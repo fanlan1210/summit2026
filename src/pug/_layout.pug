@@ -20,6 +20,9 @@ html(lang="zh-Hant-TW")
     link(rel='stylesheet', href='assets/css/index.css?version='+timestamp)
     block head
   body
+    select#lang-select.fixed.right-0.top-0.z-50.bg-white
+      option(value="zh") 華語
+      option(value="en") English
     block main
     footer.bg-slate-100: .container.py-20
       nav.grid.gap-8(class="grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
@@ -52,20 +55,21 @@ html(lang="zh-Hant-TW")
           a.block(href="//summit.g0v.tw/2014", target="_blank") 2014
       .mt-16.flex.flex-wrap
         span CC BY 4.0 @ g0v Summit 2026
-        a.mx-8(href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
-        .flex.gap-4
+        a.ml-8.mr-16(href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
+        .rolling-list.flex.gap-4
           a(href='https://www.facebook.com/g0v.tw/' target='_blank')
             i.fa-brands.fa-facebook-f#social(aria-hidden='true')
           a(href='https://www.instagram.com/g0v.tw/' target='_blank')
             i.fa-brands.fa-instagram#social(aria-hidden='true')
           a(href='https://x.com/g0vtw/' target='_blank')
-            i.fa-brands.fa-twitter#social(aria-hidden='true')
+            i.fa-brands.fa-x-twitter#social(aria-hidden='true')
           a(href='https://g0v.social/@summit' target='_blank')
             i.fa-brands.fa-mastodon#social(aria-hidden='true')
-    #cookie-notice.px-4.py-2.fixed.bottom-0.w-full.bg-white.hidden(style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1)")
-      | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您 
-      a(href="#") 同意使用 cookies
-      button.btn.btn-primary.btn-sm.ml-4(href="#") 同意 
+    #cookie-notice.px-4.py-2.fixed.bottom-0.w-full.bg-white.flex.hidden(style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1)")
+      .mr-auto 
+        | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您 
+        a(href="#") 同意使用 cookies
+      button.btn.btn-primary.btn-sm(href="#") 同意 
       
     script(src='https://code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js', integrity='sha512-EkS8Kq86l7dHt/dOBniHgtYvAScDqFw/lIPX5VCwaVKsufs0pY44I2cguqZ45QaFOGGwVd3T1nXvVJYIEjRsjA==', crossorigin='anonymous', referrerpolicy='no-referrer')
