@@ -13,7 +13,7 @@
     "pre": "node prebuild/index.js",
     "build": "gulp build",
     "deploy": "gulp deploy",
-    "start": "gulp server"
+    "dev": "gulp server"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.14",
