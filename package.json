@@ -10,6 +10,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "start": "gulp server",
     "pre": "node prebuild/index.js",
     "build": "gulp build",
     "deploy": "gulp deploy",
