@@ -20,10 +20,26 @@ html(lang="zh-Hant-TW")
     link(rel='stylesheet', href='assets/css/index.css?version='+timestamp)
     block head
   body
-    select#lang-select.fixed.right-0.top-0.z-50.bg-white
-      option(value="zh") 華語
-      option(value="en") English
+    nav(id="navbar" class="fixed z-999 grid place-items-center w-full h-28 bg-transparent transition-colors")
+      div(class="container flex items-center") 
+        a(class="mr-auto text-lg md:text-2xl font-bold text-black no-underline" href="#") g0v Summit 2026
+        div(class="hidden md:flex items-center gap-12")
+          a(class="text-2xl font-bold text-black no-underline" href="#") 年會資訊
+          a(class="w-39 h-12 grid place-items-center px-4 text-2xl font-bold text-white bg-[#008CC9] no-underline rounded-2xl" href="#") 徵稿辦法
+        button(id="toggle-nav-btn" class="md:hidden cursor-pointer")
+          iconify-icon(icon="material-symbols:clear-all-rounded" width="32" height="32")
+      div(id="mobile-nav" class="md:hidden absolute left-0 right-0 top-full overflow-hidden bg-white grid grid-rows-[0fr] transition-[grid-template-rows]")
+        div(class="min-h-0")
+          div(class="flex flex-col gap-4 items-center py-4 ")
+            a(class="text-2xl font-bold text-black no-underline" href="#") 年會資訊
+            a(class="w-39 h-12 grid place-items-center px-4 text-2xl font-bold text-white bg-[#008CC9] no-underline rounded-2xl" href="#") 徵稿辦法
+
+    //- select#lang-select.fixed.right-0.top-0.z-50.bg-white
+    //-   option(value="zh") 華語
+    //-   option(value="en") English
+
     block main
+
     footer.bg-slate-100: .container.py-20
       nav.grid.gap-8(class="grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
         .leading-loose
@@ -79,5 +95,7 @@ html(lang="zh-Hant-TW")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.language.min.js', integrity='sha512-XaRK7YZ6nqPsjMAMUysMC0J7zqEOp3K74pUzIADUd3Ql8qpFpuwpR5jm+TVyzJc8C5fvVkjC3yOjF0gWmmCtDA==', crossorigin='anonymous', referrerpolicy='no-referrer')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.messagestore.min.js', integrity='sha512-Ejnbo8F6SIU18Tj9hZyJzVbhWtbC40Fyvuyfs6InZloy043xEvICul37BxuUGZG1ia8RQky7uBOwBdLsGKDu1w==', crossorigin='anonymous', referrerpolicy='no-referrer')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.parser.min.js', integrity='sha512-v3mCT0T3rETWJU4RZKWHobzvOdJUcaojtxFBYVY371L/3aaWj9Dg2MNl6Q46wr19u4YHHnyzAR99wWAr9mB3ZA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js")
     script(src='assets/js/base.js?v='+timestamp)
+    script(src='assets/js/layout.js?v='+timestamp)
     block script

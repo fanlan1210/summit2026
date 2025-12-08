@@ -1,17 +1,11 @@
 extend _layout.pug
+
 block variables
   - title = "徵件中"
+
 block main
     #top-block.w-full.h-svh.relative
       img.absolute.top-0.left-0.w-full.h-full.object-cover(src="assets/img/test.jpg", alt="")
-      .container.px-12.pt-6.relative
-        .rounded-md.bg-white.p-4.w-full.flex.flex-wrap.items-center.shadow-lg
-          img.h-8.w-auto.my-auto(src="assets/img/g0v-summit-logo.svg", alt="")
-          #timer.mx-auto.w-max.my-auto 提案截止 2026 年 1 月 5 日 尚餘 <span></span> 天
-          .flex.items-center.ml-auto.my-auto
-            a(href="/about-cfp") 投稿說明
-            a.btn.btn-primary.ml-4(href="#" class="md:ml-8") 我要投稿
-            a.btn.btn-outline-primary.ml-4(href="#", target="_blank") 訂閱電子報
       
       .absolute.text-white.p-4(class="left-8 bottom-8 md:left-1/4 md:bottom-1/4 bg-primary/80")
         h2.mb-1 summit 2026
