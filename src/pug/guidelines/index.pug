@@ -1,0 +1,147 @@
+extend ../_layout.pug
+
+block variables
+  - title = "徵稿辦法"
+
+block main
+    div(class="container pt-14 md:pt-28")
+      div(class="my-16")
+        div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
+          div(class="text-bold whitespace-nowrap text-lg md:text-2xl")
+            | 距離徵稿結束剩下 <span class="text-[#FF7874]">32</span> 天
+          div(class="h-2 w-full bg-[#F5F5F5] rounded-full grow")
+            div(class="h-full bg-[#FF7874] rounded-full" style="width: 20%")
+        div
+          button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl") 投稿表單
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-8") 投稿方法
+        p
+          | g0v 雙年會 2026 議程由大會進行線上公開徵集，您僅可透過大會指定之線上 Google 表單進行投稿。
+          br 
+          | 投稿將於 2026  1 月 15 日 23:59 (UTC+8)截止，截止日期之前送出的投稿都可以持續用 Google 表單修改，投稿截止後，g0v 雙年會 2026 將會選出本屆議程、與投稿者一一確認，您的稿件確認錄取後，將摒除隱私資訊及（除暱稱外之）個人資料，預計於三月底陸續公開顯示在 g0v 雙年會 2026 網頁上。
+
+      div(class="mb-15")
+        h2(class="text-3xl md:text-4xl text-bold mb-12") 重要日程
+        div(class="grid gap-8 mb-12 md:flex md:gap-x-4 md:gap-y-8 md:flex-wrap md:items-center md:justify-center")
+          div(class="flex flex-col items-center gap-1 self-start")
+            div(class="w-22 h-22 border rounded-full mb-4") 
+            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2025/12/15
+            h3(class="text-2xl md:text-3xl text-bold") 徵件開始
+          div(class="hidden md:block")
+            iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
+          div(class="flex flex-col items-center gap-1 self-start")
+            div(class="w-22 h-22 border rounded-full mb-4") 
+            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/01/15
+            h3(class="text-2xl md:text-3xl text-bold") 徵件截止
+          div(class="hidden md:block")
+            iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
+          div(class="flex flex-col items-center gap-1 self-start")
+            div(class="w-22 h-22 border rounded-full mb-4") 
+            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/02/15
+            h3(class="text-2xl md:text-3xl text-bold") 通知投稿結果
+          div(class="hidden md:block")
+            iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
+          div(class="flex flex-col items-center gap-1 self-start")
+            div(class="w-22 h-22 border rounded-full mb-4") 
+            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/03/15
+            h3(class="text-2xl md:text-3xl text-bold") 公告議程
+          div(class="hidden md:block")
+            iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
+          div(class="flex flex-col items-center gap-1 self-start")
+            div(class="w-22 h-22 border rounded-full mb-4") 
+            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/03/15
+            h3(class="text-2xl md:text-3xl text-bold text-center") 
+              | g0v Summit
+              br
+              | 2026 
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-12") 主題分類
+        div(class="h-32 bg-[#D9D9D9]")
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-12") 議程形式分類
+        div(class="grid md:grid-cols-[300px_auto] lg:grid-cols-[348px_auto] gap-8")
+          div(class="grid gap-6")
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box1") 
+              span(class="text-xl md:text-2xl text-bold") 演講
+              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]") Talk
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box2") 
+              span(class="text-xl md:text-2xl text-bold") 主題論壇
+              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]") Panel Disucssion
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box3") 
+              span(class="text-xl md:text-2xl text-bold") 工作坊
+              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]") Workshop
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box4") 
+              span(class="text-xl md:text-2xl text-bold") 圓桌會議
+              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]") Roundtable Discussion
+          div(class="border rounded-xl p-6 md:max-h-[480px] overflow-auto")
+            div(id="agenda-box1" class="agenda-box text-lg" style="display: none")
+              | 演講內容 123
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tempora excepturi at. Dolor blanditiis accusantium quod maiores nisi minus, doloremque adipisci quidem at reprehenderit consequatur obcaecati repudiandae nulla nostrum beatae fuga optio quisquam, dicta velit corrupti impedit consectetur veniam aspernatur eum. Harum incidunt nobis, modi fugit dolore blanditiis libero, quo maxime veritatis, voluptas laborum quos praesentium iste rem est eum cumque commodi repudiandae! Nostrum, doloribus blanditiis quidem esse pariatur dolore minima amet, voluptate, similique nesciunt hic obcaecati quia. Quibusdam hic iure tempore ipsa est optio animi totam. In, modi sint ea saepe accusamus illum rem suscipit sed doloribus itaque debitis!
+            div(id="agenda-box2" class="agenda-box text-lg" style="display: none")
+              | 主題論壇 123
+            div(id="agenda-box3" class="agenda-box text-lg" style="display: none")
+              | 工作坊 123
+            div(id="agenda-box4" class="agenda-box text-lg" style="display: none")
+              | 圓桌會議 123
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-12") 評選標準
+        p g0v Summit 2026 會優先選擇具專案成果、專案影響力、知識分享性質的投稿。我們注重台灣、東南亞、東亞的在地特性，並且努力達成性別、地域均衡。
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-12") 個資聲明
+        p g0v Summit 2026 個人資料蒐集、處理及利用同意書
+        p 為遵守「個人資料保護法」規定，並保障當事人之權利，謹依法告知下列事項：
+        p 1. 機關單位名稱：g0v Summit 2026 工作小組
+        p 2. 蒐集之特定目的：g0v Summit 活動籌備使用
+        p 3. 個人資料之項目：參考上述投稿方法之內容
+        p 4. 個人資料利用之期間、地區、對象及方式：
+        p a. 期間: g0v Summit 2026 及未來 g0v Summit 籌備期間 （籌備時間認定為該屆總召確認當日起，至活動結束後 30 天內）
+        p b. 地區：台灣
+        p c. 對象：於 g0v Summit 2026 網頁提案者
+        p d. 方式：蒐集、處理、利用
+        p 5. 依個人資料保護法第 3條規定，當事人可行使以下權利：
+        p a. 查詢或請求閱覽。
+        p b. 請求製給複製本。
+        p c. 請求補充或更正。
+        p d. 請求停止蒐集、處理及利用。
+        p e. 請求刪除。
+        p 6. 依個人資料保護法第 14 條規定，當事人查詢或請求閱覽個人資料或製給複製本。
+        p 7. 若遇行使第 5 及 6 條權利，請寫信至 programming@summit.g0v.tw ，本團隊將依法進行回覆。
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-8") FAQ
+        h3(class="text-xl md:text-2xl text-bold mb-6") 投稿相關
+        div(class="grid gap-6")
+          div(class="rounded-md overflow-hidden")
+            button(class="faq-btn w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content1") 1. 結果何時公佈？入選與未入選都會收到通知嗎？
+            div(id="faq-content1" class="bg-[#d3ebdf] p-4")
+              p 我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。
+          div(class="rounded-md overflow-hidden")
+            button(class="faq-btn w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content2") 1. 結果何時公佈？入選與未入選都會收到通知嗎？
+            div(id="faq-content2" class="bg-[#d3ebdf] p-4")
+              p 我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。
+          div(class="rounded-md overflow-hidden")
+            button(class="faq-btn w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content3") 1. 結果何時公佈？入選與未入選都會收到通知嗎？
+            div(id="faq-content3" class="bg-[#d3ebdf] p-4")
+              p 我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。
+          div(class="rounded-md overflow-hidden")
+            button(class="faq-btn w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content4") 1. 結果何時公佈？入選與未入選都會收到通知嗎？
+            div(id="faq-content4" class="bg-[#d3ebdf] p-4")
+              p 我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-8") 聯絡資訊
+        p 有任何投稿相關問題歡迎來信 programming@summit.g0v.tw
+
+      div(class="mb-20")
+        h2(class="text-3xl md:text-4xl text-bold mb-8") 前往投稿！
+        div
+          button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl") 投稿表單
+
+
+block script
+  script(src="assets/js/guidelines.js?v="+timestamp)
