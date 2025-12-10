@@ -99,33 +99,43 @@ $(document).on('keydown', function (e) {
 
 // Change the navbar color dynamically on scroll
 const navTransparentFlag = Boolean($('#nav-transparent-flag')[0]);
-const $navbar = $('#navbar');
-const $mobileNav = $('#mobile-nav');
+const $navbar = $('#navbar')
+const $mobileNav = $('#mobile-nav')
 
 if (navTransparentFlag) {
-  $navbar.addClass('bg-transparent transition-colors');
+  $navbar.addClass('bg-transparent transition-colors')
   function onScroll() {
     if ($(window).scrollTop() > 10) {
-      $navbar.addClass('bg-white shadow-md');
+      $navbar.addClass('bg-white shadow-md')
     } else {
-      $navbar.removeClass('bg-white shadow-md');
+      $navbar.removeClass('bg-white shadow-md')
     }
   }
-  $(window).on('scroll', onScroll);
-  onScroll();
+  $(window).on('scroll', onScroll)
+  onScroll()
 } else {
-  $navbar.addClass('bg-white shadow-md');
+  $navbar.addClass('bg-white shadow-md')
 }
 
 // toggle mobile nav
-$('#toggle-nav-btn').on('click', toggleMobileNav);
+$('#toggle-nav-btn').on('click', toggleMobileNav)
 
 function toggleMobileNav() {
-  $navbar.addClass('bg-white');
-  $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]');
-  $mobileNav.toggleClass('shadow-md');
+  $navbar.addClass('bg-white')
+  $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
+  $mobileNav.toggleClass('shadow-md')
 
   if ($(window).scrollTop() < 10 && $mobileNav.hasClass('grid-rows-[0fr]')) {
-    $navbar.removeClass('bg-white');
+    $navbar.removeClass('bg-white')
   }
 }
+
+// count day to submission deadline
+const target = new Date("2026-01-15T00:00:00+08:00")
+const msPerDay = 24 * 60 * 60 * 1000
+const daysLeftFromNow = Math.ceil((target - new Date()) / msPerDay)
+$('.submission-deadline').text(daysLeftFromNow)
+const totalDays = 40
+const dayPassed = Math.max(totalDays - daysLeftFromNow, 0)
+const progress = Math.min(Math.round(dayPassed / 30 * 100), 100)
+$('.submission-deadline-progress').css('width', `${progress}%`)
