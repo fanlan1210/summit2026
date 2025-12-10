@@ -5,3 +5,59 @@ survey: Post-Event Survey
 contact: Sponsor & Press Contact
 cookie: This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics.
 agree: Agree
+
+index.hero.title: Summit 2026
+index.hero.date: 2026.5
+index.hero.location: Taipei, Taiwan
+index.t1: Summit <br class="md:hidden">2026 “Invite Yourself”
+index.p1: >-
+  (非正式翻譯版本僅作佔位) g0v Summit 2026 focuses on civic tech and public-private collaboration. This year,
+  after community discussions, we set the theme as “Invite Yourself,” reflecting on
+  fragmented public spaces and fading momentum. We hope to broaden participation and
+  actively connect civic groups across Taiwan, rekindling constructive contributions
+  through diverse session formats in the spirit of open collaboration. 
+  <br>
+  We look forward to presenting civic tech and advocacy practices, showing the
+  potential of civic action across fields. Whether sharing inspiring wins or lessons
+  from failures, we invite civic hackers and on-the-ground advocates to gather,
+  understand each other, and encourage newcomers to take ownership—turning the
+  Summit into a place that stitches together actors in civil society.
+index.t2: Important dates
+index.dates.1.title: "Submission and <br/> open discussion start"
+index.dates.2.title: "Dealine for <br/> new submission"
+index.dates.3.title: "Notification of <br/> accepted proposals"
+index.dates.4.title: "Anouncement of <br/>the agenda"
+index.dates.5.title: "g0v Summit <br/> 2026"
+index.countdown: "<span class=\"submission-deadline text-[#FF7874]\"></span> Days left before CFP closes:"
+index.cta.submit: Submit Now!
+index.cta.slack: g0v Slack
+index.cta.docs: Summit 2026 Planning Docs
+index.cta.events: g0v Upcoming Events
+index.t3: Venue
+index.p2: "Humanities & Social Sciences Building, Academia Sinica <br/> 128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan"
+index.t4: What is g0v Summit?
+index.p3: >-
+  (非正式翻譯版本僅作佔位) g0v is a civic tech community born in Taiwan. By offering more readable
+  information and more usable digital services, it advances civic engagement in
+  public issues. In g0v’s polycentric universe, projects self-organize and
+  contribute autonomously, practicing open collaboration at the grassroots level and
+  releasing results under open-source licenses so more people can build on them.
+  <br>
+  Through hackathons and hands-on projects, and to connect practitioners of civic
+  tech, open data, and digital governance in Taiwan and worldwide, the g0v community
+  holds “g0v Summit” every two years—bringing civic hackers, NGOs, public servants,
+  and advocates together to share stories and experiences.
+index.t5: Past events
+index.t6: Join g0v
+index.p4: >-
+  g0v (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.
+  <br>
+  g0v replaces the “o” in gov with “0”, thereby reimagining the role of government from scratch, and represents the vision from 0 to 1 of the generation of digital natives.
+index.t7: Sponsorship Information
+index.p5: "For sponsorship inquiries, please contact: sponsorship@summit.g0v.tw"
+index.t8: Partners
+index.partners.1.name: Open Culture Foundation
+index.partners.1.site: Official site
+index.partners.1.donate: Donate
+index.partners.2.name: Information Law Center, IIAS
+index.partners.2.site: Official site

@@ -10,86 +10,41 @@ block main
       img.absolute.top-0.left-0.w-full.h-full.object-cover(src="assets/img/test.jpg", alt="")
       
       .absolute.text-white.p-4(class="left-8 bottom-8 md:left-1/4 md:bottom-1/4 bg-primary/80")
-        h2.mb-1 Summit 2026
-        h5.mb-1 2026.5
-        h5.mb-1 Taipei, Taiwan
+        h2.mb-1(data-i18n="index.hero.title") Summit 2026
+        h5.mb-1(data-i18n="index.hero.date") 2026.5
+        h5.mb-1(data-i18n="index.hero.location") Taipei, Taiwan
 
     div(class="container py-20")
-      h1(class="mb-6 md:mb-12 text-3xl md:text-4xl") 
-        |Summit
+      h1(class="mb-6 md:mb-12 text-3xl md:text-4xl" data-i18n="[html]index.t1") 
+        |Summit 
         br(class="md:hidden")
         |2026「反客為主」
 
       div(class="mb-18")
-        p
+        p(data-i18n="[html]index.p1")
           | g0v Summit 2026 除聚焦於公民科技與公私協力議題，今年並透過社群討論形成共識，將主題設定為「反客為主」(“Invite Yourself”)：由前述公共領域破碎化、社群動能減弱的反思作為為切入點，g0v Summit 2026 希望能擴大參與、積極串連台灣各領域的民間團體與公民，秉持 g0v 社群開放協作的精神，透過多元的議程形式重燃建設性貢獻的熱誠。
           br
-          |
-          br
           | 我們期待在 g0v Summit 呈現公民科技與各式倡議的實務經驗結合成果，也將藉由本次 g0v Summit 向各個領域的積極公民展現公民行動的潛力和展望。不論是分享鼓舞人心的成功案例，或是從失敗經驗中學習成長，希望讓習慣虛擬空間的公民黑客與在實體空間中奔走的公民運動參與者們齊聚一堂，促進現役貢獻者相互瞭解、彼此連結，並鼓勵初次參與者投入貢獻、積極做主 (take ownership)，讓年會成為拼貼不同行動者與縫合公民社會的契機。
-
-      //- div(class="grid gap-4 mb-20")
-        div(class="grid md:grid-cols-[3fr_2fr] gap-4")
-          div(class="md:order-1")
-            img(class="block w-full h-full object-cover" src="https://picsum.photos/600/400", alt="草繩為「工具」")
-          div(class="mt-3")
-            h3(class="font-normal text-lg mb-2") 🧰 草繩為「工具」
-            p 草繩是人類最早的工具之一，象徵著「自造」的精神，將「旁觀民主」轉化為「製作民主」。我們邀請你分享如何打造、使用、或串連工具，除錯、自造我們的民主機制。
-        div(class="grid md:grid-cols-[2fr_3fr] gap-4")
-          div
-            img(class="block w-full h-full object-cover" src="https://picsum.photos/600/400", alt="草繩為「工具」")
-          div(class="mt-3")
-            h3(class="font-normal text-lg mb-2") 🛡️ 草繩為「韌性」
-            p 草繩的「韌性」與「防禦力」，是抵禦外力的基礎。在極端情境下，它是那條不可或缺的救命索。我們探問從「等待救援」走向「自主行動」，建立日常／非日常情境下的生存實務與社區互助能力。
-        div(class="grid md:grid-cols-[3fr_2fr] gap-4")
-          div(class="md:order-1")
-            img(class="block w-full h-full object-cover" src="https://picsum.photos/600/400", alt="草繩為「工具」")
-          div(class="mt-3")
-            h3(class="font-normal text-lg mb-2") 🕸️ 草繩為「連結」
-            p 無數草繩「連結」起來，能織成一張社會安全「網」（Social Safety Net），讓每一個節點都能互相支撐、彼此承接。但它也能編成一張「吊床」，提供一個「鬆」的空間，讓人們在疲憊時得以休息。我們關注從「孤軍奮戰」到「形成支持網絡」，練習抗失敗與團體療傷。
-        div(class="grid md:grid-cols-[2fr_3fr] gap-4")
-          div
-            img(class="block w-full h-full object-cover" src="https://picsum.photos/600/400", alt="草繩為「工具」")
-          div(class="mt-3")
-            h3(class="font-normal text-lg mb-2") 🧵 草繩為「覺察」
-            p 要拍打一條好草繩，你必須覺察每一根稻草的質地。在資訊洪流中，這份「覺察」至關重要。我們實踐從「被演算法操控」到「理解與反制」，重拾媒體識讀與自主防禦的能力，辨識構成我們數位世界的每一根「稻草」。
-
-        p(class="mb-20")
-          | 邀請你，一起來拍拍 (phah-phik)！
-          br
-          | 「拍」(phah) 不只是製造的動作，更是一種「節拍」。
-          br
-          | 這十年的節拍，將 g0v Summit 2026 變成了一座盛大的「公民大舞廳」。
-          br
-          | 遮就是台灣 ê 舞廳！
-          br
-          | 地緣政治、社會變遷、性別議題⋯⋯遮予咱「頭殼疼」ê 代誌，就是咱 ê 舞曲！。
-          br
-          | 音樂一下——「催落去」！
-          br
-          | 毋通徛佇遐，著愛綴著節拍，徛好跤步，
-          br
-          | 佇這個「舞池」頂面，跳出咱家己的「氣口」！
-      
+ 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-12") 重要日程
+        h2(class="text-3xl md:text-4xl text-bold mb-12" data-i18n="index.t2") 重要日程
         div(class="grid gap-8 mb-12 md:flex md:gap-x-4 md:gap-y-8 md:flex-wrap md:items-center md:justify-center")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
             span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2025/12/15
-            h3(class="text-2xl md:text-3xl text-bold") 徵件開始
+            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]index.dates.1.title") 徵件開始
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
             span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/01/15 23:59 (UTC+8)
-            h3(class="text-2xl md:text-3xl text-bold") 徵件截止
+            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]index.dates.2.title") 徵件截止
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
             span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/02/15
-            h3(class="text-2xl md:text-3xl text-bold") 通知投稿結果
+            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]index.dates.3.title") 通知投稿結果
           //- break
           div(class="md:basis-full xl:basis-auto") 
           div(class="hidden md:block")
@@ -97,43 +52,43 @@ block main
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
             span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/03/15
-            h3(class="text-2xl md:text-3xl text-bold") 公告議程
+            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]index.dates.4.title") 公告議程
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
             span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/05/23、05/24
-            h3(class="text-2xl md:text-3xl text-bold text-center") 
+            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]index.dates.5.title") 
               | g0v Summit
               br
               | 2026 
 
         div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
-          div(class="text-bold whitespace-nowrap text-lg md:text-2xl")
+          div(class="text-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]index.countdown")
             | 距離徵稿結束剩下 <span class="submission-deadline text-[#FF7874]"></span> 天
           div(class="h-2 w-full bg-[#F5F5F5] rounded-full grow")
             div(class="h-full bg-[#FF7874] rounded-full" style="width: 20%")
 
         div(class="text-center")
-          button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl") 前往投稿！
+          button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl" data-i18n="index.cta.submit") 前往投稿！
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 地點
-        p(class="md:text-2xl") 臺北市南港區研究院路二段128號中央研究院 人文社會科學館
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t3") 地點
+        p(class="md:text-2xl" data-i18n="[html]index.p2") 臺北市南港區研究院路二段128號中央研究院 人文社會科學館
         div(class="aspect-video")
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7812848444714!2d121.60895341132034!3d25.04149547771906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2sHumanities%20and%20Social%20Science%20Building!5e0!3m2!1sen!2stw!4v1765251597360!5m2!1sen!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       hr(class="text-[#BDBDBD] mb-20")
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 什麼是 g0v Summit?
-        p
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t4") 什麼是 g0v Summit?
+        p(data-i18n="[html]index.p3")
           | g0v是發源於台灣的公民科技社群，藉由提供更容易閱讀的資訊、更容易使用的數位服務，推進公民參與公共議題。在g0v多中心的社群宇宙裡，每個專案自發組成、自主貢獻，透過公開協作的草根方式實踐理念，並將成果以開源授權釋出，讓更多的夥伴可以在前人的基礎上接力賽跑。
           br
           | 而在動手實作專案的黑客松，為了與台灣及世界各地的公民科技、開放資料、數位治理的實踐者互相連結，g0v社群也每兩年舉辦一次「g0v Summit」零時政府雙年會，邀請公民駭客、NPO、公務員與倡議者齊聚交流，分享彼此的故事與經驗。
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 歷年活動
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t5") 歷年活動
         div(class="grid md:grid-cols-4 gap-4")
           img(class="w-full h-full object-cover" src="https://picsum.photos/600/400") 
           img(class="w-full h-full object-cover" src="https://picsum.photos/600/400") 
@@ -141,45 +96,45 @@ block main
           img(class="w-full h-full object-cover" src="https://picsum.photos/600/400") 
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 參與 g0v
-        p(class="mb-7")
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t6") 參與 g0v
+        p(class="mb-7" data-i18n="[html]index.p4")
           | g0v 是一個草根式的公民社群，致力於加深公民對社會的貢獻以及彼此間的連結。透過 g0v 社群，你可以在這裡尋找志同道合的夥伴，以草根的方式實踐你的理念，並將成果以開放授權模式釋出，讓更多的人可以站在你的成果上接力賽跑。 
           br
           | 將 gov 以「零」替代成為 g0v，從零重新思考政府的角色，也代表數位原生世代從 0 與 1 世界的視野。 
         div(class="flex gap-4 justify-center md:justify-start")
-          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://join.g0v.tw") 
-            | g0v Slack
+          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://join.g0v.tw")
+            span(data-i18n="index.cta.slack") g0v Slack
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
-          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro") 
-            | summit 2026 籌備文件
+          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro")
+            span(data-i18n="index.cta.docs") summit 2026 籌備文件
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
-          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://calendar.google.com/calendar/embed?src=cpcf6iv5pt9l6gl2ue3svo63e8%40group.calendar.google.com&ctz=Asia%2FTaipei") 
-            | g0v 近期活動
+          a(class="bg-primary text-white py-2 px-6 rounded-lg text-lg flex items-center gap-2 no-underline" href="https://calendar.google.com/calendar/embed?src=cpcf6iv5pt9l6gl2ue3svo63e8%40group.calendar.google.com&ctz=Asia%2FTaipei")
+            span(data-i18n="index.cta.events") g0v 近期活動
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 贊助資訊
-        p 如果有贊助意願，請洽詢 sponsorship@summit.g0v.tw
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t7") 贊助資訊
+        p(data-i18n="index.p5") 如果有贊助意願，請洽詢 sponsorship@summit.g0v.tw
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-8") 合作夥伴
+        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="index.t8") 合作夥伴
         div(class="grid md:grid-cols-2 lg:grid-cols-3 gap-6")
           div(class="flex gap-8 p-6 border rounded-lg")
             div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
               img(class="w-full h-full" src="https://picsum.photos/400/400")
             div(class="mt-3")
-              h5 開放文化基金會
+              h5(data-i18n="index.partners.1.name") 開放文化基金會
               div(class="flex gap-2 items-center")
-                a(class="text-black no-underline" href="https://ocf.tw") 官方網站
+                a(class="text-black no-underline" href="https://ocf.tw" data-i18n="index.partners.1.site") 官方網站
                 span |
-                a(class="text-black no-underline" href="https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=86") 捐款贊助
+                a(class="text-black no-underline" href="https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=86" data-i18n="index.partners.1.donate") 捐款贊助
           div(class="flex gap-8 p-6 border rounded-lg")
             div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
               img(class="w-full h-full" src="https://picsum.photos/400/400")
             div(class="mt-3")
-              h5 中央研究院法律學研究所資訊法中心
+              h5(data-i18n="index.partners.2.name") 中央研究院法律學研究所資訊法中心
               div
-                a(class="text-black no-underline" href="https://infolaw.iias.sinica.edu.tw") 官方網站
+                a(class="text-black no-underline" href="https://infolaw.iias.sinica.edu.tw" data-i18n="index.partners.2.site") 官方網站
 
 block script
   script(src="assets/js/index.js?v="+timestamp)
