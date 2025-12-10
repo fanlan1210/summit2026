@@ -25,81 +25,87 @@ function formatDatetime(dateObject) {
 }
 
 function buildI18n(baseurl = '/2026/') {
-  let locales = { en: {} }
+  return function buildI18nTask () {
+    let locales = { en: {} }
 
-  // Load schedule
-  const schedule = require('./src/data/schedule.json')
-  for (let session of schedule.sessions) {
-    if (!session.room || !session.start || !session.end) continue;
-    locales.en[`session.${session.id}.title`] = session.en.title
-    locales.en[`session.${session.id}.description`] = session.en.description
+    // Load schedule
+    const schedule = require('./src/data/schedule.json')
+    for (let session of schedule.sessions) {
+      if (!session.room || !session.start || !session.end) continue;
+      locales.en[`session.${session.id}.title`] = session.en.title
+      locales.en[`session.${session.id}.description`] = session.en.description
+    }
+
+    for (let speaker of schedule.speakers) {
+      locales.en[`speakers.${speaker.id}.name`] = speaker.en.name
+      locales.en[`speakers.${speaker.id}.bio`] = speaker.en.bio
+    }
+
+    for (let sessionType of schedule.session_types) {
+      locales.en[`session_type.${sessionType.id}`] = sessionType.en.name
+    }
+
+    for (let room of schedule.rooms) {
+      locales.en[`room.${room.id}`] = room.en.name
+    }
+
+    for (let tag of schedule.tags) {
+      locales.en[`tag.${tag.id}`] = tag.en.name
+    }
+
+    // Merge translations into base YAML file
+    return gulp
+      .src('src/locale/*.yml')
+      .pipe(new Transform({
+        readableObjectMode: true,
+        writableObjectMode: true,
+        transform: function (file, _, callback) {
+          const lang = file.stem
+
+          // Load and merge each locale
+          let document = yaml.load(file.contents.toString('utf8'), { schema: yaml.FAILSAFE_SCHEMA })
+          Object.assign(document, locales[lang])
+
+          // Rewrite file extension and content
+          file.contents = Buffer.from(JSON.stringify(document, null, 2))
+          file.extname = '.json'
+          this.push(file)
+          callback()
+        }
+      }))
+      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
   }
-
-  for (let speaker of schedule.speakers) {
-    locales.en[`speakers.${speaker.id}.name`] = speaker.en.name
-    locales.en[`speakers.${speaker.id}.bio`] = speaker.en.bio
-  }
-
-  for (let sessionType of schedule.session_types) {
-    locales.en[`session_type.${sessionType.id}`] = sessionType.en.name
-  }
-
-  for (let room of schedule.rooms) {
-    locales.en[`room.${room.id}`] = room.en.name
-  }
-
-  for (let tag of schedule.tags) {
-    locales.en[`tag.${tag.id}`] = tag.en.name
-  }
-
-  // Merge translations into base YAML file
-  return gulp
-    .src('src/locale/*.yml')
-    .pipe(new Transform({
-      readableObjectMode: true,
-      writableObjectMode: true,
-      transform: function (file, _, callback) {
-        const lang = file.stem
-
-        // Load and merge each locale
-        let document = yaml.load(file.contents.toString('utf8'), { schema: yaml.FAILSAFE_SCHEMA })
-        Object.assign(document, locales[lang])
-
-        // Rewrite file extension and content
-        file.contents = Buffer.from(JSON.stringify(document, null, 2))
-        file.extname = '.json'
-        this.push(file)
-        callback()
-      }
-    }))
-    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
 }
 
 function buildAssets(baseurl = '/2026/') {
-  gulp
-    .src('src/assets/**')
-    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
-  return gulp
-    .src('src/data/**')
-    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
+  return function buildAssetsTask () {
+    gulp
+      .src('src/assets/**')
+      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
+    return gulp
+      .src('src/data/**')
+      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
+  }
 }
 
 function buildPcss(baseurl = '/2026/') {
-  let dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
-  return gulp
-    .src('src/pcss/*.pcss')
-    .pipe(
-      data(file => {
-        console.log('[build] ' + file['history'])
-      })
-    )
-    .pipe(postcss())
-    .pipe(
-      rename({
-        extname: '.css'
-      })
-    )
-    .pipe(gulp.dest(dest_path))
+  return function buildPcssTask () {
+    const dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
+    return gulp
+      .src('src/pcss/*.pcss')
+      .pipe(
+        data(file => {
+          console.log('[build] ' + file['history'])
+        })
+      )
+      .pipe(postcss())
+      .pipe(
+        rename({
+          extname: '.css'
+        })
+      )
+      .pipe(gulp.dest(dest_path))
+  }
 }
 
 function buildSchedule() {
@@ -146,75 +152,81 @@ function buildSchedule() {
 }
 
 function buildPug(baseurl = '/2026/') {
-  let build_time = new Date().getTime()
-  let dest_path = '.' + path.join('/static/', baseurl)
+  return function buildPugTask () {
+    const build_time = new Date().getTime()
+    const dest_path = '.' + path.join('/static/', baseurl)
 
-  // Load schedule
-  let schedule = buildSchedule()
+    // Load schedule
+    const schedule = buildSchedule()
 
-  return gulp
-    .src('src/pug/**/index.pug')
-    .pipe(
-      data(file => {
-        console.log('[build] ' + file.history)
+    return gulp
+      .src('src/pug/**/index.pug')
+      .pipe(
+        data(file => {
+          console.log('[build] ' + file.history)
 
-        // Set up basic context
-        let context = {
-          schedule: schedule,
-          timestamp: build_time,
-          base: baseurl
-        }
+          // Set up basic context
+          const context = {
+            schedule: schedule,
+            timestamp: build_time,
+            base: baseurl
+          }
 
-        // See if additional data is available
-        const pagename = path.basename(file.dirname)
-        if (fs.existsSync(`./src/data/${pagename}.json`))
-          context[pagename] = require(`./src/data/${pagename}.json`)
+          // See if additional data is available
+          const pagename = path.basename(file.dirname)
+          if (fs.existsSync(`./src/data/${pagename}.json`))
+            context[pagename] = require(`./src/data/${pagename}.json`)
 
-        return context
-      })
-    )
-    .pipe(pug())
-    .pipe(gulp.dest(dest_path))
-    .pipe(
-      sitemap({
-        siteUrl: 'https://summit.g0v.tw',
-        images: true
-      })
-    )
-    .pipe(gulp.dest(dest_path))
-    .pipe(connect.reload())
+          return context
+        })
+      )
+      .pipe(pug())
+      .pipe(gulp.dest(dest_path))
+      .pipe(
+        sitemap({
+          siteUrl: 'https://summit.g0v.tw',
+          images: true
+        })
+      )
+      .pipe(gulp.dest(dest_path))
+      .pipe(connect.reload())
+  }
 }
 
-gulp.task('build', async () => {
-  await buildPcss('/summit2026/')
-  await buildI18n('/summit2026/')
-  await buildAssets('/summit2026/')
-  await buildPug('/summit2026/')
-})
+function buildAll(baseUrl = '/2026/') {
+  return gulp.series(
+    gulp.parallel(buildPcss(baseUrl), buildI18n(baseUrl), buildAssets(baseUrl)),
+    buildPug(baseUrl)
+  )
+}
 
-gulp.task('deploy', async () => {
-  await buildPcss('/2026/')
-  await buildI18n('/2026/')
-  await buildAssets('/2026/')
-  await buildPug('/2026/')
-})
+function reload(done) {
+  connect.reload()
+  done()
+}
 
-gulp.task('server', async () => {
+function serve(done) {
   connect.server({
     port: 3000,
     livereload: true,
-    host: '::',
+    host: 'localhost',
     root: 'static'
   })
-  await buildPcss()
-  await buildI18n()
-  await buildAssets()
-  await buildPug()
+  done()
+}
 
-  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml', 'src/assets/**', 'src/**/*.json'], async () => {
-    await buildPcss()
-    await buildI18n()
-    await buildAssets()
-    await buildPug()
-  })
-})
+function watchFiles() {
+  const watchOpts = {
+    awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 50 }
+  }
+
+  gulp.watch('src/assets/**', watchOpts, gulp.series(buildAssets(), buildPug(), reload))
+  gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], watchOpts, gulp.series(buildPcss(), buildPug(), reload))
+  gulp.watch(['src/**/*.yml', 'src/**/*.json'], watchOpts, gulp.series(buildI18n(), buildPug(), reload))
+}
+
+exports.server = gulp.series(buildAll(), serve, watchFiles)
+
+exports.build = buildAll('/summit2026/')
+
+exports.deploy = buildAll('/2026/')
