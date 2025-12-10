@@ -202,7 +202,6 @@ function buildPug(baseurl = '/2026/') {
         })
       )
       .pipe(gulp.dest(dest_path))
-      .pipe(connect.reload())
   }
 }
 
@@ -219,19 +218,23 @@ function buildAll(baseUrl = '/2026/') {
   )
 }
 
-function reload(done) {
-  connect.reload()
-  done()
-}
+let devServer;
 
 function serve(done) {
-  connect.server({
+  devServer = connect.server({
     port: 3000,
     livereload: true,
     host: 'localhost',
     root: 'static'
   })
   done()
+}
+
+function reload(done) {
+  if (devServer?.lr) {
+    devServer.lr.changed({ body: { files: ['*'] } });
+  }
+  done();
 }
 
 function watchFiles(done) {
