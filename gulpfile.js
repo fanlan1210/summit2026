@@ -77,11 +77,24 @@ function buildI18n(baseurl = '/2026/') {
   }
 }
 
-function buildAssets(baseurl = '/2026/') {
-  return function buildAssetsTask () {
-    gulp
-      .src('src/assets/**')
-      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
+function copyJavascript(baseurl = '/2026/') {
+  return function copyJavascriptTask() {
+    return gulp
+      .src('src/assets/js/**/*.js')
+      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/js/')))
+  }
+}
+
+function copyImages(baseurl = '/2026/') {
+  return function copyImagesTask() {
+    return gulp
+      .src('src/assets/img/**')
+      .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/img/')))
+  }
+}
+
+function copyData(baseurl = '/2026/') {
+  return function copyDataTask() {
     return gulp
       .src('src/data/**')
       .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
@@ -195,7 +208,13 @@ function buildPug(baseurl = '/2026/') {
 
 function buildAll(baseUrl = '/2026/') {
   return gulp.series(
-    gulp.parallel(buildPcss(baseUrl), buildI18n(baseUrl), buildAssets(baseUrl)),
+    gulp.parallel(
+      buildPcss(baseUrl),
+      buildI18n(baseUrl),
+      copyJavascript(baseUrl),
+      copyImages(baseUrl),
+      copyData(baseUrl)
+    ),
     buildPug(baseUrl)
   )
 }
@@ -220,8 +239,10 @@ function watchFiles(done) {
     awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 50 }
   }
 
-  gulp.watch('src/assets/**', watchOpts, gulp.series(buildAssets(), buildPug(), reload))
+  gulp.watch('src/assets/js/**/*.js', watchOpts, gulp.series(copyJavascript(), buildPug(), reload))
   gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], watchOpts, gulp.series(buildPcss(), buildPug(), reload))
+  gulp.watch('src/data/**', watchOpts, gulp.series(copyData(), reload))
+  gulp.watch('src/assets/img/**', watchOpts, gulp.series(copyImages(), reload))
   gulp.watch(['src/**/*.yml', 'src/**/*.json'], watchOpts, gulp.series(buildI18n(), buildPug(), reload))
 
   done()
