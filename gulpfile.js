@@ -215,7 +215,7 @@ function serve(done) {
   done()
 }
 
-function watchFiles() {
+function watchFiles(done) {
   const watchOpts = {
     awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 50 }
   }
@@ -223,6 +223,8 @@ function watchFiles() {
   gulp.watch('src/assets/**', watchOpts, gulp.series(buildAssets(), buildPug(), reload))
   gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], watchOpts, gulp.series(buildPcss(), buildPug(), reload))
   gulp.watch(['src/**/*.yml', 'src/**/*.json'], watchOpts, gulp.series(buildI18n(), buildPug(), reload))
+
+  done()
 }
 
 exports.server = gulp.series(buildAll(), serve, watchFiles)
