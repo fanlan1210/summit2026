@@ -101,11 +101,11 @@ function copyData(baseurl = '/2026/') {
   }
 }
 
-function buildPcss(baseurl = '/2026/') {
-  return function buildPcssTask () {
+function buildCss(baseurl = '/2026/') {
+  return function buildCssTask () {
     const dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
     return gulp
-      .src('src/pcss/*.pcss')
+      .src('src/assets/css/**/*.css')
       .pipe(
         data(file => {
           console.log('[build] ' + file['history'])
@@ -209,7 +209,7 @@ function buildPug(baseurl = '/2026/') {
 function buildAll(baseUrl = '/2026/') {
   return gulp.series(
     gulp.parallel(
-      buildPcss(baseUrl),
+      buildCss(baseUrl),
       buildI18n(baseUrl),
       copyJavascript(baseUrl),
       copyImages(baseUrl),
@@ -240,7 +240,7 @@ function watchFiles(done) {
   }
 
   gulp.watch('src/assets/js/**/*.js', watchOpts, gulp.series(copyJavascript(), buildPug(), reload))
-  gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], watchOpts, gulp.series(buildPcss(), buildPug(), reload))
+  gulp.watch(['src/**/*.pug', 'src/assets/css/**/*.css'], watchOpts, gulp.series(buildCss(), buildPug(), reload))
   gulp.watch('src/data/**', watchOpts, gulp.series(copyData(), reload))
   gulp.watch('src/assets/img/**', watchOpts, gulp.series(copyImages(), reload))
   gulp.watch(['src/**/*.yml', 'src/**/*.json'], watchOpts, gulp.series(buildI18n(), buildPug(), reload))
