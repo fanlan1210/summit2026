@@ -6,6 +6,25 @@ contact: Sponsor & Press Contact
 cookie: This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics.
 agree: Agree
 
+nav.speakers: Speakers
+nav.agenda: Agenda
+nav.visit: Visit
+nav.hackmd: Collab Notes
+nav.live: Livestream
+nav.media: Media
+nav.presskit: Press Kit
+nav.guide: Visitors' Guide
+nav.newsletter: Newsletter
+nav.souvenir: SUmmit Souvenir
+nav.about: About Summit
+nav.staff: Staff
+nav.partners: Partners
+nav.docs: Organization Records
+nav.coc: Code of Conduct
+nav.safety: Safety Tips
+nav.past: Past Events
+nav.bugreport: Report Website Issue
+
 index.hero.title: Summit 2026
 index.hero.date: 2026.5
 index.hero.location: Taipei, Taiwan
