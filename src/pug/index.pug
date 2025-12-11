@@ -4,12 +4,12 @@ block variables
   - title = "反客為主"
 
 block main
-    div(id="nav-transparent-flag" class="hidden")
+    #nav-transparent-flag(class="hidden")
 
-    #top-block.w-full.h-svh.relative
-      img.absolute.top-0.left-0.w-full.h-full.object-cover(src="assets/img/test.jpg", alt="")
+    #top-block(class="w-full h-svh relative")
+      img(class="absolute top-0 left-0 w-full h-full object-cover" src="assets/img/test.jpg" alt="")
       
-      .absolute.text-white.p-4(class="left-8 bottom-8 md:left-1/4 md:bottom-1/4 bg-primary/80")
+      div(class="absolute text-white p-4 left-8 bottom-8 md:left-1/4 md:bottom-1/4 bg-primary/80")
         h2.mb-1(data-i18n="index.hero.title") Summit 2026
         h5.mb-1(data-i18n="index.hero.date") 2026.5
         h5.mb-1(data-i18n="index.hero.location") Taipei, Taiwan
