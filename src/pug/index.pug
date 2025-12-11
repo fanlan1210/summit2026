@@ -84,8 +84,10 @@ block main
         div(class="grid md:grid-cols-3 gap-4")
           mixin pastEvent(year)
             - var title = "g0v Summit " + year
-            a(href="https://summit.g0v.tw/"+year target="_blank" title=title class="hover:-translate-y-1 transition-all overflow-hidden border border-neutral-200")
+            a(href="https://summit.g0v.tw/"+year target="_blank" title=title class="relative group border border-neutral-200")
               img(class="w-full" src="assets/img/past_events/"+year+".jpg" alt=title)
+              div(class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all text-white font-bold flex items-center justify-center") 
+                span.text-xl g0v Summit #[=year]
           +pastEvent("2024")
           +pastEvent("2020")
           +pastEvent("2018")
