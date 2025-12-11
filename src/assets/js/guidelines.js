@@ -37,11 +37,15 @@ $(function () {
    * =======================
    */
   const FAQ_DURATION = 300;
-  function showFaqContent(selector) {
-    const $target = $(selector);
-    $target[0].clientHeight > 0 ? $target.slideUp(FAQ_DURATION) : $target.slideDown(FAQ_DURATION);
-  }
   $('.faq-btn').on('click', function () {
-    showFaqContent($(this).data('target'));
+    const $target = $($(this).data('target'));
+    const isOpen = $target.css('display') !== 'none';
+    if (isOpen) {
+      $target.slideUp(FAQ_DURATION)
+      $(this).removeClass('active')
+    } else {
+      $target.slideDown(FAQ_DURATION)
+      $(this).addClass('active')
+    }
   });
 });
