@@ -8,7 +8,6 @@ agree: Agree
 
 nav.summit_info: Annual Info
 nav.cfp: CFP Guidelines
-
 nav.speakers: Speakers
 nav.agenda: Agenda
 nav.visit: Visit
@@ -27,6 +26,7 @@ nav.coc: Code of Conduct
 nav.safety: Safety Tips
 nav.past: Past Events
 nav.bugreport: Report Website Issue
+nav.disabled.title: Still Cooking!
 
 index.hero.title: Summit 2026
 index.hero.date: 2026.5
