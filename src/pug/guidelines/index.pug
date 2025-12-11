@@ -7,22 +7,22 @@ block main
     div(class="container pt-14 md:pt-28")
       div(class="my-16")
         div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
-          div(class="text-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]guidelines.countdown")
-            | 距離徵稿結束剩下 <span class="submission-deadline text-[#FF7874]"></span> 天
+          div(class="font-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]guidelines.countdown")
+            | 距離徵稿結束剩下 <span class="submission-deadline text-secondary"></span> 天
           div(class="h-2 w-full bg-[#F5F5F5] rounded-full grow")
-            div(class="submission-deadline-progress h-full bg-[#FF7874] rounded-full")
+            div(class="submission-deadline-progress h-full bg-secondary rounded-full")
         div
           button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl" data-i18n="guidelines.cta.form") 投稿表單
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="guidelines.t1") 投稿方法
+        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t1") 投稿方法
         p(data-i18n="[html]guidelines.p1")
           | g0v 雙年會 2026 議程由大會進行線上公開徵集，您僅可透過大會指定之線上 Google 表單進行投稿。
           br
           | 投稿將於 2026  1 月 15 日 23:59 (UTC+8)截止，截止日期之前送出的投稿都可以持續用 Google 表單修改，投稿截止後，g0v 雙年會 2026 將會選出本屆議程、與投稿者一一確認，您的稿件確認錄取後，將摒除隱私資訊及（除暱稱外之）個人資料，預計於三月底陸續公開顯示在 g0v 雙年會 2026 網頁上。
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="guidelines.t2") 徵稿方向：從節點到網面的公民座標
+        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t2") 徵稿方向：從節點到網面的公民座標
         p(data-i18n="[html]guidelines.p2")
           | 有人告訴我們，「一朝被蛇咬，十年怕草繩。」近期的台灣社會，也正經歷情勢挑戰、政治動盪，甚至各種「蛇咬」般的挫折與危機。面對公民運動的挫敗、來自此方與彼端的威脅，我們拒絕陷入「怕草繩」的被動與畏縮；相反地，我們選擇捲起袖子，伸手抓起那條草繩——在這裡，我們將恐懼的「怕」，轉化為行動的「拍phah」，不坐等、不依賴，親自動手自造，將驚恐的幻影編織成強韌而靈活的立體坐標系。
           br
@@ -36,58 +36,58 @@ block main
 
 
       div(class="mb-15")
-        h2(class="text-3xl md:text-4xl text-bold mb-12" data-i18n="guidelines.t3") 重要日程
+        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t3") 重要日程
         div(class="grid gap-8 mb-12 md:flex md:gap-x-4 md:gap-y-8 md:flex-wrap md:items-center md:justify-center")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
-            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2025/12/15
-            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]guidelines.dates.1.title") 徵件開始
+            span(class="font-bold text-xl md:text-2xl text-[#A2A2A2]") 2025/12/15
+            h3(class="text-2xl md:text-3xl font-bold text-center" data-i18n="[html]guidelines.dates.1.title") 徵件開始
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
-            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/01/15 23:59 (UTC+8)
-            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]guidelines.dates.2.title") 徵件截止
+            span(class="font-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/01/15 23:59 (UTC+8)
+            h3(class="text-2xl md:text-3xl font-bold text-center" data-i18n="[html]guidelines.dates.2.title") 徵件截止
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
-            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/02/15
-            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]guidelines.dates.3.title") 通知投稿結果
+            span(class="font-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/02/15
+            h3(class="text-2xl md:text-3xl font-bold text-center" data-i18n="[html]guidelines.dates.3.title") 通知投稿結果
           //- break
           div(class="md:basis-full xl:basis-auto") 
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
-            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/03/15
-            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]guidelines.dates.4.title") 公告議程
+            span(class="font-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/03/15
+            h3(class="text-2xl md:text-3xl font-bold text-center" data-i18n="[html]guidelines.dates.4.title") 公告議程
           div(class="hidden md:block")
             iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
           div(class="flex flex-col items-center gap-1 self-start")
             div(class="w-22 h-22 border rounded-full mb-4") 
-            span(class="text-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/05/23-24
-            h3(class="text-2xl md:text-3xl text-bold text-center" data-i18n="[html]guidelines.dates.5.title") 
+            span(class="font-bold text-xl md:text-2xl text-[#A2A2A2]") 2026/05/23-24
+            h3(class="text-2xl md:text-3xl font-bold text-center" data-i18n="[html]guidelines.dates.5.title") 
               | g0v Summit
               br
               | 2026 
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-12" data-i18n="guidelines.t4") 議程形式分類
+        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t4") 議程形式分類
         div(class="grid md:grid-cols-[300px_auto] lg:grid-cols-[348px_auto] gap-8")
           div(class="grid gap-6")
             button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box1") 
-              span(class="text-xl md:text-2xl text-bold" data-i18n="guidelines.formats.1.title") 演講
-              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]" data-i18n="guidelines.formats.1.subtitle") Talk
+              span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.1.title") 演講
+              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.1.subtitle") Talk
             button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box2") 
-              span(class="text-xl md:text-2xl text-bold" data-i18n="guidelines.formats.2.title") 主題論壇
-              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]" data-i18n="guidelines.formats.2.subtitle") Panel Disucssion
+              span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.2.title") 主題論壇
+              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.2.subtitle") Panel Disucssion
             button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box3") 
-              span(class="text-xl md:text-2xl text-bold" data-i18n="guidelines.formats.3.title") 工作坊
-              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]" data-i18n="guidelines.formats.3.subtitle") Workshop
+              span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.3.title") 工作坊
+              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.3.subtitle") Workshop
             button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box4") 
-              span(class="text-xl md:text-2xl text-bold" data-i18n="guidelines.formats.4.title") 圓桌會議
-              span(class="text-lg md:text-xl text-bold text-[#A1A1A1]" data-i18n="guidelines.formats.4.subtitle") Roundtable Discussion
+              span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.4.title") 圓桌會議
+              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.4.subtitle") Roundtable Discussion
           div(class="border rounded-xl p-6 md:max-h-[480px] overflow-auto")
             div(id="agenda-box1" class="agenda-box text-lg" style="display: none" data-i18n="guidelines.formats.1.desc")
               | 20 分鐘，1-2 位講者。
@@ -99,11 +99,11 @@ block main
               | 可選擇 60、90 或 120 分鐘，由 1-3 人主持團隊引導，與自由參與的會眾共同討論。全程採「單一討論場域」形式，所有人圍繞同一議題進行對話與思辨，一次僅一人發言，鼓勵現場即時提問與互動回應。此形式強調公共思考、觀點碰撞與集體討論的流動性。
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-12" data-i18n="guidelines.t5") 評選標準
+        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t5") 評選標準
         p(data-i18n="guidelines.p5") g0v Summit 2026 會優先選擇具專案成果、專案影響力、知識分享性質的投稿。我們注重台灣、東南亞、東亞的在地特性，並且努力達成性別、地域均衡。
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-12" data-i18n="guidelines.t6") 個資聲明
+        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t6") 個資聲明
         p(data-i18n="guidelines.p6") g0v Summit 2026 個人資料蒐集、處理及利用同意書
         p(data-i18n="guidelines.p7") 為遵守「個人資料保護法」規定，並保障當事人之權利，謹依法告知下列事項：
         p(data-i18n="guidelines.p8") 1. 機關單位名稱：g0v Summit 2026 工作小組
@@ -126,8 +126,8 @@ block main
         p(data-i18n="guidelines.p23") 7. 若遇行使第 5 及 6 條權利，請寫信至 programming@summit.g0v.tw ，本團隊將依法進行回覆。
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="guidelines.t7") FAQ
-        h3(class="text-xl md:text-2xl text-bold mb-6" data-i18n="guidelines.faq.section1") 投稿相關
+        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t7") FAQ
+        h3(class="text-xl md:text-2xl font-bold mb-6" data-i18n="guidelines.faq.section1") 投稿相關
         div(class="grid gap-6")
           div(class="rounded-md overflow-hidden")
             button(class="faq-btn flex items-center gap-2 w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content1") 
@@ -153,7 +153,7 @@ block main
               iconify-icon(class="w-9 h-9 in-[.active]:-rotate-180 transition-transform duration-300" icon="material-symbols:arrow-drop-down-rounded" width="36" height="36")
             div(id="faq-content4" class="hidden bg-[#d3ebdf] p-4" data-i18n="[html]guidelines.faq.a4")
               p 可以。投稿系統上將有此欄位供投稿者勾選。
-        h3(class="text-xl md:text-2xl text-bold mb-6 mt-8" data-i18n="[html]guidelines.faq.section2") 議程需求
+        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="[html]guidelines.faq.section2") 議程需求
         div(class="grid gap-6")
           div(class="rounded-md overflow-hidden")
             button(class="faq-btn flex items-center gap-2 w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content5")
@@ -175,7 +175,7 @@ block main
               | 各場地均備有基礎會議設備，包括投影機、麥克風、直播等設備。現場會開放共筆供每個現場、線上、會前、會後的參與者紀錄。都會開 
               a(href="https://www.slido.com/" target="_blank") sli.do
               |  的即時提問系統，方便主持人或講者快速查閱提問。原則上現場各處都找得到 110V 供電插頭。若有特殊需求，請於提案時備註。
-        h3(class="text-xl md:text-2xl text-bold mb-6 mt-8" data-i18n="guidelines.faq.section3") 交通、住宿相關
+        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="guidelines.faq.section3") 交通、住宿相關
         div(class="grid gap-6")
           div(class="rounded-md overflow-hidden")
             button(class="faq-btn flex items-center gap-2 w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content8")
@@ -193,11 +193,11 @@ block main
               p 若有需要主辦單位提供任何文件，請與我們聯繫 programming@summit.g0v.tw。
       
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="guidelines.t8") 聯絡資訊
+        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t8") 聯絡資訊
         p(data-i18n="[html]guidelines.p24") 有任何投稿相關問題歡迎來信 programming@summit.g0v.tw
 
       div(class="mb-20")
-        h2(class="text-3xl md:text-4xl text-bold mb-8" data-i18n="guidelines.t9") 前往投稿！
+        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t9") 前往投稿！
         div
           button(class="px-12 py-2 bg-primary text-white rounded-lg text-2xl" data-i18n="guidelines.cta.form2") 投稿表單
 
