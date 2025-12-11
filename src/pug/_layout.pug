@@ -10,21 +10,21 @@ html(lang="zh-Hant-TW")
     meta(property='og:image', content="assets/img/summit2026cfp.jpg")
 
     base(href=base)
-    link(rel='icon', type='image/png', href='assets/img/icon.png')
+    link(rel='icon', type='image/svg', href='assets/img/stool-nbg-r-l.svg')
     link(rel='preconnect', href='https://fonts.googleapis.com')
     link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
-    link(href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Onest:wght@100..900&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=Noto+Sans+TC:wght@100..900&family=LXGW+WenKai+TC&display=swap', rel='stylesheet')
     link(rel='stylesheet', href='assets/css/base.css?version='+timestamp)
     link(rel='stylesheet', href='assets/css/index.css?version='+timestamp)
     block head
   body
-    nav#navbar(class="fixed z-999 grid place-items-center w-full h-14 md:h-28")
+    nav#navbar(class="fixed z-999 grid place-items-center w-full h-14 md:h-28 font-serif")
       div(class="container flex items-center") 
-        a(class="btn btn-lg btn-text-dark mr-auto" href="./") g0v Summit 2026
+        a(class="btn btn-lg btn-text-dark mr-auto !font-black" href="./") g0v Summit 2026
         div(class="hidden md:flex items-center gap-6 lg:gap-12")
-          a(class="btn btn-lg btn-text-dark" href="#" data-i18n="nav.summit_info") 年會資訊
-          a(class="btn btn-lg btn-primary" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
-          div(class="flex items-center gap-2 text-xl")
+          a(class="btn btn-lg btn-text-dark !font-black" href="#" data-i18n="nav.summit_info") 年會資訊
+          a(class="btn btn-lg btn-primary !font-black" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
+          div(class="flex items-center gap-2 text-xl font-black")
             iconify-icon(icon="material-symbols:globe-asia" width="24" height="24")
             button(class="lang-btn zh-btn") 華語
             span |
