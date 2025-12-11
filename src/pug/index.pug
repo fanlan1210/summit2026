@@ -33,7 +33,7 @@ block main
           p: b 在這張由社群編織的「公民座標」上，原本孤立的節點形成了聚落，單線的對話演化成協作的生態系。它既是防禦危機的社會安全網，也是讓公民創意得以彈跳的基地。
 
       #timeline(class="mb-20")
-        h2(class="text-3xl md:text-4xl mb-12 font-bold" data-i18n="index.t2") 重要日程
+        h2(class="max-md:text-center text-3xl md:text-4xl mb-12 font-bold" data-i18n="index.t2") 重要日程
         div(class="flex flex-wrap gap-8 mb-12 md:gap-x-4 md:gap-y-8 justify-center items-center")
           mixin timelineItem(text, date, i18nKey, showArrow=true)
             div(class="timeline-item flex flex-col items-center gap-1 self-start max-md:w-full" data-timeline-date=date)
@@ -51,7 +51,7 @@ block main
           +timelineItem("g0v Summit 2026", "2026/05/23、05/24", 5, false)
 
         div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
-          div(class="font-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]index.countdown")
+          div(class="max-md:text-center font-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]index.countdown")
             | 距離徵稿結束剩下 <span class="submission-deadline text-secondary"></span> 天
           div(class="h-4 w-full bg-neutral-200 rounded-full grow ml-2")
             div(class="submission-deadline-progress h-full bg-secondary rounded-full" style="width: 0%")
@@ -60,7 +60,7 @@ block main
           button(class="btn btn-lg btn-primary" data-i18n="index.cta.submit") 前往投稿！
 
       #location(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t3") 地點
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t3") 地點
         p(class="md:text-2xl" data-i18n="[html]index.p2") 臺北市南港區研究院路二段128號中央研究院 人文社會科學館
         div(class="aspect-video")
           iframe.w-full(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1354.0143677658955!2d121.61029955043031!3d25.041381051702803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1765449506756!5m2!1szh-TW!2stw' width='600' height='450' style='border:0;' allowfullscreen loading='lazy' referrerpolicy='no-referrer-when-downgrade')
@@ -68,7 +68,7 @@ block main
       hr(class="text-neutral-300 mb-20")
 
       #what-is(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t4") 什麼是 g0v Summit？
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t4") 什麼是 g0v Summit？
         div(data-i18n="[html]index.p3")
           p 自 2012 年起，g0v.tw 台灣零時政府社群在「寫程式改造社會」的號召下，開啟了一場長達十餘年的公民黑客實踐。
           p.mb-9: b 我們以開放、透明、協作為核心，從 2014 年首屆「g0v 啥米」（Summit）至今，搭建了一座讓開放社群、政府、學界與公民跨界交流的橋樑。
@@ -80,7 +80,7 @@ block main
           p 歷經十年拍打的草繩，不再是讓人驚恐的幻影，而是強韌而靈活的實體，它分支、編織、連結，不斷幻化與創造。
 
       #past-events(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t5") 歷年活動
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t5") 歷年活動
         div(class="grid md:grid-cols-3 gap-4")
           mixin pastEvent(year)
             - var title = "g0v Summit " + year
@@ -93,7 +93,7 @@ block main
           +pastEvent("2014")
 
       #join(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t6") 參與 g0v
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t6") 參與 g0v
         div(class="mb-7" data-i18n="[html]index.p4")
           p g0v 是一個草根式的公民社群，致力於加深公民對社會的貢獻以及彼此間的連結。透過 g0v 社群，你可以在這裡尋找志同道合的夥伴，以草根的方式實踐你的理念，並將成果以開放授權模式釋出，讓更多的人可以站在你的成果上接力賽跑。 
           p 將 gov 以「零」替代成為 g0v，從零重新思考政府的角色，也代表數位原生世代從 0 與 1 世界的視野。 
@@ -108,17 +108,17 @@ block main
             span(data-i18n="index.cta.events") g0v 近期活動
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
 
-      #sponsorship(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t7") 贊助資訊
+      #sponsorship(class="mb-20 max-md:text-center")
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t7") 贊助資訊
         p(data-i18n="[html]index.p5") 
           |如果有贊助意願，請洽詢 
           a(href="mailto:sponsorship@summit.g0v.tw") sponsorship@summit.g0v.tw
 
       #partners(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t8") 合作夥伴
+        h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t8") 合作夥伴
         div(class="grid lg:grid-cols-2 gap-6")
           mixin partner(name, site, donate, key, img)
-            div(class="flex gap-8 p-6 border rounded-lg")
+            div(class="flex gap-4 md:gap-8 p-6 border rounded-lg")
               div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
                 img(class="w-full h-full object-contain bg-neutral-100" src="assets/img/partners/"+img)
               div(class="mt-3")
