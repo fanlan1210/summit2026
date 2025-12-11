@@ -80,6 +80,9 @@
       }
     }
   }
+  a[disabled] {
+    @apply !text-neutral-500 !no-underline !cursor-default;
+  }
 }
 
 @layer utilities {

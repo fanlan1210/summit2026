@@ -46,33 +46,33 @@ html(lang="zh-Hant-TW")
 
     footer.bg-slate-100: .container.py-20
       nav(class="grid gap-8 grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
-        .leading-loose
+        div(class="leading-loose grid h-fit")
           .mb-4.font-bold Summit 2026
-          a.block(href="speakers", data-i18n="nav.speakers") 講者
-          a.block(href="agenda", data-i18n="nav.agenda") 議程
-          a.block(href="visit", data-i18n="nav.visit") 交通
-          a.block(href="//g0v.hackmd.io/@summit2026/notes", target="_blank", data-i18n="nav.hackmd") 共筆
-          a.block(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
-        .leading-loose
+          a(href="", data-i18n="nav.speakers" disabled) 講者
+          a(href="", data-i18n="nav.agenda" disabled) 議程
+          a(href="", data-i18n="nav.visit" disabled) 交通
+          a(href="//g0v.hackmd.io/@summit2026/notes", target="_blank", data-i18n="nav.hackmd") 共筆
+          a(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
+        div(class="leading-loose grid h-fit")
           .mb-4.font-bold(data-i18n="nav.media") 媒體資源
-          a.block(href="//g0v.hackmd.io/@SQLfOC1bRwKstcPS84Gu_w/H1aRf_W8a", target="_blank", data-i18n="nav.presskit") 新聞素材
-          a.block(href="guide", data-i18n="nav.guide") 行前資訊
-          a.block(href="//us21.campaign-archive.com/home/?u=5f2da7dc5b32fcf00c4e26170&id=cf109d5e52", target="_blank", data-i18n="nav.newsletter") 電子報
-          a.block(href="souvenir", data-i18n="nav.souvenir") 紀念品
-        .leading-loose
+          a(href="", target="_blank", data-i18n="nav.presskit" disabled) 新聞素材
+          a(href="", data-i18n="nav.guide" disabled) 行前資訊
+          a(href="", target="_blank", data-i18n="nav.newsletter" disabled) 電子報
+          a(href="", data-i18n="nav.souvenir" disabled) 紀念品
+        div(class="leading-loose grid h-fit")
           .mb-4.font-bold(data-i18n="nav.about") 關於 Summit
-          a.block(href="staff", data-i18n="nav.staff") 工作團隊
-          a.block(href="partners", data-i18n="nav.partners") 合作夥伴
-          a.block(href="//g0v.hackmd.io/@summit2026/book/", target="_blank", data-i18n="nav.docs") 籌備紀錄
-          a.block(href="coc", data-i18n="nav.coc") 社群守則
-          a.block(href="safety", data-i18n="nav.safety") 安全須知
-        .leading-loose
+          a(href="", data-i18n="nav.staff" disabled) 工作團隊
+          a(href="", data-i18n="nav.partners" disabled) 合作夥伴
+          a(href="", target="_blank", data-i18n="nav.docs" disabled) 籌備紀錄
+          a(href="", data-i18n="nav.coc" disabled) 社群守則
+          a(href="", data-i18n="nav.safety" disabled) 安全須知
+        div(class="leading-loose grid h-fit")
           .mb-4.font-bold(data-i18n="nav.past") 歷年網站
-          a.block(href="//summit.g0v.tw/2024", target="_blank") 2024
-          a.block(href="//summit.g0v.tw/2020", target="_blank") 2020
-          a.block(href="//summit.g0v.tw/2018", target="_blank") 2018
-          a.block(href="//summit.g0v.tw/2016", target="_blank") 2016
-          a.block(href="//summit.g0v.tw/2014", target="_blank") 2014
+          a(href="//summit.g0v.tw/2024", target="_blank") 2024
+          a(href="//summit.g0v.tw/2020", target="_blank") 2020
+          a(href="//summit.g0v.tw/2018", target="_blank") 2018
+          a(href="//summit.g0v.tw/2016", target="_blank") 2016
+          a(href="//summit.g0v.tw/2014", target="_blank") 2014
       .mt-16.flex.flex-wrap
         span CC BY 4.0 @ g0v Summit 2026
         a(class="mr-16 md:ml-8", href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
