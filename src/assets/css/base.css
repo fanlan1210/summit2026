@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @theme {
   --text-base: 18px;
-  --font-sans: Amarna, 'Noto Sans TC', sans-serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
   --font-serif: Amarna, 'LXGW WenKai TC', serif;
   --color-primary: #008CC9;
   --color-primary-dark: #006CA9;
@@ -16,7 +16,7 @@
 
 @layer base {
   body {
-    @apply font-serif leading-relaxed text-base;
+    @apply font-sans leading-relaxed text-base;
     letter-spacing: 0.5px;
   }
   h1, h2, h3, h4, h5, h6 {
