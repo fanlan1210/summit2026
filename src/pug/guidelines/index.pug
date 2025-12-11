@@ -74,8 +74,15 @@ block main
 
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t4") 議程形式分類
-        div(class="grid md:grid-cols-[300px_auto] lg:grid-cols-[348px_auto] gap-8")
-          div(class="grid gap-6")
+        div(class="grid md:grid-cols-[300px_auto] lg:grid-cols-[348px_auto] gap-6 md:gap-8")
+          div(class="relative")
+            iconify-icon(class="w-9 h-9 absolute top-0 bottom-0 m-auto right-3 md:right-5" icon="material-symbols:arrow-drop-down-rounded" width="36" height="36")
+            select(id="agenda-select" class="appearance-none w-full md:hidden py-3 md:py-5 px-8 border rounded-xl outline-0")
+              option(value="#agenda-box1" data-i18n="guidelines.formats.1.title") 演講
+              option(value="#agenda-box2" data-i18n="guidelines.formats.2.title") 主題論壇
+              option(value="#agenda-box3" data-i18n="guidelines.formats.3.title") 工作坊
+              option(value="#agenda-box4" data-i18n="guidelines.formats.4.title") 圓桌會議
+          div(class="hidden md:grid gap-6")
             button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box1") 
               span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.1.title") 演講
               span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.1.subtitle") Talk
