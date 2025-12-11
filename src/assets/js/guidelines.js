@@ -36,9 +36,10 @@ $(function () {
    * FAQ
    * =======================
    */
+  const FAQ_DURATION = 300;
   function showFaqContent(selector) {
     const $target = $(selector);
-    $target[0].clientHeight > 0 ? $target.slideUp() : $target.slideDown();
+    $target[0].clientHeight > 0 ? $target.slideUp(FAQ_DURATION) : $target.slideDown(FAQ_DURATION);
   }
   $('.faq-btn').on('click', function () {
     showFaqContent($(this).data('target'));
