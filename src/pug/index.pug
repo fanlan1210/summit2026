@@ -98,39 +98,41 @@ block main
           p g0v 是一個草根式的公民社群，致力於加深公民對社會的貢獻以及彼此間的連結。透過 g0v 社群，你可以在這裡尋找志同道合的夥伴，以草根的方式實踐你的理念，並將成果以開放授權模式釋出，讓更多的人可以站在你的成果上接力賽跑。 
           p 將 gov 以「零」替代成為 g0v，從零重新思考政府的角色，也代表數位原生世代從 0 與 1 世界的視野。 
         div(class="flex flex-col md:flex-row gap-4 justify-center md:justify-start")
-          a(class="btn btn-primary gap-2" href="https://join.g0v.tw")
+          a(class="btn btn-primary gap-2" href="https://join.g0v.tw" target="_blank")
             span(data-i18n="index.cta.slack") g0v Slack
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
-          a(class="btn btn-primary gap-2" href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro")
+          a(class="btn btn-primary gap-2" href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro" target="_blank")
             span(data-i18n="index.cta.docs") summit 2026 籌備文件
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
-          a(class="btn btn-primary gap-2" href="https://calendar.google.com/calendar/embed?src=cpcf6iv5pt9l6gl2ue3svo63e8%40group.calendar.google.com&ctz=Asia%2FTaipei")
+          a(class="btn btn-primary gap-2" href="https://calendar.google.com/calendar/embed?src=cpcf6iv5pt9l6gl2ue3svo63e8%40group.calendar.google.com&ctz=Asia%2FTaipei" target="_blank")
             span(data-i18n="index.cta.events") g0v 近期活動
             iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
 
       #sponsorship(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t7") 贊助資訊
-        p(data-i18n="index.p5") 如果有贊助意願，請洽詢 sponsorship@summit.g0v.tw
+        p(data-i18n="[html]index.p5") 
+          |如果有贊助意願，請洽詢 
+          a(href="mailto:sponsorship@summit.g0v.tw") sponsorship@summit.g0v.tw
 
       #partners(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t8") 合作夥伴
-        div(class="grid md:grid-cols-2 lg:grid-cols-3 gap-6")
-          div(class="flex gap-8 p-6 border rounded-lg")
-            div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
-              img(class="w-full h-full" src="https://picsum.photos/400/400")
-            div(class="mt-3")
-              h5(data-i18n="index.partners.1.name") 開放文化基金會
-              div(class="flex gap-2 items-center")
-                a(class="text-black no-underline" href="https://ocf.tw" data-i18n="index.partners.1.site") 官方網站
-                span |
-                a(class="text-black no-underline" href="https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=86" data-i18n="index.partners.1.donate") 捐款贊助
-          div(class="flex gap-8 p-6 border rounded-lg")
-            div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
-              img(class="w-full h-full" src="https://picsum.photos/400/400")
-            div(class="mt-3")
-              h5(data-i18n="index.partners.2.name") 中央研究院法律學研究所資訊法中心
-              div
-                a(class="text-black no-underline" href="https://infolaw.iias.sinica.edu.tw" data-i18n="index.partners.2.site") 官方網站
+        div(class="grid lg:grid-cols-2 gap-6")
+          mixin partner(name, site, donate, key, img)
+            div(class="flex gap-8 p-6 border rounded-lg")
+              div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
+                img(class="w-full h-full object-contain bg-neutral-100" src="assets/img/partners/"+img)
+              div(class="mt-3")
+                h5(data-i18n="index.partners."+key+".name")= name
+                div(class="flex gap-2 items-center")
+                  if site
+                    a(class="text-black hover:text-primary no-underline" href=site data-i18n="index.partners.site" target="_blank") 官方網站
+                  if site && donate
+                    span |
+                  if donate
+                    a(class="text-black hover:text-primary no-underline" href=donate data-i18n="index.partners.donate" target="_blank") 捐款贊助
+
+          +partner("開放文化基金會", "https://ocf.tw", "https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=86", "1", "ocf.svg")
+          +partner("中央研究院法律學研究所資訊法中心", "https://infolaw.iias.sinica.edu.tw", "", "2", "iias.jpg")
 
 block script
   script(src="assets/js/index.js?v="+timestamp)
