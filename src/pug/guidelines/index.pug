@@ -50,7 +50,7 @@ block main
             div(class="timeline-item flex flex-col items-center gap-1 self-start max-md:w-full" data-timeline-date=date)
               div(class="timeline-icon w-22 h-22 border rounded-full mb-3 flex")
               span(class="font-bold text-xl md:text-2xl text-neutral-400")!= date
-              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n="[html]index.dates."+i18nKey+".title")= text
+              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n=`[html]index.dates.${i18nKey}.title`)= text
             if showArrow
               div(class="hidden md:block")
                 iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
@@ -72,19 +72,19 @@ block main
               option(value="#agenda-box3" data-i18n="guidelines.formats.3.title") 工作坊
               option(value="#agenda-box4" data-i18n="guidelines.formats.4.title") 圓桌會議
           div(class="hidden md:grid gap-6")
-            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box1") 
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border border-neutral-400 rounded-xl hover:border-neutral-600 transition-colors" data-target="#agenda-box1") 
               span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.1.title") 演講
-              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.1.subtitle") Talk
-            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box2") 
+              span(class="text-lg md:text-xl font-bold text-neutral-400" data-i18n="guidelines.formats.1.subtitle") Talk
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border border-neutral-400 rounded-xl hover:border-neutral-600 transition-colors" data-target="#agenda-box2") 
               span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.2.title") 主題論壇
-              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.2.subtitle") Panel Disucssion
-            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box3") 
+              span(class="text-lg md:text-xl font-bold text-neutral-400" data-i18n="guidelines.formats.2.subtitle") Panel Disucssion
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border border-neutral-400 rounded-xl hover:border-neutral-600 transition-colors" data-target="#agenda-box3") 
               span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.3.title") 工作坊
-              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.3.subtitle") Workshop
-            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border rounded-xl" data-target="#agenda-box4") 
+              span(class="text-lg md:text-xl font-bold text-neutral-400" data-i18n="guidelines.formats.3.subtitle") Workshop
+            button(class="agenda-tab flex flex-col py-3 md:py-5 px-8 text-left border border-neutral-400 rounded-xl hover:border-neutral-600 transition-colors" data-target="#agenda-box4") 
               span(class="text-xl md:text-2xl font-bold" data-i18n="guidelines.formats.4.title") 圓桌會議
-              span(class="text-lg md:text-xl font-bold text-[#A1A1A1]" data-i18n="guidelines.formats.4.subtitle") Roundtable Discussion
-          div(class="border rounded-xl p-6 md:max-h-[632px] overflow-auto")
+              span(class="text-lg md:text-xl font-bold text-neutral-400" data-i18n="guidelines.formats.4.subtitle") Roundtable Discussion
+          div(class="border border-neutral-600 rounded-xl p-6 md:max-h-[632px] overflow-auto flex flex-col")
             div(id="agenda-box1" class="agenda-box text-lg" style="display: none" data-i18n="guidelines.formats.1.desc")
               | 20 分鐘，1-2 位講者。
             div(id="agenda-box2" class="agenda-box text-lg" style="display: none" data-i18n="guidelines.formats.2.desc")
@@ -93,6 +93,17 @@ block main
               | 可選擇 60、90 或 120 分鐘，由 1-5 人主持團隊帶領會眾進行互動式小組討論、動手做等形式的議程。通常會分組進行，讓每組針對子題或任務討論，最後再集中分享成果或觀察。
             div(id="agenda-box4" class="agenda-box text-lg" style="display: none" data-i18n="guidelines.formats.4.desc")
               | 可選擇 60、90 或 120 分鐘，由 1-3 人主持團隊引導，與自由參與的會眾共同討論。全程採「單一討論場域」形式，所有人圍繞同一議題進行對話與思辨，一次僅一人發言，鼓勵現場即時提問與互動回應。此形式強調公共思考、觀點碰撞與集體討論的流動性。
+            h4.mt-auto.pt-6 參考形式：
+            hr.mt-3.mb-4.border-neutral-600
+            div(class="flex flex-wrap gap-4")
+              mixin refAgenda(year)
+                a(href=`https://summit.g0v.tw/${year}/agenda/` target="_blank" class="flex gap-4 items-center w-full max-w-44 bg-neutral-200 hover:bg-neutral-300 transition-colors p-3 rounded-lg font-bold text-black no-underline")
+                  div g0v Summit #[=year] 議程
+                  iconify-icon(icon='material-symbols:arrow-outward' width='24' height='24')
+              +refAgenda(2024)
+              +refAgenda(2020)
+              +refAgenda(2018)
+
 
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t5") 評選標準

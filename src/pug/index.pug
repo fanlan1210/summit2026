@@ -39,7 +39,7 @@ block main
             div(class="timeline-item flex flex-col items-center gap-1 self-start max-md:w-full" data-timeline-date=date)
               div(class="timeline-icon w-22 h-22 border rounded-full mb-3 flex")
               span(class="font-bold text-xl md:text-2xl text-neutral-400")!= date
-              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n="[html]index.dates."+i18nKey+".title")= text
+              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n=`[html]index.dates.${i18nKey}.title`)= text
             if showArrow
               div(class="hidden md:block")
                 iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
@@ -85,7 +85,7 @@ block main
           mixin pastEvent(year)
             - var title = "g0v Summit " + year
             a(href="https://summit.g0v.tw/"+year target="_blank" title=title class="relative group border border-neutral-200")
-              img(class="w-full" src="assets/img/past_events/"+year+".jpg" alt=title)
+              img(class="w-full" src=`assets/img/past_events/${year}.jpg` alt=title)
               div(class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all text-white font-bold flex items-center justify-center") 
                 span.text-xl g0v Summit #[=year]
           +pastEvent("2024")
@@ -124,7 +124,7 @@ block main
               div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
                 img(class="w-full h-full object-contain bg-neutral-100" src="assets/img/partners/"+img)
               div(class="mt-3")
-                h5(data-i18n="index.partners."+key+".name")= name
+                h5(data-i18n=`index.partners.${key}.name`)= name
                 div(class="flex gap-2 items-center")
                   if site
                     a(class="text-black hover:text-primary no-underline" href=site data-i18n="index.partners.site" target="_blank") 官方網站
