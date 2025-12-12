@@ -81,7 +81,7 @@
     }
   }
   a[disabled] {
-    @apply !text-neutral-500 !no-underline !cursor-default;
+    @apply text-neutral-500! no-underline! cursor-default!;
   }
 }
 
