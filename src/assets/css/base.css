@@ -15,6 +15,9 @@
 }
 
 @layer base {
+  :root {
+    @apply scroll-smooth scroll-pt-18 md:scroll-pt-28;
+  }
   body {
     @apply font-sans leading-relaxed text-base;
     letter-spacing: 0.5px;
