@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @theme {
   --text-base: 18px;
-  --font-sans: 'Noto Sans TC', sans-serif;
+  --font-sans: Onest, 'Noto Sans TC', sans-serif;
   --font-serif: Amarna, 'LXGW WenKai TC', serif;
   --color-primary: #008CC9;
   --color-primary-dark: #006CA9;
@@ -47,13 +47,13 @@
     }
   }
   ul {
-    @apply list-disc list-outside ps-5 mb-2;
+    @apply list-disc list-outside pl-[1.5rem] mb-2;
     li {
       @apply mb-1;
     }
   }
   ol {
-    @apply list-decimal list-outside ps-4 mb-2;
+    @apply list-decimal list-outside pl-[1.5rem] mb-2;
     li {
       @apply mb-1 ps-1;
     }
