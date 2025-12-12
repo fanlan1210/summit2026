@@ -22,6 +22,6 @@ https://g0v.github.io/summit2026/
 
 ## how to deploy (WIP)
 `./deploy`
-會自動將 static/2026 下的檔案推送到 production branch，並透過 repositor dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
+會自動將 static/2026 下的檔案推送到 production branch，並透過 repository dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
 
 
