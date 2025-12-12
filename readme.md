@@ -16,12 +16,13 @@ https://g0v.github.io/summit2026/
 
 ## translation
 
-- 使用 JQuery i18n
+- 使用 [JQuery-i18next](https://github.com/i18next/jquery-i18next)
 - 華語直接使用程式碼內文字，英文使用 `/src/locale/en.yml`
 
 
-## how to deploy (WIP)
+## how to deploy
 `./deploy`
 會自動將 static/2026 下的檔案推送到 production branch，並透過 repository dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
+目前是使用 SeanGau 的 Token
 
 
