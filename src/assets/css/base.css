@@ -112,6 +112,78 @@
   }
 }
 
+#burger {
+  @apply w-6 h-[2.5px] bg-black rounded-full transition-all;
+  &:before,
+  &:after {
+    content: ' ';
+    @apply absolute block w-6 h-[2.5px] bg-black rounded-full;
+  }
+  &:before {
+    animation: burger-t-Out 0.3s ease forwards;
+  }
+  &:after {
+    animation: burger-b-Out 0.3s ease forwards;
+  }
+  &.is-active {
+    @apply h-0;
+    &:before {
+      animation: burger-t-In 0.3s ease forwards;
+    }
+    &:after {
+      animation: burger-b-In 0.3s ease forwards;
+    }
+  }
+}
+
+@keyframes burger-t-In {
+  0% {
+    transform: rotate(0deg) translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes burger-t-Out {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(-8px);
+  }
+}
+
+@keyframes burger-b-In {
+  0% {
+    transform: rotate(0deg) translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(-225deg);
+  }
+}
+
+@keyframes burger-b-Out {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(8px);
+  }
+}
+
 #modal {
   @apply fixed left-0 top-0 w-full h-full z-50 flex items-center justify-center p-4;
   background-color: rgba(0, 0, 0, 0.5);
