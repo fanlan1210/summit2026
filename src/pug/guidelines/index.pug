@@ -11,7 +11,7 @@ block main
             | 距離徵稿結束剩下 <span class="submission-deadline text-secondary"></span> 天
           div(class="h-4 w-full bg-neutral-200 rounded-full grow ml-2")
             div(class="submission-deadline-progress h-full bg-secondary rounded-full" style="width: 0%")
-        button(class="btn btn-lg btn-primary" data-i18n="index.cta.submit") 前往投稿！
+        a(href="https://forms.gle/u5YoP2gK5PVK9FUM8" target="_blank" class="btn btn-lg btn-primary" data-i18n="index.cta.submit") 前往投稿！
 
       #intro(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t1") 投稿方法
@@ -81,7 +81,7 @@ block main
                 mixin refAgenda(year)
                   a(href=`https://summit.g0v.tw/${year}/agenda/` target="_blank" class="flex gap-4 items-center w-full max-w-44 bg-neutral-200 hover:bg-neutral-300 transition-colors p-3 rounded-lg font-bold text-black no-underline")
                     div g0v Summit #[=year] <span data-i18n="guidelines.ref.agenda">議程</span>
-                    iconify-icon(icon='material-symbols:arrow-outward' width='24' height='24')
+                    iconify-icon(icon='material-symbols:open-in-new' width='24' height='24')
                 +refAgenda(2024)
                 +refAgenda(2020)
                 +refAgenda(2018)
@@ -158,7 +158,7 @@ block main
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t9") 前往投稿！
         div
-          a( href="" class="btn btn-lg btn-primary" data-i18n="guidelines.cta.form2") 投稿表單
+          a(href="https://forms.gle/u5YoP2gK5PVK9FUM8" target="_blank" class="btn btn-lg btn-primary" data-i18n="guidelines.cta.form2") 投稿表單
 
 
 block script
