@@ -141,7 +141,7 @@ block main
             div(id="faq-content"+i18nKey class="hidden bg-[#d3ebdf] p-4" data-i18n="[html]guidelines.faq.a"+i18nKey)!= aText
               
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t7") FAQ
-        h3(class="text-xl md:text-2xl font-bold mb-6" data-i18n="guidelines.faq.section1") 投稿相關
+        h3(class="text-xl md:text-2xl font-bold mb-6" data-i18n="[html]guidelines.faq.section1") 投稿相關
 
         div(class="grid gap-6")
           +faq("1. 結果何時公佈？入選與未入選都會收到通知嗎？", "我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。", "1")
@@ -157,13 +157,13 @@ block main
           各場地均備有基礎會議設備，包括投影機、麥克風、直播等設備。現場會開放共筆供每個現場、線上、會前、會後的參與者紀錄。都會開 <a href="https://www.slido.com/" target="_blank">sli.do</a> 的即時提問系統，方便主持人或講者快速查閱提問。原則上現場各處都找得到 110V 供電插頭。若有特殊需求，請於提案時備註。
           `, "7")
 
-        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="guidelines.faq.section3") 交通、住宿相關
+        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="[html]guidelines.faq.section3") 交通、住宿相關
         div(class="grid gap-6")
           +faq("1. 我不住在台北，大會是否會協助講者安排住宿與交通？或是提供補助？", "很抱歉，此次大會並不提供任何住宿與交通協助。", "8")
           +faq("2. 我是外國人，大會是否會協助我辦理簽證與入境相關文件？", `
-          我們將會在通知入選時一併寄送邀請函，供簽證及入境申請使用。<br>
-          其它簽證辦理相關問題，請參考外交部領事事務局網站並洽詢台灣駐各地辦事處。<br>
-          若有需要主辦單位提供任何文件，請與我們聯繫 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。
+          <p>我們將會在通知入選時一併寄送邀請函，供簽證及入境申請使用。</p>
+          <p>其它簽證辦理相關問題，請參考外交部領事事務局網站並洽詢台灣駐各地辦事處。</p>
+          <p>若有需要主辦單位提供任何文件，請與我們聯繫 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。</p>
           `, "9")
       
       div(class="mb-20")
