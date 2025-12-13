@@ -3,16 +3,23 @@ extend _layout.pug
 block variables
   - title = "反客為主"
 
+block head
+  link(rel="stylesheet" href="assets/css/index.css")
 block main
     #nav-transparent-flag(class="hidden")
 
-    #top-block(class="w-full h-svh relative")
-      img(class="absolute top-0 left-0 w-full h-full object-cover" src="assets/img/test.jpg" alt="")
-      
-      div(class="absolute text-white p-4 left-8 bottom-8 md:left-1/4 md:bottom-1/4 bg-primary/80")
-        h2.mb-1(data-i18n="index.hero.title") Summit 2026
-        h5.mb-1(data-i18n="index.hero.date") 2026.5
-        h5.mb-1(data-i18n="index.hero.location") Taipei, Taiwan
+    #top-block(class="w-full h-[calc(100vh-56px)] md:h-[calc(100vh-112px)] relative flex flex-col items-center bg-[rgb(252,245,241)] overflow-hidden pointer-events-none")
+      div(class="relative z-2 mx-auto mb-6 grow w-4/5 md:w-1/2 max-w-xl h-fit flex flex-col items-center justify-center")
+        img(class="w-1/2 md:w-1/3 mb-4 md:mb-6" src="assets/img/banner/g0v-summit-logo.svg" alt="g0v-summit-logo")
+        img(class="mb-4 md:mb-8" src="assets/img/banner/slogan.svg" alt="g0v-summit-logo")
+        img(class="w-4/5 md:w-1/2" src="assets/img/banner/date-and-venue.svg" alt="date-and-venue")
+      div(class="relative z-1 -mb-12 w-[120%] grid grid-cols-3 md:grid-cols-5 items-end gap-16")
+        img(class="stool hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-1")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-y-s.svg" alt="yellow-chair")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-r-l.svg" alt="red-chair")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-b-s.svg" alt="blue-chair")
+        img(class="stool hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-2")
+      img(class="max-w-none md:max-w-full h-24 md:h-auto object-fit" src="assets/img/banner/bottom-bar.svg" alt="bottom-bar")
 
     div(class="container py-20")
       #intro(class="mb-20")
@@ -26,30 +33,15 @@ block main
           p: b 對 g0v Summit 2026 來說，這條「草繩」，也象徵著 g0v 十年黑客行動主義精神的具體展現：「不要問為何沒有人做這個，先承認你就是『沒有人』」。因為，「沒有人」是萬能的。
           p: b 不坐等、不依賴，我們「反客為主」，親自動手自造：
           p 在這裡，g0v Summit 2026 邀請你走進一個由草繩編織而成的立體公民座標。
-          p 你和每一個參與者基於自身的技能、價值觀、立場，都是這空間中的一個「點」
+          p 你和每一個參與者基於自身的技能、價值觀、立場，都是這空間中的一個「點」。
           p 當我們拋出手中的繩子，與他人對話，點就連成了「線」；
           p 當無數條線交織，我們便撐起了「面」——這是一張充滿動能的行動網絡，也是一張接住彼此的吊床。
           p: b 於是，原本孤立的節點形成了聚落，單線的對話演化成協作的生態系。
-          p: b 從最初的「資訊透明、開放成果、開放協作」核心，演化成 g0v Summit 2026 由社群編織的「公民座標」，和三大座標軸線：（開放透明，自主隱私）、（思辨監督，韌性連結）、（政府體制， 民間草根）。
+          p: b 從最初的「資訊透明、開放成果、開放協作」核心，演化成 g0v Summit 2026 由社群編織的「公民座標」，和三大座標軸線：（開放透明，自主隱私）、（思辨監督，韌性連結）、（政府體制，民間草根）。
           p 在這裡，沒有人是局外人，每個人都能找到屬於自己的座標，向內探索，向外連結。
 
       #timeline(class="mb-20")
-        h2(class="max-md:text-center text-3xl md:text-4xl mb-12 font-bold" data-i18n="index.t2") 重要日程
-        div(class="flex flex-wrap gap-8 mb-12 md:gap-x-3 justify-center items-center")
-          mixin timelineItem(text, date, i18nKey, showArrow=true)
-            div(class="timeline-item flex flex-col items-center gap-1 self-start max-md:w-full" data-timeline-date=date)
-              div(class="timeline-icon w-22 h-22 border rounded-full flex")
-              span(class="font-bold text-xl md:text-2xl text-neutral-400")!= date
-              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n=`[html]index.dates.${i18nKey}.title`)= text
-            if showArrow
-              div(class="hidden md:block")
-                iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
-          
-          +timelineItem("徵件開始", "<ruby>2025/12/15<rt>&nbsp;</rt></ruby>", 1)
-          +timelineItem("徵件截止", "2026/01/15<ruby> 23:59<rt>(UTC+8)</rt></ruby>", 2)
-          +timelineItem("通知投稿結果", "<ruby>2026/02/15<rt>&nbsp;</rt></ruby>", 3)
-          +timelineItem("公告議程", "<ruby>2026/03/15<rt>&nbsp;</rt></ruby>", 4)
-          +timelineItem("g0v Summit 2026", "<ruby>2026/05/23-24<rt>&nbsp;</rt></ruby>", 5, false)
+        include ./components/timeline.pug
 
         div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
           div(class="max-md:text-center font-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]index.countdown")
@@ -97,7 +89,7 @@ block main
       #join(class="mb-20")
         h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t6") 參與 g0v
         div(class="mb-7" data-i18n="[html]index.p4")
-          p g0v 是一座草根式的公民社群，致力於加深公民對社會的貢獻以及彼此間的連結。透過 g0v 社群，你可以在這裡尋找志同道合的夥伴，以草根的方式實踐你的理念，並將成果以開放授權模式釋出，讓更多的人可以站在你的成果上接力賽跑。
+          p g0v 是一個草根式的公民社群，致力於加深公民對社會的貢獻以及彼此間的連結。透過 g0v 社群，你可以在這裡尋找志同道合的夥伴，以草根的方式實踐你的理念，並將成果以開放授權模式釋出，讓更多的人可以站在你的成果上接力賽跑。
           p 將 gov 以「零」替代成為 g0v，從零重新思考政府的角色，也代表數位原生世代從 0 與 1 世界的視野。 
         div(class="flex flex-col md:flex-row gap-4 justify-center md:justify-start")
           a(class="btn btn-primary gap-2" href="https://join.g0v.tw" target="_blank")
