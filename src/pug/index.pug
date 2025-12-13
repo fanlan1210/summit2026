@@ -4,21 +4,21 @@ block variables
   - title = "反客為主"
 
 block head
-
+  link(rel="stylesheet" href="assets/css/index.css")
 block main
     #nav-transparent-flag(class="hidden")
 
-    #top-block(class="w-full h-[calc(100vh-56px)] md:h-[calc(100vh-112px)] relative flex flex-col items-center bg-[rgb(252,245,241)] overflow-hidden")
+    #top-block(class="w-full h-[calc(100vh-56px)] md:h-[calc(100vh-112px)] relative flex flex-col items-center bg-[rgb(252,245,241)] overflow-hidden pointer-events-none")
       div(class="relative z-2 mx-auto grow w-4/5 md:w-1/2 max-w-xl h-fit flex flex-col items-center justify-center")
         img(class="w-1/2 md:w-1/3 mb-4 md:mb-6" src="assets/img/banner/g0v-summit-logo.svg" alt="g0v-summit-logo")
         img(class="mb-4 md:mb-8" src="assets/img/banner/slogan.svg" alt="g0v-summit-logo")
         img(class="w-4/5 md:w-1/2" src="assets/img/banner/date-and-venue.svg" alt="date-and-venue")
       div(class="relative z-1 -mb-6 w-[120%] grid grid-cols-3 md:grid-cols-5 items-end gap-16")
-        img(class="hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-1")
-        img(class="md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-y-s.svg" alt="yellow-chair")
-        img(class="md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-r-l.svg" alt="red-chair")
-        img(class="md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-b-s.svg" alt="blue-chair")
-        img(class="hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-2")
+        img(class="stool hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-1")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-y-s.svg" alt="yellow-chair")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-r-l.svg" alt="red-chair")
+        img(class="stool md:w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-b-s.svg" alt="blue-chair")
+        img(class="stool hidden md:block w-2/3 mx-auto max-w-[220px]" src="assets/img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-2")
       img(class="max-w-none md:max-w-full h-24 md:h-auto object-fit" src="assets/img/banner/bottom-bar.svg" alt="bottom-bar")
 
     div(class="container py-20")
