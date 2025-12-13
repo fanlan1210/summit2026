@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "./_tailwind.css";
 
 .stool.animate {
   animation: jump 1s linear forwards;

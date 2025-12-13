@@ -1,18 +1,4 @@
-@import "tailwindcss";
-@theme {
-  --text-base: 18px;
-  --font-sans: Onest, 'Noto Sans TC', sans-serif;
-  --font-serif: Amarna, 'LXGW WenKai TC', serif;
-  --color-primary: #008CC9;
-  --color-primary-dark: #006CA9;
-  --color-primary-light: #009CE9;
-  --color-secondary: #FF7874;
-  --color-secondary-dark: #DF5854;
-  --color-secondary-light: #FF9894;
-  --color-success: #6CBD93;
-  --color-success-dark: #4C9D73;
-  --color-success-light: #8CDDB3;
-}
+@import "./_tailwind.css";
 
 @layer base {
   :root {
