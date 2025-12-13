@@ -28,9 +28,6 @@ nav.past: Past Events
 nav.bugreport: Report Website Issue
 nav.disabled.title: Still Cooking!
 
-index.hero.title: Summit 2026
-index.hero.date: 2026.5
-index.hero.location: Taipei, Taiwan
 index.t1: >-
   g0v Summit 2026<br>“Geometry of the Rope, ‘Invite Yourself’ to Tame It”
 index.p1: >-
@@ -69,8 +66,8 @@ index.p3: >-
   <p>Following the <strong>Sunflower Movement</strong>, we launched the g0v Summit in 2014, building a bridge for interdisciplinary dialogue between open communities, government, NGOs, academia, and netizens.<br>Over these dozen years, Taiwanese society has weathered democratic crises, social turbulence, polarization, and “snake bites” of frustration.</p>
   <p>Facing the scars of Taiwanese society and threats from near and far, “Ten Years” is not just a measure of time. It marks the continuous action and practice of the civic community: a process of transforming fear into resilience.</p>
   <p>There is a saying: <em>“Once bitten by a snake, ten years afraid of a straw rope.”</em></p>
-  <p>But at g0v Summit 2026, we say: <strong>“Ten Years of <em>Phah</em><code>*</code> the Rope.”</strong><br>We believe in the power of the grassroots and our connection to one another. We can continuously transform that fear (<strong>Phah</strong> <code>**</code>, to be afraid) into action (<strong>Phah</strong>, to beat/weave in Tâi-gí).</p>
-  <p><strong>To <em>Phah-kat</em><code>***</code> (tie a knot in Tâi-gí) is not just about holding tight; it is about learning how to loosen.</strong> About loosening our passive posture, loosening dependency and fear. In an era of crisis and uncertainty, we are retraining our muscles for “Self Help” and “Mutual Aid.”</p>
+  <p>But at g0v Summit 2026, we say: <strong>“Ten Years of <em>Phah</em> <code>*</code> the Rope.”</strong><br>We believe in the power of the grassroots and our connection to one another. We can continuously transform that fear (<strong>Phah</strong> <code>**</code>, to be afraid) into action (<strong>Phah</strong>, to beat/weave in Tâi-gí).</p>
+  <p><strong>To <em>Phah-kat </em><code>***</code> (tie a knot in Tâi-gí) is not just about holding tight; it is about learning how to loosen.</strong> About loosening our passive posture, loosening dependency and fear. In an era of crisis and uncertainty, we are retraining our muscles for “Self Help” and “Mutual Aid.”</p>
   <p>We refuse to recoil in passive fear of the rope. Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, grab that straw rope, and start rubbing and beating it anew. As we branch out, weave, and connect, the “Snake” is no longer a phantom of terror, but a strong, organic community.</p>
   <p><code>* “Phah” means “Weaving” or “Beating” in Taiwanese language Tâi-gí.</code><br><code>** “Phah” (怕) means “Fear” in Mandarin.</code><br><code>*** “Phah-kat” means “Tie a Knot” in Taiwanese language Tâi-gí.</code></p>
 index.t5: Past events
@@ -103,7 +100,7 @@ guidelines.axes.x: "Do you pursue public <strong>Transparency & Openness</strong
 guidelines.axes.y: "Is your strength in “Upward” <strong>Overseeing the Power</strong>, or “Downward” <strong>Resilience & Healing</strong>?"
 guidelines.axes.z: "Do you operate within <strong>Government & Organizations</strong>, or in decentralized <strong>Grassroots/Civil Society</strong>?"
 guidelines.p3: >-
-  <p>Wherever your coordinates lie, we welcome your proposal.<br>When the music starts—**“Floor it!” (<em>Cui-loh-khi</em>)**</p>
+  <p>Wherever your coordinates lie, we welcome your proposal.<br>When the music starts—<strong>“Floor it!” (<em>Cui-loh-khi</em>)</strong></p>
   <p>Don’t just stand there. Follow the beat, find your footing.<br>Bring your knots, pull your thread.<br>On this dance floor, let’s see your own unique <strong>“Dance Steps”</strong>!</p>
   <p><strong>Welcome to the grand <em>Party</em>!</strong></p>
 guidelines.t3: Important Dates
@@ -162,7 +159,7 @@ guidelines.p19: c. Request for annotation or correction.
 guidelines.p20: d. Request for stop collecting, edit, using.
 guidelines.p21: e. Request for deletion.
 guidelines.p22: 6. In terms of the 14th paragraph of the Act, you can Inquire or request for viewing your personal data or request for a hard copy.
-guidelines.p23: 7. If the purpose of 5th, 6th right, please email programming@summit.g0v.tw.
+guidelines.p23: 7. If the purpose of 5th, 6th right, please email <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>.
 guidelines.t7: FAQ
 guidelines.faq.section1: About Submitting a Proposal
 guidelines.faq.q1: 1. When will you announce the result? Will everyone receive notifications whether the proposal is accepted or denied?
@@ -190,7 +187,7 @@ guidelines.faq.q9: 2. I am a foreigner, would g0v Summit assist me to apply for 
 guidelines.faq.a9: >-
   <p>We will send an invitation letter after notifying selected proposals so that you can use it toward visa application and upon entry to Taiwan.</p>
   <p>For other visa-related questions, please refer to the Ministry of Foreign Affairs and consult our overseas representative offices.</p>
-  <p>If you need g0v Summit to provide any other documents, please contact us at programming@summit.g0v.tw.</p>
+  <p>If you need g0v Summit to provide any other documents, please contact us at <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>.</p>
 guidelines.t8: Contact Information
 guidelines.p24: >-
   For any questions regarding submissions, please feel free to contact us.

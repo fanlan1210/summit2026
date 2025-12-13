@@ -17,7 +17,7 @@ block main
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t1") 投稿方法
         div(data-i18n="[html]guidelines.p1")
           p g0v 雙年會 2026 議程由大會進行線上公開徵集，您僅可透過大會指定之線上 Google 表單進行投稿。
-          p 投稿將於 2026 年 1 月 15 日 23:59 (UTC+8)截止，截止日期之前送出的投稿都可以持續用 Google 表單修改，投稿截止後，g0v 雙年會 2026 將會選出本屆議程、與投稿者一一確認，您的稿件確認錄取後，將摒除隱私資訊及（除暱稱外之）個人資料，預計於三月底陸續公開顯示在 g0v 雙年會 2026 網頁上。
+          p 投稿將於 2026 年 1 月 15 日 23:59 (UTC+8) 截止，截止日期之前送出的投稿都可以持續用 Google 表單修改，投稿截止後，g0v 雙年會 2026 將會選出本屆議程、與投稿者一一確認，您的稿件確認錄取後，將摒除隱私資訊及（除暱稱外之）個人資料，預計於三月底陸續公開顯示在 g0v 雙年會 2026 網頁上。
 
       #keypoints(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t2") 徵稿方向：公民大舞廳，邀請你一起來拍拍（phah-phik）！
@@ -40,22 +40,7 @@ block main
 
 
       #timeline(class="mb-20")
-        h2(class="max-md:text-center text-3xl md:text-4xl mb-12 font-bold" data-i18n="index.t2") 重要日程
-        div(class="flex flex-wrap gap-8 mb-12 md:gap-x-3 justify-center items-center")
-          mixin timelineItem(text, date, i18nKey, showArrow=true)
-            div(class="timeline-item flex flex-col items-center gap-1 self-start max-md:w-full" data-timeline-date=date)
-              div(class="timeline-icon w-22 h-22 border rounded-full flex")
-              span(class="font-bold text-xl md:text-2xl text-neutral-400")!= date
-              h3(class="text-2xl md:text-3xl font-bold text-center max-w-48" data-i18n=`[html]index.dates.${i18nKey}.title`)= text
-            if showArrow
-              div(class="hidden md:block")
-                iconify-icon(icon="material-symbols:arrow-right-alt-rounded" width="44" height="44")
-          
-          +timelineItem("徵件開始", "<ruby>2025/12/15<rt>&nbsp;</rt></ruby>", 1)
-          +timelineItem("徵件截止", "2026/01/15<ruby> 23:59<rt>(UTC+8)</rt></ruby>", 2)
-          +timelineItem("通知投稿結果", "<ruby>2026/02/15<rt>&nbsp;</rt></ruby>", 3)
-          +timelineItem("公告議程", "<ruby>2026/03/15<rt>&nbsp;</rt></ruby>", 4)
-          +timelineItem("g0v Summit 2026", "<ruby>2026/05/23-24<rt>&nbsp;</rt></ruby>", 5, false)
+        include ../components/timeline.pug
 
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t4") 議程形式分類
@@ -130,7 +115,7 @@ block main
           p(data-i18n="guidelines.p20") d. 請求停止蒐集、處理及利用。
           p(data-i18n="guidelines.p21") e. 請求刪除。
         p(data-i18n="guidelines.p22") 6. 依個人資料保護法第 14 條規定，當事人查詢或請求閱覽個人資料或製給複製本。
-        p(data-i18n="guidelines.p23") 7. 若遇行使第 5 及 6 條權利，請寫信至 programming@summit.g0v.tw ，本團隊將依法進行回覆。
+        p(data-i18n="[html]guidelines.p23") 7. 若遇行使第 5 及 6 條權利，請寫信至 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a> ，本團隊將依法進行回覆。
 
       div(class="mb-20")
         mixin faq(qText, aText, i18nKey)
