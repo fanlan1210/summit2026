@@ -115,7 +115,7 @@
     animation: burger-b-Out 0.3s ease forwards;
   }
   &.is-active {
-    @apply h-0;
+    @apply bg-transparent;
     &:before {
       animation: burger-t-In 0.3s ease forwards;
     }
