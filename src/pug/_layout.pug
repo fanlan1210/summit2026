@@ -15,84 +15,91 @@ html(lang="zh-Hant-TW")
     link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
     link(href='https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=Onest:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=LXGW+WenKai+TC&display=swap', rel='stylesheet')
     link(rel='stylesheet', href='assets/css/base.css?version='+timestamp)
+    //  Google tag (gtag.js) 
+    script(async src='https://www.googletagmanager.com/gtag/js?id=G-SPHXWCG6TN')
+    script.
+      window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SPHXWCG6TN');
     block head
-  body
-    canvas#overlap-canvas(class="fixed z-998 w-full h-full pointer-events-none")
-    nav#navbar(class="sticky top-0 z-999 grid place-items-center w-full h-14 md:h-28 bg-[rgb(252,245,241)] transition-all")
-      div(class="container flex items-center") 
-        a(class="btn btn-lg btn-text-dark mr-auto" href="./") g0v Summit 2026
-        div(class="hidden md:flex items-center gap-6 lg:gap-12")
-          a(class="btn btn-lg btn-text-dark" href="#intro" data-i18n="nav.summit_info") 年會資訊
-          a(class="btn btn-lg btn-primary" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
-          div(class="flex items-center gap-2 text-xl font-bold")
-            iconify-icon(icon="material-symbols:globe-asia" width="24" height="24" class="w-6 -translate-y-0.5")
-            button(class="lang-btn zh-btn whitespace-nowrap") 華語
-            span |
-            button(class="lang-btn en-btn") English
-        button#toggle-nav-btn(class="md:hidden grid place-items-center h-6")
-          #burger
-      div#mobile-nav(class="md:hidden absolute left-0 right-0 top-full overflow-hidden bg-white grid grid-rows-[0fr] transition-[grid-template-rows]")
-        div(class="min-h-0")
-          div(class="flex flex-col gap-3 items-center py-4")
-            a(class="toggle-mobile-nav text-xl font-bold no-underline" href="#intro" data-i18n="nav.summit_info") 年會資訊
-            a(class="h-12 grid place-items-center px-4 text-xl font-bold text-white bg-primary no-underline rounded-2xl whitespace-nowrap" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
-            div(class="flex items-center gap-2 text-xl py-2")
-              iconify-icon(icon="material-symbols:globe-asia" width="24" height="24")
-              button(class="lang-btn zh-btn") 華語
+    body
+      canvas#overlap-canvas(class="fixed z-998 w-full h-full pointer-events-none")
+      nav#navbar(class="sticky top-0 z-999 grid place-items-center w-full h-14 md:h-28 bg-[rgb(252,245,241)] transition-all")
+        div(class="container flex items-center") 
+          a(class="btn btn-lg btn-text-dark mr-auto" href="./") g0v Summit 2026
+          div(class="hidden md:flex items-center gap-6 lg:gap-12")
+            a(class="btn btn-lg btn-text-dark" href="#intro" data-i18n="nav.summit_info") 年會資訊
+            a(class="btn btn-lg btn-primary" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
+            div(class="flex items-center gap-2 text-xl font-bold")
+              iconify-icon(icon="material-symbols:globe-asia" width="24" height="24" class="w-6 -translate-y-0.5")
+              button(class="lang-btn zh-btn whitespace-nowrap") 華語
               span |
               button(class="lang-btn en-btn") English
+          button#toggle-nav-btn(class="md:hidden grid place-items-center h-6")
+            #burger
+        div#mobile-nav(class="md:hidden absolute left-0 right-0 top-full overflow-hidden bg-white grid grid-rows-[0fr] transition-[grid-template-rows]")
+          div(class="min-h-0")
+            div(class="flex flex-col gap-3 items-center py-4")
+              a(class="toggle-mobile-nav text-xl font-bold no-underline" href="#intro" data-i18n="nav.summit_info") 年會資訊
+              a(class="h-12 grid place-items-center px-4 text-xl font-bold text-white bg-primary no-underline rounded-2xl whitespace-nowrap" href="./guidelines" data-i18n="nav.cfp") 徵稿辦法
+              div(class="flex items-center gap-2 text-xl py-2")
+                iconify-icon(icon="material-symbols:globe-asia" width="24" height="24")
+                button(class="lang-btn zh-btn") 華語
+                span |
+                button(class="lang-btn en-btn") English
 
-    block main
+      block main
 
-    footer.bg-slate-100: .container.py-20
-      nav(class="grid gap-8 grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
-        div(class="leading-loose grid h-fit")
-          .mb-4.font-bold Summit 2026
-          a(href="", data-i18n="nav.speakers" disabled) 講者
-          a(href="", data-i18n="nav.agenda" disabled) 議程
-          a(href="", data-i18n="nav.visit" disabled) 交通
-          a(href="", target="_blank", data-i18n="nav.hackmd" disabled) 共筆
-          a(href="", target="_blank", data-i18n="nav.live" disabled) 直播
-        div(class="leading-loose grid h-fit")
-          .mb-4.font-bold(data-i18n="nav.media") 媒體資源
-          a(href="", target="_blank", data-i18n="nav.presskit" disabled) 新聞素材
-          a(href="", data-i18n="nav.guide" disabled) 行前資訊
-          a(href="", target="_blank", data-i18n="nav.newsletter" disabled) 電子報
-          a(href="", data-i18n="nav.souvenir" disabled) 紀念品
-        div(class="leading-loose grid h-fit")
-          .mb-4.font-bold(data-i18n="nav.about") 關於 Summit
-          a(href="", data-i18n="nav.staff" disabled) 工作團隊
-          a(href="", data-i18n="nav.partners" disabled) 合作夥伴
-          a(href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro", target="_blank", data-i18n="nav.docs") 籌備紀錄
-          a(href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fcoc-procedure", data-i18n="nav.coc") 社群守則
-          a(href="", data-i18n="nav.safety" disabled) 安全須知
-        div(class="leading-loose grid h-fit")
-          .mb-4.font-bold(data-i18n="nav.past") 歷年網站
-          a(href="//summit.g0v.tw/2024", target="_blank") 2024
-          a(href="//summit.g0v.tw/2020", target="_blank") 2020
-          a(href="//summit.g0v.tw/2018", target="_blank") 2018
-          a(href="//summit.g0v.tw/2016", target="_blank") 2016
-          a(href="//summit.g0v.tw/2014", target="_blank") 2014
-      .mt-16.flex.flex-wrap.gap-2
-        span CC BY 4.0 @ g0v Summit 2026
-        a(class="mr-16 md:ml-8", href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
-        .rolling-list.flex.gap-4
-          a(href='https://www.facebook.com/g0v.tw/' target='_blank')
-            iconify-icon(icon="ri:facebook-fill" width="30" height="30")
-          a(href='https://www.instagram.com/g0v.tw/' target='_blank')
-            iconify-icon(icon="ri:instagram-line" width="30" height="30")
-          a(href='https://x.com/g0vtw/' target='_blank')
-            iconify-icon(icon="ri:twitter-x-line" width="30" height="30")
-          a(href='https://g0v.social/@summit' target='_blank')
-            iconify-icon(icon="ri:mastodon-fill" width="30" height="30")
-    #cookie-notice(class="fixed bottom-0 w-full bg-slate-200 flex p-4 items-center justify-center z-50 hidden" role='dialog' aria-label='Cookie' style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1)")
-      div(data-i18n='cookie') 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
-      button.btn.btn-primary.shrink-0.my-auto.ms-3(data-i18n='agree') 同意
-    script(src='https://code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js')
-    script(src='https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js')
-    script(src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js")
-    script(src='assets/js/matter.min.js')
-    script(src='assets/js/base.js?v='+timestamp)
-    script(src='assets/js/overlap-canvas.js?v='+timestamp)
-    block script
+      footer.bg-slate-100: .container.py-20
+        nav(class="grid gap-8 grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
+          div(class="leading-loose grid h-fit")
+            .mb-4.font-bold Summit 2026
+            a(href="", data-i18n="nav.speakers" disabled) 講者
+            a(href="", data-i18n="nav.agenda" disabled) 議程
+            a(href="", data-i18n="nav.visit" disabled) 交通
+            a(href="", target="_blank", data-i18n="nav.hackmd" disabled) 共筆
+            a(href="", target="_blank", data-i18n="nav.live" disabled) 直播
+          div(class="leading-loose grid h-fit")
+            .mb-4.font-bold(data-i18n="nav.media") 媒體資源
+            a(href="", target="_blank", data-i18n="nav.presskit" disabled) 新聞素材
+            a(href="", data-i18n="nav.guide" disabled) 行前資訊
+            a(href="", target="_blank", data-i18n="nav.newsletter" disabled) 電子報
+            a(href="", data-i18n="nav.souvenir" disabled) 紀念品
+          div(class="leading-loose grid h-fit")
+            .mb-4.font-bold(data-i18n="nav.about") 關於 Summit
+            a(href="", data-i18n="nav.staff" disabled) 工作團隊
+            a(href="", data-i18n="nav.partners" disabled) 合作夥伴
+            a(href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro", target="_blank", data-i18n="nav.docs") 籌備紀錄
+            a(href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fcoc-procedure", data-i18n="nav.coc") 社群守則
+            a(href="", data-i18n="nav.safety" disabled) 安全須知
+          div(class="leading-loose grid h-fit")
+            .mb-4.font-bold(data-i18n="nav.past") 歷年網站
+            a(href="//summit.g0v.tw/2024", target="_blank") 2024
+            a(href="//summit.g0v.tw/2020", target="_blank") 2020
+            a(href="//summit.g0v.tw/2018", target="_blank") 2018
+            a(href="//summit.g0v.tw/2016", target="_blank") 2016
+            a(href="//summit.g0v.tw/2014", target="_blank") 2014
+        .mt-16.flex.flex-wrap.gap-2
+          span CC BY 4.0 @ g0v Summit 2026
+          a(class="mr-16 md:ml-8", href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
+          .rolling-list.flex.gap-4
+            a(href='https://www.facebook.com/g0v.tw/' target='_blank')
+              iconify-icon(icon="ri:facebook-fill" width="30" height="30")
+            a(href='https://www.instagram.com/g0v.tw/' target='_blank')
+              iconify-icon(icon="ri:instagram-line" width="30" height="30")
+            a(href='https://x.com/g0vtw/' target='_blank')
+              iconify-icon(icon="ri:twitter-x-line" width="30" height="30")
+            a(href='https://g0v.social/@summit' target='_blank')
+              iconify-icon(icon="ri:mastodon-fill" width="30" height="30")
+      #cookie-notice(class="fixed bottom-0 w-full bg-slate-200 flex p-4 items-center justify-center z-50 hidden" role='dialog' aria-label='Cookie' style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1)")
+        div(data-i18n='cookie') 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
+        button.btn.btn-primary.shrink-0.my-auto.ms-3(data-i18n='agree') 同意
+      script(src='https://code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
+      script(src='https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js')
+      script(src='https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js')
+      script(src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js")
+      script(src='assets/js/matter.min.js')
+      script(src='assets/js/base.js?v='+timestamp)
+      script(src='assets/js/overlap-canvas.js?v='+timestamp)
+      block script
