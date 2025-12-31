@@ -1,7 +1,7 @@
 extend ../_layout.pug
 
 block variables
-  - title = "徵稿辦法"
+  - title = "徵稿辦法 Submission Guidelines"
   - pageKey = "guidelines"
 
 block main
@@ -21,7 +21,7 @@ block main
           p 投稿將於 2026 年 1 月 15 日 23:59 (UTC+8) 截止，截止日期之前送出的投稿都可以持續用 Google 表單修改，投稿截止後，g0v 雙年會 2026 將會選出本屆議程、與投稿者一一確認，您的稿件確認錄取後，將摒除隱私資訊及（除暱稱外之）個人資料，預計於三月底陸續公開顯示在 g0v 雙年會 2026 網頁上。
 
       #keypoints(class="mb-20")
-        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="guidelines.t2") 徵稿方向：公民大舞廳，邀請你一起來#[ruby 拍拍#[rp （]#[rt(lang="nan-tw") phah-phik]#[rp ）]]！
+        h2(class="text-3xl md:text-4xl font-bold mb-12" data-i18n="[html]guidelines.t2") 徵稿方向：公民大舞廳，邀請你一起來#[ruby 拍拍#[rp （]#[rt(lang="nan-tw") phah-phik]#[rp ）]]！
         div(data-i18n="[html]guidelines.p2")
           p 「#[ruby 拍#[rp （]#[rt(lang="nan-tw") phah]#[rp ）]]」不只是製造的動作，更是一種「節拍」。
           p 在 g0v Summit 2026，我們邀請你走進這個由#[b （開放透明，自主隱私）、（思辨監督，韌性連結）和（政府體制，民間草根）]三大座標軸線所交織而成的 3D「公民大舞廳」，找到屬於你的座標：
@@ -130,7 +130,7 @@ block main
             div(id="faq-content"+i18nKey class="hidden bg-[#d3ebdf] p-4" data-i18n="[html]guidelines.faq.a"+i18nKey)!= aText
 
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t7") FAQ
-        h3(class="text-xl md:text-2xl font-bold mb-6" data-i18n="[html]guidelines.faq.section1") 投稿相關
+        h3(class="text-xl md:text-2xl font-bold mb-6" data-i18n="guidelines.faq.section1") 投稿相關
 
         div(class="grid gap-6")
           +faq("1. 結果何時公布？入選與未入選都會收到通知嗎？", "我們將在二月底以 email 通知入選或未入選的投稿者，三月底公布最後確認之議程。", "1")
@@ -138,26 +138,26 @@ block main
           +faq("3. 一個人可以參與多個稿件嗎？", "可以。工作人員會依講者多元性、稿件內容等條件綜合評量。", "3")
           +faq("4. 我因有特殊考慮，不希望被錄影、錄音、拍照、直播，或任何形式的記錄，這樣適合投稿嗎？", "可以。投稿系統上將有此欄位供投稿者勾選。", "4")
 
-        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="[html]guidelines.faq.section2") 議程需求
+        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="guidelines.faq.section2") 議程需求
         div(class="grid gap-6")
-          +faq("1. 我的議程將以非華語進行，大會是否能提供翻譯協助？", "所有會議室都有 AI 即時轉錄字幕（華語 to 英文、英語 to 華語）", "5")
-          +faq("2. 我的議程有需要特殊協助（例如手語、無障礙空間等等），大會是否可以協助安排？", "請於投稿時備註需求，大會將在考量場地與成本限制之餘，將儘可能協助安排。", "6")
+          +faq("1. 我的議程將以非華語進行，大會是否能提供翻譯協助？", "大會將配合議程語言提供即時轉錄字幕。", "5")
+          +faq("2. 我的議程有需要特殊協助（例如手語、無障礙空間等等），大會是否可以協助安排？", "請於投稿時備註需求，大會將考量場地與成本限制，儘可能協助安排。", "6")
           +faq("3. 會議場地有提供什麼器材？", `
-          各場地均備有基礎會議設備，包括投影機、麥克風、直播等設備。現場會開放共筆供每個現場、線上、會前、會後的參與者紀錄。都會開 <a href="https://www.slido.com/" target="_blank">sli.do</a> 的即時提問系統，方便主持人或講者快速查閱提問。原則上現場各處都找得到 110V 供電插頭。若有特殊需求，請於提案時備註。
+          各場地均備有基礎會議設備，包括投影機、麥克風、攝錄影裝置等設備。現場會開放共筆供每個現場、線上、會前、會後的參與者紀錄，並會開設 sli.do 的即時提問系統，方便主持人或講者快速查閱提問。原則上現場各處都找得到 110V 供電插頭。若有特殊需求，請於提案時備註。
           `, "7")
 
-        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="[html]guidelines.faq.section3") 交通、住宿相關
+        h3(class="text-xl md:text-2xl font-bold mb-6 mt-8" data-i18n="guidelines.faq.section3") 交通、住宿相關
         div(class="grid gap-6")
-          +faq("1. 我不住在台北，大會是否會協助講者安排住宿與交通？或是提供補助？", "很抱歉，此次大會並不提供任何住宿與交通協助。", "8")
+          +faq("1. 我不住在台北，大會是否會協助講者安排住宿與交通或是提供補助？", "很抱歉，此次大會並不提供任何住宿與交通協助。", "8")
           +faq("2. 我是外國人，大會是否會協助我辦理簽證與入境相關文件？", `
           <p>我們將會在通知入選時一併寄送邀請函，供簽證及入境申請使用。</p>
           <p>其它簽證辦理相關問題，請參考外交部領事事務局網站並洽詢台灣駐各地辦事處。</p>
-          <p>若有需要主辦單位提供任何文件，請與我們聯繫 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。</p>
+          <p>若有需要主辦單位提供任何文件，請與我們聯繫：<a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。</p>
           `, "9")
 
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t8") 聯絡資訊
-        p(data-i18n="[html]guidelines.p24") 有任何投稿相關問題歡迎來信 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。
+        p(data-i18n="[html]guidelines.p24") 有任何投稿相關問題，歡迎來信 <a href="mailto:programming@summit.g0v.tw">programming@summit.g0v.tw</a>。
 
       div(class="mb-20")
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t9") 前往投稿！
