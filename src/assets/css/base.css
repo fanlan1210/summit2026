@@ -180,6 +180,26 @@ body[lang=en-TW] .timeline-item-title {
   @apply text-xl;
 }
 
+.timeline-item {
+  position: relative;
+  + .timeline-item::before {
+    @apply absolute hidden md:inline-block w-[44px] h-[44px] top-[22px] left-[-33px];
+    content: '';
+    background: url('../img/icons/arrow-right-alt.svg') center / cover no-repeat;
+  }
+
+  time {
+    position: relative;
+    &[datetime$="+08:00"]::after {
+      content: '(UTC+8)';
+      position: absolute;
+      top: -1em;
+      right: 0;
+      font-size: 0.5em;
+    }
+  }
+}
+
 #modal {
   @apply fixed left-0 top-0 w-full h-full z-50 flex items-center justify-center p-4;
   background-color: rgba(0, 0, 0, 0.5);
