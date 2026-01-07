@@ -32,6 +32,9 @@
       @apply mb-3;
     }
   }
+  address {
+    @apply not-italic;
+  }
   ul {
     @apply list-disc list-outside pl-[1.5rem] mb-2;
     li {

@@ -45,13 +45,15 @@ index.dates.2.title: "Submission Close"
 index.dates.3.title: "Result Notification"
 index.dates.4.title: "Agenda Announcement"
 index.dates.5.title: "g0v Summit <br/> 2026"
-index.countdown: "<span class=\"submission-deadline text-secondary\"></span> Days left before CFP closes:"
+index.countdown.1: ""
+index.countdown.2: "days left before CFP closes"
 index.cta.submit: Submit Now!
 index.cta.slack: g0v Slack
 index.cta.docs: Summit 2026 Planning Docs
 index.cta.events: Upcoming Events
-index.t3: Venue
-index.p2: "Humanities & Social Sciences Building, Academia Sinica <br/>128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan"
+index.venue: Venue
+index.venue.name: Humanities & Social Sciences Building, Academia Sinica
+index.venue.address: 128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan
 index.t4: What is g0v Summit?
 index.p3: >-
   <p>Since 2012, under the call to “fork the government and code for society,” the <a href="https://g0v.tw" target="_blank">g0v.tw</a> (read as gov-zero) community has practiced over a decade of civic hacking. Centered on <strong>“Information Transparency, Open Results, and Open Collaboration,”</strong> we use the power of the grassroots to care for public affairs.</p>

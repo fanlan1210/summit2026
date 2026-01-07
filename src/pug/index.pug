@@ -41,8 +41,10 @@ block main
       include ./components/timeline.pug
 
       div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
-        div(class="max-md:text-center font-bold whitespace-nowrap text-lg md:text-2xl" data-i18n="[html]index.countdown")
-          | 距離徵稿結束剩下 <span class="submission-deadline text-secondary"></span> 天
+        div(class="max-md:text-center font-bold whitespace-nowrap text-lg md:text-2xl")
+          span(data-i18n="index.countdown.1") 距離徵稿結束剩下
+          span.submission-deadline.text-secondary.mx-2
+          span(data-i18n="index.countdown.2") 天
         div(class="h-4 w-full bg-neutral-200 rounded-full grow ml-2")
           div(class="submission-deadline-progress h-full bg-secondary rounded-full" style="width: 0%")
 
@@ -50,8 +52,10 @@ block main
         a(href="https://forms.gle/u5YoP2gK5PVK9FUM8" target="_blank" class="btn btn-lg btn-primary submit-form-link" data-i18n="index.cta.submit") 前往投稿！
 
     #location(class="mb-20")
-      h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.t3") 地點
-      p(class="md:text-2xl" data-i18n="[html]index.p2") 臺北市南港區研究院路二段128號 中央研究院 人文社會科學館
+      h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.venue") 地點
+      p(class="md:text-2xl")
+        div(data-i18n="index.venue.name") 中央研究院 人文社會科學館
+        address(data-i18n="index.venue.address") 臺北市南港區研究院路二段 128 號
       div(class="aspect-video")
         iframe.w-full.h-full(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1354.0143677658955!2d121.61029955043031!3d25.041381051702803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1765449506756!5m2!1szh-TW!2stw' width='600' height='450' style='border:0;' allowfullscreen loading='lazy' referrerpolicy='no-referrer-when-downgrade')
 
@@ -99,8 +103,8 @@ block main
         a(class="btn btn-primary gap-2" href="https://join.g0v.tw" target="_blank")
           span(data-i18n="index.cta.slack") g0v Slack
           iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
-        a(class="btn btn-primary gap-2" href="https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro" target="_blank")
-          span(data-i18n="index.cta.docs") Summit 2026 籌備文件
+        a(class="btn btn-primary gap-2" href="https://g0v.hackmd.io/@summit2026/book" target="_blank")
+          span(data-i18n="index.cta.docs") Summit 籌備文件
           iconify-icon(icon="material-symbols:open-in-new" width="20" height="20")
         a(class="btn btn-primary gap-2" href="https://g0v.hackmd.io/@jothon/event" target="_blank")
           span(data-i18n="index.cta.events") g0v 近期活動
