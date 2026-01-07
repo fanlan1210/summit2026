@@ -39,7 +39,7 @@ index.p1: >-
   <p>Every participant, including you, represents a <strong>point</strong> in the coordinate system, defined by your unique skills, values, and stance. As we communicate with each other, points connect into <strong>lines</strong>. As countless lines intertwine, woven <strong>surfaces</strong> supported by dynamic network of action take shape, doubling as hammocks that gently catch us. Thus, isolated nodes form clusters and single-threaded conversations evolve into collaborative ecosystems.</p>
   <p>Derived from g0v’s core values: transparency, openness, and collaboration, we are braiding the Civic Coordinate System of g0v Summit 2026 with three major axes: <strong>(transparency–autonomy/privacy)</strong>, <strong>(advocacy–recovery)</strong>, <strong>(government agency–grassroots/civil society)</strong>.</p>
   <p>There are no outsiders here. Everyone can find their own coordinates to explore inward and connect outward.</p>
-index.t2: Important dates
+index.dates: Important dates
 index.dates.1.title: "Submission Open"
 index.dates.2.title: "Submission Close"
 index.dates.3.title: "Result Notification"
@@ -49,7 +49,7 @@ index.countdown: "<span class=\"submission-deadline text-secondary\"></span> Day
 index.cta.submit: Submit Now!
 index.cta.slack: g0v Slack
 index.cta.docs: Summit 2026 Planning Docs
-index.cta.events: g0v Upcoming Events
+index.cta.events: Upcoming Events
 index.t3: Venue
 index.p2: "Humanities & Social Sciences Building, Academia Sinica <br/>128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan"
 index.t4: What is g0v Summit?
