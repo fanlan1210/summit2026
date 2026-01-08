@@ -126,7 +126,7 @@ block main
           div(class="rounded-md overflow-hidden")
             button(class="faq-btn flex items-center gap-2 w-full text-left bg-primary text-white text-xl px-4 py-2" data-target="#faq-content"+i18nKey)
               span(class="mr-auto" data-i18n="guidelines.faq.q"+i18nKey)= qText
-              iconify-icon(class="w-9 h-9 in-[.active]:-rotate-180 transition-transform duration-300" icon="material-symbols:arrow-drop-down-rounded" width="36" height="36")
+              iconify-icon(class="w-9 h-9 grid in-[.active]:-rotate-180 transition-transform duration-300" icon="material-symbols:arrow-drop-down-rounded" width="36" height="36")
             div(id="faq-content"+i18nKey class="hidden bg-[#d3ebdf] p-4" data-i18n="[html]guidelines.faq.a"+i18nKey)!= aText
 
         h2(class="text-3xl md:text-4xl font-bold mb-8" data-i18n="guidelines.t7") FAQ
