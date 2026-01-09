@@ -39,17 +39,9 @@ block main
 
     #timeline(class="mb-20")
       include ./components/timeline.pug
+      include ./components/progress.pug
+      a(href="https://forms.gle/u5YoP2gK5PVK9FUM8" target="_blank" class="btn btn-lg btn-primary submit-form-link" data-i18n="nav.cfp") 徵稿辦法
 
-      div(class="flex flex-col md:flex-row md:items-center gap-4 md:gap-2 mb-12")
-        div(class="max-md:text-center font-bold whitespace-nowrap text-lg md:text-2xl")
-          span(data-i18n="index.countdown.1") 距離徵稿結束剩下
-          span.submission-deadline.text-secondary.mx-2
-          span(data-i18n="index.countdown.2") 天
-        div(class="h-4 w-full bg-neutral-200 rounded-full grow ml-2")
-          div(class="submission-deadline-progress h-full bg-secondary rounded-full" style="width: 0%")
-
-      div(class="text-center")
-        a(href="https://forms.gle/u5YoP2gK5PVK9FUM8" target="_blank" class="btn btn-lg btn-primary submit-form-link" data-i18n="index.cta.submit") 前往投稿！
 
     #location(class="mb-20")
       h2(class="max-md:text-center text-3xl md:text-4xl font-bold mb-8" data-i18n="index.venue") 地點

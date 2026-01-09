@@ -200,6 +200,23 @@ body[lang=en-TW] .timeline-item-title {
   }
 }
 
+.submission-deadline-progress {
+  @apply bg-neutral-200;
+  background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light), var(--color-secondary), var(--color-secondary-light));
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  animation: progress-shine 2s linear infinite;
+}
+
+@keyframes progress-shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
 #modal {
   @apply fixed left-0 top-0 w-full h-full z-50 flex items-center justify-center p-4;
   background-color: rgba(0, 0, 0, 0.5);
