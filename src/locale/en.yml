@@ -32,13 +32,15 @@ nav.bugreport: Report Website Issue
 nav.disabled.title: Still Cooking!
 
 index.t1: Invite Yourself into a Braided Nexus
-index.p1: >-
-  <p>It’s often said that <em>once bitten, twice shy</em>. In times where democracy backsliding and social polarization are tearing the very fabric of civic space apart, activists may as well feel bitten by the venomous state of public dialogue.</p>
-  <p>Yet if we are tired of infuriating quarrels and political apathy, we shall move out from the comfort of armchairs and to braid back the society we desire ourselves. The decade-old g0v motto, hacktivism at its core, perfectly manifested the idea: <em>“Ask not why nobody is doing this. You're that nobody—and ‘nobody’ can do everything.”</em></p>
-  <p>At g0v Summit 2026, we kindly ask you to <strong>“invite yourself”</strong> to take charge on braiding our future. Step into a three-dimensional civic space woven from different fabrics of the civic society—</p>
-  <p>Every participant, including you, represents a <strong>point</strong> in the coordinate system, defined by your unique skills, values, and stance. As we communicate with each other, points connect into <strong>lines</strong>. As countless lines intertwine, woven <strong>surfaces</strong> supported by dynamic network of action take shape, doubling as hammocks that gently catch us. Thus, isolated nodes form clusters and single-threaded conversations evolve into collaborative ecosystems.</p>
-  <p>Derived from g0v’s core values: transparency, openness, and collaboration, we are braiding the Civic Coordinate System of g0v Summit 2026 with three major axes: <strong>(transparency–autonomy/privacy)</strong>, <strong>(advocacy–recovery)</strong>, <strong>(government agency–grassroots/civil society)</strong>.</p>
-  <p>There are no outsiders here. Everyone can find their own coordinates to explore inward and connect outward.</p>
+index.p1.p1: "It’s often said that <em>once bitten, twice shy</em>. In times where democracy backsliding and social polarization are tearing the very fabric of civic space apart, activists may as well feel bitten by the venomous state of public dialogue."
+index.p1.p2: "Yet if we are tired of infuriating quarrels and political apathy, we shall move out from the comfort of armchairs and to braid back the society we desire ourselves. The decade-old g0v motto, hacktivism at its core, perfectly manifested the idea: <em>“Ask not why nobody is doing this. You're that nobody—and ‘nobody’ can do everything.”</em>"
+index.p1.p3: "Yet if we are tired of infuriating quarrels and political apathy, we shall move out from the comfort of armchairs and to braid back the society we desire ourselves. The decade-old g0v motto, hacktivism at its core, perfectly manifested the idea: <em>“Ask not why nobody is doing this. You're that nobody—and ‘nobody’ can do everything.”</em>"
+index.p1.p4: At g0v Summit 2026, we kindly ask you to <strong>“invite yourself”</strong> to take charge on braiding our future. Step into a three-dimensional civic space woven from different fabrics of the civic society—
+index.p1.p5: Every participant, including you, represents a <strong>point</strong> in the coordinate system, defined by your unique skills, values, and stance. As we communicate with each other, points connect into <strong>lines</strong>. As countless lines intertwine, woven <strong>surfaces</strong> supported by dynamic network of action take shape, doubling as hammocks that gently catch us.
+index.p1.p6: Thus, isolated nodes form clusters and single-threaded conversations evolve into collaborative ecosystems.
+index.p1.p7: "Derived from g0v’s core values: transparency, openness, and collaboration, we are braiding the Civic Coordinate System of g0v Summit 2026 with three major axes: <strong>(transparency–autonomy/privacy)</strong>, <strong>(advocacy–recovery)</strong>, <strong>(government agency–grassroots/civil society)</strong>."
+index.p1.p8: There are no outsiders here. Everyone can find their own coordinates to explore inward and connect outward.
+
 index.dates: Important dates
 index.dates.1.title: "Submission Open"
 index.dates.2.title: "Submission Close"
@@ -54,19 +56,21 @@ index.venue: Venue
 index.venue.name: Humanities & Social Sciences Building, Academia Sinica
 index.venue.address: 128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan
 index.t4: What is g0v Summit?
-index.p3: >-
-  <p>Since 2012, under the call to “fork the government and code for society,” the <a href="https://g0v.tw" target="_blank">g0v.tw</a> (read as gov-zero) community has practiced over a decade of civic hacking. Centered on <strong>“Information Transparency, Open Results, and Open Collaboration,”</strong> we use the power of the grassroots to care for public affairs.</p>
-  <p>Following the <strong>Sunflower Movement</strong>, we launched the g0v Summit in 2014, building a bridge for interdisciplinary dialogue between open communities, government, NGOs, academia, and netizens.<br>Over these dozen years, Taiwanese society has weathered democratic crises, social turbulence, polarization, and “snake bites” of frustration.</p>
-  <p>Facing the scars of Taiwanese society and threats from near and far, “Ten Years” is not just a measure of time. It marks the continuous action and practice of the civic community: a process of transforming fear into resilience.</p>
-  <p>There is a saying: <em>“Once bitten by a snake, ten years afraid of a straw rope.”</em></p>
-  <p>But at g0v Summit 2026, we say: <strong>“Ten Years of <em>Phah</em> the Rope.”</strong><br>We believe in the power of the grassroots and our connection to one another. We can continuously transform that fear (<strong>Phah</strong>, to be afraid) into action (<strong>Phah</strong>, to beat/weave in Tâi-gí).</p>
-  <p><strong>To <em>Phah-kat</em> (tie a knot in Tâi-gí) is not just about holding tight; it is about learning how to loosen.</strong> About loosening our passive posture, loosening dependency and fear. In an era of crisis and uncertainty, we are retraining our muscles for “Self Help” and “Mutual Aid.”</p>
-  <p>We refuse to recoil in passive fear of the rope. Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, grab that straw rope, and start rubbing and beating it anew. As we branch out, weave, and connect, the “Snake” is no longer a phantom of terror, but a strong, organic community.</p>
+
+index.p3.p1: Since 2012, under the call to “fork the government and code for society,” the <a href="https://g0v.tw" target="_blank">g0v.tw</a> (read as gov-zero) community has practiced over a decade of civic hacking. Centered on <strong>“Information Transparency, Open Results, and Open Collaboration,”</strong> we use the power of the grassroots to care for public affairs.
+index.p3.p2: Following the <strong>Sunflower Movement</strong>, we launched the g0v Summit in 2014, building a bridge for interdisciplinary dialogue between open communities, government, NGOs, academia, and netizens.
+index.p3.p3: Over these dozen years, Taiwanese society has weathered democratic crises, social turbulence, polarization, and “snake bites” of frustration.
+index.p3.p4: "Facing the scars of Taiwanese society and threats from near and far, “Ten Years” is not just a measure of time. It marks the continuous action and practice of the civic community: a process of transforming fear into resilience."
+index.p3.p5: "There is a saying: <em>“Once bitten by a snake, ten years afraid of a straw rope.”</em> But at g0v Summit 2026, we say: <strong>“Ten Years of <em>Phah</em> the Rope.”</strong> We believe in the power of the grassroots and our connection to one another. We can continuously transform that fear (<strong>Phah</strong>, to be afraid) into action (<strong>Phah</strong>, to beat/weave in Tâi-gí)."
+index.p3.p6: <strong>To <em>Phah-kat</em> (tie a knot in Tâi-gí) is not just about holding tight; it is about learning how to loosen.</strong> About loosening our passive posture, loosening dependency and fear. In an era of crisis and uncertainty, we are retraining our muscles for “Self Help” and “Mutual Aid.”
+index.p3.p7: We refuse to recoil in passive fear of the rope. Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, grab that straw rope, and start rubbing and beating it anew. As we branch out, weave, and connect, the “Snake” is no longer a phantom of terror, but a strong, organic community.
+
 index.t5: Past events
 index.t6: Join g0v
-index.p4: >-
-  <p>g0v (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.</p>
-  <p>g0v replaces the “o” in gov with “0”, thereby reimagining the role of government from scratch, and represents the vision from 0 to 1 of the generation of digital natives.</p>
+
+index.p4.p1: g0v (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.
+index.p4.p2: g0v replaces the “o” in gov with “0”, thereby reimagining the role of government from scratch, and represents the vision from 0 to 1 of the generation of digital natives.
+
 index.t7: Sponsorship Information
 index.p5: "For sponsorship inquiries, please contact: <a href=\"mailto:sponsorship@summit.g0v.tw\">sponsorship@summit.g0v.tw</a>"
 index.t8: Partners
@@ -79,22 +83,21 @@ guidelines.countdown: "<span class=\"submission-deadline text-secondary\"></span
 guidelines.cta.form: Submit Form
 guidelines.cta.form2: Submission Form
 guidelines.t1: How to Submit
-guidelines.p1: >-
-  <p>g0v Summit 2026 will run an open, online call for proposals. Submissions are accepted only via the designated Google Form.</p>
-  <p>The call for proposals closes on January 15, 2026 at 23:59 (UTC+8). You may revise your submission in the Google Form at any time before the deadline.</p>
-  <p>After the deadline, the Programming Committee will select the program and confirm details with each submitter. Once your proposal is accepted, we will remove privacy‑sensitive information and personal data (except your nickname) prior to publication. Accepted sessions are expected to be published progressively on the g0v Summit 2026 website starting in late March.</p>
+guidelines.p1.p1: g0v Summit 2026 will run an open, online call for proposals. Submissions are accepted only via the designated Google Form.
+guidelines.p1.p2: The call for proposals closes on January 15, 2026 at 23:59 (UTC+8). You may revise your submission in the Google Form at any time before the deadline. After the deadline, the Programming Committee will select the program and confirm details with each submitter. Once your proposal is accepted, we will remove privacy‑sensitive information and personal data (except your nickname) prior to publication. Accepted sessions are expected to be published progressively on the g0v Summit 2026 website starting in late March.
+
 guidelines.t2: "Call for Proposals: Civic Coordinate from Node to Surface"
-guidelines.p2: >-
-  <p>In Taiwanese (Tâi-gí), <strong>“Phah”</strong> doesn’t just mean to build—it also means <strong>“The Beat.”</strong></p>
-  <p>At g0v Summit 2026, we invite you to step into a three dimension <strong>“Civic Ballroom”</strong> woven from our three major axes: <strong>(Openness & Transparency, Autonomy & Privacy)</strong>, <strong>(Overseeing the Power, Resilient Connection)</strong>, and <strong>(Government Structure, Grassroots/Civil Society)</strong>.</p>
-  <p><strong>Find your coordinates:</strong></p>
+guidelines.p2.p1: In Taiwanese (Tâi-gí), <strong>“Phah”</strong> doesn’t just mean to build—it also means <strong>“The Beat.”</strong>
+guidelines.p2.p2: "At g0v Summit 2026, we invite you to step into a three dimension <strong>“Civic Ballroom”</strong> woven from our three major axes: <strong>(Openness & Transparency, Autonomy & Privacy)</strong>, <strong>(Overseeing the Power, Resilient Connection)</strong>, and <strong>(Government Structure, Grassroots/Civil Society)</strong>. <strong>Find your coordinates:</strong>"
 guidelines.axes.x: "Do you pursue public <strong>Transparency & Openness</strong>, or personal <strong>Autonomy & Privacy</strong>?"
 guidelines.axes.y: "Is your strength in “Upward” <strong>Overseeing the Power</strong>, or “Downward” <strong>Resilience & Healing</strong>?"
 guidelines.axes.z: "Do you operate within <strong>Government & Organizations</strong>, or in decentralized <strong>Grassroots/Civil Society</strong>?"
-guidelines.p3: >-
-  <p>Wherever your coordinates lie, we welcome your proposal.<br>When the music starts—<strong>“Floor it!” (<em>Cui-loh-khi</em>)</strong></p>
-  <p>Don’t just stand there. Follow the beat, find your footing.<br>Bring your knots, pull your thread.<br>On this dance floor, let’s see your own unique <strong>“Dance Steps”</strong>!</p>
-  <p><strong>Welcome to the grand <em>Party</em>!</strong></p>
+
+guidelines.p3.p1: Wherever your coordinates lie, we welcome your proposal.<br>When the music starts—<strong>“Floor it!” (<em>Cui-loh-khi</em>)</strong>
+guidelines.p3.p2: Don’t just stand there. Follow the beat, find your footing.<br>Bring your knots, pull your thread.
+guidelines.p3.p3: On this dance floor, let’s see your own unique <strong>“Dance Steps”</strong>!
+guidelines.p3.p4: <strong>Welcome to the grand <em>Party</em>!</strong>
+
 guidelines.t3: Important Dates
 guidelines.dates.1.title: "Submission and <br/> open discussion start"
 guidelines.dates.2.title: "Deadline for <br/> new submission"
@@ -107,38 +110,28 @@ guidelines.formats.1.subtitle: " "
 guidelines.formats.1.desc: 20 minutes, 1-2 speaker(s).
 guidelines.formats.2.title: Panel Discussion
 guidelines.formats.2.subtitle: " "
-guidelines.formats.2.desc: >-
-  <p>Available durations: 60/90/120 minutes. Assemble your own speaker(s) lineup with no limit on the number of speakers.</p>
-  <p>You may designate one person as the moderator. The panel will hold an on-stage conversation around a specific topic.</p>
+guidelines.formats.2.desc: "Available durations: 60/90/120 minutes. Assemble your own speaker(s) lineup with no limit on the number of speakers. You may designate one person as the moderator. The panel will hold an on-stage conversation around a specific topic."
 guidelines.formats.3.title: Workshop
 guidelines.formats.3.subtitle: " "
-guidelines.formats.3.desc: >-
-  <p>Available durations: 60/90/120 minutes. A facilitation team of 1–5 people leads participants through an interactive agenda such as small-group discussions and hands-on activities.</p>
-  <p>The session typically runs in breakout groups, each focusing on a subtopic or task, then reconvenes for a whole-group share-out of results and observations.</p>
+guidelines.formats.3.desc: "Available durations: 60/90/120 minutes. A facilitation team of 1–5 people leads participants through an interactive agenda such as small-group discussions and hands-on activities. The session typically runs in breakout groups, each focusing on a subtopic or task, then reconvenes for a whole-group share-out of results and observations."
 guidelines.formats.4.title: Roundtable Discussion
 guidelines.formats.4.subtitle: " "
-guidelines.formats.4.desc: >-
-  <p>Available durations: 60/90/120 minutes. Guided by 1–3 facilitators, attendees join an open discussion.</p>
-  <p>The session uses a single discussion space: everyone engages the same topic, with one person speaking at a time. Real-time questions and interactions are encouraged. This format emphasizes public reasoning, the cross-pollination of viewpoints, and the fluidity of collective deliberation.</p>
+guidelines.formats.4.desc: "Available durations: 60/90/120 minutes. Guided by 1–3 facilitators, attendees join an open discussion. The session uses a single discussion space: everyone engages the same topic, with one person speaking at a time. Real-time questions and interactions are encouraged. This format emphasizes public reasoning, the cross-pollination of viewpoints, and the fluidity of collective deliberation."
 guidelines.ref.title: "Reference:"
 guidelines.ref.agenda: " "
 guidelines.t5: Selection Criteria
-guidelines.p5: >-
-  <p>g0v Summit 2026 prioritizes proposals that demonstrate <strong>project results, impact, or knowledge sharing</strong>. We evaluate based on:</p>
-  <ul>
-  <li><strong>Topicality/Urgency</strong></li>
-  <li><strong>Openness &amp; Public Benefit</strong></li>
-  <li><strong>Community Relevance</strong></li>
-  <li><strong>Actionability (Tools/Methods)</strong></li>
-  <li><strong>Accessibility to the general public</strong></li>
-  </ul>
-  <p>We pay special attention to local characteristics of <strong>Taiwan, Southeast Asia, and East Asia</strong>, and strive for balance in <strong>gender and geography</strong>.</p>
-  <p><strong>Review Process:</strong> Proposals pass a format check by the agenda team, then are reviewed by g0v Summit 2026 staff based on:</p>
-  <ol>
-  <li><strong>Content:</strong> Uniqueness of the issue, experience, or perspective.</li>
-  <li><strong>Expression:</strong> Is the information complete, logical, and clear? (Detailed info helps us understand your talk better).</li>
-  <li><strong>Audience Fit:</strong> Is it suitable for the g0v Summit audience? (Popular topics may be assigned to larger halls).</li>
-  </ol>
+guidelines.p5.p1: "g0v Summit 2026 prioritizes proposals that demonstrate <strong>project results, impact, or knowledge sharing</strong>. We evaluate based on:"
+guidelines.p5.p1.li1: <strong>Topicality/Urgency</strong>
+guidelines.p5.p1.li2: <strong>Openness &amp; Public Benefit</strong>
+guidelines.p5.p1.li3: <strong>Community Relevance</strong>
+guidelines.p5.p1.li4: <strong>Actionability (Tools/Methods)</strong>
+guidelines.p5.p1.li5: <strong>Accessibility to the general public</strong>
+guidelines.p5.p2: We pay special attention to local characteristics of <strong>Taiwan, Southeast Asia, and East Asia</strong>, and strive for balance in <strong>gender and geography</strong>.
+guidelines.p5.p3: "<strong>Review Process:</strong> Proposals pass a format check by the agenda team, then are reviewed by g0v Summit 2026 staff based on:"
+guidelines.p5.p3.li1: <strong>Content:</strong> Uniqueness of the issue, experience, or perspective.
+guidelines.p5.p3.li2: <strong>Expression:</strong> Is the information complete, logical, and clear? (Detailed info helps us understand your talk better).
+guidelines.p5.p3.li3: <strong>Audience Fit:</strong> Is it suitable for the g0v Summit audience? (Popular topics may be assigned to larger halls).
+
 guidelines.t6: Privacy Policy
 guidelines.p6: Personal Data Collection Agreement
 guidelines.p7: "In respect to the “Personal Information Protection Act,” notify you of your responsibilities and rights by the following:"
@@ -174,10 +167,7 @@ guidelines.faq.a5: All conference rooms will provide AI real-time captioning (Ma
 guidelines.faq.q6: 2. My proposal needs special assistance (like sign language, accessibility, etc.), will you be able to help?
 guidelines.faq.a6: Please leave a note about what you need when submitting a proposal, we will make our best to provide assistance in consideration of the stage and costs.
 guidelines.faq.q7: 3. What equipment will be provided?
-guidelines.faq.a7: >-
-  <p>Each room provides basic conference equipment: projector, microphones, and a livestreaming setup.</p>
-  <p>Collaborative notes are open for every session, available to onsite and online participants before, during, and after the event. We use Slido for live Q&A so moderators and speakers can quickly review questions. 110V power outlets are available throughout the venue.</p>
-  <p>If you have special requirements, please note them in your proposal.</p>
+guidelines.faq.a7: "Each room provides basic conference equipment: projector, microphones, and a livestreaming setup. Collaborative notes are open for every session, available to onsite and online participants before, during, and after the event. We use Slido for live Q&A so moderators and speakers can quickly review questions. 110V power outlets are available throughout the venue. If you have special requirements, please note them in your proposal."
 guidelines.faq.section3: About Travel and Accommodation guidelines
 guidelines.faq.q8: 1. I don’t live in Taipei, would you help arrange accommodation and transportation? Would you provide travel subsidy?
 guidelines.faq.a8: Sorry, g0v Summit won’t provide any accommodation and transportation assistance.
