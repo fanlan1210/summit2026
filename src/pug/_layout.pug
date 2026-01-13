@@ -8,6 +8,14 @@ html(lang="zh-Hant-TW")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     if noindex
       meta(name="robots" content="noindex")
+    else
+      //  Google tag (gtag.js)
+      script(async src='https://www.googletagmanager.com/gtag/js?id=G-SPHXWCG6TN')
+      script.
+        window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SPHXWCG6TN');
     meta(name='description', content='g0v Summit 2026 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民科技、公民行動、開放資料、數位治理實踐者齊聚一堂的盛會。不論你是想來傳承經驗或是揪團打怪，歡迎你拉張板凳、拋出糸索，一起加入這場公民phah-ty！')
     meta(property='og:title', content=`${title} | g0v Summit 2026`)
     meta(property='og:description', content='g0v Summit 2026 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民科技、公民行動、開放資料、數位治理實踐者齊聚一堂的盛會。不論你是想來傳承經驗或是揪團打怪，歡迎你拉張板凳、拋出糸索，一起加入這場公民phah-ty！')
@@ -25,13 +33,6 @@ html(lang="zh-Hant-TW")
     link(href='https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap', rel='stylesheet')
     link(href='https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css', rel='stylesheet')
     link(rel='stylesheet', href='assets/css/base.css?version='+timestamp)
-    //  Google tag (gtag.js)
-    script(async src='https://www.googletagmanager.com/gtag/js?id=G-SPHXWCG6TN')
-    script.
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-SPHXWCG6TN');
     block head
     body
       canvas#overlap-canvas(class="fixed z-998 w-full h-full pointer-events-none")
