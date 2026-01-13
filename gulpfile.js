@@ -25,7 +25,7 @@ function formatDatetime(dateObject) {
 }
 
 function buildI18n(baseurl = '/2026/') {
-  return function buildI18nTask () {
+  return function buildI18nTask() {
     let locales = { en: {} }
 
     // Load schedule
@@ -102,7 +102,7 @@ function copyData(baseurl = '/2026/') {
 }
 
 function buildCss(baseurl = '/2026/') {
-  return function buildCssTask () {
+  return function buildCssTask() {
     const dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
     return gulp
       .src('src/assets/css/**/*.css')
@@ -165,7 +165,7 @@ function buildSchedule() {
 }
 
 function buildPug(baseurl = '/2026/') {
-  return function buildPugTask () {
+  return function buildPugTask() {
     const build_time = new Date().getTime()
     const dest_path = '.' + path.join('/static/', baseurl)
 
@@ -205,7 +205,18 @@ function buildPug(baseurl = '/2026/') {
   }
 }
 
-function buildAll(baseUrl = '/2026/') {
+function manageRobots(baseurl = '/2026/', deploy = false) {
+  return function manageRobotsTask(done) {
+    const robotsPath = '.' + path.join('/static/', baseurl, '/robots.txt')
+    if (!deploy) {
+      fs.outputFile(robotsPath, 'User-agent: *\nDisallow: /', done)
+    } else {
+      fs.remove(robotsPath, done)
+    }
+  }
+}
+
+function buildAll(baseUrl = '/2026/', deploy = false) {
   return gulp.series(
     gulp.parallel(
       buildCss(baseUrl),
@@ -214,7 +225,8 @@ function buildAll(baseUrl = '/2026/') {
       copyImages(baseUrl),
       copyData(baseUrl)
     ),
-    buildPug(baseUrl)
+    buildPug(baseUrl),
+    manageRobots(baseUrl, deploy)
   )
 }
 
@@ -255,4 +267,4 @@ exports.server = gulp.series(buildAll(), serve, watchFiles)
 
 exports.build = buildAll('/summit2026/')
 
-exports.deploy = buildAll('/2026/')
+exports.deploy = buildAll('/2026/', true)
