@@ -164,7 +164,7 @@ function buildSchedule() {
   return schedule
 }
 
-function buildPug(baseurl = '/2026/') {
+function buildPug(baseurl = '/2026/', deploy = false) {
   return function buildPugTask() {
     const build_time = new Date().getTime()
     const dest_path = '.' + path.join('/static/', baseurl)
@@ -182,7 +182,8 @@ function buildPug(baseurl = '/2026/') {
           const context = {
             schedule: schedule,
             timestamp: build_time,
-            base: baseurl
+            base: baseurl,
+            noindex: !deploy
           }
 
           // See if additional data is available
@@ -225,7 +226,7 @@ function buildAll(baseUrl = '/2026/', deploy = false) {
       copyImages(baseUrl),
       copyData(baseUrl)
     ),
-    buildPug(baseUrl),
+    buildPug(baseUrl, deploy),
     manageRobots(baseUrl, deploy)
   )
 }
