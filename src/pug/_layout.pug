@@ -105,7 +105,8 @@ html(lang="zh-Hant-TW")
       #cookie-notice(class="fixed bottom-0 w-full bg-slate-200 flex p-4 items-center justify-center z-50 hidden" role='dialog' aria-label='Cookie' style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1)")
         div(data-i18n='cookie') 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
         button.btn.btn-primary.shrink-0.my-auto.ms-3(data-i18n='agree') 同意
-      #staging-info(class="hidden fixed z-50 bottom-0 left-0 w-full bg-orange-400 text-white text-center") Staging (main branch)
+      if noindex
+        #staging-info(class="fixed z-50 bottom-0 left-0 w-full bg-orange-400 text-white text-center") Staging (main branch)
       script(src='https://code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
       script(src='https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js')
       script(src='https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js')
