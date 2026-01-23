@@ -113,7 +113,7 @@ block main
       div(class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8")
         mixin partner(name, site, donate, key, img)
           div(class="flex gap-4 md:gap-8 p-6 border rounded-lg")
-            div(class="w-28 h-28 aspect-square shrink-0 rounded-md overflow-hidden")
+            div(class="w-28 h-28 grid place-items-center aspect-square shrink-0 rounded-md overflow-hidden")
               img(classd="w-full h-full object-contain bg-neutral-100" src="assets/img/partners/"+img alt=name)
             div(class="mt-3")
               h5(data-i18n=`index.partners.${key}.name`)= name
