@@ -91,7 +91,7 @@
     @apply px-7 py-3 text-xl lg:text-2xl font-bold;
   }
   .btn-text-dark {
-    @apply text-neutral-800 hover:text-primary transition-colors;
+    @apply text-neutral-800 hover:text-primary transition-colors px-0;
   }
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary-dark;
