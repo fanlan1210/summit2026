@@ -62,18 +62,20 @@
   a:focus {
     @apply outline-none;
   }
-  a:not(.btn, .nav-link) {
-    &:link,
-    &:visited {
-      @apply text-primary;
-      @apply no-underline;
-      &:hover {
-        @apply underline;
+  main {
+    a:not(.btn, .nav-link) {
+      &:link,
+      &:visited {
+        @apply text-primary;
+        @apply no-underline;
+        &:hover {
+          @apply underline;
+        }
       }
     }
-  }
-  a[disabled] {
-    @apply text-neutral-500! no-underline!;
+    a[disabled] {
+      @apply text-neutral-500! no-underline!;
+    }
   }
 }
 
@@ -98,6 +100,12 @@
   }
   .btn-outline-primary {
     @apply border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  .btn-info {
+    @apply bg-info text-white hover:bg-info-dark;
+  }
+  .btn-outline-info {
+    @apply border border-info text-info hover:bg-info hover:text-white;
   }
   .btn-outline-dark {
     @apply border border-neutral-500 text-neutral-500 hover:bg-neutral-500 hover:text-white;
@@ -202,7 +210,7 @@ body[lang=en-TW] .timeline-item-title {
 
 .submission-deadline-progress {
   @apply bg-neutral-200;
-  background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light), var(--color-secondary), var(--color-secondary-light));
+  background-image: linear-gradient(to right, var(--color-info), var(--color-info-light), var(--color-info), var(--color-info-light));
   background-size: 300% 100%;
   background-repeat: no-repeat;
   animation: progress-shine 2s linear infinite;
