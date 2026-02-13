@@ -92,6 +92,16 @@
   .btn-lg {
     @apply px-7 py-3 text-xl lg:text-2xl font-bold;
   }
+  .btn-brand {
+    background: linear-gradient(to left, var(--color-brand) 40%, var(--color-info) 60%);
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    transition: background-position 0.3s ease;
+    background-position: 100% 0;
+    &:hover {
+      background-position: 0% 0;
+    }
+  }
   .btn-text-dark {
     @apply text-neutral-800 hover:text-primary transition-colors px-0;
   }
@@ -110,14 +120,17 @@
   .btn-outline-dark {
     @apply border border-neutral-500 text-neutral-500 hover:bg-neutral-500 hover:text-white;
   }
+  .nav-link {
+    @apply flex h-full px-4 hover:bg-neutral-500 transition-[background-color] items-center cursor-pointer;
+  }
 }
 
 #burger {
-  @apply w-5 h-[2.5px] bg-black rounded-full transition-all;
+  @apply w-5 h-[2.5px] bg-white rounded-full transition-all;
   &:before,
   &:after {
     content: ' ';
-    @apply absolute block w-5 h-[2.5px] bg-black rounded-full;
+    @apply absolute block w-5 h-[2.5px] bg-white rounded-full;
   }
   &:before {
     animation: burger-t-Out 0.3s ease forwards;

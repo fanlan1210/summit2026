@@ -96,11 +96,6 @@ function toggleMobileNav() {
   $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
   $mobileNav.toggleClass('shadow-md')
   $('#burger').toggleClass('is-active')
-  if ($('#burger').hasClass('is-active')) {
-    $navbar.addClass('max-md:bg-white')
-  } else {
-    $navbar.removeClass('max-md:bg-white')
-  }
 }
 
 // countdown to submission deadline
