@@ -3,13 +3,11 @@
   --text-base: 18px;
   --font-sans: Onest, 'Noto Sans TC', sans-serif;
   --font-serif: Amarna, 'LXGW WenKai TC', serif;
-  --color-primary: #008CC9;
-  --color-primary-dark: #006CA9;
-  --color-primary-light: #009CE9;
-  --color-secondary: #FF7874;
-  --color-secondary-dark: #DF5854;
-  --color-secondary-light: #FF9894;
-  --color-success: #6CBD93;
-  --color-success-dark: #4C9D73;
-  --color-success-light: #8CDDB3;
+  --color-brand: #F25549;
+  --color-primary: #DF6258;
+  --color-primary-dark: #9E3027;
+  --color-primary-light: #FF8F86;
+  --color-info: #3C89C2;
+  --color-info-dark: #195078;
+  --color-info-light: #A1D7FF;
 }
