@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.17.2",
     "fs-extra": "^11.3.2",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
@@ -27,7 +29,7 @@
     "postcss": "^8.5.6",
     "postcss-nested": "^6.0.1",
     "spreadsheet-to-json": "^2.0.0",
-    "tailwindcss": "^4.1.14"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.18",

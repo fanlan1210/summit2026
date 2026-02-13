@@ -123,3 +123,5 @@ static/**/*
 
 # config
 config.js
+
+.astro
