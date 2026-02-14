@@ -11,9 +11,10 @@
   "scripts": {
     "pre": "node prebuild/index.js",
     "build": "cross-env BUILD_MODE=production astro build",
+    "preview": "cross-env BUILD_MODE=production astro preview",
     "build-staging": "cross-env BUILD_MODE=staging astro build",
-    "preview": "astro preview",
-    "dev": "astro dev"
+    "preview-staging": "cross-env BUILD_MODE=stagin astro preview",
+    "dev": "cross-env BUILD_MODE=staging astro dev"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
