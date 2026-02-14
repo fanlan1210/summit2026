@@ -34,14 +34,13 @@ const base = import.meta.env.BASE_URL
       content="g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
     />
     <meta name="twitter:image" content="https://summit.g0v.tw/2026/assets/img/share.jpg" />
+    {isStaging() && <meta name="robots" content="noindex" />}
 
     <link rel="icon" type="image/svg" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet" />
     <base href={base} />
-
-    <!-- TODO robots.txt -->
 
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SPHXWCG6TN"></script>
