@@ -207,43 +207,6 @@ body[lang='en-TW'] .timeline-item-title {
   @apply text-xl;
 }
 
-.timeline-item {
-  position: relative;
-  + .timeline-item::before {
-    @apply absolute top-[22px] left-[-33px] hidden h-[44px] w-[44px] md:inline-block;
-    content: '';
-    background: url('../img/icons/arrow-right-alt.svg') center / cover no-repeat;
-  }
-
-  time {
-    position: relative;
-    &[datetime$='+08:00']::after {
-      content: '(UTC+8)';
-      position: absolute;
-      top: -1em;
-      right: 0;
-      font-size: 0.5em;
-    }
-  }
-}
-
-.submission-deadline-progress {
-  @apply bg-neutral-200;
-  background-image: linear-gradient(to right, var(--color-info), var(--color-info-light), var(--color-info), var(--color-info-light));
-  background-size: 300% 100%;
-  background-repeat: no-repeat;
-  animation: progress-shine 2s linear infinite;
-}
-
-@keyframes progress-shine {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0% 0;
-  }
-}
-
 #modal {
   @apply fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center p-4;
   background-color: rgba(0, 0, 0, 0.5);
