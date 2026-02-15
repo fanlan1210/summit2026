@@ -1,5 +1,8 @@
 {
   "title": "English title",
+  "common": {
+    "agree": "Agree"
+  },
   "nav": {
     "agenda": "Agenda",
     "visit": "Visit",
@@ -8,5 +11,6 @@
     "sponsor": "Sponsor",
     "about": "About",
     "register": "Register"
-  }
+  },
+  "cookieNotice": "This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics."
 }

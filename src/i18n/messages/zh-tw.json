@@ -1,5 +1,8 @@
 {
   "title": "中文標題",
+  "common": {
+    "agree": "Agree"
+  },
   "nav": {
     "agenda": "議程",
     "visit": "交通",
@@ -8,5 +11,6 @@
     "sponsor": "贊助/媒體",
     "about": "關於",
     "register": "參與活動"
-  }
+  },
+  "cookieNotice": "本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。"
 }
