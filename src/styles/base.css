@@ -130,7 +130,14 @@
     @apply h-4.5 w-4.5 text-lg;
   }
   .nav-link {
-    @apply flex h-full cursor-pointer items-center px-4 transition-[background-color] hover:bg-neutral-500;
+    @apply flex h-full cursor-pointer items-center px-4 text-nowrap transition-[background-color] hover:bg-neutral-500;
+  }
+
+  .scroll-x {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand) white;
+    @apply overflow-x-auto overflow-y-hidden;
   }
 }
 

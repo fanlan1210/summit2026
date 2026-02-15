@@ -23,7 +23,7 @@ const navs = [
       <img src="./img/g0v-summit-logo-w.svg" alt="g0v Summit 2026" class="h-12" />
     </a>
 
-    <div class="hidden h-full items-center md:flex">
+    <div id="navs" class="scroll-x hidden h-full min-w-0 items-center md:flex">
       {
         navs.map(nav => (
           <a class="nav-link" href={nav.href}>
@@ -31,20 +31,20 @@ const navs = [
           </a>
         ))
       }
+    </div>
 
-      <div class="group relative flex h-full items-center gap-2 px-4 font-bold">
-        <span class="flex cursor-pointer items-center gap-2">
-          Language
-          <iconify-icon icon="mdi:language" class="icon-18"></iconify-icon>
-        </span>
+    <div class="group relative hidden h-full items-center gap-2 px-4 font-bold md:flex">
+      <span class="flex cursor-pointer items-center gap-2">
+        Language
+        <iconify-icon icon="mdi:language" class="icon-18"></iconify-icon>
+      </span>
 
-        <div
-          class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
-        >
-          <div class="mt-1 flex flex-col">
-            <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
-            <a href={getRelativeLocaleUrl('en', pathname)} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
-          </div>
+      <div
+        class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
+      >
+        <div class="mt-1 flex flex-col">
+          <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
+          <a href={getRelativeLocaleUrl('en', pathname)} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
         </div>
       </div>
     </div>
@@ -91,4 +91,22 @@ const navs = [
     $mobileNav.toggleClass('shadow-md')
     $('#burger').toggleClass('is-active')
   }
+
+  // navs x scroll
+  const $navs = $('#navs')
+
+  $navs.on('wheel', function (e) {
+    const oe = e.originalEvent as WheelEvent
+
+    const delta = Math.abs(oe.deltaX) > Math.abs(oe.deltaY) ? oe.deltaX : oe.deltaY
+
+    const el = this
+    const canScrollLeft = el.scrollLeft > 0
+    const canScrollRight = el.scrollLeft + el.clientWidth < el.scrollWidth
+
+    if ((delta < 0 && canScrollLeft) || (delta > 0 && canScrollRight)) {
+      e.preventDefault()
+      el.scrollBy({ left: delta, behavior: 'smooth' })
+    }
+  })
 </script>
