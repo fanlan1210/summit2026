@@ -1,3 +1,10 @@
+---
+import { useI18n } from '~/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+const t = useI18n(Astro.url.pathname)
+---
+
 <nav id="navbar" class="sticky top-0 z-999 flex h-14 w-full items-center bg-black text-white shadow-md">
   <div class="container flex h-full items-center">
     <a id="logo" class="mr-auto" href="./">
@@ -21,9 +28,9 @@
         <div
           class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
         >
-          <div class="mt-1">
-            <div class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</div>
-            <div class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</div>
+          <div class="mt-1 flex flex-col">
+            <a href={getRelativeLocaleUrl('zh-tw')} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
+            <a href={getRelativeLocaleUrl('en')} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import { useI18n } from '~/i18n/utils'
+
+const t = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName="反客為主">
-  <div class="bg-amber-400 px-2 py-3 text-2xl">首頁</div>
+  <div class="bg-amber-400 px-2 py-3 text-2xl">{t.title}</div>
 </Layout>

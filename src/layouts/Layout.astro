@@ -6,11 +6,13 @@ import Footer from '~/components/Footer.astro'
 import CookieNotice from '~/components/CookieNotice.astro'
 import StagingInfo from '~/components/StagingInfo.astro'
 import { isStaging } from '~/utils/build/isStaging'
+import { getLocaleFromPath } from '~/i18n/utils'
 
+const locale = getLocaleFromPath(Astro.url.pathname)
 const { pageName } = Astro.props
 ---
 
-<html lang="zh-Hant-TW">
+<html lang={locale}>
   <Head pageName={pageName} />
   <body>
     <div class="flex min-h-screen flex-col">
