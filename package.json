@@ -10,10 +10,10 @@
   },
   "scripts": {
     "pre": "node prebuild/index.js",
-    "build": "cross-env BUILD_MODE=production astro build",
-    "preview": "cross-env BUILD_MODE=production astro preview",
-    "build-staging": "cross-env BUILD_MODE=staging astro build",
-    "preview-staging": "cross-env BUILD_MODE=stagin astro preview",
+    "build-production": "cross-env BUILD_MODE=production astro build",
+    "preview-production": "cross-env BUILD_MODE=production astro preview",
+    "build": "cross-env BUILD_MODE=staging astro build",
+    "preview": "cross-env BUILD_MODE=stagin astro preview",
     "dev": "cross-env BUILD_MODE=staging astro dev"
   },
   "dependencies": {
