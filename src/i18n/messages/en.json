@@ -1,13 +1,10 @@
 {
-  "title": "English title",
+  "title": "Invite Yourself",
   "common": {
     "agree": "Agree"
   },
   "meta": {
     "description": "g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
-  },
-  "pageName": {
-    "home": "Invite Yourself"
   },
   "nav": {
     "agenda": "Agenda",

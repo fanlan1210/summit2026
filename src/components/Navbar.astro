@@ -1,8 +1,11 @@
 ---
-import { useI18n } from '~/i18n/utils'
+import { useI18n, getLocaleFromPath } from '~/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
+import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseAndLocale'
 
+const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
+const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
 ---
 
 <nav id="navbar" class="sticky top-0 z-999 flex h-14 w-full items-center bg-black text-white shadow-md">
@@ -12,12 +15,12 @@ const { t } = useI18n(Astro.url.pathname)
     </a>
 
     <div class="hidden h-full items-center md:flex">
-      <a class="nav-link" href="">{t('nav.agenda')}</a>
-      <a class="nav-link" href="">{t('nav.visit')}</a>
-      <a class="nav-link" href="">{t('nav.venue')}</a>
-      <a class="nav-link" href="">{t('nav.speaker')}</a>
-      <a class="nav-link" href="">{t('nav.sponsor')}</a>
-      <a class="nav-link" href="">{t('nav.about')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'agenda')}>{t('nav.agenda')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'visit')}>{t('nav.visit')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'venue')}>{t('nav.venue')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'speaker')}>{t('nav.speaker')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'sponsor')}>{t('nav.sponsor')}</a>
+      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'about')}>{t('nav.about')}</a>
 
       <div class="group relative flex h-full items-center gap-2 px-4 font-bold">
         <span class="flex cursor-pointer items-center gap-2">
@@ -29,8 +32,8 @@ const { t } = useI18n(Astro.url.pathname)
           class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
         >
           <div class="mt-1 flex flex-col">
-            <a href={getRelativeLocaleUrl('zh-tw')} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
-            <a href={getRelativeLocaleUrl('en')} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
+            <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
+            <a href={getRelativeLocaleUrl('en', pathname)} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
           </div>
         </div>
       </div>
