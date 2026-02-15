@@ -6,6 +6,15 @@ import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseA
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
+
+const navs = [
+  { href: getRelativeLocaleUrl(locale, 'agenda'), name: t('nav.agenda') },
+  { href: getRelativeLocaleUrl(locale, 'visit'), name: t('nav.visit') },
+  { href: getRelativeLocaleUrl(locale, 'venue'), name: t('nav.venue') },
+  { href: getRelativeLocaleUrl(locale, 'speaker'), name: t('nav.speaker') },
+  { href: getRelativeLocaleUrl(locale, 'sponsor'), name: t('nav.sponsor') },
+  { href: getRelativeLocaleUrl(locale, 'about'), name: t('nav.about') },
+]
 ---
 
 <nav id="navbar" class="sticky top-0 z-999 flex h-14 w-full items-center bg-black text-white shadow-md">
@@ -15,12 +24,13 @@ const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
     </a>
 
     <div class="hidden h-full items-center md:flex">
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'agenda')}>{t('nav.agenda')}</a>
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'visit')}>{t('nav.visit')}</a>
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'venue')}>{t('nav.venue')}</a>
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'speaker')}>{t('nav.speaker')}</a>
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'sponsor')}>{t('nav.sponsor')}</a>
-      <a class="nav-link" href={getRelativeLocaleUrl(locale, 'about')}>{t('nav.about')}</a>
+      {
+        navs.map(nav => (
+          <a class="nav-link" href={nav.href}>
+            {nav.name}
+          </a>
+        ))
+      }
 
       <div class="group relative flex h-full items-center gap-2 px-4 font-bold">
         <span class="flex cursor-pointer items-center gap-2">
@@ -46,15 +56,19 @@ const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
     <div id="mobile-nav" class="absolute top-full right-0 left-0 grid grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:hidden">
       <div class="min-h-0">
         <div class="flex flex-col items-center gap-3 py-3">
-          <a class="mobile-nav-item" href="#intro" data-i18n="nav.summit_info">年會資訊</a>
-          <a class="mobile-nav-item" href="./guidelines" data-i18n="nav.cfp">徵稿辦法</a>
-          <a class="mobile-nav-item" href="https://g0v-summit-2026.oen.tw/" target="_blank" data-i18n="nav.donate">支持 Summit</a>
+          {
+            navs.map(nav => (
+              <a class="mobile-nav-item" href={nav.href}>
+                {nav.name}
+              </a>
+            ))
+          }
 
           <div class="flex items-center gap-2 py-2 text-xl">
-            <iconify-icon icon="material-symbols:globe-asia" width="24" height="24"></iconify-icon>
-            <button class="lang-btn zh-btn">華語</button>
+            <iconify-icon icon="mdi:language" class="icon-18"></iconify-icon>
+            <a href={getRelativeLocaleUrl('zh-tw', pathname)}>華語</a>
             <span>|</span>
-            <button class="lang-btn en-btn">English</button>
+            <a href={getRelativeLocaleUrl('en', pathname)}>English</a>
           </div>
         </div>
       </div>
