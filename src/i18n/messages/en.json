@@ -1,3 +1,12 @@
 {
-  "title": "English title"
+  "title": "English title",
+  "nav": {
+    "agenda": "Agenda",
+    "visit": "Visit",
+    "venue": "Venue",
+    "speaker": "Speaker",
+    "sponsor": "Sponsor",
+    "about": "About",
+    "register": "Register"
+  }
 }

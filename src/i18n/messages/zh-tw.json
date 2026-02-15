@@ -1,3 +1,12 @@
 {
-  "title": "中文標題"
+  "title": "中文標題",
+  "nav": {
+    "agenda": "議程",
+    "visit": "交通",
+    "venue": "場地與攤位",
+    "speaker": "講者",
+    "sponsor": "贊助/媒體",
+    "about": "關於",
+    "register": "參與活動"
+  }
 }

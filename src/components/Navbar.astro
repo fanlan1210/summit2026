@@ -12,12 +12,12 @@ const t = useI18n(Astro.url.pathname)
     </a>
 
     <div class="hidden h-full items-center md:flex">
-      <a class="nav-link" href="" data-i18n="nav.agenda">議程</a>
-      <a class="nav-link" href="" data-i18n="nav.visit">交通</a>
-      <a class="nav-link" href="" data-i18n="nav.venue">場地與攤位</a>
-      <a class="nav-link" href="" data-i18n="nav.speaker">講者</a>
-      <a class="nav-link" href="" data-i18n="nav.sponsor">贊助/媒體</a>
-      <a class="nav-link" href="" data-i18n="nav.about">關於</a>
+      <a class="nav-link" href="">{t.nav.agenda}</a>
+      <a class="nav-link" href="">{t.nav.visit}</a>
+      <a class="nav-link" href="">{t.nav.venue}</a>
+      <a class="nav-link" href="">{t.nav.speaker}</a>
+      <a class="nav-link" href="">{t.nav.sponsor}</a>
+      <a class="nav-link" href="">{t.nav.about}</a>
 
       <div class="group relative flex h-full items-center gap-2 px-4 font-bold">
         <span class="flex cursor-pointer items-center gap-2">
@@ -57,7 +57,7 @@ const t = useI18n(Astro.url.pathname)
       </div>
     </div>
   </div>
-  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">參與活動</a>
+  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t.nav.register}</a>
 </nav>
 
 <script>
