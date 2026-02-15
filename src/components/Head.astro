@@ -1,33 +1,26 @@
 ---
 const { pageName } = Astro.props
+import { useI18n } from '~/i18n/utils'
 import { isStaging } from '~/utils/build/isStaging'
 
 const base = import.meta.env.BASE_URL
+const t = useI18n(Astro.url.pathname)
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageName} | g0v Summit 2026</title>
-  <meta
-    name="description"
-    content="g0v Summit 2026 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民科技、公民行動、開放資料、數位治理實踐者齊聚一堂的盛會。不論你是想來傳承經驗或是揪團打怪，歡迎你拉張板凳、拋出糸索，一起加入這場公民phah-ty！"
-  />
+  <meta name="description" content={t.meta.description} />
   <meta property="og:title" content="g0v Summit 2026" />
-  <meta
-    property="og:description"
-    content="g0v Summit 2026 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民科技、公民行動、開放資料、數位治理實踐者齊聚一堂的盛會。不論你是想來傳承經驗或是揪團打怪，歡迎你拉張板凳、拋出糸索，一起加入這場公民phah-ty！"
-  />
-  <meta property="og:image" content="https://summit.g0v.tw/2026/assets/img/share.jpg" />
+  <meta property="og:description" content={t.meta.description} />
+  <meta property="og:image" content="https://summit.g0v.tw/2026/img/share.jpg" />
   <meta property="og:url" content="https://summit.g0v.tw/2026" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="g0v Summit 2026" />
-  <meta
-    name="twitter:description"
-    content="g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
-  />
-  <meta name="twitter:image" content="https://summit.g0v.tw/2026/assets/img/share.jpg" />
+  <meta name="twitter:description" content={t.meta.description} />
+  <meta name="twitter:image" content="https://summit.g0v.tw/2026/img/share.jpg" />
   {isStaging() && <meta name="robots" content="noindex" />}
 
   <link rel="icon" type="image/svg" href="favicon.svg" />
