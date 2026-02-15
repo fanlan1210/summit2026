@@ -29,5 +29,9 @@ export function stripProjectName(pathname) {
 const dict = { 'zh-tw': zhTW, en }
 export function useI18n(pathname) {
   const locale = getLocaleFromPath(pathname)
-  return dict[locale] || dict[defaultLocale]
+  return {
+    t(key) {
+      return key.split('.').reduce((obj, k) => obj?.[k], dict[locale]) ?? key
+    },
+  }
 }

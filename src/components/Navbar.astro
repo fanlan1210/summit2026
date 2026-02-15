@@ -2,7 +2,7 @@
 import { useI18n } from '~/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
-const t = useI18n(Astro.url.pathname)
+const { t } = useI18n(Astro.url.pathname)
 ---
 
 <nav id="navbar" class="sticky top-0 z-999 flex h-14 w-full items-center bg-black text-white shadow-md">
@@ -12,12 +12,12 @@ const t = useI18n(Astro.url.pathname)
     </a>
 
     <div class="hidden h-full items-center md:flex">
-      <a class="nav-link" href="">{t.nav.agenda}</a>
-      <a class="nav-link" href="">{t.nav.visit}</a>
-      <a class="nav-link" href="">{t.nav.venue}</a>
-      <a class="nav-link" href="">{t.nav.speaker}</a>
-      <a class="nav-link" href="">{t.nav.sponsor}</a>
-      <a class="nav-link" href="">{t.nav.about}</a>
+      <a class="nav-link" href="">{t('nav.agenda')}</a>
+      <a class="nav-link" href="">{t('nav.visit')}</a>
+      <a class="nav-link" href="">{t('nav.venue')}</a>
+      <a class="nav-link" href="">{t('nav.speaker')}</a>
+      <a class="nav-link" href="">{t('nav.sponsor')}</a>
+      <a class="nav-link" href="">{t('nav.about')}</a>
 
       <div class="group relative flex h-full items-center gap-2 px-4 font-bold">
         <span class="flex cursor-pointer items-center gap-2">
@@ -57,7 +57,7 @@ const t = useI18n(Astro.url.pathname)
       </div>
     </div>
   </div>
-  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t.nav.register}</a>
+  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t('nav.register')}</a>
 </nav>
 
 <script>

@@ -1,7 +1,7 @@
 ---
 import { useI18n } from '~/i18n/utils'
 
-const t = useI18n(Astro.url.pathname)
+const { t } = useI18n(Astro.url.pathname)
 ---
 
 <div
@@ -11,8 +11,8 @@ const t = useI18n(Astro.url.pathname)
   aria-label="Cookie"
   style="box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1); display: none;"
 >
-  <div>{t.cookieNotice}</div>
-  <button class="btn btn-primary my-auto ms-3 shrink-0">{t.common.agree}</button>
+  <div>{t('cookieNotice')}</div>
+  <button class="btn btn-primary my-auto ms-3 shrink-0">{t('common.agree')}</button>
 </div>
 
 <script>
