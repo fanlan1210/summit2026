@@ -1,0 +1,75 @@
+---
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+
+const { session } = Astro.props
+
+const columnOrder = {
+  R0: 0,
+  R1: 1,
+  R2: 2,
+  RH: 3,
+}
+const tags = session.tags.map(tagId => tagIdToDetail(tagId))
+const speakers = session.speakers.map(speakerId => speakerIdToDetail(speakerId))
+const type = typeToDetail(session.type)
+const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
+const endRow = parseInt(extractHHmm(session.end).replace(':', '')) || 0
+const [startCol, endCol] = getColumnStartEnd(session.broadcast || session.room)
+const isRest = session.type === 'R'
+
+const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
+
+function getColumnStartEnd(columns) {
+  columns = columns.split(',')
+  if (columns.length === 1) return [columns[0], columns[0]]
+  columns.sort((a, b) => columnOrder[a] - columnOrder[b])
+  return [columns[0], columns.at(-1)]
+}
+
+function speakerIdToDetail(speakerId) {
+  return schedule.speakers.find(speaker => speaker.id === speakerId)
+}
+
+function tagIdToDetail(tagId) {
+  return schedule.tags.find(tag => tag.id === tagId)
+}
+
+function typeToDetail(type) {
+  return schedule.session_types.find(t => t.id === type)
+}
+---
+
+<div class="flex flex-col p-3" style={style}>
+  <div class=`relative z-10 shrink-0 grow cursor-pointer p-4 ${isRest ? 'bg-neutral-300' : 'bg-neutral-100'}`>
+    <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
+      <div class="font-bold text-neutral-800">{isZhTW ? session.zh.title : session.en.title}</div>
+      <div class="flex flex-col items-stretch">
+        {speakers.map(speaker => <div class="text-sm text-neutral-700">{isZhTW ? speaker.zh.name : speaker.en.name}</div>)}
+      </div>
+
+      {
+        !isRest && (
+          <div class="my-2 flex flex-wrap gap-1 text-xs text-white">
+            {session.type && <span class="bg-primary rounded-full px-2">{isZhTW ? type.zh.name : type.en.name}</span>}
+            {session.language && <span class="rounded-full bg-neutral-500 px-2">{t(`language.${session.language}`)}</span>}
+            {tags.map(tag => (
+              <span class="rounded-full bg-neutral-400 px-2">{isZhTW ? tag.zh.name : tag.en.name}</span>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  #navbar {
+    position: static;
+  }
+</style>

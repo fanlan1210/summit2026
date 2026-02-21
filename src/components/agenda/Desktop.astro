@@ -1,0 +1,58 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { useI18n, getLocaleFromPath } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+import Time from '~/components/agenda/Time.astro'
+import Session from '~/components/agenda/Session.astro'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const { title, date } = Astro.props
+
+const times = new Set()
+const sessions = []
+schedule.sessions.forEach(session => {
+  if (session.start.startsWith(date)) {
+    times.add(extractHHmm(session.start))
+    times.add(extractHHmm(session.end))
+    sessions.push(session)
+  }
+})
+---
+
+<div class="agenda">
+  <div class="sticky top-0 z-30 flex flex-col justify-center bg-white" style="height: var(--agenda-header-height);">
+    <div class="mb-5 flex justify-center gap-4 font-bold">
+      <a class={title === 'Day 1' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day1')}>Day 1</a>
+      <a class={title === 'Day 2' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day2')}>Day 2</a>
+    </div>
+
+    <div class="agenda-grid grid text-center">
+      <div></div>
+      <div class="bg-primary mx-3 py-2 text-white">{t('room.R0')}</div>
+      <div class="bg-primary mx-3 py-2 text-white">{t('room.R1')}</div>
+      <div class="bg-primary mx-3 py-2 text-white">{t('room.R2')}</div>
+      <div class="bg-primary mx-3 py-2 text-white">{t('room.RH')}</div>
+    </div>
+  </div>
+
+  <h2 class="mt-8 mb-12">{title}</h2>
+
+  <div class="agenda-grid relative grid">
+    {Array.from(times).map(time => <Time at={time} />)}
+    {sessions.map(session => <Session session={session} />)}
+  </div>
+</div>
+
+<style>
+  .agenda-grid {
+    grid-template-columns: [time] 4rem [R0] 1fr [R1] 1fr [R2] 1fr [RH] 1fr [end] auto [R4] 0;
+  }
+</style>
+
+<style is:global>
+  .agenda {
+    --agenda-header-height: 130px;
+  }
+</style>

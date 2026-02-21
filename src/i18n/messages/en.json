@@ -6,6 +6,16 @@
   "meta": {
     "description": "g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
   },
+  "language": {
+    "zh": "Mandarin",
+    "en": "English"
+  },
+  "room": {
+    "R0": "International Conference Hall (R0)",
+    "R1": "1st Conference Room (R1)",
+    "R2": "2nd Conference Room (R2)",
+    "RH": "Recreation Hall (RH)"
+  },
   "nav": {
     "agenda": "Agenda",
     "visit": "Visit",

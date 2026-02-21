@@ -8,7 +8,7 @@ const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
 
 const navs = [
-  { href: getRelativeLocaleUrl(locale, 'agenda'), name: t('nav.agenda') },
+  { href: getRelativeLocaleUrl(locale, 'agenda/day1'), name: t('nav.agenda') },
   { href: getRelativeLocaleUrl(locale, 'visit'), name: t('nav.visit') },
   { href: getRelativeLocaleUrl(locale, 'venue'), name: t('nav.venue') },
   { href: getRelativeLocaleUrl(locale, 'speaker'), name: t('nav.speaker') },

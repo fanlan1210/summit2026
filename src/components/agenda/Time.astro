@@ -1,0 +1,22 @@
+---
+const { at } = Astro.props
+
+const row = parseInt(at.replace(':', '')) || 0
+
+const style = at ? `grid-area: ${row} / time` : ''
+---
+
+<div class="agenda-timeline z-0 block" style={style}>
+  <div class="translate-y-[-50%] font-medium">{at}</div>
+</div>
+
+<style>
+  .agenda-timeline:before {
+    content: '';
+    position: absolute;
+    left: 4rem;
+    right: 0;
+    height: 1px;
+    background-color: #e5e5e5;
+  }
+</style>
