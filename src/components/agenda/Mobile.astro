@@ -8,7 +8,7 @@ import Session from '~/components/agenda/Session.astro'
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, date } = Astro.props
 
-const sessions = schedule.sessions.filter(session => session.start.startsWith(date)).sort(session => session.start.localeCompare(session.end))
+const sessions = schedule.sessions.filter(session => session.start.startsWith(date))
 
 const allSessions = sessions.reduce((acc, session) => {
   const key = extractHHmm(session.start)
@@ -66,12 +66,12 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
         <a class={title === 'Day 1' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day1')}>Day 1</a>
         <a class={title === 'Day 2' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day2')}>Day 2</a>
       </div>
-      <div class="grid grid-cols-5 text-center">
-        <button id="allBtn">ALL</button>
-        <button id="r0Btn">R0</button>
-        <button id="r1Btn">R1</button>
-        <button id="r2Btn">R2</button>
-        <button id="rhBtn">RH</button>
+      <div id="btns" class="grid grid-cols-5 text-center">
+        <button data-target="#allSessions" class="border-primary border-b-2 transition-colors">ALL</button>
+        <button data-target="#r0Sessions" class="border-b-2 border-transparent transition-colors">R0</button>
+        <button data-target="#r1Sessions" class="border-b-2 border-transparent transition-colors">R1</button>
+        <button data-target="#r2Sessions" class="border-b-2 border-transparent transition-colors">R2</button>
+        <button data-target="#rhSessions" class="border-b-2 border-transparent transition-colors">RH</button>
       </div>
     </div>
   </div>
@@ -79,69 +79,71 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
   <div class="container">
     <h2 class="mt-8 mb-12">{title}</h2>
 
-    <div id="allSessions">
-      {
-        allTimes.map(time => (
-          <div>
-            <div>{time}</div>
-            {allSessions[time].map(session => (
-              <Session session={session} />
-            ))}
-          </div>
-        ))
-      }
-    </div>
+    <div id="sessions">
+      <div id="allSessions">
+        {
+          allTimes.map(time => (
+            <div>
+              <div>{time}</div>
+              {allSessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
 
-    <div id="r0Sessions" style="display: none;">
-      {
-        r0Times.map(time => (
-          <div>
-            <div>{time}</div>
-            {r0Sessions[time].map(session => (
-              <Session session={session} />
-            ))}
-          </div>
-        ))
-      }
-    </div>
+      <div id="r0Sessions" style="display: none;">
+        {
+          r0Times.map(time => (
+            <div>
+              <div>{time}</div>
+              {r0Sessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
 
-    <div id="r1Sessions" style="display: none;">
-      {
-        r1Times.map(time => (
-          <div>
-            <div>{time}</div>
-            {r1Sessions[time].map(session => (
-              <Session session={session} />
-            ))}
-          </div>
-        ))
-      }
-    </div>
+      <div id="r1Sessions" style="display: none;">
+        {
+          r1Times.map(time => (
+            <div>
+              <div>{time}</div>
+              {r1Sessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
 
-    <div id="r2Sessions" style="display: none;">
-      {
-        r2Times.map(time => (
-          <div>
-            <div>{time}</div>
-            {r2Sessions[time].map(session => (
-              <Session session={session} />
-            ))}
-          </div>
-        ))
-      }
-    </div>
+      <div id="r2Sessions" style="display: none;">
+        {
+          r2Times.map(time => (
+            <div>
+              <div>{time}</div>
+              {r2Sessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
 
-    <div id="rhSessions" style="display: none;">
-      {
-        rhTimes.map(time => (
-          <div>
-            <div>{time}</div>
-            {rhSessions[time].map(session => (
-              <Session session={session} />
-            ))}
-          </div>
-        ))
-      }
+      <div id="rhSessions" style="display: none;">
+        {
+          rhTimes.map(time => (
+            <div>
+              <div>{time}</div>
+              {rhSessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
@@ -149,42 +151,21 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 <script>
   import $ from 'jquery'
 
-  const $allSessions = $('#allSessions')
-  const $r0Sessions = $('#r0Sessions')
-  const $r1Sessions = $('#r1Sessions')
-  const $r2Sessions = $('#r2Sessions')
-  const $rhSessions = $('#rhSessions')
+  const $btnsChildren = $('#btns button')
+  const $sessionsChildren = $('#sessions > div')
 
-  $('#allBtn').on('click', function () {
+  $('#btns').on('click', 'button', function () {
     hideAll()
-    $allSessions.css('display', '')
-  })
-
-  $('#r0Btn').on('click', function () {
-    hideAll()
-    $r0Sessions.css('display', '')
-  })
-
-  $('#r1Btn').on('click', function () {
-    hideAll()
-    $r1Sessions.css('display', '')
-  })
-
-  $('#r2Btn').on('click', function () {
-    hideAll()
-    $r2Sessions.css('display', '')
-  })
-
-  $('#rhBtn').on('click', function () {
-    hideAll()
-    $rhSessions.css('display', '')
+    $(this).removeClass('border-transparent').addClass('border-primary')
+    $($(this).data('target')).css('display', '')
   })
 
   function hideAll() {
-    $allSessions.css('display', 'none')
-    $r0Sessions.css('display', 'none')
-    $r1Sessions.css('display', 'none')
-    $r2Sessions.css('display', 'none')
-    $rhSessions.css('display', 'none')
+    $btnsChildren.each(function () {
+      $(this).removeClass('border-primary').addClass('border-transparent')
+    })
+    $sessionsChildren.each(function () {
+      $(this).css('display', 'none').removeClass('border-primary')
+    })
   }
 </script>
