@@ -2,6 +2,7 @@
 import { useI18n } from '~/i18n/utils'
 import Layout from '~/layouts/Layout.astro'
 import Desktop from './Desktop.astro'
+import Mobile from './Mobile.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -9,4 +10,11 @@ const { title, date } = Astro.props
 
 <Layout pageName={t('nav.agenda')}>
   <Desktop title={title} date={date} />
+  <Mobile title={title} date={date} />
 </Layout>
+
+<style is:global>
+  #navbar {
+    position: static;
+  }
+</style>
