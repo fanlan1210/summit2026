@@ -9,12 +9,8 @@ const isZhTW = locale === 'zh-tw'
 
 const { session } = Astro.props
 
-const columnOrder = {
-  R0: 0,
-  R1: 1,
-  R2: 2,
-  RH: 3,
-}
+const columnOrder = ['R0', 'R1', 'R2', 'RH', 'end']
+
 const tags = session.tags.map(tagId => tagIdToDetail(tagId))
 const speakers = session.speakers.map(speakerId => speakerIdToDetail(speakerId))
 const type = typeToDetail(session.type)
@@ -27,9 +23,11 @@ const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
-  if (columns.length === 1) return [columns[0], columns[0]]
-  columns.sort((a, b) => columnOrder[a] - columnOrder[b])
-  return [columns[0], columns.at(-1)]
+  if (columns.length !== 1) {
+    columns.sort((a, b) => columnOrder.indexOf(a) - columnOrder.indexOf(b))
+  }
+  const last = columnOrder.indexOf(columns.at(-1)) + 1
+  return [columns[0], columnOrder[last]]
 }
 
 function speakerIdToDetail(speakerId) {
