@@ -25,5 +25,35 @@
     "about": "About",
     "register": "Register"
   },
+  "visit": {
+    "info": {
+      "title": "Traffic Info",
+      "venueName": "Academia Sinica Humanities and Social Sciences Building",
+      "address": "128 Academia Rd. Sec. 2, Nangang, Taipei",
+      "osmMap": "OSM Map",
+      "googleMap": "Google Map",
+      "mapPlaceholder": "Open Street Map"
+    },
+    "transport": {
+      "title": "Transportation",
+      "tabs": {
+        "publicTransport": "Public Transit",
+        "driving": "Driving or Motorcycle"
+      },
+      "step1": {
+        "title": "1. To Nangang",
+        "item1": "Take TRA or HSR to Nangang Station.",
+        "item2": "Take Taipei MRT to Nangang Station (Blue Line) or Nangang Exhibition Center (Blue Line, Brown Line)."
+      },
+      "step2": {
+        "title": "2. To Academia Sinica",
+        "item1": "Shuttle buses run between Nangang Station and Academia Sinica (North side) daily 7:50–9:30. Look for staff with signs; interval about 20 min.",
+        "item2": "At MRT Nangang Station (Exit 2), take bus 212, 270, or Blue 25 to Academia Sinica.",
+        "item3": "At Nangang Exhibition Center (Exit 5), take bus 212, 276, 306, 620, 645, 679, 205, S5, S1, or S12 to Academia Sinica.",
+        "item4": "Walk or ride YouBike to Academia Sinica Humanities and Social Sciences Building."
+      },
+      "imagePlaceholder": "Image placeholder"
+    }
+  },
   "cookieNotice": "This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics."
 }

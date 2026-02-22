@@ -6,5 +6,89 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.visit')}>
-  <h1>{t('nav.visit')}</h1>
+  <div class="visit-main container mx-auto px-4 py-10">
+    <!-- 區塊一：交通資訊 -->
+    <div class="visit-section-info mb-16">
+      <div class="visit-section-info__title">
+        <h2>{t('visit.info.title')}</h2>
+      </div>
+      <div class="visit-section-info__content grid gap-8 md:grid-cols-2">
+        <!-- 左側：地址與地圖按鈕 -->
+        <div class="visit-section-info__left">
+          <div class="visit-venue-name">
+            <h3 class="text-primary">{t('visit.info.venueName')}</h3>
+          </div>
+          <div class="visit-address">
+            <address>{t('visit.info.address')}</address>
+          </div>
+          <div class="visit-map-buttons flex flex-wrap gap-3">
+            <div class="visit-map-btn visit-map-btn--osm">
+              <a href="#" class="btn">{t('visit.info.osmMap')}</a>
+            </div>
+            <div class="visit-map-btn visit-map-btn--google">
+              <a href="#" class="btn">{t('visit.info.googleMap')}</a>
+            </div>
+          </div>
+        </div>
+        <!-- 右側：地圖 -->
+        <div class="visit-section-info__right">
+          <div class="visit-map-embed aspect-video rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
+            {t('visit.info.mapPlaceholder')}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 區塊二：交通方式 -->
+    <div class="visit-section-transport">
+      <div class="visit-section-transport__title">
+        <h2>{t('visit.transport.title')}</h2>
+      </div>
+      <div class="visit-tabs">
+        <!-- 標籤頁導航 -->
+        <div class="visit-tabs__nav flex border-b border-neutral-300 gap-6">
+          <div class="visit-tabs__tab visit-tabs__tab--active border-b-2 border-primary pb-2">
+            <span>{t('visit.transport.tabs.publicTransport')}</span>
+          </div>
+          <div class="visit-tabs__tab pb-2">
+            <span>{t('visit.transport.tabs.driving')}</span>
+          </div>
+        </div>
+        <!-- 標籤頁內容 -->
+        <div class="visit-tabs__content mt-8">
+          <div class="visit-tab-panel grid gap-8 md:grid-cols-2">
+            <!-- 左側：交通說明 -->
+            <div class="visit-tab-panel__left">
+              <div class="visit-step">
+                <div class="visit-step__title">
+                  <h4>{t('visit.transport.step1.title')}</h4>
+                </div>
+                <ul class="visit-step__list">
+                  <li>{t('visit.transport.step1.item1')}</li>
+                  <li>{t('visit.transport.step1.item2')}</li>
+                </ul>
+              </div>
+              <div class="visit-step">
+                <div class="visit-step__title">
+                  <h4>{t('visit.transport.step2.title')}</h4>
+                </div>
+                <ul class="visit-step__list">
+                  <li>{t('visit.transport.step2.item1')}</li>
+                  <li>{t('visit.transport.step2.item2')}</li>
+                  <li>{t('visit.transport.step2.item3')}</li>
+                  <li>{t('visit.transport.step2.item4')}</li>
+                </ul>
+              </div>
+            </div>
+            <!-- 右側：預計配圖佔位 -->
+            <div class="visit-tab-panel__right">
+              <div class="visit-image-placeholder aspect-video rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
+                {t('visit.transport.imagePlaceholder')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
