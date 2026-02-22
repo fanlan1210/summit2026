@@ -7,18 +7,20 @@
   const tabs = nav.querySelectorAll('[data-tab]')
   const panels = document.querySelectorAll('.visit-tabs__content [data-panel]')
   const activeTabClass = 'visit-tabs__tab--active'
-  const activeBorder = 'border-b-2'
   const borderPrimary = 'border-primary'
+  const borderTransparent = 'border-transparent'
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', function () {
       const value = this.getAttribute('data-tab')
       if (!value) return
       tabs.forEach((t) => {
-        t.classList.remove(activeTabClass, activeBorder, borderPrimary)
+        t.classList.remove(activeTabClass, borderPrimary)
+        t.classList.add(borderTransparent)
         t.setAttribute('aria-selected', 'false')
       })
-      this.classList.add(activeTabClass, activeBorder, borderPrimary)
+      this.classList.remove(borderTransparent)
+      this.classList.add(activeTabClass, borderPrimary)
       this.setAttribute('aria-selected', 'true')
       panels.forEach((panel) => {
         const isActive = panel.getAttribute('data-panel') === value

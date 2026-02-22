@@ -52,7 +52,18 @@
         "item3": "At Nangang Exhibition Center (Exit 5), take bus 212, 276, 306, 620, 645, 679, 205, S5, S1, or S12 to Academia Sinica.",
         "item4": "Walk or ride YouBike to Academia Sinica Humanities and Social Sciences Building."
       },
-      "drivingPlaceholder": "Driving / motorcycle directions to be added.",
+      "drivingStep1": {
+        "title": "1. Driving Route",
+        "item1": "National Highway 3 Nanshen Rd. exit ramp → Jiuzhuang St. Sec. 1 → Academia Rd. Sec. 2 → Academia Sinica main gate."
+      },
+      "drivingStep2": {
+        "title": "2. Vehicle Access",
+        "item1": "To enter the campus by vehicle, present ID at the guard station by the main gate to obtain a temporary pass and park in designated areas."
+      },
+      "drivingStep3": {
+        "title": "3. Motorcycle Parking",
+        "item1": "Motorcycles are not allowed inside Academia Sinica. Please park at the lot to the right of the main gate, the side gate by Sifen Creek, or the motorcycle lot by Hu Shih Park."
+      },
       "imagePlaceholder": "Image placeholder"
     }
   },
