@@ -73,8 +73,8 @@ const { t } = useI18n(Astro.url.pathname)
                   <h4>{t('visit.transport.step1.title')}</h4>
                 </div>
                 <ul class="visit-step__list">
-                  <li>{t('visit.transport.step1.item1')}</li>
-                  <li>{t('visit.transport.step1.item2')}</li>
+                  <li set:html={t('visit.transport.step1.item1')}></li>
+                  <li set:html={t('visit.transport.step1.item2')}></li>
                 </ul>
               </div>
               <div class="visit-step">
@@ -82,10 +82,10 @@ const { t } = useI18n(Astro.url.pathname)
                   <h4>{t('visit.transport.step2.title')}</h4>
                 </div>
                 <ul class="visit-step__list">
-                  <li>{t('visit.transport.step2.item1')}</li>
-                  <li>{t('visit.transport.step2.item2')}</li>
-                  <li>{t('visit.transport.step2.item3')}</li>
-                  <li>{t('visit.transport.step2.item4')}</li>
+                  <li set:html={t('visit.transport.step2.item1')}></li>
+                  <li set:html={t('visit.transport.step2.item2')}></li>
+                  <li set:html={t('visit.transport.step2.item3')}></li>
+                  <li set:html={t('visit.transport.step2.item4')}></li>
                 </ul>
               </div>
             </div>
@@ -136,3 +136,15 @@ const { t } = useI18n(Astro.url.pathname)
     <script src="../scripts/visit-tabs.js"></script>
   </div>
 </Layout>
+
+<style>
+  .visit-step__title {
+    margin-bottom: 1.2rem;
+  }
+  /* 大眾運輸 step2、自行開車 step2/step3 上方加間距 */
+  #visit-panel-publicTransport .visit-tab-panel__left > .visit-step:nth-child(2),
+  #visit-panel-driving .visit-tab-panel__left > .visit-step:nth-child(2),
+  #visit-panel-driving .visit-tab-panel__left > .visit-step:nth-child(3) {
+    margin-top: 1.5rem;
+  }
+</style>
