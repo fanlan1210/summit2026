@@ -6,34 +6,34 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.visit')}>
-  <div class="visit-main container mx-auto px-4 py-10">
-    <!-- 區塊一：交通資訊 -->
-    <div class="visit-section-info mb-16">
+  <div class="visit-main container mx-auto px-10 py-25">
+    <!-- 區塊一：交通資訊（右欄較寬、地圖填滿寬高） -->
+    <div class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
       <div class="visit-section-info__title">
         <h2>{t('visit.info.title')}</h2>
       </div>
-      <div class="visit-section-info__content grid gap-8 md:grid-cols-2">
-        <!-- 左側：地址與地圖按鈕 -->
-        <div class="visit-section-info__left">
-          <div class="visit-venue-name">
+      <!-- 右側：地圖（與標題上緣同級、填滿右欄） -->
+      <div class="visit-section-info__right md:row-span-2 min-h-0">
+        <div class="visit-map-embed w-full h-full min-h-[400px] rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
+          {t('visit.info.mapPlaceholder')}
+        </div>
+      </div>
+      <!-- 左側：地址與地圖按鈕 -->
+      <div class="visit-section-info__content">
+        <div class="visit-section-info__left flex flex-col justify-center">
+          <div class="visit-venue-name mb-4 leading-relaxed">
             <h3 class="text-primary">{t('visit.info.venueName')}</h3>
           </div>
-          <div class="visit-address">
+          <div class="visit-address leading-relaxed">
             <address>{t('visit.info.address')}</address>
           </div>
-          <div class="visit-map-buttons flex flex-wrap gap-3">
+          <div class="visit-map-buttons flex flex-wrap gap-3 mt-8">
             <div class="visit-map-btn visit-map-btn--osm">
               <a href="#" class="btn">{t('visit.info.osmMap')}</a>
             </div>
             <div class="visit-map-btn visit-map-btn--google">
               <a href="#" class="btn">{t('visit.info.googleMap')}</a>
             </div>
-          </div>
-        </div>
-        <!-- 右側：地圖 -->
-        <div class="visit-section-info__right">
-          <div class="visit-map-embed aspect-video rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
-            {t('visit.info.mapPlaceholder')}
           </div>
         </div>
       </div>
@@ -46,18 +46,18 @@ const { t } = useI18n(Astro.url.pathname)
       </div>
       <div class="visit-tabs">
         <!-- 標籤頁導航 -->
-        <div class="visit-tabs__nav flex border-b border-neutral-300 gap-6">
-          <div class="visit-tabs__tab visit-tabs__tab--active border-b-2 border-primary pb-2">
+        <div class="visit-tabs__nav flex border-b border-neutral-300 gap-6" role="tablist">
+          <button type="button" class="visit-tabs__tab visit-tabs__tab--active border-b-2 border-primary pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="true" aria-controls="visit-panel-publicTransport" id="visit-tab-publicTransport" data-tab="publicTransport">
             <span>{t('visit.transport.tabs.publicTransport')}</span>
-          </div>
-          <div class="visit-tabs__tab pb-2">
+          </button>
+          <button type="button" class="visit-tabs__tab pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="false" aria-controls="visit-panel-driving" id="visit-tab-driving" data-tab="driving">
             <span>{t('visit.transport.tabs.driving')}</span>
-          </div>
+          </button>
         </div>
         <!-- 標籤頁內容 -->
-        <div class="visit-tabs__content mt-8">
-          <div class="visit-tab-panel grid gap-8 md:grid-cols-2">
-            <!-- 左側：交通說明 -->
+        <div class="visit-tabs__content mt-8 min-h-[480px]">
+          <!-- 大眾運輸 -->
+          <div id="visit-panel-publicTransport" class="visit-tab-panel grid gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
             <div class="visit-tab-panel__left">
               <div class="visit-step">
                 <div class="visit-step__title">
@@ -80,7 +80,17 @@ const { t } = useI18n(Astro.url.pathname)
                 </ul>
               </div>
             </div>
-            <!-- 右側：預計配圖佔位 -->
+            <div class="visit-tab-panel__right">
+              <div class="visit-image-placeholder aspect-video rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
+                {t('visit.transport.imagePlaceholder')}
+              </div>
+            </div>
+          </div>
+          <!-- 自行開車（暫用佔位文案） -->
+          <div id="visit-panel-driving" class="visit-tab-panel hidden grid gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
+            <div class="visit-tab-panel__left">
+              <p class="text-neutral-600">{t('visit.transport.drivingPlaceholder')}</p>
+            </div>
             <div class="visit-tab-panel__right">
               <div class="visit-image-placeholder aspect-video rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
                 {t('visit.transport.imagePlaceholder')}
@@ -90,5 +100,7 @@ const { t } = useI18n(Astro.url.pathname)
         </div>
       </div>
     </div>
+
+    <script src="../scripts/visit-tabs.js"></script>
   </div>
 </Layout>

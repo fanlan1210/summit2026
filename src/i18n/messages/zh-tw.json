@@ -29,7 +29,7 @@
     "info": {
       "title": "交通資訊",
       "venueName": "中央研究院人文社會科學館",
-      "address": "台北市南港區研究院路2段128號",
+      "address": "台北市南港區研究院路 2 段 128 號",
       "osmMap": "OSM Map",
       "googleMap": "Google Map",
       "mapPlaceholder": "Open Street Map"
@@ -52,6 +52,7 @@
         "item3": "於南港展覽館站 (5號出口) 換乘公車212、276、306、620、645、679、205、小5、小1或小12至中研院站。",
         "item4": "步行或騎乘 YouBike 至中央研究院人文社會科學館。"
       },
+      "drivingPlaceholder": "自行開車／摩托車說明內容待補。",
       "imagePlaceholder": "預計配圖"
     }
   },
