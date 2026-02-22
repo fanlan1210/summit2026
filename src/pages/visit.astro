@@ -6,7 +6,7 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.visit')}>
-  <main class="visit-main container mx-auto min-w-0 max-w-full px-10 py-25">
+  <main class="visit-main container min-w-0 max-w-full px-10 py-25">
     <!-- 區塊一：交通資訊 -->
     <div class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
       <div class="visit-section-info__title">
@@ -26,22 +26,16 @@ const { t } = useI18n(Astro.url.pathname)
         </div>
       </div>
       <!-- 左側：地址與地圖按鈕 -->
-      <div class="visit-section-info__content">
-        <div class="visit-section-info__left flex flex-col justify-center">
-          <div class="visit-venue-name mb-4 leading-relaxed text-info">
-            <h3>{t('visit.info.venueName')}</h3>
-          </div>
-          <div class="visit-address leading-relaxed">
-            <address>{t('visit.info.address')}</address>
-          </div>
-          <div class="visit-map-buttons flex flex-wrap gap-3 mt-8">
-            <div class="visit-map-btn visit-map-btn--osm">
-              <a href="https://www.openstreetmap.org/?mlat=25.041528&amp;mlon=121.611472#map=17/25.041528/121.611472" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary !text-base !font-normal">{t('visit.info.osmMap')}</a>
-            </div>
-            <div class="visit-map-btn visit-map-btn--google">
-              <a href="https://www.google.com/maps?q=25.041528,121.611472" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary !text-base !font-normal">{t('visit.info.googleMap')}</a>
-            </div>
-          </div>
+      <div class="visit-section-info__content flex flex-col justify-center">
+        <div class="visit-venue-name mb-4 leading-relaxed text-info">
+          <h3>{t('visit.info.venueName')}</h3>
+        </div>
+        <div class="visit-address leading-relaxed">
+          <address>{t('visit.info.address')}</address>
+        </div>
+        <div class="visit-map-buttons flex flex-wrap gap-3 mt-8">
+          <a href="https://www.openstreetmap.org/?mlat=25.041528&amp;mlon=121.611472#map=17/25.041528/121.611472" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary !text-base !font-normal">{t('visit.info.osmMap')}</a>
+          <a href="https://www.google.com/maps?q=25.041528,121.611472" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary !text-base !font-normal">{t('visit.info.googleMap')}</a>
         </div>
       </div>
     </div>
@@ -54,11 +48,11 @@ const { t } = useI18n(Astro.url.pathname)
       <div class="visit-tabs min-w-0">
         <!-- 標籤頁導航 -->
         <div class="visit-tabs__nav flex flex-wrap gap-6" role="tablist">
-          <button type="button" class="visit-tabs__tab visit-tabs__tab--active flex min-w-[10rem] flex-1 items-center justify-center gap-2 font-bold border-b-6 border-info-dark text-info-dark pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="true" aria-controls="visit-panel-publicTransport" id="visit-tab-publicTransport" data-tab="publicTransport">
+          <button type="button" class="visit-tabs__tab visit-tabs__tab--active flex min-w-[10rem] flex-1 md:flex-initial items-center justify-center gap-2 font-bold border-b-6 border-info-dark text-info-dark pb-2 bg-transparent" role="tab" aria-selected="true" aria-controls="visit-panel-publicTransport" id="visit-tab-publicTransport" data-tab="publicTransport">
             <iconify-icon icon="mdi:bus" class="size-5 shrink-0 [&>*]:text-current" aria-hidden="true"></iconify-icon>
             <span>{t('visit.transport.tabs.publicTransport')}</span>
           </button>
-          <button type="button" class="visit-tabs__tab flex min-w-[10rem] flex-1 items-center justify-center gap-2 font-bold border-b-6 border-transparent text-info pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="false" aria-controls="visit-panel-driving" id="visit-tab-driving" data-tab="driving">
+          <button type="button" class="visit-tabs__tab flex min-w-[10rem] flex-1 md:flex-initial items-center justify-center gap-2 font-bold border-b-6 border-transparent text-info pb-2 bg-transparent" role="tab" aria-selected="false" aria-controls="visit-panel-driving" id="visit-tab-driving" data-tab="driving">
             <iconify-icon icon="mdi:car" class="size-5 shrink-0 [&>*]:text-current" aria-hidden="true"></iconify-icon>
             <span>{t('visit.transport.tabs.drivingLine1')}<span class="whitespace-nowrap">{t('visit.transport.tabs.drivingLine2')}</span></span>
           </button>
@@ -69,19 +63,19 @@ const { t } = useI18n(Astro.url.pathname)
           <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
             <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
-                <div class="visit-step__title">
+                <div class="visit-step__title mb-5">
                   <h4>{t('visit.transport.publicTransportStep1.title')}</h4>
                 </div>
-                <ul class="visit-step__list">
+                <ul class="visit-step__list break-words">
                   <li set:html={t('visit.transport.publicTransportStep1.item1')}></li>
                   <li set:html={t('visit.transport.publicTransportStep1.item2')}></li>
                 </ul>
               </div>
-              <div class="visit-step">
-                <div class="visit-step__title">
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
                   <h4>{t('visit.transport.publicTransportStep2.title')}</h4>
                 </div>
-                <ul class="visit-step__list">
+                <ul class="visit-step__list break-words">
                   <li set:html={t('visit.transport.publicTransportStep2.item1')}></li>
                   <li set:html={t('visit.transport.publicTransportStep2.item2')}></li>
                   <li set:html={t('visit.transport.publicTransportStep2.item3')}></li>
@@ -99,26 +93,26 @@ const { t } = useI18n(Astro.url.pathname)
           <div id="visit-panel-driving" class="visit-tab-panel hidden grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
             <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
-                <div class="visit-step__title">
+                <div class="visit-step__title mb-5">
                   <h4>{t('visit.transport.drivingStep1.title')}</h4>
                 </div>
-                <ul class="visit-step__list">
+                <ul class="visit-step__list break-words">
                   <li>{t('visit.transport.drivingStep1.item1')}</li>
                 </ul>
               </div>
-              <div class="visit-step">
-                <div class="visit-step__title">
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
                   <h4>{t('visit.transport.drivingStep2.title')}</h4>
                 </div>
-                <ul class="visit-step__list">
+                <ul class="visit-step__list break-words">
                   <li>{t('visit.transport.drivingStep2.item1')}</li>
                 </ul>
               </div>
-              <div class="visit-step">
-                <div class="visit-step__title">
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
                   <h4>{t('visit.transport.drivingStep3.title')}</h4>
                 </div>
-                <ul class="visit-step__list">
+                <ul class="visit-step__list break-words">
                   <li>{t('visit.transport.drivingStep3.item1')}</li>
                 </ul>
               </div>
@@ -136,18 +130,3 @@ const { t } = useI18n(Astro.url.pathname)
     <script src="../scripts/visit-tabs.js"></script>
   </main>
 </Layout>
-
-<style>
-  .visit-step__title {
-    margin-bottom: 1.2rem;
-  }
-  .visit-section-transport .visit-step__list li {
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-  #visit-panel-publicTransport .visit-tab-panel__left > .visit-step:nth-child(2),
-  #visit-panel-driving .visit-tab-panel__left > .visit-step:nth-child(2),
-  #visit-panel-driving .visit-tab-panel__left > .visit-step:nth-child(3) {
-    margin-top: 2rem;
-  }
-</style>
