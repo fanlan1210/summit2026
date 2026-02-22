@@ -38,7 +38,8 @@
       "title": "交通方式",
       "tabs": {
         "publicTransport": "大眾運輸工具",
-        "driving": "自行開車或摩托車"
+        "drivingLine1": "自行開車",
+        "drivingLine2": "或摩托車"
       },
       "publicTransportStep1": {
         "title": "1. 移動至南港",

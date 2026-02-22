@@ -38,7 +38,8 @@
       "title": "Transportation",
       "tabs": {
         "publicTransport": "By Transit",
-        "driving": "Driving Directions"
+        "drivingLine1": "Driving",
+        "drivingLine2": "Directions"
       },
       "publicTransportStep1": {
         "title": "Reaching Nangang",

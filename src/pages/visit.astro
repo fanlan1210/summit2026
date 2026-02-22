@@ -6,7 +6,7 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.visit')}>
-  <main class="visit-main container mx-auto px-10 py-25">
+  <main class="visit-main container mx-auto min-w-0 max-w-full px-10 py-25">
     <!-- 區塊一：交通資訊 -->
     <div class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
       <div class="visit-section-info__title">
@@ -47,27 +47,27 @@ const { t } = useI18n(Astro.url.pathname)
     </div>
 
     <!-- 區塊二：交通方式 -->
-    <div class="visit-section-transport">
-      <div class="visit-section-transport__title mb-12">
+    <div class="visit-section-transport min-w-0">
+      <div class="visit-section-transport__title mb-12 break-words">
         <h2>{t('visit.transport.title')}</h2>
       </div>
-      <div class="visit-tabs">
+      <div class="visit-tabs min-w-0">
         <!-- 標籤頁導航 -->
-        <div class="visit-tabs__nav flex gap-6" role="tablist">
-          <button type="button" class="visit-tabs__tab visit-tabs__tab--active flex min-w-[13rem] items-center justify-center gap-2 font-bold border-b-6 border-info-dark text-info-dark pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="true" aria-controls="visit-panel-publicTransport" id="visit-tab-publicTransport" data-tab="publicTransport">
+        <div class="visit-tabs__nav flex flex-wrap gap-6" role="tablist">
+          <button type="button" class="visit-tabs__tab visit-tabs__tab--active flex min-w-[10rem] flex-1 items-center justify-center gap-2 font-bold border-b-6 border-info-dark text-info-dark pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="true" aria-controls="visit-panel-publicTransport" id="visit-tab-publicTransport" data-tab="publicTransport">
             <iconify-icon icon="mdi:bus" class="size-5 shrink-0 [&>*]:text-current" aria-hidden="true"></iconify-icon>
             <span>{t('visit.transport.tabs.publicTransport')}</span>
           </button>
-          <button type="button" class="visit-tabs__tab flex min-w-[13rem] items-center justify-center gap-2 font-bold border-b-6 border-transparent text-info pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="false" aria-controls="visit-panel-driving" id="visit-tab-driving" data-tab="driving">
+          <button type="button" class="visit-tabs__tab flex min-w-[10rem] flex-1 items-center justify-center gap-2 font-bold border-b-6 border-transparent text-info pb-2 cursor-pointer bg-transparent" role="tab" aria-selected="false" aria-controls="visit-panel-driving" id="visit-tab-driving" data-tab="driving">
             <iconify-icon icon="mdi:car" class="size-5 shrink-0 [&>*]:text-current" aria-hidden="true"></iconify-icon>
-            <span>{t('visit.transport.tabs.driving')}</span>
+            <span>{t('visit.transport.tabs.drivingLine1')}<span class="whitespace-nowrap">{t('visit.transport.tabs.drivingLine2')}</span></span>
           </button>
         </div>
         <!-- 標籤頁內容 -->
-        <div class="visit-tabs__content mt-8 min-h-[480px]">
+        <div class="visit-tabs__content mt-8 min-h-[480px] min-w-0">
           <!-- 大眾運輸 -->
-          <div id="visit-panel-publicTransport" class="visit-tab-panel grid gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
-            <div class="visit-tab-panel__left">
+          <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
+            <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
                 <div class="visit-step__title">
                   <h4>{t('visit.transport.publicTransportStep1.title')}</h4>
@@ -89,15 +89,15 @@ const { t } = useI18n(Astro.url.pathname)
                 </ul>
               </div>
             </div>
-            <div class="visit-tab-panel__right min-h-[320px]">
+            <div class="visit-tab-panel__right min-h-[320px] min-w-0">
               <div class="visit-image-placeholder aspect-video min-h-[320px] w-full rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
                 {t('visit.transport.imagePlaceholder')}
               </div>
             </div>
           </div>
           <!-- 自行開車 -->
-          <div id="visit-panel-driving" class="visit-tab-panel hidden grid gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
-            <div class="visit-tab-panel__left">
+          <div id="visit-panel-driving" class="visit-tab-panel hidden grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
+            <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
                 <div class="visit-step__title">
                   <h4>{t('visit.transport.drivingStep1.title')}</h4>
@@ -123,7 +123,7 @@ const { t } = useI18n(Astro.url.pathname)
                 </ul>
               </div>
             </div>
-            <div class="visit-tab-panel__right min-h-[320px]">
+            <div class="visit-tab-panel__right min-h-[320px] min-w-0">
               <div class="visit-image-placeholder aspect-video min-h-[320px] w-full rounded bg-neutral-200 flex items-center justify-center text-neutral-500">
                 {t('visit.transport.imagePlaceholder')}
               </div>
@@ -140,6 +140,10 @@ const { t } = useI18n(Astro.url.pathname)
 <style>
   .visit-step__title {
     margin-bottom: 1.2rem;
+  }
+  .visit-section-transport .visit-step__list li {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   #visit-panel-publicTransport .visit-tab-panel__left > .visit-step:nth-child(2),
   #visit-panel-driving .visit-tab-panel__left > .visit-step:nth-child(2),
