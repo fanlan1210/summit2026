@@ -32,7 +32,8 @@
       "address": "台北市南港區研究院路 2 段 128 號",
       "osmMap": "OSM Map",
       "googleMap": "Google Map",
-      "mapPlaceholder": "Open Street Map"
+      "mapPlaceholder": "Open Street Map",
+      "mapView": "查看"
     },
     "transport": {
       "title": "交通方式",

@@ -32,7 +32,8 @@
       "address": "128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan",
       "osmMap": "OSM Map",
       "googleMap": "Google Map",
-      "mapPlaceholder": "Open Street Map"
+      "mapPlaceholder": "Open Street Map",
+      "mapView": "View"
     },
     "transport": {
       "title": "Transportation",

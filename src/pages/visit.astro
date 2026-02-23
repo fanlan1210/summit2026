@@ -13,8 +13,8 @@ const { t } = useI18n(Astro.url.pathname)
         <h2>{t('visit.info.title')}</h2>
       </div>
       <!-- 右側：地圖 -->
-      <div class="visit-section-info__right min-h-0 md:row-span-2">
-        <div class="visit-map-embed h-full min-h-[400px] w-full overflow-hidden rounded">
+      <div class="visit-section-info__right hidden min-h-0 md:row-span-2 md:block">
+        <div class="visit-map-embed relative h-full min-h-[400px] w-full overflow-hidden rounded">
           <iframe
             title={t('visit.info.mapPlaceholder')}
             class="block h-full min-h-[450px] w-full border-0"
@@ -22,6 +22,9 @@ const { t } = useI18n(Astro.url.pathname)
             referrerpolicy="no-referrer-when-downgrade"
             src="https://www.openstreetmap.org/export/embed.html?bbox=121.605%2C25.038%2C121.618%2C25.045&layer=mapnik&marker=25.041528%2C121.611472"
             loading="lazy"></iframe>
+          <div class="visit-map-embed__overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40">
+            <button type="button" class="visit-map-embed__view-btn btn btn-lg btn-primary text-base! font-normal!">{t('visit.info.mapView')}</button>
+          </div>
         </div>
       </div>
       <!-- 左側：地址與地圖按鈕 -->
@@ -161,5 +164,16 @@ const { t } = useI18n(Astro.url.pathname)
     </div>
 
     <script src="../scripts/visit-tabs.js"></script>
+    <script>
+      document.querySelector('.visit-map-embed__view-btn')?.addEventListener('click', function () {
+        this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+      })
+    </script>
+    <style>
+      .visit-map-embed--active .visit-map-embed__overlay {
+        pointer-events: none;
+        opacity: 0;
+      }
+    </style>
   </main>
 </Layout>
