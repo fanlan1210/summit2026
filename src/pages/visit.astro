@@ -6,5 +6,164 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.visit')}>
-  <h1>{t('nav.visit')}</h1>
+  <main class="visit-main container max-w-full min-w-0 px-10 py-25">
+    <!-- 區塊一：交通資訊 -->
+    <div class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
+      <div class="visit-section-info__title">
+        <h2>{t('visit.info.title')}</h2>
+      </div>
+      <!-- 右側：地圖 -->
+      <div class="visit-section-info__right hidden min-h-0 md:row-span-2 md:block">
+        <div class="visit-map-embed relative h-full min-h-[400px] w-full overflow-hidden rounded">
+          <iframe
+            title={t('visit.info.mapPlaceholder')}
+            class="block h-full min-h-[450px] w-full border-0"
+            sandbox="allow-scripts"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=121.605%2C25.038%2C121.618%2C25.045&layer=mapnik&marker=25.041528%2C121.611472"
+            loading="lazy"></iframe>
+          <div class="visit-map-embed__overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40">
+            <button type="button" class="visit-map-embed__view-btn btn btn-lg btn-primary text-base! font-normal!">{t('visit.info.mapView')}</button>
+          </div>
+        </div>
+      </div>
+      <!-- 左側：地址與地圖按鈕 -->
+      <div class="visit-section-info__content flex flex-col justify-center">
+        <div class="visit-venue-name text-info mb-4 leading-relaxed">
+          <h3>{t('visit.info.venueName')}</h3>
+        </div>
+        <div class="visit-address leading-relaxed">
+          <address>{t('visit.info.address')}</address>
+        </div>
+        <div class="visit-map-buttons mt-8 flex flex-wrap gap-3">
+          <a
+            href="https://www.openstreetmap.org/?mlat=25.041528&mlon=121.611472#map=17/25.041528/121.611472"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-lg btn-primary text-base! font-normal!">{t('visit.info.osmMap')}</a
+          >
+          <a href="https://maps.app.goo.gl/LVEvAzn1x7rboLUJ6" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary text-base! font-normal!">{t('visit.info.googleMap')}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 區塊二：交通方式 -->
+    <div class="visit-section-transport min-w-0">
+      <div class="visit-section-transport__title mb-12 wrap-break-word">
+        <h2>{t('visit.transport.title')}</h2>
+      </div>
+      <div class="visit-tabs min-w-0">
+        <!-- 標籤頁導航 -->
+        <div class="visit-tabs__nav flex flex-nowrap gap-3 md:gap-6" role="tablist">
+          <button
+            type="button"
+            class="visit-tabs__tab visit-tabs__tab--active border-info-dark text-info-dark flex min-w-0 flex-1 items-center justify-center gap-2 border-b-6 bg-transparent pb-2 font-bold md:min-w-40 md:flex-initial"
+            role="tab"
+            aria-selected="true"
+            aria-controls="visit-panel-publicTransport"
+            aria-label={t('visit.transport.tabs.publicTransport')}
+            id="visit-tab-publicTransport"
+            data-tab="publicTransport"
+          >
+            <iconify-icon icon="mdi:bus" class="size-5 shrink-0" aria-hidden="true"></iconify-icon>
+            <span class="hidden md:inline">{t('visit.transport.tabs.publicTransport')}</span>
+          </button>
+          <button
+            type="button"
+            class="visit-tabs__tab text-info flex min-w-0 flex-1 items-center justify-center gap-2 border-b-6 border-transparent bg-transparent pb-2 font-bold md:min-w-40 md:flex-initial"
+            role="tab"
+            aria-selected="false"
+            aria-controls="visit-panel-driving"
+            aria-label={`${t('visit.transport.tabs.drivingLine1')} ${t('visit.transport.tabs.drivingLine2')}`}
+            id="visit-tab-driving"
+            data-tab="driving"
+          >
+            <iconify-icon icon="mdi:car" class="size-5 shrink-0" aria-hidden="true"></iconify-icon>
+            <span class="hidden md:inline">{t('visit.transport.tabs.drivingLine1')}<span class="whitespace-nowrap">{t('visit.transport.tabs.drivingLine2')}</span></span>
+          </button>
+        </div>
+
+        <!-- 標籤頁內容 -->
+        <div class="visit-tabs__content mt-8 min-h-[480px] min-w-0">
+          <!-- 大眾運輸 -->
+          <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
+            <div class="visit-tab-panel__left min-w-0">
+              <div class="visit-step">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.publicTransportStep1.title')}</h4>
+                </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li set:html={t('visit.transport.publicTransportStep1.item1')} />
+                  <li set:html={t('visit.transport.publicTransportStep1.item2')} />
+                </ul>
+              </div>
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.publicTransportStep2.title')}</h4>
+                </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li set:html={t('visit.transport.publicTransportStep2.item1')} />
+                  <li set:html={t('visit.transport.publicTransportStep2.item2')} />
+                  <li set:html={t('visit.transport.publicTransportStep2.item3')} />
+                  <li set:html={t('visit.transport.publicTransportStep2.item4')} />
+                </ul>
+              </div>
+            </div>
+            <div class="visit-tab-panel__right min-w-0">
+              <div class="visit-image-placeholder flex aspect-video min-h-[320px] w-full items-center justify-center rounded bg-neutral-200 text-neutral-500">
+                {t('visit.transport.imagePlaceholder')}
+              </div>
+            </div>
+          </div>
+          <!-- 自行開車 -->
+          <div id="visit-panel-driving" class="visit-tab-panel hidden min-w-0 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
+            <div class="visit-tab-panel__left min-w-0">
+              <div class="visit-step">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep1.title')}</h4>
+                </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep1.item1')}</li>
+                </ul>
+              </div>
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep2.title')}</h4>
+                </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep2.item1')}</li>
+                </ul>
+              </div>
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep3.title')}</h4>
+                </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep3.item1')}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="visit-tab-panel__right min-w-0">
+              <div class="visit-image-placeholder flex aspect-video min-h-[320px] w-full items-center justify-center rounded bg-neutral-200 text-neutral-500">
+                {t('visit.transport.imagePlaceholder')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/visit-tabs.js"></script>
+    <script>
+      document.querySelector('.visit-map-embed__view-btn')?.addEventListener('click', function () {
+        this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+      })
+    </script>
+    <style>
+      .visit-map-embed--active .visit-map-embed__overlay {
+        pointer-events: none;
+        opacity: 0;
+      }
+    </style>
+  </main>
 </Layout>

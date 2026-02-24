@@ -25,5 +25,49 @@
     "about": "關於",
     "register": "參與活動"
   },
+  "visit": {
+    "info": {
+      "title": "交通資訊",
+      "venueName": "中央研究院人文社會科學館",
+      "address": "台北市南港區研究院路 2 段 128 號",
+      "osmMap": "OSM Map",
+      "googleMap": "Google Map",
+      "mapPlaceholder": "Open Street Map",
+      "mapView": "查看"
+    },
+    "transport": {
+      "title": "交通方式",
+      "tabs": {
+        "publicTransport": "大眾運輸工具",
+        "drivingLine1": "自行開車",
+        "drivingLine2": "或摩托車"
+      },
+      "publicTransportStep1": {
+        "title": "1. 移動至南港",
+        "item1": "搭乘<a href=\"https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵</a>、<a href=\"https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">高鐵</a>至南港站。",
+        "item2": "搭乘<a href=\"https://www.metro.taipei/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台北捷運</a>至南港站（板南線）、南港展覽館站（板南線、文湖線）。"
+      },
+      "publicTransportStep2": {
+        "title": "2. 移動至中研院",
+        "item1": "年會接駁車每日早上 7:50 至 9:30 來回行駛<a href=\"https://maps.app.goo.gl/npaRb5tB9zpv8mYU8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵南港站</a> ↔ <a href=\"https://maps.app.goo.gl/SjMNHSzr76wUS1Mx7\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">中央研究院人文社會科學館北側</a>，請留意現場舉指示牌的工作人員；來回班距約 20 分鐘，還請提早前往等待。",
+        "item2": "於捷運南港站（2 號出口）換乘公車 <a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100021230\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">212直</a>、<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100027000\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">270 </a>或<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0112002500\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> 藍25</a> 至中研院站。",
+        "item3": "於南港展覽館站（5 號出口）換乘公車 212、276、306、620、645、679、205、小5、小1 或 小12 至中研院站。",
+        "item4": "步行或騎乘<a href=\"https://www.youbike.com.tw/region/taipei/stations/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> YouBike </a>至中央研究院人文社會科學館。"
+      },
+      "drivingStep1": {
+        "title": "1. 行車路線",
+        "item1": "國道3號南深路出口匝道→舊莊街一段→研究院路二段→中研院大門。"
+      },
+      "drivingStep2": {
+        "title": "2. 車輛入園",
+        "item1": "車輛進入中研院區，請持證件向大門警衛室換取臨時通行證並依規定停放。"
+      },
+      "drivingStep3": {
+        "title": "3. 機車停放",
+        "item1": "機車無法駛入中研院，請停放在中研院大門右側、四分溪旁側門、或是胡適公園旁的機車停車場。"
+      },
+      "imagePlaceholder": "預計配圖"
+    }
+  },
   "cookieNotice": "本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。"
 }
