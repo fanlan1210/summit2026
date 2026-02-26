@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
+  "type": "module",
   "author": "SeanGau",
   "license": "MIT",
   "engines": {
@@ -14,7 +15,8 @@
     "preview-production": "cross-env BUILD_MODE=production astro preview",
     "build": "cross-env BUILD_MODE=staging astro build",
     "preview": "cross-env BUILD_MODE=stagin astro preview",
-    "dev": "cross-env BUILD_MODE=staging astro dev"
+    "dev": "cross-env BUILD_MODE=staging astro dev",
+    "fetch-schedule": "node fetch-schedule.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
