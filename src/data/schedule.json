@@ -22,8 +22,17 @@
         "title": "Wikidata as the foundation of data co-governance platfom for communities",
         "description": "This lecture continues from the Open Data Day 2021 presentation on \"Open Data Models Based on Wikidata: External Database Applications and Community Co-governance Models\". It will incorporate the work results of the Wikidata Taiwan community from 2022 and 2023, re-examining the current status of data integration into Wikidata across various fields (including education, arts, local studies, etc.). The session will review mechanisms and possibilities for cross-database and cross-platform data co-governance and will attempt to propose new directions for action.\n\n---\n\nThemes:\n資料、人工智慧與社群協作；草根、開放、多中心的公民社群如何回應政治與科技的極權；技術與議題的交鋒\n\n---\n\nTarget audience:\nWikidata 、Open Data 、資料治理\n\n---\n\nRecommend pre-study:\n開放資料、資料治理、資料庫"
       },
-      "speakers": ["zh-20", "zh-28", "zh-17"],
-      "tags": ["Beginner", "非營利組織", "社群治理", "開源精神"]
+      "speakers": [
+        "zh-20",
+        "zh-28",
+        "zh-17"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織",
+        "社群治理",
+        "開源精神"
+      ]
     },
     {
       "id": "2024-014",
@@ -47,8 +56,20 @@
         "title": "Open Parliament: A Four Year Review",
         "description": "Open Parliament is a new form of public-private partnership and civic engagement.  Looking back at the work of Open Parliament during 2020 to 2024 from the institutional and cultural aspects, can it be continued in 2024? \n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\n國會 開放 參與\n\n---\n\nRecommend pre-study:\nOGP 開放國會"
       },
-      "speakers": ["zh-5", "zh-31", "zh-32", "zh-33"],
-      "tags": ["Beginner", "大數據(資料治理)", "SDG", "開源精神", "數位轉型", "教育"]
+      "speakers": [
+        "zh-5",
+        "zh-31",
+        "zh-32",
+        "zh-33"
+      ],
+      "tags": [
+        "Beginner",
+        "大數據(資料治理)",
+        "SDG",
+        "開源精神",
+        "數位轉型",
+        "教育"
+      ]
     },
     {
       "id": "2024-018",
@@ -72,8 +93,16 @@
         "title": "How to intergrate Open Government Data - Taiwan Case Experience",
         "description": "OpenStreetMap is one of the well-known community-collaborated co-edited map.  It takes 10 years to accumulate such a huge amount of geodate. In Taiwan, the OpenStreetMap Taiwan Community with the help of publicly released pen data datasets by the Taiwanese government, has imported so much data into OpenStreetMap. We have imported places, village boundaries, traffic-related bus stops, fire hydrants, ETC toll gates, and emergency assemble points, and have various stories to tell during our sharing time. And of course, we want to give advice to the Taiwan government.\n\n---\n\nThemes:\n資料、人工智慧與社群協作\n\n---\n\nTarget audience:\nOpenStreetMap, Wikidata, Crowd-sourcing\n\n---\n\nRecommend pre-study:\nOpenStreetMap, Wikidata, Data Quality "
       },
-      "speakers": ["zh-17"],
-      "tags": ["Beginner", "非營利組織", "社群治理", "公民倡議", "開源精神"]
+      "speakers": [
+        "zh-17"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織",
+        "社群治理",
+        "公民倡議",
+        "開源精神"
+      ]
     },
     {
       "id": "2024-020",
@@ -97,8 +126,14 @@
         "title": "Would constructing a media ecosystem save the democracy?",
         "description": "Many people say that news is the cornerstone of democracy. However, various surveys in recent years show that public trust in news is declining, yet most information is still obtained through social media channels distributing news media content. The algorithms that push content on these platforms act as a filter. To gain an advantage in these algorithms, news media often resort to sensational content and headlines, which in turn negatively affects public trust. This negative cycle also impacts the business operations of news media.\n\nIs there a chance to use technology to create a news ecosystem that can change this cycle? An ecosystem where commercial media, independent media, freelance journalists, and readers all participate to generate a positive cycle.\n\n\n\n\n\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\n新聞 民主\n\n---\n\nRecommend pre-study:\n無"
       },
-      "speakers": ["zh-1"],
-      "tags": ["Beginner", "群眾外包", "地圖資料"]
+      "speakers": [
+        "zh-1"
+      ],
+      "tags": [
+        "Beginner",
+        "群眾外包",
+        "地圖資料"
+      ]
     },
     {
       "id": "2024-022",
@@ -122,8 +157,13 @@
         "title": "OONI Research Project and Taiwan Internet Freedom Observation",
         "description": "OONI is an observation and detection project that assesses whether the internet is subject to censorship, surveillance, interference, or blocking. Global volunteers are recruited to install OONI Probes in their respective regions, conducting regular tests and reporting their observations.\n\nAs a global community partner of OONI, the [Open Culture Foundation](https://ocf.tw/en/) primarily assists in promoting, installing, reviewing observation reports, and discoveries. The collected data undergoes in-depth analysis and research to understand the current landscape, enabling the identification of goals for improvement. Through the [OONI-Research](https://ocf.tw/en/p/ooni/) project, we aim to recruit a cohort of civic tech enthusiasts and data analysis volunteers in Taiwan.\n\nTogether, we observe the local internet environment, analyze data, and collaborate to understand the observations from various countries. This initiative seeks to engage volunteers in actively participating in civic technology and contribute to a comprehensive analysis of internet freedom globally.\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\n網路審查, 資料分析, 網路自由\n\n---\n\nRecommend pre-study:\nASN, CitizenLab, Open Observatory"
       },
-      "speakers": ["zh-2"],
-      "tags": ["Beginner", "非營利組織"]
+      "speakers": [
+        "zh-2"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織"
+      ]
     },
     {
       "id": "2024-026",
@@ -147,8 +187,16 @@
         "title": "Cases from Civil IoT Taiwan: How IoT tech can enhance Social Inclusion",
         "description": "Civic Sense is an initiative of OCF aimed at providing environmental sensors and basic training to civic organizations. The goal is to assist these organizations in better understanding dynamic environmental data and supporting their advocacy objectives.\nBy deploying sensors and applying data analysis to the collected information, civic organizations can more easily enhance public awareness and participation in public affairs. This, in turn, facilitates public-private collaboration on environmental issues, making cooperation between the government and citizens possible.\n\n---\n\nThemes:\n資料、人工智慧與社群協作；草根、開放、多中心的公民社群如何回應政治與科技的極權；技術與議題的交鋒\n\n---\n\nTarget audience:\nCivic Tech、開放硬體、開源\n\n---\n\nRecommend pre-study:\nCivic Tech、開放硬體、開源"
       },
-      "speakers": ["zh-25", "zh-26", "zh-30"],
-      "tags": ["Beginner", "大數據(資料治理)", "地圖資料"]
+      "speakers": [
+        "zh-25",
+        "zh-26",
+        "zh-30"
+      ],
+      "tags": [
+        "Beginner",
+        "大數據(資料治理)",
+        "地圖資料"
+      ]
     },
     {
       "id": "2024-035",
@@ -172,8 +220,14 @@
         "title": "A Cross between Citizen Science and Civic Tech",
         "description": "To connect the research of experts to social implementation, we have to consider the possibility of collaboration between civic tech and citizen science, and collaboration in civic tech communities in East Asian countries.\nCode for Japan has taken an increasing number of approaches to social implementation of knowledge and algorithms from research institutions in recent years, including a project to visualize carbon dioxide emissions in collaboration with the National Institute for Environmental Studies and a sleep measurement project with the National Center of Neurology and Psychiatry. \nLet's think and work together to create an environment where not only civic tech in times of disaster or emergency, but also civic tech in normal times can contribute to civil society.\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\nThis topic is for those interested in university collaboration and the use of technology with scientific research and social implementation.\n\n---\n\nRecommend pre-study:\ncitizen science, collaboration, STEAM education"
       },
-      "speakers": ["en-11", "en-15"],
-      "tags": ["Beginner", "非營利組織"]
+      "speakers": [
+        "en-11",
+        "en-15"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織"
+      ]
     },
     {
       "id": "2024-038",
@@ -197,8 +251,16 @@
         "title": "Anti-Misinformation Factchecking Chatbot: A Prototype for Malaysia",
         "description": "An interactive workshop to introduce, gather feedback, and solicit ideas on a prototype for a cross-platform an anti-misinformation chatbot targeted at Malaysian internet users. In this session, we will go through the implementation of multimedia integrations with WhatsApp and other instant messaging systems as well as an overview of available open standards for factchecking. \n\n---\n\nThemes:\n資料、人工智慧與社群協作；草根、開放、多中心的公民社群如何回應政治與科技的極權；基於同理心、涵容、多元性的數位基礎建設；技術與議題的交鋒\n\n---\n\nTarget audience:\nDigital rights advocates,factcheckers, anti-misinformation campaigners, journalists, funders who are interested in the topic\n\n---\n\nRecommend pre-study:\nMisinformation, factchecking, information control"
       },
-      "speakers": ["en-2"],
-      "tags": ["Beginner", "非營利組織", "社群治理", "公民倡議", "開源精神"]
+      "speakers": [
+        "en-2"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織",
+        "社群治理",
+        "公民倡議",
+        "開源精神"
+      ]
     },
     {
       "id": "2024-040",
@@ -222,8 +284,15 @@
         "title": "Will it be possible to have an opne source social enterprise focus on serving NPOs?",
         "description": "Looking at the open source business models in foreign markets, many emerges from developer ecosystems to users, and finally to venture capital involvement. However, NETivism has experimented with a social enterprise model for 15 years, focusing on serving NPOs with open source SaaS and practicing various social enterprise values. Is this a viable path?\n\nThis submission attempts to answer the following questions:\n\n- Besides code being open source, what else relates to being public and transparent?\n- Besides open values, what other values are important?\n- Is marrying social enterprise with open source a good approach?\n- Is it a good combination to use open source to serve NPOs?\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\n開放原始碼,NPO,創業\n\n---\n\nRecommend pre-study:\n社會企業,資料隱私,開源"
       },
-      "speakers": ["zh-4"],
-      "tags": ["Beginner", "非營利組織", "社群治理", "公民倡議"]
+      "speakers": [
+        "zh-4"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織",
+        "社群治理",
+        "公民倡議"
+      ]
     },
     {
       "id": "2024-054",
@@ -247,8 +316,13 @@
         "title": "Let's test the rights to access, delete, and cease the use of personal data",
         "description": "In the apps we use regularly, website memberships, and large databases of the government, where does the data about me come from, what personal information is included, and for what purposes is it used? What obstacles might I encounter when I want to access, delete, or request the cessation of the use of my personal data? This workshop will feature the requesting experience of the host, as well as participants actively requesting and discussing privacy policies. This session requires internet access and capable devices. The discussions from the workshop will also serve as a reference for future advocacy related to personal data protection laws.\n\n\n\n\n\n---\n\nThemes:\nNerd Politics vs. 數位治理\n\n---\n\nTarget audience:\n隱私權、個資保護、資訊自主\n\n---\n\nRecommend pre-study:\n刪除權、目的外利用、查閱製給複本"
       },
-      "speakers": ["zh-3"],
-      "tags": ["Beginner", "公民倡議"]
+      "speakers": [
+        "zh-3"
+      ],
+      "tags": [
+        "Beginner",
+        "公民倡議"
+      ]
     },
     {
       "id": "2024-056",
@@ -272,8 +346,14 @@
         "title": "The Value of Open Source in Furthering Accessibility Goals",
         "description": "Open source has the potential to play a key role in supporting a more inclusive society. Governments around the world are struggling to produce accessible digital content, yet many overlook actively leveraging open source solutions. Unlike proprietary tools, most open source tools tend to focus on issues which are of interest to their membership. Engaging in improving the accessibility of open source projects provides a number of benefits. \n\nIn this session, participants will learn about how to engage about accessibility in the open source projects that they use. I will also highlight how people with disabilities can be engaged as experts in identifying and resolving barriers that they encounter. \n\nThere are opportunities for innovation by prioritizing the needs of people with disabilities. Building a semantic digital infrastructure is key for people with disabilities, but also critical for future compatibility issues with new digital interfaces. \n\n---\n\nThemes:\n基於同理心、涵容、多元性的數位基礎建設；技術與議題的交鋒\n\n---\n\nTarget audience:\nPeople interested in digital accessibility and inclusion / Novice / Intermediate\n\n---\n\nRecommend pre-study:\naccessibility, wcag, open source"
       },
-      "speakers": ["en-9"],
-      "tags": ["Beginner", "群眾外包", "地圖資料"]
+      "speakers": [
+        "en-9"
+      ],
+      "tags": [
+        "Beginner",
+        "群眾外包",
+        "地圖資料"
+      ]
     },
     {
       "id": "2024-062",
@@ -297,8 +377,13 @@
         "title": "Misuse of Citizen Data by South Korea Government through AI and other Technologies: What Can Civil Society Do?",
         "description": "We will explore the issues raised by the South Korean government's misuse of citizens' data, and how these concerns can be addressed in other societies.\n\nWhile AI technology and facial recognition are being regulated in many countries around the world, the South Korean government has taken a different approach, leading to various other forms of misuse, including\n\n- Facial recognition of citizens and foreigners\n- Encouraging companies to use personal information, including health-related data\n- Indiscriminate collection of biometric data, such as fingerprints\n- Implementing digital identification systems\n- Use of AI-based public safety cameras\n\nThroughout the session, we will look at the consequences of such misuse and discuss the importance of data governance and protecting citizens' privacy. In addition, we will explore the role of community collaboration in addressing these issues and propose potential solutions that civil society can adopt to protect citizens' data and prevent its misuse.\n\n---\n\nThemes:\n資料、人工智慧與社群協作\n\n---\n\nTarget audience:\n\n\n---\n\nRecommend pre-study:\n"
       },
-      "speakers": ["en-13"],
-      "tags": ["數位韌性", "數位民防"]
+      "speakers": [
+        "en-13"
+      ],
+      "tags": [
+        "數位韌性",
+        "數位民防"
+      ]
     },
     {
       "id": "2024-064",
@@ -322,8 +407,15 @@
         "title": "Digital Technology and Civil-Government Partnerships to Solve National Social Issues of South Korea ",
         "description": "As the types of crises become more complex, diverse and rapid,  follow-up management are becoming difficult. Fortunately, in South Korea, in recent national crises, there are increasing cases where various entities such as citizen experts, private companies, citizen hackers, public institutions, and ministries provide collaborative networks and digital capabilities to quickly solve problems.\n  For example, various examples are emerging, such as cooperation between the Pharmaceutical Association and the government to prevent medicines from being sold out, and public-private cooperation to solve social problems, such as responding to digital traffic surge for Flood risk area guide map public services such as maps to guide people at risk of being submerged during floods.\n  To ensure the sustainability of this digital-based public-private cooperation, our government launched the ‘Digital Technology and Civil-Government Cooperation Project to Solve National Social Issues.’ We are establishing a cloud-based 'civil-government cooperation support platform' and utilizing communication channels with the public to solve social problems and promote civil-government cooperation.\nI would like to introduce examples of digital technology and public-private cooperation to solve South Korea's national and social problems.\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\nPeople who are trying to solve the problem with digital tools in emergency situation(disaster like COVID-19) of Nation\n\n---\n\nRecommend pre-study:\nProblem solving with digital tools, Against national disaster, Civil-Government Partnerships"
       },
-      "speakers": ["en-4"],
-      "tags": ["Beginner", "非營利組織", "社群治理", "公民倡議"]
+      "speakers": [
+        "en-4"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織",
+        "社群治理",
+        "公民倡議"
+      ]
     },
     {
       "id": "2024-068",
@@ -347,8 +439,17 @@
         "title": "Building Pathways: Participatory Data Governance for Co-Generated Data",
         "description": "Our session presents immersive strategies to help participants engage with Aapti Institute’s body of research, which explores collective rights and community participation in context of co-generated data and AI. Aapti Institute is a women-led research institution based in Bengaluru, India, that examines lived experiences at the intersection of technology and society. Our ongoing research centres the criticality of data in the digital space, and seeks to unravel the intricate relationship between data, supporting infrastructures, and community values. Aapti's multidisciplinary and multi-stakeholder approach is showcased in our Playbook on Fostering Participatory Data Stewardship, which presents a rich compendium of resources on modelling data stewardship mechanisms.\nOur work explores evolving communal dimensions of data use in context of AI, cogeneration, and community data rights. Further, we have developed framework for embedding participatory governance in co-generated mental health data. Leveraging a workshop format, we aim to organise activities that can help participants deeply engage with the challenges in regulating different scenarios of co-generation with a participatory lens. Shifting to solutions, we advocate for recognizing and protecting collective data rights, challenging the limitations of consent and data governance regulations, and proposing an infrastructural lens to adopting data justice frameworks for trustworthy engagement.\n\n---\n\nThemes:\n資料、人工智慧與社群協作\n\n---\n\nTarget audience:\nPolicy and civil-society actors, participative community initiatives, AI and data governance enthusiasts \n\n---\n\nRecommend pre-study:\nCogenerated data, participatory data governance, GenAI and intellectual property "
       },
-      "speakers": ["en-7", "en-8"],
-      "tags": ["Beginner", "開放政府", "大數據(資料治理)", "群眾外包", "地圖資料"]
+      "speakers": [
+        "en-7",
+        "en-8"
+      ],
+      "tags": [
+        "Beginner",
+        "開放政府",
+        "大數據(資料治理)",
+        "群眾外包",
+        "地圖資料"
+      ]
     },
     {
       "id": "2024-073",
@@ -372,8 +473,14 @@
         "title": "Community Driven Data Interoperability: The Case of a Local Government, a Research Institution and a Small Media Organization",
         "description": "This talk explores the transformative power of open data in fostering public participation and informed decision-making. We delve into three compelling use cases: Mexico City's innovative open data portal, a Colombian research institute's collaborative biodiversity data project, and a Spanish newsroom's integrative approach to data-driven journalism. Each case highlights the challenges and breakthroughs in constructing platforms that democratize information via visual uses of the data.\n\nIn Mexico City, citizens can upload personal data to the city's portal, intersecting it with official datasets, enhancing transparency and community engagement. Colombia's case showcases a network collaborators weaving indigenous wisdom with scientific research to map biodiversity, emphasizing the value of diverse knowledge systems. The Spanish newsroom scenario illustrates how consolidating varied data sources creates impactful, verifiable reporting on critical issues.\n\nThese examples underscore the complexities of building accessible, user-friendly platforms while maintaining data integrity and security. Key learnings include navigating technical, cultural, and ethical considerations to create tools that not only present data but also actively engage communities in meaningful public discourse. This session aims to provide insights into leveraging open data as a catalyst for civic action and societal change.\n\n---\n\nThemes:\n資料、人工智慧與社群協作；基於同理心、涵容、多元性的數位基礎建設；技術與議題的交鋒\n\n---\n\nTarget audience:\nCivic tech, activists, journalists \n\n---\n\nRecommend pre-study:\nOpen data, visualization, democracy "
       },
-      "speakers": ["en-10"],
-      "tags": ["Beginner", "大數據(資料治理)", "地圖資料"]
+      "speakers": [
+        "en-10"
+      ],
+      "tags": [
+        "Beginner",
+        "大數據(資料治理)",
+        "地圖資料"
+      ]
     },
     {
       "id": "2024-088",
@@ -397,8 +504,13 @@
         "title": "Talk to the City: How LLM can Help Discriminate Consensus Illusion",
         "description": "With Talk to the City, AI Objectives Institute’s bet is that democratic deliberation, a process proven to work well at in-person events to bridge views and gain mutual understanding, could be scaled with LLMs and potentially even amplified & simulated. Being able to interact with a social group of any size through qualitative discourse would allow policymakers to quickly iterate on policy proposals and address concerns that are crowded out in traditional social choice mechanisms.\nIn this speech, we are going to discover the primitives for building shared world models.‘’‘\n\n\n---\n\nThemes:\n資料、人工智慧與社群協作；草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\nCollective intelligence, deliberation tech, AI\n\n---\n\nRecommend pre-study:\nYes I recommend. Ai Alignment, surveying, digital representatives"
       },
-      "speakers": ["en-3"],
-      "tags": ["Beginner", "公民倡議"]
+      "speakers": [
+        "en-3"
+      ],
+      "tags": [
+        "Beginner",
+        "公民倡議"
+      ]
     },
     {
       "id": "2024-090",
@@ -422,8 +534,18 @@
         "title": "Between Nerds & Governments: Why The Sovereign Tech Fund Invests Public Money in Open Source Infrastructure",
         "description": "Through its work, the Sovereign Tech Fund (STF) demonstrates one approach towards digital sovereignty, advocating for a collaborative, secure, and open digital future. Ensuring digital sovereignty and fostering open source are closely intertwined goals. This talk will introduce the Sovereign Tech Fund as a new public organisation at the intersection between “nerd” politics and digital governance, illustrating its approach towards fostering digital sovereignty, security, and innovation.\n\nBacked by the German government, the STF champions the development, maintenance, and improvement of open digital infrastructure. This session will unpack STF’s approach to investing in essential open source projects in the public interest. It will explore how the STF's mission aligns with and diverges from traditional narratives in digital governance, \"nerd\" politics, and the role of the state in ensuring access to and maintenance of digital infrastructure and services.\n\nWe will also highlight open source technologies STF has supported, introduce how a government-funded organisation operates iteratively, share lessons we’ve learned along the way, and offer some ideas on where nerds and governments around the world can go from here.\n\n\n---\n\nThemes:\nNerd Politics vs. 數位治理\n\n---\n\nTarget audience:\nopen source maintainers, civic hackers, digital policy\n\n---\n\nRecommend pre-study:\ndigital sovereignty, digital infrastructure, public interest"
       },
-      "speakers": ["en-5", "en-6"],
-      "tags": ["Beginner", "SDG", "社群治理", "公民倡議", "開源精神", "數位轉型"]
+      "speakers": [
+        "en-5",
+        "en-6"
+      ],
+      "tags": [
+        "Beginner",
+        "SDG",
+        "社群治理",
+        "公民倡議",
+        "開源精神",
+        "數位轉型"
+      ]
     },
     {
       "id": "2024-100",
@@ -447,8 +569,16 @@
         "title": "Digital governance and gender equality: the legal challenges of digital sexual violence",
         "description": "With the rapid development of digital technology, \"digital sexual violence\" has become a serious issue facing society. In January last year, the Legislative Yuan passed  \"Amendments to the Four Laws on Sexual Imagery\", aiming to curb the occurrence of digital sexual violence. However, the amendments still did not address many of the suggestions from civil society groups, and there are still legal loopholes in the protection of victims that need to be addressed. Additionally, due to the rapid and open nature of the internet, the effectiveness of removing sexual imagery has been minimal, posing challenges and dilemmas in digital governance. This workshop invites experts and scholars to introduce the amendment process and suggestions, discuss the prevention of digital sexual violence, improve victim protection mechanisms, and eliminate the distribution of sexual imagery.\n\n\n\n\n\n---\n\nThemes:\nNerd Politics vs. 數位治理\n\n---\n\nTarget audience:\n法律、社工、女性主義\n\n---\n\nRecommend pre-study:\n數位性暴力、性私密影像、保護令"
       },
-      "speakers": ["zh-18", "zh-19", "zh-24", "zh-27"],
-      "tags": ["大數據(資料治理)", "群眾外包"]
+      "speakers": [
+        "zh-18",
+        "zh-19",
+        "zh-24",
+        "zh-27"
+      ],
+      "tags": [
+        "大數據(資料治理)",
+        "群眾外包"
+      ]
     },
     {
       "id": "2024-103",
@@ -472,8 +602,19 @@
         "title": "Youth-Led Innovation: Shaping the Future through Civic Tech",
         "description": "In this session, we’ll have a tripartite dialogue with representatives from Code for Japan, g0v Sch001, and Code for Germany, discussing youth-led civic tech projects worldwide. We’ll also share insights on nurturing the next generation of civic tech communities. Young people play a crucial role in shaping the future, actively using civic tech to address social challenges. Understanding innovative initiatives across diverse cultural backgrounds helps us grasp the global impact and potential of youth in this field. We’ll also promote cross-cultural collaboration among students.\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\n#學生 #教育工作者 #公民科技參與者\n\n---\n\nRecommend pre-study:\n#公民科技 #數位公民教育(digital citizenship education) #PBL"
       },
-      "speakers": ["zh-6", "zh-7", "zh-8"],
-      "tags": ["Beginner", "SDG", "社群治理", "公民倡議", "開源精神", "數位轉型"]
+      "speakers": [
+        "zh-6",
+        "zh-7",
+        "zh-8"
+      ],
+      "tags": [
+        "Beginner",
+        "SDG",
+        "社群治理",
+        "公民倡議",
+        "開源精神",
+        "數位轉型"
+      ]
     },
     {
       "id": "2024-104",
@@ -497,8 +638,14 @@
         "title": "The Issues with Governments Not Using Public Code",
         "description": "From contributing to open-source projects to tender government projects, YuTin will discuss how to create a thriving public software ecosystem. In this inspiring lecture, we will delve into the challenges governments face when adopting public software solutions, from the initial tendering process, through winning the bid, to final acceptance, and how to tackle information security and regulatory challenges in the rapidly evolving field of information technology.\n\nThis exploration will not only cover the technical aspects but also include the policies, management, and strategic planning needed to successfully integrate public software into government operations, examining real-world examples and leveraging YuTin's open-sourced experience\n\n---\n\nThemes:\n資料、人工智慧與社群協作\n\n---\n\nTarget audience:\n在意稅金被怎麼使用\n\n---\n\nRecommend pre-study:\n公共程式"
       },
-      "speakers": ["zh-16", "zh-22"],
-      "tags": ["Beginner", "數位兩極化"]
+      "speakers": [
+        "zh-16",
+        "zh-22"
+      ],
+      "tags": [
+        "Beginner",
+        "數位兩極化"
+      ]
     },
     {
       "id": "2024-105",
@@ -522,8 +669,18 @@
         "title": "Why do civic tech contributors come? Why do they stay? Why do they leave?",
         "description": "In the civic technology community, participants' autonomous contributions can bring a sense of self-worth and social change, but there is also the possibility of internal burnout leading to departure. However, the foundation of any community is its people, and how to treat oneself and others well is key to maintaining enthusiasm for participation and community development. This session will focus on the original intentions, challenges, solutions, and impacts on personal development for those participating in civic tech communities/projects. It will start with \"Dao Dao Ah Xue\", a self-learning community,  sharing experiences from four years of nearly a hundred volunteers collaborating to develop a learning resource website. Following this, a \"World Café\" format will invite attendees to share their experiences, clarifying motivations, finding methods, and uncovering secrets to maintaining community momentum through dialogue.\n\n\n\n\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\n#公民科技參與者 #喜歡當志工的人 #對心理學或人類學或社會學有興趣的人\n\n---\n\nRecommend pre-study:\n#民主教育 #自主學習 "
       },
-      "speakers": ["zh-6", "zh-10", "zh-21"],
-      "tags": ["Beginner", "開放政府", "大數據(資料治理)", "個人資料保護", "數位主權"]
+      "speakers": [
+        "zh-6",
+        "zh-10",
+        "zh-21"
+      ],
+      "tags": [
+        "Beginner",
+        "開放政府",
+        "大數據(資料治理)",
+        "個人資料保護",
+        "數位主權"
+      ]
     },
     {
       "id": "2024-106",
@@ -547,8 +704,14 @@
         "title": "China Dissent Monitor: Experiences in Data Collection and Processing",
         "description": "Since June 2022, China Dissent Monitor has been collecting, recording, and sharing information about dissent in China. Through various channels such as news reports, civil society organizations, China-based social media platforms, and a machine learning algorithm, the database has accumulated nearly 5000 cases of protest activities. In this event, we hope to share our experiences in data collection, management, and process planning, as well as the challenges encountered in executing the project so far. We also hope to discuss with the audience how to establish best practices for similar data projects.\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\nNGO \n\n---\n\nRecommend pre-study:\n中國抗議活動 網路資料處理"
       },
-      "speakers": ["zh-13"],
-      "tags": ["Beginner", "開放政府", "群眾外包"]
+      "speakers": [
+        "zh-13"
+      ],
+      "tags": [
+        "Beginner",
+        "開放政府",
+        "群眾外包"
+      ]
     },
     {
       "id": "2024-115",
@@ -572,8 +735,14 @@
         "title": "g0v Civic Tech Project & Community Handbook",
         "description": "Through g0v’s experiences over the past decade and interactions with civic tech advocates from different countries, the g0v community has managed to extract elements and models for initiating “civic tech communities and projects”, which are included in the “2023 g0v Civic Tech Project & Community Handbook.” The handbook begins with an overview of the g0v civic tech community, then delves into how to develop civic tech communities and expand networks, including the four stages of community initiation and societal environmental factors. It also shares ways and templates for initiating civic tech projects and provides case studies to aid readers’ understanding. Finally, this book draws from past experiences from exchanges among various Asian countries, as well as feedback from participants in the Digital Rights Asia-Pacific Assembly 2023 and 2023 FtO Jeju. It shares insights into the regional diversity and differences in East and South Asia, the impact and relationship of governments on civic tech development, and the involvement of young people from Taiwan, Japan, and South Korea in civic tech communities. This helps us understand the evolving civic tech development models in different societal contexts. Read & Download Handbook: https://g0v.hackmd.io/@jothon/ctpbook_en/\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\nInterested in promoting the content of the manual together、對於公民科技專案與社群手冊有興趣的任何人、有興趣一起推廣手冊內容\n\n---\n\nRecommend pre-study:\nCurrent Status of Civic Tech Projects and Communities in Asian Countries、亞洲公民科技專案與社群、發起社群與拓展網絡"
       },
-      "speakers": ["zh-12", "zh-35"],
-      "tags": ["Beginner", "非營利組織"]
+      "speakers": [
+        "zh-12",
+        "zh-35"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織"
+      ]
     },
     {
       "id": "2024-116",
@@ -597,8 +766,13 @@
         "title": "Saving g0v hackathons: a jothon workshop",
         "description": "Reviewing the operation model of the g0v community, it can be summarized into four elements: 'People, Project, Hackathon, Source.' Through physical and online collaborative infrastructure (Hackathons), numerous contributors implement various types of civic tech projects and actions, open-sourcing the results as public resources and establishing channels for community sponsorship (Source). This workshop focuses on the sustainability issues of 'Hackathon' and 'Source,' and invites you to become part of the 'Save the Hackathon Team.' Process of our workshop:\n(1) The Save the Hackathon Team will present recent results of the 'Save the Hackathon Initiative.'\n(2) Group discussions on action items: Community Infrastructure Group, Financial Open Source Group, Transformation Prospects Group\n(3) Each group will summarize the results of their discussions and integrate them into a combined action plan.\nYou are welcome to join the #fundraising-救松團-募款執行 channel in g0v Slack.\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權；技術與議題的交鋒\n\n---\n\nTarget audience:\n想一起協力救松、想舉辦黑客松活動、想發展您所參與的社群\n\n---\n\nRecommend pre-study:\n社群基礎建設、財務開源、轉型展望"
       },
-      "speakers": ["zh-11"],
-      "tags": ["Beginner", "非營利組織"]
+      "speakers": [
+        "zh-11"
+      ],
+      "tags": [
+        "Beginner",
+        "非營利組織"
+      ]
     },
     {
       "id": "2024-117",
@@ -622,8 +796,13 @@
         "title": "Birmingham Screwdriver",
         "description": "An environmental advocacy organization, composed of digital novices, has embarked on developing digital tools (#disfactory) with the hope of solving environmental issues. But can such problems truly be resolved this way? The open-source community and advocacy groups each have their own cultures. What do the terms \"digital tools\" and \"public issues\" signify within these cultures? Do the perspectives of different stakeholders determine their outcomes?\n\n---\n\nThemes:\n技術與議題的交鋒\n\n---\n\nTarget audience:\n公共議題、社會運動、群眾外包\n\n---\n\nRecommend pre-study:\nDisfactoy, Law of the instrument, 錘子與釘子"
       },
-      "speakers": ["zh-14"],
-      "tags": ["Beginner", "教育"]
+      "speakers": [
+        "zh-14"
+      ],
+      "tags": [
+        "Beginner",
+        "教育"
+      ]
     },
     {
       "id": "2024-110",
@@ -647,8 +826,13 @@
         "title": "The Civic Space Situation in Ethiopia",
         "description": "1.\tConsortium of Ethiopian Human Rights Organizations:  CEHRO is a Consortium of 18 CSOs working on Human Rights, democracy and peace building in Ethiopia. Civic space in Ethiopia remains significantly restricted, categorized as \"Repressed\" by the CIVICUS Monitor.\n2.\tPositive Developments: The GoE shall undertook major Legal reforms, released some political prisoners detained in the wake of the 2021 elections, declared a ceasefire and signed peace agreement to end the Tigray conflict, and established the National Dialogue Commission aimed at fostering national reconciliation. \n3.\tLimitations and Key Concerns: there are however continued Violent Conflicts, Internet Shutdowns & Digital Surveillance, Media Repression & Intimidation, Shrinking Operating Environment for HRDs, Political Repression & Arrests & Increased Vulnerability of HRDs.\n4.\tRecommendations: We recommend that the GoE shall Guarantee the safety & security of journalists, media freedom, HRDs, Enact laws to prevent violation of the rights of HRDs, Ensure full &unfettered access for human rights CSOs and humanitarian actors in conflict affected areas & guarantee freedom of movement, End the practice of internet shutdowns & uphold the right to freedom of expression online, and Engage in constructive dialogue with CSOs and other stakeholders to address the challenges to civic space.\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權\n\n---\n\nTarget audience:\nCivil Society leaders, Academia, Media  and International community representatives \n\n---\n\nRecommend pre-study:\nCivic Space"
       },
-      "speakers": ["en-12"],
-      "tags": ["Beginner", "社群治理"]
+      "speakers": [
+        "en-12"
+      ],
+      "tags": [
+        "Beginner",
+        "社群治理"
+      ]
     },
     {
       "id": "2024-112",
@@ -672,8 +856,15 @@
         "title": "How to Decolonise Taiwan's Civic Tech in International Discourse?",
         "description": "g0v has been positioned as Taiwan’s soft power in digital diplomacy and pioneer in civic tech by the West. But what does that actually mean or impact us?\n\nThe talk is about the personal struggles to break the Orientalist gaze upon Taiwan and point out how Taiwan has been placed in the global imperial structure dominated by the West. From those problematics, the speaker would share their experiments in decolonisong tech and design workshops and other global initiatives. It is an open invitation to more discussion for Taiwanese to have our own agency in the global tech and democracy discourse and practices.\n\n- Taiwan can help. We are more than geopolitics.\n- g0v.london: the consequence of being naive to white supremacy \n- From seeking White recognition to our own agency\n- How might we decolonise the narratives/perspectives on Taiwan’s civic tech in English? As we are not an exotic, experimental alternative playground.\n\n---\n\nThemes:\n草根、開放、多中心的公民社群如何回應政治與科技的極權；基於同理心、涵容、多元性的數位基礎建設；技術與議題的交鋒\n\n---\n\nTarget audience:\n社群治理、國際交流\n\n---\n\nRecommend pre-study:\ndecolonization, white supremacy "
       },
-      "speakers": ["zh-23"],
-      "tags": ["數位韌性", "開源精神", "個人資料保護", "數位平台規管"]
+      "speakers": [
+        "zh-23"
+      ],
+      "tags": [
+        "數位韌性",
+        "開源精神",
+        "個人資料保護",
+        "數位平台規管"
+      ]
     },
     {
       "id": "2024-CT-1",
@@ -697,8 +888,15 @@
         "title": "Challenges of Disinformation in the Era of AI",
         "description": "Even those who are not familiar with the field of technology can use generative AI to experience various content predictions and industrial impacts accumulated from data. Many people predict that generative AI will bring more misinformation and disinformation, posing greater challenges to public awareness. In the information environment, the civic tech community Cofacts, together with the Cofact civic tech fact checking organization from Thailand and IORG, will discuss the various challenges of information and how to safeguard our information environment through collaboration and connections."
       },
-      "speakers": ["zh-34", "o-36", "o-34", "zh-15"],
-      "tags": ["Beginner"]
+      "speakers": [
+        "zh-34",
+        "o-36",
+        "o-34",
+        "zh-15"
+      ],
+      "tags": [
+        "Beginner"
+      ]
     },
     {
       "id": "2024-CT-2",
@@ -722,8 +920,13 @@
         "title": "Fantastic Student Community Participants and Where to Find Them",
         "description": "To promote student participation in the community and make g0v a more youth-friendly space for civic tech issues, this session track invites students who conducted research on \"\"Opportunities and Sustainability for Student Participation in Civic Tech Communities\"\" as part of the Y.L. Lin Program. Additionally, participants who represented students at the FtO Jeju 2023 \"\"Taiwan-Japan-Korea Civic Technology Hackathon\"\" are also invited to discuss student involvement in g0v and the civic tech community. This includes challenges and breakthroughs in student community participation, as well as diverse student perspectives on project execution and civic technology. Through this session, we aim to share models and barriers to community engagement from the students' viewpoint and attract more students to participate in the g0v community.\n\n---\n\nSpeakers:\nTed Lu, TOEDU Founder / Data Engineer\nAstrid, NYCU CS  Undergrad\nCHEN-WEI MAO, NCKU CS Undergrad\nVivian Wu, NTU Yu-Lin Project / Easier to Find Teammate! project contributor\nYvonne Cho, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\nSky Hong, NTNU CSIE Undergrad\nYuting Ta, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\""
       },
-      "speakers": ["o-14"],
-      "tags": ["Beginner", "CT-Student"]
+      "speakers": [
+        "o-14"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Student"
+      ]
     },
     {
       "id": "2024-CT-2-1",
@@ -747,8 +950,15 @@
         "title": "Opportunities and Sustainability for Student Participation in Civic Tech Communities",
         "description": "To promote student participation in the community and make g0v a more youth-friendly space for civic tech issues, this session track invites students who conducted research on \"\"Opportunities and Sustainability for Student Participation in Civic Tech Communities\"\" as part of the Y.L. Lin Program. Additionally, participants who represented students at the FtO Jeju 2023 \"\"Taiwan-Japan-Korea Civic Technology Hackathon\"\" are also invited to discuss student involvement in g0v and the civic tech community. This includes challenges and breakthroughs in student community participation, as well as diverse student perspectives on project execution and civic technology. Through this session, we aim to share models and barriers to community engagement from the students' viewpoint and attract more students to participate in the g0v community.\n\n---\n\nSpeakers:\nTed Lu, TOEDU Founder / Data Engineer\nAstrid, NYCU CS  Undergrad\nCHEN-WEI MAO, NCKU CS Undergrad\nVivian Wu, NTU Yu-Lin Project / Easier to Find Teammate! project contributor\nYvonne Cho, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\nSky Hong, NTNU CSIE Undergrad\nYuting Ta, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\""
       },
-      "speakers": ["o-17", "o-18", "o-20"],
-      "tags": ["Beginner", "CT-Student"]
+      "speakers": [
+        "o-17",
+        "o-18",
+        "o-20"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Student"
+      ]
     },
     {
       "id": "2024-CT-2-2",
@@ -772,8 +982,16 @@
         "title": "FtO Jeju 2023 Student Participation Observation Report",
         "description": "To promote student participation in the community and make g0v a more youth-friendly space for civic tech issues, this session track invites students who conducted research on \"\"Opportunities and Sustainability for Student Participation in Civic Tech Communities\"\" as part of the Y.L. Lin Program. Additionally, participants who represented students at the FtO Jeju 2023 \"\"Taiwan-Japan-Korea Civic Technology Hackathon\"\" are also invited to discuss student involvement in g0v and the civic tech community. This includes challenges and breakthroughs in student community participation, as well as diverse student perspectives on project execution and civic technology. Through this session, we aim to share models and barriers to community engagement from the students' viewpoint and attract more students to participate in the g0v community.\n\n---\n\nSpeakers:\nTed Lu, TOEDU Founder / Data Engineer\nAstrid, NYCU CS  Undergrad\nCHEN-WEI MAO, NCKU CS Undergrad\nVivian Wu, NTU Yu-Lin Project / Easier to Find Teammate! project contributor\nYvonne Cho, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\nSky Hong, NTNU CSIE Undergrad\nYuting Ta, NTU Yu-Lin Project /Easier to Find Teammate! project contributor\""
       },
-      "speakers": ["o-14", "o-19", "o-15", "o-16"],
-      "tags": ["Beginner", "CT-Student"]
+      "speakers": [
+        "o-14",
+        "o-19",
+        "o-15",
+        "o-16"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Student"
+      ]
     },
     {
       "id": "2024-CT-3",
@@ -797,8 +1015,16 @@
         "title": "Closing the gap: achieving affordable rental housing for all ",
         "description": "In Taiwan, renting is not a wise choice for long-term stable living. However, with skyrocketing property prices, renting has become an increasingly popular alternative for many who can't afford to buy a house.\n\nHow can we address the various issues with renting? In this forum, we will invite professionals in the field of renting and living in Taiwan to share their insights and explore various solutions aimed at continuously expanding affordable living spaces and providing a more stable living environment for renters.\n\n1. Renter community: how open culture community among renters help to explore more diverse renting methods.\n2. Empowerment through renting: housing services and how they can serve as interfaces to improve the situation of the homeless.\n3. Co-living apartments: exploring the vision and reality of mutual support communities.\n4. Resilient housing: self-repairing strategies for residents to face future challenges of aging homes and climate."
       },
-      "speakers": ["o-2", "o-3", "o-4", "o-5", "o-38"],
-      "tags": ["Beginner"]
+      "speakers": [
+        "o-2",
+        "o-3",
+        "o-4",
+        "o-5",
+        "o-38"
+      ],
+      "tags": [
+        "Beginner"
+      ]
     },
     {
       "id": "2024-CT-4",
@@ -822,8 +1048,15 @@
         "title": "Digital Resilience: What to Do When the Internet Shuts Down?",
         "description": "Digital resilience is the ability of digital systems to quickly recover from natural disasters, accidents, and malicious attacks. So, how is Taiwan's digital resilience? What can be done to maintain contact with friends and family, or to obtain reliable information from government agencies and news organizations if the internet is inaccessible? The g0v community has invited Golda from Access Now to share how the people of Myanmar help each other and maintain external communication when the internet is cut off, Lii Wen from Matsu will share Matsu's experience with internet outages, and participants of the g0v Digital Resilience Hackathon (to be confirmed) will discuss the development of offline communication technologies by the civic tech community."
       },
-      "speakers": ["o-23", "o-22", "o-35", "o-37"],
-      "tags": ["Beginner"]
+      "speakers": [
+        "o-23",
+        "o-22",
+        "o-35",
+        "o-37"
+      ],
+      "tags": [
+        "Beginner"
+      ]
     },
     {
       "id": "2024-CT-5",
@@ -847,8 +1080,16 @@
         "title": "Open Source Culture × Public Issues × Collaboration with Government ",
         "description": "Can we solve the problem just by starting a project?\n\nWith the widespread adoption of digital infrastructure, an increasing number of public issues, whether by governments or the private sector, seek digital tools as solutions.\n\nHowever, is the relationship between solutions and problems simply linear, like that of a hammer and nail? Or does the nature of the tool actually lead to different outcomes?\n\nSince its establishment three years ago, Disfactory has observed many digital tools with open-source or government DNA being deployed in response to public issues. By discussing these characteristics and the effects of projects derived from them, we aim to explore the frontline of digital tools vs. public issues."
       },
-      "speakers": ["zh-14", "o-28", "zh-16", "o-2", "zh-5"],
-      "tags": ["Beginner"]
+      "speakers": [
+        "zh-14",
+        "o-28",
+        "zh-16",
+        "o-2",
+        "zh-5"
+      ],
+      "tags": [
+        "Beginner"
+      ]
     },
     {
       "id": "2024-CT-6",
@@ -872,8 +1113,13 @@
         "title": "WTF is web3?",
         "description": "The fancy terms like web3, blockchain, and digital autonomy often lead people to mistakenly believe that many flashy tools can instantly solve social issues. Indeed, there are numerous international examples of digital democracy accomplished through web3. However, if you are an actual practitioner of web3's public nature, you'll find that tools are not very useful once you dive in. The real challenge is \"\"how citizens can empower themselves and shake the structure.\"\" This thematic forum invites activists from the da0 project and its associated community networks over the past year to discuss how to \"\"play\"\" with tools, be played by tools, and share the actual outcomes of their actions."
       },
-      "speakers": ["o-12"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-12"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-CT-6-1",
@@ -897,8 +1143,13 @@
         "title": "Book Club and Public Diplomacy?",
         "description": "The fancy terms like web3, blockchain, and digital autonomy often lead people to mistakenly believe that many flashy tools can instantly solve social issues. Indeed, there are numerous international examples of digital democracy accomplished through web3. However, if you are an actual practitioner of web3's public nature, you'll find that tools are not very useful once you dive in. The real challenge is \"\"how citizens can empower themselves and shake the structure.\"\" This thematic forum invites activists from the da0 project and its associated community networks over the past year to discuss how to \"\"play\"\" with tools, be played by tools, and share the actual outcomes of their actions."
       },
-      "speakers": ["o-6"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-6"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-CT-6-2",
@@ -922,8 +1173,13 @@
         "title": "Is a Reputation System the Foundation of Open Communities?",
         "description": "The fancy terms like web3, blockchain, and digital autonomy often lead people to mistakenly believe that many flashy tools can instantly solve social issues. Indeed, there are numerous international examples of digital democracy accomplished through web3. However, if you are an actual practitioner of web3's public nature, you'll find that tools are not very useful once you dive in. The real challenge is \"\"how citizens can empower themselves and shake the structure.\"\" This thematic forum invites activists from the da0 project and its associated community networks over the past year to discuss how to \"\"play\"\" with tools, be played by tools, and share the actual outcomes of their actions."
       },
-      "speakers": ["o-8"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-8"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-CT-6-3",
@@ -947,8 +1203,13 @@
         "title": "Quadratic Funding is Great, But Where is the Problem?",
         "description": "The fancy terms like web3, blockchain, and digital autonomy often lead people to mistakenly believe that many flashy tools can instantly solve social issues. Indeed, there are numerous international examples of digital democracy accomplished through web3. However, if you are an actual practitioner of web3's public nature, you'll find that tools are not very useful once you dive in. The real challenge is \"\"how citizens can empower themselves and shake the structure.\"\" This thematic forum invites activists from the da0 project and its associated community networks over the past year to discuss how to \"\"play\"\" with tools, be played by tools, and share the actual outcomes of their actions."
       },
-      "speakers": ["o-12"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-12"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-CT-6-4",
@@ -972,8 +1233,14 @@
         "title": "Can Citizens Hack Corporate Forms and Procurement Laws?",
         "description": "The fancy terms like web3, blockchain, and digital autonomy often lead people to mistakenly believe that many flashy tools can instantly solve social issues. Indeed, there are numerous international examples of digital democracy accomplished through web3. However, if you are an actual practitioner of web3's public nature, you'll find that tools are not very useful once you dive in. The real challenge is \"\"how citizens can empower themselves and shake the structure.\"\" This thematic forum invites activists from the da0 project and its associated community networks over the past year to discuss how to \"\"play\"\" with tools, be played by tools, and share the actual outcomes of their actions."
       },
-      "speakers": ["o-10", "o-7"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-10",
+        "o-7"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-CT-6-5",
@@ -997,8 +1264,15 @@
         "title": "How British Columbia Government Hacks Procurement to Build Digital Identity Wallet in Public-Private Collaboration",
         "description": "The government of British Columbia, Canada, has established the public-private collaboration platform Code With Us (CWU) and revised procurement regulations to a more flexible mode, enabling effective collaboration between public servant and the civic tech community. Recently, British Columbia launched an open-source digital identity wallet called BC Wallet, embodying the spirit of self-sovereign identity. Let's discuss the feasibility of this model."
       },
-      "speakers": ["o-12", "o-10", "o-7"],
-      "tags": ["Beginner", "CT-Web3"]
+      "speakers": [
+        "o-12",
+        "o-10",
+        "o-7"
+      ],
+      "tags": [
+        "Beginner",
+        "CT-Web3"
+      ]
     },
     {
       "id": "2024-H",
@@ -1022,7 +1296,12 @@
         "title": "Protecting Digital Rights in the Era of Digital Authoritarianism",
         "description": "In today's interconnected world, digital rights are fundamental to the protection of personal privacy, free expression, and access to information. As technology continues to evolve, so too do the threats that jeopardize these rights. This session, hosted by Access Now at the g0v summit, aims to discuss critical issues surrounding digital rights, highlight emerging trends characteristic of digital authoritarianism, and present recommendations for governments, the private sector, and civil society to ensure that we can defend inclusive democracies, preserve spaces for civil society to flourish, and empower individuals to control their own information and identities in data-driven economies. The session will commence with an introduction to Access Now, a global non-profit organization dedicated to digital rights of people and communities at risk.. Based on its work for fifteen (15) years, the panel will focus on three alarming issues  in the age of digital authoritarianism: 1) weaponization of internet shutdowns; 2) spyware and the abuse of surveillance technologies; and 3) threats against people’s data rights. \""
       },
-      "speakers": ["zh-15", "o-25", "o-26", "o-24"],
+      "speakers": [
+        "zh-15",
+        "o-25",
+        "o-26",
+        "o-24"
+      ],
       "tags": []
     },
     {
@@ -1047,7 +1326,9 @@
         "title": "Digital Civic Education World Cafe",
         "description": "Topics - \n• How can digital civic education cooperate with current educational system?\n• How to open a digital civic class? What can be included? \n• What did student do in civic tech projects? How do projects influence their career? How to support student participating in the projects?\n• Let's think about digital civic literacy in the next ten years!"
       },
-      "speakers": ["w-1"],
+      "speakers": [
+        "w-1"
+      ],
       "tags": []
     },
     {
@@ -1072,7 +1353,9 @@
         "title": "Digital Civic Education World Cafe",
         "description": "Topics - \n• How can digital civic education cooperate with current educational system?\n• How to open a digital civic class? What can be included? \n• What did student do in civic tech projects? How do projects influence their career? How to support student participating in the projects?\n• Let's think about digital civic literacy in the next ten years!"
       },
-      "speakers": ["w-1"],
+      "speakers": [
+        "w-1"
+      ],
       "tags": []
     },
     {
@@ -1097,7 +1380,11 @@
         "title": "How do civil society organizations and tech platforms collaborate?",
         "description": "This workshop, organized by National Democratic Institute (NDI), is aimed at building dynamic strategies for civic tech and civil society professionals to communicate and collaborate with tech platforms. Bringing together professionals and activists in the Asia-Pacific region, this workshop will identify shared concerns and challenges in safeguarding/advacing platform-related digital human rights, share experience and know-how in platform engagement, and strengthen the network among workshop participants."
       },
-      "speakers": ["o-33", "o-31", "o-32"],
+      "speakers": [
+        "o-33",
+        "o-31",
+        "o-32"
+      ],
       "tags": []
     },
     {
@@ -1122,7 +1409,9 @@
         "title": "Nobody on the Front line",
         "description": "Significant change has occurred worldwide since the g0v Summit 2020. This keynote speech will feature stories from the speaker's personal interviews with civic tech programs and their managers from France, Ukraine, Germany, and Taiwan. It will describe how civic tech (programs and communities) are being facilitated to the \"front lines\" amid a tidal wave. What possibility and the price paid did the Nobodys discover at the front line? What kind of future would there be for the groups and the citizens who practice democratic values if there is literally nobody on the front line?"
       },
-      "speakers": ["zh-34"],
+      "speakers": [
+        "zh-34"
+      ],
       "tags": []
     },
     {
@@ -1147,7 +1436,9 @@
         "title": "Nerd politics and the global culture wars",
         "description": "In this talk, I build on my previous anthropological work on techno-political activism aka ‘nerd politics’ (Postill 2018) and on more recent research into the anti-woke movement (Postill 2024) to explore some of the links between nerd politics and the global culture wars. I am primarily interested in those leading individuals and groups working at the intersection of nerd politics and the global culture wars who are battling over issues of race, gender, public health, and/or climate change – for example, the tech billionaire Elon Musk, the investigative journalist Glenn Greenwald, the QAnon conspiracy/movement (Coleman 2023), K-pop fans supportive of Black Lives Matter (Cho 2022), or the Latin American hacktivist group Guacamaya (Levet 2023). I argue that some techno-political nerds are at the forefront of the conflicts that are polarising our contemporary world, while others are engaged in early efforts towards depolarisation."
       },
-      "speakers": ["en-14"],
+      "speakers": [
+        "en-14"
+      ],
       "tags": []
     },
     {
@@ -1172,7 +1463,11 @@
         "title": "Keynote Panel: East Asian Civic Tech Communities Amid Global Democratic Backslide: Dialogues among Taiwan, Japan, and Korea",
         "description": "Continuing the theme of keynote addresses, the panel invites the founders of Code for Japan and Code for Korea to embark on a conversation between Taiwan, Japan, and Korea, contrasting with East Asia and the global landscape. The civic tech communities of these three nations have long been closely connected and collaborative. This panel endeavors to shed light on the current state of democracy in Taiwan, Japan, and Korea by drawing upon their experiences, developmental trajectories, and current challenges. It may also lead to some potential pathways forward for the g0v community.\n\nThis keynote panel was related to Wikimedia Taiwan's research program: Analysis and Promotion of Civic Technology for Information Development in Digital Democracy. (Session 5 “East Asian Civic Tech Communities in a Global Democratic Regression: A Dialogue between Taiwan, Japan, and Korea”)"
       },
-      "speakers": ["o-31", "o-32", "zh-34"],
+      "speakers": [
+        "o-31",
+        "o-32",
+        "zh-34"
+      ],
       "tags": []
     },
     {
@@ -1189,9 +1484,17 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#E-OP1",
-      "zh": { "title": "開幕", "description": "" },
-      "en": { "title": "Opening", "description": "" },
-      "speakers": ["e-1"],
+      "zh": {
+        "title": "開幕",
+        "description": ""
+      },
+      "en": {
+        "title": "Opening",
+        "description": ""
+      },
+      "speakers": [
+        "e-1"
+      ],
       "tags": []
     },
     {
@@ -1208,9 +1511,17 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#E-OP2",
-      "zh": { "title": "開場", "description": "" },
-      "en": { "title": "Opening", "description": "" },
-      "speakers": ["e-1"],
+      "zh": {
+        "title": "開場",
+        "description": ""
+      },
+      "en": {
+        "title": "Opening",
+        "description": ""
+      },
+      "speakers": [
+        "e-1"
+      ],
       "tags": []
     },
     {
@@ -1227,8 +1538,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-1-1",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1246,8 +1563,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-1-2",
-      "zh": { "title": "午休", "description": "" },
-      "en": { "title": "Lunch Break", "description": "" },
+      "zh": {
+        "title": "午休",
+        "description": ""
+      },
+      "en": {
+        "title": "Lunch Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1265,8 +1588,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-2-1",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1284,8 +1613,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-2-2",
-      "zh": { "title": "午休", "description": "" },
-      "en": { "title": "Lunch Break", "description": "" },
+      "zh": {
+        "title": "午休",
+        "description": ""
+      },
+      "en": {
+        "title": "Lunch Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1303,8 +1638,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-1-3",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1322,8 +1663,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-2-3",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1341,8 +1688,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-1-4",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1360,8 +1713,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#R-2-4",
-      "zh": { "title": "換場", "description": "" },
-      "en": { "title": "Break", "description": "" },
+      "zh": {
+        "title": "換場",
+        "description": ""
+      },
+      "en": {
+        "title": "Break",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1379,9 +1738,17 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#E-ED1",
-      "zh": { "title": "小結", "description": "" },
-      "en": { "title": "Day Summary", "description": "" },
-      "speakers": ["e-1"],
+      "zh": {
+        "title": "小結",
+        "description": ""
+      },
+      "en": {
+        "title": "Day Summary",
+        "description": ""
+      },
+      "speakers": [
+        "e-1"
+      ],
       "tags": []
     },
     {
@@ -1398,9 +1765,17 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#E-ED2",
-      "zh": { "title": "閉幕", "description": "" },
-      "en": { "title": "Closing", "description": "" },
-      "speakers": ["e-1"],
+      "zh": {
+        "title": "閉幕",
+        "description": ""
+      },
+      "en": {
+        "title": "Closing",
+        "description": ""
+      },
+      "speakers": [
+        "e-1"
+      ],
       "tags": []
     },
     {
@@ -1417,8 +1792,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#U-1",
-      "zh": { "title": "Unconference 1", "description": "" },
-      "en": { "title": "Unconference", "description": "" },
+      "zh": {
+        "title": "Unconference 1",
+        "description": ""
+      },
+      "en": {
+        "title": "Unconference",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1436,8 +1817,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#U-2",
-      "zh": { "title": "Unconference 2", "description": "" },
-      "en": { "title": "Unconference", "description": "" },
+      "zh": {
+        "title": "Unconference 2",
+        "description": ""
+      },
+      "en": {
+        "title": "Unconference",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1455,8 +1842,14 @@
       "record": "",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#U-3",
-      "zh": { "title": "Unconference 3", "description": "" },
-      "en": { "title": "Unconference", "description": "" },
+      "zh": {
+        "title": "Unconference 3",
+        "description": ""
+      },
+      "en": {
+        "title": "Unconference",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     },
@@ -1474,69 +1867,391 @@
       "record": "https://youtu.be/y9jGmUVR4Ms?si=7CWdxHW1OQyzdQr1",
       "language": "",
       "uri": "https://summit.g0v.tw/2024/agenda/#L",
-      "zh": { "title": "閃電講", "description": "" },
-      "en": { "title": "Lightning Talk", "description": "" },
+      "zh": {
+        "title": "閃電講",
+        "description": ""
+      },
+      "en": {
+        "title": "Lightning Talk",
+        "description": ""
+      },
       "speakers": [],
       "tags": []
     }
   ],
   "speakers": [
-    { "id": "zh-1", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/hsin-chan-chien.jpg", "zh": { "name": "簡信昌", "bio": "" }, "en": { "name": "Hsin-Chan Chien", "bio": "" } },
-    { "id": "zh-2", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/toomore-chiang.jpg", "zh": { "name": "蔣偉志", "bio": "" }, "en": { "name": "Toomore Chiang", "bio": "" } },
-    { "id": "zh-3", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "周冠汝", "bio": "" }, "en": { "name": "Kuan-Ju Chou", "bio": "" } },
-    { "id": "zh-4", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "Jimmy Huang", "bio": "" }, "en": { "name": "Jimmy Huang", "bio": "" } },
+    {
+      "id": "zh-1",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/hsin-chan-chien.jpg",
+      "zh": {
+        "name": "簡信昌",
+        "bio": ""
+      },
+      "en": {
+        "name": "Hsin-Chan Chien",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-2",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/toomore-chiang.jpg",
+      "zh": {
+        "name": "蔣偉志",
+        "bio": ""
+      },
+      "en": {
+        "name": "Toomore Chiang",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-3",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "周冠汝",
+        "bio": ""
+      },
+      "en": {
+        "name": "Kuan-Ju Chou",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-4",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "Jimmy Huang",
+        "bio": ""
+      },
+      "en": {
+        "name": "Jimmy Huang",
+        "bio": ""
+      }
+    },
     {
       "id": "zh-5",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ronny-wang.jpg",
-      "zh": { "name": "王向榮", "bio": "g0v 貢獻者" },
-      "en": { "name": "Ronny Wang", "bio": "g0v contributor" }
+      "zh": {
+        "name": "王向榮",
+        "bio": "g0v 貢獻者"
+      },
+      "en": {
+        "name": "Ronny Wang",
+        "bio": "g0v contributor"
+      }
     },
-    { "id": "zh-6", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/tiff-lin.jpg", "zh": { "name": "林怡廷", "bio": "" }, "en": { "name": "Tiff Lin", "bio": "" } },
-    { "id": "zh-7", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/saya-kubota.jpg", "zh": { "name": "Saya Kubota", "bio": "" }, "en": { "name": "Saya Kubota", "bio": "" } },
-    { "id": "zh-8", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sonja-fischbauer.jpg", "zh": { "name": "Sonja Fischbauer", "bio": "" }, "en": { "name": "Sonja Fischbauer", "bio": "" } },
-    { "id": "zh-10", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/kangaroo.jpg", "zh": { "name": "袋鼠", "bio": "" }, "en": { "name": "Kangaroo", "bio": "" } },
-    { "id": "zh-11", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/g0v-jothon.jpg", "zh": { "name": "揪松團", "bio": "" }, "en": { "name": "g0v Jothon", "bio": "" } },
-    { "id": "zh-12", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/isabelhou.jpg", "zh": { "name": "侯宜秀", "bio": "" }, "en": { "name": "Isabel Hou", "bio": "" } },
-    { "id": "zh-13", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "Ming", "bio": "" }, "en": { "name": "zh-13", "bio": "" } },
-    { "id": "zh-14", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "小海", "bio": "自由工作者" }, "en": { "name": "Chuang Mu Hua", "bio": "Freelencer " } },
+    {
+      "id": "zh-6",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/tiff-lin.jpg",
+      "zh": {
+        "name": "林怡廷",
+        "bio": ""
+      },
+      "en": {
+        "name": "Tiff Lin",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-7",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/saya-kubota.jpg",
+      "zh": {
+        "name": "Saya Kubota",
+        "bio": ""
+      },
+      "en": {
+        "name": "Saya Kubota",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-8",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sonja-fischbauer.jpg",
+      "zh": {
+        "name": "Sonja Fischbauer",
+        "bio": ""
+      },
+      "en": {
+        "name": "Sonja Fischbauer",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-10",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/kangaroo.jpg",
+      "zh": {
+        "name": "袋鼠",
+        "bio": ""
+      },
+      "en": {
+        "name": "Kangaroo",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-11",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/g0v-jothon.jpg",
+      "zh": {
+        "name": "揪松團",
+        "bio": ""
+      },
+      "en": {
+        "name": "g0v Jothon",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-12",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/isabelhou.jpg",
+      "zh": {
+        "name": "侯宜秀",
+        "bio": ""
+      },
+      "en": {
+        "name": "Isabel Hou",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-13",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "Ming",
+        "bio": ""
+      },
+      "en": {
+        "name": "zh-13",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-14",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "小海",
+        "bio": "自由工作者"
+      },
+      "en": {
+        "name": "Chuang Mu Hua",
+        "bio": "Freelencer "
+      }
+    },
     {
       "id": "zh-15",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/chihhao-yu.jpg",
-      "zh": { "name": "游知澔", "bio": "- 台灣資訊環境研究中心 IORG 共同主持人\n- 台灣零時政府 g0v 國際交流社群工作小組共同創辦人\n- 港台日韓公民黑客社群網絡「面海松」共同主辦人" },
-      "en": { "name": "Chihhao Yu", "bio": "- IORG co-director\n- g0v international community taskforce co-founder\n- Facing the Ocean co-organizer" }
+      "zh": {
+        "name": "游知澔",
+        "bio": "- 台灣資訊環境研究中心 IORG 共同主持人\n- 台灣零時政府 g0v 國際交流社群工作小組共同創辦人\n- 港台日韓公民黑客社群網絡「面海松」共同主辦人"
+      },
+      "en": {
+        "name": "Chihhao Yu",
+        "bio": "- IORG co-director\n- g0v international community taskforce co-founder\n- Facing the Ocean co-organizer"
+      }
     },
     {
       "id": "zh-16",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sandra.jpg",
-      "zh": { "name": "Sandra", "bio": "公民科技場域示範案+disfactory貢獻者" },
-      "en": { "name": "Sandra", "bio": "Civic Tech Experimental Field &Disfactory  contributor" }
+      "zh": {
+        "name": "Sandra",
+        "bio": "公民科技場域示範案+disfactory貢獻者"
+      },
+      "en": {
+        "name": "Sandra",
+        "bio": "Civic Tech Experimental Field &Disfactory  contributor"
+      }
     },
     {
       "id": "zh-17",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/supaplex-dennis-raylin-chen.jpg",
-      "zh": { "name": "Supaplex (陳瑞霖)", "bio": "" },
-      "en": { "name": "Supaplex / Dennis Raylin Chen", "bio": "" }
+      "zh": {
+        "name": "Supaplex (陳瑞霖)",
+        "bio": ""
+      },
+      "en": {
+        "name": "Supaplex / Dennis Raylin Chen",
+        "bio": ""
+      }
     },
-    { "id": "zh-18", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ming-ju-lee.jpg", "zh": { "name": "李明洳", "bio": "" }, "en": { "name": "Ming Ju Lee", "bio": "" } },
-    { "id": "zh-19", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/tu-ying-chiu.jpg", "zh": { "name": "杜瑛秋", "bio": "" }, "en": { "name": "Tu Ying Chiu", "bio": "" } },
-    { "id": "zh-20", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "王文岳", "bio": "" }, "en": { "name": "Allen Wang", "bio": "" } },
-    { "id": "zh-21", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "小許", "bio": "" }, "en": { "name": "Vincent Xu", "bio": "" } },
-    { "id": "zh-22", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/yutin.jpg", "zh": { "name": "YuTin", "bio": "" }, "en": { "name": "YuTin", "bio": "" } },
-    { "id": "zh-23", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ael.jpg", "zh": { "name": "Ael", "bio": "" }, "en": { "name": "Ael", "bio": "" } },
-    { "id": "zh-24", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/june-liu.jpg", "zh": { "name": "劉昱均", "bio": "" }, "en": { "name": "June Liu", "bio": "" } },
-    { "id": "zh-25", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/dongpo-deng.jpg", "zh": { "name": "鄧東波", "bio": "" }, "en": { "name": "Dongpo Deng", "bio": "" } },
+    {
+      "id": "zh-18",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ming-ju-lee.jpg",
+      "zh": {
+        "name": "李明洳",
+        "bio": ""
+      },
+      "en": {
+        "name": "Ming Ju Lee",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-19",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/tu-ying-chiu.jpg",
+      "zh": {
+        "name": "杜瑛秋",
+        "bio": ""
+      },
+      "en": {
+        "name": "Tu Ying Chiu",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-20",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "王文岳",
+        "bio": ""
+      },
+      "en": {
+        "name": "Allen Wang",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-21",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "小許",
+        "bio": ""
+      },
+      "en": {
+        "name": "Vincent Xu",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-22",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/yutin.jpg",
+      "zh": {
+        "name": "YuTin",
+        "bio": ""
+      },
+      "en": {
+        "name": "YuTin",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-23",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ael.jpg",
+      "zh": {
+        "name": "Ael",
+        "bio": ""
+      },
+      "en": {
+        "name": "Ael",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-24",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/june-liu.jpg",
+      "zh": {
+        "name": "劉昱均",
+        "bio": ""
+      },
+      "en": {
+        "name": "June Liu",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-25",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/dongpo-deng.jpg",
+      "zh": {
+        "name": "鄧東波",
+        "bio": ""
+      },
+      "en": {
+        "name": "Dongpo Deng",
+        "bio": ""
+      }
+    },
     {
       "id": "zh-26",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sarawut-ninsawat.jpg",
-      "zh": { "name": "Sarawut Ninsawat", "bio": "" },
-      "en": { "name": "Sarawut Ninsawat", "bio": "" }
+      "zh": {
+        "name": "Sarawut Ninsawat",
+        "bio": ""
+      },
+      "en": {
+        "name": "Sarawut Ninsawat",
+        "bio": ""
+      }
     },
-    { "id": "zh-27", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/claire-liu.jpg", "zh": { "name": "劉靜耘", "bio": "" }, "en": { "name": "Claire Liu", "bio": "" } },
-    { "id": "zh-28", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "林宥伯", "bio": "" }, "en": { "name": "Lin, Yu-Po", "bio": "" } },
-    { "id": "zh-30", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/roy-weng.jpg", "zh": { "name": "Roy Weng", "bio": "" }, "en": { "name": "Roy Weng", "bio": "" } },
-    { "id": "zh-31", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/claire-cheng.jpg", "zh": { "name": "鄭婷宇", "bio": "" }, "en": { "name": "Claire Cheng", "bio": "" } },
-    { "id": "zh-32", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/james-kan.jpg", "zh": { "name": "甘順基", "bio": "" }, "en": { "name": "James Kan", "bio": "" } },
-    { "id": "zh-33", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/weichen-lim.jpg", "zh": { "name": "林韋丞", "bio": "" }, "en": { "name": "Weichen Lim", "bio": "" } },
+    {
+      "id": "zh-27",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/claire-liu.jpg",
+      "zh": {
+        "name": "劉靜耘",
+        "bio": ""
+      },
+      "en": {
+        "name": "Claire Liu",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-28",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "林宥伯",
+        "bio": ""
+      },
+      "en": {
+        "name": "Lin, Yu-Po",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-30",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/roy-weng.jpg",
+      "zh": {
+        "name": "Roy Weng",
+        "bio": ""
+      },
+      "en": {
+        "name": "Roy Weng",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-31",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/claire-cheng.jpg",
+      "zh": {
+        "name": "鄭婷宇",
+        "bio": ""
+      },
+      "en": {
+        "name": "Claire Cheng",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-32",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/james-kan.jpg",
+      "zh": {
+        "name": "甘順基",
+        "bio": ""
+      },
+      "en": {
+        "name": "James Kan",
+        "bio": ""
+      }
+    },
+    {
+      "id": "zh-33",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/weichen-lim.jpg",
+      "zh": {
+        "name": "林韋丞",
+        "bio": ""
+      },
+      "en": {
+        "name": "Weichen Lim",
+        "bio": ""
+      }
+    },
     {
       "id": "zh-34",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/jason-liu.jpg",
@@ -1549,30 +2264,174 @@
         "bio": "Chih-Hsin Liu(Jason Liu) is a journalist, author, and podcaster. He previously worked as deputy editor-in-chief of the Reporter and an editor at g0v News, as well as as an Information Integrity Senior Advisor at the Taipei Office of the National Democratic Institute. In recent years, his publications as an author include “Reality is Business: the Portraits Covering Across Belgium, France, Indonesia, Germany, China, and Taiwan” (2021) and “ War In Ukraine” (2022). He is also currently the host of the podcast “A Break Cafe.”\n\nInspired by a report from Piratenpartei Deutschland, Chih-Hsin Liu started a dialogue with civic tech and g0v, participating in many international conferences on civic tech and open government. He interviewed many civic tech programs in Taiwan, Spain, Mexico, Southeast Asia, Europe, and the United States. Moreover, he made an effort to collaborate with international organizations to complete the g0v Civic Tech Project & Community Handbook. As a whole, Chih-Hsin Liu follows the steps with Nobody by observing and recording civic tech communities over a decade. A coffee shop at Tainan managed by Chih-Hsin Liu was one of the venues of the g0v hackathon."
       }
     },
-    { "id": "zh-35", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/chewei.jpg", "zh": { "name": "劉哲瑋", "bio": "" }, "en": { "name": "Chewei Liu", "bio": "" } },
+    {
+      "id": "zh-35",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/chewei.jpg",
+      "zh": {
+        "name": "劉哲瑋",
+        "bio": ""
+      },
+      "en": {
+        "name": "Chewei Liu",
+        "bio": ""
+      }
+    },
     {
       "id": "en-1",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/idris-bilyaminu-ndasadulau.jpg",
-      "zh": { "name": "Idris Bilyaminu Ndasadu’Lau", "bio": "" },
-      "en": { "name": "Idris Bilyaminu Ndasadu’Lau", "bio": "" }
+      "zh": {
+        "name": "Idris Bilyaminu Ndasadu’Lau",
+        "bio": ""
+      },
+      "en": {
+        "name": "Idris Bilyaminu Ndasadu’Lau",
+        "bio": ""
+      }
     },
-    { "id": "en-2", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/khairil-zhafri.jpg", "zh": { "name": "Khairil Zhafri", "bio": "" }, "en": { "name": "Khairil Zhafri", "bio": "" } },
-    { "id": "en-3", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/deger-turan.jpg", "zh": { "name": "Deger Turan", "bio": "" }, "en": { "name": "Deger Turan", "bio": "" } },
-    { "id": "en-4", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/junhee-jang.jpg", "zh": { "name": "Junhee Jang", "bio": "" }, "en": { "name": "Junhee Jang", "bio": "" } },
-    { "id": "en-5", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/powen-shiah.jpg", "zh": { "name": "Powen Shiah", "bio": "" }, "en": { "name": "Powen Shiah", "bio": "" } },
-    { "id": "en-6", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/paul-sharratt.jpg", "zh": { "name": "Paul Sharratt", "bio": "" }, "en": { "name": "Paul Sharratt", "bio": "" } },
-    { "id": "en-7", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/avani-airan.jpg", "zh": { "name": "Avani Airan", "bio": "" }, "en": { "name": "Avani Airan", "bio": "" } },
-    { "id": "en-8", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/rattanmeek-kaur.jpg", "zh": { "name": "Rattanmeek Kaur", "bio": "" }, "en": { "name": "Rattanmeek Kaur", "bio": "" } },
-    { "id": "en-9", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/mike-gifford.jpg", "zh": { "name": "Mike Gifford", "bio": "" }, "en": { "name": "Mike Gifford", "bio": "" } },
+    {
+      "id": "en-2",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/khairil-zhafri.jpg",
+      "zh": {
+        "name": "Khairil Zhafri",
+        "bio": ""
+      },
+      "en": {
+        "name": "Khairil Zhafri",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-3",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/deger-turan.jpg",
+      "zh": {
+        "name": "Deger Turan",
+        "bio": ""
+      },
+      "en": {
+        "name": "Deger Turan",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-4",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/junhee-jang.jpg",
+      "zh": {
+        "name": "Junhee Jang",
+        "bio": ""
+      },
+      "en": {
+        "name": "Junhee Jang",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-5",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/powen-shiah.jpg",
+      "zh": {
+        "name": "Powen Shiah",
+        "bio": ""
+      },
+      "en": {
+        "name": "Powen Shiah",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-6",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/paul-sharratt.jpg",
+      "zh": {
+        "name": "Paul Sharratt",
+        "bio": ""
+      },
+      "en": {
+        "name": "Paul Sharratt",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-7",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/avani-airan.jpg",
+      "zh": {
+        "name": "Avani Airan",
+        "bio": ""
+      },
+      "en": {
+        "name": "Avani Airan",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-8",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/rattanmeek-kaur.jpg",
+      "zh": {
+        "name": "Rattanmeek Kaur",
+        "bio": ""
+      },
+      "en": {
+        "name": "Rattanmeek Kaur",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-9",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/mike-gifford.jpg",
+      "zh": {
+        "name": "Mike Gifford",
+        "bio": ""
+      },
+      "en": {
+        "name": "Mike Gifford",
+        "bio": ""
+      }
+    },
     {
       "id": "en-10",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "Datasketch / Jp Marin Diaz", "bio": "" },
-      "en": { "name": "Datasketch / Jp Marin Diaz", "bio": "" }
+      "zh": {
+        "name": "Datasketch / Jp Marin Diaz",
+        "bio": ""
+      },
+      "en": {
+        "name": "Datasketch / Jp Marin Diaz",
+        "bio": ""
+      }
     },
-    { "id": "en-11", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/mami-takesada.jpg", "zh": { "name": "Mami Takesada", "bio": "" }, "en": { "name": "Mami Takesada", "bio": "" } },
-    { "id": "en-12", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "Mesud Gebeyehu RETA", "bio": "" }, "en": { "name": "Mesud Gebeyehu RETA", "bio": "" } },
-    { "id": "en-13", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "MOON", "bio": "" }, "en": { "name": "MOON", "bio": "" } },
+    {
+      "id": "en-11",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/mami-takesada.jpg",
+      "zh": {
+        "name": "Mami Takesada",
+        "bio": ""
+      },
+      "en": {
+        "name": "Mami Takesada",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-12",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "Mesud Gebeyehu RETA",
+        "bio": ""
+      },
+      "en": {
+        "name": "Mesud Gebeyehu RETA",
+        "bio": ""
+      }
+    },
+    {
+      "id": "en-13",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "MOON",
+        "bio": ""
+      },
+      "en": {
+        "name": "MOON",
+        "bio": ""
+      }
+    },
     {
       "id": "en-14",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/john-postill.jpg",
@@ -1585,114 +2444,293 @@
         "bio": "John Postill 是皇家墨爾本理工大學的人類學家，他的研究專長是媒體、傳播和社會政治變革。至今為止，他已經在馬來西亞、印度尼西亞、西班牙和英語圈國家(線上)展開了人種學的田野調查，同時他也是許多著作的作者。John Postill 的著作包含《人類學的數位實踐》(2024)和《怪咖政治的崛起:數位行動主義與政治變遷》(2018)。目前John Postill致力於研究全球化的網路文化戰爭。"
       }
     },
-    { "id": "en-15", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/shun-nakajima.jpg", "zh": { "name": "Shun Nakajima", "bio": "" }, "en": { "name": "Shun Nakajima", "bio": "" } },
-    { "id": "o-2", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ddio.jpg", "zh": { "name": "ddio", "bio": "ddio - 主婦，第一間房子專案維護者" }, "en": { "name": "ddio", "bio": "" } },
-    { "id": "o-3", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sun-ming-te.jpg", "zh": { "name": "孫銘德", "bio": "左木空間生產工作室" }, "en": { "name": "Sun Ming-Te", "bio": "" } },
+    {
+      "id": "en-15",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/shun-nakajima.jpg",
+      "zh": {
+        "name": "Shun Nakajima",
+        "bio": ""
+      },
+      "en": {
+        "name": "Shun Nakajima",
+        "bio": ""
+      }
+    },
+    {
+      "id": "o-2",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ddio.jpg",
+      "zh": {
+        "name": "ddio",
+        "bio": "ddio - 主婦，第一間房子專案維護者"
+      },
+      "en": {
+        "name": "ddio",
+        "bio": ""
+      }
+    },
+    {
+      "id": "o-3",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sun-ming-te.jpg",
+      "zh": {
+        "name": "孫銘德",
+        "bio": "左木空間生產工作室"
+      },
+      "en": {
+        "name": "Sun Ming-Te",
+        "bio": ""
+      }
+    },
     {
       "id": "o-4",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "張詠卿", "bio": "楓生共居公寓" },
-      "en": { "name": "yung-ching chang", "bio": "fuuki apartment" }
+      "zh": {
+        "name": "張詠卿",
+        "bio": "楓生共居公寓"
+      },
+      "en": {
+        "name": "yung-ching chang",
+        "bio": "fuuki apartment"
+      }
     },
     {
       "id": "o-5",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "廖羚妤", "bio": "社團法人台灣芒草心慈善協會 社工" },
-      "en": { "name": "Liao, Ling-Yu", "bio": "" }
+      "zh": {
+        "name": "廖羚妤",
+        "bio": "社團法人台灣芒草心慈善協會 社工"
+      },
+      "en": {
+        "name": "Liao, Ling-Yu",
+        "bio": ""
+      }
     },
     {
       "id": "o-6",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/liying-wang.jpg",
-      "zh": { "name": "王琍瑩", "bio": "Web3 for All 貢獻者" },
-      "en": { "name": "Liying Wang", "bio": "Web3 for All / Contributor" }
+      "zh": {
+        "name": "王琍瑩",
+        "bio": "Web3 for All 貢獻者"
+      },
+      "en": {
+        "name": "Liying Wang",
+        "bio": "Web3 for All / Contributor"
+      }
     },
-    { "id": "o-7", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "劉維人", "bio": "異人研   資深研究員" }, "en": { "name": "Weijen Liu", "bio": "" } },
-    { "id": "o-8", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "廖珮杏", "bio": "異人研 共同創辦人" }, "en": { "name": "Peixing Liao", "bio": "" } },
-    { "id": "o-9", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "曾郁珊", "bio": "異人研, 研究員" }, "en": { "name": "Zoey Tseng", "bio": "" } },
-    { "id": "o-10", "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/frank-hu.jpg", "zh": { "name": "胡中瀚", "bio": "自由業" }, "en": { "name": "Frank Hu", "bio": "" } },
+    {
+      "id": "o-7",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "劉維人",
+        "bio": "異人研   資深研究員"
+      },
+      "en": {
+        "name": "Weijen Liu",
+        "bio": ""
+      }
+    },
+    {
+      "id": "o-8",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "廖珮杏",
+        "bio": "異人研 共同創辦人"
+      },
+      "en": {
+        "name": "Peixing Liao",
+        "bio": ""
+      }
+    },
+    {
+      "id": "o-9",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "曾郁珊",
+        "bio": "異人研, 研究員"
+      },
+      "en": {
+        "name": "Zoey Tseng",
+        "bio": ""
+      }
+    },
+    {
+      "id": "o-10",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/frank-hu.jpg",
+      "zh": {
+        "name": "胡中瀚",
+        "bio": "自由業"
+      },
+      "en": {
+        "name": "Frank Hu",
+        "bio": ""
+      }
+    },
     {
       "id": "o-12",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/mashbean.jpg",
-      "zh": { "name": "黃豆泥", "bio": "web3 獨立研究者" },
-      "en": { "name": "mashbean", "bio": "Independent researcher of web3" }
+      "zh": {
+        "name": "黃豆泥",
+        "bio": "web3 獨立研究者"
+      },
+      "en": {
+        "name": "mashbean",
+        "bio": "Independent researcher of web3"
+      }
     },
     {
       "id": "o-14",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/ted-lu.jpg",
-      "zh": { "name": "呂顥天", "bio": "TOEDU 臺灣開放教育推動團隊 / 發起人兼資料工程師" },
-      "en": { "name": "Ted Lu", "bio": "TOEDU Founder / Data Engineer " }
+      "zh": {
+        "name": "呂顥天",
+        "bio": "TOEDU 臺灣開放教育推動團隊 / 發起人兼資料工程師"
+      },
+      "en": {
+        "name": "Ted Lu",
+        "bio": "TOEDU Founder / Data Engineer "
+      }
     },
     {
       "id": "o-15",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/astrid.jpg",
-      "zh": { "name": "柚子", "bio": "國立陽明交通大學 資訊工程學系 學生" },
-      "en": { "name": "Astrid", "bio": "NYCU CS  Undergrad" }
+      "zh": {
+        "name": "柚子",
+        "bio": "國立陽明交通大學 資訊工程學系 學生"
+      },
+      "en": {
+        "name": "Astrid",
+        "bio": "NYCU CS  Undergrad"
+      }
     },
     {
       "id": "o-16",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/chen-wei-mao.jpg",
-      "zh": { "name": "毛宸薇", "bio": "成功大學資訊工程系大二學生" },
-      "en": { "name": "CHEN-WEI MAO", "bio": "NCKU CS Undergrad " }
+      "zh": {
+        "name": "毛宸薇",
+        "bio": "成功大學資訊工程系大二學生"
+      },
+      "en": {
+        "name": "CHEN-WEI MAO",
+        "bio": "NCKU CS Undergrad "
+      }
     },
     {
       "id": "o-17",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/vivian-wu.jpg",
-      "zh": { "name": "吳宸維", "bio": "臺大堉璘計畫 揪人更輕鬆 專案參與者" },
-      "en": { "name": "Vivian Wu", "bio": "NTU Yu-Lin Project / Easier to Find Teammate! project contributor" }
+      "zh": {
+        "name": "吳宸維",
+        "bio": "臺大堉璘計畫 揪人更輕鬆 專案參與者"
+      },
+      "en": {
+        "name": "Vivian Wu",
+        "bio": "NTU Yu-Lin Project / Easier to Find Teammate! project contributor"
+      }
     },
     {
       "id": "o-18",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "卓芸亦", "bio": "臺大堉璘專案 揪人更輕鬆 專案參與者" },
-      "en": { "name": "Yvonne Cho", "bio": "NTU Yu-Lin Project /Easier to Find Teammate! project contributor" }
+      "zh": {
+        "name": "卓芸亦",
+        "bio": "臺大堉璘專案 揪人更輕鬆 專案參與者"
+      },
+      "en": {
+        "name": "Yvonne Cho",
+        "bio": "NTU Yu-Lin Project /Easier to Find Teammate! project contributor"
+      }
     },
     {
       "id": "o-19",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/sky-hong.jpg",
-      "zh": { "name": "洪軾凱", "bio": "國立臺灣師範大學 資訊工程學系 學生" },
-      "en": { "name": "Sky Hong", "bio": "NTNU CSIE Undergrad" }
+      "zh": {
+        "name": "洪軾凱",
+        "bio": "國立臺灣師範大學 資訊工程學系 學生"
+      },
+      "en": {
+        "name": "Sky Hong",
+        "bio": "NTNU CSIE Undergrad"
+      }
     },
     {
       "id": "o-20",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "笪瑜庭", "bio": "臺大堉璘計畫 揪人更輕鬆 專案參與者" },
-      "en": { "name": "Yuting Ta", "bio": "NTU Yu-Lin Project /Easier to Find Teammate! project contributor" }
+      "zh": {
+        "name": "笪瑜庭",
+        "bio": "臺大堉璘計畫 揪人更輕鬆 專案參與者"
+      },
+      "en": {
+        "name": "Yuting Ta",
+        "bio": "NTU Yu-Lin Project /Easier to Find Teammate! project contributor"
+      }
     },
     {
       "id": "o-22",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/fu-shiang-ching.jpg",
-      "zh": { "name": "荊輔翔", "bio": "- 中央研究院資訊科學研究所研究助理\n- 環境感測器網路系統（LASS）社群成員" },
-      "en": { "name": "Fu shiang Ching", "bio": "" }
+      "zh": {
+        "name": "荊輔翔",
+        "bio": "- 中央研究院資訊科學研究所研究助理\n- 環境感測器網路系統（LASS）社群成員"
+      },
+      "en": {
+        "name": "Fu shiang Ching",
+        "bio": ""
+      }
     },
     {
       "id": "o-23",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/golda-benjamin.jpg",
-      "zh": { "name": "Golda Benjamin", "bio": "- Access Now 亞太區倡議專員" },
-      "en": { "name": "Golda Benjamin", "bio": "- Access Now Asia-Pacific Campaigner" }
+      "zh": {
+        "name": "Golda Benjamin",
+        "bio": "- Access Now 亞太區倡議專員"
+      },
+      "en": {
+        "name": "Golda Benjamin",
+        "bio": "- Access Now Asia-Pacific Campaigner"
+      }
     },
     {
       "id": "o-24",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/namrata-maheshwari.jpg",
-      "zh": { "name": "Namrata Maheshwari", "bio": "- Access Now 資深政策顧問及加密政策主任" },
-      "en": { "name": "Namrata Maheshwari", "bio": "- Access Now Senior Policy Counsel and Encryption Policy Lead" }
+      "zh": {
+        "name": "Namrata Maheshwari",
+        "bio": "- Access Now 資深政策顧問及加密政策主任"
+      },
+      "en": {
+        "name": "Namrata Maheshwari",
+        "bio": "- Access Now Senior Policy Counsel and Encryption Policy Lead"
+      }
     },
     {
       "id": "o-25",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/raman-jit-singh-chima.jpg",
-      "zh": { "name": "Raman Jit Singh Chima", "bio": "- Access Now 亞太區政策倡議總監" },
-      "en": { "name": "Raman Jit Singh Chima", "bio": "- Access Now Asia Policy Director" }
+      "zh": {
+        "name": "Raman Jit Singh Chima",
+        "bio": "- Access Now 亞太區政策倡議總監"
+      },
+      "en": {
+        "name": "Raman Jit Singh Chima",
+        "bio": "- Access Now Asia Policy Director"
+      }
     },
     {
       "id": "o-26",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/michael-de-dora.jpg",
-      "zh": { "name": "Michael De Dora", "bio": "- Access Now 美國政策及倡議總監" },
-      "en": { "name": "Michael De Dora", "bio": "- Access Now U.S. Policy and Advocacy Manager" }
+      "zh": {
+        "name": "Michael De Dora",
+        "bio": "- Access Now 美國政策及倡議總監"
+      },
+      "en": {
+        "name": "Michael De Dora",
+        "bio": "- Access Now U.S. Policy and Advocacy Manager"
+      }
     },
     {
       "id": "o-28",
       "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
-      "zh": { "name": "賴沛蓮", "bio": "Disfactory 坑主" },
-      "en": { "name": "Peii", "bio": "Disfactory  contributor " }
+      "zh": {
+        "name": "賴沛蓮",
+        "bio": "Disfactory 坑主"
+      },
+      "en": {
+        "name": "Peii",
+        "bio": "Disfactory  contributor "
+      }
     },
     {
       "id": "o-31",
@@ -1721,26 +2759,50 @@
     {
       "id": "o-33",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/patipat-susumpao.jpg",
-      "zh": { "name": "Patipat Susumpao", "bio": "- Managing Director, Opendream" },
-      "en": { "name": "Patipat Susumpao", "bio": "" }
+      "zh": {
+        "name": "Patipat Susumpao",
+        "bio": "- Managing Director, Opendream"
+      },
+      "en": {
+        "name": "Patipat Susumpao",
+        "bio": ""
+      }
     },
     {
       "id": "o-34",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/supinya-klangnarong.jpg",
-      "zh": { "name": "Supinya Klangnarong", "bio": "- Co-founder, Cofact Thailand" },
-      "en": { "name": "Supinya Klangnarong", "bio": "" }
+      "zh": {
+        "name": "Supinya Klangnarong",
+        "bio": "- Co-founder, Cofact Thailand"
+      },
+      "en": {
+        "name": "Supinya Klangnarong",
+        "bio": ""
+      }
     },
     {
       "id": "o-35",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/wen-lii.jpg",
-      "zh": { "name": "李問", "bio": "- 民主進步黨國際事務部主任兼發言人\n- 前民主進步黨連江縣立委參選人\n- 前民主進步黨連江縣黨部主任委員" },
-      "en": { "name": "Wen Lii", "bio": "" }
+      "zh": {
+        "name": "李問",
+        "bio": "- 民主進步黨國際事務部主任兼發言人\n- 前民主進步黨連江縣立委參選人\n- 前民主進步黨連江縣黨部主任委員"
+      },
+      "en": {
+        "name": "Wen Lii",
+        "bio": ""
+      }
     },
     {
       "id": "o-36",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/billion-lee.jpg",
-      "zh": { "name": "比鄰", "bio": "比鄰是個魔法少女" },
-      "en": { "name": "Billion Lee", "bio": "Billion enjoys her ootd" }
+      "zh": {
+        "name": "比鄰",
+        "bio": "比鄰是個魔法少女"
+      },
+      "en": {
+        "name": "Billion Lee",
+        "bio": "Billion enjoys her ootd"
+      }
     },
     {
       "id": "o-37",
@@ -1757,67 +2819,610 @@
     {
       "id": "o-38",
       "avatar": "https://summit.g0v.tw/2024/assets/img/speakers/pn.jpg",
-      "zh": { "name": "PN", "bio": "Rentea活動推播機器人" },
-      "en": { "name": "PN", "bio": "Rentea community evangelist" }
+      "zh": {
+        "name": "PN",
+        "bio": "Rentea活動推播機器人"
+      },
+      "en": {
+        "name": "PN",
+        "bio": "Rentea community evangelist"
+      }
     },
-    { "id": "o-39", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "陳舜伶", "bio": "" }, "en": { "name": "", "bio": "" } },
-    { "id": "", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "", "bio": "" }, "en": { "name": "", "bio": "" } },
-    { "id": "", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "", "bio": "" }, "en": { "name": "", "bio": "" } },
-    { "id": "", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "", "bio": "" }, "en": { "name": "", "bio": "" } },
-    { "id": "", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "", "bio": "" }, "en": { "name": "", "bio": "" } },
-    { "id": "w-1", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "零時小學校", "bio": "" }, "en": { "name": "g0v sch001", "bio": "" } },
-    { "id": "e-1", "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg", "zh": { "name": "Pomin Wu", "bio": "" }, "en": { "name": "Pomin Wu", "bio": "" } }
+    {
+      "id": "o-39",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "陳舜伶",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "w-1",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "零時小學校",
+        "bio": ""
+      },
+      "en": {
+        "name": "g0v sch001",
+        "bio": ""
+      }
+    },
+    {
+      "id": "e-1",
+      "avatar": "https://summit.g0v.tw/2024/assets/img/default-avatar.svg",
+      "zh": {
+        "name": "Pomin Wu",
+        "bio": ""
+      },
+      "en": {
+        "name": "Pomin Wu",
+        "bio": ""
+      }
+    }
   ],
   "rooms": [
-    { "id": "R0", "zh": { "name": "國際會議廳 (R0)", "description": "" }, "en": { "name": "International Conference Hall (R0)", "description": "" } },
-    { "id": "R1", "zh": { "name": "第一會議室 (R1)", "description": "" }, "en": { "name": "1st Conference Room (R1)", "description": "" } },
-    { "id": "R2", "zh": { "name": "第二會議室 (R2)", "description": "" }, "en": { "name": "2nd Conference Room (R2)", "description": "" } },
-    { "id": "R3", "zh": { "name": "第三會議室 (R3)", "description": "" }, "en": { "name": "3rd Conference Room (R3)", "description": "" } },
-    { "id": "RH", "zh": { "name": "交誼廳 (RH)", "description": "" }, "en": { "name": "Recreation Hall (RH)", "description": "" } }
+    {
+      "id": "R0",
+      "zh": {
+        "name": "國際會議廳 (R0)",
+        "description": ""
+      },
+      "en": {
+        "name": "International Conference Hall (R0)",
+        "description": ""
+      }
+    },
+    {
+      "id": "R1",
+      "zh": {
+        "name": "第一會議室 (R1)",
+        "description": ""
+      },
+      "en": {
+        "name": "1st Conference Room (R1)",
+        "description": ""
+      }
+    },
+    {
+      "id": "R2",
+      "zh": {
+        "name": "第二會議室 (R2)",
+        "description": ""
+      },
+      "en": {
+        "name": "2nd Conference Room (R2)",
+        "description": ""
+      }
+    },
+    {
+      "id": "R3",
+      "zh": {
+        "name": "第三會議室 (R3)",
+        "description": ""
+      },
+      "en": {
+        "name": "3rd Conference Room (R3)",
+        "description": ""
+      }
+    },
+    {
+      "id": "RH",
+      "zh": {
+        "name": "交誼廳 (RH)",
+        "description": ""
+      },
+      "en": {
+        "name": "Recreation Hall (RH)",
+        "description": ""
+      }
+    }
   ],
   "session_types": [
-    { "id": "E", "zh": { "name": "年會活動", "description": "" }, "en": { "name": "Main Event", "description": "" } },
-    { "id": "R", "zh": { "name": "休息", "description": "" }, "en": { "name": "Break", "description": "" } },
-    { "id": "K", "zh": { "name": "基調演講", "description": "" }, "en": { "name": "Keynote", "description": "" } },
-    { "id": "T", "zh": { "name": "演講", "description": "" }, "en": { "name": "Talk", "description": "" } },
-    { "id": "W", "zh": { "name": "工作坊", "description": "" }, "en": { "name": "Workshop", "description": "" } },
-    { "id": "P", "zh": { "name": "主題論壇", "description": "" }, "en": { "name": "Panel", "description": "" } },
-    { "id": "H", "zh": { "name": "焦點議程", "description": "" }, "en": { "name": "Highlight", "description": "" } },
-    { "id": "C", "zh": { "name": "社群軌", "description": "" }, "en": { "name": "Community Track", "description": "" } },
-    { "id": "U", "zh": { "name": "Unconference", "description": "" }, "en": { "name": "Unconference", "description": "" } },
-    { "id": "L", "zh": { "name": "閃電講", "description": "" }, "en": { "name": "Lightning Talk", "description": "" } },
-    { "id": "B", "zh": { "name": "社群攤位", "description": "" }, "en": { "name": "Booth", "description": "" } }
+    {
+      "id": "E",
+      "zh": {
+        "name": "年會活動",
+        "description": ""
+      },
+      "en": {
+        "name": "Main Event",
+        "description": ""
+      }
+    },
+    {
+      "id": "R",
+      "zh": {
+        "name": "休息",
+        "description": ""
+      },
+      "en": {
+        "name": "Break",
+        "description": ""
+      }
+    },
+    {
+      "id": "K",
+      "zh": {
+        "name": "基調演講",
+        "description": ""
+      },
+      "en": {
+        "name": "Keynote",
+        "description": ""
+      }
+    },
+    {
+      "id": "T",
+      "zh": {
+        "name": "演講",
+        "description": ""
+      },
+      "en": {
+        "name": "Talk",
+        "description": ""
+      }
+    },
+    {
+      "id": "W",
+      "zh": {
+        "name": "工作坊",
+        "description": ""
+      },
+      "en": {
+        "name": "Workshop",
+        "description": ""
+      }
+    },
+    {
+      "id": "P",
+      "zh": {
+        "name": "主題論壇",
+        "description": ""
+      },
+      "en": {
+        "name": "Panel",
+        "description": ""
+      }
+    },
+    {
+      "id": "H",
+      "zh": {
+        "name": "焦點議程",
+        "description": ""
+      },
+      "en": {
+        "name": "Highlight",
+        "description": ""
+      }
+    },
+    {
+      "id": "C",
+      "zh": {
+        "name": "社群軌",
+        "description": ""
+      },
+      "en": {
+        "name": "Community Track",
+        "description": ""
+      }
+    },
+    {
+      "id": "U",
+      "zh": {
+        "name": "Unconference",
+        "description": ""
+      },
+      "en": {
+        "name": "Unconference",
+        "description": ""
+      }
+    },
+    {
+      "id": "L",
+      "zh": {
+        "name": "閃電講",
+        "description": ""
+      },
+      "en": {
+        "name": "Lightning Talk",
+        "description": ""
+      }
+    },
+    {
+      "id": "B",
+      "zh": {
+        "name": "社群攤位",
+        "description": ""
+      },
+      "en": {
+        "name": "Booth",
+        "description": ""
+      }
+    }
   ],
   "tags": [
-    { "id": "Beginner", "zh": { "name": "新手友善", "description": "" }, "en": { "name": "Beginner Friendly", "description": "" } },
-    { "id": "AI科技規範", "zh": { "name": "人工智慧科技規範", "description": "" }, "en": { "name": "AIRegulation", "description": "" } },
-    { "id": "CoC", "zh": { "name": "社群守則", "description": "" }, "en": { "name": "CoC", "description": "" } },
-    { "id": "eID", "zh": { "name": "數位身分識別", "description": "" }, "en": { "name": "eID", "description": "" } },
-    { "id": "Netiquette", "zh": { "name": "網路禮儀", "description": "" }, "en": { "name": "Netiquette", "description": "" } },
-    { "id": "SDG", "zh": { "name": "永續發展目標", "description": "" }, "en": { "name": "SDGs", "description": "" } },
-    { "id": "個人資料保護", "zh": { "name": "個人資料保護", "description": "" }, "en": { "name": "PersonalDataProtection", "description": "" } },
-    { "id": "公民倡議", "zh": { "name": "公民倡議", "description": "" }, "en": { "name": "CivicActivism", "description": "" } },
-    { "id": "創新創業", "zh": { "name": "創新創業", "description": "" }, "en": { "name": "Innovation", "description": "" } },
-    { "id": "地圖資料", "zh": { "name": "地圖資料", "description": "" }, "en": { "name": "GeoData", "description": "" } },
-    { "id": "大數據(資料治理)", "zh": { "name": "大數據(資料治理)", "description": "" }, "en": { "name": "BigData(DataGovernance)", "description": "" } },
-    { "id": "教育", "zh": { "name": "教育", "description": "" }, "en": { "name": "Education", "description": "" } },
-    { "id": "數位DEI", "zh": { "name": "數位多元共融", "description": "" }, "en": { "name": "DigitalDEI", "description": "" } },
-    { "id": "數位主權", "zh": { "name": "數位主權", "description": "" }, "en": { "name": "DigitalSovereignty", "description": "" } },
-    { "id": "數位兩極化", "zh": { "name": "數位兩極化", "description": "" }, "en": { "name": "DigitalPolarization", "description": "" } },
-    { "id": "數位平台規管", "zh": { "name": "數位平台規管", "description": "" }, "en": { "name": "DigitalPlatformRegulation", "description": "" } },
-    { "id": "數位性暴力", "zh": { "name": "數位性暴力", "description": "" }, "en": { "name": "DigitalViolence", "description": "" } },
-    { "id": "數位民防", "zh": { "name": "數位民防", "description": "" }, "en": { "name": "DigitalCivilDefense", "description": "" } },
-    { "id": "數位素養", "zh": { "name": "數位素養", "description": "" }, "en": { "name": "DigitalLiteracy", "description": "" } },
-    { "id": "數位轉型", "zh": { "name": "數位轉型", "description": "" }, "en": { "name": "DigitalTransformation", "description": "" } },
-    { "id": "數位韌性", "zh": { "name": "數位韌性", "description": "" }, "en": { "name": "DigitalResilience", "description": "" } },
-    { "id": "社會企業", "zh": { "name": "社會企業", "description": "" }, "en": { "name": "SocialEnterprise", "description": "" } },
-    { "id": "社群治理", "zh": { "name": "社群治理", "description": "" }, "en": { "name": "CommunityGovernance", "description": "" } },
-    { "id": "群眾外包", "zh": { "name": "群眾外包", "description": "" }, "en": { "name": "Crowdsourcing", "description": "" } },
-    { "id": "開放政府", "zh": { "name": "開放政府", "description": "" }, "en": { "name": "OpenGovernment", "description": "" } },
-    { "id": "開放課程", "zh": { "name": "開放課程", "description": "" }, "en": { "name": "OpenCourses", "description": "" } },
-    { "id": "開源精神", "zh": { "name": "開源精神", "description": "" }, "en": { "name": "OpenSourceSpirit", "description": "" } },
-    { "id": "非營利組織", "zh": { "name": "非營利組織", "description": "" }, "en": { "name": "NGO", "description": "" } },
-    { "id": "CT-Web3", "zh": { "name": "web3 社群軌", "description": "" }, "en": { "name": "web3 Track", "description": "" } },
-    { "id": "CT-Student", "zh": { "name": "學生社群軌", "description": "" }, "en": { "name": "Student Track", "description": "" } }
+    {
+      "id": "Beginner",
+      "zh": {
+        "name": "新手友善",
+        "description": ""
+      },
+      "en": {
+        "name": "Beginner Friendly",
+        "description": ""
+      }
+    },
+    {
+      "id": "AI科技規範",
+      "zh": {
+        "name": "人工智慧科技規範",
+        "description": ""
+      },
+      "en": {
+        "name": "AIRegulation",
+        "description": ""
+      }
+    },
+    {
+      "id": "CoC",
+      "zh": {
+        "name": "社群守則",
+        "description": ""
+      },
+      "en": {
+        "name": "CoC",
+        "description": ""
+      }
+    },
+    {
+      "id": "eID",
+      "zh": {
+        "name": "數位身分識別",
+        "description": ""
+      },
+      "en": {
+        "name": "eID",
+        "description": ""
+      }
+    },
+    {
+      "id": "Netiquette",
+      "zh": {
+        "name": "網路禮儀",
+        "description": ""
+      },
+      "en": {
+        "name": "Netiquette",
+        "description": ""
+      }
+    },
+    {
+      "id": "SDG",
+      "zh": {
+        "name": "永續發展目標",
+        "description": ""
+      },
+      "en": {
+        "name": "SDGs",
+        "description": ""
+      }
+    },
+    {
+      "id": "個人資料保護",
+      "zh": {
+        "name": "個人資料保護",
+        "description": ""
+      },
+      "en": {
+        "name": "PersonalDataProtection",
+        "description": ""
+      }
+    },
+    {
+      "id": "公民倡議",
+      "zh": {
+        "name": "公民倡議",
+        "description": ""
+      },
+      "en": {
+        "name": "CivicActivism",
+        "description": ""
+      }
+    },
+    {
+      "id": "創新創業",
+      "zh": {
+        "name": "創新創業",
+        "description": ""
+      },
+      "en": {
+        "name": "Innovation",
+        "description": ""
+      }
+    },
+    {
+      "id": "地圖資料",
+      "zh": {
+        "name": "地圖資料",
+        "description": ""
+      },
+      "en": {
+        "name": "GeoData",
+        "description": ""
+      }
+    },
+    {
+      "id": "大數據(資料治理)",
+      "zh": {
+        "name": "大數據(資料治理)",
+        "description": ""
+      },
+      "en": {
+        "name": "BigData(DataGovernance)",
+        "description": ""
+      }
+    },
+    {
+      "id": "教育",
+      "zh": {
+        "name": "教育",
+        "description": ""
+      },
+      "en": {
+        "name": "Education",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位DEI",
+      "zh": {
+        "name": "數位多元共融",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalDEI",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位主權",
+      "zh": {
+        "name": "數位主權",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalSovereignty",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位兩極化",
+      "zh": {
+        "name": "數位兩極化",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalPolarization",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位平台規管",
+      "zh": {
+        "name": "數位平台規管",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalPlatformRegulation",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位性暴力",
+      "zh": {
+        "name": "數位性暴力",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalViolence",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位民防",
+      "zh": {
+        "name": "數位民防",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalCivilDefense",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位素養",
+      "zh": {
+        "name": "數位素養",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalLiteracy",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位轉型",
+      "zh": {
+        "name": "數位轉型",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalTransformation",
+        "description": ""
+      }
+    },
+    {
+      "id": "數位韌性",
+      "zh": {
+        "name": "數位韌性",
+        "description": ""
+      },
+      "en": {
+        "name": "DigitalResilience",
+        "description": ""
+      }
+    },
+    {
+      "id": "社會企業",
+      "zh": {
+        "name": "社會企業",
+        "description": ""
+      },
+      "en": {
+        "name": "SocialEnterprise",
+        "description": ""
+      }
+    },
+    {
+      "id": "社群治理",
+      "zh": {
+        "name": "社群治理",
+        "description": ""
+      },
+      "en": {
+        "name": "CommunityGovernance",
+        "description": ""
+      }
+    },
+    {
+      "id": "群眾外包",
+      "zh": {
+        "name": "群眾外包",
+        "description": ""
+      },
+      "en": {
+        "name": "Crowdsourcing",
+        "description": ""
+      }
+    },
+    {
+      "id": "開放政府",
+      "zh": {
+        "name": "開放政府",
+        "description": ""
+      },
+      "en": {
+        "name": "OpenGovernment",
+        "description": ""
+      }
+    },
+    {
+      "id": "開放課程",
+      "zh": {
+        "name": "開放課程",
+        "description": ""
+      },
+      "en": {
+        "name": "OpenCourses",
+        "description": ""
+      }
+    },
+    {
+      "id": "開源精神",
+      "zh": {
+        "name": "開源精神",
+        "description": ""
+      },
+      "en": {
+        "name": "OpenSourceSpirit",
+        "description": ""
+      }
+    },
+    {
+      "id": "非營利組織",
+      "zh": {
+        "name": "非營利組織",
+        "description": ""
+      },
+      "en": {
+        "name": "NGO",
+        "description": ""
+      }
+    },
+    {
+      "id": "CT-Web3",
+      "zh": {
+        "name": "web3 社群軌",
+        "description": ""
+      },
+      "en": {
+        "name": "web3 Track",
+        "description": ""
+      }
+    },
+    {
+      "id": "CT-Student",
+      "zh": {
+        "name": "學生社群軌",
+        "description": ""
+      },
+      "en": {
+        "name": "Student Track",
+        "description": ""
+      }
+    }
   ]
 }
