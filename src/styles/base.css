@@ -213,39 +213,6 @@
   }
 }
 
-body[lang='en-TW'] .timeline-item-title {
-  @apply text-xl;
-}
-
-#modal {
-  @apply fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center p-4;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-  > .inner-modal {
-    @apply flex max-w-lg min-w-80 flex-col bg-white;
-    max-height: 100%;
-    transition: all 0.3s ease;
-    transform: translateY(20px);
-  }
-  .modal-body {
-    flex: 1;
-    overflow-y: auto;
-    hr {
-      margin: 1rem 0;
-    }
-  }
-  &.show {
-    opacity: 1;
-    pointer-events: auto;
-    > .inner-modal {
-      transform: translateY(0);
-    }
-  }
-}
-
 footer {
   .rolling-list a {
     @apply text-neutral-600;

@@ -5,6 +5,7 @@ import Navbar from '~/components/Navbar.astro'
 import Footer from '~/components/Footer.astro'
 import CookieNotice from '~/components/CookieNotice.astro'
 import StagingInfo from '~/components/StagingInfo.astro'
+import Modal from '~/components/Modal.astro'
 import { isStaging } from '~/utils/build/isStaging'
 import { getLocaleFromPath } from '~/i18n/utils'
 
@@ -24,6 +25,7 @@ const { pageName } = Astro.props
       <CookieNotice />
       {isStaging() && <StagingInfo />}
     </div>
+    <Modal />
 
     <script is:inline src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
   </body>
