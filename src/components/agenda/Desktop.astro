@@ -42,7 +42,7 @@ schedule.sessions.forEach(session => {
   <div class="container">
     <h2 class="mt-8 mb-12">{title}</h2>
 
-    <div class="agenda-grid relative grid">
+    <div id="agenda-grid" class="agenda-grid relative grid">
       {Array.from(times).map(time => <Time at={time} />)}
       {sessions.map(session => <Session session={session} />)}
     </div>

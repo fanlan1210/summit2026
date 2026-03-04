@@ -1,0 +1,27 @@
+---
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+
+const { session } = Astro.props
+
+const tags = session.tags.map(tagId => tagIdToDetail(tagId))
+const type = typeToDetail(session.type)
+
+function tagIdToDetail(tagId) {
+  return schedule.tags.find(tag => tag.id === tagId)
+}
+
+function typeToDetail(type) {
+  return schedule.session_types.find(t => t.id === type)
+}
+---
+
+<div class="my-2 flex flex-wrap gap-1 text-xs text-white">
+  {session.type && <span class="bg-primary rounded-full px-2">{isZhTW ? type.zh.name : type.en.name}</span>}
+  {session.language && <span class="rounded-full bg-neutral-500 px-2">{t(`language.${session.language}`)}</span>}
+  {tags.map(tag => <span class="rounded-full bg-neutral-400 px-2">{isZhTW ? tag.zh.name : tag.en.name}</span>)}
+</div>

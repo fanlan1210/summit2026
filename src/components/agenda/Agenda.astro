@@ -13,6 +13,27 @@ const { title, date } = Astro.props
   <Mobile title={title} date={date} />
 </Layout>
 
+<script>
+  import { showModalWith } from '~/utils/client/modal'
+
+  const agendaGridEl = document.querySelector('#agenda-grid')
+  const sessionsEl = document.querySelector('#sessions')
+
+  agendaGridEl?.addEventListener('click', showSessionModal)
+  sessionsEl?.addEventListener('click', showSessionModal)
+
+  function showSessionModal(e: Event) {
+    const target = e.target as HTMLElement
+    const session = target.closest('.session')
+    if (!session) return
+
+    showModalWith({
+      header: session.querySelector('.modal-content .header').innerHTML,
+      body: session.querySelector('.modal-content .body').innerHTML,
+    })
+  }
+</script>
+
 <style is:global>
   #navbar {
     position: relative;

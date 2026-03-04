@@ -25,6 +25,10 @@
     "about": "About",
     "register": "Register"
   },
+  "agenda": {
+    "qa": "Q&A",
+    "note": "Collab Notes"
+  },
   "visit": {
     "info": {
       "title": "Traffic Info",

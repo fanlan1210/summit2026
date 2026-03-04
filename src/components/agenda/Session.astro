@@ -2,6 +2,7 @@
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+import SessionTags from './SessionTags.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
@@ -11,15 +12,15 @@ const { session } = Astro.props
 
 const columnOrder = ['R0', 'R1', 'R2', 'RH', 'end']
 
-const tags = session.tags.map(tagId => tagIdToDetail(tagId))
 const speakers = session.speakers.map(speakerId => speakerIdToDetail(speakerId))
-const type = typeToDetail(session.type)
 const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
 const endRow = parseInt(extractHHmm(session.end).replace(':', '')) || 0
 const [startCol, endCol] = getColumnStartEnd(session.broadcast || session.room)
 const isRest = session.type === 'R'
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
+
+const description = formatDescription(isZhTW ? session.zh.description : session.en.description)
 
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
@@ -34,16 +35,43 @@ function speakerIdToDetail(speakerId) {
   return schedule.speakers.find(speaker => speaker.id === speakerId)
 }
 
-function tagIdToDetail(tagId) {
-  return schedule.tags.find(tag => tag.id === tagId)
+function formatMMdd(date) {
+  if (typeof date === 'string') {
+    date = new Date(date)
+  }
+
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+
+  return `${month}/${day}`
 }
 
-function typeToDetail(type) {
-  return schedule.session_types.find(t => t.id === type)
+function formatHHmm(date) {
+  if (typeof date === 'string') {
+    date = new Date(date)
+  }
+
+  const hour = String(date.getHours()).padStart(2, '0')
+  const minute = String(date.getMinutes()).padStart(2, '0')
+
+  return `${hour}:${minute}`
+}
+
+function formatDescription(rawDescription) {
+  const parts = rawDescription.split('\n\n---\n\n')
+
+  return {
+    content: parts.shift(),
+    additional: parts.map(part => {
+      const seperator = isZhTW ? '：' : ':'
+      const [key, value] = part.split(seperator)
+      return { key: key.trim(), value: value.trim() }
+    }),
+  }
 }
 ---
 
-<div class="flex flex-col p-3" style={style}>
+<div class:list={[isRest ? '' : 'session', 'flex flex-col p-3']} style={style}>
   <div class=`relative z-10 shrink-0 grow cursor-pointer p-4 ${isRest ? 'bg-neutral-300' : 'bg-neutral-100'}`>
     <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
       <div class="font-bold text-neutral-800">{isZhTW ? session.zh.title : session.en.title}</div>
@@ -51,17 +79,49 @@ function typeToDetail(type) {
         {speakers.map(speaker => <div class="text-sm text-neutral-700">{isZhTW ? speaker.zh.name : speaker.en.name}</div>)}
       </div>
 
-      {
-        !isRest && (
-          <div class="my-2 flex flex-wrap gap-1 text-xs text-white">
-            {session.type && <span class="bg-primary rounded-full px-2">{isZhTW ? type.zh.name : type.en.name}</span>}
-            {session.language && <span class="rounded-full bg-neutral-500 px-2">{t(`language.${session.language}`)}</span>}
-            {tags.map(tag => (
-              <span class="rounded-full bg-neutral-400 px-2">{isZhTW ? tag.zh.name : tag.en.name}</span>
-            ))}
-          </div>
-        )
-      }
+      {!isRest && <SessionTags session={session} />}
     </div>
   </div>
+
+  {
+    !isRest && (
+      <div class="modal-content hidden">
+        <div class="header">
+          <h3 class="text-primary">{isZhTW ? session.zh.title : session.en.title}</h3>
+          <SessionTags session={session} />
+          <div class="mb-2">
+            {formatMMdd(session.start)} {formatHHmm(session.start)} ~ {formatHHmm(session.end)} @ {session.broadcast || session.room}
+          </div>
+          <div class="flex gap-2">
+            <a href={session.qa} target="_blank" class="btn btn-primary">
+              {t('agenda.qa')}
+            </a>
+            <a href={session.co_write} target="_blank" class="btn btn-primary">
+              {t('agenda.note')}
+            </a>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="mb-4 flex flex-col gap-4">
+            {speakers.map(speaker => (
+              <a href="#" class="group flex items-center gap-4">
+                <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
+                  <img class="h-full w-full" src={speaker.avatar} alt={isZhTW ? speaker.zh.name : speaker.en.name} />
+                </div>
+                <span class="text-primary text-xl font-bold underline-offset-4 group-hover:underline">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
+              </a>
+            ))}
+          </div>
+          <p class="mb-0 border-t border-neutral-300 py-4 wrap-break-word whitespace-pre-line">{description.content}</p>
+          {description.additional.map(item => (
+            <div class="border-t border-neutral-300 py-4">
+              <h6 class="font-bold">{item.key}</h6>
+              <p>{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
 </div>

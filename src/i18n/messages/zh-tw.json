@@ -25,6 +25,10 @@
     "about": "關於",
     "register": "參與活動"
   },
+  "agenda": {
+    "qa": "線上提問",
+    "note": "共同筆記"
+  },
   "visit": {
     "info": {
       "title": "交通資訊",
