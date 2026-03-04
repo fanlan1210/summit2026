@@ -1,6 +1,6 @@
-<div id="modal" class="pointer-none fixed top-0 left-0 -z-50 flex h-full w-full items-center justify-center bg-black/20 px-4 py-8 opacity-0 backdrop-blur-xs transition-opacity duration-300">
+<div id="modal" class="pointer-events-none fixed top-0 left-0 z-99999 flex h-full w-full items-center justify-center bg-black/20 px-4 py-8 opacity-0 backdrop-blur-xs transition-opacity duration-300">
   <div class="flex max-h-full max-w-lg min-w-80 translate-y-5 flex-col rounded-lg bg-white p-4 transition-transform duration-300">
-    <div class="modal-header"></div>
+    <div class="modal-header mb-6"></div>
     <div class="modal-body overflow-y-auto"></div>
   </div>
 </div>
@@ -20,7 +20,6 @@
   #modal.show {
     opacity: 1;
     pointer-events: auto;
-    z-index: 99999;
   }
 
   #modal.show > div {
