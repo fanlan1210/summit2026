@@ -2,7 +2,7 @@ name: Dispatch to summit.g0v.tw
 
 on:
   push:
-    branches: [ production ]
+    branches: [production]
 
 jobs:
   dispatch:

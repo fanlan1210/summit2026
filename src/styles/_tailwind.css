@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @theme {
   --text-base: 18px;
   --font-sans: Onest, 'Noto Sans TC', sans-serif;
   --font-serif: Amarna, 'LXGW WenKai TC', serif;
-  --color-brand: #F25549;
-  --color-primary: #DF6258;
-  --color-primary-dark: #9E3027;
-  --color-primary-light: #FF8F86;
-  --color-info: #3C89C2;
+  --color-brand: #f25549;
+  --color-primary: #df6258;
+  --color-primary-dark: #9e3027;
+  --color-primary-light: #ff8f86;
+  --color-info: #3c89c2;
   --color-info-dark: #195078;
-  --color-info-light: #A1D7FF;
+  --color-info-light: #a1d7ff;
 }
