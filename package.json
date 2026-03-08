@@ -15,6 +15,7 @@
     "build": "cross-env BUILD_MODE=staging astro build",
     "preview": "cross-env BUILD_MODE=stagin astro preview",
     "dev": "cross-env BUILD_MODE=staging astro dev",
+    "format": "prettier --write .",
     "fetch-schedule": "node fetch-schedule.js"
   },
   "dependencies": {
