@@ -1,0 +1,11 @@
+---
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+const { room } = Astro.props
+---
+
+<div class="mx-3 flex items-center justify-center gap-3 py-2 text-white">
+  <span class="text-info-dark text-4xl font-bold">{room}</span>
+  <span class="text-info text-left">{t(`room.${room}`)}</span>
+</div>
