@@ -26,6 +26,9 @@
     "register": "Register"
   },
   "agenda": {
+    "title": "Agenda",
+    "main_note": "Notes",
+    "main_live": "Live",
     "qa": "Q&A",
     "note": "Collab Notes"
   },
