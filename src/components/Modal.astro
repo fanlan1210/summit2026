@@ -1,7 +1,12 @@
-<div id="modal" class="pointer-events-none fixed top-0 left-0 z-99999 flex h-full w-full items-center justify-center bg-black/20 px-4 py-8 opacity-0 backdrop-blur-xs transition-opacity duration-300">
-  <div class="flex max-h-full md:max-w-lg md:min-w-80 translate-y-5 flex-col rounded-lg bg-white p-4 transition-transform duration-300">
+<div id="modal" class="pointer-events-none fixed top-0 left-0 z-99999 flex h-full w-full items-center justify-center bg-black/20 p-4 opacity-0 backdrop-blur-xs transition-opacity duration-300">
+  <div class="flex max-h-full max-w-full translate-y-5 flex-col rounded-lg bg-white p-4 pb-0 transition-transform duration-300 md:max-w-lg md:min-w-80">
     <div class="modal-header mb-6"></div>
     <div class="modal-body overflow-y-auto"></div>
+    <div class="flex items-center justify-center bg-white py-1">
+      <button id="modal-close-btn" class="text-info hover:text-info-dark grid place-items-center transition-colors">
+        <iconify-icon icon="mdi:close-circle" width="none" style="width: 28px; height: 28px"></iconify-icon>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -9,11 +14,14 @@
   import { hideModal } from '~/utils/client/modal'
 
   const modalEl = document.querySelector('#modal')
+  const modalCloseBtnEl = document.querySelector('#modal-close-btn')
 
   modalEl?.addEventListener('click', e => {
     if (e.target !== e.currentTarget) return
     hideModal()
   })
+
+  modalCloseBtnEl.addEventListener('click', hideModal)
 </script>
 
 <style>
