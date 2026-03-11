@@ -2,6 +2,7 @@
 import { useI18n, getLocaleFromPath } from '~/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseAndLocale'
+import Icon from '~/components/Icon.astro'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
@@ -36,7 +37,7 @@ const navs = [
     <div class="group relative hidden h-full items-center gap-2 px-4 font-bold md:flex">
       <span class="flex cursor-pointer items-center gap-2">
         Language
-        <iconify-icon icon="mdi:language" class="icon-18"></iconify-icon>
+        <Icon name="mdi:language" width="20" />
       </span>
 
       <div
@@ -65,7 +66,7 @@ const navs = [
           }
 
           <div class="flex items-center gap-2 py-2 text-xl">
-            <iconify-icon icon="mdi:language" class="icon-18"></iconify-icon>
+            <Icon name="mdi:language" width="20" />
             <a href={getRelativeLocaleUrl('zh-tw', pathname)}>華語</a>
             <span>|</span>
             <a href={getRelativeLocaleUrl('en', pathname)}>English</a>

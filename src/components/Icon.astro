@@ -1,0 +1,21 @@
+---
+let { name, width, height } = Astro.props
+
+if (!height) {
+  height = width
+}
+
+if (isNum(width)) {
+  width = `${width}px`
+}
+
+if (isNum(height)) {
+  height = `${height}px`
+}
+
+function isNum(value) {
+  return !isNaN(value)
+}
+---
+
+<iconify-icon icon={name} width="none" style={{ width: `${width}`, height: `${height}` }}></iconify-icon>

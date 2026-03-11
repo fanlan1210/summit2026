@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro'
 import { useI18n } from '~/i18n/utils'
+import Icon from '~/components/Icon.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
@@ -65,7 +66,7 @@ const { t } = useI18n(Astro.url.pathname)
             id="visit-tab-publicTransport"
             data-tab="publicTransport"
           >
-            <iconify-icon icon="mdi:bus" class="size-5 shrink-0" aria-hidden="true"></iconify-icon>
+            <Icon name="mdi:bus" width="20" />
             <span class="hidden md:inline">{t('visit.transport.tabs.publicTransport')}</span>
           </button>
           <button
@@ -78,7 +79,7 @@ const { t } = useI18n(Astro.url.pathname)
             id="visit-tab-driving"
             data-tab="driving"
           >
-            <iconify-icon icon="mdi:car" class="size-5 shrink-0" aria-hidden="true"></iconify-icon>
+            <Icon name="mdi:car" width="20" />
             <span class="hidden md:inline">{t('visit.transport.tabs.drivingLine1')}<span class="whitespace-nowrap">{t('visit.transport.tabs.drivingLine2')}</span></span>
           </button>
         </div>
