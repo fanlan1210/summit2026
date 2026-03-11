@@ -20,4 +20,7 @@ export default defineConfig({
     defaultLocale: 'zh-tw',
     locales: ['zh-tw', 'en'],
   },
+  devToolbar: {
+    enabled: false,
+  },
 })
