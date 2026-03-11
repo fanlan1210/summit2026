@@ -4,9 +4,12 @@ import Layout from '~/layouts/Layout.astro'
 import Desktop from './desktop/Desktop.astro'
 import Mobile from './mobile/Mobile.astro'
 import Icon from '~/components/Icon.astro'
+import schedule from '~/data/schedule.json'
+import Search from '~/components/agenda/Search.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const { title, date } = Astro.props
+const sessions = schedule.sessions.filter(session => session.start.startsWith(date))
 ---
 
 <Layout pageName={t('nav.agenda')}>
@@ -22,12 +25,17 @@ const { title, date } = Astro.props
         <Icon name="mdi:video" width="24" />
         <span>{t('agenda.main_live')}</span>
       </a>
+      <div class="mt-6 lg:hidden">
+        <Search />
+      </div>
     </div>
   </div>
 
   <Desktop title={title} date={date} />
   <Mobile title={title} date={date} />
 </Layout>
+
+<div id="sessionsJson" data-json={JSON.stringify(sessions)}></div>
 
 <script>
   import { showModalWith } from '~/utils/client/modal'

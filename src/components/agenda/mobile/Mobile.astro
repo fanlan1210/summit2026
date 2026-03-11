@@ -63,7 +63,7 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 <div class="lg:hidden">
   <div class="sticky top-0 z-30 bg-white py-2">
     <div class="container">
-      <div class="mb-4 flex gap-4 font-bold justify-center">
+      <div class="mb-4 flex justify-center gap-4 font-bold">
         <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day1')} title="Day 1" curTitle={title} />
         <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day2')} title="Day 2" curTitle={title} />
       </div>

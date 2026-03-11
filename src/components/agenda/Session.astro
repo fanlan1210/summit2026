@@ -73,7 +73,7 @@ function formatDescription(rawDescription) {
 }
 ---
 
-<div class:list={[isSession ? 'session' : '', 'm-3 flex flex-col']} style={style}>
+<div class:list={[isSession ? 'session' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id}>
   <div class:list={['relative z-10 shrink-0 grow rounded p-4', isRest ? 'bg-neutral-300' : 'bg-[#F3F3F3]', isSession ? 'cursor-pointer' : '']}>
     <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
       <div class="font-bold">{isZhTW ? session.zh.title : session.en.title}</div>
@@ -111,9 +111,7 @@ function formatDescription(rawDescription) {
                 <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
                   <img class="h-full w-full" src={speaker.avatar} alt={isZhTW ? speaker.zh.name : speaker.en.name} />
                 </div>
-                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">
-                  {isZhTW ? speaker.zh.name : speaker.en.name}
-                </span>
+                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
               </a>
             ))}
           </div>

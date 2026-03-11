@@ -7,6 +7,7 @@ import DayLink from '~/components/agenda/DayLink.astro'
 import RoomCard from '~/components/agenda/desktop/RoomCard.astro'
 import Time from '~/components/agenda/desktop/Time.astro'
 import Session from '~/components/agenda/Session.astro'
+import Search from '~/components/agenda/Search.astro'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -28,6 +29,9 @@ schedule.sessions.forEach(session => {
       <div class="mt-4 mb-5 flex gap-4 font-bold">
         <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day1')} title="Day 1" curTitle={title} />
         <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day2')} title="Day 2" curTitle={title} />
+        <div class="ml-auto">
+          <Search />
+        </div>
       </div>
 
       <div class="agenda-grid grid text-center">
