@@ -89,16 +89,16 @@ function formatDescription(rawDescription) {
     isSession && (
       <div class="modal-content hidden">
         <div class="header">
-          <h3 class="text-primary">{isZhTW ? session.zh.title : session.en.title}</h3>
+          <h3 class="text-info-dark">{isZhTW ? session.zh.title : session.en.title}</h3>
           <SessionBadges session={session} />
           <div class="mb-2">
             {formatMMdd(session.start)} {formatHHmm(session.start)} ~ {formatHHmm(session.end)} @ {session.broadcast || session.room}
           </div>
           <div class="flex gap-2">
-            <a href={session.qa} target="_blank" class="btn btn-primary">
+            <a href={session.qa} target="_blank" class="btn btn-info">
               {t('agenda.qa')}
             </a>
-            <a href={session.co_write} target="_blank" class="btn btn-primary">
+            <a href={session.co_write} target="_blank" class="btn btn-info">
               {t('agenda.note')}
             </a>
           </div>
@@ -111,7 +111,9 @@ function formatDescription(rawDescription) {
                 <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
                   <img class="h-full w-full" src={speaker.avatar} alt={isZhTW ? speaker.zh.name : speaker.en.name} />
                 </div>
-                <span class="text-primary text-xl font-bold underline-offset-4 group-hover:underline">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
+                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">
+                  {isZhTW ? speaker.zh.name : speaker.en.name}
+                </span>
               </a>
             ))}
           </div>
