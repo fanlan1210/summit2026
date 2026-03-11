@@ -38,6 +38,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 <div id="sessionsJson" data-json={JSON.stringify(sessions)}></div>
 
 <script>
+  import Fuse from 'fuse.js'
   import { showModalWith } from '~/utils/client/modal'
 
   const agendaGridEl = document.querySelector('#agenda-grid')
@@ -55,6 +56,66 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
       header: session.querySelector('.modal-content .header').innerHTML,
       body: session.querySelector('.modal-content .body').innerHTML,
     })
+  }
+
+  // Search
+  const agendaSearchEls = document.querySelectorAll('.agenda-search')
+  const sessionEls = document.querySelectorAll('.session')
+
+  const sessions = JSON.parse(document.querySelector<HTMLElement>('#sessionsJson').dataset.json)
+  const fuse = new Fuse(sessions, {
+    keys: ['zh.title', 'en.title', 'tags'],
+    threshold: 0.3,
+  })
+
+  let highestScoreElement: HTMLElement
+
+  agendaSearchEls.forEach((el: HTMLElement) => {
+    el.addEventListener('input', e => {
+      const target = e.currentTarget as HTMLInputElement
+      const value = target.value.trim()
+      if (!value) {
+        sessionEls.forEach((session: HTMLElement) => {
+          session.classList.remove('opacity-30')
+        })
+        return
+      }
+
+      const results = fuse.search<{ id: string }>(value)
+      const ids = results.map(result => result.item.id)
+
+      if (ids.length === 0) return
+
+      sessionEls.forEach((session: HTMLElement) => {
+        if (ids[0] === session.dataset.id && isVisible(session)) {
+          highestScoreElement = session
+        }
+
+        const isMatched = ids.includes(session.dataset.id)
+        session.classList.toggle('opacity-30', !isMatched)
+      })
+
+      scrollElementIntoView()
+    })
+
+    el.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return
+      scrollElementIntoView()
+    })
+  })
+
+  function scrollElementIntoView() {
+    if (highestScoreElement) {
+      highestScoreElement.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth' })
+    }
+  }
+
+  function isVisible(el) {
+    if (!el) return false
+
+    const style = window.getComputedStyle(el)
+
+    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && el.offsetWidth > 0 && el.offsetHeight > 0
   }
 </script>
 
