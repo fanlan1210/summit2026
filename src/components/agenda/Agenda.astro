@@ -2,7 +2,7 @@
 import { useI18n } from '~/i18n/utils'
 import Layout from '~/layouts/Layout.astro'
 import Desktop from './desktop/Desktop.astro'
-import Mobile from './Mobile.astro'
+import Mobile from './mobile/Mobile.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -12,7 +12,7 @@ const { title, date } = Astro.props
   <div class="container">
     <h1 class="my-12">{t('agenda.title')}</h1>
 
-    <div class="mb-8 flex gap-4">
+    <div class="mb-8 flex flex-col md:flex-row gap-4">
       <a href="#" class="btn btn-info flex gap-1 px-14!">
         <iconify-icon icon="mdi:text-box-edit" width="24" height="24" style="width: 24px; height: 24px"></iconify-icon>
         <span>{t('agenda.main_note')}</span>

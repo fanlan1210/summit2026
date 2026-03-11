@@ -1,0 +1,5 @@
+---
+const { curTitle, title, href } = Astro.props
+---
+
+<a class:list={[title === curTitle ? 'text-info-dark border-info-dark border-b-6' : 'text-info', 'hover:text-info-dark px-6 md:px-10 text-lg transition-colors']} href={href}>{title}</a>

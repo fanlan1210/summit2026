@@ -4,6 +4,7 @@ import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
 import Session from '~/components/agenda/Session.astro'
+import DayLink from '~/components/agenda/DayLink.astro'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -60,14 +61,14 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 ---
 
 <div class="lg:hidden">
-  <div class="sticky top-0 z-30 bg-white py-3 shadow">
+  <div class="sticky top-0 z-30 bg-white py-2">
     <div class="container">
-      <div class="mb-3 flex justify-center gap-4 font-bold">
-        <a class={title === 'Day 1' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day1')}>Day 1</a>
-        <a class={title === 'Day 2' ? 'text-info-dark' : 'text-info'} href={getRelativeLocaleUrl(locale, 'agenda/day2')}>Day 2</a>
+      <div class="mb-4 flex gap-4 font-bold justify-center">
+        <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day1')} title="Day 1" curTitle={title} />
+        <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day2')} title="Day 2" curTitle={title} />
       </div>
       <div id="btns" class="grid grid-cols-5 text-center">
-        <button data-target="#allSessions" class="border-primary border-b-2 transition-colors">ALL</button>
+        <button data-target="#allSessions" class="border-info-dark border-b-2 transition-colors">ALL</button>
         <button data-target="#r0Sessions" class="border-b-2 border-transparent transition-colors">R0</button>
         <button data-target="#r1Sessions" class="border-b-2 border-transparent transition-colors">R1</button>
         <button data-target="#r2Sessions" class="border-b-2 border-transparent transition-colors">R2</button>
@@ -77,9 +78,7 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
   </div>
 
   <div class="container">
-    <h2 class="mt-8 mb-12">{title}</h2>
-
-    <div id="sessions">
+    <div id="sessions" class="mt-6">
       <div id="allSessions">
         {
           allTimes.map(time => (
@@ -156,16 +155,16 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 
   $('#btns').on('click', 'button', function () {
     hideAll()
-    $(this).removeClass('border-transparent').addClass('border-primary')
+    $(this).removeClass('border-transparent').addClass('border-info-dark')
     $($(this).data('target')).css('display', '')
   })
 
   function hideAll() {
     $btnsChildren.each(function () {
-      $(this).removeClass('border-primary').addClass('border-transparent')
+      $(this).removeClass('border-info-dark').addClass('border-transparent')
     })
     $sessionsChildren.each(function () {
-      $(this).css('display', 'none').removeClass('border-primary')
+      $(this).css('display', 'none').removeClass('border-info-dark')
     })
   }
 </script>
