@@ -17,19 +17,19 @@
     @apply font-bold;
   }
   h1 {
-    @apply text-4xl;
+    @apply md:text-4xl text-3xl;
   }
   h2 {
-    @apply text-3xl;
+    @apply md:text-3xl text-2xl;
   }
   h3 {
-    @apply text-2xl;
+    @apply md:text-2xl text-xl;
   }
   h4 {
-    @apply text-xl;
+    @apply md:text-xl text-lg;
   }
   h5 {
-    @apply text-lg;
+    @apply md:text-lg text-base;
   }
   p {
     @apply leading-8;
