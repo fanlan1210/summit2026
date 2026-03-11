@@ -44,8 +44,8 @@ const navs = [
         class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
       >
         <div class="mt-1 flex flex-col">
-          <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="lang-btn zh-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
-          <a href={getRelativeLocaleUrl('en', pathname)} class="lang-btn en-btn w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
+          <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
+          <a href={getRelativeLocaleUrl('en', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">English</a>
         </div>
       </div>
     </div>
@@ -55,22 +55,27 @@ const navs = [
     </button>
 
     <div id="mobile-nav" class="absolute top-full right-0 left-0 grid grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:hidden">
-      <div class="min-h-0">
-        <div class="flex flex-col items-center gap-3 py-3">
+      <div class="container min-h-0">
+        <div class="flex flex-col gap-3 pt-3 pb-6">
           {
             navs.map(nav => (
-              <a class="mobile-nav-item" href={nav.href}>
+              <a class="mobile-nav-item px-6 text-lg" href={nav.href}>
                 {nav.name}
               </a>
             ))
           }
 
-          <div class="flex items-center gap-2 py-2 text-xl">
+          <div class="flex items-center gap-2 px-6 text-xl">
             <Icon name="mdi:language" width="20" />
-            <a href={getRelativeLocaleUrl('zh-tw', pathname)}>華語</a>
+            <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="text-lg">華語</a>
             <span>|</span>
-            <a href={getRelativeLocaleUrl('en', pathname)}>English</a>
+            <a href={getRelativeLocaleUrl('en', pathname)} class="text-lg">English</a>
           </div>
+
+          <a class="btn-brand flex items-center justify-between px-4 py-3 text-lg" href="#">
+            {t('nav.register')}
+            <Icon name="mdi:arrow-right" width="28" />
+          </a>
         </div>
       </div>
     </div>
