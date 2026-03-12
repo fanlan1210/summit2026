@@ -1,8 +1,17 @@
 ---
 import Icon from '~/components/Icon.astro'
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
 ---
 
 <div class="flex items-center gap-2 border-b border-[#848484]">
-  <Icon name="mdi:magnify" width="24" />
-  <input class="agenda-search w-full outline-none" type="text" />
+  <Icon name="mdi:magnify" width="24" color="#D1D1D1" />
+  <input class="agenda-search w-full outline-none" type="text" placeholder={t('agenda.search_keyword')} />
 </div>
+
+<style>
+  .agenda-search::placeholder {
+    color: #d1d1d1;
+  }
+</style>
