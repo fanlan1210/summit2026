@@ -1,5 +1,9 @@
 ---
-let { name, width, height } = Astro.props
+let { name, width, height, color } = Astro.props
+
+if (!color) {
+  color = 'currentColor'
+}
 
 if (!height) {
   height = width
@@ -18,4 +22,4 @@ function isNum(value) {
 }
 ---
 
-<iconify-icon icon={name} width="none" style={{ width: `${width}`, height: `${height}` }}></iconify-icon>
+<iconify-icon icon={name} width="none" style={{ width: `${width}`, height: `${height}`, color: `${color}` }}></iconify-icon>
