@@ -49,7 +49,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
   function showSessionModal(e: Event) {
     const target = e.target as HTMLElement
-    const session = target.closest('.session')
+    const session = target.closest('.session.session-canClick')
     if (!session) return
 
     showModalWith({

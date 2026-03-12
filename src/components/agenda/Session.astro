@@ -18,7 +18,7 @@ const endRow = parseInt(extractHHmm(session.end).replace(':', '')) || 0
 const [startCol, endCol] = getColumnStartEnd(session.broadcast || session.room)
 const isRest = session.type === 'R'
 const isEvent = session.type === 'E'
-const isSession = !isRest && !isEvent
+const canClick = !isRest && !isEvent
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
@@ -73,8 +73,8 @@ function formatDescription(rawDescription) {
 }
 ---
 
-<div class:list={[isSession ? 'session' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id}>
-  <div class:list={['relative z-10 shrink-0 grow rounded p-4', isRest ? 'bg-neutral-300' : 'bg-[#F3F3F3]', isSession ? 'cursor-pointer' : '']}>
+<div class:list={['session', canClick ? 'session-canClick' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id}>
+  <div class:list={['relative z-10 shrink-0 grow rounded p-4', isRest ? 'bg-neutral-300' : 'bg-[#F3F3F3]', canClick ? 'cursor-pointer' : '']}>
     <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
       <div class="font-bold">{isZhTW ? session.zh.title : session.en.title}</div>
       <div class="flex flex-col items-stretch">
@@ -86,7 +86,7 @@ function formatDescription(rawDescription) {
   </div>
 
   {
-    isSession && (
+    canClick && (
       <div class="modal-content hidden">
         <div class="header">
           <h3 class="text-info-dark">{isZhTW ? session.zh.title : session.en.title}</h3>
