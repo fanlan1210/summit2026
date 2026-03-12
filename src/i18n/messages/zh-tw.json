@@ -31,7 +31,11 @@
     "main_live": "議程直播",
     "qa": "線上提問",
     "note": "共同筆記",
-    "search_keyword": "以關鍵字搜尋議程"
+    "search_keyword": "以關鍵字搜尋議程",
+    "dont_miss": "不想錯過議程嗎？",
+    "opass_info": "大會提供 OPass App (iOS / Android)，可預先排程想去的議程，亦會在時間快到時提供通知。",
+    "has_installed_opass": "已經安裝 OPass ?",
+    "open_in_app": "在 App 內開啟~"
   },
   "visit": {
     "info": {

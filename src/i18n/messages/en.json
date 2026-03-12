@@ -31,7 +31,11 @@
     "main_live": "Live",
     "qa": "Q&A",
     "note": "Collab Notes",
-    "search_keyword": "Search agendas"
+    "search_keyword": "Search agendas",
+    "dont_miss": "Don't want to miss the agenda?",
+    "opass_info": "The conference offers the OPass app (iOS / Android), where you can plan the sessions you want to attend ahead of time and receive notifications as they're about to start.",
+    "has_installed_opass": "Installed OPass?",
+    "open_in_app": "Open it in the app ~"
   },
   "visit": {
     "info": {
