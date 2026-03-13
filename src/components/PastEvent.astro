@@ -1,0 +1,25 @@
+---
+const { year } = Astro.props
+
+const isAnniversary = year === '2022'
+const href = isAnniversary ? 'https://10th.g0v.tw' : `https://summit.g0v.tw/${year}`
+const text = isAnniversary ? 'g0v 10th Anniversary' : `g0v Summit ${year}`
+---
+
+<a
+  href={href}
+  target="_blank"
+  title={`past-${year}`}
+  class="relative group border border-neutral-200 aspect-video overflow-hidden block"
+>
+  <img
+    class="w-full h-full object-cover"
+    src={`./img/past_events/${year}.jpg`}
+    alt={`past-${year}`}
+  />
+  <div
+    class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all text-white font-bold flex items-center justify-center"
+  >
+    <span class="text-xl">{text}</span>
+  </div>
+</a>

@@ -1,10 +1,276 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import Icon from '~/components/Icon.astro'
+import Timeline from '~/components/Timeline.astro'
+import PastEvent from '~/components/PastEvent.astro'
+import Partner from '~/components/Partner.astro'
 import { useI18n } from '~/i18n/utils'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('title')}>
-  <h1>{t('title')}</h1>
+  <div id="nav-transparent-flag" class="hidden"></div>
+
+  <div
+    id="top-block"
+    class="w-full h-[calc(100vh-56px)] md:h-[calc(100vh-112px)] relative flex flex-col items-center bg-[rgb(252,245,241)] overflow-hidden"
+  >
+    <div
+      class="relative z-2 mx-auto mb-6 grow w-4/5 md:w-1/2 max-w-xl h-fit flex flex-col items-center justify-center"
+    >
+      <img
+        class="w-1/2 md:w-1/3 mb-4 md:mb-6"
+        src="./img/banner/g0v-summit-logo.svg"
+        alt="g0v summit"
+      />
+
+      <img
+        class="mb-4 md:mb-8"
+        src="./img/banner/slogan.svg"
+        alt="反客為主 Invite Yourself"
+      />
+
+      <img
+        class="w-4/5 md:w-1/2"
+        src="./img/banner/date-and-venue.svg"
+        alt="2026.05.23–24 | Taipei, Taiwan"
+      />
+    </div>
+
+    <div class="relative z-1 -mb-12 w-[120%] grid grid-cols-3 md:grid-cols-5 items-end gap-16">
+      <img
+        class="stool z-1 hidden md:block w-2/3 mx-auto max-w-[220px] cursor-pointer"
+        src="./img/banner/g0v_stool-nbg-g-m.svg"
+        alt="green-chair-1"
+        data-stool="g"
+      />
+
+      <a
+        class="stool-container z-2 md:w-2/3 mx-auto max-w-[220px] relative no-underline"
+        href="https://summit.g0v.tw/tickets"
+        target="_blank"
+        title="前往購票"
+      >
+        <div class="speech-bubble">
+          <Icon name="mdi:ticket" width="20" />
+        </div>
+        <img
+          class="stool w-full cursor-pointer"
+          src="./img/banner/g0v_stool-nbg-y-s.svg"
+          alt="yellow-chair"
+          data-stool="y"
+        />
+      </a>
+
+      <a
+        class="stool-container z-3 md:w-2/3 mx-auto max-w-[220px] relative no-underline"
+        href="https://summit.g0v.tw/tickets"
+        target="_blank"
+        title="前往購票"
+      >
+        <div class="speech-bubble">
+          <Icon name="mdi:ticket" width="20" />
+        </div>
+        <img
+          class="stool w-full cursor-pointer"
+          src="./img/banner/g0v_stool-nbg-r-l.svg"
+          alt="red-chair"
+          data-stool="r"
+        />
+      </a>
+
+      <a
+        class="stool-container z-4 md:w-2/3 mx-auto max-w-[220px] relative no-underline"
+        href="https://summit.g0v.tw/tickets"
+        target="_blank"
+        title="前往購票"
+      >
+        <div class="speech-bubble">
+          <Icon name="mdi:ticket" width="20" />
+        </div>
+        <img
+          class="stool w-full cursor-pointer"
+          src="./img/banner/g0v_stool-nbg-b-s.svg"
+          alt="blue-chair"
+          data-stool="b"
+        />
+      </a>
+
+      <img
+        class="stool z-5 hidden md:block w-2/3 mx-auto max-w-[220px] cursor-pointer"
+        src="./img/banner/g0v_stool-nbg-g-m.svg"
+        alt="green-chair-2"
+        data-stool="g"
+      />
+    </div>
+
+    <img
+      class="max-w-none md:max-w-full h-24 md:h-auto object-fit"
+      src="./img/banner/bottom-bar.svg"
+      alt="banner-bottom-bar"
+    />
+  </div>
+
+  <main>
+    <div class="container py-20">
+
+      <section id="intro" class="mb-20">
+        <h1 class="mb-2 md:mb-4 leading-relaxed">g0v Summit 2026</h1>
+
+        <h2 class="mb-6 md:mb-12">{t('index.intro.title')}</h2>
+
+        <div>
+          <p set:html={t('index.intro.p1')} />
+          <p set:html={t('index.intro.p2')} />
+          <p set:html={t('index.intro.p3')} />
+          <p set:html={t('index.intro.p4')} />
+          <p set:html={t('index.intro.p5')} />
+          <p set:html={t('index.intro.p6')} />
+          <p set:html={t('index.intro.p7')} />
+          <p set:html={t('index.intro.p8')} />
+        </div>
+      </section>
+
+      <section id="timeline" class="mb-20">
+        <Timeline />
+      </section>
+
+      <section id="location" class="mb-20">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.venue.title')}
+        </h2>
+
+        <p class="md:text-2xl">
+          <div>{t('index.venue.name')}</div>
+          <address>{t('index.venue.address')}</address>
+        </p>
+
+        <div class="aspect-video">
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1354.0143677658955!2d121.61029955043031!3d25.041381051702803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1765449506756!5m2!1szh-TW!2stw"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <hr class="text-neutral-300 mb-20" />
+
+      <section id="what-is" class="mb-20">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.g0vSummit.title')}
+        </h2>
+
+        <div>
+          <p set:html={t('index.g0vSummit.p1')} />
+          <p set:html={t('index.g0vSummit.p2')} />
+          <p set:html={t('index.g0vSummit.p3')} />
+          <p set:html={t('index.g0vSummit.p4')} />
+          <p set:html={t('index.g0vSummit.p5')} />
+          <p set:html={t('index.g0vSummit.p6')} />
+          <p set:html={t('index.g0vSummit.p7')} />
+        </div>
+      </section>
+
+      <section id="past-events" class="mb-20">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.pastEvents')}
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <PastEvent year="2024" />
+          <PastEvent year="2022" />
+          <PastEvent year="2020" />
+          <PastEvent year="2018" />
+          <PastEvent year="2016" />
+          <PastEvent year="2014" />
+        </div>
+      </section>
+
+      <section id="join" class="mb-20">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.joinG0v.title')}
+        </h2>
+
+        <div class="mb-7">
+          <p>{t('index.joinG0v.p1')}</p>
+          <p set:html={t('index.joinG0v.p2')} />
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+          <a class="btn btn-primary gap-2" href="https://join.g0v.tw" target="_blank">
+            <span>{t('index.joinG0v.slack')}</span>
+            <Icon name="material-symbols:open-in-new" width="20" height="20" />
+          </a>
+
+          <a
+            class="btn btn-primary gap-2"
+            href="https://g0v.hackmd.io/@summit2026/book"
+            target="_blank"
+          >
+            <span>{t('index.joinG0v.docs')}</span>
+            <Icon name="material-symbols:open-in-new" width="20" height="20" />
+          </a>
+
+          <a
+            class="btn btn-primary gap-2"
+            href="https://g0v.hackmd.io/@jothon/event"
+            target="_blank"
+          >
+            <span>{t('index.joinG0v.events')}</span>
+            <Icon name="material-symbols:open-in-new" width="20" height="20" />
+          </a>
+        </div>
+      </section>
+
+      <section id="sponsorship" class="mb-20 max-md:text-center">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.sponsorship.title')}
+        </h2>
+
+        <p set:html={t('index.sponsorship.content')} />
+      </section>
+
+      <section id="partners" class="mb-20">
+        <h2 class="max-md:text-center text-3xl md:text-4xl font-bold mb-8">
+          {t('index.partners.title')}
+        </h2>
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <Partner
+            name={t('index.partners.1.name')}
+            site="https://ocf.tw"
+            img="ocf.svg"
+          />
+          <Partner
+            name={t('index.partners.2.name')}
+            site="https://infolaw.iias.sinica.edu.tw"
+            img="iias.svg"
+          />
+          <Partner
+            name={t('index.partners.3.name')}
+            site="https://pelith.com/zh-tw"
+            img="pelith.svg"
+          />
+          <Partner
+            name={t('index.partners.4.name')}
+            site="https://openfun.tw/"
+            img="openfun.svg"
+          />
+          <Partner
+            name={t('index.partners.5.name')}
+            site="https://tekoo-tea.com/"
+            img="tekoo.svg"
+          />
+        </div>
+      </section>
+
+    </div>
+  </main>
 </Layout>

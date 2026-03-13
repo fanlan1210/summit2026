@@ -1,0 +1,33 @@
+---
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+
+const events = [
+  { date: '2025.11', labelZh: '徵稿開始', labelEn: 'CFP Opens' },
+  { date: '2026.01', labelZh: '徵稿截止', labelEn: 'CFP Closes' },
+  { date: '2026.03', labelZh: '錄取通知', labelEn: 'Acceptance Notice' },
+  { date: '2026.05.23–24', labelZh: '大會日期', labelEn: 'Conference' },
+]
+
+const locale = Astro.url.pathname.includes('/en') ? 'en' : 'zh-tw'
+---
+
+<div class="relative">
+  <div class="absolute left-4 top-0 bottom-0 w-px bg-primary/30 md:left-1/2"></div>
+
+  <div class="flex flex-col gap-8">
+    {events.map((event, i) => (
+      <div class={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+        <div class="shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center z-1 md:absolute md:left-1/2 md:-translate-x-1/2">
+          <div class="w-2 h-2 rounded-full bg-white"></div>
+        </div>
+
+        <div class={`pl-4 md:pl-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+          <div class="text-sm font-mono text-primary font-bold">{event.date}</div>
+          <div class="font-bold text-lg">{locale === 'en' ? event.labelEn : event.labelZh}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
