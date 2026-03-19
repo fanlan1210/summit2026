@@ -5,36 +5,28 @@ const { name, site, donate, img } = Astro.props
 const { t } = useI18n(Astro.url.pathname)
 ---
 
-<div class="flex gap-4 md:gap-8 p-6 border rounded-lg">
-  <div class="w-28 h-28 grid place-items-center aspect-square shrink-0 rounded-md overflow-hidden">
-    <img
-      class="w-full h-full object-contain bg-neutral-100"
-      src={`./img/partners/${img}`}
-      alt={name}
-    />
+<div class="flex gap-4 rounded-lg border p-6 md:gap-8">
+  <div class="grid aspect-square h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-md">
+    <img class="h-full w-full bg-neutral-100 object-contain" src={`./img/partners/${img}`} alt={name} />
   </div>
   <div class="mt-3">
     <h5>{name}</h5>
-    <div class="flex gap-2 items-center">
-      {site && (
-        <a
-          class="text-black hover:text-primary no-underline"
-          href={site}
-          target="_blank"
-        >
-          {t('index.partners.site')}
-        </a>
-      )}
+    <div class="flex items-center gap-2">
+      {
+        site && (
+          <a class="hover:text-primary text-black no-underline" href={site} target="_blank">
+            {t('index.partners.site')}
+          </a>
+        )
+      }
       {site && donate && <span>|</span>}
-      {donate && (
-        <a
-          class="text-black hover:text-primary no-underline"
-          href={donate}
-          target="_blank"
-        >
-          {t('index.partners.donate')}
-        </a>
-      )}
+      {
+        donate && (
+          <a class="hover:text-primary text-black no-underline" href={donate} target="_blank">
+            {t('index.partners.donate')}
+          </a>
+        )
+      }
     </div>
   </div>
 </div>

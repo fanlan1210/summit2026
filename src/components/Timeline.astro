@@ -14,20 +14,22 @@ const locale = Astro.url.pathname.includes('/en') ? 'en' : 'zh-tw'
 ---
 
 <div class="relative">
-  <div class="absolute left-4 top-0 bottom-0 w-px bg-primary/30 md:left-1/2"></div>
+  <div class="bg-primary/30 absolute top-0 bottom-0 left-4 w-px md:left-1/2"></div>
 
   <div class="flex flex-col gap-8">
-    {events.map((event, i) => (
-      <div class={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-        <div class="shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center z-1 md:absolute md:left-1/2 md:-translate-x-1/2">
-          <div class="w-2 h-2 rounded-full bg-white"></div>
-        </div>
+    {
+      events.map((event, i) => (
+        <div class={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+          <div class="bg-primary z-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white md:absolute md:left-1/2 md:-translate-x-1/2">
+            <div class="h-2 w-2 rounded-full bg-white" />
+          </div>
 
-        <div class={`pl-4 md:pl-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-          <div class="text-sm font-mono text-primary font-bold">{event.date}</div>
-          <div class="font-bold text-lg">{locale === 'en' ? event.labelEn : event.labelZh}</div>
+          <div class={`pl-4 md:w-[calc(50%-2rem)] md:pl-0 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+            <div class="text-primary font-mono text-sm font-bold">{event.date}</div>
+            <div class="text-lg font-bold">{locale === 'en' ? event.labelEn : event.labelZh}</div>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </div>

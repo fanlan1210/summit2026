@@ -30,21 +30,14 @@ const navs = [
       {
         navs.map(nav =>
           nav.key === 'visit' ? (
-            <button
-              id="visit-toggle"
-              type="button"
-              class="nav-link"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="visit-submenu"
-            >
+            <button id="visit-toggle" type="button" class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls="visit-submenu">
               {nav.name}
             </button>
           ) : (
             <a class="nav-link" href={nav.href}>
               {nav.name}
             </a>
-          ),
+          )
         )
       }
     </div>
@@ -98,18 +91,12 @@ const navs = [
   <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t('nav.register')}</a>
 
   <!-- Desktop: visit submenu (traffic quick links) -->
-  <div
-    id="visit-submenu"
-    class="pointer-events-none absolute top-full right-0 left-0 z-50 hidden grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:grid"
-  >
+  <div id="visit-submenu" class="pointer-events-none absolute top-full right-0 left-0 z-50 hidden grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:grid">
     <div class="container min-h-0">
       <div class="grid grid-cols-[1fr_2fr] gap-8 py-12">
         <div class="min-w-0">
           <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('index.venue.title')} →</div>
-          <a
-            class="mt-5 block w-fit text-base leading-relaxed font-normal text-white/70 transition-colors hover:text-white/90"
-            href={`${visitHref}#visit-map`}
-          >
+          <a class="mt-5 block w-fit text-base leading-relaxed font-normal text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#visit-map`}>
             {t('visit.info.venueName')}
           </a>
         </div>
@@ -117,10 +104,7 @@ const navs = [
         <div class="min-w-0">
           <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('visit.transport.title')} →</div>
           <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal">
-            <a
-              class="w-fit text-white/70 transition-colors hover:text-white/90"
-              href={`${visitHref}#tab-publicTransport`}
-            >
+            <a class="w-fit text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#tab-publicTransport`}>
               {t('visit.transport.tabs.publicTransport')}
             </a>
             <span class="text-white/40">|</span>
