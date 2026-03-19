@@ -126,11 +126,11 @@
       "title": "Partners",
       "site": "Official Website",
       "donate": "Donate",
-      "1": { "name": "Open Culture Foundation" },
-      "2": { "name": "Center for Information Law, IIAS, Academia Sinica" },
-      "3": { "name": "Pelith" },
-      "4": { "name": "OpenFun Ltd." },
-      "5": { "name": "TeKoo" }
+      "ocf": "Open Culture Foundation",
+      "infolaw": "Center for Information Law, IIAS, Academia Sinica",
+      "pelith": "Pelith",
+      "openfun": "OpenFun Ltd.",
+      "tekoo": "TeKoo"
     }
   }
 }

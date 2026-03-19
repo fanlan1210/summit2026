@@ -126,11 +126,11 @@
       "title": "合作夥伴",
       "site": "官方網站",
       "donate": "捐款贊助",
-      "1": { "name": "開放文化基金會" },
-      "2": { "name": "中央研究院法律學研究所資訊法中心" },
-      "3": { "name": "Pelith" },
-      "4": { "name": "歐噴有限公司 OpenFun Ltd." },
-      "5": { "name": "TeKoo" }
+      "ocf": "開放文化基金會",
+      "infolaw": "中央研究院法律學研究所資訊法中心",
+      "pelith": "Pelith",
+      "openfun": "歐噴有限公司",
+      "tekoo": "TeKoo"
     }
   }
 }
