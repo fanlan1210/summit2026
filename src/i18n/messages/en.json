@@ -11,9 +11,10 @@
     "en": "English"
   },
   "room": {
-    "R0": "International Conference Hall",
-    "R1": "1st Conference Room",
-    "R2": "2nd Conference Room",
+    "R0": "International Conf. Hall",
+    "R1": "1st Conf. Room",
+    "R2": "2nd Conf. Room",
+    "R3": "3rd Conf. Room",
     "RH": "Recreation Hall"
   },
   "nav": {
@@ -136,6 +137,8 @@
     }
   },
   "venue": {
-    "infoDesk": "Check-in / Info desk"
+    "infoDesk": "Check-in / Info desk",
+    "staffRoom": "Staff Room",
+    "restArea": "Rest Area"
   }
 }
