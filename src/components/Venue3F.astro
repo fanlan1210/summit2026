@@ -236,8 +236,28 @@ const { t } = useI18n(Astro.url.pathname)
       fill-rule="evenodd"
       id="path140"></path>
     <g id="location-front-deck" class="venue-location rotate-12">
-      <rect style="fill:#a1d7ff;fill-opacity:0.5;stroke:none;" width="803" height="525" x="2604" y="4775"></rect>
-      <text style="font-size: 100px;fill:black;" x="3004" y="5050" text-anchor="middle" dominant-baseline="middle">{t('venue.infoDesk')}</text>
+      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="803" height="525" x="2604" y="4775"></rect>
+      <text style="font-size: 100px;fill:black;font-weight: bold;" x="3004" y="5050" text-anchor="middle" dominant-baseline="middle">{t('venue.infoDesk')}</text>
+    </g>
+    <g id="location-r0" class="venue-location clickable">
+      <path
+        d="m 4077 5119 c 647 158 1937 154 2570 21 59-12 98-69 86-126 l -483-2461 c -12-56-66-95-125-88-531 68-1093 43-1530-3-58-6-112 32-124 88-82 418-399 2028-479 2444-10 56 26 111 84 125 z"
+        fill="#a1d7ff"
+        fill-opacity="0.5"
+        stroke="none"
+        transform="translate(0, -720)"></path>
+      <text style="font-size: 500px;fill:black;font-weight: bold;" x="5383" y="3000" text-anchor="middle" dominant-baseline="middle">R0</text>
+      <text style="font-size: 150px;fill:black;font-weight: bold;" x="5383" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R0')}</text>
+    </g>
+    <g id="location-r1" class="venue-location clickable">
+      <path d="m 7116 2941 c -118 799 101 1627 482 2130 l 1599-328 c 1-536-91-1504-477-2116 z" fill="#a1d7ff" fill-opacity="0.5" stroke="none" transform="translate(0, -720)"></path>
+      <text style="font-size: 500px;fill:black;font-weight: bold;" x="8216" y="3000" text-anchor="middle" dominant-baseline="middle">R1</text>
+      <text style="font-size: 150px;fill:black;font-weight: bold;" x="8216" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R1')}</text>
+    </g>
+    <g id="location-r2" class="venue-location clickable">
+      <path d="m 3616 2942 c 118 799-101 1627-482 2130 l -1599-328 c -1-536 91-1504 477-2116 z" fill="#a1d7ff" fill-opacity="0.5" stroke="none" transform="translate(0, -720)"></path>
+      <text style="font-size: 500px;fill:black;font-weight: bold;" x="2616" y="3000" text-anchor="middle" dominant-baseline="middle">R2</text>
+      <text style="font-size: 150px;fill:black;font-weight: bold;" x="2616" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R2')}</text>
     </g>
   </svg>
 </div>

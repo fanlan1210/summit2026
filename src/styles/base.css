@@ -87,6 +87,20 @@
     .venue-location {
       transform-box: fill-box;
       transform-origin: center;
+      text {
+        pointer-events: none;
+      }
+      &.clickable {
+        path, rect {
+          cursor: pointer;
+          @apply transition-all duration-200;
+        }
+        &:hover {
+          path, rect {
+            fill-opacity: 0.7;
+          }
+        }
+      }
     }
   }
 }
