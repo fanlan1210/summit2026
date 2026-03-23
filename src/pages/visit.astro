@@ -23,7 +23,7 @@ const { t } = useI18n(Astro.url.pathname)
             src="https://www.openstreetmap.org/export/embed.html?bbox=121.605%2C25.038%2C121.618%2C25.045&layer=mapnik&marker=25.041528%2C121.611472"
             loading="lazy"></iframe>
           <div class="visit-map-embed__overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40">
-            <button type="button" class="visit-map-embed__view-btn btn btn-lg btn-primary text-base! font-normal!">{t('visit.info.mapView')}</button>
+            <span class="text-white">{t('visit.info.mapView')}</span>
           </div>
         </div>
       </div>
@@ -152,53 +152,62 @@ const { t } = useI18n(Astro.url.pathname)
         </div>
       </div>
     </div>
-
-    <script src="../scripts/visit-tabs.js"></script>
-    <script>
-      /**
-       * Handle deep links from Navbar visit submenu.
-       * - #visit-map: scroll to the map/info block
-       * - #tab-publicTransport / #tab-driving: switch tab then scroll to transport block
-       * @returns {void}
-       */
-      function handleVisitHash() {
-        const { hash } = window.location
-
-        if (hash === '#visit-map') {
-          document.getElementById('visit-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          return
-        }
-
-        if (hash === '#tab-publicTransport' || hash === '#tab-driving') {
-          const tabKey = hash.replace('#tab-', '')
-          /** @type {HTMLButtonElement | null} */
-          const tab = document.querySelector(`[data-tab="${tabKey}"]`)
-          tab?.click()
-
-          document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      }
-
-      document.querySelector('.visit-map-embed__view-btn')?.addEventListener('click', function () {
-        this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
-      })
-
-      /**
-       * @returns {void}
-       */
-      function scheduleHandleVisitHash() {
-        if (!window.location.hash) return
-        window.requestAnimationFrame(() => handleVisitHash())
-      }
-
-      document.addEventListener('DOMContentLoaded', scheduleHandleVisitHash)
-      window.addEventListener('hashchange', scheduleHandleVisitHash)
-    </script>
-    <style>
-      .visit-map-embed--active .visit-map-embed__overlay {
-        pointer-events: none;
-        opacity: 0;
-      }
-    </style>
   </main>
 </Layout>
+
+<script src="../scripts/visit-tabs.js"></script>
+<script>
+  /**
+   * Handle deep links from Navbar visit submenu.
+   * - #visit-map: scroll to the map/info block
+   * - #tab-publicTransport / #tab-driving: switch tab then scroll to transport block
+   * @returns {void}
+   */
+  function handleVisitHash() {
+    const { hash } = window.location
+
+    if (hash === '#visit-map') {
+      document.getElementById('visit-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+
+    if (hash === '#tab-publicTransport' || hash === '#tab-driving') {
+      const tabKey = hash.replace('#tab-', '')
+      /** @type {HTMLButtonElement | null} */
+      const tab = document.querySelector(`[data-tab="${tabKey}"]`)
+      tab?.click()
+
+      document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  document.querySelector('.visit-map-embed__overlay')?.addEventListener('click', function () {
+    this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+  })
+
+  /**
+   * @returns {void}
+   */
+  function scheduleHandleVisitHash() {
+    if (!window.location.hash) return
+    window.requestAnimationFrame(() => handleVisitHash())
+  }
+
+  document.addEventListener('DOMContentLoaded', scheduleHandleVisitHash)
+  window.addEventListener('hashchange', scheduleHandleVisitHash)
+</script>
+
+<style>
+  .visit-map-embed__overlay {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .visit-map-embed--active .visit-map-embed__overlay {
+    pointer-events: none;
+    opacity: 0;
+  }
+</style>

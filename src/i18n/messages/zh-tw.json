@@ -46,7 +46,7 @@
       "osmMap": "OSM Map",
       "googleMap": "Google Map",
       "mapPlaceholder": "Open Street Map",
-      "mapView": "查看"
+      "mapView": "點擊開始互動"
     },
     "transport": {
       "title": "交通方式",

@@ -46,7 +46,7 @@
       "osmMap": "OSM Map",
       "googleMap": "Google Map",
       "mapPlaceholder": "Open Street Map",
-      "mapView": "View"
+      "mapView": "Click to Interact"
     },
     "transport": {
       "title": "Transportation",
