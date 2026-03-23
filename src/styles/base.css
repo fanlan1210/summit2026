@@ -83,6 +83,12 @@
       @apply text-neutral-500! no-underline!;
     }
   }
+  svg {
+    .venue-location {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+  }
 }
 
 @layer utilities {
