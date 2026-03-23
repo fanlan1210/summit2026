@@ -1,10 +1,9 @@
 ---
-import { useI18n, getLocaleFromPath } from '~/i18n/utils'
-import { getRelativeLocaleUrl } from 'astro:i18n'
+import { useI18n } from '~/i18n/utils'
 import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseAndLocale'
 import Icon from '~/components/Icon.astro'
+import Link from '~/components/Link.astro'
 
-const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
 ---
@@ -62,8 +61,8 @@ const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
     <nav class="grid grid-cols-2 gap-8 md:grid-cols-4" aria-label="Sitemap">
       <div class="grid h-fit leading-loose">
         <div class="mb-4 text-xl font-bold">Summit 2026</div>
-        <a class="footer-link" href={getRelativeLocaleUrl(locale, 'agenda/day1')}>{t('nav.agenda')}</a>
-        <a class="footer-link" href={getRelativeLocaleUrl(locale, 'visit')}>{t('nav.visit')}</a>
+        <Link class="footer-link" href="agenda/day1">{t('nav.agenda')}</Link>
+        <Link class="footer-link" href="visit">{t('nav.visit')}</Link>
       </div>
       <div class="grid h-fit leading-loose">
         <div class="mb-4 text-xl font-bold">{t('footer.media')}</div>

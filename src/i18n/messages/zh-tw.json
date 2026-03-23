@@ -146,6 +146,7 @@
   "venue": {
     "infoDesk": "報到台 / 服務台",
     "staffRoom": "工作人員休息室",
-    "restArea": "飲食區"
+    "restArea": "飲食區",
+    "description": "g0v Summit 今年在中央研究院人文社會科學館舉行，可於<a href=\"./visit\">交通資訊</a>頁面查看前往方式。"
   }
 }

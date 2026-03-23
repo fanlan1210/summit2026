@@ -4,12 +4,10 @@ import Icon from '~/components/Icon.astro'
 import Timeline from '~/components/Timeline.astro'
 import PastEvent from '~/components/PastEvent.astro'
 import Partner from '~/components/Partner.astro'
-import { useI18n, getLocaleFromPath } from '~/i18n/utils'
-import { getRelativeLocaleUrl } from 'astro:i18n'
+import Link from '~/components/Link.astro'
+import { useI18n } from '~/i18n/utils'
 
 const { t } = useI18n(Astro.url.pathname)
-const locale = getLocaleFromPath(Astro.url.pathname)
-const visitHref = getRelativeLocaleUrl(locale, 'visit')
 ---
 
 <Layout pageName={t('title')}>
@@ -85,7 +83,7 @@ const visitHref = getRelativeLocaleUrl(locale, 'visit')
         <p class="md:text-2xl">
           <div>{t('index.venue.name')}</div>
           <address>{t('index.venue.address')}</address>
-          <a href={visitHref} class="flex items-center gap-2">{t('visit.info.title')}<Icon name="mdi:arrow-right" width="18" height="18" /></a>
+          <Link href="visit" class="flex items-center gap-2">{t('visit.info.title')}<Icon name="mdi:arrow-right" width="18" height="18" /></Link>
           <div class="visit-map-embed relative mt-4 aspect-video w-full overflow-hidden rounded">
             <iframe
               title={t('visit.info.mapPlaceholder')}

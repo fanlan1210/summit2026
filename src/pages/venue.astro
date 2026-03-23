@@ -3,23 +3,28 @@ import Layout from '~/layouts/Layout.astro'
 import { useI18n } from '~/i18n/utils'
 import Venue3F from '~/components/Venue3F.astro'
 import Venue4F from '~/components/Venue4F.astro'
+import Link from '~/components/Link.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.venue')}>
-  <div class="container py-8 md:py-12">
-    <div class="mb-20">
-      <h1>3F</h1>
-      <div class="my-10 md:my-14">
-        <Venue3F />
+  <main>
+    <div class="container py-8 md:py-12">
+      <h1 class="mb-8">{t('nav.venue')}</h1>
+      <p class="mb-12" set:html={t('venue.description')} />
+      <div class="mb-20">
+        <h2>3F</h2>
+        <div class="my-10 md:my-14">
+          <Venue3F />
+        </div>
+      </div>
+      <div>
+        <h2>4F</h2>
+        <div class="my-10 px-6 md:my-14">
+          <Venue4F />
+        </div>
       </div>
     </div>
-    <div>
-      <h1>4F</h1>
-      <div class="my-10 px-6 md:my-14">
-        <Venue4F />
-      </div>
-    </div>
-  </div>
+  </main>
 </Layout>

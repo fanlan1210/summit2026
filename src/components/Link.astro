@@ -1,0 +1,14 @@
+---
+import { useI18n, getLocaleFromPath } from '~/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+const locale = getLocaleFromPath(Astro.url.pathname)
+const { href, ...props } = Astro.props
+
+// 如果 href 是字串且不是外部連結，就自動加上語系前綴
+const localizedHref = typeof href === 'string' && !href.startsWith('http') ? getRelativeLocaleUrl(locale, href.startsWith('/') ? href.slice(1) : href) : href
+---
+
+<a href={localizedHref} {...props}>
+  <slot />
+</a>
