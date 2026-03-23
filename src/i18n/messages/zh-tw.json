@@ -26,6 +26,13 @@
     "about": "關於",
     "register": "參與活動"
   },
+  "footer": {
+    "media": "媒體資源",
+    "presskit": "新聞素材",
+    "pastSites": "歷年網站",
+    "docs": "籌備文件",
+    "coc": "社群守則"
+  },
   "agenda": {
     "title": "議程",
     "main_note": "議程共筆",

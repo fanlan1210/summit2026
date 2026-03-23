@@ -26,6 +26,14 @@
     "about": "About",
     "register": "Register"
   },
+  "footer": {
+    "media": "Media Resources",
+    "presskit": "Press Kit",
+    "pastSites": "Past Sites",
+    "docs": "Organization Records",
+    "coc": "Code of Conduct"
+
+  },
   "agenda": {
     "title": "Agenda",
     "main_note": "Notes",

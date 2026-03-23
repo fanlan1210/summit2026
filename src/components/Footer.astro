@@ -1,1 +1,99 @@
-<footer class="grid h-20 place-items-center bg-gray-400">temp footer</footer>
+---
+import { useI18n, getLocaleFromPath } from '~/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseAndLocale'
+import Icon from '~/components/Icon.astro'
+
+const locale = getLocaleFromPath(Astro.url.pathname)
+const { t } = useI18n(Astro.url.pathname)
+const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
+---
+
+<style>
+  @reference "~/styles/base.css";
+
+  .footer-link {
+    @apply w-max text-gray-300 transition-colors hover:text-gray-100;
+  }
+
+  .rolling-list a {
+    @apply text-neutral-300;
+    &:hover > * {
+      animation: iconMouseIn 0.3s ease forwards;
+    }
+    &:not(:hover) > * {
+      animation: iconMouseOut 0.3s ease forwards;
+    }
+  }
+
+  @keyframes iconMouseIn {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      color: inherit;
+    }
+    49% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      color: var(--color-primary);
+    }
+  }
+
+  @keyframes iconMouseOut {
+    0% {
+      color: var(--color-primary);
+    }
+    100% {
+      color: inherit;
+    }
+  }
+</style>
+
+<footer class="grid place-items-center bg-black py-10 text-white">
+  <div class="container">
+    <nav class="grid grid-cols-2 gap-8 md:grid-cols-4" aria-label="Sitemap">
+      <div class="grid h-fit leading-loose">
+        <div class="mb-4 text-xl font-bold">Summit 2026</div>
+        <a class="footer-link" href={getRelativeLocaleUrl(locale, 'agenda/day1')}>{t('nav.agenda')}</a>
+        <a class="footer-link" href={getRelativeLocaleUrl(locale, 'visit')}>{t('nav.visit')}</a>
+      </div>
+      <div class="grid h-fit leading-loose">
+        <div class="mb-4 text-xl font-bold">{t('footer.media')}</div>
+        <a class="footer-link" href="https://g0v.hackmd.io/@summit2026/press-kit" target="_blank">{t('footer.presskit')}</a>
+      </div>
+      <div class="grid h-fit leading-loose">
+        <div class="mb-4 text-xl font-bold">{t('nav.about')}</div>
+        <a class="footer-link" href="https://g0v.hackmd.io/@summit2026/book/" target="_blank">{t('footer.docs')}</a>
+        <a class="footer-link" href="https://g0v.hackmd.io/@summit2026/coc-procedure">{t('footer.coc')}</a>
+      </div>
+      <div class="grid h-fit leading-loose">
+        <div class="mb-4 text-xl font-bold">{t('footer.pastSites')}</div>
+        <a class="footer-link" href="//summit.g0v.tw/2024" target="_blank">2024</a>
+        <a class="footer-link" href="//summit.g0v.tw/2020" target="_blank">2020</a>
+        <a class="footer-link" href="//summit.g0v.tw/2018" target="_blank">2018</a>
+        <a class="footer-link" href="//summit.g0v.tw/2016" target="_blank">2016</a>
+        <a class="footer-link" href="//summit.g0v.tw/2014" target="_blank">2014</a>
+      </div>
+    </nav>
+    <div class="mt-16 flex flex-wrap gap-2">
+      <span>CC BY 4.0 @ g0v Summit 2026</span>
+      <a class="footer-link mr-16 md:ml-8" href="//github.com/g0v/summit2026/issues" target="_blank" data-i18n="nav.bugreport">網站問題回饋</a>
+      <div class="rolling-list flex gap-4">
+        <a href="https://www.facebook.com/g0v.tw/" target="_blank"><iconify-icon icon="ri:facebook-fill" width="30" height="30"></iconify-icon></a><a
+          href="https://www.instagram.com/g0v.tw/"
+          target="_blank"><iconify-icon icon="ri:instagram-line" width="30" height="30"></iconify-icon></a
+        ><a href="https://x.com/g0vtw/" target="_blank"><iconify-icon icon="ri:twitter-x-line" width="30" height="30"></iconify-icon></a><a href="https://g0v.social/@summit" target="_blank"
+          ><iconify-icon icon="ri:mastodon-fill" width="30" height="30"></iconify-icon></a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
