@@ -95,14 +95,14 @@ const navs = [
     <div class="container min-h-0">
       <div class="grid grid-cols-[1fr_2fr] gap-8 py-12">
         <div class="min-w-0">
-          <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('index.venue.title')} →</div>
+          <a class="text-2xl leading-tight font-bold tracking-wide text-white" href={`${visitHref}#visit-map`}>{t('index.venue.title')} →</a>
           <a class="mt-5 block w-fit text-base leading-relaxed font-normal text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#visit-map`}>
             {t('visit.info.venueName')}
           </a>
         </div>
 
         <div class="min-w-0">
-          <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('visit.transport.title')} →</div>
+          <a class="text-2xl leading-tight font-bold tracking-wide text-white" href={`${visitHref}#tab-publicTransport`}>{t('visit.transport.title')} →</a>
           <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal">
             <a class="w-fit text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#tab-publicTransport`}>
               {t('visit.transport.tabs.publicTransport')}
