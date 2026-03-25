@@ -141,7 +141,40 @@
       "openfun": "OpenFun Ltd.",
       "tekoo": "TeKoo",
       "justfont": "justfont",
-      "archilife": "Archilife Research Foundation"
+      "archilife": "Archilife Research Foundation",
+      "hackmd": "HackMD"
+    }
+  },
+  "sponsor": {
+    "title": "g0v Summit 2026 Partners",
+    "tiers": {
+      "organizer": "Organizer",
+      "coorganizer": "Co-organizer",
+      "pioneer": "Pioneer Partners",
+      "catalyst": "Catalyst Partners",
+      "companion": "Companion Partners",
+      "sidekick": "Sidekick Partners",
+      "special": "Special Thanks"
+    },
+    "site": "Official Website",
+    "support": {
+      "title": "Support g0v Summit",
+      "p1": "g0v Summit is a volunteer-organized, non-profit event. 'Invite Yourself' is our theme for 2026 — we invite everyone to pull up a stool and become part of the action. The sponsors listed above are the key supporters who make g0v Summit 2026 possible.",
+      "p2": "Every g0v Summit depends on the support and participation of the community. Beyond attending sessions and events, you're welcome to support the open community through sponsorship.",
+      "p3": "We offer a variety of partnership packages including brand exposure, booth setup, ticket sponsorship, and more custom options. We look forward to working with you to advance civic technology.",
+      "p4": "For sponsorship and partnership inquiries, please contact: sponsorship@summit.g0v.tw",
+      "cta": "Individual Donation"
+    },
+    "pressKit": {
+      "title": "Press Kit",
+      "subtitle": "g0v Summit 2026 Promotional Materials",
+      "license": "License",
+      "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
+      "pdf": "Poster / PDF",
+      "notice": "Public Notice / Docs"
+    },
+    "pastReports": {
+      "title": "Past News Reports"
     }
   },
   "venue": {

@@ -1,10 +1,147 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import Icon from '~/components/Icon.astro'
+import SponsorCard from '~/components/SponsorCard.astro'
 import { useI18n } from '~/i18n/utils'
 
 const { t } = useI18n(Astro.url.pathname)
+
+// All 7 sponsors from index page, grouped by tier
+const sponsors = {
+  coorganizer: [
+    {
+      nameKey: 'index.partners.ocf',
+      site: 'https://ocf.tw',
+      img: 'ocf.svg',
+    },
+    {
+      nameKey: 'index.partners.infolaw',
+      site: 'https://infolaw.iias.sinica.edu.tw',
+      img: 'iias.svg',
+    },
+  ],
+  companion: [
+    {
+      nameKey: 'index.partners.pelith',
+      description: '一家以區塊鏈應用為核心的軟體公司，專注於以太坊生態系統的開發和創新。',
+      site: 'https://pelith.com/zh-tw',
+      img: 'pelith.svg',
+    },
+    {
+      nameKey: 'index.partners.tekoo',
+      description: '延續一段山路，誕生一杯好茶。從1982年的雲林坪頂開始，唯有時光淬煉的茶家，茶農才願意託付上等好茶。TeKoo 烏龍茶的每道喉韻，都是世代傳承的經驗與用心。',
+      site: 'https://tekoo-tea.com/',
+      img: 'tekoo.svg',
+    },
+  ],
+  sidekick: [
+    {
+      nameKey: 'index.partners.archilife',
+      site: 'https://www.archilife.org/',
+      img: 'archilife.svg',
+    },
+    {
+      nameKey: 'index.partners.openfun',
+      site: 'https://openfun.tw/',
+      img: 'openfun.svg',
+    },
+  ],
+  special: [
+    {
+      nameKey: 'index.partners.hackmd',
+      site: 'https://hackmd.io/',
+      img: 'hackmd.svg',
+    },
+    {
+      nameKey: 'index.partners.justfont',
+      site: 'https://justfont.com/',
+      img: 'justfont.svg',
+    },
+  ],
+}
+
+const tierOrder = ['coorganizer', 'pioneer', 'catalyst', 'companion', 'sidekick', 'special']
+
+const pastReports = []
 ---
 
 <Layout pageName={t('nav.sponsor')}>
-  <h1>{t('nav.sponsor')}</h1>
+  <main class="sponsor-main">
+    <div class="container py-8 md:py-12">
+      <!-- Page Title -->
+      <h1 class="mb-12 md:mb-16 md:text-4xl">{t('sponsor.title')}</h1>
+
+      <!-- Sponsor Tiers -->
+      {
+        tierOrder.map(tier => {
+          const list = sponsors[tier]
+          if (!list || list.length === 0) return null
+          return (
+            <section id={`sponsor-${tier}`} class="mb-12">
+              <div class="sponsor-tier-label mb-6 flex items-center gap-2">
+                <span class="bg-primary mb-[1px] inline-block h-6 w-1 rounded-full" />
+                <h3 class="text-primary text-xl font-bold">{t(`sponsor.tiers.${tier}`)}</h3>
+              </div>
+              <div class={`grid gap-5 ${['sidekick', 'special'].includes(tier) && 'lg:grid-cols-2'}`}>
+                {list.map(s => (
+                  <SponsorCard name={t(s.nameKey)} description={s.description} site={s.site} img={s.img} tier={tier} />
+                ))}
+              </div>
+            </section>
+          )
+        })
+      }
+
+      <!-- Support g0v Summit CTA -->
+      <section id="sponsor-support" class="mt-16 mb-20">
+        <div class="relative overflow-hidden rounded-2xl border-2 border-[#58A83F] bg-[#58A83F]/10 p-6 text-[#306D13] md:p-8">
+          <h2 class="mb-6 md:text-3xl">{t('sponsor.support.title')}</h2>
+          <p class="mb-3 leading-8">{t('sponsor.support.p1')}</p>
+          <p class="mb-3 leading-8">{t('sponsor.support.p2')}</p>
+          <p class="mb-3 leading-8">{t('sponsor.support.p3')}</p>
+          <p class="mb-6 leading-8">
+            {t('sponsor.support.p4').split('sponsorship@summit.g0v.tw')[0]}
+            <a href="mailto:sponsorship@summit.g0v.tw" class="font-semibold text-[#306D13]">sponsorship@summit.g0v.tw</a>
+          </p>
+          <a href="https://summit.g0v.tw/donate/" class="btn btn-success gap-2" target="_blank">
+            <span>{t('sponsor.support.cta')}</span>
+            <Icon name="material-symbols:open-in-new" width="18" height="18" />
+          </a>
+        </div>
+      </section>
+
+      <!-- Press Kit -->
+      <section id="sponsor-presskit" class="mb-20">
+        <h2 class="mb-3 md:text-3xl">{t('sponsor.pressKit.title')}</h2>
+        <h3 class="mb-8 text-neutral-600">{t('sponsor.pressKit.subtitle')}</h3>
+
+        <!-- License -->
+        <div class="mb-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6 text-sky-800 md:p-8">
+          <h4 class="mb-2">{t('sponsor.pressKit.license')}</h4>
+          <div class="text-sm">{t('sponsor.pressKit.licenseText')}</div>
+        </div>
+        <div class="flex flex-wrap gap-8">
+          <img src="img/presskit/post.jpg" alt="徵稿宣傳海報" class="w-full border border-neutral-200 md:max-w-80" />
+          <div class="flex flex-col gap-6">
+            <a class="btn btn-primary w-fit gap-2" href="https://drive.google.com/file/d/1v7c2DtdAgMmO3jQlYbA1idEt9kxXfzSO/view?usp=sharing" target="_blank"
+              >{t('sponsor.pressKit.pdf')}<Icon name="material-symbols:open-in-new" width="18" height="18" /></a
+            >
+            <a class="btn btn-primary w-fit gap-2" href="https://docs.google.com/document/d/1rIjwph4r5rwqQWPphujvM2jkg36Ux6LWeQNiem9kmYM/edit?usp=sharing" target="_blank"
+              >{t('sponsor.pressKit.notice')}<Icon name="material-symbols:open-in-new" width="18" height="18" /></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Past Summit Websites -->
+      {
+        pastReports.length > 0 && (
+          <section id="sponsor-past" class="mb-10">
+            <h2 class="mb-6 md:text-3xl">{t('sponsor.pastReports.title')}</h2>
+            <div class="flex flex-col gap-3" />
+          </section>
+        )
+      }
+    </div>
+  </main>
 </Layout>

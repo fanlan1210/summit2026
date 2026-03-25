@@ -140,7 +140,40 @@
       "openfun": "歐噴有限公司",
       "tekoo": "TeKoo",
       "justfont": "justfont",
-      "archilife": "祐生研究基金會"
+      "archilife": "祐生研究基金會",
+      "hackmd": "HackMD"
+    }
+  },
+  "sponsor": {
+    "title": "g0v Summit 2026 合作夥伴",
+    "tiers": {
+      "organizer": "主辦單位",
+      "coorganizer": "協辦單位",
+      "pioneer": "開路的人",
+      "catalyst": "做代誌的人",
+      "companion": "做伙的伴",
+      "sidekick": "蹽落去的伴",
+      "special": "特別感謝"
+    },
+    "site": "官方網站",
+    "support": {
+      "title": "支持 g0v Summit",
+      "p1": "g0v Summit 是由志工自主籌辦的非營利活動，「反客為主」是我們 2026 的主題，希望邀請各位一起拉張板凳，成為行動的一份子。上面列出的贊助夥伴是讓 g0v Summit 2026 成為可能的重要支持力量。",
+      "p2": "g0v Summit 每次活動都仰賴社群的支持與参與。除了出席議程與活動之外，也歡迎以贊助方式支持開放社群的發展。",
+      "p3": "我們提供各式合作方案，涵蓋品牌露出、攤位設置、票券贊助及更多客製選項，期盼與您一起攜手推進公民科技。",
+      "p4": "贊助與合作洽詢，歡迎來信：sponsorship@summit.g0v.tw",
+      "cta": "個人贊助"
+    },
+    "pressKit": {
+      "title": "媒體素材 / Press Kit",
+      "subtitle": "g0v Summit 2026 相關宣傳圖檔",
+      "license": "授權方式 / License",
+      "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
+      "pdf": "徵稿宣傳海報 / PDF",
+      "notice": "徵稿宣傳公文 / Docs"
+    },
+    "pastReports": {
+      "title": "歷屆 g0v Summit 報導"
     }
   },
   "venue": {

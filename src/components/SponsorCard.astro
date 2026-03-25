@@ -1,0 +1,37 @@
+---
+import { useI18n } from '~/i18n/utils'
+import Icon from '~/components/Icon.astro'
+
+const { name, description, site, img, tier } = Astro.props
+const { t } = useI18n(Astro.url.pathname)
+---
+
+<div class={`sponsor-card group relative overflow-hidden rounded-xl border-2 border-neutral-300 bg-white p-6`}>
+  <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
+    <!-- Logo -->
+    <div class="aspect-square h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-neutral-50 p-2 sm:h-28 sm:w-28">
+      <img class="h-full w-full object-contain" src={`./img/partners/${img}`} alt={name} />
+    </div>
+
+    <!-- Info -->
+    <div class="flex flex-1 flex-col justify-center">
+      <div class="mb-2 flex items-center gap-3">
+        <h4 class="text-lg font-bold text-neutral-800">{name}</h4>
+        <span class={`ms-auto flex-shrink-0 inline-block rounded-full px-3 py-0.5 text-xs font-semibold bg-primary text-white`}>
+          {t(`sponsor.tiers.${tier}`)}
+        </span>
+      </div>
+
+      {description && <p class="mb-3 text-sm leading-relaxed text-neutral-600">{description}</p>}
+
+      {
+        site && (
+          <a href={site} target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-fit gap-1.5 text-sm">
+            {t('sponsor.site')}
+            <Icon name="material-symbols:open-in-new" width="14" height="14" />
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
