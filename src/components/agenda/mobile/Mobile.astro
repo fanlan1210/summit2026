@@ -5,6 +5,8 @@ import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
 import Session from '~/components/agenda/Session.astro'
 import DayLink from '~/components/agenda/DayLink.astro'
+import Search from '~/components/agenda/Search.astro'
+import Icon from '~/components/Icon.astro'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -63,9 +65,23 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 <div class="lg:hidden">
   <div class="sticky top-0 z-30 bg-white py-2">
     <div class="container">
-      <div class="mb-4 flex justify-center gap-4 font-bold">
-        <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day1')} title="Day 1" curTitle={title} />
-        <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day2')} title="Day 2" curTitle={title} />
+      <div class="mb-4 flex items-center justify-between gap-3 font-bold">
+        <div class="flex justify-center gap-4">
+          <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day1')} title="Day 1" curTitle={title} />
+          <DayLink href={getRelativeLocaleUrl(locale, 'agenda/day2')} title="Day 2" curTitle={title} />
+        </div>
+        <button
+          id="searchToggle"
+          type="button"
+          class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-[#D1D1D1] text-gray-400 transition-colors"
+          aria-expanded="false"
+          aria-controls="mobileSearchPanel"
+        >
+          <Icon name="mdi:magnify" width="24" />
+        </button>
+      </div>
+      <div id="mobileSearchPanel" class="mb-4 hidden">
+        <Search />
       </div>
       <div id="btns" class="grid grid-cols-5 text-center">
         <button data-target="#allSessions" class="border-info-dark border-b-2 transition-colors">ALL</button>
@@ -150,8 +166,19 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 <script>
   import $ from 'jquery'
 
+  const searchToggleEl = document.querySelector<HTMLButtonElement>('#searchToggle')
+  const searchPanelEl = document.querySelector<HTMLElement>('#mobileSearchPanel')
   const $btnsChildren = $('#btns button')
   const $sessionsChildren = $('#sessions > div')
+
+  searchToggleEl?.addEventListener('click', () => {
+    const isExpanded = searchToggleEl.getAttribute('aria-expanded') === 'true'
+    searchToggleEl.setAttribute('aria-expanded', String(!isExpanded))
+    searchToggleEl?.classList.toggle('bg-info-dark', !isExpanded)
+    searchToggleEl?.classList.toggle('text-white!', !isExpanded)
+    searchToggleEl?.classList.toggle('border-info-dark!', !isExpanded)
+    searchPanelEl?.classList.toggle('hidden', isExpanded)
+  })
 
   $('#btns').on('click', 'button', function () {
     hideAll()

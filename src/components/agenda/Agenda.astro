@@ -5,7 +5,6 @@ import Desktop from './desktop/Desktop.astro'
 import Mobile from './mobile/Mobile.astro'
 import Icon from '~/components/Icon.astro'
 import schedule from '~/data/schedule.json'
-import Search from '~/components/agenda/Search.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -25,9 +24,6 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
         <Icon name="mdi:video" width="24" />
         <span>{t('agenda.main_live')}</span>
       </a>
-      <div class="mt-6 lg:hidden">
-        <Search />
-      </div>
     </div>
   </div>
 
