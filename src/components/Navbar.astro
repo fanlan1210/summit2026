@@ -1,47 +1,145 @@
 ---
-import { useI18n, getLocaleFromPath } from '~/i18n/utils'
-import { getRelativeLocaleUrl } from 'astro:i18n'
+import { useI18n } from '~/i18n/utils'
 import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseAndLocale'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 import Icon from '~/components/Icon.astro'
+import Link from '~/components/Link.astro'
 
-const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
 
-const visitHref = getRelativeLocaleUrl(locale, 'visit')
+// ── Types ────────────────────────────────────────────────────────────────────
 
-const navs = [
-  { key: 'agenda', href: getRelativeLocaleUrl(locale, 'agenda/day1'), name: t('nav.agenda') },
-  { key: 'visit', href: visitHref, name: t('nav.visit') },
-  { key: 'venue', href: getRelativeLocaleUrl(locale, 'venue'), name: t('nav.venue') },
-  { key: 'speaker', href: getRelativeLocaleUrl(locale, 'speaker'), name: t('nav.speaker') },
-  { key: 'sponsor', href: getRelativeLocaleUrl(locale, 'sponsor'), name: t('nav.sponsor') },
-  { key: 'about', href: getRelativeLocaleUrl(locale, 'about'), name: t('nav.about') },
+/** A single link inside a submenu column */
+interface NavSubmenuLink {
+  label: string
+  href: string
+}
+
+/**
+ * A column inside the submenu dropdown.
+ * - `title` / `titleHref` render as a large bold heading link.
+ * - `links` renders as a row of smaller links separated by "|".
+ */
+interface NavSubmenuColumn {
+  title: string
+  titleHref: string
+  links: NavSubmenuLink[]
+}
+
+/**
+ * When a NavItem has a `submenu`, a dropdown panel is rendered automatically.
+ * Add columns to describe the content — no extra HTML needed.
+ */
+interface NavSubmenu {
+  columns: NavSubmenuColumn[]
+}
+
+interface NavItem {
+  key: string
+  name: string
+  /** Used as the fallback link in the mobile nav */
+  href: string
+  submenu?: NavSubmenu
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
+
+const navs: NavItem[] = [
+  {
+    key: 'agenda',
+    href: 'agenda/day1',
+    name: t('nav.agenda'),
+  },
+  {
+    key: 'visit',
+    href: 'visit',
+    name: t('nav.visit'),
+    submenu: {
+      columns: [
+        {
+          title: t('index.venue.title'),
+          titleHref: `visit#visit-map`,
+          links: [{ label: t('visit.info.venueName'), href: `visit#visit-map` }],
+        },
+        {
+          title: t('visit.transport.title'),
+          titleHref: `visit#tab-publicTransport`,
+          links: [
+            { label: t('visit.transport.tabs.publicTransport'), href: `visit#tab-publicTransport` },
+            { label: `${t('visit.transport.tabs.drivingLine1')}${t('visit.transport.tabs.drivingLine2')}`, href: `visit#tab-driving` },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    key: 'venue',
+    href: 'venue',
+    name: t('nav.venue'),
+  },
+  {
+    key: 'speaker',
+    href: 'speaker',
+    name: t('nav.speaker'),
+  },
+  {
+    key: 'sponsor',
+    href: 'sponsor',
+    name: t('nav.sponsor'),
+    submenu: {
+      columns: [
+        {
+          title: t('sponsor.title2'),
+          titleHref: `sponsor#sponsor-list`,
+          links: [],
+        },
+        {
+          title: t('sponsor.support.title'),
+          titleHref: `sponsor#sponsor-support`,
+          links: [],
+        },
+        {
+          title: t('sponsor.pressKit.title'),
+          titleHref: `sponsor#sponsor-presskit`,
+          links: [],
+        },
+      ],
+    },
+  },
+  {
+    key: 'about',
+    href: 'about',
+    name: t('nav.about'),
+  },
 ]
 ---
 
 <nav id="navbar" class="sticky top-0 z-999 flex h-14 w-full items-center bg-black text-white shadow-md">
   <div class="container flex h-full items-center">
-    <a id="logo" class="mr-auto" href={getRelativeLocaleUrl(locale, '/')}>
+    <!-- Logo -->
+    <Link id="logo" class="mr-auto" href="/">
       <img src="./img/g0v-summit-logo-w.svg" alt="g0v Summit 2026" class="h-12" />
-    </a>
+    </Link>
 
+    <!-- Desktop nav links -->
     <div id="navs" class="scroll-x hidden h-full min-w-0 items-center md:flex">
       {
         navs.map(nav =>
-          nav.key === 'visit' ? (
-            <button id="visit-toggle" type="button" class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls="visit-submenu">
+          nav.submenu ? (
+            <button id={`${nav.key}-toggle`} type="button" class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls={`${nav.key}-submenu`}>
               {nav.name}
             </button>
           ) : (
-            <a class="nav-link" href={nav.href}>
+            <Link class="nav-link" href={nav.href}>
               {nav.name}
-            </a>
+            </Link>
           )
         )
       }
     </div>
 
+    <!-- Language switcher -->
     <div class="group relative hidden h-full items-center gap-2 px-4 font-bold md:flex">
       <span class="flex cursor-pointer items-center gap-2">
         Language
@@ -62,18 +160,20 @@ const navs = [
       </div>
     </div>
 
+    <!-- Mobile hamburger -->
     <button id="toggle-nav-btn" class="grid h-6 place-items-center md:hidden">
       <div id="burger"></div>
     </button>
 
+    <!-- Mobile nav drawer -->
     <div id="mobile-nav" class="absolute top-full right-0 left-0 grid grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:hidden">
       <div class="container min-h-0">
         <div class="flex flex-col gap-3 pt-3 pb-6">
           {
             navs.map(nav => (
-              <a class="mobile-nav-item px-6 text-lg" href={nav.href}>
+              <Link class="mobile-nav-item px-6 text-lg" href={nav.href}>
                 {nav.name}
-              </a>
+              </Link>
             ))
           }
 
@@ -92,40 +192,55 @@ const navs = [
       </div>
     </div>
   </div>
-  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t('nav.register')}</a>
 
-  <!-- Desktop: visit submenu (traffic quick links) -->
-  <div id="visit-submenu" class="pointer-events-none absolute top-full right-0 left-0 z-50 hidden grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:grid">
-    <div class="container min-h-0">
-      <div class="grid grid-cols-[1fr_2fr] gap-8 py-12">
-        <div class="min-w-0">
-          <a class="text-2xl leading-tight font-bold tracking-wide text-white" href={`${visitHref}#visit-map`}>{t('index.venue.title')} →</a>
-          <a class="mt-5 block w-fit text-base leading-relaxed font-normal text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#visit-map`}>
-            {t('visit.info.venueName')}
-          </a>
-        </div>
+  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">
+    {t('nav.register')}
+  </a>
 
-        <div class="min-w-0">
-          <a class="text-2xl leading-tight font-bold tracking-wide text-white" href={`${visitHref}#tab-publicTransport`}>{t('visit.transport.title')} →</a>
-          <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal">
-            <a class="w-fit text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#tab-publicTransport`}>
-              {t('visit.transport.tabs.publicTransport')}
-            </a>
-            <span class="text-white/40">|</span>
-            <a class="w-fit text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#tab-driving`}>
-              {t('visit.transport.tabs.drivingLine1')}{t('visit.transport.tabs.drivingLine2')}
-            </a>
+  <!-- ── Desktop submenu panels (auto-generated from navs data) ──────────────
+       To add a submenu: add a `submenu: { columns: [...] }` entry to a NavItem.
+       Each column has:
+         title / titleHref  →  large bold heading link
+         links[]            →  row of smaller links separated by "|"
+  ─────────────────────────────────────────────────────────────────────────── -->
+  {
+    navs
+      .filter(nav => nav.submenu)
+      .map(nav => (
+        <div
+          id={`${nav.key}-submenu`}
+          class="pointer-events-none absolute top-full right-0 left-0 z-50 hidden grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:grid"
+        >
+          <div class="container min-h-0">
+            <div class={`grid gap-8 py-12 grid-cols-${nav.submenu!.columns.length}`}>
+              {nav.submenu!.columns.map(col => (
+                <div class="min-w-0">
+                  <Link class="flex items-center gap-2 text-2xl leading-tight font-bold tracking-wide text-white" href={col.titleHref}>
+                    {col.title} <Icon name="bi:arrow-right" height="20" />
+                  </Link>
+                  <div class={`mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal ${col.links.length == 0 && 'hidden'}`}>
+                    {col.links.map((link, i) => (
+                      <>
+                        {i > 0 && <span class="text-white/40">|</span>}
+                        <Link class="w-fit text-white/70 transition-colors hover:text-white/90" href={link.href}>
+                          {link.label}
+                        </Link>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      ))
+  }
 </nav>
 
 <script>
   import $ from 'jquery'
 
-  // toggle mobile nav
+  // ── Mobile nav toggle ────────────────────────────────────────────────────────
   const $mobileNav = $('#mobile-nav')
 
   $('#toggle-nav-btn').on('click', toggleMobileNav)
@@ -137,11 +252,8 @@ const navs = [
     $('#burger').toggleClass('is-active')
   }
 
-  /**
-   * @param {JQuery<HTMLElement>} $submenu
-   * @param {JQuery<HTMLElement>} $toggle
-   */
-  function closeSubmenu($submenu, $toggle) {
+  // ── Submenu helpers ──────────────────────────────────────────────────────────
+  function closeSubmenu($submenu: JQuery<HTMLElement>, $toggle: JQuery<HTMLElement>) {
     $submenu.removeClass('grid-rows-[1fr]')
     $submenu.addClass('grid-rows-[0fr]')
     $submenu.removeClass('shadow-md')
@@ -150,14 +262,64 @@ const navs = [
     $toggle.attr('aria-expanded', 'false')
   }
 
-  // navs x scroll
+  function openSubmenu($submenu: JQuery<HTMLElement>, $toggle: JQuery<HTMLElement>) {
+    $submenu.addClass('grid-rows-[1fr]')
+    $submenu.removeClass('grid-rows-[0fr]')
+    $submenu.addClass('shadow-md')
+    $submenu.addClass('pointer-events-auto')
+    $submenu.removeClass('pointer-events-none')
+    $toggle.attr('aria-expanded', 'true')
+  }
+
+  // ── Auto-wire every [id="*-toggle"] ↔ [id="*-submenu"] pair ─────────────────
+  // Convention: button id="{key}-toggle" controls panel id="{key}-submenu".
+  const toggles: Array<{ $toggle: JQuery<HTMLElement>; $submenu: JQuery<HTMLElement> }> = []
+
+  $('[id$="-toggle"]').each(function () {
+    const toggleId = $(this).attr('id')! // e.g. "visit-toggle"
+    const key = toggleId.replace(/-toggle$/, '') // e.g. "visit"
+    const $submenu = $(`#${key}-submenu`)
+    if (!$submenu.length) return
+
+    const $toggle = $(this)
+    toggles.push({ $toggle, $submenu })
+
+    $toggle.on('click', function () {
+      const isOpen = $submenu.hasClass('grid-rows-[1fr]')
+
+      // Close all other open submenus first
+      toggles.forEach(({ $toggle: t, $submenu: s }) => {
+        if (!s.is($submenu)) closeSubmenu(s, t)
+      })
+
+      if (isOpen) {
+        closeSubmenu($submenu, $toggle)
+      } else {
+        openSubmenu($submenu, $toggle)
+      }
+    })
+
+    // Close when any link inside the submenu is clicked
+    $submenu.find('a').on('click', function () {
+      closeSubmenu($submenu, $toggle)
+    })
+  })
+
+  // Close all submenus on outside click
+  $(document).on('click', function (e) {
+    toggles.forEach(({ $toggle, $submenu }) => {
+      if (!$toggle.is(e.target as unknown as Element) && !$submenu.find(e.target as unknown as Element).length) {
+        closeSubmenu($submenu, $toggle)
+      }
+    })
+  })
+
+  // ── Navs horizontal scroll on trackpad / mouse-wheel ─────────────────────────
   const $navs = $('#navs')
 
   $navs.on('wheel', function (e) {
     const oe = e.originalEvent as WheelEvent
-
     const delta = Math.abs(oe.deltaX) > Math.abs(oe.deltaY) ? oe.deltaX : oe.deltaY
-
     const el = this
     const canScrollLeft = el.scrollLeft > 0
     const canScrollRight = el.scrollLeft + el.clientWidth < el.scrollWidth
@@ -168,25 +330,9 @@ const navs = [
     }
   })
 
-  // desktop visit submenu (reuse the same grid-rows toggle approach as mobile nav)
-  const $visitSubmenu = $('#visit-submenu')
-  const $visitToggle = $('#visit-toggle')
-
-  $visitToggle.on('click', function () {
-    $visitSubmenu.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
-    $visitSubmenu.toggleClass('shadow-md')
-    $visitSubmenu.toggleClass('pointer-events-none pointer-events-auto')
-
-    const expanded = $visitSubmenu.hasClass('grid-rows-[1fr]')
-    $visitToggle.attr('aria-expanded', String(expanded))
-  })
-
-  $('#visit-submenu a').on('click', function () {
-    closeSubmenu($visitSubmenu, $visitToggle)
-  })
-
+  // ── Language switcher ─────────────────────────────────────────────────────────
   $('.lang-btn-group button').on('click', function () {
-    if (!window.location.href.endsWith($(this).data('target'))) {
+    if (!window.location.href.split('#')[0].endsWith($(this).data('target'))) {
       window.location.href = $(this).data('target')
     }
   })

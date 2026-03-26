@@ -74,28 +74,29 @@ const pastReports = []
         <img src="img/g0v-summit-logo.svg" class="h-12 w-auto" />
         <span class="font-bold">{t('sponsor.title1')}</span>
       </div>
-      <h2 class="mb-12">{t('sponsor.title2')}</h2>
-
-      <!-- Sponsor Tiers -->
-      {
-        tierOrder.map(tier => {
-          const list = sponsors[tier]
-          if (!list || list.length === 0) return null
-          return (
-            <section id={`sponsor-${tier}`} class="mb-12">
-              <div class="sponsor-tier-label mb-6 flex items-center gap-2">
-                <span class="bg-primary mb-[1px] inline-block h-6 w-1 rounded-full" />
-                <h3 class="text-primary text-xl font-bold">{t(`sponsor.tiers.${tier}`)}</h3>
-              </div>
-              <div class={`grid gap-5 ${['sidekick', 'special'].includes(tier) && 'lg:grid-cols-2'}`}>
-                {list.map(s => (
-                  <SponsorCard name={t(s.nameKey)} description={s.description} site={s.site} img={s.img} tier={tier} />
-                ))}
-              </div>
-            </section>
-          )
-        })
-      }
+      <section id="sponsor-list">
+        <h2 class="mb-12">{t('sponsor.title2')}</h2>
+        <!-- Sponsor Tiers -->
+        {
+          tierOrder.map(tier => {
+            const list = sponsors[tier]
+            if (!list || list.length === 0) return null
+            return (
+              <section id={`sponsor-${tier}`} class="mb-12">
+                <div class="sponsor-tier-label mb-6 flex items-center gap-2">
+                  <span class="bg-primary mb-[1px] inline-block h-6 w-1 rounded-full" />
+                  <h3 class="text-primary text-xl font-bold">{t(`sponsor.tiers.${tier}`)}</h3>
+                </div>
+                <div class={`grid gap-5 ${['sidekick', 'special'].includes(tier) && 'lg:grid-cols-2'}`}>
+                  {list.map(s => (
+                    <SponsorCard name={t(s.nameKey)} description={s.description} site={s.site} img={s.img} tier={tier} />
+                  ))}
+                </div>
+              </section>
+            )
+          })
+        }
+      </section>
 
       <!-- Support g0v Summit CTA -->
       <section id="sponsor-support" class="mt-16 mb-20">

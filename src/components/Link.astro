@@ -6,7 +6,10 @@ const locale = getLocaleFromPath(Astro.url.pathname)
 const { href, ...props } = Astro.props
 
 // 如果 href 是字串且不是外部連結，就自動加上語系前綴
-const localizedHref = typeof href === 'string' && !href.startsWith('http') ? getRelativeLocaleUrl(locale, href.startsWith('/') ? href.slice(1) : href) : href
+let localizedHref = typeof href === 'string' && !href.startsWith('http') ? getRelativeLocaleUrl(locale, href) : href
+if (localizedHref.includes('#') && localizedHref.endsWith('/')) {
+  localizedHref = localizedHref.slice(0, -1)
+}
 ---
 
 <a href={localizedHref} {...props}>
