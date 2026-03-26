@@ -182,5 +182,14 @@
     "staffRoom": "工作人員休息室",
     "restArea": "飲食區",
     "description": "g0v Summit 今年在中央研究院人文社會科學館舉行，可於<a href=\"./visit\">交通資訊</a>頁面查看前往方式。"
+  },
+  "register": {
+    "cta": "購票連結",
+    "time": "活動時間",
+    "location": "活動地點",
+    "location_value_1": "中央研究院 人文社會科學館",
+    "location_value_2": "臺北市南港區研究院路二段 128 號",
+    "add_to_calendar": "加入行事曆",
+    "transportation": "交通方式"
   }
 }

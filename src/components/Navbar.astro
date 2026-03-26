@@ -79,11 +79,6 @@ const navs: NavItem[] = [
     name: t('nav.venue'),
   },
   {
-    key: 'speaker',
-    href: 'speaker',
-    name: t('nav.speaker'),
-  },
-  {
     key: 'sponsor',
     href: 'sponsor',
     name: t('nav.sponsor'),
@@ -106,11 +101,6 @@ const navs: NavItem[] = [
         },
       ],
     },
-  },
-  {
-    key: 'about',
-    href: 'about',
-    name: t('nav.about'),
   },
 ]
 ---
@@ -184,7 +174,7 @@ const navs: NavItem[] = [
             <a href={getRelativeLocaleUrl('en', pathname)} class="text-lg">English</a>
           </div>
 
-          <a class="btn-brand flex items-center justify-between px-4 py-3 text-lg" href="#">
+          <a class="register-btn btn-brand flex items-center justify-between px-4 py-3 text-lg" href="#">
             {t('nav.register')}
             <Icon name="mdi:arrow-right" width="28" />
           </a>
@@ -193,7 +183,7 @@ const navs: NavItem[] = [
     </div>
   </div>
 
-  <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">
+  <a class="register-btn btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">
     {t('nav.register')}
   </a>
 
@@ -235,10 +225,63 @@ const navs: NavItem[] = [
         </div>
       ))
   }
+
+  <template id="register-modal-header">
+    <h1 class="mb-2">{t('nav.register')}</h1>
+  </template>
+  <template id="register-modal-body">
+    <div class="text-[#1e1e1e]">
+      <div class="mb-8">
+        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2">
+          {t('register.cta')}<Icon name="mdi:external-link" width="22" />
+        </a>
+      </div>
+
+      <div class="mb-12 grid gap-8 md:grid-cols-2">
+        <div class="flex flex-col">
+          <h4 class="text-info-dark mb-2">{t('register.time')}</h4>
+          <div class="mb-4">2026.05.23-24 | 09:00-17:30</div>
+          <a
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=g0v+Summit+2026&dates=20260523T010000Z/20260524T093000Z&details=g0v+Summit+2026&location=Academia+Sinica"
+            target="_blank"
+            class="btn btn-primary mt-auto flex w-fit items-center gap-2"
+          >
+            {t('register.add_to_calendar')}<Icon name="mdi:external-link" width="22" />
+          </a>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="text-info-dark mb-2">{t('register.location')}</h4>
+          <div class="mb-4">
+            {t('register.location_value_1')}<br />
+            <span class="text-gray-700">{t('register.location_value_2')}</span>
+          </div>
+          <Link href="visit" class="btn btn-primary mt-auto flex w-fit items-center gap-2">
+            {t('register.transportation')}<Icon name="mdi:external-link" width="22" />
+          </Link>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border-2 border-[#58A83F] bg-[#F6FFF3] p-6 text-[#306D13]">
+        <h3 class="mb-4 text-xl font-bold">{t('agenda.dont_miss')}</h3>
+        <p class="mb-6">{t('agenda.opass_info')}</p>
+        <div class="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
+          <div class="flex items-center gap-4">
+            <a href="https://play.google.com/store/apps/details?id=app.opass.ccip" target="_blank">
+              <img class="h-full max-h-16" src={import.meta.env.BASE_URL + 'img/logo/google-play.png'} alt="google play" />
+            </a>
+            <a href="https://apps.apple.com/us/app/opass-app/id1436417025" target="_blank">
+              <img class="h-full max-h-16" src={import.meta.env.BASE_URL + 'img/logo/app-store.png'} alt="app store" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 </nav>
 
 <script>
   import $ from 'jquery'
+  import { showModalWith } from '~/utils/client/modal'
 
   // ── Mobile nav toggle ────────────────────────────────────────────────────────
   const $mobileNav = $('#mobile-nav')
@@ -251,6 +294,17 @@ const navs: NavItem[] = [
     $mobileNav.toggleClass('shadow-md')
     $('#burger').toggleClass('is-active')
   }
+
+  // ── Register modal ───────────────────────────────────────────────────────────
+  $('.register-btn').on('click', function (e) {
+    e.preventDefault()
+    if ($mobileNav.hasClass('grid-rows-[1fr]')) toggleMobileNav()
+    showModalWith({
+      header: $('#register-modal-header').html(),
+      body: $('#register-modal-body').html(),
+      size: 'lg',
+    })
+  })
 
   // ── Submenu helpers ──────────────────────────────────────────────────────────
   function closeSubmenu($submenu: JQuery<HTMLElement>, $toggle: JQuery<HTMLElement>) {

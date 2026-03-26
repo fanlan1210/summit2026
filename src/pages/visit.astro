@@ -173,9 +173,10 @@ const { t } = useI18n(Astro.url.pathname)
 
     if (hash === '#tab-publicTransport' || hash === '#tab-driving') {
       const tabKey = hash.replace('#tab-', '')
-      /** @type {HTMLButtonElement | null} */
       const tab = document.querySelector(`[data-tab="${tabKey}"]`)
-      tab?.click()
+      if (tab instanceof HTMLElement) {
+        tab.click()
+      }
 
       document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
@@ -183,6 +184,10 @@ const { t } = useI18n(Astro.url.pathname)
 
   document.querySelector('.visit-map-embed__overlay')?.addEventListener('click', function () {
     this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+  })
+  window.addEventListener('focus', function () {
+    console.log('window on focus')
+    document.querySelector('.visit-map-embed')?.classList.remove('visit-map-embed--active')
   })
 
   /**

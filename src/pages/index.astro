@@ -156,30 +156,6 @@ const { t } = useI18n(Astro.url.pathname)
               </a>
             </div>
           </section>
-
-          <section id="sponsorship" class="mb-20 max-md:text-center">
-            <h2 class="mb-8 text-3xl font-bold max-md:text-center md:text-4xl">
-              {t('index.sponsorship.title')}
-            </h2>
-
-            <p set:html={t('index.sponsorship.content')} />
-          </section>
-
-          <section id="partners" class="mb-20">
-            <h2 class="mb-8 text-3xl font-bold max-md:text-center md:text-4xl">
-              {t('index.partners.title')}
-            </h2>
-
-            <div class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-              <Partner name={t('index.partners.ocf')} site="https://ocf.tw" img="ocf.svg" />
-              <Partner name={t('index.partners.infolaw')} site="https://infolaw.iias.sinica.edu.tw" img="iias.svg" />
-              <Partner name={t('index.partners.pelith')} site="https://pelith.com/zh-tw" img="pelith.svg" />
-              <Partner name={t('index.partners.openfun')} site="https://openfun.tw/" img="openfun.svg" />
-              <Partner name={t('index.partners.tekoo')} site="https://tekoo-tea.com/" img="tekoo.svg" />
-              <Partner name={t('index.partners.justfont')} site="https://justfont.com/" img="justfont.svg" />
-              <Partner name={t('index.partners.archilife')} site="https://www.archilife.org/" img="archilife.svg" />
-            </div>
-          </section>
         </p>
       </section>
     </div>
@@ -187,6 +163,10 @@ const { t } = useI18n(Astro.url.pathname)
     <script>
       document.querySelector('.visit-map-embed__overlay')?.addEventListener('click', function () {
         this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+      })
+      window.addEventListener('focus', function () {
+        console.log('window on focus')
+        document.querySelector('.visit-map-embed')?.classList.remove('visit-map-embed--active')
       })
     </script>
 
