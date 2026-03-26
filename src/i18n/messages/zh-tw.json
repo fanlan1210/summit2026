@@ -145,9 +145,10 @@
     }
   },
   "sponsor": {
-    "title": "g0v Summit 2026 合作夥伴",
+    "organizer": "主辦單位",
+    "title1": "g0v Summit 2026 工作小組",
+    "title2": "合作夥伴",
     "tiers": {
-      "organizer": "主辦單位",
       "coorganizer": "協辦單位",
       "pioneer": "開路的人",
       "catalyst": "做代誌的人",

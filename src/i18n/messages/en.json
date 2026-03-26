@@ -146,9 +146,10 @@
     }
   },
   "sponsor": {
-    "title": "g0v Summit 2026 Partners",
+    "organizer": "Organizer",
+    "title1": "g0v Summit 2026 Working Group",
+    "title2": "Partners",
     "tiers": {
-      "organizer": "Organizer",
       "coorganizer": "Co-organizer",
       "pioneer": "Pioneer Partners",
       "catalyst": "Catalyst Partners",
