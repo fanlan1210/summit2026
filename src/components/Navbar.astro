@@ -205,8 +205,8 @@ const navs: NavItem[] = [
             <div class={`grid gap-8 py-12 grid-cols-${nav.submenu!.columns.length}`}>
               {nav.submenu!.columns.map(col => (
                 <div class="min-w-0">
-                  <Link class="flex items-center gap-2 text-2xl leading-tight font-bold tracking-wide text-white" href={col.titleHref}>
-                    {col.title} <Icon name="bi:arrow-right" height="20" />
+                  <Link class="submenu-link flex items-center text-2xl leading-tight font-bold tracking-wide text-white" href={col.titleHref}>
+                    {col.title} <Icon name="bi:arrow-right" height="20" class="ml-2" />
                   </Link>
                   <div class={`mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal ${col.links.length == 0 && 'hidden'}`}>
                     {col.links.map((link, i) => (
@@ -391,3 +391,119 @@ const navs: NavItem[] = [
     }
   })
 </script>
+
+<style>
+  @reference "../styles/base.css";
+
+  #burger {
+    @apply h-[2.5px] w-5 rounded-full bg-white transition-all;
+    &:before,
+    &:after {
+      content: ' ';
+      @apply absolute block h-[2.5px] w-5 rounded-full bg-white;
+    }
+    &:before {
+      animation: burger-t-Out 0.3s ease forwards;
+    }
+    &:after {
+      animation: burger-b-Out 0.3s ease forwards;
+    }
+    &.is-active {
+      @apply bg-transparent;
+      &:before {
+        animation: burger-t-In 0.3s ease forwards;
+      }
+      &:after {
+        animation: burger-b-In 0.3s ease forwards;
+      }
+    }
+  }
+
+  @keyframes burger-t-In {
+    0% {
+      transform: rotate(0deg) translateY(-7px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes burger-t-Out {
+    0% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(0deg) translateY(-7px);
+    }
+  }
+
+  @keyframes burger-b-In {
+    0% {
+      transform: rotate(0deg) translateY(-7px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(-225deg);
+    }
+  }
+
+  @keyframes burger-b-Out {
+    0% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(0deg) translateY(7px);
+    }
+  }
+
+  .submenu-link {
+    @apply w-fit;
+    &:hover > iconify-icon {
+      animation: submenuIconMouseIn 0.3s ease forwards;
+    }
+    &:not(:hover) > iconify-icon {
+      animation: submenuIconMouseOut 0.3s ease forwards;
+    }
+  }
+
+  @keyframes submenuIconMouseIn {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+      color: inherit;
+    }
+    49% {
+      opacity: 0;
+      transform: translateX(15px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+      color: var(--color-primary);
+    }
+  }
+
+  @keyframes submenuIconMouseOut {
+    0% {
+      color: var(--color-primary);
+    }
+    100% {
+      color: inherit;
+    }
+  }
+</style>
