@@ -1,0 +1,59 @@
+---
+interface Props {
+  modelPath?: string
+  scenePath?: string
+  initCamera?: [number, number, number]
+  invertOrbit?: boolean
+}
+
+const { modelPath = '', scenePath = '', initCamera = [5, -1, 5], invertOrbit = false } = Astro.props
+---
+
+<div class="viewer-container">
+  <div class="model-viewer" data-model-path={modelPath} data-scene-path={scenePath} data-init-camera={JSON.stringify(initCamera)} data-invert-orbit={invertOrbit}></div>
+</div>
+
+<style>
+  .viewer-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .model-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .overlay-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  import { initModelViewer } from '~/scripts/modelViewer'
+
+  initModelViewer()
+</script>

@@ -1,0 +1,10 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import ModelViewer from '../components/ModelViewer.astro'
+---
+
+<Layout>
+  <div class="h-100 w-full">
+    <ModelViewer modelPath="models/plastic-stool-r.glb" initCamera={[0.5, 0.5, 0.5]} />
+  </div>
+</Layout>
