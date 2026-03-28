@@ -15,6 +15,11 @@ export default defineConfig({
         '~': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
+    server: {
+      allowedHosts: [
+        'ciera-puffiest-unvibrantly.ngrok-free.dev'
+      ]
+    }
   },
   i18n: {
     defaultLocale: 'zh-tw',
