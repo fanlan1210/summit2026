@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as CANNON from 'cannon-es';
+import CannonDebugger from 'cannon-es-debugger';
 
 export function initModelViewer() {
   const container = document.querySelector('.model-viewer') as HTMLElement;
@@ -16,15 +18,42 @@ export function initModelViewer() {
   const modelPath = container.dataset.modelPath || '';
   const initCamera = JSON.parse(container.dataset.initCamera || '[5, -1, 5]') as [number, number, number];
   const invertOrbit = container.dataset.invertOrbit === 'true';
+  const stools = [
+    {
+      color: 0xC0282A,
+      position: new THREE.Vector3(0, 0, 0),
+      scale: new THREE.Vector3(1, 1, 1),
+    },
+    {
+      color: 0x2C76B4,
+      position: new THREE.Vector3(0, 0, -0.5),
+      scale: new THREE.Vector3(1, 0.6, 1),
+    },
+    {
+      color: 0xD2C446,
+      position: new THREE.Vector3(0, 0, 0.5),
+      scale: new THREE.Vector3(1, 0.6, 1),
+    },
+    {
+      color: 0x40AC3A,
+      position: new THREE.Vector3(0, 0, 1),
+      scale: new THREE.Vector3(1, 0.8, 1),
+    },
+    {
+      color: 0x40AC3A,
+      position: new THREE.Vector3(0, 0, -1),
+      scale: new THREE.Vector3(1, 0.8, 1),
+    },
+  ]
 
   const init = () => {
     // Create scene
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf0f0f0);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    directionalLight.position.set(0, 2, 1);
+    directionalLight.position.set(0, 3, 1);
     directionalLight.castShadow = true;
 
     // Configure shadow properties to fix banding/lines
@@ -44,7 +73,7 @@ export function initModelViewer() {
 
     // Create camera
     camera = new THREE.PerspectiveCamera(
-      50,
+      75,
       container.clientWidth / container.clientHeight,
       0.1,
       1000
@@ -66,12 +95,33 @@ export function initModelViewer() {
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.minPolarAngle = Math.PI * 0.1;
-    controls.maxPolarAngle = Math.PI * 0.5;
+    controls.maxPolarAngle = Math.PI * 0.4;
 
     if (invertOrbit) {
       controls.rotateSpeed = -0.3;
     } else {
       controls.rotateSpeed = 0.5;
+    }
+
+    const floorGeometry = new THREE.PlaneGeometry(20, 20);
+    const floorMaterial = new THREE.MeshStandardMaterial({
+      color: 0xDDDDDD
+    });
+    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.receiveShadow = true;
+    floor.rotation.x = -Math.PI / 2;
+    scene.add(floor);
+
+    for (let i = 0; i < 8; i++) {
+      const floorGeometry = new THREE.PlaneGeometry(0.1, 20);
+      const floorMaterial = new THREE.MeshStandardMaterial({
+        color: i % 2 == 0 ? 0xE62327 : 0x3282B8
+      });
+      const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+      floor.receiveShadow = true;
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.set(-0.8 + i * 0.2, 0.01, 0);
+      scene.add(floor);
     }
 
     // Load model and scene
@@ -83,19 +133,18 @@ export function initModelViewer() {
             modelPath,
             (gltf) => {
               const mesh = gltf.scene.children[0] as THREE.Mesh;
-              mesh.pivot = new THREE.Vector3(0, -0.19, 0);
-              mesh.position.set(0, 0, -0.2);
               mesh.castShadow = true;
               mesh.receiveShadow = true;
-              scene.add(mesh);
-              const clone = mesh.clone();
-              clone.scale.set(1, 0.7, 1);
-              const material = new THREE.MeshStandardMaterial();
-              material.color.setHex(0x00ff00);
-              material.side = THREE.DoubleSide;
-              clone.material = material;
-              clone.position.set(0, 0, 0.2);
-              scene.add(clone);
+              for (const stool of stools) {
+                const clone = mesh.clone();
+                const material = new THREE.MeshStandardMaterial();
+                material.color.setHex(stool.color);
+                material.side = THREE.DoubleSide;
+                clone.material = material;
+                clone.position.set(stool.position.x, stool.position.y, stool.position.z);
+                clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z);
+                scene.add(clone);
+              }
               resolve();
             },
             (xhr) => {
