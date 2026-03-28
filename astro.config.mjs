@@ -16,9 +16,7 @@ export default defineConfig({
       },
     },
     server: {
-      allowedHosts: [
-        'ciera-puffiest-unvibrantly.ngrok-free.dev'
-      ]
+      allowedHosts: process.env.ALLOW_HOSTS?.split(',') || []
     }
   },
   i18n: {
