@@ -13,17 +13,13 @@ const { t } = useI18n(Astro.url.pathname)
     <div class="container py-8 md:py-12">
       <h1 class="mb-8">{t('nav.venue')}</h1>
       <p class="mb-12" set:html={t('venue.description')} />
-      <div class="mb-20">
+      <div class="mx-auto my-10 mb-20 max-w-3xl">
         <h2>3F</h2>
-        <div class="my-10 md:my-14">
-          <Venue3F />
-        </div>
+        <Venue3F />
       </div>
-      <div>
+      <div class="mx-auto my-10 max-w-3xl px-6">
         <h2>4F</h2>
-        <div class="my-10 px-6 md:my-14">
-          <Venue4F />
-        </div>
+        <Venue4F />
       </div>
     </div>
   </main>
