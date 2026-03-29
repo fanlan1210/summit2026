@@ -23,6 +23,7 @@ const canClick = !isRest && !isEvent
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
 const description = formatDescription(isZhTW ? session.zh.description : session.en.description)
+const agendaTimeZone = 'Asia/Taipei'
 
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
@@ -38,25 +39,37 @@ function speakerIdToDetail(speakerId) {
 }
 
 function formatMMdd(date) {
-  if (typeof date === 'string') {
-    date = new Date(date)
-  }
+  const parts = formatInAgendaTimeZoneToParts(date, {
+    month: '2-digit',
+    day: '2-digit',
+  })
 
-  const month = String(date.getMonth() + 1).padStart(2, '0')
-  const day = String(date.getDate()).padStart(2, '0')
+  const month = parts.find(part => part.type === 'month')?.value ?? '00'
+  const day = parts.find(part => part.type === 'day')?.value ?? '00'
 
   return `${month}/${day}`
 }
 
 function formatHHmm(date) {
-  if (typeof date === 'string') {
-    date = new Date(date)
-  }
+  const parts = formatInAgendaTimeZoneToParts(date, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })
 
-  const hour = String(date.getHours()).padStart(2, '0')
-  const minute = String(date.getMinutes()).padStart(2, '0')
+  const hour = parts.find(part => part.type === 'hour')?.value ?? '00'
+  const minute = parts.find(part => part.type === 'minute')?.value ?? '00'
 
   return `${hour}:${minute}`
+}
+
+function formatInAgendaTimeZoneToParts(date, options) {
+  const value = typeof date === 'string' ? new Date(date) : date
+
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: agendaTimeZone,
+    ...options,
+  }).formatToParts(value)
 }
 
 function formatDescription(rawDescription) {
