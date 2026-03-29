@@ -51,6 +51,16 @@ const r2Sessions = sessions
   }, {})
 const r2Times = Object.keys(r2Sessions).sort((a, b) => a.localeCompare(b))
 
+const r3Sessions = sessions
+  .filter(session => session.room === 'R3' || session.broadcast.includes('R3'))
+  .reduce((acc, session) => {
+    const key = extractHHmm(session.start)
+    if (!acc[key]) acc[key] = []
+    acc[key].push(session)
+    return acc
+  }, {})
+const r3Times = Object.keys(r3Sessions).sort((a, b) => a.localeCompare(b))
+
 const rhSessions = sessions
   .filter(session => session.room === 'RH' || session.broadcast.includes('RH'))
   .reduce((acc, session) => {
@@ -83,11 +93,12 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
       <div id="mobileSearchPanel" class="mb-4 hidden">
         <Search />
       </div>
-      <div id="btns" class="grid grid-cols-5 text-center">
+      <div id="btns" class="grid grid-cols-6 text-center">
         <button data-target="#allSessions" class="border-info-dark border-b-2 transition-colors">ALL</button>
         <button data-target="#r0Sessions" class="border-b-2 border-transparent transition-colors">R0</button>
         <button data-target="#r1Sessions" class="border-b-2 border-transparent transition-colors">R1</button>
         <button data-target="#r2Sessions" class="border-b-2 border-transparent transition-colors">R2</button>
+        <button data-target="#r3Sessions" class="border-b-2 border-transparent transition-colors">R3</button>
         <button data-target="#rhSessions" class="border-b-2 border-transparent transition-colors">RH</button>
       </div>
     </div>
@@ -140,6 +151,19 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
             <div>
               <div>{time}</div>
               {r2Sessions[time].map(session => (
+                <Session session={session} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+
+      <div id="r3Sessions" style="display: none;">
+        {
+          r3Times.map(time => (
+            <div>
+              <div>{time}</div>
+              {r3Sessions[time].map(session => (
                 <Session session={session} />
               ))}
             </div>

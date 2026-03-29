@@ -10,7 +10,7 @@ const isZhTW = locale === 'zh-tw'
 
 const { session } = Astro.props
 
-const columnOrder = ['R0', 'R1', 'R2', 'RH', 'end']
+const columnOrder = ['R0', 'R1', 'R2', 'R3', 'RH', 'end']
 
 const speakers = session.speakers.map(speakerId => speakerIdToDetail(speakerId))
 const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
