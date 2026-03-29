@@ -13,13 +13,13 @@ const items = [
   },
   {
     icon: 'mdi:email-lock',
-    datetime: '2026-01-26',
+    datetime: '2026-01-26T00:00:00+08:00',
     dateKey: 'date.cfpEnd',
     titleKey: 'common.dates.2.title',
   },
   {
     icon: 'ic:baseline-list-alt',
-    datetime: '2026-03-30T00:00:00+08:00',
+    datetime: '2026-03-30',
     dateKey: 'date.announceAgenda',
     titleKey: 'common.dates.4.title',
   },
@@ -61,7 +61,7 @@ const items = [
   }
   .timeline-item + .timeline-item::before {
     content: '';
-    background-image: url('./img/arrow-right-alt.svg');
+    background-image: url('../assets/arrow-right-alt.svg');
     @apply absolute top-6 -left-11 hidden h-12 w-12 bg-cover bg-center bg-no-repeat md:block;
   }
 </style>
