@@ -273,9 +273,7 @@ export function initModelViewer() {
               }
               resolve();
             },
-            (xhr) => {
-              console.log('model:', (xhr.loaded / xhr.total) * 100 + '% loaded');
-            },
+            (xhr) => { },
             (error) => {
               console.error('An error occurred loading the model:', error);
               reject(error);
@@ -310,12 +308,7 @@ export function initModelViewer() {
       isVisible = entry.isIntersecting;
 
       if (isVisible) {
-        // 回到視窗內，重啟渲染迴圈
-        console.log("Canvas 進入視區，啟動渲染");
         animate();
-      } else {
-        // 離開視窗，停止渲染
-        console.log("Canvas 離開視區，停止渲染以節省效能");
       }
     });
   }, {
@@ -420,7 +413,7 @@ export function initModelViewer() {
       // camera.position.x = vRadius * Math.cos((event.alpha - initOrientation.alpha) / 180 * Math.PI);
       // camera.position.z = -1 * vRadius * Math.sin((event.alpha - initOrientation.alpha) / 180 * Math.PI);
     }
-    vo.innerText = `a ${event.alpha.toFixed(2)}, b ${event.beta.toFixed(2)}, g ${event.gamma.toFixed(2)}`;
+    vo.innerText = `a ${event.alpha?.toFixed(2)}, b ${event.beta?.toFixed(2)}, g ${event.gamma?.toFixed(2)}`;
   };
 
   // Initialize
@@ -430,14 +423,14 @@ export function initModelViewer() {
   window.addEventListener('load', () => {
     try {
       window.addEventListener('resize', handleResize);
-      window.addEventListener('deviceorientation', handleOrientation);
+      // window.addEventListener('deviceorientation', handleOrientation);
     } catch (e) {
       alert(e);
     }
   });
   window.addEventListener('beforeunload', () => {
     window.removeEventListener('resize', handleResize);
-    window.removeEventListener('deviceorientation', handleOrientation);
+    // window.removeEventListener('deviceorientation', handleOrientation);
     if (renderer) {
       renderer.dispose();
     }

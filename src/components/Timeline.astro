@@ -1,35 +1,77 @@
 ---
 import { useI18n } from '~/i18n/utils'
+import Icon from '~/components/Icon.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 
-const events = [
-  { date: '2025.11', labelZh: '徵稿開始', labelEn: 'CFP Opens' },
-  { date: '2026.01', labelZh: '徵稿截止', labelEn: 'CFP Closes' },
-  { date: '2026.03', labelZh: '錄取通知', labelEn: 'Acceptance Notice' },
-  { date: '2026.05.23–24', labelZh: '大會日期', labelEn: 'Conference' },
+const items = [
+  {
+    icon: 'mdi:mailbox',
+    datetime: '2025-12-15',
+    dateKey: 'date.cfpStart',
+    titleKey: 'common.dates.1.title',
+  },
+  {
+    icon: 'mdi:email-lock',
+    datetime: '2026-01-26',
+    dateKey: 'date.cfpEnd',
+    titleKey: 'common.dates.2.title',
+  },
+  {
+    icon: 'ic:baseline-list-alt',
+    datetime: '2026-03-30T00:00:00+08:00',
+    dateKey: 'date.announceAgenda',
+    titleKey: 'common.dates.4.title',
+  },
+  {
+    icon: 'la:calendar-day',
+    datetime: '2026-05-23',
+    dateKey: 'date.summit',
+    titleKey: 'common.dates.5.title',
+  },
 ]
-
-const locale = Astro.url.pathname.includes('/en') ? 'en' : 'zh-tw'
 ---
 
-<div class="relative">
-  <div class="bg-primary/30 absolute top-0 bottom-0 left-4 w-px md:left-1/2"></div>
+<h2 class="mb-12 text-3xl font-bold max-md:text-center md:text-4xl" data-i18n="common.dates">
+  {t('common.dates.title')}
+</h2>
 
-  <div class="flex flex-col gap-8">
-    {
-      events.map((event, i) => (
-        <div class={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-          <div class="bg-primary z-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white md:absolute md:left-1/2 md:-translate-x-1/2">
-            <div class="h-2 w-2 rounded-full bg-white" />
-          </div>
-
-          <div class={`pl-4 md:w-[calc(50%-2rem)] md:pl-0 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-            <div class="text-primary font-mono text-sm font-bold">{event.date}</div>
-            <div class="text-lg font-bold">{locale === 'en' ? event.labelEn : event.labelZh}</div>
-          </div>
+<div class="timeline mx-auto mb-12 flex flex-wrap items-center justify-center gap-11">
+  {
+    items.map(item => (
+      <div class="timeline-item relative flex min-w-48 flex-col items-center gap-3 self-start max-md:w-full">
+        <div class="timeline-icon flex h-22 w-22 rounded-full border">
+          <Icon class="m-auto" name={item.icon} width="44" />
         </div>
-      ))
-    }
-  </div>
+        <time class="relative text-xl font-bold tracking-tight text-neutral-400 md:text-2xl" datetime={item.datetime}>
+          {t(item.dateKey)}
+        </time>
+        <h3 class="timeline-item-title max-w-48 text-center text-2xl font-bold tracking-tight md:text-3xl" set:html={t(item.titleKey)} />
+      </div>
+    ))
+  }
 </div>
+
+<style>
+  @import '~/styles/base.css';
+
+  .timeline-item [datetime$='+08:00']::after {
+    content: '(UTC+8)';
+    @apply absolute top-[-1em] right-0 text-sm;
+  }
+  .timeline-item + .timeline-item::before {
+    content: '';
+    background-image: url('./img/arrow-right-alt.svg');
+    @apply absolute top-6 -left-11 hidden h-12 w-12 bg-cover bg-center bg-no-repeat md:block;
+  }
+</style>
+
+<script>
+  const now = new Date()
+  document.querySelectorAll('.timeline-item time').forEach((item, index) => {
+    const itemDate = new Date(item.getAttribute('datetime'))
+    if (itemDate > now) {
+      item.parentElement.classList.add('opacity-50')
+    }
+  })
+</script>

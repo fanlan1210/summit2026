@@ -1,7 +1,22 @@
 {
   "title": "Invite Yourself",
   "common": {
-    "agree": "Agree"
+    "agree": "Agree",
+    "dates": {
+      "title": "Key Dates",
+      "1": { "title": "CFP Opens" },
+      "2": { "title": "CFP Closes" },
+      "3": { "title": "Submission Results" },
+      "4": { "title": "Agenda Announced" },
+      "5": { "title": "g0v Summit 2026" }
+    }
+  },
+  "date": {
+    "cfpStart": "2025/12/15",
+    "cfpEnd": "2026/01/25 23:59",
+    "submissionResult": "TBD",
+    "announceAgenda": "2026/03/30",
+    "summit": "2026/05/23-24"
   },
   "meta": {
     "description": "g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
