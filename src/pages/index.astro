@@ -3,57 +3,21 @@ import Layout from '~/layouts/Layout.astro'
 import Icon from '~/components/Icon.astro'
 import Timeline from '~/components/Timeline.astro'
 import PastEvent from '~/components/PastEvent.astro'
-import Partner from '~/components/Partner.astro'
 import Link from '~/components/Link.astro'
 import { useI18n } from '~/i18n/utils'
+import ModelViewer from '../components/ModelViewer.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('title')}>
   <div id="nav-transparent-flag" class="hidden"></div>
-
-  <div id="top-block" class="relative flex h-[calc(100vh-56px)] w-full flex-col items-center overflow-hidden bg-[rgb(252,245,241)] md:h-[calc(100vh-112px)]">
-    <div class="relative z-2 mx-auto mb-6 flex h-fit w-4/5 max-w-xl grow flex-col items-center justify-center md:w-1/2">
-      <img class="mb-4 w-1/2 md:mb-6 md:w-1/3" src="./img/banner/g0v-summit-logo.svg" alt="g0v summit" />
-
-      <img class="mb-4 md:mb-8" src="./img/banner/slogan.svg" alt="反客為主 Invite Yourself" />
-
-      <img class="w-4/5 md:w-1/2" src="./img/banner/date-and-venue.svg" alt="2026.05.23–24 | Taipei, Taiwan" />
-    </div>
-
-    <div class="relative z-1 -mb-12 grid w-[120%] grid-cols-3 items-end gap-16 md:grid-cols-5">
-      <img class="stool z-1 mx-auto hidden w-2/3 max-w-[220px] cursor-pointer md:block" src="./img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-1" data-stool="g" />
-
-      <a class="stool-container relative z-2 mx-auto max-w-[220px] no-underline md:w-2/3" href="https://summit.g0v.tw/tickets" target="_blank" title="前往購票">
-        <div class="speech-bubble">
-          <Icon name="mdi:ticket" width="20" />
-        </div>
-        <img class="stool w-full cursor-pointer" src="./img/banner/g0v_stool-nbg-y-s.svg" alt="yellow-chair" data-stool="y" />
-      </a>
-
-      <a class="stool-container relative z-3 mx-auto max-w-[220px] no-underline md:w-2/3" href="https://summit.g0v.tw/tickets" target="_blank" title="前往購票">
-        <div class="speech-bubble">
-          <Icon name="mdi:ticket" width="20" />
-        </div>
-        <img class="stool w-full cursor-pointer" src="./img/banner/g0v_stool-nbg-r-l.svg" alt="red-chair" data-stool="r" />
-      </a>
-
-      <a class="stool-container relative z-4 mx-auto max-w-[220px] no-underline md:w-2/3" href="https://summit.g0v.tw/tickets" target="_blank" title="前往購票">
-        <div class="speech-bubble">
-          <Icon name="mdi:ticket" width="20" />
-        </div>
-        <img class="stool w-full cursor-pointer" src="./img/banner/g0v_stool-nbg-b-s.svg" alt="blue-chair" data-stool="b" />
-      </a>
-
-      <img class="stool z-5 mx-auto hidden w-2/3 max-w-[220px] cursor-pointer md:block" src="./img/banner/g0v_stool-nbg-g-m.svg" alt="green-chair-2" data-stool="g" />
-    </div>
-
-    <img class="object-fit h-24 max-w-none md:h-auto md:max-w-full" src="./img/banner/bottom-bar.svg" alt="banner-bottom-bar" />
+  <div class="h-[calc(50vh)] w-full md:h-[calc(100vh-56px)]">
+    <ModelViewer modelPath="models/plastic-stool-r.glb" />
   </div>
 
   <main>
-    <div class="container py-20">
+    <div class="container pt-10 pb-20">
       <section id="intro" class="mb-20">
         <h1 class="mb-2 leading-relaxed md:mb-4">g0v Summit 2026</h1>
 

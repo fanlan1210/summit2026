@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import * as CANNON from 'cannon-es';
@@ -25,7 +26,8 @@ export function initModelViewer() {
   // Camera shake tracking
   let lastCameraPosition = new THREE.Vector3();
   let cameraVelocity = new THREE.Vector3();
-  const initCameraPosition = [3, 0, 0] as [number, number, number];
+  const initCameraPosition = [3, 0, 2] as [number, number, number];
+  const isMobile = container.clientWidth <= container.clientHeight;
 
   // Get props from data attributes
   const modelPath = container.dataset.modelPath || '';
@@ -114,7 +116,7 @@ export function initModelViewer() {
 
     // Create camera
     camera = new THREE.PerspectiveCamera(
-      35,
+      isMobile ? 60 : 35,
       container.clientWidth / container.clientHeight,
       0.1,
       1000
@@ -153,6 +155,9 @@ export function initModelViewer() {
     } else {
       controls.rotateSpeed = 0.5;
     }
+    if (isMobile) {
+      controls.rotateSpeed *= 2.5;
+    }
 
     controls.target.set(0, 0.4, 0);
     controls.update();
@@ -180,25 +185,29 @@ export function initModelViewer() {
     }
 
     // Create slogan
-    const sloganGeometry = new THREE.PlaneGeometry(4.5, 1);
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    const texture = new THREE.CanvasTexture(canvas);
-    const material = new THREE.MeshStandardMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
-    const slogan = new THREE.Mesh(sloganGeometry, material);
-    slogan.position.set(-1, 0.5, 0);
-    slogan.scale.set(0.5, 0.5, 0.5);
-    slogan.rotation.y = Math.PI / 2;
+    const loader = new SVGLoader();
+    loader.load('img/banner/slogan.svg', (data) => {
+      const paths = data.paths;
+      const group = new THREE.Group();
+      const material = new THREE.MeshStandardMaterial({ color: 0x333333 });
 
-    img.onload = () => {
-      canvas.width = 4096; // 自定義解析度
-      canvas.height = 4096;
-      ctx.drawImage(img, 0, 0, 4096, 4096);
-      texture.needsUpdate = true; // 通知 Three.js 更新
-      scene.add(slogan);
-    };
-    img.src = 'img/banner/slogan.svg';
+      paths.forEach((path) => {
+        const shapes = SVGLoader.createShapes(path);
+        shapes.forEach((shape) => {
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 20, bevelEnabled: false });
+          const mesh = new THREE.Mesh(geometry, material);
+          group.add(mesh);
+        });
+      });
+      if (isMobile) {
+        group.position.set(-1, 1.5, 1.15);
+      } else {
+        group.position.set(-1, 1, 1.15);
+      }
+      group.scale.set(0.002, 0.002, 0.002);
+      group.rotation.set(0, - Math.PI / 2, Math.PI);
+      scene.add(group);
+    });
 
 
     // Load model and scene
