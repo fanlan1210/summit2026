@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+import { getLocalizedSpeakerName } from '~/utils/speaker'
 import SessionBadges from './SessionBadges.astro'
 
 const { t } = useI18n(Astro.url.pathname)
@@ -42,7 +43,7 @@ function speakerIdToDetail(speakerId) {
 }
 
 function getSpeakerName(speaker) {
-  return isZhTW ? speaker.zh.name : speaker.en.name || speaker.zh.name
+  return getLocalizedSpeakerName(speaker, locale)
 }
 
 function formatMMdd(date) {
