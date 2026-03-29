@@ -53,6 +53,7 @@ const { modelPath = '', scenePath = '', initCamera = [5, -1, 5], invertOrbit = f
     cursor: pointer;
     z-index: 1;
     transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .overlay.hidden {
@@ -80,18 +81,24 @@ const { modelPath = '', scenePath = '', initCamera = [5, -1, 5], invertOrbit = f
   const isTouchDevice = () => {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0
   }
+
   let isScrolling
-  window.addEventListener('scroll', function () {
-    const overlay = document.querySelector('.overlay')
 
-    if (isTouchDevice()) {
+  const overlay = document.querySelector('.overlay')
+
+  if (isTouchDevice()) {
+    document.querySelector('.viewer-container')?.addEventListener('click', function () {
       overlay?.classList.remove('hidden')
-    }
-
-    window.clearTimeout(isScrolling)
-
-    isScrolling = setTimeout(function () {
-      overlay?.classList.add('hidden')
-    }, 1000)
-  })
+      isScrolling = setTimeout(function () {
+        overlay?.classList.add('hidden')
+      }, 1000)
+    })
+    window.addEventListener('scroll', function () {
+      overlay?.classList.remove('hidden')
+      window.clearTimeout(isScrolling)
+      isScrolling = setTimeout(function () {
+        overlay?.classList.add('hidden')
+      }, 500)
+    })
+  }
 </script>
