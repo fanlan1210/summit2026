@@ -21,56 +21,6 @@ const allSessions = sessions.reduce((acc, session) => {
   return acc
 }, {})
 const allTimes = Object.keys(allSessions).sort((a, b) => a.localeCompare(b))
-
-const r0Sessions = sessions
-  .filter(session => session.room === 'R0' || session.broadcast.includes('R0'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r0Times = Object.keys(r0Sessions).sort((a, b) => a.localeCompare(b))
-
-const r1Sessions = sessions
-  .filter(session => session.room === 'R1' || session.broadcast.includes('R1'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r1Times = Object.keys(r1Sessions).sort((a, b) => a.localeCompare(b))
-
-const r2Sessions = sessions
-  .filter(session => session.room === 'R2' || session.broadcast.includes('R2'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r2Times = Object.keys(r2Sessions).sort((a, b) => a.localeCompare(b))
-
-const r3Sessions = sessions
-  .filter(session => session.room === 'R3' || session.broadcast.includes('R3'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r3Times = Object.keys(r3Sessions).sort((a, b) => a.localeCompare(b))
-
-const rhSessions = sessions
-  .filter(session => session.room === 'RH' || session.broadcast.includes('RH'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 ---
 
 <div class="lg:hidden">
