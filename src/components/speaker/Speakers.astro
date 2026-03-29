@@ -9,7 +9,8 @@ const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
 
 // schedule speaker ids
-const KEYNOTE_SPEAKER_IDS = ['zh-34', 'en-14']
+// TODO 後續有基調演講講者後補上
+const KEYNOTE_SPEAKER_IDS = []
 
 const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
 
@@ -21,25 +22,27 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
   <div class="container">
     <h1 class="my-8 md:my-12">{t('nav.speaker')}</h1>
 
-    <section class="my-20">
-      <h3 class="mb-12">{t('speakers.keynote')}</h3>
-      {
-        keynoteSpeakers.map(speaker => {
-          const { name, bio } = getSpeakerProfile(speaker, locale)
-          return (
-            <div class="mb-12">
-              <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
-                <img class="h-auto w-full max-w-56 shrink-0 rounded-full md:max-w-48" src={speaker.avatar} alt={name} />
-                <div>
-                  <h5 class="mb-6">{name}</h5>
-                  {bio && <p class="whitespace-pre-line">{bio}</p>}
+    {
+      keynoteSpeakers && keynoteSpeakers.length > 0 && (
+        <section class="my-20">
+          <h3 class="mb-12">{t('speakers.keynote')}</h3>
+          {keynoteSpeakers.map(speaker => {
+            const { name, bio } = getSpeakerProfile(speaker, locale)
+            return (
+              <div class="mb-12">
+                <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
+                  <img class="h-auto w-full max-w-56 shrink-0 rounded-full md:max-w-48" src={speaker.avatar} alt={name} />
+                  <div>
+                    <h5 class="mb-6">{name}</h5>
+                    {bio && <p class="whitespace-pre-line">{bio}</p>}
+                  </div>
                 </div>
               </div>
-            </div>
-          )
-        })
-      }
-    </section>
+            )
+          })}
+        </section>
+      )
+    }
 
     <section class="my-20">
       <h3 class="mb-4">{t('speakers.sessions')}</h3>
