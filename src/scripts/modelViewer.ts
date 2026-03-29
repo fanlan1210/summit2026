@@ -6,6 +6,10 @@ import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import * as CANNON from 'cannon-es';
 import CannonDebugger from 'cannon-es-debugger';
 
+const isTouchDevice = () => {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+}
+
 export function initModelViewer() {
   const container = document.querySelector('.model-viewer') as HTMLElement;
 
@@ -32,6 +36,7 @@ export function initModelViewer() {
   // Get props from data attributes
   const modelPath = container.dataset.modelPath || '';
   const invertOrbit = container.dataset.invertOrbit === 'true';
+  const backgroundColor = 0xFCF5F1;
   const stools = [
     {
       color: 0xC0282A,
@@ -91,9 +96,9 @@ export function initModelViewer() {
 
     // Create scene
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xDDDDDD);
+    scene.background = new THREE.Color(backgroundColor);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
     directionalLight.position.set(0, 3, 1);
     directionalLight.castShadow = true;
@@ -112,7 +117,7 @@ export function initModelViewer() {
 
     scene.add(ambientLight);
     scene.add(directionalLight);
-    scene.fog = new THREE.Fog(0xDDDDDD, 3, 10);
+    scene.fog = new THREE.Fog(backgroundColor, 3, 10);
 
     // Create camera
     camera = new THREE.PerspectiveCamera(
@@ -147,7 +152,9 @@ export function initModelViewer() {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.enablePan = false;
-    controls.enableZoom = false;
+    controls.enableZoom = isTouchDevice();
+    controls.touches.ONE = null;
+    controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
     controls.minPolarAngle = Math.PI * 0.1;
     controls.maxPolarAngle = Math.PI * 0.4;
 
@@ -166,7 +173,7 @@ export function initModelViewer() {
     // add floor
     const floorGeometry = new THREE.PlaneGeometry(30, 30);
     const floorMaterial = new THREE.MeshStandardMaterial({
-      color: 0xDDDDDD
+      color: backgroundColor
     });
     const floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.receiveShadow = true;
@@ -176,7 +183,9 @@ export function initModelViewer() {
     for (let i = 0; i < 8; i++) {
       const floorGeometry = new THREE.PlaneGeometry(0.1, 30);
       const floorMaterial = new THREE.MeshStandardMaterial({
-        color: i % 2 == 0 ? 0xE62327 : 0x3282B8
+        color: i % 2 == 0 ? 0xE62327 : 0x3282B8,
+        opacity: 0.5,
+        transparent: true
       });
       const floor = new THREE.Mesh(floorGeometry, floorMaterial);
       floor.receiveShadow = true;
