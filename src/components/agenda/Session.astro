@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
@@ -130,12 +131,12 @@ function formatDescription(rawDescription) {
         <div class="body">
           <div class="mb-4 flex flex-col gap-4">
             {speakers.map(speaker => (
-              <span class="group flex items-center gap-4">
+              <a href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`} class="group flex items-center gap-4 text-inherit no-underline">
                 <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
                   <img class="h-full w-full" src={speaker.avatar} alt={getSpeakerName(speaker)} />
                 </div>
-                <span class="text-info-dark text-xl font-bold underline-offset-4">{getSpeakerName(speaker)}</span>
-              </span>
+                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{getSpeakerName(speaker)}</span>
+              </a>
             ))}
           </div>
           <p class="mb-0 border-t border-neutral-300 py-4 wrap-break-word whitespace-pre-line">{description.content}</p>

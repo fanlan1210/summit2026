@@ -1,0 +1,94 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+import SpeakerGridCard from './SpeakerGridCard.astro'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+
+// schedule speaker ids
+const KEYNOTE_SPEAKER_IDS = ['zh-34', 'en-14']
+
+const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
+
+// hide placeholder rows with empty id
+const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '')
+---
+
+<Layout pageName={t('nav.speaker')}>
+  <div class="container">
+    <h1 class="my-8 md:my-12">{t('nav.speaker')}</h1>
+
+    <section class="my-20">
+      <h3 class="mb-12">{t('speakers.keynote')}</h3>
+      {
+        keynoteSpeakers.map(speaker => {
+          const name = isZhTW ? speaker.zh.name : speaker.en.name
+          const bio = isZhTW ? speaker.zh.bio : speaker.en.bio
+          return (
+            <div class="mb-12">
+              <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
+                <img class="h-auto w-full max-w-56 shrink-0 rounded-full md:max-w-48" src={speaker.avatar} alt={name} />
+                <div>
+                  <h5 class="mb-6">{name}</h5>
+                  {bio && <p class="whitespace-pre-line">{bio}</p>}
+                </div>
+              </div>
+            </div>
+          )
+        })
+      }
+    </section>
+
+    <section class="my-20">
+      <h3 class="mb-4">{t('speakers.sessions')}</h3>
+      <div id="speakers-grid" class="mb-12 grid grid-cols-3 items-start gap-6 md:grid-cols-5">
+        {speakersForGrid.map(speaker => <SpeakerGridCard speaker={speaker} />)}
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import { showModalWith } from '~/utils/client/modal'
+
+  const gridEl = document.querySelector('#speakers-grid')
+
+  function openSpeakerModalFromCard(speaker: HTMLElement) {
+    const header = speaker.querySelector('.modal-content .header')
+    const body = speaker.querySelector('.modal-content .body')
+    if (!header || !body) return
+    showModalWith({ header: header.innerHTML, body: body.innerHTML })
+  }
+
+  // Click speaker and open pop-up overlay used on the agenda page
+  function showSpeakerModal(e: Event) {
+    const target = e.target as HTMLElement
+    const speaker = target.closest('.speaker[data-id]')
+    if (!speaker || !(speaker instanceof HTMLAnchorElement)) return
+
+    openSpeakerModalFromCard(speaker)
+  }
+
+  function isVisible(el: HTMLElement) {
+    const style = window.getComputedStyle(el)
+    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && el.offsetWidth > 0 && el.offsetHeight > 0
+  }
+
+  // …/speaker/#speakerId → scroll to card and open same pop-up (ref speakers.js)
+  function tryOpenSpeakerFromHash() {
+    const raw = location.hash.slice(1)
+    if (!raw) return
+    const id = decodeURIComponent(raw)
+    const nodes = document.querySelectorAll<HTMLElement>(`#speakers-grid .speaker[data-id="${CSS.escape(id)}"]`)
+    const speaker = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    if (!speaker) return
+    speaker.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
+    openSpeakerModalFromCard(speaker)
+  }
+
+  gridEl?.addEventListener('click', showSpeakerModal)
+  requestAnimationFrame(() => tryOpenSpeakerFromHash())
+</script>
