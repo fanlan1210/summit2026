@@ -13,25 +13,15 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
 <Layout pageName={t('nav.agenda')}>
   <div class="container">
-    <h1 class="my-8 md:my-12">{t('agenda.title')}</h1>
-
-    <!-- <div class="mb-8 flex flex-col gap-4 md:flex-row">
-      <a href="#" class="btn btn-info flex gap-1 px-14!">
-        <Icon name="mdi:text-box-edit" width="24" />
-        <span>{t('agenda.main_note')}</span>
-      </a>
-      <a href="#" class="btn btn-info flex gap-1 px-14!">
-        <Icon name="mdi:video" width="24" />
-        <span>{t('agenda.main_live')}</span>
-      </a>
-    </div> -->
+    <h1 class="mt-8 md:mt-12">{t('agenda.title')}</h1>
+    <p class="mt-4 mb-8 text-neutral-400">{t('agenda.info')}</p>
   </div>
 
   <Desktop title={title} date={date} />
   <Mobile title={title} date={date} />
 
   <div class="container mt-24 mb-16">
-    <div class="rounded-3xl border-2 border-[#58A83F] bg-[#F6FFF3] p-6 text-[#306D13] md:p-12">
+    <!-- div class="rounded-3xl border-2 border-[#58A83F] bg-[#F6FFF3] p-6 text-[#306D13] md:p-12">
       <h3 class="mb-7">{t('agenda.dont_miss')}</h3>
       <p class="mb-9">{t('agenda.opass_info')}</p>
       <div class="flex flex-col items-start gap-4 lg:flex-row">
@@ -44,15 +34,15 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
           </a>
         </div>
 
-        <!-- a href="https://opass.app/open/?event_id=SITCON_2024" class="flex h-16 items-center gap-8 rounded-lg bg-[#58a83f] px-4 transition-colors hover:bg-[#4F9739] lg:ml-auto">
+        <a href="https://opass.app/open/?event_id=G0V_SUMMIT_2026" class="flex h-16 items-center gap-8 rounded-lg bg-[#58a83f] px-4 transition-colors hover:bg-[#4F9739] lg:ml-auto">
           <div>
             <span class="block text-white">{t('agenda.has_installed_opass')}</span>
             <span class="block text-sm text-[#CFF0C5]">{t('agenda.open_in_app')}</span>
           </div>
           <Icon name="mdi:external-link" width="28" color="white" />
-        </a -->
+        </a>
       </div>
-    </div>
+    </div -->
   </div>
 </Layout>
 
@@ -78,7 +68,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
   function showSessionModal(e: Event) {
     const target = e.target as HTMLElement
-    const session = target.closest('.session.session-canClick')
+    const session = target.closest('.session.session-canClick') as HTMLElement
     if (!session) return
 
     openSessionModalFromElement(session)
@@ -89,11 +79,8 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     const raw = location.hash.slice(1)
     if (!raw) return
     const id = decodeURIComponent(raw)
-    const nodes = document.querySelectorAll<HTMLElement>(
-      `.session.session-canClick[data-id="${CSS.escape(id)}"]`,
-    )
-    const session =
-      Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    const nodes = document.querySelectorAll<HTMLElement>(`.session.session-canClick[data-id="${CSS.escape(id)}"]`)
+    const session = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
     if (!session) return
     session.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
     openSessionModalFromElement(session)
