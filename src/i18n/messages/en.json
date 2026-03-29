@@ -8,7 +8,9 @@
   },
   "language": {
     "zh": "Mandarin",
-    "en": "English"
+    "en": "English",
+    "nan": "Taiwanese",
+    "hak": "Hakka"
   },
   "room": {
     "R0": "International Conf. Hall",
@@ -32,7 +34,6 @@
     "pastSites": "Past Sites",
     "docs": "Organization Records",
     "coc": "Code of Conduct"
-
   },
   "speakers": {
     "keynote": "Keynote",
