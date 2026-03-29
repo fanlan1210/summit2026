@@ -95,12 +95,16 @@ function formatDescription(rawDescription) {
             {formatMMdd(session.start)} {formatHHmm(session.start)} ~ {formatHHmm(session.end)} @ {session.broadcast || session.room}
           </div>
           <div class="flex gap-2">
-            <a href={session.qa} target="_blank" class="btn btn-info">
-              {t('agenda.qa')}
-            </a>
-            <a href={session.co_write} target="_blank" class="btn btn-info">
-              {t('agenda.note')}
-            </a>
+            {session.qa && (
+              <a href={session.qa} target="_blank" class="btn btn-info">
+                {t('agenda.qa')}
+              </a>
+            )}
+            {session.co_write && (
+              <a href={session.co_write} target="_blank" class="btn btn-info">
+                {t('agenda.note')}
+              </a>
+            )}
           </div>
         </div>
 
