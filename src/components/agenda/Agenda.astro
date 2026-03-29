@@ -63,10 +63,10 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   import { showModalWith } from '~/utils/client/modal'
 
   const agendaGridEl = document.querySelector('#agenda-grid')
-  const sessionsEl = document.querySelector('#sessions')
+  const mobileSessionsEl = document.querySelector('#mobile-sessions')
 
   agendaGridEl?.addEventListener('click', showSessionModal)
-  sessionsEl?.addEventListener('click', showSessionModal)
+  mobileSessionsEl?.addEventListener('click', showSessionModal)
 
   function showSessionModal(e: Event) {
     const target = e.target as HTMLElement
