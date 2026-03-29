@@ -86,7 +86,7 @@ const { t } = useI18n(Astro.url.pathname)
         <!-- 標籤頁內容 -->
         <div class="visit-tabs__content mt-8 min-h-[480px] min-w-0">
           <!-- 大眾運輸 -->
-          <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
+          <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
             <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
                 <div class="visit-step__title mb-5">
@@ -102,21 +102,17 @@ const { t } = useI18n(Astro.url.pathname)
                   <h4>{t('visit.transport.publicTransportStep2.title')}</h4>
                 </div>
                 <ul class="visit-step__list wrap-break-word">
-                  <li set:html={t('visit.transport.publicTransportStep2.item1')} />
+                  <!-- li set:html={t('visit.transport.publicTransportStep2.item1')} / -->
                   <li set:html={t('visit.transport.publicTransportStep2.item2')} />
                   <li set:html={t('visit.transport.publicTransportStep2.item3')} />
                   <li set:html={t('visit.transport.publicTransportStep2.item4')} />
                 </ul>
               </div>
             </div>
-            <div class="visit-tab-panel__right min-w-0">
-              <div class="visit-image-placeholder flex aspect-video min-h-[320px] w-full items-center justify-center rounded bg-neutral-200 text-neutral-500">
-                {t('visit.transport.imagePlaceholder')}
-              </div>
-            </div>
           </div>
+
           <!-- 自行開車 -->
-          <div id="visit-panel-driving" class="visit-tab-panel hidden min-w-0 gap-8 md:grid-cols-2" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
+          <div id="visit-panel-driving" class="visit-tab-panel hidden min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
             <div class="visit-tab-panel__left min-w-0">
               <div class="visit-step">
                 <div class="visit-step__title mb-5">
@@ -141,11 +137,6 @@ const { t } = useI18n(Astro.url.pathname)
                 <ul class="visit-step__list wrap-break-word">
                   <li>{t('visit.transport.drivingStep3.item1')}</li>
                 </ul>
-              </div>
-            </div>
-            <div class="visit-tab-panel__right min-w-0">
-              <div class="visit-image-placeholder flex aspect-video min-h-[320px] w-full items-center justify-center rounded bg-neutral-200 text-neutral-500">
-                {t('visit.transport.imagePlaceholder')}
               </div>
             </div>
           </div>
