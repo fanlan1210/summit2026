@@ -111,12 +111,12 @@ function formatDescription(rawDescription) {
         <div class="body">
           <div class="mb-4 flex flex-col gap-4">
             {speakers.map(speaker => (
-              <a href="#" class="group flex items-center gap-4">
+              <span class="group flex items-center gap-4">
                 <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
                   <img class="h-full w-full" src={speaker.avatar} alt={isZhTW ? speaker.zh.name : speaker.en.name} />
                 </div>
-                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
-              </a>
+                <span class="text-info-dark text-xl font-bold underline-offset-4">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
+              </span>
             ))}
           </div>
           <p class="mb-0 border-t border-neutral-300 py-4 wrap-break-word whitespace-pre-line">{description.content}</p>
