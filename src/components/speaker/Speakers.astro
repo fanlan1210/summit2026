@@ -66,7 +66,7 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
   function showSpeakerModal(e: Event) {
     const target = e.target as HTMLElement
     const speaker = target.closest('.speaker[data-id]')
-    if (!speaker || !(speaker instanceof HTMLAnchorElement)) return
+    if (!speaker || !(speaker instanceof HTMLElement)) return
 
     openSpeakerModalFromCard(speaker)
   }
