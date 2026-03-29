@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+import { formatHHmm, formatMMdd } from '~/utils/datetime'
 import { getLocalizedSpeakerName } from '~/utils/speaker'
 import SessionBadges from './SessionBadges.astro'
 
@@ -27,7 +28,6 @@ const canClick = !isRest && !isEvent
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
 const description = formatDescription(sessionDescription)
-const agendaTimeZone = 'Asia/Taipei'
 
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
@@ -44,40 +44,6 @@ function speakerIdToDetail(speakerId) {
 
 function getSpeakerName(speaker) {
   return getLocalizedSpeakerName(speaker, locale)
-}
-
-function formatMMdd(date) {
-  const parts = formatInAgendaTimeZoneToParts(date, {
-    month: '2-digit',
-    day: '2-digit',
-  })
-
-  const month = parts.find(part => part.type === 'month')?.value ?? '00'
-  const day = parts.find(part => part.type === 'day')?.value ?? '00'
-
-  return `${month}/${day}`
-}
-
-function formatHHmm(date) {
-  const parts = formatInAgendaTimeZoneToParts(date, {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  })
-
-  const hour = parts.find(part => part.type === 'hour')?.value ?? '00'
-  const minute = parts.find(part => part.type === 'minute')?.value ?? '00'
-
-  return `${hour}:${minute}`
-}
-
-function formatInAgendaTimeZoneToParts(date, options) {
-  const value = typeof date === 'string' ? new Date(date) : date
-
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: agendaTimeZone,
-    ...options,
-  }).formatToParts(value)
 }
 
 function formatDescription(rawDescription) {
