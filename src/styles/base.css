@@ -166,7 +166,7 @@
     transform: translate(0, 0);
   }
   100% {
-    TRANSFORM: translate(15px, -15px);
+    transform: translate(0, -15px);
   }
 }
 

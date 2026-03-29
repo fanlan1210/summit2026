@@ -130,7 +130,7 @@ export function initModelViewer() {
 
     // Create renderer
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
@@ -302,8 +302,30 @@ export function initModelViewer() {
   const timer = new THREE.Timer();
   const fixedTimeStep = 1 / 60; // 60 FPS fixed timestep
   let accumulator = 0;
+  let isVisible = true;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // 當 canvas 進入視窗 (isIntersecting 為 true)
+      isVisible = entry.isIntersecting;
+
+      if (isVisible) {
+        // 回到視窗內，重啟渲染迴圈
+        console.log("Canvas 進入視區，啟動渲染");
+        animate();
+      } else {
+        // 離開視窗，停止渲染
+        console.log("Canvas 離開視區，停止渲染以節省效能");
+      }
+    });
+  }, {
+    threshold: 0.1 // 只要 Canvas 露出 10% 就開始渲染
+  });
+  observer.observe(container);
 
   const animate = () => {
+    if (!isVisible) return;
+
     requestAnimationFrame(animate);
     controls.update();
 
@@ -376,7 +398,6 @@ export function initModelViewer() {
     if (camera && renderer && container) {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(container.clientWidth, container.clientHeight);
     }
   };
