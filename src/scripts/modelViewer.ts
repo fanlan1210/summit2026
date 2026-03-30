@@ -36,8 +36,11 @@ export function initModelViewer() {
   // Camera shake tracking
   let lastCameraPosition = new THREE.Vector3();
   let cameraVelocity = new THREE.Vector3();
-  const initCameraPosition = new THREE.Vector3(-3, 2, -3);
-  const targetCameraPosition = new THREE.Vector3(3.5, 0, 0);
+  let initialPosition = Math.floor(Math.random() * 4);
+  const initCameraPosition = new THREE.Vector3(
+    ...(initialPosition < 1 ? [3, 2, -3] : initialPosition > 2 ? [-3, 2, -3] : [-3, 2, -3]));
+  const targetCameraPosition = new THREE.Vector3(
+    ...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 2 ? [3, 0, -2] : [3.23, 0, 0]));
   const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition);
   const isMobile = container.clientWidth <= container.clientHeight;
 
@@ -375,7 +378,7 @@ export function initModelViewer() {
         controls.enabled = true;
         canMove = true;
       }
-    } else {
+    } else if (elapsed > 1.5) { // Only triggers animation afterwards
       // Detect camera shake (velocity from OrbitControls movement)
       const currentCameraPosition = camera.position.clone();
       cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition);
@@ -418,7 +421,7 @@ export function initModelViewer() {
     controls.update();
 
     // update rolling pangolin
-    if (rolling.mesh) {
+    if (elapsed > 5.0 && rolling.mesh) {
       rolling.mesh.rotation.x += rolling.speed * deltaTime;
       rolling.mesh.position.z += rolling.speed * rolling.radius * deltaTime;
       if (rolling.mesh.position.z > 10) {
