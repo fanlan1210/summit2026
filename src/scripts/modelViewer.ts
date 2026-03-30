@@ -178,6 +178,7 @@ export function initModelViewer() {
     const floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.receiveShadow = true;
     floor.rotation.x = -Math.PI / 2;
+    floor.position.set(0, -0.002, 0);
     scene.add(floor);
 
     for (let i = 0; i < 8; i++) {
@@ -190,7 +191,7 @@ export function initModelViewer() {
       const floor = new THREE.Mesh(floorGeometry, floorMaterial);
       floor.receiveShadow = true;
       floor.rotation.x = -Math.PI / 2;
-      floor.position.set(-0.8 + i * 0.2, 0.001, 0);
+      floor.position.set(-0.8 + i * 0.2, -0.001, 0);
       scene.add(floor);
     }
 
@@ -248,7 +249,7 @@ export function initModelViewer() {
                 const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4);
 
                 // Position the stool with its bottom at the ground (y=0)
-                const physicsYPosition = stoolHeight / 2 + 0.01; // Center of mass at half height, just above ground
+                const physicsYPosition = stoolHeight / 2 + 0.1; // Center of mass at half height, just above ground
 
                 const stoolBody = new CANNON.Body({
                   mass: 1,
