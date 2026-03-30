@@ -23,7 +23,7 @@ https://g0v.github.io/summit2026/
 
 ```
 GCP_API_KEY=""
-SPREADSHEET_KEY=""
+SPREADSHEET_ID=""
 DEFAULT_AVATAR=""
 AVATAR_BASE_URL=""
 ```

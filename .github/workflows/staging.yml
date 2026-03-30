@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Fetch schedule
+        run: npm run fetch-schedule
+        env:
+          SPREADSHEET_ID: ${{ vars.SPREADSHEET_ID }}
+          GCP_API_KEY: ${{ secrets.GCP_API_KEY }}
+
       - name: Build site
         run: npm run build
 
