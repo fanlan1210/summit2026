@@ -373,8 +373,7 @@ export function initModelViewer() {
         const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value));
         camera.position.copy(newPosition);
       } else {
-        camera.position.copy(targetCameraPosition);
-        lastCameraPosition.copy(targetCameraPosition);
+        lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)));
         controls.enabled = true;
         canMove = true;
       }
