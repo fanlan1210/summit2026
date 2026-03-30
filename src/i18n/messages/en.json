@@ -16,7 +16,11 @@
     "cfpEnd": "Jan. 25, 2026 @ 23:59",
     "submissionResult": "Mar. 18, 2026",
     "announceAgenda": "Mar. 30, 2026",
-    "summit": "May 23–24, 2026"
+    "summit": "May 23–24, 2026",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
   },
   "meta": {
     "description": "g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
