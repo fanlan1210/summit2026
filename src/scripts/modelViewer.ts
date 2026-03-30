@@ -26,7 +26,7 @@ export function initModelViewer() {
     mesh: null as THREE.Group | null,
     radius: 0.45,
     height: 0.0001,
-    speed: 0.02,
+    speed: 5,
   }
 
   // Physics bodies and meshes mapping
@@ -36,7 +36,8 @@ export function initModelViewer() {
   // Camera shake tracking
   let lastCameraPosition = new THREE.Vector3();
   let cameraVelocity = new THREE.Vector3();
-  const initCameraPosition = [3, 0, 2] as [number, number, number];
+  const initCameraPosition = [3, 2, -3] as [number, number, number];
+  const targetCameraPosition = [3, 0, 2] as [number, number, number];
   const isMobile = container.clientWidth <= container.clientHeight;
 
   // Get props from data attributes
@@ -163,6 +164,7 @@ export function initModelViewer() {
     controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
     controls.minPolarAngle = Math.PI * 0.1;
     controls.maxPolarAngle = Math.PI * 0.4;
+    controls.enabled = false;
 
     if (invertOrbit) {
       controls.rotateSpeed = -0.3;
@@ -311,15 +313,12 @@ export function initModelViewer() {
         }
       })
     ]).then(() => {
-      // Initialize camera position tracking
-      lastCameraPosition.copy(camera.position);
-
       // Enable physics debugger to see collision shapes
       // cannonDebugger = CannonDebugger(scene, world, {
       //   color: 0x00ff00,
       //   scale: 1.0,
       // });
-
+      document.querySelector('.model-viewer')?.classList.add('loaded');
       animate();
     });
   };
@@ -328,6 +327,7 @@ export function initModelViewer() {
   const fixedTimeStep = 1 / 60; // 60 FPS fixed timestep
   let accumulator = 0;
   let isVisible = true;
+  let canMove = false;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -348,18 +348,6 @@ export function initModelViewer() {
 
     requestAnimationFrame(animate);
 
-    // update rolling pangolin
-    if (rolling.mesh) {
-      rolling.mesh.rotation.x += rolling.speed;
-      rolling.mesh.position.z += rolling.speed * rolling.radius;
-      if (rolling.mesh.position.z > 10) {
-        rolling.mesh.position.z = -10;
-      }
-    }
-
-    // update camera position
-    controls.update();
-
     // Update physics world with fixed timestep
     timer.update();
     const deltaTime = Math.min(timer.getDelta(), 0.1); // Cap delta to prevent spiral of death
@@ -371,47 +359,69 @@ export function initModelViewer() {
       accumulator -= fixedTimeStep;
     }
 
+    // update camera position
+    const distance = camera.position.distanceTo(new THREE.Vector3(...targetCameraPosition));
+    if (!canMove && distance > 1.495) {
+      const deltaVector = new THREE.Vector3(...targetCameraPosition).sub(camera.position);
+      camera.position.add(deltaVector.multiplyScalar(2 * deltaTime));
+    } else if (!canMove) {
+      lastCameraPosition.copy(camera.position);
+      controls.enabled = true;
+      canMove = true;
+    } else {
+      // Detect camera shake (velocity from OrbitControls movement)
+      const currentCameraPosition = camera.position.clone();
+      cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition);
+      lastCameraPosition.copy(currentCameraPosition);
+
+      // Calculate shake intensity
+      const shakeIntensity = cameraVelocity.length();
+
+      // If camera is shaking (moving fast), apply forces to stools
+      if (shakeIntensity > 0.0005) {
+        const forceMagnitude = shakeIntensity * 100; // Significantly amplify the effect
+        physicsBodies.forEach(({ body }) => {
+          // Apply a horizontal force in the direction opposite to camera movement
+          const force = new CANNON.Vec3(
+            -cameraVelocity.x * forceMagnitude,
+            0.1,
+            -cameraVelocity.z * forceMagnitude
+          );
+
+          // Apply force at the top of the stool to create wobble
+          const worldPoint = new CANNON.Vec3(
+            body.position.x,
+            body.position.y,
+            body.position.z
+          );
+
+          body.applyForce(force, worldPoint);
+
+          // Also add some torque for more natural wobble
+          const torqueStrength = forceMagnitude * 0.2;
+          const torque = new CANNON.Vec3(
+            (Math.random() - 0.5) * torqueStrength,
+            0,
+            (Math.random() - 0.5) * torqueStrength
+          );
+          body.torque.vadd(torque, body.torque);
+        });
+      }
+    }
+    controls.update();
+
+    // update rolling pangolin
+    if (rolling.mesh) {
+      rolling.mesh.rotation.x += rolling.speed * deltaTime;
+      rolling.mesh.position.z += rolling.speed * rolling.radius * deltaTime;
+      if (rolling.mesh.position.z > 10) {
+        rolling.mesh.position.z = -10;
+        rolling.speed = Math.random() * 4 + 3;
+      }
+    }
+
     // Update physics debugger
     if (cannonDebugger) cannonDebugger.update();
-
-    // Detect camera shake (velocity from OrbitControls movement)
-    const currentCameraPosition = camera.position.clone();
-    cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition);
-    lastCameraPosition.copy(currentCameraPosition);
-
-    // Calculate shake intensity
-    const shakeIntensity = cameraVelocity.length();
-
-    // If camera is shaking (moving fast), apply forces to stools
-    if (shakeIntensity > 0.0005) {
-      const forceMagnitude = shakeIntensity * 100; // Significantly amplify the effect
-      physicsBodies.forEach(({ body }) => {
-        // Apply a horizontal force in the direction opposite to camera movement
-        const force = new CANNON.Vec3(
-          -cameraVelocity.x * forceMagnitude,
-          0.1,
-          -cameraVelocity.z * forceMagnitude
-        );
-
-        // Apply force at the top of the stool to create wobble
-        const worldPoint = new CANNON.Vec3(
-          body.position.x,
-          body.position.y,
-          body.position.z
-        );
-
-        body.applyForce(force, worldPoint);
-
-        // Also add some torque for more natural wobble
-        const torqueStrength = forceMagnitude * 0.2;
-        const torque = new CANNON.Vec3(
-          (Math.random() - 0.5) * torqueStrength,
-          0,
-          (Math.random() - 0.5) * torqueStrength
-        );
-        body.torque.vadd(torque, body.torque);
-      });
-    }
 
     // Sync Three.js meshes with Cannon.js bodies
     physicsBodies.forEach(({ mesh, body }) => {
