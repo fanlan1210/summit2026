@@ -36,8 +36,9 @@ export function initModelViewer() {
   // Camera shake tracking
   let lastCameraPosition = new THREE.Vector3();
   let cameraVelocity = new THREE.Vector3();
-  const initCameraPosition = [3, 2, -3] as [number, number, number];
-  const targetCameraPosition = [3, 0, 2] as [number, number, number];
+  const initCameraPosition = new THREE.Vector3(-3, 2, -3);
+  const targetCameraPosition = new THREE.Vector3(3.5, 0, 0);
+  const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition);
   const isMobile = container.clientWidth <= container.clientHeight;
 
   // Get props from data attributes
@@ -133,7 +134,7 @@ export function initModelViewer() {
       0.1,
       1000
     );
-    camera.position.set(...initCameraPosition);
+    camera.position.copy(initCameraPosition);
 
     // Create renderer
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -326,6 +327,7 @@ export function initModelViewer() {
   const timer = new THREE.Timer();
   const fixedTimeStep = 1 / 60; // 60 FPS fixed timestep
   let accumulator = 0;
+  let elapsed = 0;
   let isVisible = true;
   let canMove = false;
 
@@ -352,6 +354,7 @@ export function initModelViewer() {
     timer.update();
     const deltaTime = Math.min(timer.getDelta(), 0.1); // Cap delta to prevent spiral of death
     accumulator += deltaTime;
+    elapsed += deltaTime;
 
     // Step physics with fixed timestep
     while (accumulator >= fixedTimeStep) {
@@ -360,14 +363,18 @@ export function initModelViewer() {
     }
 
     // update camera position
-    const distance = camera.position.distanceTo(new THREE.Vector3(...targetCameraPosition));
-    if (!canMove && distance > 1.495) {
-      const deltaVector = new THREE.Vector3(...targetCameraPosition).sub(camera.position);
-      camera.position.add(deltaVector.multiplyScalar(2 * deltaTime));
-    } else if (!canMove) {
-      lastCameraPosition.copy(camera.position);
-      controls.enabled = true;
-      canMove = true;
+    if (!canMove) { // We are in the launch animation
+      const progress = elapsed / 1.1;
+      if (progress <= 1.0) {
+        const value = 1.724 * progress * (1 - 0.26 * progress * (1 + 0.616 * progress));
+        const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value));
+        camera.position.copy(newPosition);
+      } else {
+        camera.position.copy(targetCameraPosition);
+        lastCameraPosition.copy(targetCameraPosition);
+        controls.enabled = true;
+        canMove = true;
+      }
     } else {
       // Detect camera shake (velocity from OrbitControls movement)
       const currentCameraPosition = camera.position.clone();
