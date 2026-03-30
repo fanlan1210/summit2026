@@ -217,7 +217,7 @@ export function initModelViewer() {
       paths.forEach((path) => {
         const shapes = SVGLoader.createShapes(path);
         shapes.forEach((shape) => {
-          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 10, bevelEnabled: false });
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false });
           const mesh = new THREE.Mesh(geometry, material);
           group.add(mesh);
         });
