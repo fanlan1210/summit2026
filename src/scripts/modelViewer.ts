@@ -88,10 +88,10 @@ export function initModelViewer() {
     const wallShape1 = new CANNON.Box(new CANNON.Vec3(0.1, 50, 10));
     const wallShape2 = new CANNON.Box(new CANNON.Vec3(10, 50, 0.1));
     const wallBody = new CANNON.Body({ mass: 0 });
-    wallBody.addShape(wallShape1, new CANNON.Vec3(1, 0, 0));
-    wallBody.addShape(wallShape1, new CANNON.Vec3(-1, 0, 0));
-    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 0, 4));
-    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 0, -4));
+    wallBody.addShape(wallShape1, new CANNON.Vec3(1, 20, 0));
+    wallBody.addShape(wallShape1, new CANNON.Vec3(-1, 20, 0));
+    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 20, 4));
+    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 20, -4));
     world.addBody(wallBody);
 
     // Create scene
@@ -352,14 +352,14 @@ export function initModelViewer() {
         // Apply a horizontal force in the direction opposite to camera movement
         const force = new CANNON.Vec3(
           -cameraVelocity.x * forceMagnitude,
-          0,
+          0.1,
           -cameraVelocity.z * forceMagnitude
         );
 
         // Apply force at the top of the stool to create wobble
         const worldPoint = new CANNON.Vec3(
           body.position.x,
-          body.position.y + 0.15,
+          body.position.y,
           body.position.z
         );
 
@@ -394,27 +394,6 @@ export function initModelViewer() {
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     }
-  };
-
-  let initOrientation;
-  const vo = document.getElementById('orientation-v') as HTMLElement;
-  const handleOrientation = (event: DeviceOrientationEvent) => {
-    if (event.alpha !== null) {
-      if (!initOrientation) {
-        initOrientation = {
-          alpha: event.alpha,
-          beta: event.beta,
-          gamma: event.gamma
-        };
-      }
-      const beta = Math.max(Math.min(event.beta - initOrientation.beta, 90), 1);
-
-      const vRadius = initCameraPosition[0] * Math.cos(beta / 180 * Math.PI);
-      // camera.position.y = -1 * initCameraPosition[0] * Math.sin(beta / 180 * Math.PI);
-      // camera.position.x = vRadius * Math.cos((event.alpha - initOrientation.alpha) / 180 * Math.PI);
-      // camera.position.z = -1 * vRadius * Math.sin((event.alpha - initOrientation.alpha) / 180 * Math.PI);
-    }
-    vo.innerText = `a ${event.alpha?.toFixed(2)}, b ${event.beta?.toFixed(2)}, g ${event.gamma?.toFixed(2)}`;
   };
 
   // Initialize
