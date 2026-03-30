@@ -1,11 +1,11 @@
 {
-  "name": "template",
+  "name": "g0v-summit-2026",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "",
   "type": "module",
-  "author": "SeanGau",
-  "license": "MIT",
+  "author": "g0v-summit-2026-working-group",
+  "license": "",
   "engines": {
     "node": ">=22"
   },
@@ -13,7 +13,7 @@
     "build-production": "cross-env BUILD_MODE=production astro build",
     "preview-production": "cross-env BUILD_MODE=production astro preview",
     "build": "cross-env BUILD_MODE=staging astro build",
-    "preview": "cross-env BUILD_MODE=stagin astro preview",
+    "preview": "cross-env BUILD_MODE=staging astro preview",
     "dev": "cross-env BUILD_MODE=staging astro dev",
     "format": "prettier --write .",
     "fetch-schedule": "node fetch-schedule.js"
