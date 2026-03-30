@@ -6,17 +6,17 @@
       "title": "Key Dates",
       "1": { "title": "CFP Opens" },
       "2": { "title": "CFP Closes" },
-      "3": { "title": "Submission Results" },
-      "4": { "title": "Agenda Announced" },
+      "3": { "title": "Acceptance Sent" },
+      "4": { "title": "Agenda Announces" },
       "5": { "title": "g0v Summit 2026" }
     }
   },
   "date": {
-    "cfpStart": "2025/12/15",
-    "cfpEnd": "2026/01/25 23:59",
-    "submissionResult": "TBD",
-    "announceAgenda": "2026/03/30",
-    "summit": "2026/05/23-24"
+    "cfpStart": "Dec. 15, 2025",
+    "cfpEnd": "Jan. 25, 2026 @ 23:59",
+    "submissionResult": "Mar. 18, 2026",
+    "announceAgenda": "Mar. 30, 2026",
+    "summit": "May 23–24, 2026"
   },
   "meta": {
     "description": "g0v Summit is centered on “Information Transparency, Open Results, and Open Collaboration,” we use the power of the grassroots to care for public affairs. In 2026, #🪑InviteYourself to Taipei to weave the future of civic space."
@@ -48,7 +48,9 @@
     "presskit": "Press Kit",
     "pastSites": "Past Sites",
     "docs": "Organization Records",
-    "coc": "Code of Conduct"
+    "coc": "Code of Conduct",
+    "webfont": "webfont provided by justfont",
+    "bugreport": "Report Website Issues"
   },
   "speakers": {
     "keynote": "Keynote",
@@ -56,25 +58,25 @@
   },
   "agenda": {
     "title": "Agenda",
-    "info": "Agenda is still being updated, please refer to the conference announcements.",
+    "info": "The agenda is still being rolled out and is subject to change. Please check back for the most recent updates.",
     "main_note": "Notes",
     "main_live": "Live",
     "qa": "Q&A",
     "note": "Collab Notes",
-    "search_keyword": "Search agendas",
-    "dont_miss": "Don't want to miss the agenda?",
-    "opass_info": "The conference offers the OPass app (iOS / Android), where you can plan the sessions you want to attend ahead of time and receive notifications as they're about to start.",
+    "search_keyword": "Search a session",
+    "dont_miss": "Don’t wanna miss a session?",
+    "opass_info": "You may find everything you need to know about the summit on the open-source OPass app (available on iOS & Android), where you can plan your schedule ahead of time and receive notifications as they’re about to start.",
     "has_installed_opass": "Installed OPass?",
-    "open_in_app": "Open it in the app ~"
+    "open_in_app": "View in the app!"
   },
   "visit": {
     "info": {
       "title": "Traffic Info",
       "venueName": "Humanities & Social Sciences Building, Academia Sinica",
       "address": "128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan",
-      "osmMap": "OSM Map",
-      "googleMap": "Google Map",
-      "mapPlaceholder": "Open Street Map",
+      "osmMap": "OpenStreetMap",
+      "googleMap": "Google Maps",
+      "mapPlaceholder": "OpenStreetMap",
       "mapView": "Click to Interact"
     },
     "transport": {
@@ -82,7 +84,7 @@
       "tabs": {
         "publicTransport": "By Transit",
         "drivingLine1": "Driving",
-        "drivingLine2": " Directions"
+        "drivingLine2": " or Biking"
       },
       "publicTransportStep1": {
         "title": "Reaching Nangang",
@@ -106,7 +108,7 @@
       },
       "drivingStep3": {
         "title": "Motorcycle Parking",
-        "item1": "As motorbikes are prohibited from entering the campus, please utilize free parking spaces next to Academia Sinica's main entrance and side entrances."
+        "item1": "As motorbikes are prohibited from entering the campus, please utilize free parking spaces next to Academia Sinica’s main entrance and side entrances."
       },
       "imagePlaceholder": "Image placeholder"
     }
@@ -114,11 +116,11 @@
   "cookieNotice": "This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics.",
   "index": {
     "interact": "Use two fingers to interact",
-    "opening_in": "Opening in",
+    "opening_in": "Commencing in",
     "intro": {
       "title": "\"The Rope-Weaving Geometry of Invite Yourself!\"",
-      "p1": "They say, \"Once bitten by a snake, you'll fear a rope for ten years.\" But at g0v Summit 2026, we say: ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope.",
-      "p2": "<strong>For g0v Summit 2026, this \"rope\" symbolizes the concrete expression of g0v's decade of hacktivism: \"Don't ask why nobody is doing this — admit that you are nobody.\" Because \"nobody\" can do anything.</strong>",
+      "p1": "They say, \"Once bitten by a snake, you’ll fear a rope for ten years.\" But at g0v Summit 2026, we say: ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope.",
+      "p2": "<strong>For g0v Summit 2026, this \"rope\" symbolizes the concrete expression of g0v’s decade of hacktivism: \"Don’t ask why nobody is doing this — admit that you are nobody.\" Because \"nobody\" can do anything.</strong>",
       "p3": "<strong>No waiting, no depending on others — we Invite Ourselves, and build things with our own hands:</strong>",
       "p4": "Here, g0v Summit 2026 invites you into a three-dimensional civic coordinate system woven from rope.",
       "p5": "You and every participant, each grounded in your own skills, values, and positions, are a \"point\" in this space.<br>When we toss out our rope and engage with others, points become \"lines\";<br>when countless lines interweave, we hold up a \"plane\" — a dynamic network of action, a hammock that catches us all.",
@@ -136,16 +138,16 @@
       "p1": "Since 2012, <a href=\"https://g0v.tw\" target=\"_blank\">g0v.tw</a>, the Taiwan Zero-Hour Government community, under the rallying cry of \"hacking to change society,\" has centered on <b>\"information transparency, open results, and open collaboration\"</b> — using the power of the grassroots to care for public affairs, launching over a decade of civic hacker practice.",
       "p2": "<b>Following the Sunflower Movement, g0v Summit (What?) was first held in 2014, bringing together open communities, government, NGOs, academia, and internet citizens for cross-sector exchange.</b>",
       "p3": "Over these decades, Taiwanese society has experienced countless democratic crises, social upheaval, and polarization — setbacks and crises like being \"bitten by a snake.\"",
-      "p4": "Facing Taiwan's societal wounds and threats from near and far, \"ten years\" is not just a measure of time — it etches the continuous action and practice of civic communities, the ongoing process of transforming fear into resilience.",
-      "p5": "They say, \"Once bitten by a snake, you'll fear a rope for ten years.\" But at g0v Summit 2026, we say <b>\"ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope\"</b>. We believe in the power of grassroots communities and the bonds between us to continually transform the \"fear\" into the \"action\" of beating.",
+      "p4": "Facing Taiwan’s societal wounds and threats from near and far, \"ten years\" is not just a measure of time — it etches the continuous action and practice of civic communities, the ongoing process of transforming fear into resilience.",
+      "p5": "They say, \"Once bitten by a snake, you’ll fear a rope for ten years.\" But at g0v Summit 2026, we say <b>\"ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope\"</b>. We believe in the power of grassroots communities and the bonds between us to continually transform the \"fear\" into the \"action\" of beating.",
       "p6": "<ruby>Tying knots<rp>(</rp><rt>phah-kat</rt><rp>)</rp></ruby> is not just about binding tight — it is about learning to loosen: loosening passive postures, loosening dependence and fear, and in times of crisis and uncertainty, relearning the muscles of \"self-rescue\" and \"mutual aid.\"",
       "p7": "We refuse to be trapped in the passivity and timidity of \"fearing the rope.\" Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, reach out, grab that rope, and knead and beat it anew. We branch, weave, connect, and continuously transform and create — the \"rope\" is no longer a terrifying phantom, but a resilient and organic community."
     },
     "pastEvents": "Past Events",
     "joinG0v": {
       "title": "Join g0v",
-      "p1": "g0v is a grassroots civic community dedicated to deepening citizens' contributions to society and the connections between them. Through the g0v community, you can find like-minded partners, put your ideas into practice in a grassroots way, and release your results under open licenses so that more people can build on your work.",
-      "p2": "Replacing the \"o\" in \"gov\" with a zero to form g0v, we rethink the role of government from zero — representing the digital-native generation's perspective from the world of 0s and 1s.",
+      "p1": "g0v is a grassroots civic community dedicated to deepening citizens’ contributions to society and the connections between them. Through the g0v community, you can find like-minded partners, put your ideas into practice in a grassroots way, and release your results under open licenses so that more people can build on your work.",
+      "p2": "Replacing the \"o\" in \"gov\" with a zero to form g0v, we rethink the role of government from zero — representing the digital-native generation’s perspective from the world of 0s and 1s.",
       "slack": "g0v Slack",
       "docs": "Summit Planning Docs",
       "events": "Upcoming g0v Events"
@@ -159,7 +161,7 @@
       "site": "Official Website",
       "donate": "Donate",
       "ocf": "Open Culture Foundation",
-      "infolaw": "Center for Information Law, IIAS, Academia Sinica",
+      "infolaw": "Information Law Center, IIAS, Academia Sinica",
       "pelith": "Pelith",
       "openfun": "OpenFun Ltd.",
       "tekoo": "TeKoo",
@@ -173,7 +175,7 @@
     "title1": "g0v Summit 2026 Working Group",
     "title2": "Partners",
     "tiers": {
-      "coorganizer": "Co-organizer",
+      "coorganizer": "Supporting Organizers",
       "pioneer": "Pioneer Partners",
       "catalyst": "Catalyst Partners",
       "companion": "Companion Partners",
@@ -183,8 +185,8 @@
     "site": "Official Website",
     "support": {
       "title": "Support g0v Summit",
-      "p1": "g0v Summit is a volunteer-organized, non-profit event. 'Invite Yourself' is our theme for 2026 — we invite everyone to pull up a stool and become part of the action. The sponsors listed above are the key supporters who make g0v Summit 2026 possible.",
-      "p2": "Every g0v Summit depends on the support and participation of the community. Beyond attending sessions and events, you're welcome to support the open community through sponsorship.",
+      "p1": "g0v Summit is a volunteer-organized, non-profit event. “Invite Yourself” is our theme for 2026 — we invite everyone to pull up a stool and become part of the action. The sponsors listed above are the key supporters who make g0v Summit 2026 possible.",
+      "p2": "Every g0v Summit depends on the support and participation of the community. Beyond attending sessions and events, you’re welcome to support the open community through sponsorship.",
       "p3": "We offer a variety of partnership packages including brand exposure, booth setup, ticket sponsorship, and more custom options. We look forward to working with you to advance civic technology.",
       "p4": "For sponsorship and partnership inquiries, please contact: sponsorship@summit.g0v.tw",
       "cta": "Individual Donation"
@@ -194,15 +196,15 @@
       "subtitle": "g0v Summit 2026 Promotional Materials",
       "license": "License",
       "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
-      "pdf": "Poster / PDF",
-      "notice": "Public Notice / Docs"
+      "pdf": "Poster (PDF)",
+      "notice": "Official Letter (Docs)"
     },
     "pastReports": {
       "title": "Past News Reports"
     }
   },
   "venue": {
-    "infoDesk": "Check-in / Info desk",
+    "infoDesk": "Check-in / Information",
     "staffRoom": "Staff Room",
     "restArea": "Rest Area",
     "description": "g0v Summit 2026 will be held at the Humanities and Social Sciences Building, Academia Sinica. Please refer to the <a href=\"./en/visit\">Visit</a> page for transportation information."

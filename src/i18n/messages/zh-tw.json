@@ -1,7 +1,7 @@
 {
   "title": "反客為主",
   "common": {
-    "agree": "Agree",
+    "agree": "同意",
     "dates": {
       "title": "重要日程",
       "1": { "title": "徵件開始" },
@@ -14,7 +14,7 @@
   "date": {
     "cfpStart": "2025/12/15",
     "cfpEnd": "2026/01/25 23:59",
-    "submissionResult": "待定",
+    "submissionResult": "2026/03/18",
     "announceAgenda": "2026/03/30",
     "summit": "2026/05/23-24"
   },
@@ -48,7 +48,9 @@
     "presskit": "新聞素材",
     "pastSites": "歷年網站",
     "docs": "籌備文件",
-    "coc": "社群守則"
+    "coc": "社群守則",
+    "webfont": "網頁字體由 justfont 提供",
+    "bugreport": "網站問題回饋"
   },
   "speakers": {
     "keynote": "基調演講",
@@ -56,15 +58,15 @@
   },
   "agenda": {
     "title": "議程",
-    "info": "議程仍在滾動更新中，請以年會公告為主。",
+    "info": "議程表與講者資訊仍在持續更新中，請以年會公告為主。",
     "main_note": "議程共筆",
     "main_live": "議程直播",
     "qa": "線上提問",
     "note": "共同筆記",
     "search_keyword": "以關鍵字搜尋議程",
     "dont_miss": "不想錯過議程嗎？",
-    "opass_info": "大會提供 OPass App (iOS / Android)，可預先排程想去的議程，亦會在時間快到時提供通知。",
-    "has_installed_opass": "已經安裝 OPass ?",
+    "opass_info": "你能在開源的 OPass App（iOS / Android）上取得關於年會的一切資訊，不但能預先規劃想聽的議程，亦會在時間快到時提供通知。",
+    "has_installed_opass": "已經安裝 OPass?",
     "open_in_app": "在 App 內開啟~"
   },
   "visit": {
@@ -72,9 +74,9 @@
       "title": "交通資訊",
       "venueName": "中央研究院人文社會科學館",
       "address": "台北市南港區研究院路 2 段 128 號",
-      "osmMap": "OSM Map",
-      "googleMap": "Google Map",
-      "mapPlaceholder": "Open Street Map",
+      "osmMap": "OSM 開放街圖",
+      "googleMap": "Google 地圖",
+      "mapPlaceholder": "OpenStreetMap",
       "mapView": "點擊開始互動"
     },
     "transport": {
@@ -194,15 +196,15 @@
       "subtitle": "g0v Summit 2026 相關宣傳圖檔",
       "license": "授權方式 / License",
       "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
-      "pdf": "徵稿宣傳海報 / PDF",
-      "notice": "徵稿宣傳公文 / Docs"
+      "pdf": "徵稿宣傳海報 (PDF)",
+      "notice": "徵稿宣傳公文 (Docs)"
     },
     "pastReports": {
       "title": "歷屆 g0v Summit 報導"
     }
   },
   "venue": {
-    "infoDesk": "報到台 / 服務台",
+    "infoDesk": "報到台／服務台",
     "staffRoom": "工作人員休息室",
     "restArea": "飲食區",
     "description": "g0v Summit 今年在中央研究院人文社會科學館舉行，可於<a href=\"./visit\">交通資訊</a>頁面查看前往方式。"

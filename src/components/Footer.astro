@@ -53,8 +53,8 @@ const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
     </nav>
     <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
       <span>CC BY 4.0 @ g0v Summit 2026</span>
-      <a href="https://justfont.com" target="_blank" class="footer-link flex items-center gap-2"><img src="img/partners/justfont_logo.png" width="20" height="20" />webfont provided by justfont</a>
-      <a class="footer-link" href="//github.com/g0v/summit2026/issues" target="_blank" data-i18n="nav.bugreport">網站問題回饋</a>
+      <a href="https://justfont.com" target="_blank" class="footer-link flex items-center gap-2"><img src="img/partners/justfont_logo.png" width="20" height="20" />{t('footer.webfont')}</a>
+      <a class="footer-link" href="//github.com/g0v/summit2026/issues" target="_blank">{t('footer.bugreport')}</a>
       <div class="rolling-list flex items-center gap-4">
         <a class="inline-flex" href="https://www.facebook.com/g0v.tw/" target="_blank"><Icon icon="ri:facebook-fill" width="30" height="30" /></a>
         <a class="inline-flex" href="https://www.instagram.com/g0v.tw/" target="_blank"><Icon icon="ri:instagram-line" width="30" height="30" /></a>
