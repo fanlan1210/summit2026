@@ -232,12 +232,12 @@ const navs: NavItem[] = [
   }
 
   <template id="register-modal-header">
-    <h1 class="mb-2">{t('nav.register')}</h1>
+    <h1>{t('nav.register')}</h1>
   </template>
   <template id="register-modal-body">
     <div class="text-[#1e1e1e]">
       <div class="mb-8">
-        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2">
+        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
           {t('register.cta')}<Icon name="mdi:external-link" width="22" />
         </a>
       </div>
@@ -246,13 +246,15 @@ const navs: NavItem[] = [
         <div class="flex flex-col">
           <h4 class="text-info-dark mb-2">{t('register.time')}</h4>
           <div class="mb-4">2026.05.23-24 | 09:00-17:30</div>
-          <a
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=g0v+Summit+2026&dates=20260523T010000Z/20260524T093000Z&details=g0v+Summit+2026&location=Academia+Sinica"
-            target="_blank"
-            class="btn btn-primary mt-auto flex w-fit items-center gap-2"
-          >
-            {t('register.add_to_calendar')}<Icon name="mdi:external-link" width="22" />
-          </a>
+          <div class="mt-auto">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=g0v+Summit+2026&dates=20260523T010000Z/20260524T093000Z&details=g0v+Summit+2026&location=Academia+Sinica"
+              target="_blank"
+              class="btn btn-primary flex items-center gap-2 md:inline-flex"
+            >
+              {t('register.add_to_calendar')}<Icon name="mdi:external-link" width="22" />
+            </a>
+          </div>
         </div>
         <div class="flex flex-col">
           <h4 class="text-info-dark mb-2">{t('register.location')}</h4>
@@ -260,9 +262,11 @@ const navs: NavItem[] = [
             {t('register.location_value_1')}<br />
             <span class="text-gray-700">{t('register.location_value_2')}</span>
           </div>
-          <Link href="visit" class="btn btn-primary mt-auto flex w-fit items-center gap-2">
-            {t('register.transportation')}<Icon name="mdi:external-link" width="22" />
-          </Link>
+          <div class="mt-auto">
+            <Link href="visit" class="btn btn-primary flex items-center gap-2 md:inline-flex">
+              {t('register.transportation')}<Icon name="mdi:external-link" width="22" />
+            </Link>
+          </div>
         </div>
       </div>
 

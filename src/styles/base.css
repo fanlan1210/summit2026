@@ -116,7 +116,7 @@
     @apply inline-flex cursor-pointer items-center justify-center rounded px-4 py-2 leading-none duration-200 focus:outline-none;
   }
   .btn-sm {
-    @apply px-2 py-1 text-sm;
+    @apply px-2 py-1 text-sm leading-0;
   }
   .btn-lg {
     @apply px-7 py-3 text-xl font-bold lg:text-2xl;
