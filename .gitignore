@@ -21,3 +21,5 @@ pnpm-debug.log*
 .DS_Store
 
 static
+
+src/data/schedule.json
