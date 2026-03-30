@@ -96,13 +96,16 @@ export function initModelViewer() {
     world.addBody(groundBody);
 
     // Create wall
-    const wallShape1 = new CANNON.Box(new CANNON.Vec3(0.1, 50, 10));
-    const wallShape2 = new CANNON.Box(new CANNON.Vec3(10, 50, 0.1));
     const wallBody = new CANNON.Body({ mass: 0 });
-    wallBody.addShape(wallShape1, new CANNON.Vec3(1, 20, 0));
-    wallBody.addShape(wallShape1, new CANNON.Vec3(-1, 20, 0));
-    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 20, 4));
-    wallBody.addShape(wallShape2, new CANNON.Vec3(0, 20, -4));
+    const quaternionFromEuler = (x, y, z) => {
+      let q = new CANNON.Quaternion();
+      q.setFromEuler(x, y, z);
+      return q;
+    }
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(-1, 0, 0), quaternionFromEuler(0, Math.PI / 2, 0));
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(2, 0, 0), quaternionFromEuler(0, -Math.PI / 2, 0));
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, 4), quaternionFromEuler(-Math.PI / 6, Math.PI, 0));
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, -4), quaternionFromEuler(Math.PI / 6, 0, 0));
     world.addBody(wallBody);
 
     // Create scene
