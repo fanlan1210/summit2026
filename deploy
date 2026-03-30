@@ -2,6 +2,7 @@
 set -e
 if [[ -d .git ]]; then
   REV=`git describe --always`
+  npm run fetch-schedule
   npm run build-production
   rm -rf _public
   git clone $(git remote get-url origin) --depth 1 -b production _public
