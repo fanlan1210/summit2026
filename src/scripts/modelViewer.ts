@@ -22,6 +22,12 @@ export function initModelViewer() {
   let viewHelper: ViewHelper;
   let world: CANNON.World;
   let cannonDebugger: any;
+  let rolling = {
+    mesh: null as THREE.Group | null,
+    radius: 0.45,
+    height: 0.0001,
+    speed: 0.02,
+  }
 
   // Physics bodies and meshes mapping
   const physicsBodies: Array<{ mesh: THREE.Mesh; body: CANNON.Body }> = [];
@@ -220,6 +226,26 @@ export function initModelViewer() {
       scene.add(group);
     });
 
+    // add rolling pangolin
+    loader.load('models/pangolin-mono.svg', (data) => {
+      const paths = data.paths;
+      const group = new THREE.Group();
+      const material = new THREE.MeshStandardMaterial({ color: 0xd0ba7f });
+      paths.forEach((path) => {
+        const shapes = SVGLoader.createShapes(path);
+        shapes.forEach((shape) => {
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 30, bevelEnabled: false });
+          geometry.center();
+          const mesh = new THREE.Mesh(geometry, material);
+          group.add(mesh);
+        });
+      });
+      group.scale.set(0.002, 0.002, 0.002);
+      group.rotation.y = -Math.PI / 2;
+      group.position.set(-1.5, rolling.radius / 2, -10);
+      rolling.mesh = group;
+      scene.add(group);
+    });
 
     // Load model and scene
     Promise.all([
@@ -321,6 +347,17 @@ export function initModelViewer() {
     if (!isVisible) return;
 
     requestAnimationFrame(animate);
+
+    // update rolling pangolin
+    if (rolling.mesh) {
+      rolling.mesh.rotation.x += rolling.speed;
+      rolling.mesh.position.z += rolling.speed * rolling.radius;
+      if (rolling.mesh.position.z > 10) {
+        rolling.mesh.position.z = -10;
+      }
+    }
+
+    // update camera position
     controls.update();
 
     // Update physics world with fixed timestep
