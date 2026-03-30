@@ -36,11 +36,11 @@ export function initModelViewer() {
   // Camera shake tracking
   let lastCameraPosition = new THREE.Vector3();
   let cameraVelocity = new THREE.Vector3();
-  let initialPosition = Math.floor(Math.random() * 4);
+  let initialPosition = Math.floor(Math.random() * 3);
   const initCameraPosition = new THREE.Vector3(
-    ...(initialPosition < 1 ? [3, 2, -3] : initialPosition > 2 ? [-3, 2, -3] : [-3, 2, -3]));
+    ...(initialPosition < 1 ? [3, 1, -1] : initialPosition > 1 ? [-3, 1, -1] : [-2, 1, -1]));
   const targetCameraPosition = new THREE.Vector3(
-    ...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 2 ? [3, 0, -2] : [3.23, 0, 0]));
+    ...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 1 ? [3, 0, -2] : [3.23, 0, 0]));
   const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition);
   const isMobile = container.clientWidth <= container.clientHeight;
 
@@ -369,7 +369,7 @@ export function initModelViewer() {
     if (!canMove) { // We are in the launch animation
       const progress = elapsed / 1.1;
       if (progress <= 1.0) {
-        const value = 1.724 * progress * (1 - 0.26 * progress * (1 + 0.616 * progress));
+        const value = Math.min(1.724 * progress * (1 - 0.26 * progress * (1 + 0.616 * progress)), 1.0);
         const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value));
         camera.position.copy(newPosition);
       } else {
@@ -378,7 +378,7 @@ export function initModelViewer() {
         controls.enabled = true;
         canMove = true;
       }
-    } else if (elapsed > 1.5) { // Only triggers animation afterwards
+    } else {
       // Detect camera shake (velocity from OrbitControls movement)
       const currentCameraPosition = camera.position.clone();
       cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition);
