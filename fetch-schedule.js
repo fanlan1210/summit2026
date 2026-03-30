@@ -10,4 +10,6 @@ const schedule = await scheduleToJson({
   defaultAvatar: process.env.DEFAULT_AVATAR,
 })
 
-fs.writeFile(path.resolve('src/data/schedule.json'), JSON.stringify(schedule, null, 2), 'utf-8')
+const filePath = 'src/data/schedule.json'
+await fs.mkdir(path.dirname(filePath), { recursive: true })
+fs.writeFile(path.resolve(filePath), JSON.stringify(schedule, null, 2), 'utf-8')
