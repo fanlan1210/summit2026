@@ -63,9 +63,10 @@ const allTimes = Object.keys(allSessions).sort((a, b) => a.localeCompare(b))
         allTimes.map(time => (
           <div class="time-group">
             <div>{time}</div>
-            {allSessions[time].map(session => (
-              <Session session={session} />
-            ))}
+            {allSessions[time].map(session => {
+              if (session.id.startsWith('CT-')) return
+              return <Session session={session} />
+            })}
           </div>
         ))
       }

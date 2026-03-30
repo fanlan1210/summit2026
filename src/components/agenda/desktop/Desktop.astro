@@ -47,7 +47,12 @@ const gridTemplateColumnsStyle = '[time] 4rem ' + rooms.map(room => `[${room}] 1
   <div class="container">
     <div id="agenda-grid" class="relative grid" style={`grid-template-columns: ${gridTemplateColumnsStyle};`}>
       {Array.from(times).map(time => <Time at={time} />)}
-      {sessions.map(session => <Session session={session} />)}
+      {
+        sessions.map(session => {
+          if (session.id.startsWith('CT-')) return
+          return <Session session={session} />
+        })
+      }
     </div>
   </div>
 </div>
