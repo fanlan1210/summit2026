@@ -24,7 +24,7 @@ export function initModelViewer() {
   let cannonDebugger: any;
   let rolling = {
     mesh: null as THREE.Group | null,
-    radius: 0.45,
+    radius: 0.33,
     height: 0.0001,
     speed: 5,
   }
@@ -205,7 +205,7 @@ export function initModelViewer() {
 
     // Create slogan
     const loader = new SVGLoader();
-    loader.load('img/banner/slogan.svg', (data) => {
+    loader.load('models/slogan_merge.svg', (data) => {
       const paths = data.paths;
       const group = new THREE.Group();
       const material = new THREE.MeshStandardMaterial({ color: 0x333333 });
@@ -213,7 +213,7 @@ export function initModelViewer() {
       paths.forEach((path) => {
         const shapes = SVGLoader.createShapes(path);
         shapes.forEach((shape) => {
-          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 20, bevelEnabled: false });
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 10, bevelEnabled: false });
           const mesh = new THREE.Mesh(geometry, material);
           group.add(mesh);
         });
