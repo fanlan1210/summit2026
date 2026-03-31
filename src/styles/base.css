@@ -8,6 +8,8 @@
   body {
     @apply font-sans text-base leading-relaxed;
     letter-spacing: 0.5px;
+    text-autospace: normal; /* enable autospacing between CJK kanji & latin chars */
+    text-autospace: replace; /* forward-compatible with auto space removal */
   }
   h1,
   h2,
