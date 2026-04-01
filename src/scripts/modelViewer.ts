@@ -20,19 +20,15 @@ export function initModelViewer() {
   let renderer: THREE.WebGLRenderer
   let controls: OrbitControls
   let world: CANNON.World
-  let rolling = {
-    mesh: null as THREE.Group | null,
-    radius: 0.33,
-    height: 0.0001,
-    speed: 5,
-  }
 
   // Debuggers
   let viewHelper: any
   // let cannonDebugger: any
 
   // Physics bodies and meshes mapping
-  const physicsBodies: Array<{ mesh: THREE.Mesh; body: CANNON.Body }> = []
+  type PhysicBody = { mesh: THREE.Object3D; body: CANNON.Body }
+  const stoolBodies: PhysicBody[] = []
+  let pangolin: PhysicBody
   let groundBody: CANNON.Body
 
   // Camera shake tracking
@@ -217,6 +213,7 @@ export function initModelViewer() {
 
     // add rolling pangolin
     svgLoader.load('models/pangolin-mono.svg', data => {
+      const radius = 0.33 / 2
       const paths = data.paths
       const group = new THREE.Group()
       const material = new THREE.MeshStandardMaterial({ color: 0xd0ba7f })
@@ -230,9 +227,24 @@ export function initModelViewer() {
         })
       })
       group.scale.set(0.002, 0.002, 0.002)
-      group.rotation.y = -Math.PI / 2
-      group.position.set(-1.5, rolling.radius / 2, -10)
-      rolling.mesh = group
+      group.rotation.set(0, -Math.PI / 2, 0)
+      group.position.set(-0.5, radius, initialPosition < 1 ? 4 : -4)
+
+      const rotation = new CANNON.Quaternion()
+      rotation.setFromEuler(group.rotation.x, group.rotation.y, group.rotation.z)
+
+      const body = new CANNON.Body({
+        mass: 600,
+        position: group.position.clone() as any,
+        quaternion: rotation,
+        linearDamping: 0,
+        angularDamping: 0.8
+      })
+      const shape = new CANNON.Sphere(radius)
+      body.addShape(shape)
+      world.addBody(body)
+
+      pangolin = { mesh: group, body: body }
       scene.add(group)
     })
 
@@ -273,24 +285,25 @@ export function initModelViewer() {
         world.addBody(stoolBody)
 
         // Store the mesh-body pair
-        physicsBodies.push({ mesh: clone, body: stoolBody })
+        stoolBodies.push({ mesh: clone, body: stoolBody })
         scene.add(clone)
       }
 
-      // Enable view helper to see orbit
-      viewHelper = new ViewHelper(camera, renderer.domElement)
-
-      // Enable physics debugger to see collision shapes
-      // cannonDebugger = CannonDebugger(scene, world, {
-      //   color: 0x00ff00,
-      //   scale: 1.0,
-      // });
       document.querySelector('.model-viewer')?.classList.add('loaded')
       animate()
     },
       null,
       error => console.error('An error occurred loading the model:', error)
     )
+
+    // Enable view helper to see orbit
+    viewHelper = new ViewHelper(camera, renderer.domElement)
+
+    // Enable physics debugger to see collision shapes
+    // cannonDebugger = CannonDebugger(scene, world, {
+    //   color: 0x00ff00,
+    //   scale: 1.0,
+    // });
   }
 
   const timer = new THREE.Timer()
@@ -299,6 +312,7 @@ export function initModelViewer() {
   let elapsed = 0
   let isVisible = true
   let canMove = false
+  let lastDirection = 0
 
   const observer = new IntersectionObserver(
     entries => {
@@ -356,7 +370,7 @@ export function initModelViewer() {
       // If camera is shaking (moving fast), apply forces to stools
       if (shakeIntensity > 0.0005) {
         const forceMagnitude = shakeIntensity * 100 // Significantly amplify the effect
-        physicsBodies.forEach(({ body }) => {
+        stoolBodies.forEach(({ body }) => {
           // Apply a horizontal force in the direction opposite to camera movement
           const force = new CANNON.Vec3(-cameraVelocity.x * forceMagnitude, 0.1, -cameraVelocity.z * forceMagnitude)
 
@@ -375,12 +389,23 @@ export function initModelViewer() {
     controls.update()
 
     // update rolling pangolin
-    if (elapsed > 5.0 && rolling.mesh) {
-      rolling.mesh.rotation.x += rolling.speed * deltaTime
-      rolling.mesh.position.z += rolling.speed * rolling.radius * deltaTime
-      if (rolling.mesh.position.z > 10) {
-        rolling.mesh.position.z = -10
-        rolling.speed = Math.random() * 4 + 3
+    if (pangolin && elapsed > 5) {
+      pangolin.mesh.position.copy(pangolin.body.position as any)
+      pangolin.mesh.quaternion.copy(pangolin.body.quaternion as any)
+
+      if (lastDirection === 0) {  // initial roll
+        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -8 : 8)
+        lastDirection = initialPosition < 1 ? -1 : 1
+      } else if (pangolin.body.velocity.lengthSquared() < 0.2) { // subsequent rolls
+        const z = pangolin.body.position.z
+        if (Math.sign(z) === lastDirection && Math.abs(z) > 3) { // only bounce back if we reached one side
+          const bowlingMode = Math.random() > 0.8 && (initialPosition === 1 || (initialPosition - 1) !== Math.sign(z))
+          lastDirection = -lastDirection
+          pangolin.body.position.x = bowlingMode ? 0 : -0.5
+          pangolin.body.velocity.set(0, 0, lastDirection * (bowlingMode ? 12 : 9))
+        } else {
+          pangolin.body.velocity.set(0, 0, lastDirection * 6)
+        }
       }
     }
 
@@ -388,7 +413,7 @@ export function initModelViewer() {
     // if (cannonDebugger) cannonDebugger.update()
 
     // Sync Three.js meshes with Cannon.js bodies
-    physicsBodies.forEach(({ mesh, body }) => {
+    stoolBodies.forEach(({ mesh, body }) => {
       mesh.position.copy(body.position as any)
       mesh.quaternion.copy(body.quaternion as any)
     })
