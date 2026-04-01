@@ -19,15 +19,17 @@ export function initModelViewer() {
   let camera: THREE.PerspectiveCamera
   let renderer: THREE.WebGLRenderer
   let controls: OrbitControls
-  let viewHelper: ViewHelper
   let world: CANNON.World
-  let cannonDebugger: any
   let rolling = {
     mesh: null as THREE.Group | null,
     radius: 0.33,
     height: 0.0001,
     speed: 5,
   }
+
+  // Debuggers
+  // let viewHelper: any
+  // let cannonDebugger: any
 
   // Physics bodies and meshes mapping
   const physicsBodies: Array<{ mesh: THREE.Mesh; body: CANNON.Body }> = []
@@ -151,15 +153,6 @@ export function initModelViewer() {
     }
     canvas.addEventListener('gesturestart', preventGesture, { passive: false })
     canvas.addEventListener('gesturechange', preventGesture, { passive: false })
-
-    viewHelper = new ViewHelper(camera, renderer.domElement)
-    const helperContainer = document.createElement('div')
-    helperContainer.style.position = 'absolute'
-    helperContainer.style.right = '0'
-    helperContainer.style.top = '0'
-    helperContainer.style.width = '128px'
-    helperContainer.style.height = '128px'
-    document.body.appendChild(helperContainer)
 
     // Add controls
     controls = new OrbitControls(camera, renderer.domElement)
@@ -301,6 +294,8 @@ export function initModelViewer() {
         }
       }),
     ]).then(() => {
+      // Enable view helper to see orbit
+      // viewHelper = new ViewHelper(camera, renderer.domElement)
       // Enable physics debugger to see collision shapes
       // cannonDebugger = CannonDebugger(scene, world, {
       //   color: 0x00ff00,
@@ -322,11 +317,7 @@ export function initModelViewer() {
     entries => {
       entries.forEach(entry => {
         // 當 canvas 進入視窗 (isIntersecting 為 true)
-        isVisible = entry.isIntersecting
-
-        if (isVisible) {
-          animate()
-        }
+        if (entry.isIntersecting) animate()
       })
     },
     {
@@ -406,7 +397,7 @@ export function initModelViewer() {
     }
 
     // Update physics debugger
-    if (cannonDebugger) cannonDebugger.update()
+    // if (cannonDebugger) cannonDebugger.update()
 
     // Sync Three.js meshes with Cannon.js bodies
     physicsBodies.forEach(({ mesh, body }) => {
@@ -417,7 +408,7 @@ export function initModelViewer() {
     renderer.clear()
     renderer.render(scene, camera)
     renderer.clearDepth() // 確保座標軸不被方塊遮擋
-    viewHelper.render(renderer)
+    // if (viewHelper) viewHelper.render(renderer)
   }
 
   const handleResize = () => {
