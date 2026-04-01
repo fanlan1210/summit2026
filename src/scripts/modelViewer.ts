@@ -96,15 +96,19 @@ export function initModelViewer() {
 
     // Create wall
     const wallBody = new CANNON.Body({ mass: 0 })
-    const quaternionFromEuler = (x, y, z) => {
-      let q = new CANNON.Quaternion()
-      q.setFromEuler(x, y, z)
-      return q
+    const walls: [[number, number, number], [number, number, number]][] = [
+      [[-1, 0, 0], [0, Math.PI / 2, 0]],
+      [[2, 0, 0], [0, -Math.PI / 2, 0]],
+      [[0, 0, 4], [-Math.PI / 6, Math.PI, 0]],
+      [[0, 0, -4], [Math.PI / 6, 0, 0]],
+    ]
+    for (const [position, rotation] of walls) {
+      const plane = new CANNON.Plane()
+      const offset = new CANNON.Vec3(...position)
+      let orientation = new CANNON.Quaternion()
+      orientation.setFromEuler(...rotation)
+      wallBody.addShape(plane, offset, orientation)
     }
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(-1, 0, 0), quaternionFromEuler(0, Math.PI / 2, 0))
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(2, 0, 0), quaternionFromEuler(0, -Math.PI / 2, 0))
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, 4), quaternionFromEuler(-Math.PI / 6, Math.PI, 0))
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, -4), quaternionFromEuler(Math.PI / 6, 0, 0))
     world.addBody(wallBody)
 
     // Create scene
@@ -148,9 +152,7 @@ export function initModelViewer() {
     container.appendChild(renderer.domElement)
 
     const canvas = renderer.domElement
-    const preventGesture = (e: Event) => {
-      e.preventDefault()
-    }
+    const preventGesture = (e: Event) => e.preventDefault()
     canvas.addEventListener('gesturestart', preventGesture, { passive: false })
     canvas.addEventListener('gesturechange', preventGesture, { passive: false })
 
