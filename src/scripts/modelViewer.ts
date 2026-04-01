@@ -237,7 +237,7 @@ export function initModelViewer() {
         mass: 600,
         position: group.position.clone() as any,
         quaternion: rotation,
-        type: CANNON.Body.KINEMATIC,
+        type: CANNON.Body.STATIC,
         linearDamping: 0,
         angularDamping: 0.8
       })
@@ -290,7 +290,7 @@ export function initModelViewer() {
         scene.add(clone)
       }
 
-      document.querySelector('.model-viewer')?.classList.add('loaded')
+      container.classList.add('loaded')
       animate()
     },
       null,
@@ -313,7 +313,7 @@ export function initModelViewer() {
   let elapsed = 0
   let isVisible = true
   let canMove = false
-  let lastDirection = 0
+  let lastDirection = initialPosition < 1 ? -1 : 1
 
   const observer = new IntersectionObserver(
     entries => {
@@ -355,7 +355,11 @@ export function initModelViewer() {
         const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value))
         camera.position.copy(newPosition)
       } else {
+        // bump the chairs and start the pangolin
         lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)))
+        pangolin.body.type = CANNON.Body.KINEMATIC
+        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
+        pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
         controls.enabled = true
         canMove = true
       }
@@ -394,13 +398,8 @@ export function initModelViewer() {
       pangolin.mesh.position.copy(pangolin.body.position as any)
       pangolin.mesh.quaternion.copy(pangolin.body.quaternion as any)
 
-      if (lastDirection === 0 && elapsed > 5.0) {  // initial roll
-        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
-        pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
-        lastDirection = initialPosition < 1 ? -1 : 1
-      } else { // subsequent rolls
-        const z = pangolin.body.position.z
-        if (Math.abs(z) >= 10) { // only bounce back if we reached one side
+      if (pangolin.body.type === CANNON.Body.KINEMATIC) {
+        if (Math.abs(pangolin.body.position.z) > 10) { // only bounce back if we reached one side
           lastDirection = -lastDirection
           pangolin.body.velocity.set(0, 0, lastDirection * 1.2)
           pangolin.body.angularVelocity.set(lastDirection * 8, 0, 0)
@@ -449,5 +448,12 @@ export function initModelViewer() {
     if (renderer) {
       renderer.dispose()
     }
+  })
+  window.addEventListener('keydown', (e) => {
+    // simple konami
+    if (e.key !== "Enter") return
+    pangolin.body.type = CANNON.Body.DYNAMIC
+    pangolin.body.position.set(0, 0, initialPosition < 1 ? 3.5 : -3.5)
+    pangolin.body.velocity.set(0, 0, 12)
   })
 }
