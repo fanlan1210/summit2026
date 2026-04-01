@@ -1,27 +1,27 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
-import * as CANNON from 'cannon-es';
-import CannonDebugger from 'cannon-es-debugger';
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { SVGLoader } from 'three/addons/loaders/SVGLoader.js'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
+import * as CANNON from 'cannon-es'
+import CannonDebugger from 'cannon-es-debugger'
 
 const isTouchDevice = () => {
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0
 }
 
 export function initModelViewer() {
-  const container = document.querySelector('.model-viewer') as HTMLElement;
+  const container = document.querySelector('.model-viewer') as HTMLElement
 
-  if (!container) return;
+  if (!container) return
 
-  let scene: THREE.Scene;
-  let camera: THREE.PerspectiveCamera;
-  let renderer: THREE.WebGLRenderer;
-  let controls: OrbitControls;
-  let viewHelper: ViewHelper;
-  let world: CANNON.World;
-  let cannonDebugger: any;
+  let scene: THREE.Scene
+  let camera: THREE.PerspectiveCamera
+  let renderer: THREE.WebGLRenderer
+  let controls: OrbitControls
+  let viewHelper: ViewHelper
+  let world: CANNON.World
+  let cannonDebugger: any
   let rolling = {
     mesh: null as THREE.Group | null,
     radius: 0.33,
@@ -30,47 +30,45 @@ export function initModelViewer() {
   }
 
   // Physics bodies and meshes mapping
-  const physicsBodies: Array<{ mesh: THREE.Mesh; body: CANNON.Body }> = [];
-  let groundBody: CANNON.Body;
+  const physicsBodies: Array<{ mesh: THREE.Mesh; body: CANNON.Body }> = []
+  let groundBody: CANNON.Body
 
   // Camera shake tracking
-  let lastCameraPosition = new THREE.Vector3();
-  let cameraVelocity = new THREE.Vector3();
-  let initialPosition = Math.floor(Math.random() * 3);
-  const initCameraPosition = new THREE.Vector3(
-    ...(initialPosition < 1 ? [3, 1, -1] : initialPosition > 1 ? [-3, 1, -1] : [-2, 1, -1]));
-  const targetCameraPosition = new THREE.Vector3(
-    ...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 1 ? [3, 0, -2] : [3.23, 0, 0]));
-  const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition);
-  const isMobile = container.clientWidth <= container.clientHeight;
+  let lastCameraPosition = new THREE.Vector3()
+  let cameraVelocity = new THREE.Vector3()
+  let initialPosition = Math.floor(Math.random() * 3)
+  const initCameraPosition = new THREE.Vector3(...(initialPosition < 1 ? [3, 1, -1] : initialPosition > 1 ? [-3, 1, -1] : [-2, 1, -1]))
+  const targetCameraPosition = new THREE.Vector3(...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 1 ? [3, 0, -2] : [3.23, 0, 0]))
+  const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition)
+  const isMobile = container.clientWidth <= container.clientHeight
 
   // Get props from data attributes
-  const modelPath = container.dataset.modelPath || '';
-  const invertOrbit = container.dataset.invertOrbit === 'true';
-  const backgroundColor = 0xFCF5F1;
+  const modelPath = container.dataset.modelPath || ''
+  const invertOrbit = container.dataset.invertOrbit === 'true'
+  const backgroundColor = 0xfcf5f1
   const stools = [
     {
-      color: 0xC0282A,
+      color: 0xc0282a,
       position: new THREE.Vector3(0, 0, 0),
       scale: new THREE.Vector3(1, 1, 1),
     },
     {
-      color: 0x2C76B4,
+      color: 0x2c76b4,
       position: new THREE.Vector3(0, 0, -0.5),
       scale: new THREE.Vector3(1, 0.6, 1),
     },
     {
-      color: 0xD2C446,
+      color: 0xd2c446,
       position: new THREE.Vector3(0, 0, 0.5),
       scale: new THREE.Vector3(1, 0.6, 1),
     },
     {
-      color: 0x40AC3A,
+      color: 0x40ac3a,
       position: new THREE.Vector3(0, 0, 1),
       scale: new THREE.Vector3(1, 0.8, 1),
     },
     {
-      color: 0x40AC3A,
+      color: 0x40ac3a,
       position: new THREE.Vector3(0, 0, -1),
       scale: new THREE.Vector3(1, 0.8, 1),
     },
@@ -80,181 +78,183 @@ export function initModelViewer() {
     // Initialize Cannon.js physics world
     world = new CANNON.World({
       gravity: new CANNON.Vec3(0, -9.82, 0), // Earth gravity
-    });
-    world.broadphase = new CANNON.NaiveBroadphase();
-    (world.solver as CANNON.GSSolver).iterations = 10;
-    world.defaultContactMaterial.friction = 0.3;
-    world.defaultContactMaterial.restitution = 0.1; // No bouncing
+    })
+    world.broadphase = new CANNON.NaiveBroadphase()
+    ;(world.solver as CANNON.GSSolver).iterations = 10
+    world.defaultContactMaterial.friction = 0.3
+    world.defaultContactMaterial.restitution = 0.1 // No bouncing
 
     // Create ground physics body
-    const groundShape = new CANNON.Plane();
+    const groundShape = new CANNON.Plane()
     groundBody = new CANNON.Body({
       mass: 0, // Static body
       shape: groundShape,
-    });
-    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
-    world.addBody(groundBody);
+    })
+    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0)
+    world.addBody(groundBody)
 
     // Create wall
-    const wallBody = new CANNON.Body({ mass: 0 });
+    const wallBody = new CANNON.Body({ mass: 0 })
     const quaternionFromEuler = (x, y, z) => {
-      let q = new CANNON.Quaternion();
-      q.setFromEuler(x, y, z);
-      return q;
+      let q = new CANNON.Quaternion()
+      q.setFromEuler(x, y, z)
+      return q
     }
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(-1, 0, 0), quaternionFromEuler(0, Math.PI / 2, 0));
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(2, 0, 0), quaternionFromEuler(0, -Math.PI / 2, 0));
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, 4), quaternionFromEuler(-Math.PI / 6, Math.PI, 0));
-    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, -4), quaternionFromEuler(Math.PI / 6, 0, 0));
-    world.addBody(wallBody);
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(-1, 0, 0), quaternionFromEuler(0, Math.PI / 2, 0))
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(2, 0, 0), quaternionFromEuler(0, -Math.PI / 2, 0))
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, 4), quaternionFromEuler(-Math.PI / 6, Math.PI, 0))
+    wallBody.addShape(new CANNON.Plane(), new CANNON.Vec3(0, 0, -4), quaternionFromEuler(Math.PI / 6, 0, 0))
+    world.addBody(wallBody)
 
     // Create scene
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(backgroundColor);
+    scene = new THREE.Scene()
+    scene.background = new THREE.Color(backgroundColor)
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    directionalLight.position.set(0, 3, 1);
-    directionalLight.castShadow = true;
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2)
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5)
+    directionalLight.position.set(0, 3, 1)
+    directionalLight.castShadow = true
 
     // Configure shadow properties to fix banding/lines
-    directionalLight.shadow.mapSize.width = 4096;
-    directionalLight.shadow.mapSize.height = 4096;
-    directionalLight.shadow.camera.near = 0.1;
-    directionalLight.shadow.camera.far = 10;
-    directionalLight.shadow.camera.left = -2;
-    directionalLight.shadow.camera.right = 2;
-    directionalLight.shadow.camera.top = 2;
-    directionalLight.shadow.camera.bottom = -2;
-    directionalLight.shadow.bias = -0.0001;
-    directionalLight.shadow.normalBias = 0.02;
+    directionalLight.shadow.mapSize.width = 4096
+    directionalLight.shadow.mapSize.height = 4096
+    directionalLight.shadow.camera.near = 0.1
+    directionalLight.shadow.camera.far = 10
+    directionalLight.shadow.camera.left = -2
+    directionalLight.shadow.camera.right = 2
+    directionalLight.shadow.camera.top = 2
+    directionalLight.shadow.camera.bottom = -2
+    directionalLight.shadow.bias = -0.0001
+    directionalLight.shadow.normalBias = 0.02
 
-    scene.add(ambientLight);
-    scene.add(directionalLight);
-    scene.fog = new THREE.Fog(backgroundColor, 3, 10);
+    scene.add(ambientLight)
+    scene.add(directionalLight)
+    scene.fog = new THREE.Fog(backgroundColor, 3, 10)
 
     // Create camera
-    camera = new THREE.PerspectiveCamera(
-      isMobile ? 60 : 35,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.copy(initCameraPosition);
+    camera = new THREE.PerspectiveCamera(isMobile ? 60 : 35, container.clientWidth / container.clientHeight, 0.1, 1000)
+    camera.position.copy(initCameraPosition)
 
     // Create renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1;
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFShadowMap;
-    renderer.autoClear = false;
-    container.appendChild(renderer.domElement);
+    renderer = new THREE.WebGLRenderer({ antialias: true })
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3))
+    renderer.setSize(container.clientWidth, container.clientHeight)
+    renderer.toneMapping = THREE.ACESFilmicToneMapping
+    renderer.toneMappingExposure = 1
+    renderer.shadowMap.enabled = true
+    renderer.shadowMap.type = THREE.PCFShadowMap
+    renderer.autoClear = false
+    container.appendChild(renderer.domElement)
 
-    viewHelper = new ViewHelper(camera, renderer.domElement);
-    const helperContainer = document.createElement('div');
-    helperContainer.style.position = 'absolute';
-    helperContainer.style.right = '0';
-    helperContainer.style.top = '0';
-    helperContainer.style.width = '128px';
-    helperContainer.style.height = '128px';
-    document.body.appendChild(helperContainer);
+    const canvas = renderer.domElement
+    const preventGesture = (e: Event) => {
+      e.preventDefault()
+    }
+    canvas.addEventListener('gesturestart', preventGesture, { passive: false })
+    canvas.addEventListener('gesturechange', preventGesture, { passive: false })
+
+    viewHelper = new ViewHelper(camera, renderer.domElement)
+    const helperContainer = document.createElement('div')
+    helperContainer.style.position = 'absolute'
+    helperContainer.style.right = '0'
+    helperContainer.style.top = '0'
+    helperContainer.style.width = '128px'
+    helperContainer.style.height = '128px'
+    document.body.appendChild(helperContainer)
 
     // Add controls
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.enablePan = false;
-    controls.enableZoom = isTouchDevice();
-    controls.touches.ONE = null;
-    controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
-    controls.minPolarAngle = Math.PI * 0.1;
-    controls.maxPolarAngle = Math.PI * 0.4;
-    controls.enabled = false;
+    controls = new OrbitControls(camera, renderer.domElement)
+    controls.enableDamping = true
+    controls.enablePan = false
+    controls.enableZoom = isTouchDevice()
+    controls.touches.ONE = null
+    controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE
+    controls.minPolarAngle = Math.PI * 0.1
+    controls.maxPolarAngle = Math.PI * 0.4
+    controls.enabled = false
 
     if (invertOrbit) {
-      controls.rotateSpeed = -0.3;
+      controls.rotateSpeed = -0.3
     } else {
-      controls.rotateSpeed = 0.5;
+      controls.rotateSpeed = 0.5
     }
     if (isMobile) {
-      controls.rotateSpeed *= 2.5;
+      controls.rotateSpeed *= 2.5
     }
 
-    controls.target.set(0, 0.4, 0);
-    controls.update();
+    controls.target.set(0, 0.4, 0)
+    controls.update()
 
     // add floor
-    const floorGeometry = new THREE.PlaneGeometry(30, 30);
+    const floorGeometry = new THREE.PlaneGeometry(30, 30)
     const floorMaterial = new THREE.MeshStandardMaterial({
-      color: backgroundColor
-    });
-    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.receiveShadow = true;
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.set(0, -0.002, 0);
-    scene.add(floor);
+      color: backgroundColor,
+    })
+    const floor = new THREE.Mesh(floorGeometry, floorMaterial)
+    floor.receiveShadow = true
+    floor.rotation.x = -Math.PI / 2
+    floor.position.set(0, -0.002, 0)
+    scene.add(floor)
 
     for (let i = 0; i < 8; i++) {
-      const floorGeometry = new THREE.PlaneGeometry(0.1, 30);
+      const floorGeometry = new THREE.PlaneGeometry(0.1, 30)
       const floorMaterial = new THREE.MeshStandardMaterial({
-        color: i % 2 == 0 ? 0xE62327 : 0x3282B8,
+        color: i % 2 == 0 ? 0xe62327 : 0x3282b8,
         opacity: 0.5,
-        transparent: true
-      });
-      const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-      floor.receiveShadow = true;
-      floor.rotation.x = -Math.PI / 2;
-      floor.position.set(-0.8 + i * 0.2, -0.001, 0);
-      scene.add(floor);
+        transparent: true,
+      })
+      const floor = new THREE.Mesh(floorGeometry, floorMaterial)
+      floor.receiveShadow = true
+      floor.rotation.x = -Math.PI / 2
+      floor.position.set(-0.8 + i * 0.2, -0.001, 0)
+      scene.add(floor)
     }
 
     // Create slogan
-    const loader = new SVGLoader();
-    loader.load('models/slogan_merge.svg', (data) => {
-      const paths = data.paths;
-      const group = new THREE.Group();
-      const material = new THREE.MeshStandardMaterial({ color: 0x333333 });
+    const loader = new SVGLoader()
+    loader.load('models/slogan_merge.svg', data => {
+      const paths = data.paths
+      const group = new THREE.Group()
+      const material = new THREE.MeshStandardMaterial({ color: 0x333333 })
 
-      paths.forEach((path) => {
-        const shapes = SVGLoader.createShapes(path);
-        shapes.forEach((shape) => {
-          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false });
-          const mesh = new THREE.Mesh(geometry, material);
-          group.add(mesh);
-        });
-      });
+      paths.forEach(path => {
+        const shapes = SVGLoader.createShapes(path)
+        shapes.forEach(shape => {
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: false })
+          const mesh = new THREE.Mesh(geometry, material)
+          group.add(mesh)
+        })
+      })
       if (isMobile) {
-        group.position.set(-1, 1.5, 1.15);
+        group.position.set(-1, 1.5, 1.15)
       } else {
-        group.position.set(-1, 1, 1.15);
+        group.position.set(-1, 1, 1.15)
       }
-      group.scale.set(0.002, 0.002, 0.002);
-      group.rotation.set(0, - Math.PI / 2, Math.PI);
-      scene.add(group);
-    });
+      group.scale.set(0.002, 0.002, 0.002)
+      group.rotation.set(0, -Math.PI / 2, Math.PI)
+      scene.add(group)
+    })
 
     // add rolling pangolin
-    loader.load('models/pangolin-mono.svg', (data) => {
-      const paths = data.paths;
-      const group = new THREE.Group();
-      const material = new THREE.MeshStandardMaterial({ color: 0xd0ba7f });
-      paths.forEach((path) => {
-        const shapes = SVGLoader.createShapes(path);
-        shapes.forEach((shape) => {
-          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 30, bevelEnabled: false });
-          geometry.center();
-          const mesh = new THREE.Mesh(geometry, material);
-          group.add(mesh);
-        });
-      });
-      group.scale.set(0.002, 0.002, 0.002);
-      group.rotation.y = -Math.PI / 2;
-      group.position.set(-1.5, rolling.radius / 2, -10);
-      rolling.mesh = group;
-      scene.add(group);
-    });
+    loader.load('models/pangolin-mono.svg', data => {
+      const paths = data.paths
+      const group = new THREE.Group()
+      const material = new THREE.MeshStandardMaterial({ color: 0xd0ba7f })
+      paths.forEach(path => {
+        const shapes = SVGLoader.createShapes(path)
+        shapes.forEach(shape => {
+          const geometry = new THREE.ExtrudeGeometry(shape, { depth: 30, bevelEnabled: false })
+          geometry.center()
+          const mesh = new THREE.Mesh(geometry, material)
+          group.add(mesh)
+        })
+      })
+      group.scale.set(0.002, 0.002, 0.002)
+      group.rotation.y = -Math.PI / 2
+      group.position.set(-1.5, rolling.radius / 2, -10)
+      rolling.mesh = group
+      scene.add(group)
+    })
 
     // Load model and scene
     Promise.all([
@@ -263,215 +263,202 @@ export function initModelViewer() {
           // Load GLTF model
           new GLTFLoader().load(
             modelPath,
-            (gltf) => {
-              const mesh = gltf.scene.children[0] as THREE.Mesh;
-              mesh.castShadow = true;
-              mesh.receiveShadow = true;
-              mesh.geometry.computeBoundingBox();
-              mesh.geometry.center();
+            gltf => {
+              const mesh = gltf.scene.children[0] as THREE.Mesh
+              mesh.castShadow = true
+              mesh.receiveShadow = true
+              mesh.geometry.computeBoundingBox()
+              mesh.geometry.center()
 
               for (const stool of stools) {
-                const clone = mesh.clone();
-                const material = new THREE.MeshStandardMaterial();
-                material.color.setHex(stool.color);
-                material.side = THREE.DoubleSide;
-                clone.material = material;
-                clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z);
+                const clone = mesh.clone()
+                const material = new THREE.MeshStandardMaterial()
+                material.color.setHex(stool.color)
+                material.side = THREE.DoubleSide
+                clone.material = material
+                clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z)
 
                 // Create physics body for the stool using cylinder for better accuracy
-                const stoolRadius = 0.24 * stool.scale.x;
-                const stoolHeight = 0.48 * stool.scale.y;
-                const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4);
+                const stoolRadius = 0.24 * stool.scale.x
+                const stoolHeight = 0.48 * stool.scale.y
+                const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4)
 
                 // Position the stool with its bottom at the ground (y=0)
-                const physicsYPosition = stoolHeight / 2 + 0.1; // Center of mass at half height, just above ground
+                const physicsYPosition = stoolHeight / 2 + 0.1 // Center of mass at half height, just above ground
 
                 const stoolBody = new CANNON.Body({
                   mass: 1,
-                  position: new CANNON.Vec3(
-                    stool.position.x,
-                    physicsYPosition,
-                    stool.position.z
-                  ),
+                  position: new CANNON.Vec3(stool.position.x, physicsYPosition, stool.position.z),
                   linearDamping: 0.4,
                   angularDamping: 0.8,
-                });
-                const q = new CANNON.Quaternion();
-                q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4);
+                })
+                const q = new CANNON.Quaternion()
+                q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4)
                 stoolBody.addShape(stoolShape, new CANNON.Vec3(), q)
-                  ;
-                world.addBody(stoolBody);
+                world.addBody(stoolBody)
 
                 // Store the mesh-body pair
-                physicsBodies.push({ mesh: clone, body: stoolBody });
+                physicsBodies.push({ mesh: clone, body: stoolBody })
 
-                scene.add(clone);
+                scene.add(clone)
               }
-              resolve();
+              resolve()
             },
-            (xhr) => { },
-            (error) => {
-              console.error('An error occurred loading the model:', error);
-              reject(error);
+            xhr => {},
+            error => {
+              console.error('An error occurred loading the model:', error)
+              reject(error)
             }
-          );
+          )
         } else {
-          resolve();
+          resolve()
         }
-      })
+      }),
     ]).then(() => {
       // Enable physics debugger to see collision shapes
       // cannonDebugger = CannonDebugger(scene, world, {
       //   color: 0x00ff00,
       //   scale: 1.0,
       // });
-      document.querySelector('.model-viewer')?.classList.add('loaded');
-      animate();
-    });
-  };
+      document.querySelector('.model-viewer')?.classList.add('loaded')
+      animate()
+    })
+  }
 
-  const timer = new THREE.Timer();
-  const fixedTimeStep = 1 / 60; // 60 FPS fixed timestep
-  let accumulator = 0;
-  let elapsed = 0;
-  let isVisible = true;
-  let canMove = false;
+  const timer = new THREE.Timer()
+  const fixedTimeStep = 1 / 60 // 60 FPS fixed timestep
+  let accumulator = 0
+  let elapsed = 0
+  let isVisible = true
+  let canMove = false
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // 當 canvas 進入視窗 (isIntersecting 為 true)
-      isVisible = entry.isIntersecting;
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        // 當 canvas 進入視窗 (isIntersecting 為 true)
+        isVisible = entry.isIntersecting
 
-      if (isVisible) {
-        animate();
-      }
-    });
-  }, {
-    threshold: 0.1 // 只要 Canvas 露出 10% 就開始渲染
-  });
-  observer.observe(container);
+        if (isVisible) {
+          animate()
+        }
+      })
+    },
+    {
+      threshold: 0.1, // 只要 Canvas 露出 10% 就開始渲染
+    }
+  )
+  observer.observe(container)
 
   const animate = () => {
-    if (!isVisible) return;
+    if (!isVisible) return
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animate)
 
     // Update physics world with fixed timestep
-    timer.update();
-    const deltaTime = Math.min(timer.getDelta(), 0.1); // Cap delta to prevent spiral of death
-    accumulator += deltaTime;
-    elapsed += deltaTime;
+    timer.update()
+    const deltaTime = Math.min(timer.getDelta(), 0.1) // Cap delta to prevent spiral of death
+    accumulator += deltaTime
+    elapsed += deltaTime
 
     // Step physics with fixed timestep
     while (accumulator >= fixedTimeStep) {
-      world.step(fixedTimeStep);
-      accumulator -= fixedTimeStep;
+      world.step(fixedTimeStep)
+      accumulator -= fixedTimeStep
     }
 
     // update camera position
-    if (!canMove) { // We are in the launch animation
-      const progress = elapsed / 1.1;
+    if (!canMove) {
+      // We are in the launch animation
+      const progress = elapsed / 1.1
       if (progress <= 1.0) {
-        const value = Math.min(1.724 * progress * (1 - 0.26 * progress * (1 + 0.616 * progress)), 1.0);
-        const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value));
-        camera.position.copy(newPosition);
+        const value = Math.min(1.724 * progress * (1 - 0.26 * progress * (1 + 0.616 * progress)), 1.0)
+        const newPosition = initCameraPosition.clone().add(initCameraShift.clone().multiplyScalar(value))
+        camera.position.copy(newPosition)
       } else {
-        lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)));
-        controls.enabled = true;
-        canMove = true;
+        lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)))
+        controls.enabled = true
+        canMove = true
       }
     } else {
       // Detect camera shake (velocity from OrbitControls movement)
-      const currentCameraPosition = camera.position.clone();
-      cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition);
-      lastCameraPosition.copy(currentCameraPosition);
+      const currentCameraPosition = camera.position.clone()
+      cameraVelocity.copy(currentCameraPosition).sub(lastCameraPosition)
+      lastCameraPosition.copy(currentCameraPosition)
 
       // Calculate shake intensity
-      const shakeIntensity = cameraVelocity.length();
+      const shakeIntensity = cameraVelocity.length()
 
       // If camera is shaking (moving fast), apply forces to stools
       if (shakeIntensity > 0.0005) {
-        const forceMagnitude = shakeIntensity * 100; // Significantly amplify the effect
+        const forceMagnitude = shakeIntensity * 100 // Significantly amplify the effect
         physicsBodies.forEach(({ body }) => {
           // Apply a horizontal force in the direction opposite to camera movement
-          const force = new CANNON.Vec3(
-            -cameraVelocity.x * forceMagnitude,
-            0.1,
-            -cameraVelocity.z * forceMagnitude
-          );
+          const force = new CANNON.Vec3(-cameraVelocity.x * forceMagnitude, 0.1, -cameraVelocity.z * forceMagnitude)
 
           // Apply force at the top of the stool to create wobble
-          const worldPoint = new CANNON.Vec3(
-            body.position.x,
-            body.position.y,
-            body.position.z
-          );
+          const worldPoint = new CANNON.Vec3(body.position.x, body.position.y, body.position.z)
 
-          body.applyForce(force, worldPoint);
+          body.applyForce(force, worldPoint)
 
           // Also add some torque for more natural wobble
-          const torqueStrength = forceMagnitude * 0.2;
-          const torque = new CANNON.Vec3(
-            (Math.random() - 0.5) * torqueStrength,
-            0,
-            (Math.random() - 0.5) * torqueStrength
-          );
-          body.torque.vadd(torque, body.torque);
-        });
+          const torqueStrength = forceMagnitude * 0.2
+          const torque = new CANNON.Vec3((Math.random() - 0.5) * torqueStrength, 0, (Math.random() - 0.5) * torqueStrength)
+          body.torque.vadd(torque, body.torque)
+        })
       }
     }
-    controls.update();
+    controls.update()
 
     // update rolling pangolin
     if (elapsed > 5.0 && rolling.mesh) {
-      rolling.mesh.rotation.x += rolling.speed * deltaTime;
-      rolling.mesh.position.z += rolling.speed * rolling.radius * deltaTime;
+      rolling.mesh.rotation.x += rolling.speed * deltaTime
+      rolling.mesh.position.z += rolling.speed * rolling.radius * deltaTime
       if (rolling.mesh.position.z > 10) {
-        rolling.mesh.position.z = -10;
-        rolling.speed = Math.random() * 4 + 3;
+        rolling.mesh.position.z = -10
+        rolling.speed = Math.random() * 4 + 3
       }
     }
 
     // Update physics debugger
-    if (cannonDebugger) cannonDebugger.update();
+    if (cannonDebugger) cannonDebugger.update()
 
     // Sync Three.js meshes with Cannon.js bodies
     physicsBodies.forEach(({ mesh, body }) => {
-      mesh.position.copy(body.position as any);
-      mesh.quaternion.copy(body.quaternion as any);
-    });
+      mesh.position.copy(body.position as any)
+      mesh.quaternion.copy(body.quaternion as any)
+    })
 
-    renderer.clear();
-    renderer.render(scene, camera);
-    renderer.clearDepth(); // 確保座標軸不被方塊遮擋
-    viewHelper.render(renderer);
-  };
+    renderer.clear()
+    renderer.render(scene, camera)
+    renderer.clearDepth() // 確保座標軸不被方塊遮擋
+    viewHelper.render(renderer)
+  }
 
   const handleResize = () => {
     if (camera && renderer && container) {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      camera.aspect = container.clientWidth / container.clientHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(container.clientWidth, container.clientHeight)
     }
-  };
+  }
 
   // Initialize
-  init();
+  init()
 
   // Add event listeners
   window.addEventListener('load', () => {
     try {
-      window.addEventListener('resize', handleResize);
+      window.addEventListener('resize', handleResize)
       // window.addEventListener('deviceorientation', handleOrientation);
     } catch (e) {
-      alert(e);
+      alert(e)
     }
-  });
+  })
   window.addEventListener('beforeunload', () => {
-    window.removeEventListener('resize', handleResize);
+    window.removeEventListener('resize', handleResize)
     // window.removeEventListener('deviceorientation', handleOrientation);
     if (renderer) {
-      renderer.dispose();
+      renderer.dispose()
     }
-  });
+  })
 }
