@@ -357,9 +357,11 @@ export function initModelViewer() {
       } else {
         // bump the chairs and start the pangolin
         lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)))
-        pangolin.body.type = CANNON.Body.KINEMATIC
-        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
-        pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
+        if (pangolin.body.type === CANNON.Body.STATIC) {
+          pangolin.body.type = CANNON.Body.KINEMATIC
+          pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
+          pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
+        }
         controls.enabled = true
         canMove = true
       }
@@ -453,7 +455,8 @@ export function initModelViewer() {
     // simple konami
     if (e.key !== "Enter") return
     pangolin.body.type = CANNON.Body.DYNAMIC
-    pangolin.body.position.set(0, 0, initialPosition < 1 ? 3.5 : -3.5)
+    const i = Math.floor(Math.random() * stoolBodies.length)
+    pangolin.body.position.set(stoolBodies[i].body.position.x, 0, initialPosition < 1 ? 3.5 : -3.5)
     pangolin.body.velocity.set(0, 0, 12)
   })
 }
