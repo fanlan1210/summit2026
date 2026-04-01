@@ -80,7 +80,7 @@ export function initModelViewer() {
       gravity: new CANNON.Vec3(0, -9.82, 0), // Earth gravity
     })
     world.broadphase = new CANNON.NaiveBroadphase()
-    ;(world.solver as CANNON.GSSolver).iterations = 10
+      ; (world.solver as CANNON.GSSolver).iterations = 10
     world.defaultContactMaterial.friction = 0.3
     world.defaultContactMaterial.restitution = 0.1 // No bouncing
 
@@ -303,8 +303,9 @@ export function initModelViewer() {
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        // 當 canvas 進入視窗 (isIntersecting 為 true)
-        if (entry.isIntersecting) animate()
+        // 當 canvas 進入視窗且動畫是暫停狀態，則恢復動畫
+        if (entry.isIntersecting && !isVisible) animate()
+        isVisible = entry.isIntersecting
       })
     },
     {
