@@ -228,7 +228,7 @@ export function initModelViewer() {
       })
       group.scale.set(0.002, 0.002, 0.002)
       group.rotation.set(0, -Math.PI / 2, 0)
-      group.position.set(-0.5, radius, initialPosition < 1 ? 4 : -4)
+      group.position.set(-1.5, radius, initialPosition < 1 ? 10 : -10)
 
       const rotation = new CANNON.Quaternion()
       rotation.setFromEuler(group.rotation.x, group.rotation.y, group.rotation.z)
@@ -237,6 +237,7 @@ export function initModelViewer() {
         mass: 600,
         position: group.position.clone() as any,
         quaternion: rotation,
+        type: CANNON.Body.KINEMATIC,
         linearDamping: 0,
         angularDamping: 0.8
       })
@@ -389,22 +390,20 @@ export function initModelViewer() {
     controls.update()
 
     // update rolling pangolin
-    if (pangolin && elapsed > 5) {
+    if (pangolin) {
       pangolin.mesh.position.copy(pangolin.body.position as any)
       pangolin.mesh.quaternion.copy(pangolin.body.quaternion as any)
 
-      if (lastDirection === 0) {  // initial roll
-        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -8 : 8)
+      if (lastDirection === 0 && elapsed > 5.0) {  // initial roll
+        pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
+        pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
         lastDirection = initialPosition < 1 ? -1 : 1
-      } else if (pangolin.body.velocity.lengthSquared() < 0.2) { // subsequent rolls
+      } else { // subsequent rolls
         const z = pangolin.body.position.z
-        if (Math.sign(z) === lastDirection && Math.abs(z) > 3) { // only bounce back if we reached one side
-          const bowlingMode = Math.random() > 0.8 && (initialPosition === 1 || (initialPosition - 1) !== Math.sign(z))
+        if (Math.abs(z) >= 10) { // only bounce back if we reached one side
           lastDirection = -lastDirection
-          pangolin.body.position.x = bowlingMode ? 0 : -0.5
-          pangolin.body.velocity.set(0, 0, lastDirection * (bowlingMode ? 12 : 9))
-        } else {
-          pangolin.body.velocity.set(0, 0, lastDirection * 6)
+          pangolin.body.velocity.set(0, 0, lastDirection * 1.2)
+          pangolin.body.angularVelocity.set(lastDirection * 8, 0, 0)
         }
       }
     }
