@@ -2,9 +2,8 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
 import * as CANNON from 'cannon-es'
-
-// import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
 // import CannonDebugger from 'cannon-es-debugger'
 
 const isTouchDevice = () => {
@@ -29,7 +28,7 @@ export function initModelViewer() {
   }
 
   // Debuggers
-  // let viewHelper: any
+  let viewHelper: any
   // let cannonDebugger: any
 
   // Physics bodies and meshes mapping
@@ -279,7 +278,8 @@ export function initModelViewer() {
       }
 
       // Enable view helper to see orbit
-      // viewHelper = new ViewHelper(camera, renderer.domElement)
+      viewHelper = new ViewHelper(camera, renderer.domElement)
+
       // Enable physics debugger to see collision shapes
       // cannonDebugger = CannonDebugger(scene, world, {
       //   color: 0x00ff00,
@@ -395,7 +395,7 @@ export function initModelViewer() {
     renderer.clear()
     renderer.render(scene, camera)
     renderer.clearDepth() // 確保座標軸不被方塊遮擋
-    // if (viewHelper) viewHelper.render(renderer)
+    viewHelper.render(renderer)
   }
 
   const handleResize = () => {
