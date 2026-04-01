@@ -2,13 +2,6 @@
 import { useI18n } from '~/i18n/utils'
 import Icon from '~/components/Icon.astro'
 const { t } = useI18n(Astro.url.pathname)
-
-interface Props {
-  modelPath?: string
-  scenePath?: string
-}
-
-const { modelPath = '', scenePath = '' } = Astro.props
 ---
 
 <div class="viewer-container">
@@ -18,7 +11,7 @@ const { modelPath = '', scenePath = '' } = Astro.props
       {t('index.interact')}
     </span>
   </div>
-  <div class="model-viewer" data-model-path={modelPath} data-scene-path={scenePath}></div>
+  <div class="model-viewer"></div>
 </div>
 
 <style>

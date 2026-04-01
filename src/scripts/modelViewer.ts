@@ -2,9 +2,10 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
 import * as CANNON from 'cannon-es'
-import CannonDebugger from 'cannon-es-debugger'
+
+// import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
+// import CannonDebugger from 'cannon-es-debugger'
 
 const isTouchDevice = () => {
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0
@@ -45,7 +46,6 @@ export function initModelViewer() {
   const isMobile = container.clientWidth <= container.clientHeight
 
   // Get props from data attributes
-  const modelPath = container.dataset.modelPath || ''
   const backgroundColor = 0xfcf5f1
   const stools = [
     {
@@ -194,8 +194,8 @@ export function initModelViewer() {
     }
 
     // Create slogan
-    const loader = new SVGLoader()
-    loader.load('models/slogan_merge.svg', data => {
+    const svgLoader = new SVGLoader()
+    svgLoader.load('models/slogan_merge.svg', data => {
       const paths = data.paths
       const group = new THREE.Group()
       const material = new THREE.MeshStandardMaterial({ color: 0x333333 })
@@ -215,7 +215,7 @@ export function initModelViewer() {
     })
 
     // add rolling pangolin
-    loader.load('models/pangolin-mono.svg', data => {
+    svgLoader.load('models/pangolin-mono.svg', data => {
       const paths = data.paths
       const group = new THREE.Group()
       const material = new THREE.MeshStandardMaterial({ color: 0xd0ba7f })
@@ -235,65 +235,47 @@ export function initModelViewer() {
       scene.add(group)
     })
 
-    // Load model and scene
-    Promise.all([
-      new Promise<void>((resolve, reject) => {
-        if (modelPath) {
-          // Load GLTF model
-          new GLTFLoader().load(
-            modelPath,
-            gltf => {
-              const mesh = gltf.scene.children[0] as THREE.Mesh
-              mesh.castShadow = true
-              mesh.receiveShadow = true
-              mesh.geometry.computeBoundingBox()
-              mesh.geometry.center()
+    // Load GLTF model
+    const gltfLoader = new GLTFLoader()
+    gltfLoader.load('models/plastic-stool-r.glb', gltf => {
+      const mesh = gltf.scene.children[0] as THREE.Mesh
+      mesh.castShadow = true
+      mesh.receiveShadow = true
+      mesh.geometry.computeBoundingBox()
+      mesh.geometry.center()
 
-              for (const stool of stools) {
-                const clone = mesh.clone()
-                const material = new THREE.MeshStandardMaterial()
-                material.color.setHex(stool.color)
-                material.side = THREE.DoubleSide
-                clone.material = material
-                clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z)
+      for (const stool of stools) {
+        const clone = mesh.clone()
+        const material = new THREE.MeshStandardMaterial()
+        material.color.setHex(stool.color)
+        material.side = THREE.DoubleSide
+        clone.material = material
+        clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z)
 
-                // Create physics body for the stool using cylinder for better accuracy
-                const stoolRadius = 0.24 * stool.scale.x
-                const stoolHeight = 0.48 * stool.scale.y
-                const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4)
+        // Create physics body for the stool using cylinder for better accuracy
+        const stoolRadius = 0.24 * stool.scale.x
+        const stoolHeight = 0.48 * stool.scale.y
+        const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4)
 
-                // Position the stool with its bottom at the ground (y=0)
-                const physicsYPosition = stoolHeight / 2 + 0.1 // Center of mass at half height, just above ground
+        // Position the stool with its bottom at the ground (y=0)
+        const physicsYPosition = stoolHeight / 2 + 0.1 // Center of mass at half height, just above ground
 
-                const stoolBody = new CANNON.Body({
-                  mass: 1,
-                  position: new CANNON.Vec3(stool.position.x, physicsYPosition, stool.position.z),
-                  linearDamping: 0.4,
-                  angularDamping: 0.8,
-                })
-                const q = new CANNON.Quaternion()
-                q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4)
-                stoolBody.addShape(stoolShape, new CANNON.Vec3(), q)
-                world.addBody(stoolBody)
+        const stoolBody = new CANNON.Body({
+          mass: 1,
+          position: new CANNON.Vec3(stool.position.x, physicsYPosition, stool.position.z),
+          linearDamping: 0.4,
+          angularDamping: 0.8,
+        })
+        const q = new CANNON.Quaternion()
+        q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4)
+        stoolBody.addShape(stoolShape, new CANNON.Vec3(), q)
+        world.addBody(stoolBody)
 
-                // Store the mesh-body pair
-                physicsBodies.push({ mesh: clone, body: stoolBody })
+        // Store the mesh-body pair
+        physicsBodies.push({ mesh: clone, body: stoolBody })
+        scene.add(clone)
+      }
 
-                scene.add(clone)
-              }
-              resolve()
-            },
-            xhr => {},
-            error => {
-              console.error('An error occurred loading the model:', error)
-              reject(error)
-            }
-          )
-        } else {
-          resolve()
-        }
-      }),
-    ]).then(() => {
       // Enable view helper to see orbit
       // viewHelper = new ViewHelper(camera, renderer.domElement)
       // Enable physics debugger to see collision shapes
@@ -303,7 +285,10 @@ export function initModelViewer() {
       // });
       document.querySelector('.model-viewer')?.classList.add('loaded')
       animate()
-    })
+    },
+      null,
+      error => console.error('An error occurred loading the model:', error)
+    )
   }
 
   const timer = new THREE.Timer()
