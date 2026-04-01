@@ -44,7 +44,6 @@ export function initModelViewer() {
 
   // Get props from data attributes
   const modelPath = container.dataset.modelPath || ''
-  const invertOrbit = container.dataset.invertOrbit === 'true'
   const backgroundColor = 0xfcf5f1
   const stools = [
     {
@@ -172,16 +171,7 @@ export function initModelViewer() {
     controls.minPolarAngle = Math.PI * 0.1
     controls.maxPolarAngle = Math.PI * 0.4
     controls.enabled = false
-
-    if (invertOrbit) {
-      controls.rotateSpeed = -0.3
-    } else {
-      controls.rotateSpeed = 0.5
-    }
-    if (isMobile) {
-      controls.rotateSpeed *= 2.5
-    }
-
+    controls.rotateSpeed = (isMobile ? 1.25 : 0.5)
     controls.target.set(0, 0.4, 0)
     controls.update()
 
@@ -225,11 +215,7 @@ export function initModelViewer() {
           group.add(mesh)
         })
       })
-      if (isMobile) {
-        group.position.set(-1, 1.5, 1.15)
-      } else {
-        group.position.set(-1, 1, 1.15)
-      }
+      group.position.set(-1, (isMobile ? 1.5 : 1), 1.15)
       group.scale.set(0.002, 0.002, 0.002)
       group.rotation.set(0, -Math.PI / 2, Math.PI)
       scene.add(group)

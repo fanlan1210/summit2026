@@ -6,11 +6,9 @@ const { t } = useI18n(Astro.url.pathname)
 interface Props {
   modelPath?: string
   scenePath?: string
-  initCamera?: [number, number, number]
-  invertOrbit?: boolean
 }
 
-const { modelPath = '', scenePath = '', initCamera = [5, -1, 5], invertOrbit = false } = Astro.props
+const { modelPath = '', scenePath = '' } = Astro.props
 ---
 
 <div class="viewer-container">
@@ -20,7 +18,7 @@ const { modelPath = '', scenePath = '', initCamera = [5, -1, 5], invertOrbit = f
       {t('index.interact')}
     </span>
   </div>
-  <div class="model-viewer" data-model-path={modelPath} data-scene-path={scenePath} data-init-camera={JSON.stringify(initCamera)} data-invert-orbit={invertOrbit}></div>
+  <div class="model-viewer" data-model-path={modelPath} data-scene-path={scenePath}></div>
 </div>
 
 <style>
