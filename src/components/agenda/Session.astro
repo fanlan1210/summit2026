@@ -28,8 +28,6 @@ const canClick = !isRest && !isEvent
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
-const description = formatDescription(sessionDescription)
-
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
   if (columns.length !== 1) {
@@ -45,19 +43,6 @@ function speakerIdToDetail(speakerId) {
 
 function getSpeakerName(speaker) {
   return getLocalizedSpeakerName(speaker, locale)
-}
-
-function formatDescription(rawDescription) {
-  const parts = rawDescription.split('\n\n---\n\n')
-
-  return {
-    content: parts.shift(),
-    additional: parts.map(part => {
-      const seperator = isZhTW ? '：' : ':'
-      const [key, value] = part.split(seperator)
-      return { key: key.trim(), value: value.trim() }
-    }),
-  }
 }
 ---
 
@@ -113,13 +98,7 @@ function formatDescription(rawDescription) {
               </a>
             ))}
           </div>
-          <p class="mb-0 border-t border-neutral-300 py-4 wrap-break-word whitespace-pre-line">{description.content}</p>
-          {description.additional.map(item => (
-            <div class="border-t border-neutral-300 py-4">
-              <h6 class="font-bold">{item.key}</h6>
-              <p>{item.value}</p>
-            </div>
-          ))}
+          <p class="mb-0 border-t border-neutral-300 py-4 wrap-break-word whitespace-pre-line">{sessionDescription}</p>
         </div>
       </div>
     )
