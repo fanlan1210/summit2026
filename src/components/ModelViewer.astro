@@ -74,27 +74,29 @@ const { t } = useI18n(Astro.url.pathname)
 <script>
   import { initModelViewer } from '~/scripts/modelViewer'
   initModelViewer()
-  const isTouchDevice = () => {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
-  }
-
   let isScrolling
+  let usingTouch = false
 
   const overlay = document.querySelector('.overlay')
+  const viewerContainer = document.querySelector('.viewer-container')
 
-  if (isTouchDevice()) {
-    document.querySelector('.viewer-container')?.addEventListener('click', function () {
-      overlay?.classList.remove('hidden')
-      isScrolling = setTimeout(function () {
-        overlay?.classList.add('hidden')
-      }, 1000)
-    })
-    window.addEventListener('scroll', function () {
-      overlay?.classList.remove('hidden')
-      window.clearTimeout(isScrolling)
-      isScrolling = setTimeout(function () {
-        overlay?.classList.add('hidden')
-      }, 500)
-    })
-  }
+  window.addEventListener('pointerdown', (e) => {
+    usingTouch = e.pointerType === 'touch'
+  })
+
+  viewerContainer?.addEventListener('click', function () {
+    if (!usingTouch) return
+    overlay?.classList.remove('hidden')
+    isScrolling = setTimeout(function () {
+      overlay?.classList.add('hidden')
+    }, 1000)
+  })
+  window.addEventListener('scroll', function () {
+    if (!usingTouch) return
+    overlay?.classList.remove('hidden')
+    window.clearTimeout(isScrolling)
+    isScrolling = setTimeout(function () {
+      overlay?.classList.add('hidden')
+    }, 500)
+  })
 </script>

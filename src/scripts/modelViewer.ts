@@ -6,10 +6,6 @@ import { ViewHelper } from 'three/addons/helpers/ViewHelper.js'
 import * as CANNON from 'cannon-es'
 // import CannonDebugger from 'cannon-es-debugger'
 
-const isTouchDevice = () => {
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
-}
-
 export function initModelViewer() {
   const container = document.querySelector('.model-viewer') as HTMLElement
 
@@ -155,13 +151,14 @@ export function initModelViewer() {
     controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
     controls.enablePan = false
-    controls.enableZoom = isTouchDevice()
+    controls.enableZoom = false
     controls.touches.ONE = null
     controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE
     controls.minPolarAngle = Math.PI * 0.1
     controls.maxPolarAngle = Math.PI * 0.4
     controls.enabled = false
     controls.rotateSpeed = (isMobile ? 1.25 : 0.5)
+    renderer.domElement.addEventListener('pointerdown', handlePointerDown)
     controls.target.set(0, 0.4, 0)
     controls.update()
 
@@ -424,6 +421,10 @@ export function initModelViewer() {
     viewHelper.render(renderer)
   }
 
+  const handlePointerDown = (e: PointerEvent) => {
+    controls.enableZoom = e.pointerType === 'touch'
+  }
+
   const handleResize = () => {
     if (camera && renderer && container) {
       camera.aspect = container.clientWidth / container.clientHeight
@@ -446,6 +447,7 @@ export function initModelViewer() {
   })
   window.addEventListener('beforeunload', () => {
     window.removeEventListener('resize', handleResize)
+    renderer.domElement.removeEventListener('pointerdown', handlePointerDown)
     // window.removeEventListener('deviceorientation', handleOrientation);
     if (renderer) {
       renderer.dispose()
