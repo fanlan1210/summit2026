@@ -359,8 +359,8 @@ export function initModelViewer() {
         lastCameraPosition.copy(camera.position.clone().add(new THREE.Vector3(0, 1.5 + Math.random(), 0)))
         if (pangolin.body.type === CANNON.Body.STATIC) {
           pangolin.body.type = CANNON.Body.KINEMATIC
-          pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -1.2 : 1.2)
-          pangolin.body.angularVelocity.set(initialPosition < 1 ? -8 : 8, 0, 0)
+          pangolin.body.velocity.set(0, 0, lastDirection * 1.2)
+          pangolin.body.angularVelocity.set(lastDirection * 8, 0, 0)
         }
         controls.enabled = true
         canMove = true
@@ -452,11 +452,22 @@ export function initModelViewer() {
     }
   })
   window.addEventListener('keydown', (e) => {
-    // simple konami
-    if (e.key !== "Enter") return
-    pangolin.body.type = CANNON.Body.DYNAMIC
-    const i = Math.floor(Math.random() * stoolBodies.length)
-    pangolin.body.position.set(stoolBodies[i].body.position.x, 0, initialPosition < 1 ? 3.5 : -3.5)
-    pangolin.body.velocity.set(0, 0, 12)
+    if (!stoolBodies.length) return
+    if (e.key === "r") {
+      stoolBodies.forEach(({ body }, idx) => {
+        const stool = stools[idx]
+        const stoolHeight = 0.48 * stool.scale.y
+        body.position.set(stool.position.x, stoolHeight / 2 + 0.1, stool.position.z)
+        body.quaternion.set(0, 0, 0, 1)
+        body.velocity.set(0, 0, 0)
+        body.angularVelocity.set(0, 0, 0)
+      })
+    } else if (e.key === "Enter") {
+      // simple konami
+      pangolin.body.type = CANNON.Body.DYNAMIC
+      const i = Math.floor(Math.random() * stoolBodies.length)
+      pangolin.body.position.set(stoolBodies[i].body.position.x, 0, initialPosition < 1 ? 3.5 : -3.5)
+      pangolin.body.velocity.set(0, 0, 12)
+    }
   })
 }
