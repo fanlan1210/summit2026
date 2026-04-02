@@ -347,33 +347,34 @@ const navs: NavItem[] = [
     const $toggle = $(this)
     toggles.push({ $toggle, $submenu })
 
-    $toggle.on('click', function () {
-      const isOpen = $submenu.hasClass('grid-rows-[1fr]')
+    let closeTimer: ReturnType<typeof setTimeout> | null = null
 
+    function scheduleClose() {
+      clearTimeout(closeTimer!)
+      closeTimer = setTimeout(() => closeSubmenu($submenu, $toggle), 100)
+    }
+    function cancelClose() {
+      clearTimeout(closeTimer!)
+      closeTimer = null
+    }
+
+    $toggle.on('mouseenter', function () {
+      cancelClose()
       // Close all other open submenus first
       toggles.forEach(({ $toggle: t, $submenu: s }) => {
         if (!s.is($submenu)) closeSubmenu(s, t)
       })
-
-      if (isOpen) {
-        closeSubmenu($submenu, $toggle)
-      } else {
-        openSubmenu($submenu, $toggle)
-      }
+      openSubmenu($submenu, $toggle)
     })
+    $toggle.on('mouseleave', scheduleClose)
+
+    $submenu.on('mouseenter', cancelClose)
+    $submenu.on('mouseleave', scheduleClose)
 
     // Close when any link inside the submenu is clicked
     $submenu.find('a').on('click', function () {
+      cancelClose()
       closeSubmenu($submenu, $toggle)
-    })
-  })
-
-  // Close all submenus on outside click
-  $(document).on('click', function (e) {
-    toggles.forEach(({ $toggle, $submenu }) => {
-      if (!$toggle.is(e.target as unknown as Element) && !$submenu.find(e.target as unknown as Element).length) {
-        closeSubmenu($submenu, $toggle)
-      }
     })
   })
 
