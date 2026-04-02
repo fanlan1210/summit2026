@@ -286,9 +286,6 @@ export function initModelViewer() {
         stoolBodies.push({ mesh: clone, body: stoolBody })
         scene.add(clone)
       }
-
-      container.classList.add('loaded')
-      animate()
     },
       null,
       error => console.error('An error occurred loading the model:', error)
@@ -308,7 +305,7 @@ export function initModelViewer() {
   const fixedTimeStep = 1 / 60 // 60 FPS fixed timestep
   let accumulator = 0
   let elapsed = 0
-  let isVisible = true
+  let isVisible = false
   let canMove = false
   let lastDirection = initialPosition < 1 ? -1 : 1
 
@@ -316,8 +313,13 @@ export function initModelViewer() {
     entries => {
       entries.forEach(entry => {
         // 當 canvas 進入視窗且動畫是暫停狀態，則恢復動畫
-        if (entry.isIntersecting && !isVisible) animate()
-        isVisible = entry.isIntersecting
+        if (entry.isIntersecting && !isVisible) {
+          container.classList.add('loaded')
+          isVisible = true
+          animate()
+        } else {
+          isVisible = entry.isIntersecting
+        }
       })
     },
     {
@@ -327,8 +329,8 @@ export function initModelViewer() {
   observer.observe(container)
 
   const animate = () => {
-    if (!isVisible) return
 
+    if (!isVisible) return
     requestAnimationFrame(animate)
 
     // Update physics world with fixed timestep
