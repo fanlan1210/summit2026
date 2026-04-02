@@ -468,8 +468,9 @@ export function initModelViewer() {
       // simple konami
       pangolin.body.type = CANNON.Body.DYNAMIC
       const i = Math.floor(Math.random() * stoolBodies.length)
+      pangolin.body.quaternion.setFromEuler(0, Math.PI / 2, 0)
       pangolin.body.position.set(stoolBodies[i].body.position.x, 0, initialPosition < 1 ? 3.5 : -3.5)
-      pangolin.body.velocity.set(0, 0, 12)
+      pangolin.body.velocity.set(0, 0, initialPosition < 1 ? -12 : 12)
     }
   })
 }
