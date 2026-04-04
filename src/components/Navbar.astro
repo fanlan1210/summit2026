@@ -120,17 +120,18 @@ const navs: NavItem[] = [
     <!-- Desktop nav links -->
     <div id="navs" class="scroll-x hidden h-full min-w-0 items-center md:flex">
       {
-        navs.map(nav =>
-          nav.submenu ? (
-            <button id={`${nav.key}-toggle`} type="button" class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls={`${nav.key}-submenu`}>
-              {nav.name}
-            </button>
-          ) : (
-            <Link class="nav-link" href={nav.href}>
-              {nav.name}
-            </Link>
-          )
-        )
+        navs.map(nav => (
+          <Link
+            href={nav.href}
+            class="nav-link"
+            id={nav.submenu ? `${nav.key}-toggle` : undefined}
+            aria-haspopup={nav.submenu ? 'true' : undefined}
+            aria-expanded={nav.submenu ? 'false' : undefined}
+            aria-controls={nav.submenu ? `${nav.key}-submenu` : undefined}
+          >
+            {nav.name}
+          </Link>
+        ))
       }
     </div>
 
