@@ -6,11 +6,13 @@ const { t } = useI18n(Astro.url.pathname)
 ---
 
 <Layout pageName={t('nav.agenda')} />
+
 <script>
+  const isZhTW = document.documentElement.lang === 'zh-tw'
   const day2 = new Date('2026-05-24T00:00:00+08:00')
   if (new Date() > day2) {
-    window.location.href = 'agenda/day2/'
+    window.location.href = isZhTW ? 'agenda/day2/' : 'en/agenda/day2/'
   } else {
-    window.location.href = 'agenda/day1/'
+    window.location.href = isZhTW ? 'agenda/day1/' : 'en/agenda/day1/'
   }
 </script>
