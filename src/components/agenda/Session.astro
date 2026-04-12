@@ -24,8 +24,7 @@ const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
 const endRow = parseInt(extractHHmm(session.end).replace(':', '')) || 0
 const [startCol, endCol] = getColumnStartEnd(session.broadcast || session.room)
 const isRest = session.type === 'R'
-const isEvent = session.type === 'E'
-const canClick = !isRest && !isEvent
+const canClick = !isRest
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 

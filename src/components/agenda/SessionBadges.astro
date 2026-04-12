@@ -19,10 +19,13 @@ function tagIdToDetail(tagId) {
 function typeToDetail(type) {
   return schedule.session_types.find(t => t.id === type)
 }
+
+const isEvent = session.type === 'E'
+const isUnique = session.zh.title === type.zh.name
 ---
 
 <div class="my-2 flex flex-wrap gap-2 text-xs text-white">
-  {session.type && <Badge className="bg-info-dark">{isZhTW ? type.zh.name : type.en.name}</Badge>}
+  {session.type && !(isEvent || isUnique) && <Badge className="bg-info-dark">{isZhTW ? type.zh.name : type.en.name}</Badge>}
   {session.language && <Badge className="bg-[#585858]">{t(`language.${session.language}`)}</Badge>}
   {tags.map(tag => <Badge className="bg-[#A4A4A4]">{isZhTW ? tag.zh.name : tag.en.name}</Badge>)}
 </div>
