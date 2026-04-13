@@ -4,7 +4,7 @@
 
 - Astro
 - TailwindCSS
-- JQuery
+- jQuery
 
 ## 開發
 
@@ -19,7 +19,7 @@ GitHub action 根據 main branch 更新，作為 staging site
 
 ## 議程
 
-議程採用 OPass 格式的 Google Sheet。更新前，請先在 `.env` 設定以下欄位:
+議程採用 OPass 格式的 Google Sheet。更新前，請先在 `.env` 設定以下欄位：
 
 ```
 GCP_API_KEY=""
@@ -28,7 +28,7 @@ DEFAULT_AVATAR=""
 AVATAR_BASE_URL=""
 ```
 
-接著執行:
+接著執行：
 
 ```
 npm run fetch-schedule
@@ -40,6 +40,9 @@ npm run fetch-schedule
 
 ## 部署
 
-`./deploy`
+```
+./deploy
+```
+
 會自動將 dist 下的檔案推送到 production branch，並透過 repository dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
 目前是使用網站組小組長 SeanGau 的 Token
