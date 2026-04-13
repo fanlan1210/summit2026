@@ -15,11 +15,11 @@
 
 GitHub action 根據 main branch 更新，作為 staging site
 
-https://g0v.github.io/summit2026/
+<https://g0v.github.io/summit2026/>
 
 ## 議程
 
-議程採用 OPass 格式的 Google Sheet。更新前，請先在 .env 設定以下欄位:
+議程採用 OPass 格式的 Google Sheet。更新前，請先在 `.env` 設定以下欄位:
 
 ```
 GCP_API_KEY=""
