@@ -10,6 +10,7 @@
     "node": ">=22"
   },
   "scripts": {
+    "deploy": "node ./deploy.js",
     "build-production": "cross-env BUILD_MODE=production astro build",
     "preview-production": "cross-env BUILD_MODE=production astro preview",
     "build": "cross-env BUILD_MODE=staging astro build",

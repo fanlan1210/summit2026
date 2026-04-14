@@ -41,7 +41,11 @@ npm run fetch-schedule
 ## 部署
 
 ```
+# macOS and Linux only
 ./deploy
+
+# Cross-platform
+npm run deploy
 ```
 
 會自動將 dist 下的檔案推送到 production branch，並透過 repository dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
