@@ -17,7 +17,7 @@ const { t } = useI18n(Astro.url.pathname)
     <div class="flex flex-1 flex-col justify-center">
       <div class="mb-2 flex items-center gap-3">
         <h4 class="text-lg font-bold text-neutral-800">{name}</h4>
-        <span class={`ms-auto flex-shrink-0 inline-block rounded-full px-3 py-0.5 text-xs font-semibold bg-primary text-white`}>
+        <span class={`ms-auto shrink-0 inline-block rounded-full px-3 py-0.5 text-xs font-semibold bg-primary text-white`}>
           {t(`sponsor.tiers.${tier}`)}
         </span>
       </div>
