@@ -172,7 +172,12 @@
       "justfont": "justfont",
       "archilife": "Archilife Research Foundation",
       "hackmd": "HackMD",
-      "doit": "Department of Information Technology, Taipei City Government"
+      "doit": "Department of Information Technology, Taipei City Government",
+      "jothon": {
+        "name": "g0v Jothon",
+        "description": "g0v Jothon is the task force responsible for organizing g0v’s Bi-monthly Hackathons and Infrathons, as well as managing the community’s fundraising affairs. Currently, the team consists of the Jothon Volunteer Group, project-based collaborators, and eight members of the Steering Committee."
+      },
+      "ima": "IMA"
     }
   },
   "sponsor": {
