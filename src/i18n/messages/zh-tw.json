@@ -121,6 +121,11 @@
   "index": {
     "interact": "使用雙指進行互動",
     "opening_in": "距離開幕還有",
+    "key": {
+      "reset": "擺好椅子",
+      "ticket": "購票",
+      "pangolin": "發射穿山甲"
+    },
     "intro": {
       "title": "「反客為主的草繩幾何學！」",
       "p1": "有人說，「一朝被蛇咬，十年怕草繩。」但在 g0v Summit 2026，我們說「十年<ruby>拍<rp>（</rp><rt lang=\"nan-tw\">phah</rt><rp>）</rp></ruby>草繩」。",
@@ -220,7 +225,7 @@
     "description": "g0v Summit 今年在中央研究院人文社會科學館舉行，可於<a href=\"./visit\">交通資訊</a>頁面查看前往方式。"
   },
   "register": {
-    "cta": "購票連結",
+    "cta": "立即購票",
     "time": "活動時間",
     "location": "活動地點",
     "location_value_1": "中央研究院 人文社會科學館",

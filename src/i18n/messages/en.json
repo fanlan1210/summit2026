@@ -121,6 +121,11 @@
   "index": {
     "interact": "Use two fingers to interact",
     "opening_in": "Commencing in",
+    "key": {
+      "reset": "Reset",
+      "ticket": "Tickets",
+      "pangolin": "Shoot"
+    },
     "intro": {
       "title": "\"The Rope-Weaving Geometry of Invite Yourself!\"",
       "p1": "They say, \"Once bitten by a snake, you’ll fear a rope for ten years.\" But at g0v Summit 2026, we say: ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope.",

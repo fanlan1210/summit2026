@@ -36,12 +36,18 @@ const { t } = useI18n(Astro.url.pathname)
         </div>
       </section>
 
-      <section id="timeline" class="m10-20">
+      <section id="timeline" class="mb-10">
         <Timeline />
       </section>
 
       <p class="text-center text-xl">{t('index.opening_in')}</p>
       <div id="flipdown" class="flipdown mx-auto mb-20 flex w-auto! justify-center" data-headings={[t('date.days'),t('date.hours'),t('date.minutes'),t('date.seconds')]}></div>
+
+      <div class="flex mb-20">
+        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="mx-auto btn btn-lg btn-primary flex items-center gap-2 md:inline-flex">
+          {t('register.cta')}<Icon name="mdi:external-link" width="22" />
+        </a>
+      </div>
 
       <section id="location" class="mb-20">
         <h2 class="mb-8 text-3xl font-bold max-md:text-center md:text-4xl">
