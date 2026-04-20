@@ -14,8 +14,16 @@ const KEYNOTE_SPEAKER_IDS = []
 
 const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
 
-// hide placeholder rows with empty id
-const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '')
+const allSpeakersInSessions = new Set()
+
+for (const session of schedule.sessions) {
+  for (const speaker of session.speakers) {
+    allSpeakersInSessions.add(speaker)
+  }
+}
+
+// Hide speakers who have no id or no sessions.
+const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '' && allSpeakersInSessions.has(s.id))
 ---
 
 <Layout pageName={t('nav.speaker')}>
