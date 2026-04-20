@@ -35,3 +35,9 @@ export function formatHHmm(date: DateValue) {
 
   return `${hour}:${minute}`
 }
+
+export function compareDate(date1: DateValue, date2: DateValue) {
+  const value1 = typeof date1 === 'string' ? new Date(date1) : date1
+  const value2 = typeof date2 === 'string' ? new Date(date2) : date2
+  return (value1.getTime() - value2.getTime()) / 1000
+}

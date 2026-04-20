@@ -4,7 +4,7 @@ import Markdown from '~/components/Markdown.astro'
 import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { AGENDA_DAY2_DATE } from '~/utils/build/agenda/dates'
-import { formatHHmm, formatMMdd } from '~/utils/datetime'
+import { formatHHmm, formatMMdd, compareDate } from '~/utils/datetime'
 import { getSpeakerProfile } from '~/utils/speaker'
 import { getDefaultAvatar } from '~/utils/getDefaultAvatar'
 
@@ -23,7 +23,7 @@ const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
 const isDefaultAvatar = !speaker.avatar
 const avatar = speaker.avatar || getDefaultAvatar(name)
 
-const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id))
+const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).sort((a, b) => compareDate(a.start, b.start))
 ---
 
 <div class="speaker flex cursor-pointer flex-col items-center justify-center" data-id={speaker.id}>
