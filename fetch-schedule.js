@@ -11,5 +11,9 @@ const schedule = await scheduleToJson({
 })
 
 const filePath = 'src/data/schedule.json'
-await fs.mkdir(path.dirname(filePath), { recursive: true })
-fs.writeFile(path.resolve(filePath), JSON.stringify(schedule, null, 2), 'utf-8')
+const publicFilePath = 'public/data/schedule.json'
+
+await Promise.all([fs.mkdir(path.dirname(filePath), { recursive: true }), fs.mkdir(path.dirname(publicFilePath), { recursive: true })])
+
+const json = JSON.stringify(schedule, null, 2)
+await Promise.all([fs.writeFile(path.resolve(filePath), json, 'utf-8'), fs.writeFile(path.resolve(publicFilePath), json, 'utf-8')])
