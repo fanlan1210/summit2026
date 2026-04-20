@@ -49,6 +49,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
 <script>
   import Fuse from 'fuse.js'
+  import { clearLocationHash, getVisibleElementFromHash, isVisible, updateLocationHash } from '~/utils/client/locationHash'
   import { showModalWith } from '~/utils/client/modal'
 
   const agendaGridEl = document.querySelector('#agenda-grid')
@@ -99,11 +100,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
   function updateSessionHash(session: HTMLElement) {
     const { id } = session.dataset
-    if (!id) return
-
-    const url = new URL(location.href)
-    url.hash = encodeURIComponent(id)
-    history.replaceState(history.state, '', url)
+    updateLocationHash(id)
   }
 
   function handleModalHide() {
@@ -114,18 +111,12 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   }
 
   function clearSessionHash() {
-    if (!location.hash) return
-
-    history.replaceState(history.state, '', `${location.pathname}${location.search}`)
+    clearLocationHash()
   }
 
   // scroll page to `#sessionId` cell and open modal
   function tryOpenSessionFromHash() {
-    const raw = location.hash.slice(1)
-    if (!raw) return
-    const id = decodeURIComponent(raw)
-    const nodes = document.querySelectorAll<HTMLElement>(`.session.session-canClick[data-id="${CSS.escape(id)}"]`)
-    const session = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    const session = getVisibleElementFromHash(id => `.session.session-canClick[data-id="${id}"]`)
     if (!session) return
     openSessionModal(session, { scroll: true })
   }
@@ -182,14 +173,6 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     if (highestScoreElement) {
       highestScoreElement.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth' })
     }
-  }
-
-  function isVisible(el) {
-    if (!el) return false
-
-    const style = window.getComputedStyle(el)
-
-    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && el.offsetWidth > 0 && el.offsetHeight > 0
   }
 </script>
 

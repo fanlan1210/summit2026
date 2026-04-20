@@ -54,15 +54,33 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
 </Layout>
 
 <script>
+  import { clearLocationHash, getVisibleElementFromHash, updateLocationHash } from '~/utils/client/locationHash'
   import { showModalWith } from '~/utils/client/modal'
 
   const gridEl = document.querySelector('#speakers-grid')
+  let isSpeakerModalOpen = false
 
-  function openSpeakerModalFromCard(speaker: HTMLElement) {
+  type OpenSpeakerModalOptions = {
+    updateHash?: boolean
+    scroll?: boolean
+  }
+
+  function openSpeakerModalFromCard(speaker: HTMLElement, { updateHash = false, scroll = false }: OpenSpeakerModalOptions = {}) {
+    if (scroll) {
+      speaker.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
+    }
+
     const header = speaker.querySelector('.modal-content .header')
     const body = speaker.querySelector('.modal-content .body')
-    if (!header || !body) return
+    if (!header || !body) return false
     showModalWith({ header: header.innerHTML, body: body.innerHTML })
+    isSpeakerModalOpen = true
+
+    if (updateHash) {
+      updateSpeakerHash(speaker)
+    }
+
+    return true
   }
 
   // Click speaker and open pop-up overlay used on the agenda page
@@ -71,26 +89,33 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
     const speaker = target.closest('.speaker[data-id]')
     if (!speaker || !(speaker instanceof HTMLElement)) return
 
-    openSpeakerModalFromCard(speaker)
+    openSpeakerModalFromCard(speaker, { updateHash: true })
   }
 
-  function isVisible(el: HTMLElement) {
-    const style = window.getComputedStyle(el)
-    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && el.offsetWidth > 0 && el.offsetHeight > 0
+  function handleModalHide() {
+    if (!isSpeakerModalOpen) return
+
+    isSpeakerModalOpen = false
+    clearSpeakerHash()
+  }
+
+  function clearSpeakerHash() {
+    clearLocationHash()
+  }
+
+  function updateSpeakerHash(speaker: HTMLElement) {
+    const { id } = speaker.dataset
+    updateLocationHash(id)
   }
 
   // …/speaker/#speakerId → scroll to card and open same pop-up (ref speakers.js)
   function tryOpenSpeakerFromHash() {
-    const raw = location.hash.slice(1)
-    if (!raw) return
-    const id = decodeURIComponent(raw)
-    const nodes = document.querySelectorAll<HTMLElement>(`#speakers-grid .speaker[data-id="${CSS.escape(id)}"]`)
-    const speaker = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    const speaker = getVisibleElementFromHash(id => `#speakers-grid .speaker[data-id="${id}"]`)
     if (!speaker) return
-    speaker.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
-    openSpeakerModalFromCard(speaker)
+    openSpeakerModalFromCard(speaker, { scroll: true })
   }
 
   gridEl?.addEventListener('click', showSpeakerModal)
+  window.addEventListener('modal:hide', handleModalHide)
   requestAnimationFrame(() => tryOpenSpeakerFromHash())
 </script>
