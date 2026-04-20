@@ -146,7 +146,7 @@ const { t } = useI18n(Astro.url.pathname)
   window.addEventListener('keydown', (e) => {
     const key = e.key.toLowerCase()
     const match = document.querySelector(`.keycap[data-key="${key === 'enter' ? 'Enter' : key}"]`) as HTMLElement | null
-    if ('efgy'.includes(key) && !rickedRoll) {
+    if ('edfg'.includes(key) && Math.random() < 0.5 && !rickedRoll) {
       window.open('https://youtu.be/dQw4w9WgXcQ?si=XC9FTyur51K2qQU-', '_blank')
       rickedRoll = true
       gtag('event', 'rickroll', {
