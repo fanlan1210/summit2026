@@ -11,6 +11,7 @@ export function showModal() {
 export function hideModal() {
   modalEl.classList.remove('show')
   document.body.classList.remove('overflow-hidden')
+  window.dispatchEvent(new CustomEvent('modal:hide'))
 }
 
 export function showModalWith({ header, body, size = 'sm' }) {

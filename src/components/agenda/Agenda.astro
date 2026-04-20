@@ -53,16 +53,40 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
   const agendaGridEl = document.querySelector('#agenda-grid')
   const mobileSessionsEl = document.querySelector('#mobile-sessions')
+  let isSessionModalOpen = false
 
   agendaGridEl?.addEventListener('click', showSessionModal)
   mobileSessionsEl?.addEventListener('click', showSessionModal)
+  window.addEventListener('modal:hide', handleModalHide)
+
+  type OpenSessionModalOptions = {
+    updateHash?: boolean
+    scroll?: boolean
+  }
+
+  function openSessionModal(session: HTMLElement, { updateHash = false, scroll = false }: OpenSessionModalOptions = {}) {
+    if (scroll) {
+      session.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
+    }
+
+    if (!renderSessionModal(session)) return false
+
+    isSessionModalOpen = true
+
+    if (updateHash) {
+      updateSessionHash(session)
+    }
+
+    return true
+  }
 
   // Reuse the same modal HTML as clicking a session cell
-  function openSessionModalFromElement(session: HTMLElement) {
+  function renderSessionModal(session: HTMLElement) {
     const header = session.querySelector('.modal-content .header')
     const body = session.querySelector('.modal-content .body')
-    if (!header || !body) return
+    if (!header || !body) return false
     showModalWith({ header: header.innerHTML, body: body.innerHTML })
+    return true
   }
 
   function showSessionModal(e: Event) {
@@ -70,7 +94,29 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     const session = target.closest('.session.session-canClick') as HTMLElement
     if (!session) return
 
-    openSessionModalFromElement(session)
+    openSessionModal(session, { updateHash: true })
+  }
+
+  function updateSessionHash(session: HTMLElement) {
+    const { id } = session.dataset
+    if (!id) return
+
+    const url = new URL(location.href)
+    url.hash = encodeURIComponent(id)
+    history.replaceState(history.state, '', url)
+  }
+
+  function handleModalHide() {
+    if (!isSessionModalOpen) return
+
+    isSessionModalOpen = false
+    clearSessionHash()
+  }
+
+  function clearSessionHash() {
+    if (!location.hash) return
+
+    history.replaceState(history.state, '', `${location.pathname}${location.search}`)
   }
 
   // scroll page to `#sessionId` cell and open modal
@@ -81,8 +127,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     const nodes = document.querySelectorAll<HTMLElement>(`.session.session-canClick[data-id="${CSS.escape(id)}"]`)
     const session = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
     if (!session) return
-    session.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
-    openSessionModalFromElement(session)
+    openSessionModal(session, { scroll: true })
   }
 
   requestAnimationFrame(() => tryOpenSessionFromHash())
