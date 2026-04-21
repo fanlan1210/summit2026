@@ -21,7 +21,7 @@ const { speaker } = Astro.props
 
 const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
 const isDefaultAvatar = !speaker.avatar
-const avatar = speaker.avatar || getDefaultAvatar(name)
+const avatar = speaker.avatar ? `${import.meta.env.BASE_URL}img/avatars/${speaker.avatar}` : getDefaultAvatar(name)
 
 const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).sort((a, b) => compareDate(a.start, b.start))
 ---
