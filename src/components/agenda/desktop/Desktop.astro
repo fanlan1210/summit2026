@@ -6,7 +6,7 @@ import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
 import DayLink from '~/components/agenda/DayLink.astro'
 import RoomCard from '~/components/agenda/desktop/RoomCard.astro'
 import Time from '~/components/agenda/desktop/Time.astro'
-import Session from '~/components/agenda/Session.astro'
+import SessionGrid from '~/components/agenda/SessionGrid.astro'
 import Search from '~/components/agenda/Search.astro'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
@@ -50,7 +50,7 @@ const gridTemplateColumnsStyle = '[time] 4rem ' + rooms.map(room => `[${room}] 1
       {
         sessions.map(session => {
           if (session.id.startsWith('CT-')) return
-          return <Session session={session} />
+          return <SessionGrid session={session} />
         })
       }
     </div>

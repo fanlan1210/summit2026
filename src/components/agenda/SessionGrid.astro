@@ -1,0 +1,47 @@
+---
+import schedule from '~/data/schedule.json'
+import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
+import Session from './Session.astro'
+import CTSession from './CTSession.astro'
+import { ctColorMap } from './ctColorMap'
+
+const { session } = Astro.props
+
+const columnOrder = ['R0', 'R1', 'R2', 'R3', 'RH', 'end']
+
+const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
+const endRow = parseInt(extractHHmm(session.end).replace(':', '')) || 0
+const [startCol, endCol] = getColumnStartEnd(session.broadcast || session.room)
+const ctTag = session.tags.find(tagId => tagId.startsWith('CT-'))
+const ctSession = ctTag ? schedule.sessions.find(session => session.id === ctTag) : null
+const isRest = session.type === 'R'
+const canClick = !isRest
+
+function getColumnStartEnd(columns) {
+  columns = columns.split(',')
+  if (columns.length !== 1) {
+    columns.sort((a, b) => columnOrder.indexOf(a) - columnOrder.indexOf(b))
+  }
+  const last = columnOrder.indexOf(columns.at(-1)) + 1
+  return [columns[0], columnOrder[last]]
+}
+
+const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
+---
+
+<div class:list={['m-3 flex flex-col transition-opacity']} style={style}>
+  <div
+    class:list={[
+      'relative z-10 shrink-0 grow rounded hover:z-20',
+      isRest ? 'border-info-dark bg-info/20 text-info-dark z-10 border-2 border-dashed text-center' : 'bg-[#F3F3F3]',
+      canClick ? 'cursor-pointer' : '',
+      ctTag ? 'border-r-4' : '',
+    ]}
+    style={ctTag ? `border-color: ${ctColorMap[ctTag]};` : ''}
+  >
+    <div class="sticky" style="top: var(--agenda-header-height);">
+      {ctSession && ctSession.start === session.start && <CTSession ctSession={ctSession} />}
+      <Session session={session} />
+    </div>
+  </div>
+</div>

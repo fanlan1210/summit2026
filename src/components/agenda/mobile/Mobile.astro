@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { extractHHmm } from '~/utils/build/agenda/extractHHmm'
-import Session from '~/components/agenda/Session.astro'
+import SessionGrid from '~/components/agenda/SessionGrid.astro'
 import DayLink from '~/components/agenda/DayLink.astro'
 import Search from '~/components/agenda/Search.astro'
 import Icon from '~/components/Icon.astro'
@@ -65,7 +65,7 @@ const allTimes = Object.keys(allSessions).sort((a, b) => a.localeCompare(b))
             <div>{time}</div>
             {allSessions[time].map(session => {
               if (session.id.startsWith('CT-')) return
-              return <Session session={session} />
+              return <SessionGrid session={session} />
             })}
           </div>
         ))
