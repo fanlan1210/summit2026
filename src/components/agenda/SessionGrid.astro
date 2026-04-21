@@ -33,7 +33,7 @@ const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
   <div
     class:list={[
       'relative z-10 shrink-0 grow rounded hover:z-20',
-      isRest ? 'border-info-dark bg-info/20 text-info-dark z-10 border-2 border-dashed text-center' : 'bg-[#F3F3F3]',
+      isRest ? 'border-info-dark bg-info/20 text-info-dark z-10 grid place-items-center border-2 border-dashed' : 'bg-[#F3F3F3]',
       canClick ? 'cursor-pointer' : '',
       ctTag ? 'border-r-4' : '',
     ]}
