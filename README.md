@@ -19,7 +19,7 @@ GitHub action 根據 main branch 更新，作為 staging site
 
 ## 議程
 
-議程採用 OPass 格式的 Google Sheet。更新前，請先在 `.env` 設定以下欄位：
+議程採用 OPass 格式的 [Google Sheet](https://docs.google.com/spreadsheets/d/1jD0RtB_J4XxcwbgABtHJWo6XECffTLP6_bgzrcy_rqo)。更新前，請先在 `.env` 設定以下欄位：
 
 ```
 GCP_API_KEY=""
