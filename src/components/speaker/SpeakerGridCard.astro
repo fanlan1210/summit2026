@@ -5,8 +5,7 @@ import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { AGENDA_DAY2_DATE } from '~/utils/build/agenda/dates'
 import { formatHHmm, formatMMdd, compareDate } from '~/utils/datetime'
-import { getSpeakerProfile } from '~/utils/speaker'
-import { getDefaultAvatar } from '~/utils/getDefaultAvatar'
+import { getSpeakerProfile, getAvatar } from '~/utils/speaker'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
@@ -21,7 +20,7 @@ const { speaker } = Astro.props
 
 const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
 const isDefaultAvatar = !speaker.avatar
-const avatar = speaker.avatar ? `${import.meta.env.BASE_URL}img/avatars/${speaker.avatar}` : getDefaultAvatar(name)
+const avatar = getAvatar(speaker)
 
 const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).sort((a, b) => compareDate(a.start, b.start))
 ---
