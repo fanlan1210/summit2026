@@ -1,0 +1,69 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import Markdown from '~/components/Markdown.astro'
+import SessionBadges from './SessionBadges.astro'
+import schedule from '~/data/schedule.json'
+import { getLocalizedSpeakerName, getAvatar } from '~/utils/speaker'
+import { ctColorMap } from './ctColorMap'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+const { ctSession } = Astro.props
+
+const sessionTitle = isZhTW ? ctSession.zh.title : ctSession.en.title || ctSession.zh.title
+const sessionDescription = isZhTW ? ctSession.zh.description : ctSession.en.description || ctSession.zh.description
+const speakers = ctSession.speakers.map(speakerId => speakerIdToDetail(speakerId))
+
+function speakerIdToDetail(speakerId) {
+  return schedule.speakers.find(speaker => speaker.id === speakerId)
+}
+
+function getSpeakerName(speaker) {
+  return getLocalizedSpeakerName(speaker, locale)
+}
+---
+
+<div class="session session-canClick rounded-tl p-3 text-white" style={`background-color: ${ctColorMap[ctSession.id]};`} data-id={ctSession.id} data-room={ctSession.broadcast || ctSession.room}>
+  <div class="font-bold">{ctSession.zh.title}</div>
+
+  <div class="modal-content hidden">
+    <div class="header">
+      <h3 class="text-info-dark">{sessionTitle}</h3>
+      <SessionBadges session={ctSession} />
+      <div class="flex gap-2">
+        {
+          ctSession.qa && (
+            <a href={ctSession.qa} target="_blank" class="btn btn-info">
+              {t('agenda.qa')}
+            </a>
+          )
+        }
+        {
+          ctSession.co_write && (
+            <a href={ctSession.co_write} target="_blank" class="btn btn-info">
+              {t('agenda.note')}
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="mb-4 flex flex-col gap-4">
+        {
+          speakers.map(speaker => (
+            <a href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`} class="group flex items-center gap-4 text-inherit no-underline">
+              <div class="grid aspect-square w-18 shrink-0 place-items-center overflow-hidden rounded-full bg-[#f1f5f9] md:w-24">
+                <img class:list={[speaker.avatar ? 'h-full w-full' : 'w-[60%]']} src={getAvatar(speaker)} alt={getSpeakerName(speaker)} />
+              </div>
+              <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{getSpeakerName(speaker)}</span>
+            </a>
+          ))
+        }
+      </div>
+      <Markdown content={sessionDescription} class="border-t border-neutral-300 py-4" />
+    </div>
+  </div>
+</div>
