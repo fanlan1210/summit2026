@@ -25,7 +25,12 @@ function getSpeakerName(speaker) {
 }
 ---
 
-<div class="session session-canClick rounded-tl p-3 text-white" style={`background-color: ${ctColorMap[ctSession.id]};`} data-id={ctSession.id} data-room={ctSession.broadcast || ctSession.room}>
+<div
+  class="session session-canClick ct-session-content rounded-tl p-3 text-white"
+  style={`background-color: ${ctColorMap[ctSession.id]};`}
+  data-id={ctSession.id}
+  data-room={ctSession.broadcast || ctSession.room}
+>
   <div class="font-bold">{ctSession.zh.title}</div>
 
   <div class="modal-content hidden">

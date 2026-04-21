@@ -29,7 +29,7 @@ function getColumnStartEnd(columns) {
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 ---
 
-<div class:list={['m-3 flex flex-col transition-opacity']} style={style}>
+<div class:list={['session', canClick ? 'session-canClick' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id} data-room={session.broadcast || session.room}>
   <div
     class:list={[
       'relative z-10 shrink-0 grow rounded hover:z-20',

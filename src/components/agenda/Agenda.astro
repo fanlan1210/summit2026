@@ -83,8 +83,9 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 
   // Reuse the same modal HTML as clicking a session cell
   function renderSessionModal(session: HTMLElement) {
-    const header = session.querySelector('.modal-content .header')
-    const body = session.querySelector('.modal-content .body')
+    const modalContent = getOwnModalContent(session)
+    const header = modalContent?.querySelector('.header')
+    const body = modalContent?.querySelector('.body')
     if (!header || !body) return false
     showModalWith({ header: header.innerHTML, body: body.innerHTML })
     return true
@@ -96,6 +97,14 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     if (!session) return
 
     openSessionModal(session, { updateHash: true })
+  }
+
+  function getOwnModalContent(session: HTMLElement) {
+    if (session.classList.contains('ct-session-content')) {
+      return session.querySelector('.modal-content')
+    }
+
+    return session.querySelector('.session-content .modal-content')
   }
 
   function updateSessionHash(session: HTMLElement) {

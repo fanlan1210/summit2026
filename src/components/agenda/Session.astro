@@ -28,7 +28,7 @@ function getSpeakerName(speaker) {
 }
 ---
 
-<div class:list={['session', canClick ? 'session-canClick' : '', 'p-3']} data-id={session.id} data-room={session.broadcast || session.room}>
+<div class="session-content p-3">
   <div class="font-bold">{sessionTitle}</div>
   <div class="flex flex-col items-stretch">
     {speakers.map(speaker => <div class="text-sm">{getSpeakerName(speaker)}</div>)}
