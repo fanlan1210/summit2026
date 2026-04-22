@@ -38,7 +38,7 @@ npm run fetch-schedule
 
 放在 `public/img/avatars` 底下。
 
-上傳前請先檢查檔案副檔名是否正規化（小寫），以 ImageMagick 縮放到短邊 960 像素，並以 Zopfli、OptimJPEG等軟體壓縮過（壓縮品質 90%）：
+上傳前請先檢查檔案副檔名是否正規化（小寫），以 ImageMagick 縮放到短邊 960 像素，並以 Zopfli、JPEGOptim 等軟體壓縮過（壓縮品質 90%）：
 
 ```bash
 for i in *.jpg; do
