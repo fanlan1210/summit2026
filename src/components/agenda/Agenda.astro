@@ -59,6 +59,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   agendaGridEl?.addEventListener('click', showSessionModal)
   mobileSessionsEl?.addEventListener('click', showSessionModal)
   window.addEventListener('modal:hide', handleModalHide)
+  window.addEventListener('hashchange', handleSessionHashChange)
 
   type OpenSessionModalOptions = {
     updateHash?: boolean
@@ -128,6 +129,10 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     const session = getVisibleElementFromHash(id => `.session.session-canClick[data-id="${id}"]`)
     if (!session) return
     openSessionModal(session, { scroll: true })
+  }
+
+  function handleSessionHashChange() {
+    tryOpenSessionFromHash()
   }
 
   requestAnimationFrame(() => tryOpenSessionFromHash())
