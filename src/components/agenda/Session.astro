@@ -4,7 +4,7 @@ import schedule from '~/data/schedule.json'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { formatHHmm, formatMMdd } from '~/utils/datetime'
-import { getLocalizedSpeakerName, getAvatar } from '~/utils/speaker'
+import { getLocalizedSpeakerName, getAvatar } from '~/utils/build/speaker'
 import SessionBadges from './SessionBadges.astro'
 
 const { t } = useI18n(Astro.url.pathname)

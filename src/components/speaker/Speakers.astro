@@ -2,7 +2,7 @@
 import Layout from '~/layouts/Layout.astro'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
-import { getSpeakerProfile } from '~/utils/speaker'
+import { getSpeakerProfile } from '~/utils/build/speaker'
 import SpeakerGridCard from './SpeakerGridCard.astro'
 
 const { t } = useI18n(Astro.url.pathname)

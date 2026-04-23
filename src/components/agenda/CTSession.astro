@@ -6,7 +6,7 @@ import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import Markdown from '~/components/Markdown.astro'
 import SessionBadges from './SessionBadges.astro'
 import schedule from '~/data/schedule.json'
-import { getLocalizedSpeakerName, getAvatar } from '~/utils/speaker'
+import { getLocalizedSpeakerName, getAvatar } from '~/utils/build/speaker'
 import { ctColorMap } from './ctColorMap'
 
 const { t } = useI18n(Astro.url.pathname)

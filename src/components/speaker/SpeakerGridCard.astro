@@ -4,7 +4,7 @@ import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import { formatHHmm, formatMMdd, compareDate } from '~/utils/datetime'
-import { getSpeakerProfile, getAvatar } from '~/utils/speaker'
+import { getSpeakerProfile, getAvatar } from '~/utils/build/speaker'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
