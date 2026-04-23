@@ -1,19 +1,13 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n'
 import Markdown from '~/components/Markdown.astro'
 import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
-import { AGENDA_DAY2_DATE } from '~/utils/build/agenda/dates'
+import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import { formatHHmm, formatMMdd, compareDate } from '~/utils/datetime'
 import { getSpeakerProfile, getAvatar } from '~/utils/speaker'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-// Localized agenda/dayN + #sessionId for hash deep-link
-function hrefForAgendaSession(start, id) {
-  const day = start.startsWith(AGENDA_DAY2_DATE) ? 'agenda/day2' : 'agenda/day1'
-  return `${getRelativeLocaleUrl(locale, day)}#${encodeURIComponent(id)}`
-}
 const isZhTW = locale === 'zh-tw'
 
 const { speaker } = Astro.props
@@ -52,7 +46,7 @@ const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).
               const title = isZhTW ? session.zh.title : session.en.title
               const info = `${formatMMdd(session.start)} ${formatHHmm(session.start)} ~ ${formatHHmm(session.end)} @ ${session.room}`
               return (
-                <a class="mb-4 block text-inherit no-underline hover:underline" href={hrefForAgendaSession(session.start, session.id)}>
+                <a class="mb-4 block text-inherit no-underline hover:underline" href={hrefForAgendaSession(locale, session.start, session.id)}>
                   <h5 class="font-bold">{title}</h5>
                   <div class="text-sm text-neutral-500">{info}</div>
                 </a>

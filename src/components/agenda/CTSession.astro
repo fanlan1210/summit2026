@@ -1,6 +1,8 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import { formatHHmm, formatMMdd } from '~/utils/datetime'
+import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import Markdown from '~/components/Markdown.astro'
 import SessionBadges from './SessionBadges.astro'
 import schedule from '~/data/schedule.json'
@@ -15,6 +17,7 @@ const { ctSession } = Astro.props
 const sessionTitle = isZhTW ? ctSession.zh.title : ctSession.en.title || ctSession.zh.title
 const sessionDescription = isZhTW ? ctSession.zh.description : ctSession.en.description || ctSession.zh.description
 const speakers = ctSession.speakers.map(speakerId => speakerIdToDetail(speakerId))
+const subSessions = schedule.sessions.filter(session => session.tags.includes(ctSession.id))
 
 function speakerIdToDetail(speakerId) {
   return schedule.speakers.find(speaker => speaker.id === speakerId)
@@ -69,6 +72,22 @@ function getSpeakerName(speaker) {
         }
       </div>
       {sessionDescription && <Markdown content={sessionDescription} class="border-t border-neutral-300 py-4" />}
+      {
+        subSessions.length > 0 && (
+          <div class="border-t border-neutral-300 pt-4">
+            {subSessions.map(session => {
+              const title = isZhTW ? session.zh.title : session.en.title
+              const info = `${formatMMdd(session.start)} ${formatHHmm(session.start)} ~ ${formatHHmm(session.end)} @ ${session.room}`
+              return (
+                <a class="mb-4 block text-inherit no-underline hover:underline" href={hrefForAgendaSession(locale, session.start, session.id)}>
+                  <h5 class="font-bold">{title}</h5>
+                  <div class="text-sm text-neutral-500">{info}</div>
+                </a>
+              )
+            })}
+          </div>
+        )
+      }
     </div>
   </div>
 </div>
