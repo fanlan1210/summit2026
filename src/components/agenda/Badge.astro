@@ -1,12 +1,20 @@
 ---
 import { getLocaleFromPath } from '~/i18n/utils'
 
-const { className } = Astro.props
+const { className, style, href } = Astro.props
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 const isZhTW = locale === 'zh-tw'
 ---
 
-<span class:list={[className, 'rounded-full px-4 pb-0.5', isZhTW ? 'pt-1' : 'pt-0.5']}>
-  <slot />
-</span>
+{
+  href ? (
+    <a href={href} class:list={[className, 'rounded-full px-4 pb-0.5', isZhTW ? 'pt-1' : 'pt-0.5']} style={style}>
+      <slot />
+    </a>
+  ) : (
+    <span class:list={[className, 'rounded-full px-4 pb-0.5', isZhTW ? 'pt-1' : 'pt-0.5']} style={style}>
+      <slot />
+    </span>
+  )
+}

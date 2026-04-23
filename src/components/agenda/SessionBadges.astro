@@ -1,4 +1,6 @@
 ---
+import { ctColorMap } from './ctColorMap'
+import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import Badge from '~/components/agenda/Badge.astro'
@@ -22,10 +24,23 @@ function typeToDetail(type) {
 
 const isEvent = session.type === 'E'
 const isUnique = session.zh.title === type.zh.name
+const ctTag = session.tags.find(tagId => tagId.startsWith('CT-'))
+const ctSession = ctTag ? schedule.sessions.find(session => session.id === ctTag) : null
 ---
 
 <div class="my-2 flex flex-wrap gap-2 text-xs text-white">
   {session.type && !(isEvent || isUnique) && <Badge className="bg-info-dark">{isZhTW ? type.zh.name : type.en.name}</Badge>}
   {session.language && <Badge className="bg-[#585858]">{t(`language.${session.language}`)}</Badge>}
-  {tags.map(tag => <Badge className="bg-[#A4A4A4]">{isZhTW ? tag.zh.name : tag.en.name}</Badge>)}
+  {
+    tags.map(tag => {
+      const tagName = isZhTW ? tag.zh.name : tag.en.name
+      return ctSession ? (
+        <Badge style={`background-color: ${ctColorMap[ctSession.id]}`} href={hrefForAgendaSession(locale, ctSession.start, ctSession.id)}>
+          {tagName}
+        </Badge>
+      ) : (
+        <Badge className="bg-[#A4A4A4]">{tagName}</Badge>
+      )
+    })
+  }
 </div>
