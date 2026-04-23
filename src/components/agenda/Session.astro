@@ -70,7 +70,8 @@ function getSpeakerName(speaker) {
               </a>
             ))}
           </div>
-          <Markdown content={sessionDescription} class="border-t border-neutral-300 py-4" />
+
+          {sessionDescription && <Markdown content={sessionDescription} class="border-t border-neutral-300 py-4" />}
         </div>
       </div>
     )
