@@ -27,7 +27,7 @@ const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).
 
 <div class="speaker flex cursor-pointer flex-col items-center justify-center" data-id={speaker.id}>
   <div class="flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100">
-    <img class:list={[isDefaultAvatar ? 'w-1/2' : 'h-full w-full object-cover']} src={avatar} alt={name} />
+    <img class:list={[isDefaultAvatar ? 'w-1/2' : 'h-full w-full object-cover object-top']} src={avatar} alt={name} />
   </div>
   <div class="my-2 text-center">{name}</div>
 
