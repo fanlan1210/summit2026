@@ -35,6 +35,9 @@ function getSpeakerName(speaker) {
   data-room={ctSession.broadcast || ctSession.room}
 >
   <div class="font-bold">{sessionTitle}</div>
+  <div class="flex flex-col items-stretch">
+    {speakers.map(speaker => <div class="text-sm">{getSpeakerName(speaker)}</div>)}
+  </div>
 
   <div class="modal-content hidden">
     <div class="header">
