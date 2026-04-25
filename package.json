@@ -7,7 +7,7 @@
   "author": "g0v-summit-2026-working-group",
   "license": "",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "deploy": "node ./deploy.js",
