@@ -4,11 +4,21 @@
     "agree": "Agree",
     "dates": {
       "title": "Key Dates",
-      "1": { "title": "CFP Opens" },
-      "2": { "title": "CFP Closes" },
-      "3": { "title": "Acceptance Sent" },
-      "4": { "title": "Agenda Announces" },
-      "5": { "title": "g0v Summit 2026" }
+      "1": {
+        "title": "CFP Opens"
+      },
+      "2": {
+        "title": "CFP Closes"
+      },
+      "3": {
+        "title": "Acceptance Sent"
+      },
+      "4": {
+        "title": "Agenda Announces"
+      },
+      "5": {
+        "title": "g0v Summit 2026"
+      }
     }
   },
   "date": {
@@ -223,7 +233,8 @@
     "staffRoom": "Staff Room",
     "restArea": "Rest Area",
     "description": "g0v Summit 2026 will be held at the Humanities and Social Sciences Building, Academia Sinica. Please refer to the <a href=\"./en/visit\">Visit</a> page for transportation information.",
-    "community_booth": "Community"
+    "community_booth": "Community",
+    "website": "Website"
   },
   "register": {
     "cta": "Buy Tickets",
