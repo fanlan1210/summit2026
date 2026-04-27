@@ -24,7 +24,7 @@ GitHub action 根據 main branch 更新，作為 staging site
 ```
 GCP_API_KEY=""
 SPREADSHEET_ID=""
-DEFAULT_AVATAR="https://summit.g0v.tw/2026/img/avatars/default.png"
+DEFAULT_AVATAR="https://summit.g0v.tw/2026/img/avatars/default.jpg"
 AVATAR_BASE_URL="https://summit.g0v.tw/2026/img/avatars/"
 ```
 
