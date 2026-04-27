@@ -33,7 +33,7 @@ export function getLocalizedSpeakerName(speaker, locale) {
 }
 
 export function isDefaultAvatar(speaker) {
-  return !speaker.avatar || speaker.avatar === import.meta.env.DEFAULT_AVATAR
+  return !speaker.avatar || speaker.avatar.includes('avatars/default')
 }
 
 export function getAvatar(speaker) {
