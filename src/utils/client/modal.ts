@@ -16,6 +16,7 @@ export function hideModal() {
 
 export function showModalWith({ header, body, size = 'sm' }) {
   modalHeaderEl.innerHTML = header
+  modalHeaderEl.classList.toggle('hidden', !header)
   modalBodyEl.innerHTML = body
   modalBodyEl.scrollTo(0, 0)
   modalBoxEl.classList.remove('md:max-w-lg', 'md:max-w-xl', 'md:max-w-2xl')

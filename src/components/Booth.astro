@@ -1,0 +1,62 @@
+---
+const { booth } = Astro.props
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import Icon from './Icon.astro'
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const getIcon = (name: string) => {
+  switch (name) {
+    case 'website':
+      return 'ri:global-line'
+    case 'facebook':
+      return 'ri:facebook-line'
+    case 'twitter':
+      return 'ri:twitter-line'
+    case 'instagram':
+      return 'ri:instagram-line'
+    case 'youtube':
+      return 'ri:youtube-line'
+    case 'flickr':
+      return 'ri:flickr-line'
+    case 'github':
+      return 'ri:github-line'
+    default:
+      return 'ri:link'
+  }
+}
+---
+
+<div class="booth-card tranition-all flex h-fit cursor-pointer gap-2 rounded-lg border border-dashed border-transparent duration-300 hover:border-neutral-500">
+  <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="h-16 w-16 rounded-lg bg-neutral-100 object-contain p-2" />
+  <div>
+    <h5>{locale === 'en' ? booth.name_en : booth.name}</h5>
+    <p class="m-0 text-sm text-neutral-500">{t('venue.community_booth')}</p>
+  </div>
+  <div class="modal-content hidden">
+    <div class="body">
+      <div class="flex gap-8">
+        <div>
+          <div class="mb-8 flex items-center">
+            <div>
+              <h3 class="mb-4">{locale === 'en' ? booth.name_en : booth.name}</h3>
+              <div class="text-neutral-500">{t('venue.community_booth')}</div>
+            </div>
+            <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="ms-auto h-24 w-24 rounded-lg bg-neutral-100 object-contain p-2 md:hidden" />
+          </div>
+          <div>{locale === 'en' ? booth.description_en : booth.description}</div>
+        </div>
+        <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="hidden h-48 w-48 rounded-lg bg-neutral-100 object-contain p-2 md:block" />
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        {
+          booth.links.map(link => (
+            <a href={link.url} title={link.label} target="_blank" rel="noopener noreferrer" class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-neutral-200 transition-colors hover:bg-neutral-300">
+              <Icon name={getIcon(link.label)} width={24} height={24} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
