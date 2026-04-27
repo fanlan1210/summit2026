@@ -33,7 +33,7 @@ export function getLocalizedSpeakerName(speaker, locale) {
 }
 
 export function isDefaultAvatar(speaker) {
-  return !speaker.avatar || speaker.avatar.startsWith('https://summit.g0v.tw/2026/img/banner/g0v_stool-nbg-b-s.svg')
+  return !speaker.avatar || speaker.avatar === import.meta.env.DEFAULT_AVATAR
 }
 
 export function getAvatar(speaker) {
