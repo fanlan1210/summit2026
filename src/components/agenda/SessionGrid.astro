@@ -18,12 +18,24 @@ const isRest = session.type === 'R'
 const canClick = !isRest
 
 function getColumnStartEnd(columns) {
-  columns = columns.split(',')
-  if (columns.length !== 1) {
-    columns.sort((a, b) => columnOrder.indexOf(a) - columnOrder.indexOf(b))
+  const list = Array.isArray(columns) ? [...columns] : columns.split(',').map(column => column.trim())
+
+  const sorted = list
+    .map(column => ({
+      column,
+      index: columnOrder.indexOf(column),
+    }))
+    .filter(item => item.index !== -1)
+    .sort((a, b) => a.index - b.index)
+
+  if (sorted.length === 0) {
+    return [undefined, undefined]
   }
-  const last = columnOrder.indexOf(columns.at(-1)) + 1
-  return [columns[0], columnOrder[last]]
+
+  const startColumn = sorted[0].column
+  const endColumn = columnOrder[sorted[sorted.length - 1].index + 1]
+
+  return [startColumn, endColumn]
 }
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
