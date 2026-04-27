@@ -32,8 +32,23 @@ export function getLocalizedSpeakerName(speaker, locale) {
   return getLocalizedSpeakerField(speaker, 'name', locale)
 }
 
+export function isDefaultAvatar(speaker) {
+  return !speaker.avatar || speaker.avatar.startsWith('https://summit.g0v.tw/2026/img/banner/g0v_stool-nbg-b-s.svg')
+}
+
 export function getAvatar(speaker) {
-  return speaker.avatar ? `${import.meta.env.BASE_URL}img/avatars/${speaker.avatar}` : getDefaultAvatar(getLocalizedSpeakerName(speaker, 'zh-tw'))
+  if (isDefaultAvatar(speaker)) {
+    return getDefaultAvatar(getLocalizedSpeakerName(speaker, 'zh-tw'))
+  }
+
+  if (speaker.avatar.includes('summit.g0v.tw/2026')) {
+    const filename = speaker.avatar.split('/').pop()
+    return `${import.meta.env.BASE_URL}img/avatars/${filename}`
+  }
+
+  if (speaker.avatar.startsWith('http')) {
+    return speaker.avatar
+  }
 }
 
 export function getDefaultAvatar(name) {

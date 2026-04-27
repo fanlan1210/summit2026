@@ -4,7 +4,7 @@ import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import { formatHHmm, formatMMdd, compareDate } from '~/utils/datetime'
-import { getSpeakerProfile, getAvatar } from '~/utils/build/speaker'
+import { getSpeakerProfile, getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
@@ -13,7 +13,6 @@ const isZhTW = locale === 'zh-tw'
 const { speaker } = Astro.props
 
 const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
-const isDefaultAvatar = !speaker.avatar
 const avatar = getAvatar(speaker)
 
 const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).sort((a, b) => compareDate(a.start, b.start))
@@ -21,7 +20,7 @@ const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).
 
 <div class="speaker flex cursor-pointer flex-col items-center justify-center" data-id={speaker.id}>
   <div class="flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100">
-    <img class:list={[isDefaultAvatar ? 'w-1/2' : 'h-full w-full object-cover object-top']} src={avatar} alt={name} />
+    <img class:list={[isDefaultAvatar(speaker) ? 'w-1/2' : 'h-full w-full object-cover object-top']} src={avatar} alt={name} />
   </div>
   <div class="my-2 text-center">{name}</div>
 
@@ -29,7 +28,7 @@ const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).
     <div class="header">
       <div class="flex items-center gap-4">
         <div class="grid aspect-square w-14 place-items-center overflow-hidden rounded-full bg-slate-100 md:w-20">
-          <img class:list={[isDefaultAvatar ? 'w-1/2' : 'h-full w-full object-cover', '']} src={avatar} alt={name} />
+          <img class:list={[isDefaultAvatar(speaker) ? 'w-1/2' : 'h-full w-full object-cover', '']} src={avatar} alt={name} />
         </div>
         <div class="flex flex-col">
           <h4 class="font-bold">{name}</h4>
