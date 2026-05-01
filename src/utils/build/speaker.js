@@ -5,6 +5,9 @@ const stools = [
   `${import.meta.env.BASE_URL}/img/banner/g0v_stool-nbg-y-s.svg`,
 ]
 
+const DEFAULT_AVATAR_SEGMENT = 'avatars/default'
+const PRODUCTION_SUMMIT_AVATAR_SEGMENT = 'summit.g0v.tw/2026'
+
 function normalizeText(value) {
   return typeof value === 'string' ? value.trim() : ''
 }
@@ -33,26 +36,45 @@ export function getLocalizedSpeakerName(speaker, locale) {
 }
 
 export function isDefaultAvatar(speaker) {
-  return !speaker.avatar || speaker.avatar.includes('avatars/default')
+  return !speaker?.avatar || speaker.avatar.includes(DEFAULT_AVATAR_SEGMENT)
 }
 
 export function getAvatar(speaker) {
+  const avatar = speaker?.avatar
+
   if (isDefaultAvatar(speaker)) {
     return getDefaultAvatar(getLocalizedSpeakerName(speaker, 'zh-tw'))
   }
 
-  if (speaker.avatar.includes('summit.g0v.tw/2026')) {
-    const filename = speaker.avatar.split('/').pop()
-    return `${import.meta.env.BASE_URL}img/avatars/${filename}`
+  if (isProductionSummitAvatar(avatar)) {
+    return toLocalAvatarPath(getAvatarFilename(avatar))
   }
 
-  if (speaker.avatar.startsWith('http')) {
-    return speaker.avatar
+  if (isRemoteAvatar(avatar)) {
+    return avatar
   }
+
+  return toLocalAvatarPath(avatar)
 }
 
 export function getDefaultAvatar(name) {
   return stools[stringToNumber(name, 0, stools.length - 1)]
+}
+
+function isProductionSummitAvatar(avatar) {
+  return typeof avatar === 'string' && avatar.includes(PRODUCTION_SUMMIT_AVATAR_SEGMENT)
+}
+
+function isRemoteAvatar(avatar) {
+  return typeof avatar === 'string' && avatar.startsWith('http')
+}
+
+function getAvatarFilename(avatar) {
+  return avatar.split('/').pop()?.split('?')[0] || ''
+}
+
+function toLocalAvatarPath(filename) {
+  return `${import.meta.env.BASE_URL}img/avatars/${filename}`
 }
 
 function stringToNumber(str, from, to) {
