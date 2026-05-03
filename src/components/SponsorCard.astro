@@ -1,6 +1,7 @@
 ---
 import { useI18n } from '~/i18n/utils'
 import Icon from '~/components/Icon.astro'
+import Markdown from '~/components/Markdown.astro'
 
 const { name, description, site, img, tier } = Astro.props
 const { t } = useI18n(Astro.url.pathname)
@@ -56,7 +57,7 @@ const { t } = useI18n(Astro.url.pathname)
                 </div>
                 <h2 class="text-xl font-bold text-neutral-800">{name}</h2>
               </div>
-              <div class="text-base leading-relaxed whitespace-pre-line text-neutral-700" set:html={description} />
+              <Markdown content={description} />
             </div>
             <div class="hidden aspect-square h-48 w-48 shrink-0 overflow-hidden rounded-lg bg-neutral-50 p-2 md:block">
               <img class="h-full w-full object-contain" src={`./img/partners/${img}`} alt={name} />
