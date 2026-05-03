@@ -6,6 +6,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { formatHHmm, formatMMdd } from '~/utils/datetime'
 import { getLocalizedSpeakerName, getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
 import SessionBadges from './SessionBadges.astro'
+import AvatarImage from '~/components/AvatarImage.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
@@ -64,7 +65,7 @@ function getSpeakerName(speaker) {
             {speakers.map(speaker => (
               <a href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`} class="group flex items-center gap-4 text-inherit no-underline">
                 <div class="grid aspect-square w-18 shrink-0 place-items-center overflow-hidden rounded-full bg-[#f1f5f9] md:w-24">
-                  <img class:list={[isDefaultAvatar(speaker) ? 'w-[60%]' : 'h-full w-full object-cover object-top']} src={getAvatar(speaker)} alt={getSpeakerName(speaker)} />
+                  <AvatarImage class:list={[isDefaultAvatar(speaker) ? 'w-[60%]' : 'h-full w-full object-cover object-top']} src={getAvatar(speaker)} alt={getSpeakerName(speaker)} />
                 </div>
                 <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{getSpeakerName(speaker)}</span>
               </a>

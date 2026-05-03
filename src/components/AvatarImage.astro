@@ -1,0 +1,8 @@
+---
+const fallbackSrc = `${import.meta.env.BASE_URL}img/avatars/default.jpg`
+
+const { src, onerror, ...props } = Astro.props
+const handleError = `this.onerror=null;this.src='${fallbackSrc}'`
+---
+
+<img src={src} onerror={onerror ?? handleError} {...props} />
