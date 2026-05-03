@@ -22,16 +22,66 @@ const { t } = useI18n(Astro.url.pathname)
         </span>
       </div>
 
-      {description && <p class="mb-3 text-sm leading-relaxed text-neutral-600">{description}</p>}
+      <div class="flex flex-wrap gap-2">
+        {
+          site && (
+            <a href={site} target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-fit gap-1.5 text-sm">
+              {t('sponsor.site')}
+              <Icon name="material-symbols:open-in-new" width="14" height="14" />
+            </a>
+          )
+        }
 
-      {
-        site && (
-          <a href={site} target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-fit gap-1.5 text-sm">
-            {t('sponsor.site')}
-            <Icon name="material-symbols:open-in-new" width="14" height="14" />
-          </a>
-        )
-      }
+        {
+          description && (
+            <button type="button" class="sponsor-description-trigger btn btn-outline-primary btn-sm w-fit gap-1.5 text-sm" aria-haspopup="dialog">
+              {t('sponsor.description')}
+              <Icon name="material-symbols:info-outline" width="14" height="14" />
+            </button>
+          )
+        }
+      </div>
     </div>
   </div>
+
+  {
+    description && (
+      <div class="modal-content hidden">
+        <div class="body">
+          <div class="mb-5 flex justify-center">
+            <div>
+              <div class="mb-4 flex items-center gap-4">
+                <div class="aspect-square h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-neutral-50 p-2 md:hidden">
+                  <img class="h-full w-full object-contain" src={`./img/partners/${img}`} alt={name} />
+                </div>
+                <h2 class="text-xl font-bold text-neutral-800">{name}</h2>
+              </div>
+              <div class="text-base leading-relaxed whitespace-pre-line text-neutral-700" set:html={description} />
+            </div>
+            <div class="hidden aspect-square h-48 w-48 shrink-0 overflow-hidden rounded-lg bg-neutral-50 p-2 md:block">
+              <img class="h-full w-full object-contain" src={`./img/partners/${img}`} alt={name} />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 </div>
+
+<script>
+  import { showModalWith } from '~/utils/client/modal'
+
+  document.querySelectorAll('.sponsor-description-trigger').forEach(trigger => {
+    trigger.addEventListener('click', e => {
+      const card = (e.currentTarget as HTMLElement).closest('.sponsor-card')
+      const body = card?.querySelector('.modal-content .body')
+      if (!body) return
+
+      showModalWith({
+        header: null,
+        body: body.innerHTML,
+        size: 'lg',
+      })
+    })
+  })
+</script>
