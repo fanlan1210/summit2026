@@ -193,7 +193,11 @@
         "description": "g0v Jothon is the task force responsible for organizing g0v’s Bi-monthly Hackathons and Infrathons, as well as managing the community’s fundraising affairs. Currently, the team consists of the Jothon Volunteer Group, project-based collaborators, and eight members of the Steering Committee."
       },
       "ima": "IMA",
-      "netivism": "NETivism"
+      "netivism": "NETivism",
+      "friedrich": {
+        "name": "Friedrich-Naumann-Stiftung For Freedom",
+        "description": "The Friedrich-Naumann-Stiftung for Freedom (FNF) is a German political foundation. In Germany and in 60 countries around the world, FNF and its partners promote freedom, liberalism, democracy, human rights, pluralism, tolerance, curbing climate change, an open and digital society, social market economy, and the rule of law. We are a non-profit organization that focuses on civic education.\n\nWe work with government institutions, NGOs, academia, political parties, researchers, students, journalists, activists, start-ups and artists who share our values and want to join us in promoting freedom. We work collaboratively and seek long-term partnerships, highlighting the importance of individual freedom and strong democratic institutions. FNF promotes economic freedom and free trade. We want businesses to respect human rights. We highly value privacy and data protection. FNF promotes curbing climate change by utilizing technological advances, for example in the context of smart cities.\n\nFNF has worked in Asia since 1969. Today, we have five offices in Asia: Bangkok, Jarkata, Manila, Seoul, and Taipei. We also work in Malaysia.\n\nIn Taiwan, Taiwan Office/ Global Innovation Hub of the Friedrich Naumann Foundation for Freedom was established in 2021. The Hub focuses on “digital transformation” and “innovation for democracy.” With its international global network of experts, partners and collaborators, the hub aims to support the Friedrich Naumann Foundation on its way to becoming a creative innovation platform for liberalism."
+      }
     }
   },
   "sponsor": {
