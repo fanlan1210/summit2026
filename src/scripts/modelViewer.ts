@@ -35,6 +35,8 @@ export function initModelViewer() {
   const targetCameraPosition = new THREE.Vector3(...(initialPosition < 1 ? [3, 0, 2] : initialPosition > 1 ? [3, 0, -2] : [3.23, 0, 0]))
   const initCameraShift = targetCameraPosition.clone().sub(initCameraPosition)
   const isMobile = container.clientWidth <= container.clientHeight
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en')
+  const sloganModelPath = isEnglish ? 'models/slogan_merge_en.svg' : 'models/slogan_merge.svg'
 
   // Get props from data attributes
   const backgroundColor = 0xfcf5f1
@@ -72,7 +74,7 @@ export function initModelViewer() {
       gravity: new CANNON.Vec3(0, -9.82, 0), // Earth gravity
     })
     world.broadphase = new CANNON.NaiveBroadphase()
-      ; (world.solver as CANNON.GSSolver).iterations = 10
+    ;(world.solver as CANNON.GSSolver).iterations = 10
     world.defaultContactMaterial.friction = 0.3
     world.defaultContactMaterial.restitution = 0.1 // No bouncing
 
@@ -88,10 +90,22 @@ export function initModelViewer() {
     // Create wall
     const wallBody = new CANNON.Body({ mass: 0 })
     const walls: [[number, number, number], [number, number, number]][] = [
-      [[-1, 0, 0], [0, Math.PI / 2, 0]],
-      [[2, 0, 0], [0, -Math.PI / 2, 0]],
-      [[0, 0, 4], [-Math.PI / 6, Math.PI, 0]],
-      [[0, 0, -4], [Math.PI / 6, 0, 0]],
+      [
+        [-1, 0, 0],
+        [0, Math.PI / 2, 0],
+      ],
+      [
+        [2, 0, 0],
+        [0, -Math.PI / 2, 0],
+      ],
+      [
+        [0, 0, 4],
+        [-Math.PI / 6, Math.PI, 0],
+      ],
+      [
+        [0, 0, -4],
+        [Math.PI / 6, 0, 0],
+      ],
     ]
     for (const [position, rotation] of walls) {
       const plane = new CANNON.Plane()
@@ -157,7 +171,7 @@ export function initModelViewer() {
     controls.minPolarAngle = Math.PI * 0.1
     controls.maxPolarAngle = Math.PI * 0.4
     controls.enabled = false
-    controls.rotateSpeed = (isMobile ? 1.25 : 0.5)
+    controls.rotateSpeed = isMobile ? 1.25 : 0.5
     renderer.domElement.addEventListener('pointerdown', handlePointerDown)
     controls.target.set(0, 0.4, 0)
     controls.update()
@@ -189,7 +203,7 @@ export function initModelViewer() {
 
     // Create slogan
     const svgLoader = new SVGLoader()
-    svgLoader.load('models/slogan_merge.svg', data => {
+    svgLoader.load(sloganModelPath, data => {
       const paths = data.paths
       const group = new THREE.Group()
       const material = new THREE.MeshStandardMaterial({ color: 0x333333 })
@@ -202,7 +216,7 @@ export function initModelViewer() {
           group.add(mesh)
         })
       })
-      group.position.set(-1, (isMobile ? 1.5 : 1), 1.15)
+      group.position.set(-1, isMobile ? 1.5 : 1, 1.15)
       group.scale.set(0.002, 0.002, 0.002)
       group.rotation.set(0, -Math.PI / 2, Math.PI)
       scene.add(group)
@@ -236,7 +250,7 @@ export function initModelViewer() {
         quaternion: rotation,
         type: CANNON.Body.STATIC,
         linearDamping: 0,
-        angularDamping: 0.8
+        angularDamping: 0.8,
       })
       const shape = new CANNON.Sphere(radius)
       body.addShape(shape)
@@ -248,45 +262,47 @@ export function initModelViewer() {
 
     // Load GLTF model
     const gltfLoader = new GLTFLoader()
-    gltfLoader.load('models/plastic-stool-r.glb', gltf => {
-      const mesh = gltf.scene.children[0] as THREE.Mesh
-      mesh.castShadow = true
-      mesh.receiveShadow = true
-      mesh.geometry.computeBoundingBox()
-      mesh.geometry.center()
+    gltfLoader.load(
+      'models/plastic-stool-r.glb',
+      gltf => {
+        const mesh = gltf.scene.children[0] as THREE.Mesh
+        mesh.castShadow = true
+        mesh.receiveShadow = true
+        mesh.geometry.computeBoundingBox()
+        mesh.geometry.center()
 
-      for (const stool of stools) {
-        const clone = mesh.clone()
-        const material = new THREE.MeshStandardMaterial()
-        material.color.setHex(stool.color)
-        material.side = THREE.DoubleSide
-        clone.material = material
-        clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z)
+        for (const stool of stools) {
+          const clone = mesh.clone()
+          const material = new THREE.MeshStandardMaterial()
+          material.color.setHex(stool.color)
+          material.side = THREE.DoubleSide
+          clone.material = material
+          clone.scale.set(stool.scale.x, stool.scale.y, stool.scale.z)
 
-        // Create physics body for the stool using cylinder for better accuracy
-        const stoolRadius = 0.24 * stool.scale.x
-        const stoolHeight = 0.48 * stool.scale.y
-        const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4)
+          // Create physics body for the stool using cylinder for better accuracy
+          const stoolRadius = 0.24 * stool.scale.x
+          const stoolHeight = 0.48 * stool.scale.y
+          const stoolShape = new CANNON.Cylinder(stoolRadius * 0.78, stoolRadius, stoolHeight, 4)
 
-        // Position the stool with its bottom at the ground (y=0)
-        const physicsYPosition = stoolHeight / 2 + 0.1 // Center of mass at half height, just above ground
+          // Position the stool with its bottom at the ground (y=0)
+          const physicsYPosition = stoolHeight / 2 + 0.1 // Center of mass at half height, just above ground
 
-        const stoolBody = new CANNON.Body({
-          mass: 1,
-          position: new CANNON.Vec3(stool.position.x, physicsYPosition, stool.position.z),
-          linearDamping: 0.4,
-          angularDamping: 0.8,
-        })
-        const q = new CANNON.Quaternion()
-        q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4)
-        stoolBody.addShape(stoolShape, new CANNON.Vec3(), q)
-        world.addBody(stoolBody)
+          const stoolBody = new CANNON.Body({
+            mass: 1,
+            position: new CANNON.Vec3(stool.position.x, physicsYPosition, stool.position.z),
+            linearDamping: 0.4,
+            angularDamping: 0.8,
+          })
+          const q = new CANNON.Quaternion()
+          q.setFromAxisAngle(new CANNON.Vec3(0, 1, 0), Math.PI / 4)
+          stoolBody.addShape(stoolShape, new CANNON.Vec3(), q)
+          world.addBody(stoolBody)
 
-        // Store the mesh-body pair
-        stoolBodies.push({ mesh: clone, body: stoolBody })
-        scene.add(clone)
-      }
-    },
+          // Store the mesh-body pair
+          stoolBodies.push({ mesh: clone, body: stoolBody })
+          scene.add(clone)
+        }
+      },
       null,
       error => console.error('An error occurred loading the model:', error)
     )
@@ -329,7 +345,6 @@ export function initModelViewer() {
   observer.observe(container)
 
   const animate = () => {
-
     if (!isVisible) return
     requestAnimationFrame(animate)
 
@@ -400,7 +415,8 @@ export function initModelViewer() {
       pangolin.mesh.quaternion.copy(pangolin.body.quaternion as any)
 
       if (pangolin.body.type === CANNON.Body.KINEMATIC) {
-        if (Math.abs(pangolin.body.position.z) > 10) { // only bounce back if we reached one side
+        if (Math.abs(pangolin.body.position.z) > 10) {
+          // only bounce back if we reached one side
           lastDirection = -lastDirection
           pangolin.body.velocity.set(0, 0, lastDirection * 1.2)
           pangolin.body.angularVelocity.set(lastDirection * 8, 0, 0)
@@ -455,9 +471,9 @@ export function initModelViewer() {
       renderer.dispose()
     }
   })
-  window.addEventListener('keydown', (e) => {
+  window.addEventListener('keydown', e => {
     if (!stoolBodies.length) return
-    if (e.key === "r") {
+    if (e.key === 'r') {
       stoolBodies.forEach(({ body }, idx) => {
         const stool = stools[idx]
         const stoolHeight = 0.48 * stool.scale.y
@@ -466,7 +482,7 @@ export function initModelViewer() {
         body.velocity.set(0, 0, 0)
         body.angularVelocity.set(0, 0, 0)
       })
-    } else if (e.key === "Enter") {
+    } else if (e.key === 'Enter') {
       // simple konami
       pangolin.body.type = CANNON.Body.DYNAMIC
       const i = Math.floor(Math.random() * stoolBodies.length)
