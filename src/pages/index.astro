@@ -5,14 +5,13 @@ import Timeline from '~/components/Timeline.astro'
 import PastEvent from '~/components/PastEvent.astro'
 import Link from '~/components/Link.astro'
 import { useI18n } from '~/i18n/utils'
-import ModelViewer from '../components/ModelViewer.astro'
+import ModelViewer from '~/components/ModelViewer.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
 
 <link href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" rel="stylesheet" />
 <Layout pageName={t('title')}>
-  <div id="nav-transparent-flag" class="hidden"></div>
   <div class="h-[calc(50vh)] w-full md:h-[calc(100vh-100px)]">
     <ModelViewer />
   </div>
@@ -41,10 +40,10 @@ const { t } = useI18n(Astro.url.pathname)
       </section>
 
       <p class="text-center text-xl">{t('index.opening_in')}</p>
-      <div id="flipdown" class="flipdown mx-auto mb-20 flex w-auto! justify-center" data-headings={[t('date.days'),t('date.hours'),t('date.minutes'),t('date.seconds')]}></div>
+      <div id="flipdown" class="flipdown mx-auto mb-20 flex w-auto! justify-center" data-headings={[t('date.days'), t('date.hours'), t('date.minutes'), t('date.seconds')]}></div>
 
-      <div class="flex mb-20">
-        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="mx-auto btn btn-lg btn-primary flex items-center gap-2 md:inline-flex">
+      <div class="mb-20 flex">
+        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary mx-auto flex items-center gap-2 md:inline-flex">
           {t('register.cta')}<Icon name="mdi:external-link" width="22" />
         </a>
       </div>
@@ -149,7 +148,7 @@ const { t } = useI18n(Astro.url.pathname)
   function initCountdown() {
     const targetDate = new Date('2026-05-23T09:20:00+08:00')
     new FlipDown(targetDate.getTime() / 1000, {
-      headings: String(document.getElementById('flipdown').dataset.headings).split(',')
+      headings: String(document.getElementById('flipdown').dataset.headings).split(','),
     }).start()
   }
   initCountdown()
@@ -200,6 +199,6 @@ const { t } = useI18n(Astro.url.pathname)
   }
 
   .flipdown.flipdown__theme-dark {
-      font-family: inherit;
+    font-family: inherit;
   }
 </style>
