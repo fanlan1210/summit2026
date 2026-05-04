@@ -228,7 +228,9 @@
       "license": "授權方式",
       "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
       "pdf": "徵稿宣傳海報 (PDF)",
-      "notice": "徵稿宣傳公文 (Docs)"
+      "notice": "徵稿宣傳公文 (Docs)",
+      "summit-pdf": "年會宣傳海報 (PDF)",
+      "summit-notice": "年會宣傳公文 (Docs)"
     },
     "pastReports": {
       "title": "歷屆 g0v Summit 報導"

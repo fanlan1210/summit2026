@@ -227,8 +227,10 @@
       "subtitle": "g0v Summit 2026 Promotional Materials",
       "license": "License",
       "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
-      "pdf": "Poster (PDF)",
-      "notice": "Official Letter (Docs)"
+      "pdf": "Call for Proposals Poster (PDF)",
+      "notice": "Official Call for Proposals Announcement (Docs)",
+      "summit-pdf": "Summit Poster (PDF)",
+      "summit-notice": "Official Announcement for Summit (Docs)"
     },
     "pastReports": {
       "title": "Past News Reports"
