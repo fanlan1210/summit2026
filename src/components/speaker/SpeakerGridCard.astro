@@ -43,7 +43,7 @@ const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id)).
         sessions.length > 0 && (
           <div class="border-t border-neutral-300 pt-4">
             {sessions.map(session => {
-              const title = isZhTW ? session.zh.title : session.en.title
+              const title = isZhTW ? session.zh.title : session.en.title || session.zh.title
               const info = `${formatMMdd(session.start)} ${formatHHmm(session.start)} ~ ${formatHHmm(session.end)} @ ${session.room}`
               return (
                 <a class="mb-4 block text-inherit no-underline hover:underline" href={hrefForAgendaSession(locale, session.start, session.id)}>
