@@ -4,6 +4,7 @@ import Layout from '~/layouts/Layout.astro'
 import Desktop from './desktop/Desktop.astro'
 import Mobile from './mobile/Mobile.astro'
 import schedule from '~/data/schedule.json'
+import Icon from '~/components/Icon.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const { title, date } = Astro.props
@@ -20,7 +21,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   <Mobile title={title} date={date} />
 
   <div class="container mt-24 mb-16">
-    <!-- div class="rounded-3xl border-2 border-[#58A83F] bg-[#F6FFF3] p-6 text-[#306D13] md:p-12">
+    <div class="rounded-3xl border-2 border-[#58A83F] bg-[#F6FFF3] p-6 text-[#306D13] md:p-12">
       <h3 class="mb-7">{t('agenda.dont_miss')}</h3>
       <p class="mb-9">{t('agenda.opass_info')}</p>
       <div class="flex flex-col items-start gap-4 lg:flex-row">
@@ -33,7 +34,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
           </a>
         </div>
 
-        <a href="https://opass.app/open/?event_id=G0V_SUMMIT_2026" class="flex h-16 items-center gap-8 rounded-lg bg-[#58a83f] px-4 transition-colors hover:bg-[#4F9739] lg:ml-auto">
+        <a href="https://opass.app/open/?event_id=g0v_Summit_2026" class="flex h-16 items-center gap-8 rounded-lg bg-[#58a83f] px-4 transition-colors hover:bg-[#4F9739] lg:ml-auto">
           <div>
             <span class="block text-white">{t('agenda.has_installed_opass')}</span>
             <span class="block text-sm text-[#CFF0C5]">{t('agenda.open_in_app')}</span>
@@ -41,7 +42,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
           <Icon name="mdi:external-link" width="28" color="white" />
         </a>
       </div>
-    </div -->
+    </div>
   </div>
 </Layout>
 
