@@ -44,23 +44,14 @@ const getIcon = (name: string) => {
             </div>
             <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="ms-auto h-24 w-24 rounded-lg bg-neutral-100 object-contain p-2 md:hidden" />
           </div>
-          <div>{locale === 'en' ? booth.description_en : booth.description}</div>
+          <div set:html={(locale === 'en' ? booth.description_en : booth.description).split(/\n/).map((line) => `<p>${line}</p>`).join('')}></div>
         </div>
         <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="hidden h-48 w-48 rounded-lg bg-neutral-100 object-contain p-2 md:block" />
       </div>
-      <!-- <div class="mt-8 flex flex-wrap items-center gap-4">
-        {
-          booth.links.map(link => (
-            <a href={link.url} title={link.label} target="_blank" rel="noopener noreferrer" class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-neutral-200 transition-colors hover:bg-neutral-300">
-              <Icon name={getIcon(link.label)} width={24} height={24} />
-            </a>
-          ))
-        }
-      </div> -->
       {
-        booth.links?.website && (
-          <div class="mt-8">
-            <a href={booth.links.website} title={booth.name} target="_blank" rel="noopener noreferrer" class="btn btn-primary inline-flex items-center gap-1">
+        booth.link && (
+          <div class="my-8">
+            <a href={booth.link} title={booth.name} target="_blank" rel="noopener noreferrer" class="btn btn-primary inline-flex items-center gap-1">
               {t('venue.website')}
               <Icon name="mdi:external-link" width={20} height={20} />
             </a>
