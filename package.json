@@ -17,7 +17,8 @@
     "preview": "cross-env BUILD_MODE=staging astro preview",
     "dev": "cross-env BUILD_MODE=staging astro dev",
     "format": "prettier --write .",
-    "fetch-schedule": "node fetch-schedule.js"
+    "fetch-schedule": "node fetch-schedule.js",
+    "i18n": "node i18n-tool.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

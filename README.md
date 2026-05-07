@@ -46,6 +46,16 @@ for i in *.jpg; do
 done
 ```
 
+## 翻譯
+
+網站語系檔放在 `src/i18n/messages/` 底下，格式為 JSON 檔案。
+
+可以使用 `i18n-tool` 方便導出翻譯協作：
+```bash
+npm run i18n src/i18n/messages/zh-tw.json # 轉換成純文字格式
+npm run i18n src/i18n/messages/hak-tw.txt # 轉換成 JSON 格式
+```
+
 ## 貢獻
 
 本專案由 g0v summit 2026 宣傳組—網站小組負責維護，歡迎透過 [issue](https://github.com/g0v/summit2026/issues) 提出問題與建議，也歡迎提出 PR
