@@ -256,15 +256,29 @@
     "location_value_2": "128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan",
     "add_to_calendar": "Add to Calendar",
     "transportation": "Transportation",
+    "howto": {
+      "title": "Check-In Guide",
+      "p1": "Have you heard of the Digital Credential Wallet? At g0v Summit, we've partnered with the Ministry of Digital Affairs (MoDA) to adopt the <a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">Digital Credential Wallet</a> as the primary check-in method. The Digital Credential Wallet is one of the rare Taiwanese government projects that committed to open source as a procurement goal from the very beginning — with everything from servers to mobile apps released publicly. The volunteers of this year's g0v Summit share the spirit of Public Money, Public Code, and hope to collectively explore an identity verification process that is transparent, trustworthy, privacy-preserving, and supports selective disclosure. We welcome everyone to join us in this experiment!",
+      "h3_1": "Check-In Process with the Digital Credential Wallet (requires a sufficiently recent Android or iOS device):",
+      "li1": "Download the Ministry of Digital Affairs' <a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">\"Digital Credential Wallet\" app</a> from the Google Play Store or iOS App Store and complete the initial setup.",
+      "li2": "When the pre-event email is sent, it will include a ticket QR code link containing the necessary information. Scan or open the link using the Digital Credential Wallet app to add your ticket to the wallet.",
+      "li3": "At the check-in venue, a verification QR code will be displayed. Scan it with the app to preview what credentials the conference is requesting from you.",
+      "li4": "Confirm and submit to complete check-in.",
+      "h3_2": "What exactly is the Digital Credential Wallet, and why use it?",
+      "p2": "As governments worldwide increasingly move toward controlling digital identity, balancing basic identity verification with privacy protection on the internet is a challenge that both public and private sectors struggle with. If led entirely by governments, there's a risk of mass collection and surveillance of personal data; without any standards, companies facing verification needs might each develop their own tracking methods that are even more privacy-invasive.",
+      "p3": "To reach a consensus, OpenID Foundation, W3C, and IETF have all had dedicated working groups in long-running discussions. Building on the vision of Self-Sovereign Identity (SSI) and various Decentralized Identifiers (DIDs) technologies, the community ultimately converged on Verifiable Credentials (VC) as a shared standard.",
+      "p4": "The Digital Credential Wallet developed by the Ministry of Digital Affairs is built on the OpenID4VC standard, establishing a three-party architecture of issuer — verifier — holder, all with open-source code. This means the issuing and verifying servers, as well as the app for storing credentials, can all be self-hosted by anyone without relying on a centrally managed database. We also hope this trial will help verify whether the project meets international standards, and potentially interoperate with other global implementations such as the EU's EUDI Wallet.",
+      "p5": "Finally, on the second day of the Summit, there will be an open forum for discussion, as well as a workshop sharing the implementation process. Bring your questions and ideas — we'd love to have you there!"
+    },
     "qa": {
-      "q1": "我的資料會被傳給數位發展部嗎？",
-      "a1": "不會，發行與驗證伺服器的原始碼由數位發展部提供，並由 g0v Summit 志工於大會伺服器上架設並開發相關應用，發行證件所用的資料來自應援售票系統，證件資料僅會儲存於 App 內，報到資訊僅會留存於 g0v Summit 伺服器上並於大會後刪除。",
-      "q2": "大會會索取我的哪些資料？",
-      "a2": "證件上僅會有會眾已經於應援售票系統提供的資料，但不會全部放上。會放在證件上的與驗證過程索取的內容我們會遵從資料最小化的原則，只放上／索取必要資訊。例如透過數位憑證皮夾的選擇性揭露功能，報到時我們僅需索取能避免重複報到的欄位（如票號），而不需要證件上所有資料。在驗證資料送出前你可以在 App 上再度檢視我們索取的內容。若有其他應用場景，如領取便當，大會也僅需要知道你的餐飲資訊（葷／素），不需要索取額外的個資。",
-      "q3": "為什麼你們不自行編譯 App 的原始碼讓會眾安裝或整合進 OPass？",
-      "a3": "沒時間...QQ",
-      "q4": "我一定要用數位憑證皮夾報到嗎？",
-      "a4": "不用，我們理解不是每個人都有符合條件的手機能安裝，也可能有更嚴格的隱私考量，可以只以票號與報名資訊於現場進行報到。我們甚至提供現金購票與報到的選項。用現金購票者的資料完全不會經過應援或大會的線上系統，詳情請見官網與行前信！"
+      "q1": "Will my data be sent to the Ministry of Digital Affairs?",
+      "a1": "No. The source code for the issuing and verifying servers is provided by the Ministry of Digital Affairs, but the servers are set up and operated by g0v Summit volunteers on the conference's own infrastructure. The data used to issue credentials comes from the conference ticketing system (OEN). Credential data is stored only within the app, and check-in records are stored solely on the g0v Summit server and will be deleted after the conference.",
+      "q2": "What data will the conference request from me?",
+      "a2": "The credentials will only contain data that attendees have already provided through the conference ticketing system (OEN) — and not all of it. In accordance with the principle of data minimization, only the necessary information will be included in the credential and requested during verification. For example, using the selective disclosure feature of the Digital Credential Wallet, we only need to request a field sufficient to prevent duplicate check-ins (such as your ticket number) — not all the data in your credential. Before submitting your verification data, you can review what we're requesting in the app. For other use cases, such as picking up a bento box, the conference only needs to know your dietary preference (meat/vegetarian) and will not request any additional personal information.",
+      "q3": "Why don't you compile the app from source for attendees to install, or integrate it into OPass?",
+      "a3": "No time... :(",
+      "q4": "Do I have to check in using the Digital Credential Wallet?",
+      "a4": "No. We understand that not everyone has a compatible device, or may have stricter privacy concerns. You can check in using just your ticket number and registration information at the venue. We even offer a cash purchase and check-in option. For those who purchase with cash, your data will not pass through the ticketing system or any of the conference's online systems at all. See the official website and pre-event email for details!"
     }
   }
 }
