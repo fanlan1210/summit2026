@@ -4,7 +4,6 @@ import { pathnameWithoutBaseAndLocale } from '~/utils/build/pathnameWithoutBaseA
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import Icon from '~/components/Icon.astro'
 import Link from '~/components/Link.astro'
-import OpassDownload from '~/components/OpassDownload.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
@@ -181,18 +180,18 @@ const navs: NavItem[] = [
             <a href={getRelativeLocaleUrl('en', pathname)} class="text-lg">English</a>
           </div>
 
-          <a class="register-btn btn-brand flex items-center justify-between px-4 py-3 text-lg" href="#">
+          <Link class="mobile-nav-item btn-brand flex items-center justify-between px-4 py-3 text-lg" href="register">
             {t('nav.register')}
             <Icon name="mdi:arrow-right" width="28" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
   </div>
 
-  <a class="register-btn btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">
+  <Link class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="register">
     {t('nav.register')}
-  </a>
+  </Link>
 
   <!-- ── Desktop submenu panels (auto-generated from navs data) ──────────────
        To add a submenu: add a `submenu: { columns: [...] }` entry to a NavItem.
@@ -233,53 +232,10 @@ const navs: NavItem[] = [
       ))
   }
 
-  <template id="register-modal-header">
-    <h1>{t('nav.register')}</h1>
-  </template>
-  <template id="register-modal-body">
-    <div class="text-[#1e1e1e]">
-      <div class="mb-8">
-        <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
-          {t('register.cta')}<Icon name="mdi:external-link" width="22" />
-        </a>
-      </div>
-
-      <div class="mb-12 grid gap-8 md:grid-cols-2">
-        <div class="flex flex-col">
-          <h4 class="text-info-dark mb-2">{t('register.time')}</h4>
-          <div class="mb-4">2026.05.23-24 | 09:00-17:30</div>
-          <div class="mt-auto">
-            <a
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=g0v+Summit+2026&dates=20260523T010000Z/20260524T093000Z&details=g0v+Summit+2026&location=Academia+Sinica"
-              target="_blank"
-              class="btn btn-primary flex items-center gap-2 md:inline-flex"
-            >
-              {t('register.add_to_calendar')}<Icon name="mdi:external-link" width="22" />
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <h4 class="text-info-dark mb-2">{t('register.location')}</h4>
-          <div class="mb-4">
-            {t('register.location_value_1')}<br />
-            <span class="text-gray-700">{t('register.location_value_2')}</span>
-          </div>
-          <div class="mt-auto">
-            <Link href="visit" class="btn btn-primary flex items-center gap-2 md:inline-flex">
-              {t('register.transportation')}<Icon name="mdi:external-link" width="22" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <OpassDownload />
-    </div>
-  </template>
 </nav>
 
 <script>
   import $ from 'jquery'
-  import { showModalWith } from '~/utils/client/modal'
 
   // ── Mobile nav toggle ────────────────────────────────────────────────────────
   const $mobileNav = $('#mobile-nav')
@@ -292,17 +248,6 @@ const navs: NavItem[] = [
     $mobileNav.toggleClass('shadow-md')
     $('#burger').toggleClass('is-active')
   }
-
-  // ── Register modal ───────────────────────────────────────────────────────────
-  $('.register-btn').on('click', function (e) {
-    e.preventDefault()
-    if ($mobileNav.hasClass('grid-rows-[1fr]')) toggleMobileNav()
-    showModalWith({
-      header: $('#register-modal-header').html(),
-      body: $('#register-modal-body').html(),
-      size: 'lg',
-    })
-  })
 
   // ── Submenu helpers ──────────────────────────────────────────────────────────
   function closeSubmenu($submenu: JQuery<HTMLElement>, $toggle: JQuery<HTMLElement>) {

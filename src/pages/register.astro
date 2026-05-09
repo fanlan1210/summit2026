@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Link from '~/components/Link.astro'
+import Icon from '~/components/Icon.astro'
+import QA from '~/components/QA.astro'
+import OpassDownload from '~/components/OpassDownload.astro'
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+---
+
+<Layout pageName={t('nav.register')}>
+  <main class="container py-8 md:py-12">
+    <h1 class="mb-8">{t('nav.register')}</h1>
+
+    <div class="mb-8">
+      <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
+        {t('register.cta')}<Icon name="mdi:external-link" width="22" />
+      </a>
+    </div>
+
+    <div class="mb-12 grid gap-8 md:grid-cols-2">
+      <div class="flex flex-col">
+        <h4 class="text-info-dark mb-2">{t('register.time')}</h4>
+        <div class="mb-4">2026.05.23-24 | 09:00-17:30</div>
+        <div class="mt-auto">
+          <a
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=g0v+Summit+2026&dates=20260523T010000Z/20260524T093000Z&details=g0v+Summit+2026&location=Academia+Sinica"
+            target="_blank"
+            class="btn btn-primary flex items-center gap-2 md:inline-flex"
+          >
+            {t('register.add_to_calendar')}<Icon name="mdi:external-link" width="22" />
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <h4 class="text-info-dark mb-2">{t('register.location')}</h4>
+        <div class="mb-4">
+          {t('register.location_value_1')}<br />
+          <span class="text-gray-700">{t('register.location_value_2')}</span>
+        </div>
+        <div class="mt-auto">
+          <Link href="visit" class="btn btn-primary flex items-center gap-2 md:inline-flex">
+            {t('register.transportation')}<Icon name="mdi:external-link" width="22" />
+          </Link>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="my-12">
+      <h2 class="mb-8">如何報到</h2>
+      <div class="mb-8">
+        <p>
+          你聽過數位憑證皮夾嗎？本次 g0v Summit 與數位發展部合作，採用<a href="https://wallet.gov.tw/zh-tw" target="_blank">數位憑證皮夾</a
+          >作為主要報到管道。數位憑證皮夾是臺灣少數政府機構在開發前就將開放原始碼作為標案目標、從伺服器到手機 App 都開源的專案。這屆 g0v Summit 的志工們認同 Public Money, Public Code
+          的精神，期望能共同探索一個可被檢視與信任、可選擇性揭露、保護隱私的身份驗證流程，歡迎各位來一起參與這次嘗試！
+        </p>
+        <h3 class="my-8">數位皮夾報到流程（需要一定版本以上的 Android 或 iOS 手機）：</h3>
+        <ol>
+          <li>於 Google Play Store 或 iOS App Store 下載數位發展部的<a href="https://wallet.gov.tw/zh-tw" target="_blank">「數位憑證皮夾」App</a>並完成初始設定</li>
+          <li>大會行前信寄出時會同時寄給各會眾帶有必要資訊的票證 QR Code 連結，使用數位憑證皮夾 App 掃描或開啟連結即可將票證加入皮夾中</li>
+          <li>大會報到現場提供報到用驗證 QR Code，使用 App 掃描可以預覽大會向你索取的證件資訊</li>
+          <li>確認並送出即可完成報到</li>
+        </ol>
+        <h3 class="my-8">到底什麼是數位憑證皮夾？為什麼要用？</h3>
+        <p>
+          在世界各地越加傾向管控網路身份的現在，如何在網路世界做基本的身份驗證又保護隱私，是各國政府跟民間都傷透腦筋的問題。如果由政府主導，有大量蒐集、監控人民資訊的隱憂；若沒有規範，可能造成各大企業在仍有驗證身份的需求下，各自開發更加容易侵犯隱私的追蹤方式。
+        </p>
+        <p>
+          為了找到共識，OpenID Foundation、W3C、IETF 都有工作小組進行了長久的討論。以身分自主（Self-sovereign Identity, SSI）的理想與去中心化識別（Decentralized Identifiers,
+          DIDs）的各式技術為基礎，最終提出了可驗證憑證（Verifiable Credentials, VC）的共識。
+        </p>
+        <p>
+          本次數位發展部主導開發的數位憑證皮夾便是基於 OpenID4VC 標準所開發，建立發行端——驗證端——持有端的三方架構，並皆開放原始碼，因此發行、驗證伺服器與保存證件的 App
+          皆可由民間自行架設，無需經過中央管理的資料庫。我們也期望藉由這次嘗試，檢查專案是否符合國際標準，並期望能與其他國際上的實作（如歐盟的 EUDI Wallet）接軌。
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 mb-20">
+      {
+        [1, 2, 3, 4].map(i => {
+          return <QA qKey={`register.qa.q${i}`} aKey={`register.qa.a${i}`} />
+        })
+      }
+    </div>
+    <OpassDownload />
+  </main>
+</Layout>

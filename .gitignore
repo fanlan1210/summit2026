@@ -24,3 +24,7 @@ static
 
 src/data/schedule.json
 public/data/schedule.json
+
+.claude/
+.codex/
+.gemini/
