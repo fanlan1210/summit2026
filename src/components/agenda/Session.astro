@@ -1,7 +1,7 @@
 ---
 import Markdown from '~/components/Markdown.astro'
 import schedule from '~/data/schedule.json'
-import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import { getLocaleFromPath, useI18n, isMandarinPreferred } from '~/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { formatHHmm, formatMMdd } from '~/utils/datetime'
 import { getLocalizedSpeakerName, getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
@@ -10,7 +10,7 @@ import AvatarImage from '~/components/AvatarImage.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
-const isZhTW = locale === 'zh-tw'
+const isZhTW = isMandarinPreferred(locale)
 
 const { session } = Astro.props
 const sessionTitle = isZhTW ? session.zh.title : session.en.title || session.zh.title

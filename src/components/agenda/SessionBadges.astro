@@ -1,13 +1,13 @@
 ---
 import { ctColorMap } from './ctColorMap'
 import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
-import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import { getLocaleFromPath, useI18n, isMandarinPreferred } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import Badge from '~/components/agenda/Badge.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
-const isZhTW = locale === 'zh-tw'
+const isZhTW = isMandarinPreferred(locale)
 
 const { session } = Astro.props
 
