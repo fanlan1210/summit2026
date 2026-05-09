@@ -1,6 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n'
-import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import { getLocaleFromPath, useI18n, isMandarinPreferred } from '~/i18n/utils'
 import { formatHHmm, formatMMdd } from '~/utils/datetime'
 import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
 import Markdown from '~/components/Markdown.astro'
@@ -12,7 +12,7 @@ import { ctColorMap } from './ctColorMap'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
-const isZhTW = locale === 'zh-tw'
+const isZhTW = isMandarinPreferred(locale)
 const { ctSession } = Astro.props
 
 const sessionTitle = isZhTW ? ctSession.zh.title : ctSession.en.title || ctSession.zh.title

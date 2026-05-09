@@ -1,3 +1,5 @@
+import { isMandarinPreferred } from "~/i18n/utils"
+
 const stools = [
   `${import.meta.env.BASE_URL}/img/banner/g0v_stool-nbg-b-s.svg`,
   `${import.meta.env.BASE_URL}/img/banner/g0v_stool-nbg-g-m.svg`,
@@ -13,7 +15,7 @@ function normalizeText(value) {
 }
 
 function getLocalizedSpeakerField(speaker, field, locale) {
-  const isZhTW = locale === 'zh-tw'
+  const isZhTW = isMandarinPreferred(locale)
   const primary = isZhTW ? normalizeText(speaker?.zh?.[field]) : normalizeText(speaker?.en?.[field])
   const fallback = isZhTW ? normalizeText(speaker?.en?.[field]) : normalizeText(speaker?.zh?.[field])
   return primary || fallback
@@ -22,7 +24,7 @@ function getLocalizedSpeakerField(speaker, field, locale) {
 export function getSpeakerProfile(speaker, locale) {
   const name = getLocalizedSpeakerField(speaker, 'name', locale)
   const bio = getLocalizedSpeakerField(speaker, 'bio', locale)
-  const otherName = locale === 'zh-tw' ? normalizeText(speaker?.en?.name) : normalizeText(speaker?.zh?.name)
+  const otherName = isMandarinPreferred(locale) ? normalizeText(speaker?.en?.name) : normalizeText(speaker?.zh?.name)
 
   return {
     name,

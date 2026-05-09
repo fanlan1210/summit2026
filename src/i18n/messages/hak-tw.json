@@ -1,0 +1,139 @@
+{
+  "common": {
+    "dates": {
+      "2": {
+        "title": "徵件結束"
+      }
+    }
+  },
+  "date": {
+    "days": "日"
+  },
+  "meta": {
+    "description": "g0v Summit 2026 係 g0v 台灣零時政府社群兩年一擺个大聚會，乜係全球公民科技、公民行動、開放資料、數位治理實踐者聚到共下个盛會。無論你係想愛來傳承經驗抑係尋人共下打拚，歡迎你來拉張凳仔、擲出索仔，共下來這場公民party！"
+  },
+  "language": {
+    "zh": "中國話",
+    "en": "英國話",
+    "nan": "學老話",
+    "hak": "客話"
+  },
+  "nav": {
+    "venue": "場地同攤位"
+  },
+  "footer": {
+    "pastSites": "逐年網站"
+  },
+  "agenda": {
+    "info": "議程表同講者資訊還在該更新當中，請以年會公告為主。",
+    "qa": "線頂提問",
+    "search_keyword": "用關鍵字來尋議程",
+    "dont_miss": "敢想愛記下議程？",
+    "opass_info": "你做得在開源个 OPass App（iOS / Android）頂項拿著摎年會有關个全部資訊，毋單淨做得先規劃想愛聽个議程，乜會在時間就愛到个時節提供通知。",
+    "has_installed_opass": "既經安裝 OPass?",
+    "open_in_app": "在 App 裡背開啟~"
+  },
+  "visit": {
+    "info": {
+      "mapView": "撳落去來互動"
+    },
+    "transport": {
+      "tabs": {
+        "drivingLine1": "自家駛車",
+        "drivingLine2": "抑係騎車"
+      },
+      "publicTransportStep1": {
+        "title": "1. 移動到南港",
+        "item1": "坐<a href=\"https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵</a>、<a href=\"https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">高鐵</a>到南港站。",
+        "item2": "坐<a href=\"https://www.metro.taipei/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台北捷運</a>到南港站（板南線）、南港展覽館站（板南線、文湖線）。"
+      },
+      "publicTransportStep2": {
+        "title": "2. 移動到中研院",
+        "item1": "年會接駁車逐日朝晨 7:50 到 9:30 來回行駛<a href=\"https://maps.app.goo.gl/npaRb5tB9zpv8mYU8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵南港站</a> ↔ <a href=\"https://maps.app.goo.gl/SjMNHSzr76wUS1Mx7\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">中央研究院人文社會科學館北側</a>，請留意現場擎指示牌个工作人員；來回班距大約 20 分鐘，請挷早來等車。",
+        "item2": "在捷運南港站（2 號出口）換坐公車 <a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100021230\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">212直</a>、<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100027000\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">270 </a>抑係<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0112002500\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> 藍25</a> 到中研院站。",
+        "item3": "在南港展覽館站（5 號出口）換坐公車 212、276、306、620、645、679、205、小5、小1 或 小12 到中研院站。",
+        "item4": "行路抑係騎自行車<a href=\"https://www.youbike.com.tw/region/taipei/stations/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> YouBike </a>到中央研究院人文社會科學館。"
+      },
+      "drivingStep1": {
+        "title": "1. 駛車路線"
+      },
+      "drivingStep3": {
+        "title": "3. 機車停車",
+        "item1": "機車做毋得騎入去中研院，請停在中研院大門右手片、四分溪旁脣个側門、抑係胡適公園邊項个機車停車場。"
+      }
+    }
+  },
+  "cookieNotice": "本網站使用 cookiest 在廣告、社群同分析這兜用途，來增進您你个使用體驗，繼續使用本網站就代表你同意使用 cookies。",
+  "index": {
+    "interact": "用若个雙指來互動",
+    "opening_in": "離開幕還有",
+    "key": {
+      "reset": "擺好凳仔",
+      "ticket": "買票",
+      "pangolin": "射出鰱鯉"
+    },
+    "intro": {
+      "title": "「反客為主个草索幾何學！」",
+      "p1": "有人講，「一朝被蛇咬，十年怕草繩。」但係在 g0v Summit 2026，𠊎兜講「十年<ruby>拍<rp>（</rp><rt lang=\"nan-tw\">phah</rt><rp>）</rp></ruby>草繩」。",
+      "p2": "<strong>對 g0v Summit 2026 來講，這條「草繩」，乜象徵 g0v 十年黑客行動主義精神个具體展現：「莫問仰會無人做這个，先承認你就係『無人』」。因為，「無人」係萬能个。</strong>",
+      "p3": "<strong>毋會坐等、毋會偎凴，𠊎等「反客為主」，自家動手創造：</strong>",
+      "p4": "在這位，g0v Summit 2026 邀請你行入來一隻用草繩編織出來个立體公民座標。",
+      "p5": "你同逐儕參與者因爭逐儕無共樣个技能、價值觀、立場，都係這空間當中个一隻「點」。<br>𠊎兜擲出手項个索仔个時節，摎其他人對話，點就連啊做「線」；<br>盡多條線交織到共下个時節，𠊎等就做起了「面」——這係一張有淰淰動能个行動網絡，乜係一張接等大家个吊床。",
+      "p6": "<strong>故所，原本孤栖个節點形成了聚落，單線个對話演化做協作个生態系。</strong>",
+      "p7": "<strong>對最一開始个「資訊透明、開放成果、開放協作」核心，演化做 g0v Summit 2026 用社群編織出个「公民座標」，同三大座標軸線：（開放透明，自主隱私）、（思辨監督，韌性連結）、（政府體制，民間草根）。</strong>",
+      "p8": "在這位，無人係局外人，逐儕人都能做得找尋著自家个座標，對裡背探索，對外背連結。"
+    },
+    "venue": {
+      "title": "地點"
+    },
+    "g0vSummit": {
+      "title": "麼个係 g0v Summit？",
+      "p1": "對 2012 年開始，<a href=\"https://g0v.tw\" target=\"_blank\">g0v.tw</a> 台灣零時政府社群在「寫程式改造社會」个號召之下，用<b>「資訊透明、開放成果、開放協作」</b>作為核心，透過「群眾草根」个力量關心公共事務，開啟了一場有十過年長个公民黑客實踐。",
+      "p2": "<b>在 318 運動過後，還在 2014 年舉辦 g0v Summit（啥米）零時政府雙年會，推動開放社群、政府、NGO、學術圈、還有網路鄉民跨界交流。</b>",
+      "p3": "這十幾年來，台灣社會乜識經歷異多民主危機、社會動盪摎極端化，各式各樣像係「分蛇哥咬著」个挫折同危機。",
+      "p4": "面對臺灣社會个傷，來自這方摎對面个威脅，「十年」毋單淨係時間个刻度，還過刻畫出公民社群持續个行動同實踐——係一直摎驚怕轉化做韌性个過程。",
+      "p5": "有人講，「一朝被蛇咬，十年怕草繩。」但係在 g0v Summit 2026，𠊎等講<b>「十年<ruby>拍（phah）</rp></ruby>草繩」</b>，𠊎兜相信群眾草根个力量，大家互相个連結，做得一直摎驚怕个「怕」，轉化做行動个「<ruby>拍（phah）</rp></ruby>」。",
+      "p6": "<ruby>拍結<rp>（phah-kat）</rp></ruby>（打結）毋單淨是係為著䌈緪，更加係為著學曉放鬆——鬆動被動个姿態，鬆動偎凴同驚怕，在危機同毋確定个時代裡背，重新練習「自救」同「互助」个筋肉。",
+      "p7": "𠊎兜無愛接受「怕草繩」个被動同畏縮。顛倒，g0v Summit 2026 希望邀請來到這位个每一儕人，摎衫袖攎起來，伸手拿起該條草索，重新搓洗、亼淨來。故所，𠊎等分支、編織、連結，緊幻化還過創造，「草繩」既經毋係該隻得人驚个幻影了，佢既經變做一隻強韌又有機个社群。"
+    },
+    "pastEvents": "逐年活動",
+    "joinG0v": {
+      "p1": "g0v 係一隻草根式个公民社群，煞猛在該想愛加深公民對社會个貢獻同大眾个連結。透過 g0v 社群，你做得在這位尋著志同道合个伴仔，用草根个方式來實踐你个理念，還過摎成果用開放授權个模式放出來，分較多人做得企到你个成果頂項接等來走。",
+      "p2": "摎 gov 用「零」替代做 g0v，對零開始來思考政府个角色，乜代表數位原生世代對 0 同 1 世界个視野。",
+      "events": "g0v 最近个活動"
+    },
+    "sponsorship": {
+      "content": "係講有贊助意願，請詢問：<a href=\"mailto:sponsorship@summit.g0v.tw\">sponsorship@summit.g0v.tw</a>"
+    },
+    "partners": {
+      "donate": "捐錢贊助"
+    }
+  },
+  "sponsor": {
+    "tiers": {
+      "pioneer": "開路个人",
+      "catalyst": "做事个人",
+      "companion": "共下个伴",
+      "sidekick": "撩落去个伴",
+      "special": "特別承蒙"
+    },
+    "support": {
+      "p1": "g0v Summit 係由志工自主籌辦个非營利活動，「反客為主」係𠊎兜 2026 个主題，希望邀請各位共下拉張凳仔，變做行動个一份子。頂高列出个贊助夥伴係分 g0v Summit 2026 變做可能个重要支持力量。",
+      "p2": "g0v Summit 逐擺活動都偎凴社群个支持同参與。除忒出席議程同活動之外，乜歡迎用贊助个方式支持開放社群个發展。",
+      "p3": "𠊎兜提供各式个合作方案，包涵品牌露出、攤位設置、票券贊助同較多个客製選項，期盼同你共下推進公民科技。",
+      "p4": "贊助同合作詢問，歡迎寄信：sponsorship@summit.g0v.tw",
+      "cta": "自家贊助"
+    },
+    "pastReports": {
+      "title": "逐屆 g0v Summit 報導"
+    }
+  },
+  "venue": {
+    "staffRoom": "工作人員歇睏空間",
+    "description": "g0v Summit 今年在中央研究院人文社會科學館舉辦，做得在<a href=\"./visit\">交通資訊</a>頁面查看去个方式。"
+  },
+  "register": {
+    "cta": "馬上買票",
+    "add_to_calendar": "加到日曆"
+  }
+}

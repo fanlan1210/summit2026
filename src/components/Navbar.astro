@@ -146,11 +146,14 @@ const navs: NavItem[] = [
         class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-60 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
       >
         <div class="lang-btn-group mt-1 flex flex-col">
-          <button data-target={getRelativeLocaleUrl('zh-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
+          <button lang="zh-TW" data-target={getRelativeLocaleUrl('zh-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
             >華語</button
           >
-          <button data-target={getRelativeLocaleUrl('en', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
+          <button lang="en" data-target={getRelativeLocaleUrl('en', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
             >English</button
+          >
+          <button lang="hak-TW" data-target={getRelativeLocaleUrl('hak-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
+            >客話</button
           >
         </div>
       </div>

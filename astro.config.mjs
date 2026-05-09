@@ -21,7 +21,7 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale: 'zh-tw',
-    locales: ['zh-tw', 'en'],
+    locales: ['zh-tw', 'en', 'hak-tw'],
   },
   devToolbar: {
     enabled: false,
