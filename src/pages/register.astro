@@ -13,8 +13,11 @@ const { t } = useI18n(Astro.url.pathname)
   <main class="container py-8 md:py-12">
     <h1 class="mb-8">{t('nav.register')}</h1>
     <div class="mb-12">
-      <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
+      <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary me-4 flex items-center gap-2 md:inline-flex">
         {t('register.cta')}<Icon name="mdi:external-link" width="22" />
+      </a>
+      <a href="https://www.youtube.com/@g0vTW/streams" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
+        {t('agenda.main_live')}<Icon name="mdi:external-link" width="22" />
       </a>
     </div>
 
