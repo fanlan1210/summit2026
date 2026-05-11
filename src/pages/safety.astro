@@ -1,0 +1,41 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Icon from '~/components/Icon.astro'
+import SponsorCard from '~/components/SponsorCard.astro'
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+---
+
+<Layout pageName={t('nav.safety')}>
+  <main class="container py-8 md:py-12">
+    <h1 class="mb-8" data-i18n="safety.earthquake">{t('nav.safety')}</h1>
+    <h5 class="my-4">What is an Earthquake?</h5>
+    <p>An earthquake is when the ground shakes violently. Large earthquakes are very dangerous because they may destroy buildings.</p>
+    <p>
+      In recent weeks, Taiwan’s eastern region has experienced multiple earthquakes with magnitudes ranging from 5 to 6. Please carefully review the following guidelines to minimize potential damage.
+    </p>
+    <h5 class="my-4">What to do when an earthquake strikes</h5>
+    <ul>
+      <li><h6 class="my-2 inline-block">If you’re near a table:</h6><p>Hide under the table and hold onto its legs for stability.</p></li><li>
+        <h6 class="my-2 inline-block">If there’s no table nearby:</h6><p>Crouch down next to a sturdy pillar or wall, and protect your head and neck with a backpack.</p>
+      </li><li>
+        <h6 class="my-2 inline-block">If you’re in an elevator:</h6><p>
+          Press all floor buttons, crouch down, and exit the elevator as soon as the door opens. If the door doesn’t open, press the emergency button for help.
+        </p>
+      </li>
+    </ul>
+    <h5 class="my-4">What to do after the earthquake stops</h5><ul>
+      <li>Stay calm, don’t rush to exits. Follow staff instructions for orderly evacuation.</li><li>Keep away from glass doors, windows, or hanging light fixtures.</li><li>
+        Use a backpack or your hands to protect your head and neck while moving.
+      </li><li>Avoid using elevators. Evacuate through safety doors and staircases.</li>
+    </ul><h6 class="my-4">If trapped in a collapsed building</h6><ul>
+      <li>Stop bleeding if injured. Don’t remove objects stuck in you.</li><li>Cover mouth and nose to slow breathing initially, avoiding inhaling toxic dust.</li><li>
+        Communication systems may fail initially. Save phone battery, wait a while before calling 119 for help.
+      </li><li>If phone dies, use nearby hard objects to tap on sturdy walls or metal to attract rescuers’ attention. Don’t scream and waste energy.</li>
+    </ul><h6 class="my-4">DON’T PANIC</h6><p>Light earthquakes are quite frequent in Taiwan - almost every day.</p><h5 class="my-4">Be Prepared</h5><p>
+      <a href="https://www.cwa.gov.tw/eng/" rel="external" target="_blank">Central Weather Administration</a> sends out emergency alerts via cellular network seconds before major earthquake strikes. You
+      may additionally subscribe to <a href="https://www.cwa.gov.tw/V8/E/S/eservice/app/app_e.html" rel="external" target="_blank">mobile app</a> push notifications for better preparedness.
+    </p>
+  </main>
+</Layout>
