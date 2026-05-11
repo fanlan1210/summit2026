@@ -4,15 +4,13 @@ import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { getSpeakerProfile } from '~/utils/build/speaker'
 import SpeakerGridCard from './SpeakerGridCard.astro'
-import { getAvatar } from '~/utils/build/speaker'
+import { getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
 import AvatarImage from '~/components/AvatarImage.astro'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-// schedule speaker ids
-// TODO 後續有基調演講講者後補上
-const KEYNOTE_SPEAKER_IDS = []
+const KEYNOTE_SPEAKER_IDS = ['isabelhou', 'special', 'muhua']
 
 const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
 
@@ -41,8 +39,10 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
             return (
               <div class="mb-12">
                 <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
-                  <AvatarImage class="h-auto w-full max-w-56 shrink-0 rounded-full md:max-w-48" src={getAvatar(speaker)} alt={name} />
-                  <div>
+                  <div class="grid aspect-square w-40 shrink-0 place-items-center overflow-hidden rounded-full bg-[#f1f5f9]">
+                    <AvatarImage class:list={[isDefaultAvatar(speaker) ? 'w-[60%]' : 'h-full w-full']} src={getAvatar(speaker)} alt={name} />
+                  </div>
+                  <div class="w-full">
                     <h5 class="mb-6">{name}</h5>
                     {bio && <p class="whitespace-pre-line">{bio}</p>}
                   </div>
