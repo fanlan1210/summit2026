@@ -27,7 +27,9 @@ for (const session of schedule.sessions) {
 }
 
 // Hide speakers who have no id or no sessions.
-const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '' && allSpeakersInSessions.has(s.id))
+const speakersForGrid = schedule.speakers.filter(
+  s => String(s.id ?? '').trim() !== '' && allSpeakersInSessions.has(s.id) && !KEYNOTE_SPEAKER_IDS.includes(s.id),
+)
 ---
 
 <Layout pageName={t('nav.speaker')}>
