@@ -12,8 +12,7 @@ const { t } = useI18n(Astro.url.pathname)
 <Layout pageName={t('nav.register')}>
   <main class="container py-8 md:py-12">
     <h1 class="mb-8">{t('nav.register')}</h1>
-
-    <div class="mb-8">
+    <div class="mb-12">
       <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-primary flex items-center gap-2 md:inline-flex">
         {t('register.cta')}<Icon name="mdi:external-link" width="22" />
       </a>
@@ -48,20 +47,36 @@ const { t } = useI18n(Astro.url.pathname)
     </div>
     <hr />
     <div class="my-12">
+      <h2 class="mb-8">{t('register.ticket_info.title')}</h2>
+      <ol>
+        <li set:html={t('register.ticket_info.li1')} />
+        <li>{t('register.ticket_info.li2')}</li>
+      </ol>
+    </div>
+    <div class="my-12">
       <h2 class="mb-8">{t('register.howto.title')}</h2>
       <div class="mb-8">
         <p set:html={t('register.howto.p1')} />
-        <h3 class="my-8">{t('register.howto.h3_1')}</h3>
+        <h3 class="mt-12 mb-6">{t('register.howto.method1.title')}</h3>
         <ol>
-          <li set:html={t('register.howto.li1')} />
-          <li set:html={t('register.howto.li2')} />
-          <li set:html={t('register.howto.li3')} />
-          <li set:html={t('register.howto.li4')} />
+          <li set:html={t('register.howto.method1.li1')} />
+          <li set:html={t('register.howto.method1.li2')} />
+          <li set:html={t('register.howto.method1.li3')} />
+          <li set:html={t('register.howto.method1.li4')} />
         </ol>
-        <h3 class="my-8" set:html={t('register.howto.h3_2')} />
-        <p set:html={t('register.howto.p2')} />
-        <p set:html={t('register.howto.p3')} />
-        <p set:html={t('register.howto.p4')} />
+        <h3 class="mt-12 mb-6">{t('register.howto.method2.title')}</h3>
+        <ol>
+          <li>{t('register.howto.method2.li1')}<a href="https://tech.oen.tw/posts/23dOWUuecAV87tNHAgmHCf0KSod?locale=zh-TW" target="_blank">{t('register.howto.step')}</a></li>
+          <li>{t('register.howto.method2.li2')}</li>
+          <li>{t('register.howto.method2.li3')}</li>
+        </ol>
+        <h3 class="mt-12 mb-6">{t('register.howto.method_cash.title')}</h3>
+        <p>{t('register.howto.method_cash.p')}</p>
+        <h2 class="mt-12 mb-6" set:html={t('register.howto.whatis.title')} />
+        <p><b>{t('register.howto.whatis.p1')}</b></p>
+        <p set:html={t('register.howto.whatis.p2')} />
+        <p set:html={t('register.howto.whatis.p3')} />
+        <p set:html={t('register.howto.whatis.p4')} />
       </div>
     </div>
     <div class="my-12">
@@ -72,7 +87,7 @@ const { t } = useI18n(Astro.url.pathname)
       }
     </div>
     <div class="mt-12 mb-20">
-      <p>{t('register.howto.p5')}</p>
+      <p>{t('register.howto.whatis.p5')}</p>
     </div>
     <OpassDownload />
   </main>
