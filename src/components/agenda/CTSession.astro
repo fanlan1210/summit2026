@@ -7,7 +7,7 @@ import Markdown from '~/components/Markdown.astro'
 import AvatarImage from '~/components/AvatarImage.astro'
 import SessionBadges from './SessionBadges.astro'
 import schedule from '~/data/schedule.json'
-import { getLocalizedSpeakerName, getAvatar } from '~/utils/build/speaker'
+import { getLocalizedSpeakerName, getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
 import { ctColorMap } from './ctColorMap'
 
 const { t } = useI18n(Astro.url.pathname)
@@ -68,7 +68,7 @@ function getSpeakerName(speaker) {
           speakers.map(speaker => (
             <a href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`} class="group flex items-center gap-4 text-inherit no-underline">
               <div class="grid aspect-square w-18 shrink-0 place-items-center overflow-hidden rounded-full bg-[#f1f5f9] md:w-24">
-                <AvatarImage class:list={[speaker.avatar ? 'h-full w-full' : 'w-[60%]']} src={getAvatar(speaker)} alt={getSpeakerName(speaker)} />
+                <AvatarImage class:list={[isDefaultAvatar(speaker) ? 'w-[60%]' : 'h-full w-full']} src={getAvatar(speaker)} alt={getSpeakerName(speaker)} />
               </div>
               <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{getSpeakerName(speaker)}</span>
             </a>
