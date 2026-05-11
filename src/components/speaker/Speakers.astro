@@ -27,18 +27,16 @@ for (const session of schedule.sessions) {
 }
 
 // Hide speakers who have no id or no sessions.
-const speakersForGrid = schedule.speakers.filter(
-  s => String(s.id ?? '').trim() !== '' && allSpeakersInSessions.has(s.id) && !KEYNOTE_SPEAKER_IDS.includes(s.id),
-)
+const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '' && allSpeakersInSessions.has(s.id) && !KEYNOTE_SPEAKER_IDS.includes(s.id))
 ---
 
 <Layout pageName={t('nav.speaker')}>
-  <div class="container">
+  <div class="speakers container">
     <h1 class="my-8 md:my-12">{t('nav.speaker')}</h1>
 
     {
       keynoteSpeakers && keynoteSpeakers.length > 0 && (
-        <section class="keynote my-20">
+        <section class="my-20">
           <h3 class="mb-12">{t('speakers.keynote')}</h3>
           {keynoteSpeakers.map(speaker => {
             const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
@@ -105,7 +103,7 @@ const speakersForGrid = schedule.speakers.filter(
   import { clearLocationHash, getVisibleElementFromHash, updateLocationHash } from '~/utils/client/locationHash'
   import { showModalWith } from '~/utils/client/modal'
 
-  const speakersPageEl = document.querySelector('.keynote')
+  const speakersPageEl = document.querySelector('.speakers')
   let isSpeakerModalOpen = false
 
   type OpenSpeakerModalOptions = {
