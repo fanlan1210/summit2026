@@ -265,10 +265,10 @@
     "howto": {
       "title": "Check-In Guide",
       "p1": "At g0v Summit, we've partnered with the Ministry of Digital Affairs (MoDA) to adopt the <a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">Digital Credential Wallet</a> as the primary check-in method. The Digital Credential Wallet is one of the rare Taiwanese government projects that committed to open source as a procurement goal from the very beginning — with everything from servers to mobile apps released publicly. The volunteers of this year's g0v Summit share the spirit of Public Money, Public Code, and hope to collectively explore an identity verification process that is transparent, trustworthy, privacy-preserving, and supports selective disclosure. We welcome everyone to join us in this experiment! For clarity, \"credential\" below refers to a ticket stored in the TW DIW.",
-      "step": " steps",
+      "step": " steps.",
       "method1": {
         "title": "Check-In with the TW DIW (Recommended; requires online purchase and a sufficiently recent Android or iOS device)",
-        "li1": "Download the Ministry of Digital Affairs' <a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">\"Taiwan Digital Identity Wallet\" app</a> from the Google Play Store or iOS App Store and complete the initial setup",
+        "li1": "Download the Ministry of Digital Affairs' <a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">\"Taiwan Digital Identity Wallet\" app</a> from the Google Play Store or iOS App Store and complete the initial setup.",
         "li2": "When the pre-event email is sent, it will include a credential QR code link containing your ticket information. Scan or open the link using the TW DIW app to add your ticket credential to the wallet.",
         "li3": "At the check-in venue, a verification QR code will be displayed. Scan it with the app to preview what credential information the conference is requesting from you.",
         "li4": "Confirm and submit to complete check-in."
