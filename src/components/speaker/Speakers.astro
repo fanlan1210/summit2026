@@ -1,14 +1,18 @@
 ---
 import Layout from '~/layouts/Layout.astro'
-import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import Markdown from '~/components/Markdown.astro'
+import { getLocaleFromPath, isMandarinPreferred, useI18n } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
 import { getSpeakerProfile } from '~/utils/build/speaker'
 import SpeakerGridCard from './SpeakerGridCard.astro'
 import { getAvatar, isDefaultAvatar } from '~/utils/build/speaker'
 import AvatarImage from '~/components/AvatarImage.astro'
+import { hrefForAgendaSession } from '~/utils/build/agenda/hrefForAgendaSession'
+import { compareDate, formatHHmm, formatMMdd } from '~/utils/datetime'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = isMandarinPreferred(locale)
 
 const KEYNOTE_SPEAKER_IDS = ['isabelhou', 'special', 'muhua']
 
@@ -32,19 +36,51 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
 
     {
       keynoteSpeakers && keynoteSpeakers.length > 0 && (
-        <section class="my-20">
+        <section class="keynote my-20">
           <h3 class="mb-12">{t('speakers.keynote')}</h3>
           {keynoteSpeakers.map(speaker => {
-            const { name, bio } = getSpeakerProfile(speaker, locale)
+            const { name, otherName, bio } = getSpeakerProfile(speaker, locale)
+            const sessions = schedule.sessions.filter(session => session.speakers.includes(speaker.id)).sort((a, b) => compareDate(a.start, b.start))
             return (
-              <div class="mb-12">
+              <div class="speaker mb-12" data-id={speaker.id}>
                 <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
-                  <div class="grid aspect-square w-40 shrink-0 place-items-center overflow-hidden rounded-full bg-[#f1f5f9]">
+                  <div class="grid aspect-square w-40 shrink-0 cursor-pointer place-items-center overflow-hidden rounded-full bg-[#f1f5f9]">
                     <AvatarImage class:list={[isDefaultAvatar(speaker) ? 'w-[60%]' : 'h-full w-full']} src={getAvatar(speaker)} alt={name} />
                   </div>
                   <div class="w-full">
                     <h5 class="mb-6">{name}</h5>
                     {bio && <p class="whitespace-pre-line">{bio}</p>}
+                  </div>
+                </div>
+
+                <div class="modal-content hidden">
+                  <div class="header">
+                    <div class="flex items-center gap-4">
+                      <div class="grid aspect-square w-14 place-items-center overflow-hidden rounded-full bg-slate-100 md:w-20">
+                        <AvatarImage class:list={[isDefaultAvatar(speaker) ? 'w-1/2' : 'h-full w-full object-cover']} src={getAvatar(speaker)} alt={name} />
+                      </div>
+                      <div class="flex flex-col">
+                        <h4 class="font-bold">{name}</h4>
+                        {otherName && otherName !== name && <h6 class="text-neutral-500">{otherName}</h6>}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="body">
+                    {bio && <Markdown content={bio} class="speaker-bio mb-4" />}
+                    {sessions.length > 0 && (
+                      <div class="border-t border-neutral-300 pt-4">
+                        {sessions.map(session => {
+                          const title = isZhTW ? session.zh.title : session.en.title || session.zh.title
+                          const info = `${formatMMdd(session.start)} ${formatHHmm(session.start)} ~ ${formatHHmm(session.end)} @ ${session.room}`
+                          return (
+                            <a class="mb-4 block text-inherit no-underline hover:underline" href={hrefForAgendaSession(locale, session.start, session.id)}>
+                              <h5 class="font-bold">{title}</h5>
+                              <div class="text-sm text-neutral-500">{info}</div>
+                            </a>
+                          )
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -67,7 +103,7 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
   import { clearLocationHash, getVisibleElementFromHash, updateLocationHash } from '~/utils/client/locationHash'
   import { showModalWith } from '~/utils/client/modal'
 
-  const gridEl = document.querySelector('#speakers-grid')
+  const speakersPageEl = document.querySelector('.keynote')
   let isSpeakerModalOpen = false
 
   type OpenSpeakerModalOptions = {
@@ -96,6 +132,7 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
   // Click speaker and open pop-up overlay used on the agenda page
   function showSpeakerModal(e: Event) {
     const target = e.target as HTMLElement
+    if (target.tagName !== 'IMG') return
     const speaker = target.closest('.speaker[data-id]')
     if (!speaker || !(speaker instanceof HTMLElement)) return
 
@@ -120,12 +157,12 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
 
   // …/speaker/#speakerId → scroll to card and open same pop-up (ref speakers.js)
   function tryOpenSpeakerFromHash() {
-    const speaker = getVisibleElementFromHash(id => `#speakers-grid .speaker[data-id="${id}"]`)
+    const speaker = getVisibleElementFromHash(id => `.speaker[data-id="${id}"]`)
     if (!speaker) return
     openSpeakerModalFromCard(speaker, { scroll: true })
   }
 
-  gridEl?.addEventListener('click', showSpeakerModal)
+  speakersPageEl?.addEventListener('click', showSpeakerModal)
   window.addEventListener('modal:hide', handleModalHide)
   requestAnimationFrame(() => tryOpenSpeakerFromHash())
 </script>
