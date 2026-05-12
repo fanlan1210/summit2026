@@ -138,15 +138,15 @@
       "pangolin": "Shoot"
     },
     "intro": {
-      "title": "\"The Rope-Weaving Geometry of Invite Yourself!\"",
-      "p1": "They say, \"Once bitten by a snake, you’ll fear a rope for ten years.\" But at g0v Summit 2026, we say: ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope.",
-      "p2": "<strong>For g0v Summit 2026, this \"rope\" symbolizes the concrete expression of g0v’s decade of hacktivism: \"Don’t ask why nobody is doing this — admit that you are nobody.\" Because \"nobody\" can do anything.</strong>",
-      "p3": "<strong>No waiting, no depending on others — we Invite Ourselves, and build things with our own hands:</strong>",
-      "p4": "Here, g0v Summit 2026 invites you into a three-dimensional civic coordinate system woven from rope.",
-      "p5": "You and every participant, each grounded in your own skills, values, and positions, are a \"point\" in this space.<br>When we toss out our rope and engage with others, points become \"lines\";<br>when countless lines interweave, we hold up a \"plane\" — a dynamic network of action, a hammock that catches us all.",
-      "p6": "<strong>Isolated nodes form communities; single-thread conversations evolve into collaborative ecosystems.</strong>",
-      "p7": "<strong>From the original core of \"information transparency, open results, open collaboration,\" g0v Summit 2026 evolves into a community-woven \"civic coordinate system\" with three axes: (Openness &amp; Transparency, Autonomy &amp; Privacy), (Critical Scrutiny &amp; Resilient Connection), (Government Institutions &amp; Grassroots Civil Society).</strong>",
-      "p8": "Here, no one is an outsider. Everyone can find their own coordinates — exploring inward, connecting outward."
+      "title": "Invite Yourself into a Braided Nexus",
+      "p1": "It’s often said that <em>once bitten, twice shy</em>. In times where democracy backsliding and social polarization are tearing the very fabric of civic space apart, activists may as well feel bitten by the venomous state of public dialogue.",
+      "p2": "Yet if we are tired of infuriating quarrels and political apathy, we shall move out from the comfort of armchairs and to braid back the society we desire ourselves. The decade-old g0v motto, hacktivism at its core, perfectly manifested the idea: <em>“Ask not why nobody is doing this. You're that nobody—and ‘nobody’ can do everything.”</em>",
+      "p3": "At g0v Summit 2026, we kindly ask you to <strong>“invite yourself”</strong> to take charge on braiding our future. Step into a three-dimensional civic space woven from different fabrics of the civic society—",
+      "p4": "Every participant, including you, represents a <strong>point</strong> in the coordinate system, defined by your unique skills, values, and stance. As we communicate with each other, points connect into <strong>lines</strong>. As countless lines intertwine, woven <strong>surfaces</strong> supported by dynamic network of action take shape, doubling as hammocks that gently catch us.",
+      "p5": "Thus, isolated nodes form clusters and single-threaded conversations evolve into collaborative ecosystems.",
+      "p6": "Derived from g0v’s core values: transparency, openness, and collaboration, we are braiding the Civic Coordinate System of g0v Summit 2026 with three major axes: <strong>(transparency–autonomy/privacy)</strong>, <strong>(advocacy–recovery)</strong>, <strong>(government agency–grassroots/civil society)</strong>.",
+      "p7": "There are no outsiders here. Everyone can find their own coordinates to explore inward and connect outward.",
+      "p8": ""
     },
     "venue": {
       "title": "Venue",
@@ -155,19 +155,19 @@
     },
     "g0vSummit": {
       "title": "What is g0v Summit?",
-      "p1": "Since 2012, <a href=\"https://g0v.tw\" target=\"_blank\">g0v.tw</a>, the Taiwan Zero-Hour Government community, under the rallying cry of \"hacking to change society,\" has centered on <b>\"information transparency, open results, and open collaboration\"</b> — using the power of the grassroots to care for public affairs, launching over a decade of civic hacker practice.",
-      "p2": "<b>Following the Sunflower Movement, g0v Summit (What?) was first held in 2014, bringing together open communities, government, NGOs, academia, and internet citizens for cross-sector exchange.</b>",
-      "p3": "Over these decades, Taiwanese society has experienced countless democratic crises, social upheaval, and polarization — setbacks and crises like being \"bitten by a snake.\"",
-      "p4": "Facing Taiwan’s societal wounds and threats from near and far, \"ten years\" is not just a measure of time — it etches the continuous action and practice of civic communities, the ongoing process of transforming fear into resilience.",
-      "p5": "They say, \"Once bitten by a snake, you’ll fear a rope for ten years.\" But at g0v Summit 2026, we say <b>\"ten years of <ruby>beating<rp>(</rp><rt>phah</rt><rp>)</rp></ruby> the rope\"</b>. We believe in the power of grassroots communities and the bonds between us to continually transform the \"fear\" into the \"action\" of beating.",
-      "p6": "<ruby>Tying knots<rp>(</rp><rt>phah-kat</rt><rp>)</rp></ruby> is not just about binding tight — it is about learning to loosen: loosening passive postures, loosening dependence and fear, and in times of crisis and uncertainty, relearning the muscles of \"self-rescue\" and \"mutual aid.\"",
-      "p7": "We refuse to be trapped in the passivity and timidity of \"fearing the rope.\" Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, reach out, grab that rope, and knead and beat it anew. We branch, weave, connect, and continuously transform and create — the \"rope\" is no longer a terrifying phantom, but a resilient and organic community."
+      "p1": "Since 2012, under the call to “fork the government and code for society,” the <a href=\"https://g0v.tw\" target=\"_blank\">g0v.tw</a> (read as gov-zero) community has practiced over a decade of civic hacking. Centered on <strong>“Information Transparency, Open Results, and Open Collaboration,”</strong> we use the power of the grassroots to care for public affairs.",
+      "p2": "Following the <strong>Sunflower Movement</strong>, we launched the g0v Summit in 2014, building a bridge for interdisciplinary dialogue between open communities, government, NGOs, academia, and netizens.",
+      "p3": "Over these dozen years, Taiwanese society has weathered democratic crises, social turbulence, polarization, and “snake bites” of frustration.",
+      "p4": "Facing the scars of Taiwanese society and threats from near and far, “Ten Years” is not just a measure of time. It marks the continuous action and practice of the civic community: a process of transforming fear into resilience.",
+      "p5": "There is a saying: <em>“Once bitten by a snake, ten years afraid of a straw rope.”</em> But at g0v Summit 2026, we say: <strong>“Ten Years of <em>Phah</em> the Rope.”</strong> We believe in the power of the grassroots and our connection to one another. We can continuously transform that fear (<strong>Phah</strong>, to be afraid) into action (<strong>Phah</strong>, to beat/weave in Tâi-gí).",
+      "p6": "<strong>To <em>Phah-kat</em> (tie a knot in Tâi-gí) is not just about holding tight; it is about learning how to loosen.</strong> About loosening our passive posture, loosening dependency and fear. In an era of crisis and uncertainty, we are retraining our muscles for “Self Help” and “Mutual Aid.”",
+      "p7": "We refuse to recoil in passive fear of the rope. Instead, g0v Summit 2026 invites everyone here to roll up their sleeves, grab that straw rope, and start rubbing and beating it anew. As we branch out, weave, and connect, the “Snake” is no longer a phantom of terror, but a strong, organic community."
     },
     "pastEvents": "Past Events",
     "joinG0v": {
       "title": "Join g0v",
-      "p1": "g0v is a grassroots civic community dedicated to deepening citizens’ contributions to society and the connections between them. Through the g0v community, you can find like-minded partners, put your ideas into practice in a grassroots way, and release your results under open licenses so that more people can build on your work.",
-      "p2": "Replacing the \"o\" in \"gov\" with a zero to form g0v, we rethink the role of government from zero — representing the digital-native generation’s perspective from the world of 0s and 1s.",
+      "p1": "g0v (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.",
+      "p2": "g0v replaces the “o” in gov with “0”, thereby reimagining the role of government from scratch, and represents the vision from 0 to 1 of the generation of digital natives.",
       "slack": "g0v Slack",
       "docs": "Summit Planning Docs",
       "events": "Upcoming g0v Events"
