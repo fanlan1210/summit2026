@@ -1,8 +1,15 @@
 ---
-import { useI18n } from '~/i18n/utils'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import Icon from '~/components/Icon.astro'
-
+import booth_data from '~/data/booth.json'
 const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const getTitle = (name_en: String) => {
+  const name = booth_data.find(booth => booth.name_en === name_en)?.name
+  if (!name || locale === 'en') return name_en
+  return name
+}
 ---
 
 <div class="w-full">
@@ -148,42 +155,52 @@ const { t } = useI18n(Astro.url.pathname)
     <g class="venue-location clickable booth" transform="translate(3950,4750) rotate(8)" data-booth="SITCON">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">1</text>
+      <title>{getTitle('SITCON')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(4450,4815) rotate(5)" data-booth="MozTW, Mozilla Taiwan Community">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">2</text>
+      <title>{getTitle('MozTW, Mozilla Taiwan Community')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(4950,4850) rotate(2)" data-booth="Cofacts">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">3</text>
+      <title>{getTitle('Cofacts')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(5450,4850) rotate(-2)" data-booth="COSCUP x UbuCon Asia 2026">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">4</text>
+      <title>{getTitle('COSCUP x UbuCon Asia 2026')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(5950,4815) rotate(-5)" data-booth="NTU Continental Club">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">5</text>
+      <title>{getTitle('NTU Continental Club')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6450,4750) rotate(-8)" data-booth="Jothon">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">6</text>
+      <title>{getTitle('Jothon')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(7400,4730) rotate(-11)" data-booth="Sketch Of Taipei">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">7</text>
+      <title>{getTitle('Sketch Of Taipei')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(7800,4650) rotate(-11)" data-booth="OPENFUN">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">8</text>
+      <title>{getTitle('OPENFUN')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(7350,5100) rotate(79)" data-booth="citizen bookstore">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">9</text>
+      <title>{getTitle('citizen bookstore')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(7430,5500) rotate(79)" data-booth="Nowhere Bookstore">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">10</text>
+      <title>{getTitle('Nowhere Bookstore')}</title>
     </g>
     <g id="location-front-deck" class="venue-location" transform="translate(2604,4775) rotate(12)">
       <rect fill="#a1d7ff" fill-opacity="0.2" stroke="none" width="800" height="500"></rect>

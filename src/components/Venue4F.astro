@@ -1,8 +1,15 @@
 ---
-import { useI18n } from '~/i18n/utils'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import Icon from '~/components/Icon.astro'
-
+import booth_data from '~/data/booth.json'
 const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const getTitle = (name_en: String) => {
+  const name = booth_data.find(booth => booth.name_en === name_en)?.name
+  if (!name || locale === 'en') return name_en
+  return name
+}
 ---
 
 <div class="w-full">
@@ -152,31 +159,37 @@ const { t } = useI18n(Astro.url.pathname)
     </g>
     <g class="venue-location" transform="translate(4650,7400) rotate(0)">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="1400" height="250"></rect>
-      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="700" y="140">紀念品攤位</text>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="700" y="140">{t('venue.souvenir_booth')}</text>
     </g>
     <g class="venue-location clickable booth" transform="translate(3900,3000) rotate(-78)" data-booth="Do you a flavor">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">17</text>
+      <title>{getTitle('Do you a flavor')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3805,3450) rotate(-78)" data-booth="LZGH">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">16</text>
+      <title>{getTitle('LZGH')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3710,3900) rotate(-78)" data-booth="Coseeing">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">15</text>
+      <title>{getTitle('Coseeing')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3615,4350) rotate(-78)" data-booth="Kuma Academy">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">14</text>
+      <title>{getTitle('Kuma Academy')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3520,4800) rotate(-78)" data-booth="Judicial Reform Foundation">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">13</text>
+      <title>{getTitle('Judicial Reform Foundation')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3425,5250) rotate(-78)" data-booth="Awakening Foundation">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">12</text>
+      <title>{getTitle('Awakening Foundation')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3330,5700) rotate(-78)" data-booth="">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
@@ -189,14 +202,17 @@ const { t } = useI18n(Astro.url.pathname)
     <g class="venue-location clickable booth" transform="translate(6525,3450) rotate(78)" data-booth="Open Development Cambodia (ODC)">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">19</text>
+      <title>{getTitle('Open Development Cambodia (ODC)')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6620,3900) rotate(78)" data-booth="depositar">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">20</text>
+      <title>{getTitle('depositar')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6715,4350) rotate(78)" data-booth="Social Science Seed">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">21</text>
+      <title>{getTitle('Social Science Seed')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6810,4800) rotate(78)" data-booth="">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
@@ -205,6 +221,7 @@ const { t } = useI18n(Astro.url.pathname)
     <g class="venue-location clickable booth" transform="translate(6905,5250) rotate(78)" data-booth="The Society of Taiwan Women in Science and Technology (TWiST)">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">23</text>
+      <title>{getTitle('The Society of Taiwan Women in Science and Technology (TWiST)')}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(7000,5700) rotate(78)" data-booth="">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
