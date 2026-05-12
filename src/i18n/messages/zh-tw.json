@@ -189,6 +189,10 @@
       "archilife": "祐生研究基金會",
       "hackmd": "HackMD",
       "doit": "臺北市政府資訊局",
+      "moda": "數位發展部",
+      "hakka": "客家委員會",
+      "micare": "咪卡創意",
+      "nutwork": "松果網路",
       "jothon": {
         "name": "g0v 零時政府揪松團",
         "description": "g0v 零時政府揪松團是 g0v 社群籌辦雙月大黑客松（大松）和基礎松，以及推動募款事務的工作小組，目前有揪松志工群、專案計畫型合作人員、八位決策委員。"
@@ -207,7 +211,7 @@
   },
   "sponsor": {
     "organizer": "主辦單位",
-    "title1": "g0v Summit 2026 工作小組",
+    "title1": "g0v Summit 2026 籌備團隊",
     "title2": "合作夥伴",
     "description": "簡介",
     "tiers": {
