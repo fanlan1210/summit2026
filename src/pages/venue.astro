@@ -7,7 +7,7 @@ import Link from '~/components/Link.astro'
 import Booth from '~/components/Booth.astro'
 import booth_data from '~/data/booth.json'
 
-const booth_filtered = booth_data.filter(booth => booth.publish)
+const booth_filtered = booth_data.filter(booth => booth.publish).sort((a, b) => parseInt(a.location?.split('#')[1]) - parseInt(b.location?.split('#')[1]))
 
 const { t } = useI18n(Astro.url.pathname)
 ---
@@ -24,7 +24,7 @@ const { t } = useI18n(Astro.url.pathname)
         <h2>3F</h2>
         <Venue3F />
       </div>
-      <div class="mx-auto my-10 max-w-3xl px-6">
+      <div class="mx-auto my-10 max-w-3xl">
         <h2>4F</h2>
         <Venue4F />
       </div>
@@ -44,6 +44,13 @@ const { t } = useI18n(Astro.url.pathname)
         body,
         size: 'lg'
       })
+    })
+  })
+
+  document.querySelectorAll('.booth.clickable').forEach(booth => {
+    booth.addEventListener('click', () => {
+      const boothNameEn = booth.attributes.getNamedItem('data-booth').value
+      document.querySelector(`.booth-card[data-booth='${boothNameEn}']`)?.dispatchEvent(new Event('click'))
     })
   })
 </script>

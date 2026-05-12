@@ -145,23 +145,45 @@ const { t } = useI18n(Astro.url.pathname)
     <foreignObject x="6850" y="170" width="300" height="300">
       <Icon name="ic:baseline-baby-changing-station" width="300" height="300" color="#3C89C2" />
     </foreignObject>
-    <g class="venue-location" transform="translate(3950,4800) rotate(8)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3950,4750) rotate(8)" data-booth="SITCON">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">1</text>
     </g>
-    <g class="venue-location" transform="translate(4450,4865) rotate(5)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(4450,4815) rotate(5)" data-booth="MozTW, Mozilla Taiwan Community">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">2</text>
     </g>
-    <g class="venue-location" transform="translate(4950,4900) rotate(2)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(4950,4850) rotate(2)" data-booth="Cofacts">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">3</text>
     </g>
-    <g class="venue-location" transform="translate(5450,4900) rotate(-2)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(5450,4850) rotate(-2)" data-booth="COSCUP x UbuCon Asia 2026">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">4</text>
     </g>
-    <g class="venue-location" transform="translate(5950,4865) rotate(-5)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(5950,4815) rotate(-5)" data-booth="NTU Continental Club">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">5</text>
     </g>
-    <g class="venue-location" transform="translate(6450,4800) rotate(-8)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(6450,4750) rotate(-8)" data-booth="Jothon">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">6</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(7400,4730) rotate(-11)" data-booth="Sketch Of Taipei">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">7</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(7800,4650) rotate(-11)" data-booth="OPENFUN">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">8</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(7350,5100) rotate(79)" data-booth="citizen bookstore">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">9</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(7430,5500) rotate(79)" data-booth="Nowhere Bookstore">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">10</text>
     </g>
     <g id="location-front-deck" class="venue-location" transform="translate(2604,4775) rotate(12)">
       <rect fill="#a1d7ff" fill-opacity="0.2" stroke="none" width="800" height="500"></rect>
@@ -171,7 +193,7 @@ const { t } = useI18n(Astro.url.pathname)
       <rect fill="#a1d7ff" fill-opacity="0.2" stroke="none" width="980" height="1000"></rect>
       <text style="font-size: 100px;fill:black;font-weight: bold;" x="490" y="500" text-anchor="middle" dominant-baseline="middle">{t('venue.staffRoom')}</text>
     </g>
-    <g id="location-r0" class="venue-location clickable">
+    <g id="location-r0" class="venue-location">
       <path
         d="m 4077 5119 c 647 158 1937 154 2570 21 59-12 98-69 86-126 l -483-2461 c -12-56-66-95-125-88-531 68-1093 43-1530-3-58-6-112 32-124 88-82 418-399 2028-479 2444-10 56 26 111 84 125 z"
         fill="#a1d7ff"
@@ -181,17 +203,17 @@ const { t } = useI18n(Astro.url.pathname)
       <text style="font-size: 500px;fill:black;font-weight: bold;" x="5383" y="3000" text-anchor="middle" dominant-baseline="middle">R0</text>
       <text style="font-size: 150px;fill:black;font-weight: bold;" x="5383" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R0')}</text>
     </g>
-    <g id="location-r1" class="venue-location clickable">
+    <g id="location-r1" class="venue-location">
       <path d="m 7116 2941 c -118 799 101 1627 482 2130 l 1599-328 c 1-536-91-1504-477-2116 z" fill="#a1d7ff" fill-opacity="0.5" stroke="none" transform="translate(0, -720)"></path>
       <text style="font-size: 500px;fill:black;font-weight: bold;" x="8100" y="3000" text-anchor="middle" dominant-baseline="middle">R1</text>
       <text style="font-size: 150px;fill:black;font-weight: bold;" x="8100" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R1')}</text>
     </g>
-    <g id="location-r2" class="venue-location clickable">
+    <g id="location-r2" class="venue-location">
       <path d="m 3616 2942 c 118 799-101 1627-482 2130 l -1599-328 c -1-536 91-1504 477-2116 z" fill="#a1d7ff" fill-opacity="0.5" stroke="none" transform="translate(0, -720)"></path>
       <text style="font-size: 500px;fill:black;font-weight: bold;" x="2600" y="3000" text-anchor="middle" dominant-baseline="middle">R2</text>
       <text style="font-size: 150px;fill:black;font-weight: bold;" x="2600" y="3400" text-anchor="middle" dominant-baseline="middle">{t('room.R2')}</text>
     </g>
-    <g id="location-r3" class="venue-location clickable">
+    <g id="location-r3" class="venue-location">
       <path
         d="m 7038 2556 892-186 c 26-6 42-29 36-55 l -205-915 c -6-25-30-41-57-35 l -891 186 c -26 6-42 29-36 55 l 205 915 c 5 25 30 41 56 35 z"
         fill="#a1d7ff"

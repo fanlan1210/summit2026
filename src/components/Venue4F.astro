@@ -132,7 +132,7 @@ const { t } = useI18n(Astro.url.pathname)
       <rect fill="#a1d7ff" fill-opacity="0.2" stroke="none" width="1200" height="2500"></rect>
       <text style="font-size: 200px;fill:black;font-weight: bold;" x="600" y="1250" text-anchor="middle" dominant-baseline="middle">{t('venue.restArea')}</text>
     </g>
-    <g id="location-r0" class="venue-location clickable">
+    <g id="location-r0" class="venue-location">
       <path
         d="m 4373 2988 c -135 660-477 2318-610 2938-29 134 54 265 188 301 893 237 2017 223 2800-3 131-38 208-169 180-300 l -615-2945 c -25-119-133-204-256-203 l -717 3-717 3 c -124 0-230 86-254 205 z"
         fill="#a1d7ff"
@@ -141,7 +141,7 @@ const { t } = useI18n(Astro.url.pathname)
       <text style="font-size: 500px;fill:black;font-weight: bold;" x="5383" y="4400" text-anchor="middle" dominant-baseline="middle">R0</text>
       <text style="font-size: 150px;fill:black;font-weight: bold;" x="5383" y="4800" text-anchor="middle" dominant-baseline="middle">{t('room.R0')}</text>
     </g>
-    <g id="location-rh" class="venue-location clickable">
+    <g id="location-rh" class="venue-location">
       <path
         d="m 4217 205 c -46 309-118 704-146 856-7 37 15 72 51 81 902 231 1654 176 2436-14 37-9 60-45 52-82 l -169-844 c -7-33-35-56-69-56 0 0-247-74-1043-74-816 0-1043 74-1043 74-34 0-63 25-69 60 z"
         fill="#a1d7ff"
@@ -150,23 +150,81 @@ const { t } = useI18n(Astro.url.pathname)
       <text style="font-size: 500px;fill:black;font-weight: bold;" x="5383" y="600" text-anchor="middle" dominant-baseline="middle">RH</text>
       <text style="font-size: 150px;fill:black;font-weight: bold;" x="5383" y="1000" text-anchor="middle" dominant-baseline="middle">{t('room.RH')}</text>
     </g>
-    <g class="venue-location" transform="translate(3950,7400) rotate(8)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location" transform="translate(4650,7400) rotate(0)">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="1400" height="250"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="700" y="140">紀念品攤位</text>
     </g>
-    <g class="venue-location" transform="translate(4450,7465) rotate(5)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3900,3000) rotate(-78)" data-booth="Do you a flavor">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">17</text>
     </g>
-    <g class="venue-location" transform="translate(4950,7500) rotate(2)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3805,3450) rotate(-78)" data-booth="LZGH">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">16</text>
     </g>
-    <g class="venue-location" transform="translate(5450,7500) rotate(-2)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3710,3900) rotate(-78)" data-booth="Coseeing">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">15</text>
     </g>
-    <g class="venue-location" transform="translate(5950,7465) rotate(-5)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3615,4350) rotate(-78)" data-booth="Kuma Academy">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">14</text>
     </g>
-    <g class="venue-location" transform="translate(6450,7400) rotate(-8)">
-      <rect fill="#a1d7ff" fill-opacity="0.5" stroke="none" width="320" height="120"></rect>
+    <g class="venue-location clickable booth" transform="translate(3520,4800) rotate(-78)" data-booth="Judicial Reform Foundation">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">13</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(3425,5250) rotate(-78)" data-booth="Awakening Foundation">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">12</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(3330,5700) rotate(-78)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">11</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6430,3000) rotate(78)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">18</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6525,3450) rotate(78)" data-booth="Open Development Cambodia (ODC)">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">19</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6620,3900) rotate(78)" data-booth="depositar">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">20</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6715,4350) rotate(78)" data-booth="Social Science Seed">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">21</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6810,4800) rotate(78)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">22</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6905,5250) rotate(78)" data-booth="The Society of Taiwan Women in Science and Technology (TWiST)">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">23</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(7000,5700) rotate(78)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">24</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(3500,7285) rotate(10)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">25</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(4000,7370) rotate(8)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">26</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6340,7370) rotate(-8)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">27</text>
+    </g>
+    <g class="venue-location clickable booth" transform="translate(6840,7285) rotate(-10)" data-booth="">
+      <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
+      <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">28</text>
     </g>
   </svg>
 </div>
