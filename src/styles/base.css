@@ -168,6 +168,12 @@
     scrollbar-color: var(--color-brand) white;
     @apply overflow-x-auto overflow-y-hidden;
   }
+
+  @supports not (text-wrap-style: pretty) {
+      .text-pretty {
+          text-wrap-style: balance;
+      }
+  }
 }
 
 @keyframes pinchLoop {
