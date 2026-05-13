@@ -6,8 +6,8 @@ const href = isAnniversary ? 'https://10th.g0v.tw' : `https://summit.g0v.tw/${ye
 const text = isAnniversary ? 'g0v 10th Anniversary' : `g0v Summit ${year}`
 ---
 
-<a href={href} target="_blank" title={`past-${year}`} class="group relative block aspect-video overflow-hidden border border-neutral-200">
-  <img class="h-full w-full object-cover" src={`./img/past_events/${year}.jpg`} alt={`past-${year}`} />
+<a href={href} target="_blank" title={text} class="group relative block aspect-video overflow-hidden border border-neutral-200">
+  <img class="h-full w-full object-cover" src={`./img/past_events/${year}.jpg`} alt={text} />
   <div class="bg-primary/80 absolute inset-0 flex items-center justify-center font-bold text-white opacity-0 transition-all group-hover:opacity-100">
     <span class="text-xl">{text}</span>
   </div>
