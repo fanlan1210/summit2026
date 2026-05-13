@@ -27,7 +27,7 @@ const getIcon = (name: string) => {
 }
 ---
 
-<div class="booth-card tranition-all flex h-fit cursor-pointer gap-2 rounded-lg group" data-booth={booth.name_en}>
+<div class="booth-card tranition-all flex h-fit cursor-pointer gap-2 rounded-lg group" data-booth={booth.location?.split('#')[1]}>
   <img src={`./img/booth/${booth.name_en}.png`} alt={booth.name} class="h-16 w-16 rounded-md bg-neutral-100 object-contain p-2 group-hover:p-1 transition-all duration-300 shrink-0" />
   <div class="p-1 group-hover:ps-2 transition-all duration-300">
     <h5>{locale === 'en' ? booth.name_en : booth.name}</h5>

@@ -53,8 +53,8 @@ const { t } = useI18n(Astro.url.pathname)
 
   document.querySelectorAll('.booth.clickable').forEach(booth => {
     booth.addEventListener('click', () => {
-      const boothNameEn = booth.attributes.getNamedItem('data-booth').value
-      document.querySelector(`.booth-card[data-booth='${boothNameEn}']`)?.dispatchEvent(new Event('click'))
+      const boothId = booth.attributes.getNamedItem('data-booth').value
+      document.querySelector(`.booth-card[data-booth='${boothId}']`)?.dispatchEvent(new Event('click'))
     })
   })
 </script>
