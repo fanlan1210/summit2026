@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @theme {
   --text-base: 18px;
-  --font-sans: Onest, 'Noto Sans TC', 'sourcehansans-tc', sans-serif;
+  --font-sans: Onest, 'Noto Sans TC', 'sourcehansans-tc', 'Genki Gothic', sans-serif;
   --font-serif: Amarna, 'LXGW WenKai TC', serif;
   --color-brand: #f25549;
   --color-primary: #df6258;

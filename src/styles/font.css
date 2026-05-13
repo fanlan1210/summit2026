@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Genki Gothic";
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+3400-9FFF, U+20280-31CFF;
+    src: url("~/assets/font/GenKiGothic2TW-R.subset.otf") format("opentype"),
+         url("~/assets/font/GenKiGothic2TW-R.subset.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Genki Gothic";
+    font-weight: 700;
+    font-display: swap;
+    unicode-range: U+3400-9FFF, U+20280-31CFF;
+    src: url("~/assets/font/GenKiGothic2TW-B.subset.otf") format("opentype"),
+         url("~/assets/font/GenKiGothic2TW-B.subset.woff2") format("woff2");
+}
