@@ -7,8 +7,8 @@ import Link from '~/components/Link.astro'
 import Booth from '~/components/Booth.astro'
 import booth_data from '~/data/booth.json'
 
-const booth_3f = booth_data.filter(booth => booth.publish && booth.location?.includes('3F')).sort((a, b) => parseInt(a.location?.split('#')[1]) - parseInt(b.location?.split('#')[1]))
-const booth_4f = booth_data.filter(booth => booth.publish && booth.location?.includes('4F')).sort((a, b) => parseInt(a.location?.split('#')[1]) - parseInt(b.location?.split('#')[1]))
+const booth_3f = booth_data.filter(booth => booth.publish && booth.floor === '3F').sort((a, b) => a.id - b.id)
+const booth_4f = booth_data.filter(booth => booth.publish && booth.floor === '4F').sort((a, b) => a.id - b.id)
 
 const { t } = useI18n(Astro.url.pathname)
 ---

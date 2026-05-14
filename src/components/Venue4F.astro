@@ -5,8 +5,8 @@ import booth_data from '~/data/booth.json'
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-const getTitle = (id: String) => {
-  const booth = booth_data.find(booth => booth.location?.split("#")[1] === id)
+const getTitle = (id: Number) => {
+  const booth = booth_data.find(booth => booth.id === id)
   if (!booth) return ''
   if (locale === 'en') return booth.name_en
   return booth.name
@@ -165,92 +165,92 @@ const getTitle = (id: String) => {
     <g class="venue-location clickable booth" transform="translate(3900,3000) rotate(-78)" data-booth="17">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">17</text>
-      <title>{getTitle('17')}</title>
+      <title>{getTitle(17)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3805,3450) rotate(-78)" data-booth="16">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">16</text>
-      <title>{getTitle('16')}</title>
+      <title>{getTitle(16)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3710,3900) rotate(-78)" data-booth="15">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">15</text>
-      <title>{getTitle('15')}</title>
+      <title>{getTitle(15)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3615,4350) rotate(-78)" data-booth="14">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">14</text>
-      <title>{getTitle('14')}</title>
+      <title>{getTitle(14)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3520,4800) rotate(-78)" data-booth="13">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">13</text>
-      <title>{getTitle('13')}</title>
+      <title>{getTitle(13)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(3425,5250) rotate(-78)" data-booth="12">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">12</text>
-      <title>{getTitle('12')}</title>
+      <title>{getTitle(12)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(3330,5700) rotate(-78)" data-booth="11">
+    <g class="venue-location clickable booth" transform="translate(3330,5700) rotate(-78)" data-booth="11">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">11</text>
-      <title>{getTitle('11')}</title>
+      <title>{getTitle(11)}</title>
     </g>
     <g class="venue-location booth" transform="translate(6430,3000) rotate(78)" data-booth="18">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">18</text>
-      <title>{getTitle('18')}</title>
+      <title>{getTitle(18)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6525,3450) rotate(78)" data-booth="19">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">19</text>
-      <title>{getTitle('19')}</title>
+      <title>{getTitle(19)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6620,3900) rotate(78)" data-booth="20">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">20</text>
-      <title>{getTitle('20')}</title>
+      <title>{getTitle(20)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6715,4350) rotate(78)" data-booth="21">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">21</text>
-      <title>{getTitle('21')}</title>
+      <title>{getTitle(21)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(6810,4800) rotate(78)" data-booth="22">
+    <g class="venue-location clickable booth" transform="translate(6810,4800) rotate(78)" data-booth="22">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">22</text>
-      <title>{getTitle('22')}</title>
+      <title>{getTitle(22)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6905,5250) rotate(78)" data-booth="23">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">23</text>
-      <title>{getTitle('23')}</title>
+      <title>{getTitle(23)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(7000,5700) rotate(78)" data-booth="24">
+    <g class="venue-location clickable booth" transform="translate(7000,5700) rotate(78)" data-booth="24">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">24</text>
-      <title>{getTitle('24')}</title>
+      <title>{getTitle(24)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(3500,7285) rotate(10)" data-booth="25">
+    <g class="venue-location clickable booth" transform="translate(3500,7285) rotate(10)" data-booth="25">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">25</text>
-      <title>{getTitle('25')}</title>
+      <title>{getTitle(25)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(4000,7370) rotate(8)" data-booth="26">
+    <g class="venue-location clickable booth" transform="translate(4000,7370) rotate(8)" data-booth="26">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">26</text>
-      <title>{getTitle('26')}</title>
+      <title>{getTitle(26)}</title>
     </g>
-    <g class="venue-location booth" transform="translate(6340,7370) rotate(-8)" data-booth="27">
+    <g class="venue-location clickable booth" transform="translate(6340,7370) rotate(-8)" data-booth="27">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">27</text>
-      <title>{getTitle('27')}</title>
+      <title>{getTitle(27)}</title>
     </g>
     <g class="venue-location clickable booth" transform="translate(6840,7285) rotate(-10)" data-booth="28">
       <rect fill="#ffd7a1" fill-opacity="0.5" stroke="none" width="360" height="200"></rect>
       <text style="font-size: 150px; fill: black; font-weight: bold;" text-anchor="middle" dominant-baseline="middle" x="180" y="110">28</text>
-      <title>{getTitle('28')}</title>
+      <title>{getTitle(28)}</title>
     </g>
   </svg>
 </div>
