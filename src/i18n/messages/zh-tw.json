@@ -53,6 +53,7 @@
     "visit": "交通",
     "venue": "場地與攤位",
     "speaker": "講者",
+    "staff": "工作團隊",
     "sponsor": "贊助/媒體",
     "about": "關於",
     "register": "參與活動",
@@ -70,6 +71,28 @@
   "speakers": {
     "keynote": "基調演講",
     "sessions": "議程講者"
+  },
+  "staff": {
+    "title": "工作團隊",
+    "teams": {
+      "organizers": "總籌組",
+      "administration": "行政組",
+      "marketing": "宣傳組",
+      "design": "設計小組",
+      "sns": "社群小組",
+      "media": "媒體小組",
+      "web": "網站小組",
+      "finance": "財務組",
+      "logistics": "場務組",
+      "registration": "報到小組",
+      "catering": "餐飲小組",
+      "support": "機動小組",
+      "transport": "物流小組",
+      "sponsorship": "贊助組",
+      "program": "議程組",
+      "programAssistants": "議程助理",
+      "photography": "紀錄組"
+    }
   },
   "agenda": {
     "title": "議程",

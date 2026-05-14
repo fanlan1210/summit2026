@@ -53,6 +53,7 @@
     "visit": "Visit",
     "venue": "Venue",
     "speaker": "Speaker",
+    "staff": "Staff",
     "sponsor": "Sponsor",
     "about": "About",
     "register": "Register",
@@ -70,6 +71,28 @@
   "speakers": {
     "keynote": "Keynote",
     "sessions": "Session Speakers"
+  },
+  "staff": {
+    "title": "Staff",
+    "teams": {
+      "organizers": "Organizers",
+      "administration": "Administration",
+      "marketing": "Marketing",
+      "design": "Design",
+      "sns": "SNS",
+      "media": "Media Relations",
+      "web": "Web",
+      "finance": "Finance",
+      "logistics": "Logistics",
+      "registration": "Registration",
+      "catering": "Catering",
+      "support": "Support",
+      "transport": "Transport",
+      "sponsorship": "Sponsorship",
+      "program": "Program",
+      "programAssistants": "Program Assistants",
+      "photography": "Photography"
+    }
   },
   "agenda": {
     "title": "Agenda",

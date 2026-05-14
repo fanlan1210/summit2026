@@ -1,0 +1,122 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import AvatarImage from '~/components/AvatarImage.astro'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import StaffCard from './StaffCard.astro'
+import staff from '~/data/staff.json'
+import teams from '~/data/teams.json'
+import { getLocalizedStaffName, hasStaffIntro } from '~/utils/build/staff'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const staffById = new Map(staff.map(person => [person.id, person]))
+
+function normalizeIds(ids) {
+  return Array.isArray(ids) ? ids : []
+}
+
+function getStaffPeople(ids) {
+  return normalizeIds(ids)
+    .map(id => staffById.get(id))
+    .filter(Boolean)
+}
+
+function getTeamPeople(team) {
+  return [...getStaffPeople(team.leader), ...getStaffPeople(team.members)]
+}
+
+const teamEntries = Object.entries(teams)
+---
+
+<Layout pageName={t('staff.title')}>
+  <main class="staff container">
+    <h1 class="my-8 md:my-12">{t('staff.title')}</h1>
+
+    <div class="grid gap-16 pb-16">
+      {
+        teamEntries.map(([teamKey, team]) => {
+          const people = getTeamPeople(team)
+          const subteams = Object.entries(team.groups ?? {})
+
+          return (
+            <section class="staff-team" id={teamKey}>
+              <h3 class="mb-8">{t(`staff.teams.${teamKey}`)}</h3>
+
+              {people.length > 0 && (
+                <div class="staff-grid grid grid-cols-3 items-start gap-x-6 gap-y-8 md:grid-cols-5 lg:grid-cols-6">
+                  {people.map(person => (
+                    <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} />
+                  ))}
+                </div>
+              )}
+
+              {subteams.length > 0 && (
+                <div class:list={['grid gap-10', people.length > 0 && 'mt-12']}>
+                  {subteams.map(([subteamKey, subteam]) => {
+                    const subteamPeople = getTeamPeople(subteam)
+
+                    return (
+                      <section class="pt-8">
+                        <h4 class="mb-6 font-bold">{t(`staff.teams.${subteamKey}`)}</h4>
+                        <div class="staff-grid grid grid-cols-3 items-start gap-x-6 gap-y-8 md:grid-cols-5 lg:grid-cols-6">
+                          {subteamPeople.map(person => (
+                            <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  })}
+                </div>
+              )}
+            </section>
+          )
+        })
+      }
+    </div>
+  </main>
+
+  {
+    staff.filter(hasStaffIntro).map(person => {
+      const name = getLocalizedStaffName(person, locale)
+      const intro = person.intro?.trim()
+
+      return (
+        <template id={`staff-modal-${person.id}`}>
+          <div class="header">
+            <div class="flex items-center gap-4">
+              <div class="grid aspect-square w-14 place-items-center overflow-hidden rounded-full bg-slate-100 md:w-20">
+                <AvatarImage class="h-full w-full object-cover object-top" src={`/img/staff/${person.id}.jpg`} alt={name} />
+              </div>
+              <div class="flex flex-col">
+                <h4 class="font-bold">{name}</h4>
+                {person.nickname && person.nickname !== name && <h6 class="text-neutral-500">{person.nickname}</h6>}
+              </div>
+            </div>
+          </div>
+          <div class="body">{intro && <p class="whitespace-pre-line">{intro}</p>}</div>
+        </template>
+      )
+    })
+  }
+</Layout>
+
+<script>
+  import { showModalWith } from '~/utils/client/modal'
+
+  document.querySelector('.staff')?.addEventListener('click', event => {
+    const target = event.target as HTMLElement
+    const card = target.closest('.staff-card[data-id]')
+    if (!card || !(card instanceof HTMLElement)) return
+
+    const { id } = card.dataset
+    if (!id) return
+
+    const template = document.getElementById(`staff-modal-${id}`) as HTMLTemplateElement | null
+    const header = template?.content.querySelector('.header')
+    const body = template?.content.querySelector('.body')
+    if (!header || !body) return
+
+    showModalWith({ header: header.innerHTML, body: body.innerHTML })
+  })
+</script>

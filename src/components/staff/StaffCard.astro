@@ -1,0 +1,41 @@
+---
+import AvatarImage from '~/components/AvatarImage.astro'
+import { getLocalizedStaffName } from '~/utils/build/staff'
+
+const { person, locale, hasIntro = false } = Astro.props
+const name = getLocalizedStaffName(person, locale)
+---
+
+{
+  hasIntro ? (
+    <button type="button" class="staff-card staff-card-clickable min-w-0 text-inherit" data-id={person.id}>
+      <div class="staff-card-avatar">
+        <AvatarImage class="h-full w-full object-cover object-top" src={`/img/staff/${person.id}.jpg`} alt={name} />
+      </div>
+      <div class="mt-3 w-full leading-snug break-words">{name}</div>
+    </button>
+  ) : (
+    <div class="staff-card min-w-0 text-inherit">
+      <div class="staff-card-avatar">
+        <AvatarImage class="h-full w-full object-cover object-top" src={`/img/staff/${person.id}.jpg`} alt={name} />
+      </div>
+      <div class="mt-3 w-full leading-snug break-words">{name}</div>
+    </div>
+  )
+}
+
+<style>
+  @reference "~/styles/_tailwind.css";
+
+  .staff-card {
+    @apply flex flex-col items-center justify-start text-center;
+  }
+
+  .staff-card-clickable {
+    @apply cursor-pointer;
+  }
+
+  .staff-card-avatar {
+    @apply flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100;
+  }
+</style>
