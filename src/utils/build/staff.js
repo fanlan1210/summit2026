@@ -12,3 +12,7 @@ export function getLocalizedStaffName(person, locale) {
 export function hasStaffIntro(person) {
   return Boolean(person.intro?.trim())
 }
+
+export function getAvatar(person) {
+  return import.meta.env.BASE_URL + (person.hasAvatar ? `img/staff/${person.id}.jpg` : `img/staff/default.jpg`)
+}

@@ -6,7 +6,7 @@ import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import StaffCard from './StaffCard.astro'
 import staff from '~/data/staff.json'
 import teams from '~/data/teams.json'
-import { getLocalizedStaffName, hasStaffIntro } from '~/utils/build/staff'
+import { getLocalizedStaffName, hasStaffIntro, getAvatar } from '~/utils/build/staff'
 
 const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
@@ -87,7 +87,7 @@ const teamEntries = Object.entries(teams)
           <div class="header">
             <div class="flex items-center gap-4">
               <div class="grid aspect-square w-14 place-items-center overflow-hidden rounded-full bg-slate-100 md:w-20">
-                <AvatarImage class="h-full w-full object-cover object-top" src={`/img/staff/${person.id}.jpg`} alt={name} />
+                <AvatarImage class="h-full w-full object-cover object-top" src={getAvatar(person)} alt={name} />
               </div>
               <div class="flex flex-col">
                 <h4 class="font-bold">{name}</h4>
