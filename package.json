@@ -15,6 +15,7 @@
     "preview-production": "cross-env BUILD_MODE=production astro preview",
     "build": "cross-env BUILD_MODE=staging astro build",
     "preview": "cross-env BUILD_MODE=staging astro preview",
+    "predev": "node predev.js",
     "dev": "cross-env BUILD_MODE=staging astro dev",
     "format": "prettier --write .",
     "convert-staff": "node convert-staff.js",
