@@ -157,34 +157,34 @@ const { t } = useI18n(Astro.url.pathname)
                 </div>
               </p>
             </div>
+          </div>
 
-            <!-- 自行開車 -->
-            <div id="visit-panel-driving" class="visit-tab-panel hidden min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
-              <div class="visit-tab-panel__left min-w-0">
-                <div class="visit-step">
-                  <div class="visit-step__title mb-5">
-                    <h4>{t('visit.transport.drivingStep1.title')}</h4>
-                  </div>
-                  <ul class="visit-step__list wrap-break-word">
-                    <li>{t('visit.transport.drivingStep1.item1')}</li>
-                  </ul>
+          <!-- 自行開車 -->
+          <div id="visit-panel-driving" class="visit-tab-panel hidden min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-driving" data-panel="driving" aria-hidden="true">
+            <div class="visit-tab-panel__left min-w-0">
+              <div class="visit-step">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep1.title')}</h4>
                 </div>
-                <div class="visit-step mt-8">
-                  <div class="visit-step__title mb-5">
-                    <h4>{t('visit.transport.drivingStep2.title')}</h4>
-                  </div>
-                  <ul class="visit-step__list wrap-break-word">
-                    <li>{t('visit.transport.drivingStep2.item1')}</li>
-                  </ul>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep1.item1')}</li>
+                </ul>
+              </div>
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep2.title')}</h4>
                 </div>
-                <div class="visit-step mt-8">
-                  <div class="visit-step__title mb-5">
-                    <h4>{t('visit.transport.drivingStep3.title')}</h4>
-                  </div>
-                  <ul class="visit-step__list wrap-break-word">
-                    <li>{t('visit.transport.drivingStep3.item1')}</li>
-                  </ul>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep2.item1')}</li>
+                </ul>
+              </div>
+              <div class="visit-step mt-8">
+                <div class="visit-step__title mb-5">
+                  <h4>{t('visit.transport.drivingStep3.title')}</h4>
                 </div>
+                <ul class="visit-step__list wrap-break-word">
+                  <li>{t('visit.transport.drivingStep3.item1')}</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -192,65 +192,70 @@ const { t } = useI18n(Astro.url.pathname)
       </div>
     </div>
   </main>
+</Layout>
 
-  <script src="../scripts/visit-tabs.js"></script>
-  <script>
-    /**
-     * Handle deep links from Navbar visit submenu.
-     * - #visit-map: scroll to the map/info block
-     * - #tab-publicTransport / #tab-driving: switch tab then scroll to transport block
-     * @returns {void}
-     */
-    function handleVisitHash() {
-      const { hash } = window.location
+<script src="../scripts/visit-tabs.js"></script>
+<script>
+  /**
+   * Handle deep links from Navbar visit submenu.
+   * - #visit-map: scroll to the map/info block
+   * - #tab-publicTransport / #tab-driving: switch tab then scroll to transport block
+   * @returns {void}
+   */
+  function handleVisitHash() {
+    const { hash } = window.location
 
-      if (hash === '#visit-map') {
-        document.getElementById('visit-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (hash === '#visit-map') {
+      document.getElementById('visit-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    } else {
+      const tabKey = hash.replace('#tab-', '')
+      const tab = document.querySelector(`[data-tab="${tabKey}"]`)
+      if (tab instanceof HTMLElement) {
+        tab.click()
+      } else {
         return
       }
-
-      if (hash === '#tab-publicTransport' || hash === '#tab-driving') {
-        const tabKey = hash.replace('#tab-', '')
-        const tab = document.querySelector(`[data-tab="${tabKey}"]`)
-        if (tab instanceof HTMLElement) {
-          tab.click()
-        }
-
-        document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+      document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
 
-    document.querySelector('.visit-map-embed__overlay')?.addEventListener('click', function () {
-      this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+  document.querySelectorAll('.visit-tabs__tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      window.location.hash = `#tab-${tab.attributes['data-tab'].value}`
     })
-    window.addEventListener('focus', function () {
-      document.querySelector('.visit-map-embed')?.classList.remove('visit-map-embed--active')
-    })
+  })
 
-    /**
-     * @returns {void}
-     */
-    function scheduleHandleVisitHash() {
-      if (!window.location.hash) return
-      window.requestAnimationFrame(() => handleVisitHash())
+  document.querySelector('.visit-map-embed__overlay')?.addEventListener('click', function () {
+    this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
+  })
+  window.addEventListener('focus', function () {
+    document.querySelector('.visit-map-embed')?.classList.remove('visit-map-embed--active')
+  })
+
+  /**
+   * @returns {void}
+   */
+  function scheduleHandleVisitHash() {
+    if (!window.location.hash) return
+    window.requestAnimationFrame(() => handleVisitHash())
+  }
+
+  document.addEventListener('DOMContentLoaded', scheduleHandleVisitHash)
+  window.addEventListener('hashchange', scheduleHandleVisitHash)
+</script>
+
+<style>
+  .visit-map-embed__overlay {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    &:hover {
+      opacity: 1;
     }
+  }
 
-    document.addEventListener('DOMContentLoaded', scheduleHandleVisitHash)
-    window.addEventListener('hashchange', scheduleHandleVisitHash)
-  </script>
-
-  <style>
-    .visit-map-embed__overlay {
-      opacity: 0;
-      transition: opacity 0.1s ease-in-out;
-      &:hover {
-        opacity: 1;
-      }
-    }
-
-    .visit-map-embed--active .visit-map-embed__overlay {
-      pointer-events: none;
-      opacity: 0;
-    }
-  </style>
-</Layout>
+  .visit-map-embed--active .visit-map-embed__overlay {
+    pointer-events: none;
+    opacity: 0;
+  }
+</style>
