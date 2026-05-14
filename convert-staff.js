@@ -142,6 +142,7 @@ for (const record of records) {
   staff.push({
     id,
     nickname: record.暱稱?.trim() ?? '',
+    hasAvatar: String(record.大頭貼 ?? '').trim().length > 0,
     name: {
       zh: record.華語版稱呼?.trim() ?? '',
       en: record.英文版稱呼?.trim() ?? '',
