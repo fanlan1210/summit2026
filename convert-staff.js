@@ -19,13 +19,13 @@ const teamMap = {
 
 const teamLeaderMap = {
   總籌組長: 'organizers',
-  行政組長: 'administration',
   宣傳組長: 'marketing',
-  財務組長: 'finance',
-  場務組長: 'logistics',
-  贊助組長: 'sponsorship',
+  行政組長: 'administration',
   議程組長: 'program',
   紀錄組長: 'photography',
+  場務組長: 'logistics',
+  贊助組長: 'sponsorship',
+  財務組長: 'finance',
 }
 
 const groupMap = {
@@ -37,7 +37,7 @@ const groupMap = {
   餐飲小組: { team: 'logistics', group: 'catering' },
   機動小組: { team: 'logistics', group: 'support' },
   物流小組: { team: 'logistics', group: 'transport' },
-  議程助理: { team: 'program', group: 'assistants' },
+  議程助理: { team: 'program', group: 'programAssistants' },
 }
 
 const groupLeaderMap = {
