@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import Markdown from '~/components/Markdown.astro'
 import AvatarImage from '~/components/AvatarImage.astro'
 import { getLocaleFromPath, useI18n } from '~/i18n/utils'
 import StaffCard from './StaffCard.astro'
@@ -94,7 +95,9 @@ const teamEntries = Object.entries(teams)
               </div>
             </div>
           </div>
-          <div class="body">{intro && <p class="whitespace-pre-line">{intro}</p>}</div>
+          <div class="body">
+            <Markdown content={intro} />
+          </div>
         </template>
       )
     })
