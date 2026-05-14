@@ -85,6 +85,7 @@ const revision = gitOutput(["describe", "--always"]);
 const remoteUrl = gitOutput(["remote", "get-url", "origin"]);
 
 runNpm(["run", "fetch-schedule"]);
+runNpm(["run", "convert-staff"]);
 runNpm(["run", "build-production"]);
 
 removePath(checkoutDir);

@@ -23,6 +23,9 @@ pnpm-debug.log*
 static
 
 src/data/schedule.json
+src/data/staff.json
+src/data/teams.json
+
 public/data/schedule.json
 
 .claude/
