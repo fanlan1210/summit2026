@@ -99,19 +99,33 @@
       "tabs": {
         "publicTransport": "大眾運輸工具",
         "drivingLine1": "自行開車",
-        "drivingLine2": "或摩托車"
+        "drivingLine2": "或摩托車",
+        "shuttleBus": "年會接駁車"
       },
       "publicTransportStep1": {
         "title": "1. 移動至南港",
-        "item1": "搭乘<a href=\"https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵</a>、<a href=\"https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">高鐵</a>至南港站。",
-        "item2": "搭乘<a href=\"https://www.metro.taipei/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台北捷運</a>至南港站（板南線）、南港展覽館站（板南線、文湖線）。"
+        "item1": "搭乘<a href=\"https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980\" target=\"_blank\" rel=\"noopener noreferrer\" >台鐵</a>、<a href=\"https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68\" target=\"_blank\" rel=\"noopener noreferrer\" >高鐵</a>至南港站。",
+        "item2": "搭乘<a href=\"https://www.metro.taipei/\" target=\"_blank\" rel=\"noopener noreferrer\" >台北捷運</a>至南港站（板南線）、南港展覽館站（板南線、文湖線）。"
       },
       "publicTransportStep2": {
         "title": "2. 移動至中研院",
-        "item1": "年會接駁車每日早上 7:50 至 9:30 來回行駛<a href=\"https://maps.app.goo.gl/npaRb5tB9zpv8mYU8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">台鐵南港站</a> ↔ <a href=\"https://maps.app.goo.gl/SjMNHSzr76wUS1Mx7\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">中央研究院人文社會科學館北側</a>，請留意現場舉指示牌的工作人員；來回班距約 20 分鐘，還請提早前往等待。",
-        "item2": "於捷運南港站（2 號出口）換乘公車 <a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100021230\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">212直</a>、<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100027000\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\">270 </a>或<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0112002500\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> 藍25</a> 至中研院站。",
+        "item2": "於捷運南港站（2 號出口）換乘公車 <a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100021230\" target=\"_blank\" rel=\"noopener noreferrer\" >212直</a>、<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100027000\" target=\"_blank\" rel=\"noopener noreferrer\" >270 </a>或<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0112002500\" target=\"_blank\" rel=\"noopener noreferrer\" > 藍25</a> 至中研院站。",
         "item3": "於南港展覽館站（5 號出口）換乘公車 212、276、306、620、645、679、205、小5、小1 或 小12 至中研院站。",
-        "item4": "步行或騎乘<a href=\"https://www.youbike.com.tw/region/taipei/stations/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-info-dark\"> YouBike </a>至中央研究院人文社會科學館。"
+        "item4": "步行或騎乘<a href=\"https://www.youbike.com.tw/region/taipei/stations/\" target=\"_blank\" rel=\"noopener noreferrer\" > YouBike </a>至中央研究院人文社會科學館。"
+      },
+      "shuttle": {
+        "brief": "年會接駁車來回班距約<strong> 20 分鐘</strong>，請留意現場舉指示牌的工作人員，還請提早前往等待。",
+        "stop1": "台鐵南港站",
+        "stop2": "中央研究院人文社會科學館北側",
+        "tail": "。",
+        "go": {
+          "title": "1. 去程",
+          "p": "年會接駁車每日早上 7:45 至 10:10 兩台車來回行駛"
+        },
+        "back": {
+          "title": "2. 回程",
+          "p": "年會接駁車每日傍晚 17:00 至 18:30 一台車來回行駛"
+        }
       },
       "drivingStep1": {
         "title": "1. 行車路線",

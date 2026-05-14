@@ -73,6 +73,19 @@ const { t } = useI18n(Astro.url.pathname)
             class="visit-tabs__tab text-info flex min-w-0 flex-1 items-center justify-center gap-2 border-b-6 border-transparent bg-transparent pb-2 font-bold md:min-w-40 md:flex-initial"
             role="tab"
             aria-selected="false"
+            aria-controls="visit-panel-shuttleBus"
+            aria-label={`${t('visit.transport.tabs.shuttleBus')}`}
+            id="visit-tab-shuttleBus"
+            data-tab="shuttleBus"
+          >
+            <Icon name="mdi:bus-side" width="20" />
+            <span class="hidden md:inline">{t('visit.transport.tabs.shuttleBus')}</span>
+          </button>
+          <button
+            type="button"
+            class="visit-tabs__tab text-info flex min-w-0 flex-1 items-center justify-center gap-2 border-b-6 border-transparent bg-transparent pb-2 font-bold md:min-w-40 md:flex-initial"
+            role="tab"
+            aria-selected="false"
             aria-controls="visit-panel-driving"
             aria-label={`${t('visit.transport.tabs.drivingLine1')} ${t('visit.transport.tabs.drivingLine2')}`}
             id="visit-tab-driving"
@@ -84,7 +97,7 @@ const { t } = useI18n(Astro.url.pathname)
         </div>
 
         <!-- 標籤頁內容 -->
-        <div class="visit-tabs__content mt-8 min-h-[480px] min-w-0">
+        <div class="visit-tabs__content mt-8 min-h-[400px] min-w-0">
           <!-- 大眾運輸 -->
           <div id="visit-panel-publicTransport" class="visit-tab-panel grid min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-publicTransport" data-panel="publicTransport">
             <div class="visit-tab-panel__left min-w-0">
@@ -102,11 +115,25 @@ const { t } = useI18n(Astro.url.pathname)
                   <h4>{t('visit.transport.publicTransportStep2.title')}</h4>
                 </div>
                 <ul class="visit-step__list wrap-break-word">
-                  <!-- li set:html={t('visit.transport.publicTransportStep2.item1')} / -->
                   <li set:html={t('visit.transport.publicTransportStep2.item2')} />
                   <li set:html={t('visit.transport.publicTransportStep2.item3')} />
                   <li set:html={t('visit.transport.publicTransportStep2.item4')} />
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 交通車 -->
+          <div id="visit-panel-shuttleBus" class="visit-tab-panel hidden min-w-0 gap-8" role="tabpanel" aria-labelledby="visit-tab-shuttleBus" data-panel="shuttleBus" aria-hidden="true">
+            <div class="visit-tab-panel__left min-w-0">
+              <p class="mb-6" set:html={t('visit.transport.shuttle.brief')}>
+              <div class="mb-6">
+                <h4 class="mb-3">{t('visit.transport.shuttle.go.title')}</h4>
+                <p>{t('visit.transport.shuttle.go.p')} <span class="inline-flex items-center gap-2"><a href="https://maps.app.goo.gl/npaRb5tB9zpv8mYU8" target="_blank">{t('visit.transport.shuttle.stop1')}</a><Icon name="mdi:arrow-left-right" width="16" height="16" /><a href="https://maps.app.goo.gl/SjMNHSzr76wUS1Mx7" target="_blank">{t('visit.transport.shuttle.stop2')}</a></span>{t('visit.transport.shuttle.tail')}</p>
+              </div>
+              <div>
+                <h4 class="mb-3">{t('visit.transport.shuttle.back.title')}</h4>
+                <p>{t('visit.transport.shuttle.back.p')} <span class="inline-flex items-center gap-2"><a href="https://maps.app.goo.gl/SjMNHSzr76wUS1Mx7" target="_blank">{t('visit.transport.shuttle.stop2')}</a><Icon name="mdi:arrow-left-right" width="16" height="16" /><a href="https://maps.app.goo.gl/npaRb5tB9zpv8mYU8" target="_blank">{t('visit.transport.shuttle.stop1')}</a></span>{t('visit.transport.shuttle.tail')}</p>
               </div>
             </div>
           </div>
