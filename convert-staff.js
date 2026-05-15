@@ -51,7 +51,7 @@ const groupLeaderMap = {
   餐飲總監: groupMap.餐飲小組,
 }
 
-const teamKeys = Object.values(teamMap)
+const teamOrder = ['organizers', 'marketing', 'administration', 'program', 'photography', 'logistics', 'sponsorship', 'finance']
 
 function splitValues(value) {
   return String(value ?? '')
@@ -66,7 +66,7 @@ function unique(values) {
 
 function createTeams() {
   return Object.fromEntries(
-    teamKeys.map(team => [
+    teamOrder.map(team => [
       team,
       {
         leader: [],
@@ -87,25 +87,29 @@ function addGroupMember(teams, team, group, field, id) {
 
 function normalizeTeams(teams) {
   return Object.fromEntries(
-    Object.entries(teams).map(([team, value]) => [
-      team,
-      {
-        leader: unique(value.leader),
-        members: value.members.length > 0 ? unique(value.members) : null,
-        groups:
-          Object.keys(value.groups).length > 0
-            ? Object.fromEntries(
-                Object.entries(value.groups).map(([group, groupValue]) => [
-                  group,
-                  {
-                    leader: unique(groupValue.leader),
-                    members: groupValue.members.length > 0 ? unique(groupValue.members) : null,
-                  },
-                ])
-              )
-            : null,
-      },
-    ])
+    teamOrder.map(team => {
+      const value = teams[team]
+
+      return [
+        team,
+        {
+          leader: unique(value.leader),
+          members: value.members.length > 0 ? unique(value.members) : null,
+          groups:
+            Object.keys(value.groups).length > 0
+              ? Object.fromEntries(
+                  Object.entries(value.groups).map(([group, groupValue]) => [
+                    group,
+                    {
+                      leader: unique(groupValue.leader),
+                      members: groupValue.members.length > 0 ? unique(groupValue.members) : null,
+                    },
+                  ])
+                )
+              : null,
+        },
+      ]
+    })
   )
 }
 
