@@ -10,7 +10,7 @@ const intro = person.intro?.trim() ?? ''
 const hasUrlIntro = hasIntro && onlyUrl(intro)
 const introUrl = /^https?:\/\//i.test(intro) ? intro : `https://${intro}`
 const CardTag = hasUrlIntro ? 'a' : hasIntro ? 'button' : 'div'
-const cardClass = ['staff-card min-w-0 text-inherit no-underline relative', hasIntro && 'staff-card-clickable']
+const cardClass = ['staff-card min-w-0 text-inherit no-underline', hasIntro && 'staff-card-clickable']
 
 let cardAttrs = {}
 if (hasUrlIntro) {
@@ -21,17 +21,19 @@ if (hasUrlIntro) {
 ---
 
 <CardTag class:list={cardClass} {...cardAttrs}>
-  <div class="staff-card-avatar">
-    <AvatarImage class="h-full w-full object-cover object-top" src={avatar} alt={name} />
+  <div class="staff-card-avatar-wrap">
+    <div class="staff-card-avatar">
+      <AvatarImage class="h-full w-full object-cover object-top" src={avatar} alt={name} />
+    </div>
+    {
+      hasIntro && (
+        <span class="staff-card-intro-icon" aria-hidden="true">
+          <Icon name="mdi:chat-processing" width={20} />
+        </span>
+      )
+    }
   </div>
   <div class="staff-card-name mt-3 w-full leading-snug wrap-break-word">{name}</div>
-  {
-    hasIntro && (
-      <span class="staff-card-intro-icon" aria-hidden="true">
-        <Icon name="mdi:chat-processing" width={20} />
-      </span>
-    )
-  }
 </CardTag>
 
 <style>
@@ -60,12 +62,19 @@ if (hasUrlIntro) {
     @apply bg-primary text-white;
   }
 
+  .staff-card-avatar-wrap {
+    @apply relative aspect-square w-full;
+  }
+
   .staff-card-avatar {
-    @apply ring-primary/20 flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 ring-offset-2 ring-offset-white transition duration-150;
+    @apply ring-primary/20 flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 ring-offset-2 ring-offset-white transition duration-150;
   }
 
   .staff-card-intro-icon {
-    @apply text-primary absolute top-1 right-1 grid h-7 w-7 place-items-center rounded-full bg-white/90 shadow-sm ring-1 ring-black/10 transition duration-150;
+    @apply text-primary absolute grid h-7 w-7 place-items-center rounded-full bg-white/90 shadow-sm ring-1 ring-black/10 transition duration-150;
+    /* Center the badge on the avatar circle's upper-right 45-degree point. */
+    top: calc(14.6447% - 0.875rem);
+    right: calc(14.6447% - 0.875rem);
   }
 
   .staff-card-name {
