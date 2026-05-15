@@ -27,6 +27,10 @@ function getTeamPeople(team) {
   return [...getStaffPeople(team.leader), ...getStaffPeople(team.members)]
 }
 
+function isTeamLeader(team, person) {
+  return normalizeIds(team.leader).includes(person.id)
+}
+
 const teamEntries = Object.entries(teams)
 ---
 
@@ -47,7 +51,7 @@ const teamEntries = Object.entries(teams)
               {people.length > 0 && (
                 <div class="staff-grid grid grid-cols-3 items-start gap-x-6 gap-y-8 md:grid-cols-5 lg:grid-cols-6">
                   {people.map(person => (
-                    <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} />
+                    <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} isLeader={isTeamLeader(team, person)} />
                   ))}
                 </div>
               )}
@@ -62,7 +66,7 @@ const teamEntries = Object.entries(teams)
                         <h4 class="mb-6 font-bold">{t(`staff.teams.${subteamKey}`)}</h4>
                         <div class="staff-grid grid grid-cols-3 items-start gap-x-6 gap-y-8 md:grid-cols-5 lg:grid-cols-6">
                           {subteamPeople.map(person => (
-                            <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} />
+                            <StaffCard person={person} locale={locale} hasIntro={hasStaffIntro(person)} isLeader={isTeamLeader(subteam, person)} />
                           ))}
                         </div>
                       </section>
