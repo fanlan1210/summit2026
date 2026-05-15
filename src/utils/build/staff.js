@@ -13,6 +13,10 @@ export function hasStaffIntro(person) {
   return Boolean(person.intro?.trim())
 }
 
+export function onlyUrl(input) {
+  return /^\s*(?:https?:\/\/)?(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?\s*$/.test(input)
+}
+
 export function getAvatar(person) {
   return import.meta.env.BASE_URL + (person.hasAvatar ? `img/staff/${person.id}.webp` : `img/staff/default.jpg`)
 }
