@@ -14,5 +14,5 @@ export function hasStaffIntro(person) {
 }
 
 export function getAvatar(person) {
-  return import.meta.env.BASE_URL + (person.hasAvatar ? `img/staff/${person.id}.jpg` : `img/staff/default.jpg`)
+  return import.meta.env.BASE_URL + (person.hasAvatar ? `img/staff/${person.id}.webp` : `img/staff/default.jpg`)
 }
