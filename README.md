@@ -34,7 +34,7 @@ AVATAR_BASE_URL="https://summit.g0v.tw/2026/img/avatars/"
 npm run fetch-schedule
 ```
 
-## 頭貼
+## 講者頭貼
 
 放在 `public/img/avatars` 底下。
 
@@ -46,11 +46,24 @@ for i in *.jpg; do
 done
 ```
 
+## 工人資訊
+
+下載[工人表單 (上網頁名單)](https://docs.google.com/spreadsheets/d/1ZTCaRrPAvbkMjQRt4xzm106ncgNQ7uc-Se3lX1pMJ8Y)成 csv 檔案，覆蓋 `src/assets/staff.csv`
+
+工人頭貼放在 `public/img/staff` 底下，須轉換成 webp 格式並以工人的 id 命名，例如 `public/img/staff/d48f650c9b96e0b8.webp`
+
+更新後執行
+
+```
+npm run convert-staff
+```
+
 ## 翻譯
 
 網站語系檔放在 `src/i18n/messages/` 底下，格式為 JSON 檔案。
 
 可以使用 `i18n-tool` 方便導出翻譯協作：
+
 ```bash
 npm run i18n src/i18n/messages/zh-tw.json # 轉換成純文字格式
 npm run i18n src/i18n/messages/hak-tw.txt # 轉換成 JSON 格式
