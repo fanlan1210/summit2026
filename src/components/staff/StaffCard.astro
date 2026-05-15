@@ -1,5 +1,6 @@
 ---
 import AvatarImage from '~/components/AvatarImage.astro'
+import Icon from '~/components/Icon.astro'
 import { getLocalizedStaffName, getAvatar, onlyUrl } from '~/utils/build/staff'
 
 const { person, locale, hasIntro = false } = Astro.props
@@ -9,7 +10,7 @@ const intro = person.intro?.trim() ?? ''
 const hasUrlIntro = hasIntro && onlyUrl(intro)
 const introUrl = /^https?:\/\//i.test(intro) ? intro : `https://${intro}`
 const CardTag = hasUrlIntro ? 'a' : hasIntro ? 'button' : 'div'
-const cardClass = ['staff-card min-w-0 text-inherit no-underline', hasIntro && 'staff-card-clickable']
+const cardClass = ['staff-card min-w-0 text-inherit no-underline relative', hasIntro && 'staff-card-clickable']
 
 let cardAttrs = {}
 if (hasUrlIntro) {
@@ -23,7 +24,14 @@ if (hasUrlIntro) {
   <div class="staff-card-avatar">
     <AvatarImage class="h-full w-full object-cover object-top" src={avatar} alt={name} />
   </div>
-  <div class="mt-3 w-full leading-snug wrap-break-word">{name}</div>
+  <div class="staff-card-name mt-3 w-full leading-snug wrap-break-word">{name}</div>
+  {
+    hasIntro && (
+      <span class="staff-card-intro-icon" aria-hidden="true">
+        <Icon name="mdi:chat-processing" width={20} />
+      </span>
+    )
+  }
 </CardTag>
 
 <style>
@@ -37,7 +45,30 @@ if (hasUrlIntro) {
     @apply cursor-pointer;
   }
 
+  .staff-card-clickable:hover .staff-card-avatar,
+  .staff-card-clickable:focus-visible .staff-card-avatar {
+    @apply ring-primary;
+  }
+
+  .staff-card-clickable:hover .staff-card-name,
+  .staff-card-clickable:focus-visible .staff-card-name {
+    @apply text-primary;
+  }
+
+  .staff-card-clickable:hover .staff-card-intro-icon,
+  .staff-card-clickable:focus-visible .staff-card-intro-icon {
+    @apply bg-primary text-white;
+  }
+
   .staff-card-avatar {
-    @apply flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100;
+    @apply ring-primary/20 flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 ring-offset-2 ring-offset-white transition duration-150;
+  }
+
+  .staff-card-intro-icon {
+    @apply text-primary absolute top-1 right-1 grid h-7 w-7 place-items-center rounded-full bg-white/90 shadow-sm ring-1 ring-black/10 transition duration-150;
+  }
+
+  .staff-card-name {
+    @apply transition duration-150;
   }
 </style>
