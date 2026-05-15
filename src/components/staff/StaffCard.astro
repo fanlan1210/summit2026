@@ -10,7 +10,6 @@ const intro = person.intro?.trim() ?? ''
 const hasUrlIntro = hasIntro && onlyUrl(intro)
 const introUrl = /^https?:\/\//i.test(intro) ? intro : `https://${intro}`
 const CardTag = hasUrlIntro ? 'a' : hasIntro ? 'button' : 'div'
-const cardClass = ['staff-card min-w-0 text-inherit no-underline', hasIntro && 'staff-card-clickable']
 
 let cardAttrs = {}
 if (hasUrlIntro) {
@@ -20,64 +19,29 @@ if (hasUrlIntro) {
 }
 ---
 
-<CardTag class:list={cardClass} {...cardAttrs}>
-  <div class="staff-card-avatar-wrap">
-    <div class="staff-card-avatar aspect-square">
+<CardTag class:list={['staff-card group flex min-w-0 flex-col items-center justify-start text-center text-inherit no-underline', hasIntro && 'cursor-pointer']} {...cardAttrs}>
+  <div class="relative aspect-square w-full">
+    <div
+      class:list={[
+        'ring-primary/20 flex aspect-square h-full w-full items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 ring-offset-2 ring-offset-white transition duration-150',
+        hasIntro && 'group-hover:ring-primary group-focus-visible:ring-primary',
+      ]}
+    >
       <AvatarImage class="h-full w-full object-cover object-top" src={avatar} alt={name} />
     </div>
     {
       hasIntro && (
-        <span class="staff-card-intro-icon" aria-hidden="true">
+        <span
+          class="text-primary group-hover:bg-primary group-focus-visible:bg-primary absolute grid h-7 w-7 place-items-center rounded-full bg-white/90 shadow-sm ring-1 ring-black/10 transition duration-150 group-hover:text-white group-focus-visible:text-white"
+          style="top: calc(14.6447% - 0.875rem); right: calc(14.6447% - 0.875rem);"
+          aria-hidden="true"
+        >
           <Icon name="mdi:chat-processing" width={20} />
         </span>
       )
     }
   </div>
-  <div class="staff-card-name mt-3 w-full leading-snug wrap-break-word">{name}</div>
+  <div class:list={['mt-3 w-full leading-snug wrap-break-word transition duration-150', hasIntro && 'group-hover:text-primary group-focus-visible:text-primary']}>
+    {name}
+  </div>
 </CardTag>
-
-<style>
-  @reference "~/styles/_tailwind.css";
-
-  .staff-card {
-    @apply flex flex-col items-center justify-start text-center;
-  }
-
-  .staff-card-clickable {
-    @apply cursor-pointer;
-  }
-
-  .staff-card-clickable:hover .staff-card-avatar,
-  .staff-card-clickable:focus-visible .staff-card-avatar {
-    @apply ring-primary;
-  }
-
-  .staff-card-clickable:hover .staff-card-name,
-  .staff-card-clickable:focus-visible .staff-card-name {
-    @apply text-primary;
-  }
-
-  .staff-card-clickable:hover .staff-card-intro-icon,
-  .staff-card-clickable:focus-visible .staff-card-intro-icon {
-    @apply bg-primary text-white;
-  }
-
-  .staff-card-avatar-wrap {
-    @apply relative aspect-square w-full;
-  }
-
-  .staff-card-avatar {
-    @apply ring-primary/20 flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-slate-100 ring-2 ring-offset-2 ring-offset-white transition duration-150;
-  }
-
-  .staff-card-intro-icon {
-    @apply text-primary absolute grid h-7 w-7 place-items-center rounded-full bg-white/90 shadow-sm ring-1 ring-black/10 transition duration-150;
-    /* Center the badge on the avatar circle's upper-right 45-degree point. */
-    top: calc(14.6447% - 0.875rem);
-    right: calc(14.6447% - 0.875rem);
-  }
-
-  .staff-card-name {
-    @apply transition duration-150;
-  }
-</style>
