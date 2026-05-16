@@ -1,0 +1,349 @@
+{
+  "title": "反客為主",
+  "common": {
+    "agree": "同意",
+    "dates": {
+      "title": "重要日程",
+      "1": {
+        "title": "徵件開始"
+      },
+      "2": {
+        "title": "徵件結束"
+      },
+      "3": {
+        "title": "通知投稿結果"
+      },
+      "4": {
+        "title": "公告議程"
+      },
+      "5": {
+        "title": "g0v Summit 2026"
+      }
+    }
+  },
+  "date": {
+    "cfpStart": "2025/12/15",
+    "cfpEnd": "2026/01/25 23:59",
+    "submissionResult": "2026/03/18",
+    "announceAgenda": "2026/03/30",
+    "summit": "2026/05/23-24",
+    "days": "工",
+    "hours": "點鐘",
+    "minutes": "分",
+    "seconds": "秒"
+  },
+  "meta": {
+    "description": "g0v Summit 2026 是 g0v 台灣零時政府社群兩年一改的大聚會，嘛是全球公民科技、公民行動、開放資料、數位治理實踐者齊聚一堂的盛會。毋管你是想欲來傳承經驗抑是揣人做伙打拼，歡迎你搝一張椅頭仔、拋出麻索，做伙加入這場公民phah-ty！"
+  },
+  "language": {
+    "zh": "華語",
+    "en": "英語",
+    "nan": "台語",
+    "hak": "客語"
+  },
+  "room": {
+    "R0": "國際會議廳",
+    "R1": "第一會議室",
+    "R2": "第二會議室",
+    "R3": "遠距會議室",
+    "RH": "交誼廳"
+  },
+  "nav": {
+    "agenda": "議程",
+    "visit": "交通",
+    "venue": "場地佮攤位",
+    "speaker": "講者",
+    "staff": "工作團隊",
+    "sponsor": "贊助/媒體",
+    "about": "關於",
+    "register": "參與活動",
+    "safety": "地震避難指南"
+  },
+  "footer": {
+    "media": "媒體資源",
+    "presskit": "新聞素材",
+    "pastSites": "逐年網站",
+    "docs": "籌備文件",
+    "coc": "社群守則",
+    "webfont": "網頁字體由 justfont 提供",
+    "bugreport": "網站問題回饋"
+  },
+  "speakers": {
+    "keynote": "基調演講",
+    "sessions": "議程講者"
+  },
+  "staff": {
+    "title": "工作團隊",
+    "teams": {
+      "organizers": "總籌組",
+      "administration": "行政組",
+      "marketing": "宣傳組",
+      "design": "設計小組",
+      "sns": "社群小組",
+      "media": "媒體小組",
+      "web": "網站小組",
+      "finance": "財務組",
+      "logistics": "場務組",
+      "registration": "報到小組",
+      "catering": "餐飲小組",
+      "support": "機動小組",
+      "transport": "物流小組",
+      "sponsorship": "贊助組",
+      "program": "議程組",
+      "programAssistants": "議程助理",
+      "photography": "紀錄組"
+    }
+  },
+  "agenda": {
+    "title": "議程",
+    "info": "議程表佮講者資訊猶閣咧更新中，請以年會公告為主。",
+    "main_note": "議程共筆",
+    "main_live": "議程直播",
+    "qa": "網頂提問",
+    "note": "共同筆記",
+    "search_keyword": "用關鍵字搜尋議程",
+    "dont_miss": "毋想欲錯過議程？",
+    "opass_info": "你會當開源的 OPass App（iOS / Android）頂懸提到年會的所有資訊，毋但會使先規劃想欲聽的議程，嘛會佇時間欲到的時陣佮汝通知。",
+    "has_installed_opass": "已經安裝 OPass矣?",
+    "open_in_app": "佇 App 內底開啟~"
+  },
+  "visit": {
+    "info": {
+      "title": "交通資訊",
+      "venueName": "中央研究院人文社會科學館",
+      "address": "台北市南港區研究院路 2 段 128 號",
+      "osmMap": "OSM 開放街圖",
+      "googleMap": "Google 地圖",
+      "mapPlaceholder": "OpenStreetMap",
+      "mapView": "揤落去來互動"
+    },
+    "transport": {
+      "title": "交通方式",
+      "tabs": {
+        "publicTransport": "大眾運輸工具",
+        "drivingLine1": "家己開車",
+        "drivingLine2": "抑是oo-tóo-bái",
+        "shuttleBus": "年會接駁車"
+      },
+      "publicTransportStep1": {
+        "title": "1. 去南港",
+        "item1": "坐<a href=\"https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980\" target=\"_blank\" rel=\"noopener noreferrer\" >台鐵</a>、<a href=\"https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68\" target=\"_blank\" rel=\"noopener noreferrer\" >高鐵</a>至南港站。",
+        "item2": "坐<a href=\"https://www.metro.taipei/\" target=\"_blank\" rel=\"noopener noreferrer\" >台北捷運</a>至南港站（板南線）、南港展覽館站（板南線、文湖線）。"
+      },
+      "publicTransportStep2": {
+        "title": "2. 去中研院",
+        "item2": "佇捷運南港站（2 號出口）換乘公車 <a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100021230\" target=\"_blank\" rel=\"noopener noreferrer\" >212直</a>、<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0100027000\" target=\"_blank\" rel=\"noopener noreferrer\" >270 </a>或<a href=\"https://ebus.gov.taipei/Route/StopsOfRoute?routeid=0112002500\" target=\"_blank\" rel=\"noopener noreferrer\" > 藍25</a> 至中研院站。",
+        "item3": "佇南港展覽館站（5 號出口）換乘公車 212、276、306、620、645、679、205、小5、小1 或 小12 到中研院站。",
+        "item4": "行路佮騎跤踏車<a href=\"https://www.youbike.com.tw/region/taipei/stations/\" target=\"_blank\" rel=\"noopener noreferrer\" > YouBike </a>至中央研究院人文社會科學館。"
+      },
+      "shuttle": {
+        "brief": "年會接駁車來回班距約<strong> 20 分鐘</strong>，請注意現場揭指示牌的工作人員，請提早前往等待。",
+        "stop1": "台鐵南港站",
+        "stop2": "中央研究院人文社會科學館北側",
+        "tail": "。",
+        "go": {
+          "title": "1. 去程",
+          "p": "年會接駁車逐工透早 7:45 至 10:10 兩台車來回行駛"
+        },
+        "back": {
+          "title": "2. 回程",
+          "p": "年會接駁車逐工暗晡 17:00 至 18:30 一台車來回行駛"
+        }
+      },
+      "drivingStep1": {
+        "title": "1. 駛車路線",
+        "item1": "國道3號南深路出口匝道→舊莊街一段→研究院路二段→中研院大門。"
+      },
+      "drivingStep2": {
+        "title": "2. 車輛入園",
+        "item1": "汽車駛入去中研院區，請提證件佮大門警衛室換臨時通行證並依規定停放。"
+      },
+      "drivingStep3": {
+        "title": "3. 停oo-tóo-bái",
+        "item1": "oo-tóo-bái無法駛入去中研院，請停佇中研院大門正爿、四分溪邊仔的側門、抑是胡適公園邊仔的機車停車場。"
+      },
+      "imagePlaceholder": "預計配圖"
+    }
+  },
+  "cookieNotice": "本網站佇廣告、社群與分析等用途使用 cookies ，來加強汝的使用體驗，繼續使用本網站即代表您同意使用 cookies。",
+  "index": {
+    "interact": "使用雙指來互動",
+    "opening_in": "離開幕閣有",
+    "key": {
+      "reset": "擺好椅仔",
+      "ticket": "買票",
+      "pangolin": "發射鯪鯉"
+    },
+    "intro": {
+      "title": "「反客為主的草繩幾何學！」",
+      "p1": "有人講，「一朝被蛇咬，十年怕草繩。」毋過佇 g0v Summit 2026，阮講「十年<ruby>拍<rp>（</rp><rt lang=\"nan-tw\">phah</rt><rp>）</rp></ruby>草繩」。",
+      "p2": "<strong>對 g0v Summit 2026 來講，這條「草繩」，嘛象徵 g0v 十年黑客行動主義精神的具體展現：「莫問為啥物無人做這個，先承認你就是『無人』」。因為，「無人」是萬能的。</strong>",
+      "p3": "<strong>莫坐等、莫依賴，咱「反客為主」，家己動手創造：</strong>",
+      "p4": "佇遮，g0v Summit 2026 邀請你行入一个由草繩編織而成的立體公民座標。",
+      "p5": "汝佮每一个參與者基於自身的技能、價值觀、立場，攏是這空間中的一个「點」。<br>咱拋出手中的麻索的時陣，佮他人對話，點就連成「線」；<br>當無數條線交織，咱就撐起「面」——這是一張充滿動能的行動網絡，嘛是一張互相接住的吊床。",
+      "p6": "<strong>所以原底孤立的節點成做聚落，單線的對話演化做協作的生態系。</strong>",
+      "p7": "<strong>對一開始的的「資訊透明、開放成果、開放協作」核心，演化成 g0v Summit 2026 由社群編織的「公民座標」，和三大座標軸線：（開放透明，自主隱私）、（思辨監督，韌性連結）、（政府體制，民間草根）。</strong>",
+      "p8": "佇遮，無人是局外人，每一个人攏會揣到屬於家己的座標，向內探索，向外連結。"
+    },
+    "venue": {
+      "title": "地點",
+      "name": "中央研究院 人文社會科學館",
+      "address": "臺北市南港區研究院路二段 128 號"
+    },
+    "g0vSummit": {
+      "title": "啥物是 g0v Summit？",
+      "p1": "對 2012 年開始，<a href=\"https://g0v.tw\" target=\"_blank\">g0v.tw</a> 台灣零時政府社群在「寫程式改造社會」的號召下，以<b>「資訊透明、開放成果、開放協作」</b>為核心，透過「群眾草根」的力量關心公共事務，開啟了一場長達十餘年的公民黑客實踐。",
+      "p2": "<b>在 318 運動了後，閣佇 2014 年舉辦 g0v Summit（啥米）零時政府雙年會，促成開放社群、政府、NGO、學術圈、以及網路鄉民跨界交流。</b>",
+      "p3": "這十幾年來，台灣社會嘛經歷過無數民主危機、社會動盪佮極化，種種「蛇咬」般的挫折佮危機。",
+      "p4": "面對臺灣社會的傷痕，來自此方與彼端的威脅，「十年」毋單是時間的刻度，更刻畫著公民社群持續的行動佮實踐——是持續將恐懼化做韌性的過程。",
+      "p5": "有人講，「一朝被蛇咬，十年怕草繩。」毋過佇 g0v Summit 2026，阮講<b>「十年<ruby>拍<rp>（</rp><rt lang=\"nan-tw\">phah</rt><rp>）</rp></ruby>草繩」</b>，阮相信群眾草根的力量，彼此的連結，會當連紲將恐懼的「怕」，轉化做行動的「<ruby>拍<rp>（</rp><rt lang=\"nan-tw\">phah</rt><rp>）</rp></ruby>」。",
+      "p6": "<ruby>拍結<rp>（</rp><rt lang=\"nan-tw\">phah-kat</rt><rp>）</rp></ruby>（打結）毋但是為著縛緊，更是為著學會曉鬆開——鬆動被動的姿態，鬆動依賴與恐懼，佇危機佮不確定的時代裡，重新練習「自救」佮「互助」的筋肉。",
+      "p7": "阮拒絕陷入「怕草繩」的被動與畏縮。顛倒反，g0v Summit 2026 希望邀請來到遮的每一个人，佮手䘼撆起來，伸手掠起彼條草繩，重新搙拍。所以，阮分支、編織、連結，不斷幻化佮創造，「草繩」無閣是予人驚惶的幻影，而是強韌有機的社群。"
+    },
+    "pastEvents": "逐年活動",
+    "joinG0v": {
+      "title": "參與 g0v",
+      "p1": "g0v 是一个草根式的公民社群，盡力佇加深公民對社會的貢獻佮彼此的連結。透過 g0v 社群，汝會當佇遮揣到志同道合的共伴，用草根的方式實踐你的理念，用開放授權模式釋出成果，予較濟人會當徛在汝的成果頂接力鬥走。",
+      "p2": "佮 gov 用「零」替代做 g0v，對零重新思考政府的角色，嘛代表數位原生世代對 0 佮 1 世界的視野。",
+      "slack": "g0v Slack",
+      "docs": "Summit 籌備文件",
+      "events": "g0v 最近活動"
+    },
+    "sponsorship": {
+      "title": "贊助資訊",
+      "content": "若是有贊助意願，請詢問：<a href=\"mailto:sponsorship@summit.g0v.tw\">sponsorship@summit.g0v.tw</a>"
+    },
+    "partners": {
+      "title": "合作夥伴",
+      "site": "官方網站",
+      "donate": "捐錢贊助",
+      "ocf": "開放文化基金會",
+      "infolaw": "中央研究院法律學研究所資訊法中心",
+      "pelith": "Pelith",
+      "openfun": "歐噴有限公司",
+      "tekoo": "TeKoo",
+      "justfont": "justfont",
+      "archilife": "祐生研究基金會",
+      "hackmd": "HackMD",
+      "doit": "臺北市政府資訊局",
+      "moda": "數位發展部",
+      "hakka": "客家委員會",
+      "micare": "咪卡創意",
+      "nutwork": "松果網路",
+      "jothon": {
+        "name": "g0v 零時政府揪松團",
+        "description": "g0v 零時政府揪松團是 g0v 社群籌辦雙月大黑客松（大松）和基礎松，以及推動募款事務的工作小組，目前有揪松志工群、專案計畫型合作人員、八位決策委員。"
+      },
+      "ima": "中華民國資訊經理人協會 IMA",
+      "netivism": "網絡行動科技股份有限公司",
+      "friedrich": {
+        "name": "弗里德里希諾曼自由基金會",
+        "description": "[弗里德里希諾曼自由基金會（FNF）](https://www.freiheit.org/taiwan)來自德國，在德國與全球60個國家，與其合作夥伴致力於推廣自由、自由主義、民主、人權、多元化、寬容、遏止氣候變遷、開放與數位社會、社會市場經濟，以及法治。我們是一個專注於公民教育的非營利組織。\n\n 本會的合作對象包含與我們價值相符且同樣想要投入推廣自由之工作的政府機關、非政府組織、學術界、政黨、學者、學生、記者、倡議者、新創企業或組織以及藝術家。我們與夥伴們協力，共同進行倡議，並尋求長期的夥伴關係，強調個人自由與強健民主體制之重要性。FNF也提倡經濟自由與自由貿易，同時我們也希望企業能夠尊重人權。我們更高度重視隱私與資料保護。我們也支持善用科技進展以遏止氣候變遷，例如運用智慧城市作為對抗氣候變遷的途徑。\n\n FNF自1969年於印尼雅加達設立辦事處以來已在亞洲耕耘多年。今天，我們在亞洲總共有五間辦事處：[曼谷](https://www.freiheit.org/thailand)、[雅加達](https://www.freiheit.org/indonesia)、[馬尼拉](https://www.freiheit.org/philippines)、[首爾](https://www.freiheit.org/korea)與[台北](https://www.freiheit.org/taiwan)。我們也在[馬來西亞](https://www.freiheit.org/malaysia)開展工作。\n\n 弗里德里希諾曼自由基金會全球創新中心於2021年在台灣成立，其業務聚焦於「數位轉型」以及「為民主而創新」。藉由與其全球的專家、夥伴與合作網絡的合作，該中心旨在支持FNF成為一個為自由主義帶來創新的平台。"
+      },
+      "luminate": {
+        "name": "Luminate",
+        "description": "Luminate 是一家全球性基金會，致力於確保每個人，特別是那些未被充分代表的人，擁有足夠的的訊息、權利和權力，進而影響那些形塑社會的決策。該基金會致力於使人們能夠充分參與公民和政治生活，安全地挑戰權力，並取得準確、可信賴的訊息。Luminate 的工作範圍涵蓋全球，並重點關注非洲、亞洲和拉丁美洲地區。Luminate 由慈善家皮埃爾和帕姆·奧米迪亞夫婦（Pierre and Pam Omidyar）創立，十數年來致力於治理和公民參與相關問題上。"
+      }
+    }
+  },
+  "sponsor": {
+    "organizer": "主辦單位",
+    "title1": "g0v Summit 2026 籌備團隊",
+    "title2": "合作夥伴",
+    "description": "簡介",
+    "tiers": {
+      "coorganizer": "協辦單位",
+      "pioneer": "開路的人",
+      "catalyst": "做代誌的人",
+      "companion": "做伙的伴",
+      "sidekick": "蹽落去的伴",
+      "special": "特別感謝"
+    },
+    "site": "官方網站",
+    "support": {
+      "title": "支持 g0v Summit",
+      "p1": "g0v Summit 是志工自主籌辦的非營利活動，「反客為主」是阮 2026 的主題，希望邀請各位做伙搝一張椅頭仔，成做行動的一部分。頂懸列出的贊助夥伴是予 g0v Summit 2026 成為可能的重要支持力量。",
+      "p2": "g0v Summit 每一擺活動攏倚靠社群的支持與参與。除了出席議程佮活動以外，嘛歡迎用贊助方式支持開放社群的發展。",
+      "p3": "阮提供各式合作方案，涵蓋品牌露出、攤位設置、票券贊助及更多客製選項，期盼佮汝做伙攜手推進公民科技。",
+      "p4": "贊助佮合作洽詢，歡迎寄批到：sponsorship@summit.g0v.tw",
+      "cta": "個人贊助"
+    },
+    "pressKit": {
+      "title": "媒體素材",
+      "subtitle": "g0v Summit 2026 相關宣傳圖檔",
+      "license": "授權方式",
+      "licenseText": "By g0v Summit 2026 workgroup (CC BY 4.0)",
+      "pdf": "徵稿宣傳海報 (PDF)",
+      "notice": "徵稿宣傳公文 (Docs)",
+      "summit-pdf": "年會宣傳海報 (PDF)",
+      "summit-notice": "年會宣傳公文 (Docs)"
+    },
+    "pastReports": {
+      "title": "逐屆 g0v Summit 報導"
+    }
+  },
+  "venue": {
+    "infoDesk": "報到台／服務台",
+    "staffRoom": "工作人員歇睏空間",
+    "restArea": "飲食區",
+    "description": "g0v Summit 今年佇中央研究院人文社會科學館舉行，會當佇<a href=\"./visit\">交通資訊</a>頁面揣到前往方式。",
+    "community_booth": "社群攤位",
+    "sponsor_booth": "贊助攤位",
+    "souvenir_booth": "紀念品攤位",
+    "website": "網站連結"
+  },
+  "register": {
+    "cta": "隨買票",
+    "time": "活動時間",
+    "location": "活動地點",
+    "location_value_1": "中央研究院 人文社會科學館",
+    "location_value_2": "臺北市南港區研究院路二段 128 號",
+    "add_to_calendar": "加到行事曆",
+    "transportation": "交通方式",
+    "ticket_info": {
+      "title": "購票管道",
+      "li1": "線上購票：點選<a href=\"https://summit.g0v.tw/tickets\" target=\"_blank\">立即購票</a>即可使用應援售票系統進行線上購票",
+      "li2": "現場現金購票：攜帶現金（票價請參考售票系統）於 g0v Summit 2026 第一天報到時間至現場服務台即可購票並直接報到"
+    },
+    "howto": {
+      "title": "報到方式",
+      "p1": "本次 g0v Summit 與數位發展部合作，採用<a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">數位憑證皮夾</a>作為主要報到管道。數位憑證皮夾是臺灣少數政府機構在開發前就將開放原始碼作為標案目標、從伺服器到手機 App 都開源的專案。這屆 g0v Summit 的志工們認同 Public Money, Public Code 的精神，期望能共同探索一個可被檢視與信任、可選擇性揭露、保護隱私的身份驗證流程，歡迎各位來一起參與這次嘗試！為了區隔方便，以下「證件」皆指「存在數位憑證皮夾的票券」",
+      "step": "步驟",
+      "method1": {
+        "title": "數位憑證皮夾報到（需要一定版本以上的 Android 或 iOS 手機）",
+        "li1": "於 Google Play Store 或 iOS App Store 下載數位發展部的<a href=\"https://wallet.gov.tw/zh-tw\" target=\"_blank\">「數位憑證皮夾」App</a>並完成初始設定",
+        "li2": "大會行前信寄出時會同時寄給各會眾帶有必要資訊的票證 QR Code 連結，使用數位憑證皮夾 App 掃描或開啟連結即可將票證加入皮夾中",
+        "li3": "大會報到現場提供報到用驗證 QR Code，使用 App 掃描可以預覽大會向你索取的證件資訊",
+        "li4": "確認並送出即可完成報到"
+      },
+      "method2": {
+        "title": "線上報名、離線報到（需線上購票）",
+        "li1": "查看自己已購買的票卷，",
+        "li2": "列印或記錄下：票號（T 開頭的一組序號，例如：T123456789）",
+        "li3": "於現場前往服務檯，告知票號，即可完成報到"
+      },
+      "method_cash": {
+        "title": "現金購票報到",
+        "p": "只要於現場現金購票便可同時完成報到"
+      },
+      "whatis": {
+        "title": "關於數位憑證皮夾",
+        "p1": "到底什麼是數位憑證皮夾？為什麼要用？",
+        "p2": "在世界各地越加傾向管控網路身份的現在，如何在網路世界做基本的身份驗證又保護隱私，是各國政府跟民間都傷透腦筋的問題。如果由政府主導，有大量蒐集、監控人民資訊的隱憂；若沒有規範，可能造成各大企業在仍有驗證身份的需求下，各自開發更加容易侵犯隱私的追蹤方式。",
+        "p3": "為了找到共識，OpenID Foundation、W3C、IETF 都有工作小組進行了長久的討論。以身分自主（Self-sovereign Identity, SSI）的理想與去中心化識別（Decentralized Identifiers, DIDs）的各式技術為基礎，最終提出了可驗證憑證（Verifiable Credentials, VC）的共識。",
+        "p4": "本次數位發展部主導開發的數位憑證皮夾便是基於 OpenID4VC 標準所開發，建立發行端——驗證端——持有端的三方架構，並皆開放原始碼，因此發行、驗證伺服器與保存證件的 App 皆可由民間自行架設，無需經過中央管理的資料庫。我們也期望藉由這次嘗試，檢查專案是否符合國際標準，並期望能與其他國際上的實作（如歐盟的 EUDI Wallet）接軌。",
+        "p5": "最後，在 Summit 第二天也有能盡情討論的論壇，以及分享本次實作過程的工作坊，歡迎帶著你的疑問或想法來參加！"
+      }
+    },
+    "qa": {
+      "q1": "我的資料會被傳給數位發展部嗎？安全嗎？",
+      "a1": "任何報名資料都僅有必要的志工能存取（包含行政組、場務組與開發組相關負責人員）。發行與驗證伺服器的原始碼由數位發展部提供，並由 g0v Summit 志工於 Summit 專用伺服器上架設並開發相關應用，沒有資料會傳給數位發展部。發行證件所用的資料僅來自應援售票系統，證件資料僅會儲存於 g0v Summit 伺服器上與願意使用皮夾者的 App 內。報到資訊僅會留存於 g0v Summit 伺服器上並於大會後刪除。伺服器與資料庫皆由長期 g0v 貢獻者兼職業軟體工程師維護，我們會以現有開放原始碼的最佳實踐來確保資料庫安全性。",
+      "q2": "大會會索取我的哪些資料？",
+      "a2": "由數位憑證皮夾發行的票券上僅會有會眾已經於應援售票系統提供的資料，但不會全部放上。會放在證件上的與驗證過程索取的內容我們會遵從資料最小化的原則，只放上／索取必要資訊。例如透過數位憑證皮夾的選擇性揭露功能，報到時我們僅需索取能避免重複報到的欄位（如票號），而不需要證件上所有內容。在驗證資料送出前你可以在 App 上再度檢視我們索取的內容。若有其他應用場景，如領取便當，大會也僅需要知道你的餐飲資訊（葷／素），不需要索取額外的個資。",
+      "q3": "為什麼你們不自行編譯 App 的原始碼讓會眾安裝或整合進 OPass？",
+      "a3": "沒時間...QQ",
+      "q4": "我一定要用數位憑證皮夾報到嗎？",
+      "a4": "不用，我們理解不是每個人都有符合條件的手機能安裝，也可能有更嚴格的隱私考量，可以只以票號與報名資訊於現場進行報到。我們甚至提供現金購票與報到的選項。現場以現金購票者的資料完全不會經過應援售票系統或大會的線上系統，詳情請見上方「線上報名、離線報到」與「現場現金購票」的說明！"
+    }
+  }
+}
