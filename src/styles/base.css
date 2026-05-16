@@ -103,7 +103,7 @@
         &:hover {
           path,
           rect {
-            fill-opacity: 0.7;
+            fill-opacity: 0.85;
           }
         }
       }

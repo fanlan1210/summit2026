@@ -6,13 +6,13 @@ const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
 
 const getBoothType = (type: string) => {
-  if (type === '贊助攤位') return 'venue.sponsor_booth'
+  if (type === 'sponsor') return 'venue.sponsor_booth'
   else return 'venue.community_booth'
 }
 ---
 
 <div class="booth-card tranition-all flex h-fit cursor-pointer gap-2 rounded-lg group" data-booth={booth.id}>
-  <img src={booth.image || `./img/booth/${booth.name_en}.png`} alt={booth.name} class="h-16 w-16 rounded-md bg-neutral-100 object-contain p-2 group-hover:p-1 transition-all duration-300 shrink-0" />
+  <img src={booth.image || `./img/booth/${booth.name_en}.png`} alt={locale === 'en' ? booth.name_en : booth.name} class="h-16 w-16 rounded-md bg-neutral-100 object-contain p-2 group-hover:p-1 transition-all duration-300 shrink-0" />
   <div class="p-1 group-hover:ps-2 transition-all duration-300">
     <h5 class="text-pretty">{locale === 'en' ? booth.name_en : booth.name}</h5>
     <p class="m-0 text-sm text-neutral-500">{t(getBoothType(booth.type))} {booth.floor} #{booth.id}</p>
