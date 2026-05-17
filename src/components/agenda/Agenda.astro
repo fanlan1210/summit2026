@@ -1,5 +1,6 @@
 ---
 import { useI18n } from '~/i18n/utils'
+import Icon from '~/components/Icon.astro'
 import Layout from '~/layouts/Layout.astro'
 import Desktop from './desktop/Desktop.astro'
 import Mobile from './mobile/Mobile.astro'
@@ -12,9 +13,16 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
 ---
 
 <Layout pageName={t('nav.agenda')}>
-  <div class="container">
+  <div class="container mb-8">
     <h1 class="mt-8 md:mt-12">{t('agenda.title')}</h1>
-    <p class="mt-4 mb-8 text-neutral-400">{t('agenda.info')}</p>
+    <p class="mt-4 text-neutral-400">{t('agenda.info')}</p>
+
+    <div>
+      <a class="btn btn-info gap-1" target="_blank" href="https://g0v.hackmd.io/@summit2026/notes">
+        <Icon name="mdi:file-text-edit" width={20} />
+        {t('agenda.main_note')}
+      </a>
+    </div>
   </div>
 
   <Desktop title={title} date={date} />
