@@ -1,6 +1,7 @@
 ---
 import { micromark } from 'micromark'
 import linkifyHtml from 'linkify-html'
+import sanitizeHtml from 'sanitize-html'
 
 interface Props {
   content?: string | null
@@ -8,10 +9,88 @@ interface Props {
 }
 
 const { content = '', class: className = '' } = Astro.props
-const html = linkifyHtml(micromark(content), {
-  target: '_blank',
-  rel: 'noopener noreferrer',
-}).replace(/<a\b(?![^>]*\btarget=)(?![^>]*\brel=)/g, '<a target="_blank" rel="noopener noreferrer"')
+const safeStylePlaceholderPrefix = '__SAFE_STYLE_BLOCK__'
+const allowedEmbeddedStyleRules = [
+  /@keyframes\s+[a-z][\w-]*\s*\{\s*(?:0%|from)\s*\{\s*background-position-x:\s*\d+(?:\.\d+)?%;\s*\}\s*(?:100%|to)\s*\{\s*background-position-x:\s*\d+(?:\.\d+)?%;\s*\}\s*\}\s*/gi,
+  /\.[a-z][\w-]*:hover\s*\{\s*animation-duration:\s*\d*(?:\.\d+)?s\s*!important;\s*\}\s*/gi,
+]
+
+function isSafeEmbeddedStyle(css: string) {
+  const remaining = allowedEmbeddedStyleRules.reduce(function (result, pattern) {
+    return result.replace(pattern, '')
+  }, css)
+  return remaining.trim().length === 0
+}
+
+function extractSafeEmbeddedStyles(html: string) {
+  const safeStyles: string[] = []
+
+  const contentWithPlaceholders = html.replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gi, function (_, css: string) {
+    if (!isSafeEmbeddedStyle(css)) {
+      return ''
+    }
+
+    const placeholder = `${safeStylePlaceholderPrefix}${safeStyles.length}__`
+    safeStyles.push(`<style>${css.trim()}</style>`)
+    return placeholder
+  })
+
+  return {
+    contentWithPlaceholders,
+    safeStyles,
+  }
+}
+
+function restoreSafeEmbeddedStyles(html: string, safeStyles: string[]) {
+  return safeStyles.reduce(function (result, style, index) {
+    return result.replace(`${safeStylePlaceholderPrefix}${index}__`, style)
+  }, html)
+}
+
+const renderedHtml = micromark(content, { allowDangerousHtml: true })
+const { contentWithPlaceholders, safeStyles } = extractSafeEmbeddedStyles(renderedHtml)
+
+const html = restoreSafeEmbeddedStyles(
+  sanitizeHtml(
+    linkifyHtml(contentWithPlaceholders, {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }),
+    {
+      allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+      allowedAttributes: {
+        ...sanitizeHtml.defaults.allowedAttributes,
+        '*': ['class', 'id', 'lang'],
+        a: ['href', 'name', 'target', 'rel'],
+        img: ['src', 'srcset', 'alt', 'title', 'width', 'height', 'loading'],
+        ruby: ['style'],
+        span: ['style'],
+      },
+      allowedStyles: {
+        ruby: {
+          'ruby-overhang': [/^none$/],
+          'ruby-position': [/^(over|under|inter-character)$/],
+        },
+        span: {
+          'background-image': [/^linear-gradient\([^;]+?\)$/],
+          'background-size': [/^\d+(?:\.\d+)?% \d+(?:\.\d+)?%$/],
+          'background-clip': [/^text$/],
+          animation: [/^[a-z][a-z0-9-]* \d+(?:\.\d+)?s linear infinite$/i],
+          color: [/^transparent$/],
+          'font-weight': [/^(?:normal|bold|bolder|lighter|[1-9]00)$/],
+          cursor: [/^(?:auto|default|pointer|wait|text)$/],
+        },
+      },
+      transformTags: {
+        a: sanitizeHtml.simpleTransform('a', {
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        }),
+      },
+    }
+  ),
+  safeStyles
+)
 
 const baseClassName =
   'wrap-break-word whitespace-pre-line leading-relaxed [&_a]:text-info-dark [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-neutral-300 [&_blockquote]:pl-4 [&_code]:rounded [&_code]:bg-neutral-200 [&_code]:px-1 [&_code]:py-0.5 [&_h1]:mb-4 [&_h1]:font-bold [&_h2]:mb-4 [&_h2]:font-bold [&_h3]:mb-3 [&_h3]:font-bold [&_h4]:mb-3 [&_h4]:font-bold [&_h5]:mb-2 [&_h5]:font-bold [&_h6]:mb-2 [&_h6]:font-bold [&_li]:mb-1 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mb-4 [&_p:last-child]:mb-0 [&_pre]:overflow-x-auto [&_pre]:rounded [&_pre]:bg-neutral-900 [&_pre]:p-4 [&_pre]:text-neutral-100 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6'
