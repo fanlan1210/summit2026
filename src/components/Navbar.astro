@@ -156,6 +156,9 @@ const navs: NavItem[] = [
           <button lang="hak-TW" data-target={getRelativeLocaleUrl('hak-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
             >客話</button
           >
+          <button lang="nan-TW" data-target={getRelativeLocaleUrl('nan-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-left text-white transition-[background-color] hover:bg-neutral-500"
+            >台語</button
+          >
         </div>
       </div>
     </div>
@@ -179,11 +182,13 @@ const navs: NavItem[] = [
 
           <div class="flex items-center gap-2 px-6 text-xl">
             <Icon name="mdi:language" width="20" />
-            <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="text-lg">華語</a>
+            <a lang="zh-tw" href={getRelativeLocaleUrl('zh-tw', pathname)} class="text-lg">華語</a>
             <span>|</span>
-            <a href={getRelativeLocaleUrl('en', pathname)} class="text-lg">English</a>
+            <a lang="en" href={getRelativeLocaleUrl('en', pathname)} class="text-lg">English</a>
             <span>|</span>
-            <a href={getRelativeLocaleUrl('hak-tw', pathname)} class="text-lg">客話</a>
+            <a lang="hak-tw" href={getRelativeLocaleUrl('hak-tw', pathname)} class="text-lg">客話</a>
+            <span>|</span>
+            <a lang="nan-tw" href={getRelativeLocaleUrl('nan-tw', pathname)} class="text-lg">台語</a>
           </div>
 
           <Link class="mobile-nav-item btn-brand flex items-center justify-between px-4 py-3 text-lg" href="register">

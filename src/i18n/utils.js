@@ -2,6 +2,7 @@ import { i18n } from 'astro:config/server'
 import zhTW from '~/i18n/messages/zh-tw.json'
 import en from '~/i18n/messages/en.json'
 import hakTW from '~/i18n/messages/hak-tw.json'
+import nanTW from '~/i18n/messages/nan-tw.json'
 
 const PROJECT_NAME = import.meta.env.BASE_URL?.replaceAll(/^\/+|\/+$/g, '')
 const defaultLocale = i18n.defaultLocale
@@ -49,7 +50,8 @@ function derive(base, diff) {
 const dict = {
   'zh-tw': zhTW,
   en,
-  'hak-tw': derive(zhTW, hakTW)
+  'hak-tw': derive(zhTW, hakTW),
+  'nan-tw': derive(zhTW, nanTW)
 }
 export function useI18n(pathname) {
   const locale = getLocaleFromPath(pathname)
