@@ -431,20 +431,34 @@
     },
     "discussion": "提名過程、討論與建議請參考<a href=\"https://g0v.hackmd.io/@summit2026/coc-draft-discussion\" target=\"_blank\">討論紀錄</a>。",
     "effectiveDate": "生效日期：2025/11/1",
-    "procedureReport": {
-      "area1": "年會參與者、志工、講者",
-      "case1": "籌備會",
-      "case2": "年會活動",
-      "case3": "涉及申訴小組成員",
-      "case4": "涉及總召或行政組長",
-      "key1": "如果你要提的案件是⋯⋯",
-      "key2": "發生在現場",
-      "key3": "發生在線上或活動後",
-      "key4": "通知總召",
-      "key5": "通知外部委員",
-      "key6": "通知行政組長",
-      "key7": "至年會服務台求助",
-      "key8": "寫信至申訴信箱"
+    "diagram1": {
+      "areaLabel1": "年會參與者、志工、講者",
+      "caseLabel1": "籌備會",
+      "caseLabel2": "年會活動",
+      "caseLabel3": "涉及申訴小組成員",
+      "caseLabel4": "涉及總召或行政組長",
+      "nodeLabel1": "通知行政組長",
+      "nodeLabel2": "發生在現場",
+      "nodeLabel3": "至年會服務台求助",
+      "nodeLabel4": "寫信至申訴信箱",
+      "nodeLabel5": "發生在線上或活動後",
+      "nodeLabel6": "如果你要提的案件是⋯⋯",
+      "nodeLabel7": "通知總召",
+      "nodeLabel8": "通知外部委員"
+    },
+    "diagram2": {
+      "caseLabel1": "符合受理要件",
+      "caseLabel2": "有理由",
+      "caseLabel3": "無理由",
+      "caseLabel4": "不符受理範圍",
+      "nodeLabel1": "提出申訴",
+      "nodeLabel2": "召集人檢核",
+      "nodeLabel3": "受理申訴",
+      "nodeLabel4": "召開申訴小組會議",
+      "nodeLabel5": "決議",
+      "nodeLabel6": "申訴成立",
+      "nodeLabel7": "採取措施",
+      "nodeLabel8": "申訴不成立"
     }
   }
 }

@@ -430,6 +430,35 @@
       "pos6": "Promotion::Design Team Member"
     },
     "discussion": "For the nomination process, discussions, and suggestions, please refer to the <a href=\"https://g0v.hackmd.io/@summit2026/coc-draft-discussion\" target=\"_blank\">discussion logs</a>.",
-    "effectiveDate": "Effective Date: 2025/11/1"
+    "effectiveDate": "Effective Date: 2025/11/1",
+    "diagram1": {
+      "areaLabel1": "Attendees, Volunteers, Speakers",
+      "caseLabel1": "Organizing",
+      "caseLabel2": "Event",
+      "caseLabel3": "Involves Committee Member",
+      "caseLabel4": "Involves Coordinator/Admin",
+      "nodeLabel1": "Notify Admin Lead",
+      "nodeLabel2": "　On-site　",
+      "nodeLabel3": "Go to Info Desk",
+      "nodeLabel4": "Email Reporting Box",
+      "nodeLabel5": "Online or Post-event",
+      "nodeLabel6": "If the case is...",
+      "nodeLabel7": "Notify Coordinator",
+      "nodeLabel8": "Notify External Member"
+    },
+    "diagram2": {
+      "caseLabel1": "Meets Criteria",
+      "caseLabel2": "Substantiated",
+      "caseLabel3": "Unsubstantiated",
+      "caseLabel4": "Out of Scope",
+      "nodeLabel1": "File a Report",
+      "nodeLabel2": "Convener Review",
+      "nodeLabel3": "Accept Report",
+      "nodeLabel4": "Convene Committee",
+      "nodeLabel5": "Resolution",
+      "nodeLabel6": "Upheld",
+      "nodeLabel7": "Take Action",
+      "nodeLabel8": "Dismissed"
+    }
   }
 }

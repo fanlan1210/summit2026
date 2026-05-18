@@ -3,28 +3,35 @@ import { useI18n, getLocaleFromPath } from '~/i18n/utils'
 const { t } = useI18n(Astro.url.pathname)
 ---
 
+<style>
+  .edgeLabel {
+    font-size: 12px;
+    background-color: #e8e8e8;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .nodeLabel {
+    border: 2px solid #9370db;
+    background-color: #ececff;
+    padding: 5px 10px;
+  }
+</style>
 <svg
-  viewBox="0 0 890.900032043457 472.00000381469727"
-  style="max-width: 890.900032043457px;"
-  height="472.00000381469727"
+  viewBox="0 0 920 472.00000381469727"
+  style="max-width: 920px; max-height: 472px;"
+  height="100%"
   aria-labelledby="chart-title-mermaid-1779009129919 chart-desc-mermaid-1779009129919"
   role="img"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/2000/svg"
   width="100%"
   id="mermaid-1779009129919"
-  ><title id="chart-title-mermaid-1779009129919"></title><desc id="chart-desc-mermaid-1779009129919"></desc><style>
+  ><title id="chart-title-mermaid-1779009129919"></title><desc id="chart-desc-mermaid-1779009129919"></desc>
+  <style>
     #mermaid-1779009129919 {
       font-family: Onest, Candara, sans-serif;
       font-size: 16px;
       fill: #333;
-    }
-    #mermaid-1779009129919 .error-icon {
-      fill: #552222;
-    }
-    #mermaid-1779009129919 .error-text {
-      fill: #552222;
-      stroke: #552222;
     }
     #mermaid-1779009129919 .edge-thickness-normal {
       stroke-width: 2px;
@@ -76,12 +83,6 @@ const { t } = useI18n(Astro.url.pathname)
       stroke: #9370db;
       stroke-width: 1px;
     }
-    #mermaid-1779009129919 .node .label {
-      text-align: center;
-    }
-    #mermaid-1779009129919 .node.clickable {
-      cursor: pointer;
-    }
     #mermaid-1779009129919 .arrowheadPath {
       fill: #333333;
     }
@@ -92,15 +93,6 @@ const { t } = useI18n(Astro.url.pathname)
     #mermaid-1779009129919 .flowchart-link {
       stroke: #333333;
       fill: none;
-    }
-    #mermaid-1779009129919 .edgeLabel {
-      background-color: #e8e8e8;
-      text-align: center;
-    }
-    #mermaid-1779009129919 .edgeLabel rect {
-      opacity: 0.5;
-      background-color: #e8e8e8;
-      fill: #e8e8e8;
     }
     #mermaid-1779009129919 .cluster rect {
       fill: #ffffde;
@@ -113,23 +105,8 @@ const { t } = useI18n(Astro.url.pathname)
     #mermaid-1779009129919 .cluster span {
       color: #333;
     }
-    #mermaid-1779009129919 div.mermaidTooltip {
-      position: absolute;
-      text-align: center;
-      max-width: 200px;
-      padding: 2px;
-      font-family: Onest, Candara, sans-serif;
-      font-size: 12px;
-      background: hsl(80, 100%, 96.2745098039%);
-      border: 1px solid #aaaa33;
-      border-radius: 2px;
-      pointer-events: none;
-      z-index: 100;
-    }
-    #mermaid-1779009129919 :root {
-      --mermaid-font-family: Onest, Candara, sans-serif;
-    }
-  </style><g transform="translate(0, 0)"
+  </style>
+  <g transform="translate(0, 0)"
     ><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="9" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd"
       ><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker
     ><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="0" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"
@@ -145,10 +122,8 @@ const { t } = useI18n(Astro.url.pathname)
     ><g class="root"
       ><g class="clusters"
         ><g id="年會參與者、志工、講者" class="cluster default"
-          ><rect height="294.60000228881836" width="473.35001373291016" y="8" x="409.5500183105469" ry="0" rx="0" style=""></rect><g transform="translate(556.3000221252441, 13)" class="cluster-label"
-            ><foreignObject height="23.200000762939453" width="179.85000610351562"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">年會參與者、志工、講者</span></div></foreignObject
-            ></g
+          ><rect height="294.60000228881836" width="473.35001373291016" y="8" x="409.5500183105469" ry="0" rx="0" style=""></rect><g transform="translate(450, 13)" class="cluster-label"
+            ><foreignObject height="24" width="400"><div style="display: inline-block; width: 100%; text-align: center;">{t('cocProcedure.diagram1.areaLabel1')}</div></foreignObject></g
           ></g
         ></g
       ><g class="edgePaths"
@@ -197,118 +172,48 @@ const { t } = useI18n(Astro.url.pathname)
           id="L-S-External-0"
           d="M137.1487236262309,321.7000026702881L166.1197719773441,342.233336130778C195.0908203284573,362.7666695912679,253.03291703068373,403.83333651224774,298.4331328114031,424.3666699727376C343.8333485921224,444.90000343322754,376.69168345133465,444.90000343322754,401.37501843770343,444.90000343322754C426.05835342407227,444.90000343322754,442.56668853759766,444.90000343322754,450.82085609436035,444.90000343322754L459.07502365112305,444.90000343322754"
         ></path></g
-      ><g class="edgeLabels"
-        ><g class="edgeLabel"
-          ><g transform="translate(0, 0)" class="label"
-            ><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g
-          ></g
-        ><g class="edgeLabel"
-          ><g transform="translate(0, 0)" class="label"
-            ><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g
-          ></g
-        ><g transform="translate(654.4000282287598, 62.10000038146973)" class="edgeLabel"
-          ><g transform="translate(-24.524999618530273, -11.600000381469727)" class="label"
-            ><foreignObject height="23.200000762939453" width="49.04999923706055"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">籌備會</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(654.4000282287598, 150.30000114440918)" class="edgeLabel"
-          ><g transform="translate(-32.70000076293945, -11.600000381469727)" class="label"
-            ><foreignObject height="23.200000762939453" width="65.4000015258789"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">年會活動</span></div></foreignObject
-            ></g
-          ></g
-        ><g class="edgeLabel"
-          ><g transform="translate(0, 0)" class="label"
-            ><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g
-          ></g
-        ><g class="edgeLabel"
-          ><g transform="translate(0, 0)" class="label"
-            ><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g
-          ></g
-        ><g transform="translate(310.97501373291016, 356.7000026702881)" class="edgeLabel"
-          ><g transform="translate(-65.4000015258789, -11.600000381469727)" class="label"
-            ><foreignObject height="23.200000762939453" width="130.8000030517578"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">涉及申訴小組成員</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(310.97501373291016, 444.90000343322754)" class="edgeLabel"
-          ><g transform="translate(-73.57500457763672, -11.600000381469727)" class="label"
-            ><foreignObject height="23.200000762939453" width="147.15000915527344"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">涉及總召或行政組長</span></div></foreignObject
-            ></g
-          ></g
+      ><g class="edgeLabels">
+        <g transform="translate(600, 60)" class="edgeLabel"
+          ><foreignObject height="24" width="100">
+            <div style="display: inline-block; width: 100%; text-align: center;"><span class="edgeLabel">{t('cocProcedure.diagram1.caseLabel1')}</span></div>
+          </foreignObject>
+        </g>
+        <g transform="translate(600, 140)" class="edgeLabel"
+          ><foreignObject height="24" width="100">
+            <div style="display: inline-block; width: 100%; text-align: center;"><span class="edgeLabel">{t('cocProcedure.diagram1.caseLabel2')}</span></div>
+          </foreignObject>
+        </g><g transform="translate(120, 345)" class="edgeLabel"
+          ><foreignObject height="24" width="400">
+            <div style="display: inline-block; width: 100%; text-align: center;"><span class="edgeLabel">{t('cocProcedure.diagram1.caseLabel3')}</span></div>
+          </foreignObject></g
+        ><g transform="translate(120, 430)" class="edgeLabel"
+          ><foreignObject height="24" width="400">
+            <div style="display: inline-block; width: 100%; text-align: center;"><span class="edgeLabel">{t('cocProcedure.diagram1.caseLabel4')}</span></div>
+          </foreignObject></g
         ></g
       ><g class="nodes"
-        ><g transform="translate(785.0000305175781, 62.10000038146973)" id="flowchart-Admin-35" class="node default default"
-          ><rect height="38.20000076293945" width="113.0999984741211" y="-19.100000381469727" x="-56.54999923706055" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-49.04999923706055, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="98.0999984741211"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">通知行政組長</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(515.6250228881836, 150.30000114440918)" id="flowchart-Physical-32" class="node default"
-          ><rect height="38.20000076293945" width="96.75" y="-19.100000381469727" x="-48.375" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-40.875, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="81.75"><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">發生在現場</span></div></foreignObject></g
-          ></g
-        ><g transform="translate(785.0000305175781, 150.30000114440918)" id="flowchart-Info-37" class="node default default"
-          ><rect height="38.20000076293945" width="145.8000030517578" y="-19.100000381469727" x="-72.9000015258789" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-65.4000015258789, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="130.8000030517578"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">至年會服務台求助</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(785.0000305175781, 238.50000190734863)" id="flowchart-Email-40" class="node default default"
-          ><rect height="38.20000076293945" width="129.45000457763672" y="-19.100000381469727" x="-64.72500228881836" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-57.22500228881836, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="114.45000457763672"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">寫信至申訴信箱</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(515.6250228881836, 248.50000190734863)" id="flowchart-Virtual-33" class="node default"
-          ><rect height="38.20000076293945" width="162.15000915527344" y="-19.100000381469727" x="-81.07500457763672" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-73.57500457763672, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="147.15000915527344"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">發生在線上或活動後</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(110.20000457763672, 302.60000228881836)" id="flowchart-S-30" class="node default default"
-          ><rect height="38.20000076293945" width="204.4000062942505" y="-19.100000381469727" x="-102.20000314712524" ry="19.100000381469727" rx="19.100000381469727" style=""></rect><g
-            transform="translate(-89.92500305175781, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="179.85000610351562"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">如果你要提的案件是⋯⋯</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(515.6250228881836, 356.7000026702881)" id="flowchart-Organizer-42" class="node default default"
-          ><rect height="38.20000076293945" width="80.4000015258789" y="-19.100000381469727" x="-40.20000076293945" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-32.70000076293945, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="65.4000015258789"><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">通知總召</span></div></foreignObject
-            ></g
-          ></g
-        ><g transform="translate(515.6250228881836, 444.90000343322754)" id="flowchart-External-44" class="node default default"
-          ><rect height="38.20000076293945" width="113.0999984741211" y="-19.100000381469727" x="-56.54999923706055" ry="0" rx="0" style="" class="basic label-container"></rect><g
-            transform="translate(-49.04999923706055, -11.600000381469727)"
-            style=""
-            class="label"
-            ><foreignObject height="23.200000762939453" width="98.0999984741211"
-              ><div style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">通知外部委員</span></div></foreignObject
-            ></g
-          ></g
-        ></g
-      ></g
+        ><g transform="translate(730, 45)" id="flowchart-Admin-35" class="node default default">
+          <foreignObject height="50" width="200"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel1')}</span></div></foreignObject>
+        </g><g transform="translate(440, 132)" id="flowchart-Physical-32" class="node default">
+          <foreignObject height="50" width="150">
+            <div style="display: inline-flex; white-space: nowrap; width: 100%;"><span class="nodeLabel mx-auto">{t('cocProcedure.diagram1.nodeLabel2')}</span></div>
+          </foreignObject>
+        </g><g transform="translate(715, 132)" id="flowchart-Info-37" class="node default default">
+          <foreignObject height="50" width="200"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel3')}</span></div></foreignObject>
+        </g><g transform="translate(723, 218)" id="flowchart-Email-40" class="node default default">
+          <foreignObject height="50" width="200"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel4')}</span></div></foreignObject>
+        </g><g transform="translate(430, 230)" id="flowchart-Virtual-33" class="node default">
+          <foreignObject height="50" width="200"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel5')}</span></div></foreignObject>
+        </g><g transform="translate(60, 282)" id="flowchart-S-30" class="node default default">
+          <foreignObject height="50" width="300"
+            ><div style="display: inline-block; white-space: nowrap; border-radius: 100px;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel6')}</span></div></foreignObject
+          >
+        </g><g transform="translate(470, 340)" id="flowchart-Organizer-42" class="node default default">
+          <foreignObject height="50" width="200"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel7')}</span></div></foreignObject>
+        </g><g transform="translate(460, 425)" id="flowchart-External-44" class="node default default">
+          <foreignObject height="50" width="220"><div style="display: inline-block; white-space: nowrap;" class="nodeLabel"><span>{t('cocProcedure.diagram1.nodeLabel8')}</span></div></foreignObject>
+        </g>
+      </g></g
     ></g
-  ></svg
->
+  >
+</svg>
