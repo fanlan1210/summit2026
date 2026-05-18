@@ -346,5 +346,90 @@
       "q4": "Do I have to check in using the TW DIW?",
       "a4": "No. We understand that not everyone has a compatible device, or may have stricter privacy concerns. You can check in using just your ticket number and registration information at the venue. We even offer a cash purchase and check-in option. For those who purchase with cash on-site, your data will not pass through the conference ticketing system (OEN) or any of the conference's online systems at all. See the \"Online Registration, Offline Check-In\" and \"On-Site Cash Purchase\" sections above for details!"
     }
+  },
+  "cocProcedure": {
+    "g0vCoc": "g0v Code of Conduct",
+    "lastRevision": "(Last Revision: 2023/04/05)",
+    "caseTypes": "Case Types",
+    "violation": {
+      "title": "Violation Reports",
+      "period": "Period: During the preparation or execution of the Summit and Summit-related events",
+      "target": "Target: Summit attendees, volunteers, speakers",
+      "content": "Content: <a href=\"https://g0v.tw/coc/\">Any scope of harassment defined within the Code of Conduct</a>",
+      "measures": "Possible Measures:",
+      "measure1": "Denial of participation, cancellation of registration, expulsion from the venue, public declaration as an unwelcome person",
+      "measure2": "Other necessary measures"
+    },
+    "warning": {
+      "title": "Harassment Warnings",
+      "target": "Target: Summit attendees and potential attendees",
+      "content": "Content: Specific harassment incidents by the attendee outside of the community",
+      "measures": "Possible Measures:",
+      "measure1": "Alert staff to remain vigilant",
+      "measure2": "Plan countermeasures to mitigate risks"
+    },
+    "outOfScope": {
+      "title": "Out of Scope",
+      "item1": "Cases not occurring at the Summit or Summit-related events",
+      "item1sub": "Incidents occurring in other g0v projects should be reported to that project following the <a href=\"https://g0v.tw/coc/\">g0v Code of Conduct procedures</a>",
+      "item2": "Incidents not related to harassment or harassment warnings",
+      "item2sub1": "General relationship disputes not involving harassment",
+      "item2sub2": "Conflict mediation or emotional counseling",
+      "item3": "Cases not filed by the involved parties",
+      "item3sub1": "Incidents without specific targets or concrete evidence",
+      "item3sub2": "Hearsay or rumors"
+    },
+    "appeal": {
+      "title": "How to Report",
+      "subject": "If the case is about...",
+      "writeTo": "Please write to...",
+      "card1": {
+        "li1": "Summit attendees",
+        "li2": "Volunteers and staff",
+        "li3": "Speakers",
+        "to": "Appeals Committee"
+      },
+      "card2": {
+        "li1": "Appeals Committee members",
+        "to": "General Coordinator"
+      },
+      "card3": {
+        "li1": "General Coordinator or Administrative Lead",
+        "to": "External Committee Members"
+      }
+    },
+    "process": {
+      "title": "Reporting Process",
+      "step1": "Submit a report to the corresponding contact based on the content of the case",
+      "step1Ref": "Reference: ",
+      "step1RefLink": "How to Report",
+      "step2": "The contact should review the case within 7 days of submission",
+      "step2sub1": "If accepted, an Appeals Committee meeting should be convened within 14 days",
+      "step2sub2": "If rejected, briefly state the reasons why it does not fall within the accepted scope",
+      "step3": "The Appeals Committee will discuss during the meeting whether the report is substantiated and what measures should be taken",
+      "step4": "The contact will notify the involved parties of the result",
+      "step4sub": "If necessary, announce it on g0v Slack or request assistance from other g0v projects"
+    },
+    "notes": {
+      "title": "Notes",
+      "note1": "If the incident occurs on-site during the event, committee members should be convened immediately to handle it.",
+      "note2": "New cases will not be accepted 3 months after the Summit ends; email forwarding and the mailbox will be deactivated 6 months after the Summit ends.",
+      "note3": "For severe harassment with clear evidence, the organizing team may still take necessary immediate actions according to the Code of Conduct."
+    },
+    "members": {
+      "title": "Committee Members",
+      "colPosition": "Position",
+      "colName": "Name",
+      "badgeConvener": "Appeals Committee Convener",
+      "badgeExternal": "External Member",
+      "pos1": "Administrative Lead",
+      "pos2": "General Coordinator",
+      "pos3": "Promotion::Development Team Member",
+      "pos4": "Program Team Member",
+      "pos5": "Program Team Member",
+      "pos6": "Promotion::Design Team Member"
+    },
+    "discussion": "For the nomination process, discussions, and suggestions, please refer to the <a href=\"https://g0v.hackmd.io/@summit2026/coc-draft-discussion\" target=\"_blank\">discussion logs</a>.",
+    "effectiveDate": "Effective Date: 2025/11/1"
   }
 }
