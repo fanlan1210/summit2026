@@ -58,7 +58,7 @@
     "about": "About",
     "register": "Register",
     "safety": "Dealing with Earthquakes",
-    "cocProcedure": "Code of Conduct Assistance Procedure"
+    "coc": "Code of Conduct"
   },
   "footer": {
     "media": "Media Resources",
@@ -347,118 +347,149 @@
       "a4": "No. We understand that not everyone has a compatible device, or may have stricter privacy concerns. You can check in using just your ticket number and registration information at the venue. We even offer a cash purchase and check-in option. For those who purchase with cash on-site, your data will not pass through the conference ticketing system (OEN) or any of the conference's online systems at all. See the \"Online Registration, Offline Check-In\" and \"On-Site Cash Purchase\" sections above for details!"
     }
   },
-  "cocProcedure": {
-    "g0vCoc": "g0v Code of Conduct",
-    "lastRevision": "(Last Revision: 2023/04/05)",
-    "caseTypes": "Case Types",
-    "violation": {
-      "title": "Violation Reports",
-      "period": "Period: During the preparation or execution of the Summit and Summit-related events",
-      "target": "Target: Summit attendees, volunteers, speakers",
-      "content": "Content: <a href=\"https://g0v.tw/coc/\">Any scope of harassment defined within the Code of Conduct</a>",
-      "measures": "Possible Measures:",
-      "measure1": "Denial of participation, cancellation of registration, expulsion from the venue, public declaration as an unwelcome person",
-      "measure2": "Other necessary measures"
+  "coc": {
+    "text": {
+      "title": "g0v Code of Conduct",
+      "lastRevision": "(Last Revision: April 5, 2023)",
+      "intro": "Participants in the g0v community must work together to create a friendly environment free of harassment for all participants, regardless of their gender, sexual orientation, mental state, appearance, race, religious or political beliefs, or technological preferences.",
+      "rule": "Any sexually explicit, violent or discriminatory language and/or imagery is inappropriate at any online or offline community event/space, including at hackathons, seminars, speeches, workshops, gatherings, social media chatrooms and even in source code or documents.",
+      "consequence": "If you violate these rules, organisers or project owner have the right and authority to expel you. Other participants must also actively try to prevent all harassment and other inappropriate behaviour. Participants are not required to reimburse recompensate the recourses or money (such registration fees and donations) that had already been contributed by those who have since been expelled. Speakers, sponsors, contributors, project owner and others in specific roles are also participants, and thus must abide by the same rules as all others.",
+      "harassment": {
+        "title": "Harassment includes:",
+        "1": "Offensive comments regarding the gender, sexual orientation, mental state, appearance, race, religious or political beliefs, or technological preferences of others;",
+        "2": "Displaying sexually explicit images in public;",
+        "3": "Intentionally intimidating, stalking, following or harassing the photographer or cameraperson;",
+        "4": "Repeatedly disrupting the proceedings of speeches, online cooperation, or other events through verbal or other means;",
+        "5": "Inappropriate physical contact;",
+        "6": "Unwelcomed sexual attention."
+      },
+      "effect": "Please immediately stop such harassing behaviour when requested to do so by other participants.",
+      "action": "If you have been harassed or have discovered that others have been harassed, please immediately ask for help from other participants, managers or the event organising team.",
+      "expectation": "The g0v community hopes that participants can follow the above rules at both online and offline events."
     },
-    "warning": {
-      "title": "Harassment Warnings",
-      "target": "Target: Summit attendees and potential attendees",
-      "content": "Content: Specific harassment incidents by the attendee outside of the community",
-      "measures": "Possible Measures:",
-      "measure1": "Alert staff to remain vigilant",
-      "measure2": "Plan countermeasures to mitigate risks"
+    "protocol": {
+      "title": "Resolution Protocol",
+      "effectiveDate": "Effective Date: November 1, 2025",
+      "limit": "Limitation:",
+      "person": "Applicable parties:",
+      "scope": "Material scope:",
+      "measures": "Actionable measures:",
+      "grievance": {
+        "title": "Filing a Grievance",
+        "limit": "Incidents occurring during the preparation or execution of the Summit and its associated events.",
+        "person": "Attendees, volunteers, and/or speakers.",
+        "scope": "Any forms of harassment as defined within the <a href=\"coc-procedure#coc\">Code of Conduct</a>.",
+        "measure1": "Denial of participation, revocation of registration, expulsion from the venue, and/or designation as <i lang=\"la\">persona non grata</i>.",
+        "measure2": "Other necessary and appropriate measures."
+      },
+      "alert": {
+        "title": "Alerting a Threat",
+        "person": "Attendees and prospective attendees.",
+        "scope": "Specific, substantiated incidents of harassment committed by the individual outside the g0v community.",
+        "measure1": "Alerting the Summit staff to exercise heightened vigilance.",
+        "measure2": "Implement precautionary countermeasures to mitigate risks."
+      },
+      "inadmissible": {
+        "title": "Inadmissible Cases",
+        "limit": {
+          "title": "Matters that did not occur at the Summit or its associated events.",
+          "e1": "Incidents occurring within other g0v projects should be reported to the respective project through the <a href=\"https://g0v.tw/coc/en/\">g0v Code of Conduct</a> procedure."
+        },
+        "scope": {
+          "title": "Matters Not Constituting Grievance or Preventative Alerts.",
+          "e1": "General interpersonal or relationship disputes.",
+          "e2": "Requests for conflict mediation or emotional counseling."
+        },
+        "person": {
+          "title": "Cases not filed directly by the aggrieved party.",
+          "e1": "Incidents lacking specific respondents or concrete, material evidence.",
+          "e2": "Claims based on hearsay or unverified rumors."
+        }
+      }
     },
-    "outOfScope": {
-      "title": "Out of Scope",
-      "item1": "Cases not occurring at the Summit or Summit-related events",
-      "item1sub": "Incidents occurring in other g0v projects should be reported to that project following the <a href=\"https://g0v.tw/coc/\">g0v Code of Conduct procedures</a>",
-      "item2": "Incidents not related to harassment or harassment warnings",
-      "item2sub1": "General relationship disputes not involving harassment",
-      "item2sub2": "Conflict mediation or emotional counseling",
-      "item3": "Cases not filed by the involved parties",
-      "item3sub1": "Incidents without specific targets or concrete evidence",
-      "item3sub2": "Hearsay or rumors"
-    },
-    "appeal": {
+    "howTo": {
       "title": "How to Report",
-      "subject": "If the case is about...",
-      "writeTo": "Please write to...",
+      "subject": "If the matter involves…",
+      "writeTo": "Please write to…",
       "card1": {
         "li1": "Summit attendees",
-        "li2": "Volunteers and staff",
+        "li2": "Staff volunteers",
         "li3": "Speakers",
-        "to": "Appeals Committee"
+        "to": "Resolution Committee"
       },
       "card2": {
-        "li1": "Appeals Committee members",
-        "to": "General Coordinator"
+        "li1": "Resolution Committee members",
+        "to": "Chief Coordinator"
       },
       "card3": {
-        "li1": "General Coordinator or Administrative Lead",
-        "to": "External Committee Members"
+        "li1": "Chief Coordinator",
+        "li2": "Administrative Lead",
+        "to": "External Committee Member"
+      },
+      "diagram": {
+        "start": "If the case involves…",
+        "scope1": "Attendees, Volunteers, Speakers",
+        "scope2": "Committee Member",
+        "scope3": "Coordinator or Admin Lead",
+        "situation1": "Online or Post-event",
+        "situation2": "On-site",
+        "situation3": "during org.",
+        "situation4": "at Summit",
+        "action1": "Inform Admin Lead",
+        "action2": "Go to Info Desk",
+        "action3": "Email Complaint",
+        "action4": "Inform Coordinator",
+        "action5": "Inform External Member"
       }
     },
     "process": {
-      "title": "Reporting Process",
-      "step1": "Submit a report to the corresponding contact based on the content of the case",
-      "step1Ref": "Reference: ",
-      "step1RefLink": "How to Report",
-      "step2": "The contact should review the case within 7 days of submission",
-      "step2sub1": "If accepted, an Appeals Committee meeting should be convened within 14 days",
-      "step2sub2": "If rejected, briefly state the reasons why it does not fall within the accepted scope",
-      "step3": "The Appeals Committee will discuss during the meeting whether the report is substantiated and what measures should be taken",
-      "step4": "The contact will notify the involved parties of the result",
-      "step4sub": "If necessary, announce it on g0v Slack or request assistance from other g0v projects"
+      "title": "Resolution Process",
+      "step1": "File a complaint to the <a href=\"coc-procedure#howTo\">designated contact</a> in accordance with the nature of the incident.",
+      "step2": "The contact shall conduct an initial review of the case within 7 days of submission.",
+      "step2a": "If the case is accepted for review, a Resolution Committee meeting shall be convened within 14 days.",
+      "step2b": "If the case is dismissed, a brief written statement detailing the reasons for inadmissibility shall be provided.",
+      "step3": "The Resolution Committee shall discuss during the meeting to determine the validity of the complaint and decide upon the appropriate measures.",
+      "step4": "The designated contact shall notify the involved parties of the resolution.",
+      "step4a": "Where deemed necessary, the outcome may be publicly announced on the g0v Slack and/or assistance may be requested from other g0v projects.",
+      "diagram": {
+        "step1": "File a Complaint",
+        "step2": "Initial Review",
+        "case2a": "Meets Criteria",
+        "case2b": "Out of Scope",
+        "step2a": "Accept Complaint",
+        "step2b": "Dismissed",
+        "step2a1": "Convene Committee",
+        "step3": "Resolution",
+        "case3a": "Substantiated",
+        "case3b": "Unsubstantiated",
+        "step4": "Upheld",
+        "step4a": "Take Action"
+      }
     },
     "notes": {
       "title": "Notes",
-      "note1": "If the incident occurs on-site during the event, committee members should be convened immediately to handle it.",
-      "note2": "New cases will not be accepted 3 months after the Summit ends; email forwarding and the mailbox will be deactivated 6 months after the Summit ends.",
-      "note3": "For severe harassment with clear evidence, the organizing team may still take necessary immediate actions according to the Code of Conduct."
+      "1": "In the event of an incident occurring on-site during the event, Committee members shall be immediately convened to address the matter.",
+      "2": "Complaints will be accepted until 3 months after the Summit ends; email forwarding and the mailbox will be deactivated 6 months after the Summit ends.",
+      "3": "For severe harassment with clear evidence, the Summit Working Group reserves the right to enforce necessary immediate actions according to the Code of Conduct."
     },
     "members": {
-      "title": "Committee Members",
-      "colPosition": "Position",
-      "colName": "Name",
-      "badgeConvener": "Appeals Committee Convener",
+      "title": "Resolution Committee Members",
+      "position": "Position",
+      "name": "Name",
+      "badgeConvener": "Convener",
       "badgeExternal": "External Member",
       "pos1": "Administrative Lead",
-      "pos2": "General Coordinator",
-      "pos3": "Sponsorship Team Member",
-      "pos4": "Program Team Member",
+      "pos2": "Chief Coordinator",
+      "pos3": "Sponsorship Team Consultant",
+      "pos4": "Program Team Consultant",
       "pos5": "Program Team Member",
-      "pos6": "Media::Design Team Member"
+      "pos6": "Program & Media Team Member",
+      "pos7": "N/A"
     },
-    "discussion": "For the nomination process, discussions, and suggestions, please refer to the <a href=\"https://g0v.hackmd.io/@summit2026/coc-draft-discussion\" target=\"_blank\">discussion logs</a>.",
-    "effectiveDate": "Effective Date: 2025/11/1",
-    "diagram1": {
-      "areaLabel1": "Attendees, Volunteers, Speakers",
-      "caseLabel1": "Organizing",
-      "caseLabel2": "Event",
-      "caseLabel3": "Involves Committee Member",
-      "caseLabel4": "Involves Coordinator/Admin",
-      "nodeLabel1": "Notify Admin Lead",
-      "nodeLabel2": "　On-site　",
-      "nodeLabel3": "Go to Info Desk",
-      "nodeLabel4": "Email Reporting Box",
-      "nodeLabel5": "Online or Post-event",
-      "nodeLabel6": "If the case is...",
-      "nodeLabel7": "Notify Coordinator",
-      "nodeLabel8": "Notify External Member"
-    },
-    "diagram2": {
-      "caseLabel1": "Meets Criteria",
-      "caseLabel2": "Substantiated",
-      "caseLabel3": "Unsubstantiated",
-      "caseLabel4": "Out of Scope",
-      "nodeLabel1": "File a Report",
-      "nodeLabel2": "Convener Review",
-      "nodeLabel3": "Accept Report",
-      "nodeLabel4": "Convene Committee",
-      "nodeLabel5": "Resolution",
-      "nodeLabel6": "Upheld",
-      "nodeLabel7": "Take Action",
-      "nodeLabel8": "Dismissed"
+    "readMore": {
+      "text1":  "For discussions, suggestions, or records of nomination process, please refer to the ",
+      "link": "collaborative note",
+      "text2": "."
     }
   }
 }

@@ -2,177 +2,220 @@
 import Layout from '~/layouts/Layout.astro'
 import Icon from '~/components/Icon.astro'
 import Link from '~/components/Link.astro'
-import Procedure1 from '~/components/coc/Procedure1.astro'
-import Procedure2 from '~/components/coc/Procedure2.astro'
+import FilingDiagram from '~/components/coc/FilingDiagram.astro'
+import ProcessDiagram from '~/components/coc/ProcessDiagram.astro'
 import { useI18n, getLocaleFromPath } from '~/i18n/utils'
 
 const { t } = useI18n(Astro.url.pathname)
 const lang = getLocaleFromPath(Astro.url.pathname)
 ---
 
-<Layout pageName={t('nav.cocProcedure')}>
+<Layout pageName={t('nav.coc')}>
   <main class="container py-8 md:py-12">
-    <h1 class="mb-8">{t('nav.cocProcedure')}</h1>
-    <div class="mb-16 flex flex-wrap items-center gap-2">
-      <a class="btn btn-primary flex gap-1" target="_blank" href={`https://g0v.tw/coc/${lang === 'en' ? 'en' : ''}`}>{t('cocProcedure.g0vCoc')}<Icon name="mdi:external-link" width="22" /></a>
-      <span>{t('cocProcedure.lastRevision')}</span>
-    </div>
-    <h2 class="mb-8">{t('cocProcedure.caseTypes')}</h2>
-    <h3 class="mt-8 mb-6">{t('cocProcedure.violation.title')}</h3>
-    <ul>
-      <li>{t('cocProcedure.violation.period')}</li>
-      <li>{t('cocProcedure.violation.target')}</li>
-      <li set:html={t('cocProcedure.violation.content')} />
-      <li>
-        <span>{t('cocProcedure.violation.measures')}</span>
+    <h1 class="mb-8">{t('nav.coc')}</h1>
+    <div class="container">
+      <article id="coc" class="rounded-3xl border-2 border-teal-200 bg-teal-50 p-4 text-teal-800 md:p-10">
+        <h3 class="mb-6">
+          <a class="inline-flex flex-row gap-2 items-center" target="_blank" href=`https://g0v.tw/coc/${lang === 'en' ? 'en/' : ''}`>
+            <span>{t('coc.text.title')}</span>
+            <Icon name="mdi:external-link" width="22" /></a>
+          </a>
+        </h3>
+        <p>{t('coc.text.intro')}</p>
+        <p>{t('coc.text.rule')}</p>
+        <p>{t('coc.text.consequence')}</p>
+        <p>{t('coc.text.harassment.title')}</p>
         <ul>
-          <li>{t('cocProcedure.violation.measure1')}</li>
-          <li>{t('cocProcedure.violation.measure2')}</li>
+          <li>{t('coc.text.harassment.1')}</li>
+          <li>{t('coc.text.harassment.2')}</li>
+          <li>{t('coc.text.harassment.3')}</li>
+          <li>{t('coc.text.harassment.4')}</li>
+          <li>{t('coc.text.harassment.5')}</li>
+          <li>{t('coc.text.harassment.6')}</li>
         </ul>
-      </li>
-    </ul>
-    <h3 class="mt-8 mb-6">{t('cocProcedure.warning.title')}</h3>
+        <p>{t('coc.text.effect')}</p>
+        <p>{t('coc.text.action')}</p>
+        <p>{t('coc.text.expectation')}</p>
+        <p class="text-teal-600 text-sm">
+          <time>{t('coc.text.lastRevision')}</time>
+        </p>
+      </article>
+    </div>
+    <h2 class="mt-16 mb-6">{t('coc.protocol.title')}</h2>
+    <h3 class="mt-8 mb-6">{t('coc.protocol.grievance.title')}</h3>
     <ul>
-      <li>{t('cocProcedure.warning.target')}</li>
-      <li>{t('cocProcedure.warning.content')}</li>
-      <li>
-        {t('cocProcedure.warning.measures')}<ul>
-          <li>{t('cocProcedure.warning.measure1')}</li>
-          <li>{t('cocProcedure.warning.measure2')}</li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.limit')}</strong>
+        {t('coc.protocol.grievance.limit')}
+      </li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.person')}</strong>
+        {t('coc.protocol.grievance.person')}
+      </li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.scope')}</strong>
+        <span set:html={t('coc.protocol.grievance.scope')} />
+      </li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.measures')}</strong>
+        <ul>
+          <li set:html={t('coc.protocol.grievance.measure1')} />
+          <li>{t('coc.protocol.grievance.measure2')}</li>
         </ul>
       </li>
     </ul>
-    <h3 class="mt-8 mb-6">{t('cocProcedure.outOfScope.title')}</h3>
+    <h3 class="mt-8 mb-6">{t('coc.protocol.alert.title')}</h3>
     <ul>
-      <li>
-        {t('cocProcedure.outOfScope.item1')}<ul>
-          <li set:html={t('cocProcedure.outOfScope.item1sub')} />
-        </ul>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.person')}</strong>
+        {t('coc.protocol.alert.person')}
       </li>
-      <li>
-        {t('cocProcedure.outOfScope.item2')}<ul>
-          <li>{t('cocProcedure.outOfScope.item2sub1')}</li>
-          <li>{t('cocProcedure.outOfScope.item2sub2')}</li>
-        </ul>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.scope')}</strong>
+        {t('coc.protocol.alert.scope')}
       </li>
-      <li>
-        {t('cocProcedure.outOfScope.item3')}<ul>
-          <li>{t('cocProcedure.outOfScope.item3sub1')}</li>
-          <li>{t('cocProcedure.outOfScope.item3sub2')}</li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.measures')}</strong>
+        <ul>
+          <li>{t('coc.protocol.alert.measure1')}</li>
+          <li>{t('coc.protocol.alert.measure2')}</li>
         </ul>
       </li>
     </ul>
-    <h2 class="mt-16 mb-8" id="申訴方式">{t('cocProcedure.appeal.title')}</h2>
-    <Procedure1 />
+    <h3 class="mt-8 mb-6">{t('coc.protocol.inadmissible.title')}</h3>
+    <ul>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.inadmissible.limit.title')}</strong>
+        <br/>
+        <span set:html={t('coc.protocol.inadmissible.limit.e1')} />
+      </li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.inadmissible.scope.title')}</strong>
+        <ul>
+          <li>{t('coc.protocol.inadmissible.scope.e1')}</li>
+          <li>{t('coc.protocol.inadmissible.scope.e2')}</li>
+        </ul>
+      </li>
+      <li class="mb-2">
+        <strong>{t('coc.protocol.inadmissible.person.title')}</strong>
+        <ul>
+          <li>{t('coc.protocol.inadmissible.person.e1')}</li>
+          <li>{t('coc.protocol.inadmissible.person.e2')}</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 class="mt-16 mb-8" id="howTo">{t('coc.howTo.title')}</h3>
+    <FilingDiagram />
     <div class="my-6 grid gap-4 md:grid-cols-3">
       <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.subject')}</div>
+        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.subject')}</div>
         <ul class="mb-4">
-          <li>{t('cocProcedure.appeal.card1.li1')}</li>
-          <li>{t('cocProcedure.appeal.card1.li2')}</li>
-          <li>{t('cocProcedure.appeal.card1.li3')}</li>
+          <li>{t('coc.howTo.card1.li1')}</li>
+          <li>{t('coc.howTo.card1.li2')}</li>
+          <li>{t('coc.howTo.card1.li3')}</li>
         </ul>
-        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.writeTo')}</div>
-        <p class="font-medium">{t('cocProcedure.appeal.card1.to')}</p>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.writeTo')}</div>
+        <p class="font-medium">{t('coc.howTo.card1.to')}</p>
         <a href="mailto:coc@summit.g0v.tw" class="break-all">coc@summit.g0v.tw</a>
       </div>
       <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.subject')}</div>
+        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.subject')}</div>
         <ul class="mb-4">
-          <li>{t('cocProcedure.appeal.card2.li1')}</li>
+          <li>{t('coc.howTo.card2.li1')}</li>
         </ul>
-        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.writeTo')}</div>
-        <p class="font-medium">{t('cocProcedure.appeal.card2.to')}</p>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.writeTo')}</div>
+        <p class="font-medium">{t('coc.howTo.card2.to')}</p>
         <a href="mailto:coordinator@summit.g0v.tw" class="break-all">coordinator@summit.g0v.tw</a>
       </div>
       <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
-        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.subject')}</div>
+        <div class="mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.subject')}</div>
         <ul class="mb-4">
-          <li>{t('cocProcedure.appeal.card3.li1')}</li>
+          <li>{t('coc.howTo.card3.li1')}</li>
+          <li>{t('coc.howTo.card3.li2')}</li>
         </ul>
-        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('cocProcedure.appeal.writeTo')}</div>
-        <p class="font-medium">{t('cocProcedure.appeal.card3.to')}</p>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">{t('coc.howTo.writeTo')}</div>
+        <p class="font-medium">{t('coc.howTo.card3.to')}</p>
         <a href="mailto:keeper@summit.g0v.tw" class="break-all">keeper@summit.g0v.tw</a>
       </div>
     </div>
-    <h2 class="mt-16 mb-8">{t('cocProcedure.process.title')}</h2>
+    <h3 class="mt-16 mb-8">{t('coc.process.title')}</h3>
     <div class="my-6">
-      <Procedure2 />
+      <ProcessDiagram />
     </div>
     <ol>
-      <li>
-        {t('cocProcedure.process.step1')}
-        <ul>
-          <li>{t('cocProcedure.process.step1Ref')}<Link href="coc-procedure#申訴方式">{t('cocProcedure.process.step1RefLink')}</Link></li>
+      <li class="mb-2" set:html={t('coc.process.step1')} />
+      <li class="mb-2">
+        {t('coc.process.step2')}
+        <ul class="mt-2 mb-4">
+          <li>{t('coc.process.step2a')}</li>
+          <li>{t('coc.process.step2b')}</li>
         </ul>
       </li>
-      <li>
-        {t('cocProcedure.process.step2')}<ul>
-          <li>{t('cocProcedure.process.step2sub1')}</li>
-          <li>{t('cocProcedure.process.step2sub2')}</li>
-        </ul>
-      </li>
-      <li>{t('cocProcedure.process.step3')}</li>
-      <li>
-        {t('cocProcedure.process.step4')}<ul>
-          <li>{t('cocProcedure.process.step4sub')}</li>
-        </ul>
+      <li class="mb-2">{t('coc.process.step3')}</li>
+      <li class="mb-2">
+        <div class="mb-2">{t('coc.process.step4')}</div>
+        <div>{t('coc.process.step4a')}</div>
       </li>
     </ol>
-    <h4 class="mt-8 mb-6">{t('cocProcedure.notes.title')}</h4>
+    <h4 class="mt-8 mb-6">{t('coc.notes.title')}</h4>
     <ul>
-      <li>{t('cocProcedure.notes.note1')}</li>
-      <li>{t('cocProcedure.notes.note2')}</li>
-      <li>{t('cocProcedure.notes.note3')}</li>
+      <li>{t('coc.notes.1')}</li>
+      <li>{t('coc.notes.2')}</li>
+      <li>{t('coc.notes.3')}</li>
     </ul>
-    <h2 class="mt-16 mb-8">{t('cocProcedure.members.title')}</h2>
+    <h4 class="mt-8 mb-6">{t('coc.members.title')}</h4>
     <div class="my-6 w-max overflow-x-auto rounded-xl border border-neutral-200">
       <table class="border-collapse text-left">
         <thead class="bg-neutral-50 text-sm tracking-wide text-neutral-600 uppercase">
           <tr>
-            <th scope="col" class="px-5 py-3 font-semibold">{t('cocProcedure.members.colPosition')}</th>
-            <th scope="col" class="px-5 py-3 font-semibold">{t('cocProcedure.members.colName')}</th>
+            <th scope="col" class="px-5 py-3 font-semibold">{t('coc.members.position')}</th>
+            <th scope="col" class="px-5 py-3 font-semibold">{t('coc.members.name')}</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-neutral-200">
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700"
-              >{t('cocProcedure.members.pos1')}
-              <span class="bg-primary/10 text-primary inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium">{t('cocProcedure.members.badgeConvener')}</span>
-            </td>
-            <td class="px-5 py-3 font-medium">球魚 </td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos1')}</td>
+            <td class="px-5 py-3 font-medium">{lang === 'en' ? 'ballfish' : '球魚'}
+              <span class="bg-primary/10 text-primary inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium">{t('coc.members.badgeConvener')}</span></td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700">{t('cocProcedure.members.pos2')}</td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos2')}</td>
             <td class="px-5 py-3 font-medium">RS</td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700">{t('cocProcedure.members.pos3')}</td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos3')}</td>
             <td class="px-5 py-3 font-medium">pm5</td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700">{t('cocProcedure.members.pos4')}</td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos4')}</td>
             <td class="px-5 py-3 font-medium">yellowsoar</td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700">{t('cocProcedure.members.pos5')}</td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos5')}</td>
             <td class="px-5 py-3 font-medium">Winnie</td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-700">{t('cocProcedure.members.pos6')}</td>
-            <td class="px-5 py-3 font-medium">方塊酥</td>
+            <td class="px-5 py-3 text-neutral-700">{t('coc.members.pos6')}</td>
+            <td class="px-5 py-3 font-medium">{lang === 'en' ? 'Jackroy' : '方塊酥'}</td>
           </tr>
           <tr class="">
-            <td class="px-5 py-3 text-neutral-400">
-              - <span class="bg-primary/10 text-primary inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium">{t('cocProcedure.members.badgeExternal')}</span>
-            </td>
-            <td class="px-5 py-3 font-medium">Tiff </td>
+            <td class="px-5 py-3 text-neutral-400">{t('coc.members.pos7')}</td>
+            <td class="px-5 py-3 font-medium">Tiff
+              <span class="bg-primary/10 text-primary inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium">{t('coc.members.badgeExternal')}</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="mt-16" set:html={t('cocProcedure.discussion')} />
-    <p>{t('cocProcedure.effectiveDate')}</p>
+    <p>
+      {t('coc.readMore.text1')}
+      <a class="inline-flex flex-row gap-1 items-center" target="_blank" href="https://g0v.hackmd.io/@summit2026/coc-draft-discussion">
+        <span>{t('coc.readMore.link')}</span>
+        <Icon name="mdi:external-link" width="14" /></a>
+      </a>
+      {t('coc.readMore.text2')}
+    </p>
+    <div class="text-neutral-600 text-sm">
+      <p><time>{t('coc.protocol.effectiveDate')}</time></p>
+    </div>
   </main>
 </Layout>
-
