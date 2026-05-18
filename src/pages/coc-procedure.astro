@@ -1,0 +1,177 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Icon from '~/components/Icon.astro'
+import Link from '~/components/Link.astro'
+import Procedure1 from '~/components/coc/Procedure1.astro'
+import Procedure2 from '~/components/coc/Procedure2.astro'
+import { useI18n, getLocaleFromPath } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+const lang = getLocaleFromPath(Astro.url.pathname)
+---
+
+<Layout pageName={t('nav.cocProcedure')}>
+  <main class="container py-8 md:py-12">
+    <h1 class="mb-8">{t('nav.cocProcedure')}</h1>
+    <div class="mb-16 flex flex-wrap items-center gap-2">
+      <a class="btn btn-primary flex gap-1" target="_blank" href={`https://g0v.tw/coc/${lang === 'en' ? 'en' : ''}`}>g0v 社群守則<Icon name="mdi:external-link" width="22" /></a>
+      <span>（最後修訂日期：2023/04/05）</span>
+    </div>
+    <h2 class="mb-8">案件類型</h2>
+    <h3 class="mt-8 mb-6">違規行為申訴</h3>
+    <ul>
+      <li>期間：發生在年會與年會相關活動的籌備或舉行期間</li>
+      <li>對象：年會參與者、志工、講者</li>
+      <li>內容：<a href="https://g0v.tw/coc/">社群守則所定之一切騷擾範圍</a></li>
+      <li>
+        <span>可能採取的措施：</span>
+        <ul>
+          <li>拒絕參與、取消報名、驅離會場、公告為不受歡迎人物</li>
+          <li>其他必要的措施</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 class="mt-8 mb-6">騷擾預警</h3>
+    <ul>
+      <li>對象：年會參與者與潛在參與者</li>
+      <li>內容：該參與者於社群外發生的具體騷擾事跡</li>
+      <li>
+        可能採取的措施：<ul>
+          <li>請工作人員提高警覺</li>
+          <li>規劃減低風險的對策</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 class="mt-8 mb-6">不受理範圍</h3>
+    <ul>
+      <li>
+        並非發生於年會或年會相關活動的案件<ul>
+          <li>發生於 g0v 其他專案的事件，應改循 <a href="https://g0v.tw/coc/">g0v 社群守則程序</a>向該專案申訴</li>
+        </ul>
+      </li>
+      <li>
+        非屬騷擾或騷擾預警事件<ul>
+          <li>未涉騷擾行為的一般感情糾紛</li>
+          <li>勸架調解或情感諮商</li>
+        </ul>
+      </li>
+      <li>
+        非由當事人提出的案件<ul>
+          <li>無特定對象或具體事證的事件</li>
+          <li>傳聞事件</li>
+        </ul>
+      </li>
+    </ul>
+    <h2 class="mt-16 mb-8" id="申訴方式">申訴方式</h2>
+    <Procedure1 />
+    <div class="my-6 grid gap-4 md:grid-cols-3">
+      <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+        <div class="mb-2 text-sm font-semibold text-neutral-500">如果案件是關於⋯⋯</div>
+        <ul class="mb-4">
+          <li>年會參與者</li>
+          <li>志工與工作人員</li>
+          <li>講者</li>
+        </ul>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">請寫信到⋯⋯</div>
+        <p class="font-medium">申訴小組</p>
+        <a href="mailto:coc@summit.g0v.tw" class="break-all">coc@summit.g0v.tw</a>
+      </div>
+      <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+        <div class="mb-2 text-sm font-semibold text-neutral-500">如果案件是關於⋯⋯</div>
+        <ul class="mb-4">
+          <li>申訴小組成員</li>
+        </ul>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">請寫信到⋯⋯</div>
+        <p class="font-medium">總召</p>
+        <a href="mailto:coordinator@summit.g0v.tw" class="break-all">coordinator@summit.g0v.tw</a>
+      </div>
+      <div class="flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+        <div class="mb-2 text-sm font-semibold text-neutral-500">如果案件是關於⋯⋯</div>
+        <ul class="mb-4">
+          <li>總召或行政組長</li>
+        </ul>
+        <div class="mt-auto mb-2 text-sm font-semibold text-neutral-500">請寫信到⋯⋯</div>
+        <p class="font-medium">外部委員</p>
+        <a href="mailto:keeper@summit.g0v.tw" class="break-all">keeper@summit.g0v.tw</a>
+      </div>
+    </div>
+    <h2 class="mt-16 mb-8">申訴流程</h2>
+    <div class="my-6">
+      <Procedure2 />
+    </div>
+    <ol>
+      <li>
+        依照案件內容向對應窗口提出申訴 <ul>
+          <li>參考<Link href="coc-procedure#申訴方式">申訴方式</Link></li>
+        </ul>
+      </li>
+      <li>
+        窗口應於提出申訴後 7 日內檢核案件<ul>
+          <li>若受理申訴，應於 14 日內召開申訴小組會議</li>
+          <li>若不受理申訴，應簡要敘明不符受理申訴範圍的原因</li>
+        </ul>
+      </li>
+      <li>申訴小組會於會議中討論申訴是否成立、以及應採取之措施</li>
+      <li>
+        申訴窗口將申訴結果通知當事人<ul>
+          <li>必要時公告於 g0v Slack 或請求其他 g0v 專案協助</li>
+        </ul>
+      </li>
+    </ol>
+    <h4 class="mt-8 mb-6">附註</h4>
+    <ul>
+      <li>若事件發生於活動現場，應即時召集小組成員處理。</li>
+      <li>年會結束三個月後停止受理新案件，年會結束六個月後停止轉信、停用信箱。</li>
+      <li>對於情節嚴重且有明確事證的騷擾者，籌備團隊仍可依《社群守則》逕行採取必要的處置。</li>
+    </ul>
+    <h2 class="mt-16 mb-8">小組名單</h2>
+    <div class="my-6 w-max overflow-x-auto rounded-xl border border-neutral-200">
+      <table class="border-collapse text-left">
+        <thead class="bg-neutral-50 text-sm tracking-wide text-neutral-600 uppercase">
+          <tr>
+            <th scope="col" class="px-5 py-3 font-semibold">職位</th>
+            <th scope="col" class="px-5 py-3 font-semibold">名稱</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-neutral-200">
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">行政組長</td>
+            <td class="px-5 py-3 font-medium"
+              >球魚
+              <span class="bg-primary/10 text-primary inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium">申訴小組召集人</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">總召</td>
+            <td class="px-5 py-3 font-medium">RS</td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">宣傳::開發組員</td>
+            <td class="px-5 py-3 font-medium">pm5</td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">議程組員</td>
+            <td class="px-5 py-3 font-medium">yellowsoar</td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">議程組員</td>
+            <td class="px-5 py-3 font-medium">Winnie</td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-700">宣傳::設計組員</td>
+            <td class="px-5 py-3 font-medium">方塊酥</td>
+          </tr>
+          <tr class="">
+            <td class="px-5 py-3 text-neutral-400">—</td>
+            <td class="px-5 py-3 font-medium"
+              >Tiff
+              <span class="inline-flex rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700">外部委員</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-16">提名過程、討論與建議請參考<a href="https://g0v.hackmd.io/@summit2026/coc-draft-discussion" target="_blank">討論紀錄</a>。</p>
+    <p>生效日期：2025/11/1</p>
+  </main>
+</Layout>
