@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { parse } from 'csv-parse/sync'
 
-const inputPath = 'src/assets/staff.csv'
+const STAFF_CSV = 'https://docs.google.com/spreadsheets/d/1faHWhNV6XvYGI2ZLsdGcNDl-65gKjrESFSHMGuIR4cs/export?format=csv&gid=0'
 const staffOutputPath = 'src/data/staff.json'
 const teamsOutputPath = 'src/data/teams.json'
 
@@ -113,7 +113,13 @@ function normalizeTeams(teams) {
   )
 }
 
-const csv = await fs.readFile(inputPath, 'utf-8')
+const csvResponse = await fetch(STAFF_CSV)
+
+if (!csvResponse.ok) {
+  throw new Error(`Failed to fetch staff CSV: ${csvResponse.status} ${csvResponse.statusText}`)
+}
+
+const csv = await csvResponse.text()
 const records = parse(csv, {
   columns: true,
   bom: true,
