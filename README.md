@@ -48,11 +48,11 @@ done
 
 ## 工人資訊
 
-下載[工人表單 (上網頁名單)](https://docs.google.com/spreadsheets/d/1ZTCaRrPAvbkMjQRt4xzm106ncgNQ7uc-Se3lX1pMJ8Y)成 csv 檔案，覆蓋 `src/assets/staff.csv`
+資料來自 [上網頁名單](https://docs.google.com/spreadsheets/d/1ZTCaRrPAvbkMjQRt4xzm106ncgNQ7uc-Se3lX1pMJ8Y)
 
 工人頭貼放在 `public/img/staff` 底下，須轉換成 webp 格式並以工人的 id 命名，例如 `public/img/staff/d48f650c9b96e0b8.webp`
 
-更新後執行
+接著執行：
 
 ```
 npm run convert-staff
