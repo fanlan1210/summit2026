@@ -257,13 +257,13 @@
   {
     "id": 18,
     "floor": "4F",
-    "type": "sponsor",
+    "type": "community",
     "name": "HACKRAIL 鐵客松競賽",
     "name_en": "Hackrail",
     "description": "您出差、上課、旅遊搭鐵道嗎？\n\n交通部鐵道局聯合臺鐵、高鐵及各捷運公司等共九大鐵道機構，共同辦理鐵客松，解秘關鍵營運資料，並提供新臺幣50萬元獎金，邀請您運用創意及科技，解決關鍵營運痛點，一起打造美好鐵道生活！\n\n- 徵件期間：即日起至 07/31 (五) 17:00 止\n- 連絡窗口：(02) 2577-4249#861 邱先生",
     "description_en": "Do you travel by rail for business, school, or leisure?\n\nThe Railway Bureau of Ministry of Transportation & Communications, alongside Taiwan Railways, Taiwan High Speed Rail, and MRT operators—nine major railway institutions in total—is co-hosting the Railway Hackathon. We are unlocking exclusive operational data and offering a prize pool of NT$500,000. We invite you to leverage your creativity and technology to solve critical operational challenges and help shape a better railway experience!\n\n- Submission Period: Now until Friday, July 31 at 17:00\n- Contact: Mr. Chiu at (02) 2577-4249 ext. 861",
     "link": "https://www.hackrail.tw/",
-    "publish": ""
+    "publish": "新四波"
   },
   {
     "id": 25,
