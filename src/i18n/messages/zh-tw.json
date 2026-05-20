@@ -258,7 +258,8 @@
       "catalyst": "做代誌的人",
       "companion": "做伙的伴",
       "sidekick": "蹽落去的伴",
-      "special": "特別感謝"
+      "special": "特別感謝",
+      "musicSupport": "音樂協力"
     },
     "site": "官方網站",
     "support": {
@@ -487,7 +488,7 @@
       "pos7": "（無）"
     },
     "readMore": {
-      "text1":  "提名過程、討論與建議請參考",
+      "text1": "提名過程、討論與建議請參考",
       "link": "共筆文件",
       "text2": "。"
     }

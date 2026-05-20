@@ -115,9 +115,24 @@ const sponsors = {
       img: 'nutwork.png',
     },
   ],
+  musicSupport: [
+    {
+      name: 'GGteens',
+      img: 'ggteens.svg',
+    },
+    {
+      name: 'WING',
+      img: 'wing.svg',
+    },
+    {
+      name: 'TudiVoice',
+      img: 'tudiVoice.svg',
+    },
+  ],
 }
 
-const tierOrder = ['coorganizer', 'pioneer', 'catalyst', 'companion', 'sidekick', 'special']
+const tierOrder = ['coorganizer', 'pioneer', 'catalyst', 'companion', 'sidekick', 'special', 'musicSupport']
+const logoOnlyTiers = ['musicSupport']
 
 const pastReports = []
 ---
@@ -138,17 +153,29 @@ const pastReports = []
           tierOrder.map(tier => {
             const list = sponsors[tier]
             if (!list || list.length === 0) return null
+
             return (
               <section id={`sponsor-${tier}`} class="mb-12">
                 <div class="sponsor-tier-label mb-6 flex items-center gap-2">
                   <span class="bg-primary mb-px inline-block h-6 w-1 rounded-full" />
                   <h3 class="text-primary text-xl font-bold">{t(`sponsor.tiers.${tier}`)}</h3>
                 </div>
-                <div class={`grid gap-5 ${['sidekick', 'special'].includes(tier) && 'lg:grid-cols-2'}`}>
-                  {list.map(s => (
-                    <SponsorCard name={s.name} description={s.description} site={s.site} img={s.img} tier={tier} />
-                  ))}
-                </div>
+
+                {logoOnlyTiers.includes(tier) ? (
+                  <div class="grid grid-cols-2 gap-2 md:flex md:flex-wrap">
+                    {list.map(s => (
+                      <div class="aspect-square rounded-lg bg-neutral-50 md:w-32">
+                        <img src={`${import.meta.env.BASE_URL}img/partners/${s.img}`} alt={s.name} />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div class={`grid gap-5 ${['sidekick', 'special'].includes(tier) && 'lg:grid-cols-2'}`}>
+                    {list.map(s => (
+                      <SponsorCard name={s.name} description={s.description} site={s.site} img={s.img} tier={tier} />
+                    ))}
+                  </div>
+                )}
               </section>
             )
           })

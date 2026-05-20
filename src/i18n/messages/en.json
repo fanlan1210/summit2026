@@ -258,7 +258,8 @@
       "catalyst": "Catalyst Partners",
       "companion": "Companion Partners",
       "sidekick": "Sidekick Partners",
-      "special": "Special Thanks"
+      "special": "Special Thanks",
+      "musicSupport": "Music Provided by"
     },
     "site": "Official Website",
     "support": {
@@ -487,7 +488,7 @@
       "pos7": "N/A"
     },
     "readMore": {
-      "text1":  "For discussions, suggestions, or records of nomination process, please refer to the ",
+      "text1": "For discussions, suggestions, or records of nomination process, please refer to the ",
       "link": "collaborative note",
       "text2": "."
     }
