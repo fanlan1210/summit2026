@@ -1,0 +1,187 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Icon from '~/components/Icon.astro'
+import SponsorCard from '~/components/SponsorCard.astro'
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+---
+<Layout pageName={t('nav.notice')}>
+  <main class="container py-8 md:py-12">
+    <h1>Pre-Event Notice</h1>
+    <p>Dear Attendee,</p>
+    <p>g0v Summit 2026 will kick off on May 23rd, and we are thrilled to see you at this year's summit! We have compiled essential pre-event information for you. Please read it carefully.</p>
+    <p>
+      <strong>This email contains the link to the digital certificate required for check-in.</strong> Please be sure to download the Digital Identity Wallet app in advance for a smooth check-in process.
+    </p>
+    <h2>Time and Place</h2>
+    <h4>Dates</h4>
+    <p>May 23, 2026 (Sat) 08:30~17:40<br />May 24, 2026 (Sun) 08:30~17:30</p>
+    <h4>Venue</h4>
+    <p>
+      Humanities and Social Sciences Building, Academia Sinica<br />No. 128, Sec. 2, Academia Rd., Nangang Dist., Taipei City 115, Taiwan<br />(<a
+        href="https://www.openstreetmap.org/?mlat=25.041528&mlon=121.611472#map=17/25.041528/121.611472">OSM OpenStreetMap</a
+      >, <a href="https://maps.app.goo.gl/LVEvAzn1x7rboLUJ6">Google Maps</a>)
+    </p>
+    <h4>Transportation</h4>
+    <p>Please refer to the <a href="https://summit.g0v.tw/2026/en/visit/">summit website</a> for detailed explanations.</p>
+    <p><strong>Getting to Nangang</strong></p>
+    <ul>
+      <li>Take TRA (Taiwan Railways) or HSR (High-Speed Rail) to Nangang Station.</li>
+      <li>Take the Taipei Metro to Nangang Station (Bannan Line) or Nangang Exhibition Center Station (Bannan Line, Wenhu Line).</li>
+    </ul>
+    <p><strong>Getting to Academia Sinica</strong></p>
+    <ul>
+      <li>From MRT Nangang Station (Exit 2), transfer to bus 212 Express, 270, or Blue 25 to Academia Sinica stop.</li>
+      <li>From MRT Nangang Exhibition Center Station (Exit 5), transfer to bus 212, 276, 306, 620, 645, 679, 205, S5, S1, or S12 to Academia Sinica stop.</li>
+      <li>Walk or ride a YouBike to the Humanities and Social Sciences Building, Academia Sinica.</li>
+    </ul>
+    <p><strong>Summit Shuttle Bus</strong></p>
+    <ul>
+      <li>Operation time: 7:45–10:10 (20min headways)</li>
+      <li>Departure: the <strong>Nangang Station</strong> bus stop on Civic Blvd. (<a href="https://maps.app.goo.gl/kwUMzPvwvbm6ZE7z9">Google Maps</a>)</li>
+      <li>Please allow extra time to line up for the shuttle. The bus may be crowded during peak hours.</li>
+    </ul>
+    <p><strong>Driving</strong></p>
+    <ul>
+      <li>National Highway No. 3, Nanshen Rd. Exit → Jiu-zhuang St. Sec. 1 → Academia Rd. Sec. 2 → Academia Sinica Main Entrance.</li>
+      <li>When entering the Academia Sinica campus by vehicle, please present identification at the main gate security office to exchange for a temporary pass and park according to regulations.</li>
+      <li>Scooters cannot enter Academia Sinica. Please park at the motorcycle parking lot on the right side of the main gate, near the Sifen Creek side gate, or next to Hu Shih Park.</li>
+    </ul>
+    <h2>Check-in Process</h2>
+    <h4>Hours</h4>
+    <p>Starts from 8:30 on both days.</p>
+    <h4>Check-in via Digital Identity Wallet (requires recent version of Android or iOS)</h4>
+    <ol>
+      <li>
+        Download the <a href="https://wallet.gov.tw/">“Digital Identity Wallet” App</a> from the Ministry of Digital Affairs on <a href="https://play.google.com/store/apps/details?id=tw.gov.moda.diw"
+          >Google Play Store</a
+        > or <a href="https://apps.apple.com/tw/app/id6742222992">iOS App Store</a> and complete initial setup.
+      </li>
+      <li>Click on the following link. Use the DIW App to scan the QR Code on the website to add your ticket to the wallet.<br /><strong>-</strong></li>
+      <li>At the venue, the staff will present you with a QR Code; scan with your DIW App to check-in.</li>
+      <li>The app will ask for your consent and you may preview the request. Confirm the request to complete check-in.</li>
+    </ol>
+    <h4>Check-in Manually</h4>
+    <p>
+      If you have difficulties installing the DIW app, please memorize your ticket number: <strong>-</strong>. Upon arrival, follow the signs of Assisted Check-in. Present your ticket number to
+      validate and complete your check-in.
+    </p>
+    <h4>Notice to Student Ticket Holders</h4>
+    <p>If you purchased a student ticket, please present proof of student status upon entry (either one should be fine):</p>
+    <ol>
+      <li>Born on or after <strong>May 23, 2008</strong> (inclusive), with a <strong>photo ID</strong> (ID card, health insurance card, etc.).</li>
+      <li>A <strong>valid student ID or enrollment certificate</strong> for the second semester of the 114th academic year, or any document proving student status for that semester.</li>
+    </ol>
+    <h2>Agenda</h2>
+    <p>This year’s agenda is incredibly exciting! Please refer to the <a href="https://summit.g0v.tw/2026/en/agenda/">official website</a> for the latest schedule so you don’t miss out.</p>
+    <p>
+      <a href="https://g0v.hackmd.io/@summit2026/notes">Collaborative notes</a> will be available for every session, and you are welcome to help add the content shared by the speakers into the shared notes.
+    </p>
+    <h2>Chatroom</h2>
+    <p>The g0v community uses Slack for communication: <a href="https://join.g0v.tw">https://join.g0v.tw</a></p>
+    <p>Don’t forget to join #general, #rand0m for realtime comments, and #summit for important notices.</p>
+    <h2>Activities</h2>
+    <h4>Day 1 Night Social Gathering</h4>
+    <p>Time: 17:40~20:00<br />Location: 4th Floor Lounge (RH)</p>
+    <p>
+      Still craving more after Day 1? Want to chat more or share more? Come to the 4th floor and keep talking until dawn ₍₍ ᕕ(´ ω` )ᕗ⁾⁾. This social gathering also provides light food and snacks to
+      keep everyone well-fed.
+    </p>
+    <h4>Day 2 Unconference</h4>
+    <p>
+      The Unconference is coming up! This is a bottom-up session space shaped collaboratively by on-site participants. Whether you have a brilliant idea you want to discuss or an ongoing project
+      looking for contributors, you are welcome to submit a proposal!
+    </p>
+    <ul>
+      <li><strong>Proposal Location</strong>: 3F Whiteboard Alley</li>
+      <li><strong>Voting Stickers</strong>: Attendees will receive 3 Unconference voting stickers per person when they pick up their badges.</li>
+      <li><strong>How to Vote</strong>: During the Summit, attendees can use their stickers to vote by placing them on the projects they are most interested in.</li>
+      <li><strong>Deadline</strong>: Voting closes on Saturday, May 23, 2026, at 17:00 (UTC+8).</li>
+    </ul>
+    <h4>Day 2 ⚡️ Lightning Talks</h4>
+    <p>Got a wild idea you've been itching to share over the last two days? This is your absolute final chance to hit the big screen at R0 and shout out to the community at g0v Summit 2026!</p>
+    <ul>
+      <li><strong>Time</strong>: 05/24 (Day 2) 16:40 - 17:10</li>
+      <li><strong>Location</strong>: R0 International Conference Hall</li>
+      <li><strong>Time Limit</strong>: 4 minutes per person (<em>Strictly enforced</em>—you will be forced offstage when time is up!)</li>
+      <li><strong>How to Sign Up</strong>: Registration opens at 12:10 PM on the day of the Lightning Talks on the whiteboard next to the 3rd-floor Check-in desk.</li>
+    </ul>
+    <h4>Summit Souvenirs &amp; Field Rallies</h4>
+    <p>
+      The g0v Summit this year features adorably designed souvenirs, a stamp rally at the Media Team’s booth, and an offline-experience puzzle game designed by our partner, Cyber Resilience Co-lab!
+      Open up the <a href="https://summit.g0v.tw/2026/en/venue/">venue map</a> on the official website, keep your eyes peeled, and don't miss out on these fun interactive activities!
+    </p>
+    <h2>Meals</h2>
+    <ul>
+      <li>Eating and drinking are <strong>prohibited</strong> in all session halls. If you need to bring water in, please use a capped bottle.</li>
+      <li>
+        Lunch will be available for pickup at <strong>12:00 PM</strong> on the north and south sides of the 4th floor. For vegetarian meals, please go to the north side distribution area. <ul>
+          <li>Since we are using eco-friendly meal boxes/utensils, please follow the staff’s instructions to return them after use.</li>
+          <li>Please present your <strong>Digital Identity Wallet ticket</strong> or Meal Vouchers for meals.</li>
+        </ul>
+      </li>
+      <li>Snacks will be available for pickup at <strong>3:00 PM</strong> on the north and south sides of the 4th floor. For vegetarian options, please go to the north side distribution area.</li>
+    </ul>
+    <h2>Notes</h2>
+    <ul>
+      <li>
+        A filming/photography team will record the event and publish photos/videos to the official album and other media. If you do not consent to being the primary subject of public photos, please
+        pick up a privacy identification lanyard at the registration desk.
+      </li>
+      <li>
+        In case of a typhoon or other natural disasters, the event will follow the Taipei City Government Work Suspension Announcement to decide whether to proceed. Please follow the <a
+          href="https://summit.g0v.tw/2026/en/">g0v Summit 2026 Official Website and Social Media</a
+        > for the latest updates.
+      </li>
+      <li>This event entrusts OEN for ticket returns and refunds. Please refer to OEN’s refund policy.</li>
+      <li>If you need a tax ID or an invoice, please sent your inquiries to <a href="mailto:ticket@summit.g0v.tw">ticket@summit.g0v.tw</a>.</li>
+      <li>For more information about this year's summit, please visit the <a href="https://summit.g0v.tw/2026/en/">g0v Summit 2026 official website</a>.</li>
+      <li>The organizer reserves the right to final modification, change, event interpretation, and cancellation of g0v Summit 2026.</li>
+    </ul>
+    <h2>Code of Conduct</h2>
+    <p>
+      Participants in the g0v community must work together to create a friendly environment free of harassment for all participants, regardless of their gender, sexual orientation, mental state,
+      appearance, race, religious or political beliefs, or technological preferences.
+    </p>
+    <p>
+      Any sexually explicit, violent or discriminatory language and/or imagery is inappropriate at any online or offline community event/space, including at hackathons, seminars, speeches, workshops,
+      gatherings, social media chatrooms and even in source code or documents.
+    </p>
+    <p>
+      If you violate these rules, organisers or project owner, have the right and authority to expel you. Other participants must also actively try to prevent all harassment and other inappropriate
+      behaviour.
+    </p>
+    <p>
+      Participants are not required to reimburse recompensate the recourses or money (such registration fees and donations) that had already been contributed by those who have since been expelled.
+      Speakers, sponsors, contributors, project owner and others in specific roles are also participants, and thus must abide by the same rules as all others.
+    </p>
+    <p>Harassment includes:</p>
+    <ul>
+      <li>Offensive comments regarding the gender, sexual orientation, mental state, appearance, race, religious or political beliefs, or technological preferences of others;</li>
+      <li>Displaying sexually explicit images in public;</li>
+      <li>Intentionally intimidating, stalking, following or harassing the photographer or cameraperson;</li>
+      <li>Repeatedly disrupting the proceedings of speeches, online cooperation, or other events through verbal or other means;</li>
+      <li>Inappropriate physical contact;</li>
+      <li>Unwelcomed sexual attention.</li>
+    </ul>
+    <p>Please immediately stop such harassing behaviour when requested to do so by other participants.</p>
+    <p>
+      If you have been harassed or have discovered that others have been harassed, please immediately ask for help from other participants, managers or the event organising team. Refer to the <a
+        href="https://summit.g0v.tw/2026/en/coc-procedure/">g0v Summit Code of Conduct Assistance Procedure</a
+      > for more details.
+    </p>
+    <p>The g0v community hopes that participants can follow the above rules at both online and offline events.</p>
+    <p>The above is excerpted from the "<a href="https://g0v.tw/coc/en/">g0v Community Code of Conduct</a>" (Last revised: 2023/04/05).</p>
+  </main>
+</Layout>
+
+<style>
+  @reference "~/styles/_tailwind.css";
+  h1 {
+    @apply mb-8;
+  }
+  h2, h3, h4 {
+    @apply mt-6 mb-4;
+  }
+</style>
