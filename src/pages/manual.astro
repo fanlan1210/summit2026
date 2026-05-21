@@ -1,0 +1,12 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { useI18n } from '~/i18n/utils'
+
+const { t } = useI18n(Astro.url.pathname)
+---
+<script>
+  window.location.href = 'https://drive.google.com/drive/folders/11Ea5VXuBHhYoxNTla8f3KeU7n24YQ0RL?usp=sharing'
+</script>
+<Layout pageName={t('title')} >
+  <p>轉址中...</p>
+</Layout>
