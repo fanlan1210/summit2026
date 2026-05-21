@@ -6,6 +6,7 @@ import { useI18n } from '~/i18n/utils'
 
 const { t } = useI18n(Astro.url.pathname)
 ---
+
 <Layout pageName={t('nav.notice')}>
   <main class="container py-8 md:py-12">
     <h1>行前通知信</h1>
@@ -45,7 +46,7 @@ const { t } = useI18n(Astro.url.pathname)
       <li><p>於 Google Play 或 App Store 下載數位發展部的<a href="https://wallet.gov.tw/zh-tw">「數位憑證皮夾」App</a>，並完成初始設定。</p></li>
       <li><p>開啟以下連結，使用「數位憑證皮夾」 App 掃描網站中的 QR Code，即可將票證加入皮夾中。<br /><strong>-</strong></p></li>
       <li><p>當您抵達報到現場時，工作人員將會出示驗證 QR Code，請您使用 App 掃描：</p></li>
-      <img src="./img/TWDIW.png" class="w-full max-w-64 my-4" />
+      <img src="./img/TWDIW.png" class="my-4 w-full max-w-64" />
       <li><p>您可以預覽大會會索取的證件資訊；確認並送出後，即可完成報到。</p></li>
     </ol>
     <h4>離線報到</h4>
@@ -97,10 +98,10 @@ const { t } = useI18n(Astro.url.pathname)
     <h4>第二天下午閃電講</h4>
     <p>手上有剛挖好的新坑、驚人的專案成果，還是憋了兩天不吐不快的想法？閃電講是你這次在 g0v Summit 2026 登上 R0 大螢幕、對社群大聲呼喊的最後機會！</p>
     <ul>
-      <li>**時間：**5/24 (Day 2) 16:40 - 17:10</li>
-      <li>**地點：**R0 國際會議廳</li>
-      <li>**時間限制：**每人 4 分鐘（時間到強制下台）</li>
-      <li>**報名方式：**閃電講當天中午 12:10 在三樓報到台旁的白板開放報名</li>
+      <li><strong>時間：</strong>5/24 (Day 2) 16:40 - 17:10</li>
+      <li><strong>地點：</strong>R0 國際會議廳</li>
+      <li><strong>時間限制：</strong>每人 4 分鐘（時間到強制下台）</li>
+      <li><strong>報名方式：</strong>閃電講當天中午 12:10 在三樓報到台旁的白板開放報名</li>
     </ul>
     <h4>大會紀念品、大地遊戲</h4>
     <p>
@@ -155,7 +156,9 @@ const { t } = useI18n(Astro.url.pathname)
   h1 {
     @apply mb-8;
   }
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     @apply mt-6 mb-4;
   }
 </style>
