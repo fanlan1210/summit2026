@@ -17,10 +17,14 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
     <h1 class="mt-8 md:mt-12">{t('agenda.title')}</h1>
     <p class="mt-4 text-neutral-400">{t('agenda.info')}</p>
 
-    <div>
+    <div class="flex flex-wrap gap-4">
       <a class="btn btn-info gap-1" target="_blank" href="https://g0v.hackmd.io/@summit2026/notes">
         <Icon name="mdi:file-text-edit" width={20} />
         {t('agenda.main_note')}
+      </a>
+      <a class="btn btn-info gap-1" target="_blank" href="https://www.youtube.com/@g0vTW/streams">
+        <Icon name="mdi:youtube" width={20} />
+        {t('agenda.main_live')}
       </a>
     </div>
   </div>

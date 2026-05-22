@@ -38,10 +38,10 @@ const { t } = useI18n(Astro.url.pathname)
       <section id="timeline" class="mb-10">
         <Timeline />
       </section>
-
-      <p class="text-center text-xl">{t('index.opening_in')}</p>
-      <div id="flipdown" class="flipdown mx-auto mb-20 flex w-auto! justify-center" data-headings={[t('date.days'), t('date.hours'), t('date.minutes'), t('date.seconds')]}></div>
-
+      <section id="countdown" class="mb-20 hidden">
+        <p class="text-center text-xl">{t('index.opening_in')}</p>
+        <div id="flipdown" class="flipdown mx-auto flex w-auto! justify-center" data-headings={[t('date.days'), t('date.hours'), t('date.minutes'), t('date.seconds')]}></div>
+      </section>
       <div class="mb-20 flex">
         <a href="https://summit.g0v.tw/tickets" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary mx-auto flex items-center gap-2 md:inline-flex">
           {t('register.cta')}<Icon name="mdi:external-link" width="22" />
@@ -146,7 +146,11 @@ const { t } = useI18n(Astro.url.pathname)
   })
 
   function initCountdown() {
-    const targetDate = new Date('2026-05-23T09:20:00+08:00')
+    let targetDate = new Date('2026-05-23T09:20:00+08:00')
+    if (new Date() > targetDate) {
+      return
+    }
+    document.querySelector('#countdown')?.classList.remove('hidden')
     new FlipDown(targetDate.getTime() / 1000, {
       headings: String(document.getElementById('flipdown').dataset.headings).split(','),
     }).start()
